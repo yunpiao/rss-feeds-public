@@ -12,7 +12,7 @@
 	<atom:link href="https://www.technologyreview.com/feed/" rel="self" type="application/rss+xml" />
 	<link>https://www.technologyreview.com</link>
 	<description></description>
-	<lastBuildDate>Thu, 22 Oct 2026 18:48:05 +0000</lastBuildDate>
+	<lastBuildDate>Thu, 22 Oct 2026 21:17:30 +0000</lastBuildDate>
 	<language>en-US</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -28,6 +28,128 @@
 	<height>32</height>
 </image> 
 <site xmlns="com-wordpress:feed-additions:1">172986898</site>	<item>
+		<title>Designing an AI serving harness built to last</title>
+		<link>https://www.technologyreview.com/2026/10/22/1146109/designing-an-ai-serving-harness-built-to-last/</link>
+		
+		<dc:creator><![CDATA[Anand Logani]]></dc:creator>
+		<pubDate>Thu, 22 Oct 2026 21:17:29 +0000</pubDate>
+				<category><![CDATA[Artificial intelligence]]></category>
+		<category><![CDATA[sponsored]]></category>
+		<guid isPermaLink="false">https://www.technologyreview.com/?p=1146109</guid>
+
+					<description><![CDATA[The next competitive advantage in enterprise AI has less to do with which model you choose than with what you build around it. That’s an important shift. For the past several years, much of the AI conversation has centered on model capability: bigger models, better reasoning, larger context windows, higher benchmark scores. Those advances have&#8230;]]></description>
+										<content:encoded><![CDATA[
+<p class="wp-block-paragraph">The next competitive advantage in enterprise AI has less to do with which model you choose than with what you build around it.</p>
+
+
+
+<p class="wp-block-paragraph">That’s an important shift. For the past several years, much of the AI conversation has centered on model capability: bigger models, better reasoning, larger context windows, higher benchmark scores. Those advances have been extraordinary. But as AI moves from experimentation to production, the question facing enterprise leaders has changed—it’s no longer, “what can the model do?”—it’s now, “Can we deliver that intelligence reliably, economically, and at scale?”</p>
+
+
+
+<figure class="wp-block-image size-large"><img fetchpriority="high" decoding="async" height="1315" width="3000" src="https://wp.technologyreview.com/wp-content/uploads/2026/10/GettyImages-2188328005_9f1d59-e1791493652782.jpg?w=840" alt="" class="wp-image-1146166" /></figure>
+
+
+
+<p class="wp-block-paragraph">Increasingly, the answer depends on the serving harness—the engineering system surrounding the model, including the architecture, <a href="https://www.exlservice.com/insights/white-paper/engineering-memory-reliable-enterprise-ai-agents?utm_source=technologyreview&amp;utm_medium=native&amp;utm_content=sponsored_content_hosting&amp;utm_campaign=2026_q4_go_beyond">memory management</a>, scheduling, and optimization decisions that determine how efficiently model intelligence becomes a production capability.</p>
+
+
+
+<p class="wp-block-paragraph">For technical executives, that changes where AI investment should go—and what they should demand from the architecture supporting it.</p>
+
+
+
+<h3 class="wp-block-heading"><strong>Start with the workload, not the model</strong></h3>
+
+
+
+<p class="wp-block-paragraph">There is no universally “best” model or AI architecture. There is only the right solution for the business problem.</p>
+
+
+
+<p class="wp-block-paragraph">A customer-facing assistant optimized for fast responses has fundamentally different requirements from a document-processing pipeline that can run overnight. An internal knowledge application and a high-volume customer service platform may use the same foundation model but require very different serving architectures.</p>
+
+
+
+<p class="wp-block-paragraph">The workload defines the constraints. The constraints should determine the architecture.</p>
+
+
+
+<p class="wp-block-paragraph">That sounds simple, but it runs counter to the way many organizations have approached early AI deployments. During a proof of concept, model accuracy naturally dominates the discussion. Production introduces constraints that are much easier to ignore when only a handful of users are involved: latency, concurrency, memory pressure, GPU utilization, infrastructure cost, and unpredictable traffic.</p>
+
+
+
+<p class="wp-block-paragraph">A model that produces marginally better answers is not necessarily the better production choice if it doubles inference costs or cannot meet the application&#8217;s latency requirements. Not every workload needs a Ferrari. Sometimes the smarter engineering decision is the model that delivers exactly the performance the business needs without paying for capability it doesn&#8217;t.</p>
+
+
+
+<p class="wp-block-paragraph">The objective should be to deploy the right intelligence at the right cost for the workload. That makes serving architecture more than an engineering concern. It becomes an investment decision: where to spend on compute, where to optimize, and where additional model capability simply isn&#8217;t worth the cost.</p>
+
+
+
+<h3 class="wp-block-heading"><strong>Engineer the system, not the model</strong></h3>
+
+
+
+<p class="wp-block-paragraph">Once AI reaches production, seemingly isolated engineering decisions begin affecting one another. Serving architecture influences memory utilization. Memory management affects concurrency. Concurrency shapes batching and scheduling, and scheduling affects GPU utilization and latency.</p>
+
+
+
+<p class="wp-block-paragraph">Only then can techniques such as quantization, speculative decoding, or optimized attention mechanisms deliver their full value. This interdependence matters because organizations can spend considerably more on infrastructure without solving the constraint limiting performance.</p>
+
+
+
+<p class="wp-block-paragraph">GPU memory is a good example. During inference, the model&#8217;s weights remain fixed, but the key-value (KV) cache grows with active requests and context length. As concurrency increases, a system can run short of usable GPU memory even when compute capacity is still available. Adding more compute without understanding that bottleneck may simply make an inefficient system more expensive.</p>
+
+
+
+<p class="wp-block-paragraph">The lesson for technology leaders is broader than memory management: Measure before you optimize<strong>. </strong>Identify the dominant constraint. Address it. Measure the result. Then determine if another bottleneck emerged. Repeat.</p>
+
+
+
+<p class="wp-block-paragraph">Don&#8217;t think of optimization techniques as Pokémon cards: The goal isn&#8217;t to collect them all. The goal is to apply the technique that removes the highest-impact constraint while preserving the application&#8217;s business requirements.</p>
+
+
+
+<p class="wp-block-paragraph">For technology leaders, that demands a different governance question. Instead of asking which AI capabilities the organization can deploy, ask which constraints stand between a proven capability and sustainable business value.</p>
+
+
+
+<h3 class="wp-block-heading"><strong>Build for change, not today&#8217;s benchmark</strong></h3>
+
+
+
+<p class="wp-block-paragraph">Perhaps the most important reason to invest in the serving harness is that today&#8217;s leading model will probably not be tomorrow’s. Models will improve. Hardware will evolve. New optimization techniques will emerge. The architecture surrounding them should make those changes easier to absorb, not force the enterprise to rebuild its AI platform every time technology advances.</p>
+
+
+
+<p class="wp-block-paragraph">That makes adaptability an increasingly important outcome of AI strategy.</p>
+
+
+
+<p class="wp-block-paragraph">Organizations that build serving systems around workload requirements, clear service-level objectives, and measurable production economics gain the ability to evaluate new models and infrastructure against what the business actually needs. A model change can become an evaluation and configuration decision rather than an architectural reset.</p>
+
+
+
+<p class="wp-block-paragraph">EXL researchers have explored these production challenges in greater depth in the <a href="https://www.exlservice.com/insights/white-paper/exl-engineering-field-guide-engineering-the-harness-series?utm_source=technologyreview&amp;utm_medium=native&amp;utm_content=sponsored_content_hosting&amp;utm_campaign=2026_q4_go_beyond">EXL Engineering the Harness</a> series. It examines how serving architecture, memory management, scheduling, and inference optimization work together to make enterprise AI more efficient, scalable, and economically sustainable.</p>
+
+
+
+<p class="wp-block-paragraph">Increasingly, enterprises have access to many of the same models. Sustainable differentiation comes from how effectively an organization turns that intelligence into business outcomes.</p>
+
+
+
+<p class="wp-block-paragraph">The model provides the intelligence. The harness determines whether the enterprise can deliver outcomes reliably, economically, and at scale.</p>
+
+
+
+<p class="wp-block-paragraph"><em>This content was produced by EXL. It was not written by MIT Technology Review’s editorial staff.</em></p>
+]]></content:encoded>
+					
+		
+		
+		<post-id xmlns="com-wordpress:feed-additions:1">1146109</post-id>	</item>
+		<item>
 		<title>The Foundations of Scalable AI</title>
 		<link>https://www.technologyreview.com/2026/10/22/1146103/the-foundations-of-scalable-ai/</link>
 		
@@ -78,7 +200,7 @@
 
 
 
-<figure class="wp-block-image alignright size-full"><img fetchpriority="high" decoding="async" width="426" height="426" src="https://wp.technologyreview.com/wp-content/uploads/2026/10/Wang_forweb.png" alt="" class="wp-image-1146104" srcset="https://wp.technologyreview.com/wp-content/uploads/2026/10/Wang_forweb.png 426w, https://wp.technologyreview.com/wp-content/uploads/2026/10/Wang_forweb.png?resize=150,150 150w, https://wp.technologyreview.com/wp-content/uploads/2026/10/Wang_forweb.png?resize=300,300 300w" sizes="(max-width: 426px) 100vw, 426px" /></figure>
+<figure class="wp-block-image alignright size-full"><img decoding="async" width="426" height="426" src="https://wp.technologyreview.com/wp-content/uploads/2026/10/Wang_forweb.png" alt="" class="wp-image-1146104" srcset="https://wp.technologyreview.com/wp-content/uploads/2026/10/Wang_forweb.png 426w, https://wp.technologyreview.com/wp-content/uploads/2026/10/Wang_forweb.png?resize=150,150 150w, https://wp.technologyreview.com/wp-content/uploads/2026/10/Wang_forweb.png?resize=300,300 300w" sizes="(max-width: 426px) 100vw, 426px" /></figure>
 
 
 
@@ -565,7 +687,7 @@
 
 
 
-<figure class="wp-block-image size-full"><img decoding="async" width="2400" height="1350" src="https://wp.technologyreview.com/wp-content/uploads/2026/10/WD-MITTR-Infographic-Final@2x.png" alt="" class="wp-image-1147215" srcset="https://wp.technologyreview.com/wp-content/uploads/2026/10/WD-MITTR-Infographic-Final@2x.png 2400w, https://wp.technologyreview.com/wp-content/uploads/2026/10/WD-MITTR-Infographic-Final@2x.png?resize=300,169 300w, https://wp.technologyreview.com/wp-content/uploads/2026/10/WD-MITTR-Infographic-Final@2x.png?resize=768,432 768w, https://wp.technologyreview.com/wp-content/uploads/2026/10/WD-MITTR-Infographic-Final@2x.png?resize=1536,864 1536w, https://wp.technologyreview.com/wp-content/uploads/2026/10/WD-MITTR-Infographic-Final@2x.png?resize=2048,1152 2048w" sizes="(max-width: 2400px) 100vw, 2400px" /></figure>
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="2400" height="1350" src="https://wp.technologyreview.com/wp-content/uploads/2026/10/WD-MITTR-Infographic-Final@2x.png" alt="" class="wp-image-1147215" srcset="https://wp.technologyreview.com/wp-content/uploads/2026/10/WD-MITTR-Infographic-Final@2x.png 2400w, https://wp.technologyreview.com/wp-content/uploads/2026/10/WD-MITTR-Infographic-Final@2x.png?resize=300,169 300w, https://wp.technologyreview.com/wp-content/uploads/2026/10/WD-MITTR-Infographic-Final@2x.png?resize=768,432 768w, https://wp.technologyreview.com/wp-content/uploads/2026/10/WD-MITTR-Infographic-Final@2x.png?resize=1536,864 1536w, https://wp.technologyreview.com/wp-content/uploads/2026/10/WD-MITTR-Infographic-Final@2x.png?resize=2048,1152 2048w" sizes="auto, (max-width: 2400px) 100vw, 2400px" /></figure>
 
 
 
@@ -1064,75 +1186,5 @@
 		
 		
 		<post-id xmlns="com-wordpress:feed-additions:1">1146121</post-id>	</item>
-		<item>
-		<title>Interspecies communication</title>
-		<link>https://www.technologyreview.com/2026/10/21/1146124/interspecies-communication-impossible-issue/</link>
-		
-		<dc:creator><![CDATA[Cassandra Willyard]]></dc:creator>
-		<pubDate>Wed, 21 Oct 2026 09:00:00 +0000</pubDate>
-				<category><![CDATA[Culture]]></category>
-		<category><![CDATA[App]]></category>
-		<guid isPermaLink="false">https://www.technologyreview.com/?p=1146124</guid>
-
-					<description><![CDATA[Humans are far from the only species with a gift for gab, and our furry, feathered, and finned friends could have a lot to tell us. Decoding how animals communicate with one another could offer a window into the inner lives of other species and help humans realize that “animals are sentient creatures who think,&#8230;]]></description>
-										<content:encoded><![CDATA[
-<p class="wp-block-paragraph">Humans are far from the only species with a gift for gab, and our furry, feathered, and finned friends could have a lot to tell us. Decoding how animals communicate with one another could offer a window into the inner lives of other species and help humans realize that “animals are sentient creatures who think, who have hopes and dreams of their own,” says Con Slobodchikoff, the founder of Zoolingua, a company working on dog-to-human speech.</p>
-
-
-
-<h3 class="wp-block-heading">The sticking points</h3>
-
-
-
-<p class="wp-block-paragraph">Teasing all this out is complex. To decipher howls, squeaks, and clicks, researchers must match the creatures making sounds with what’s happening around them. Prairie dogs, for example, <a href="https://pubs.aip.org/asa/jasa/article-abstract/119/5/3153/892893/Acoustic-structures-in-the-alarm-calls-of-Gunnison?redirectedFrom=fulltext">utter a different series of yips</a> when a coyote approaches than when a hawk is nearby. It’s painstaking work, especially for difficult-to-­observe species, like deep-diving whales or subterranean mole rats.</p>
-
-
-
-<p class="wp-block-paragraph">There are other hurdles. Many animals communicate not just through sound but through visual cues, touch, pheromones, or a combination of signals, some of which might be difficult for us to perceive. And without a multispecies Rosetta stone, it’s hard to know if translations are accurate.&nbsp;</p>
-
-
-
-<h3 class="wp-block-heading">The progress</h3>
-
-
-
-<p class="wp-block-paragraph">Over the past 50 years, a growing arsenal of devices has made it easier to observe the sophisticated ways animals communicate. <a href="https://www.fisheries.noaa.gov/pacific-islands/population-assessments/passive-acoustics-pacific-islands">Hydrophones</a> at the bottom of the ocean can capture humpback whale song, and tiny wearable “<a href="https://phys.org/news/2026-03-tiny-backpacks-reveal-strategy.html">biologgers</a>” can record a bat’s every squeak.&nbsp;</p>
-
-
-
-<p class="wp-block-paragraph">In the last decade, advances in AI have leveled up our ability to make sense of it all. The technology can detect different calls, distinguish which sounds belong to which animal, and spot patterns. Researchers at the Earth Species Project (ESP), a nonprofit founded in 2018 to decode animal communication, recently used machine learning to <a href="https://earthspecies.org/2025/12/15/unlocking-avian-secrets-how-tiny-biologgers-are-revealing-the-hidden-communication-of-carrion-crows/">detect vocalizations of carrion crows</a> and determine which bird made which call.&nbsp;</p>
-
-
-
-<p class="wp-block-paragraph">They suspect that more advanced AI could translate critters’ chatter. Large language models like Claude and ChatGPT excel at finding relationships between words, explains Sara Keen, one of ESP’s behavioral ecologists. ESP hopes its own NatureLM—trained on human speech, music, and animal sounds—will be able to interpret the vocalizations of a variety of species.&nbsp;</p>
-
-
-
-<p class="wp-block-paragraph">That promise, however, is still theoretical. Yossi Yovel, a neuroecologist at Tel Aviv University, worries that these models will put too much emphasis on acoustic similarities and make mistakes—like lumping together similar sounds that have different meanings.&nbsp;</p>
-
-
-
-<p class="wp-block-paragraph">As for a two-way convo? It’s not clear when—or whether—that will happen. Still, “a lot of animals have an evolutionary structure that is similar enough that we should be able to understand what they’re saying,” Slobodchikoff says.&nbsp;</p>
-
-
-
-<hr class="wp-block-separator has-alpha-channel-opacity"/>
-
-
-
-<h3 class="wp-block-heading">Progress meter &#8230;&#8230;&#8230;&#8230; 4</h3>
-
-
-
-<figure class="wp-block-image size-full is-resized"><img loading="lazy" decoding="async" width="387" height="48" src="https://wp.technologyreview.com/wp-content/uploads/2026/10/purple-16.svg" alt="" class="wp-image-1147275" style="width:764px;height:auto" /></figure>
-
-
-
-<p class="wp-block-paragraph"><strong>Researchers have amassed heaps of data on animal communication, but they’re still trying to figure out how to decipher it all. </strong></p>
-]]></content:encoded>
-					
-		
-		
-		<post-id xmlns="com-wordpress:feed-additions:1">1146124</post-id>	</item>
 	</channel>
 </rss>
