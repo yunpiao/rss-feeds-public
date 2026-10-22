@@ -12,7 +12,7 @@
 	<atom:link href="https://www.technologyreview.com/feed/" rel="self" type="application/rss+xml" />
 	<link>https://www.technologyreview.com</link>
 	<description></description>
-	<lastBuildDate>Wed, 21 Oct 2026 11:49:50 +0000</lastBuildDate>
+	<lastBuildDate>Thu, 22 Oct 2026 08:41:19 +0000</lastBuildDate>
 	<language>en-US</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -28,6 +28,378 @@
 	<height>32</height>
 </image> 
 <site xmlns="com-wordpress:feed-additions:1">172986898</site>	<item>
+		<title>Making the case for context-aware AI</title>
+		<link>https://www.technologyreview.com/2026/10/22/1146812/making-the-case-for-context-aware-ai/</link>
+		
+		<dc:creator><![CDATA[MIT Technology Review Insights]]></dc:creator>
+		<pubDate>Thu, 22 Oct 2026 10:00:00 +0000</pubDate>
+				<category><![CDATA[Artificial intelligence]]></category>
+		<category><![CDATA[sponsored]]></category>
+		<guid isPermaLink="false">https://www.technologyreview.com/?p=1146812</guid>
+
+					<description><![CDATA[Enterprise AI can generate recommendations, automate tasks, and help organizations make decisions faster. But without an understanding of how a business actually operates, even powerful models can miss the constraints and relationships that determine whether a decision is the right one. As companies look to move AI from experimentation into everyday operations, the challenge ahead&#8230;]]></description>
+										<content:encoded><![CDATA[
+<iframe height="200px" width="100%" frameborder="no" scrolling="no" seamless src="https://player.simplecast.com/76d6319c-4e61-4b97-a5ef-1d0a92acaada?dark=false"></iframe>
+
+
+
+<p class="wp-block-paragraph">Enterprise AI can generate recommendations, automate tasks, and help organizations make decisions faster. But without an understanding of how a business actually operates, even powerful models can miss the constraints and relationships that determine whether a decision is the right one. As companies look to move AI from experimentation into everyday operations, the challenge ahead is giving technology the context to act usefully within complex business processes.</p>
+
+
+
+<p class="wp-block-paragraph">For Devavrat Shah, chief scientist of enterprise AI at Celonis, that context is central to what he calls “decision intelligence.” AI agents can support individual tasks within larger decision-making processes, he argues, but they need to understand the role each task plays and the business conditions surrounding it. “You can&#8217;t just do that in a vacuum,” he says. Without the right operational context, agents risk overlooking important constraints, making costly mistakes, or consuming excessive computing resources as they try to work out what they need to know.</p>
+
+
+
+<p class="wp-block-paragraph">The solution begins with connecting AI to the processes and data enterprises already use. A contextual layer can help agents understand workflows, operate within defined guardrails, and produce recommendations that people can review and approve. Shah advises organizations to start with a specific business decision, identify its most difficult steps, and test whether AI can improve them. Measuring gains in speed and value can then help determine whether an application is worth scaling.</p>
+
+
+
+<p class="wp-block-paragraph">This approach could also change how employees spend their time. Automating repetitive, manual work and coordinating tasks across teams could free people to focus on more complex strategic decisions. Realizing that benefit, however, will require investment in workforce education, so employees can understand AI outputs and their implications instead of just handing decisions over to agents.</p>
+
+
+
+<p class="wp-block-paragraph">Looking to the future, Shah sees opportunities extending from routine operational tasks to enterprise-wide planning in areas such as finance, workforce management, marketing, and sales. With the right context, AI could help organizations evaluate options and make consequential decisions more quickly. As Shah puts it, “Now, maybe [resource planning] should not take that much time, and people are actually making the right choices quickly.”</p>
+
+
+
+<p class="wp-block-paragraph"><em>This episode of Business Lab is produced in partnership with Celonis.</em></p>
+
+
+
+<p class="wp-block-paragraph"><strong>Full Transcript</strong></p>
+
+
+
+<p class="wp-block-paragraph"><em>Megan Tatum:</em> From MIT Technology Review, I&#8217;m Megan Tatum, and this is Business Lab, the show that helps business leaders make sense of new technologies coming out of the lab and into the marketplace.<br><br>This podcast is produced in partnership with Celonis.<br><br>Now, enterprise AI is at something of a crossroads. After years of experimentation, demos, and pilots, leadership teams want clear proof that scaling up will positively impact their bottom line, but many are missing an integral part of the puzzle. By acting without operational context, enterprise AI and AI agents are performing at a significant deficit. They&#8217;re applying generalized principles to specialized scenarios and coming up short, leaving business leaders understandably unconvinced and AI&#8217;s potential unrealized.<br><br>Two words for you: context matters.<br><br>My guest today is Devavrat Shah, chief scientist of enterprise AI at Celonis.<br><br>Welcome, Devavrat.</p>
+
+
+
+<p class="wp-block-paragraph"><em>Devavrat Shah:</em> Hello, Megan. Thanks for having me here.</p>
+
+
+
+<p class="wp-block-paragraph"><em>Megan:</em> Thank you so much for being here with us today. Devavrat, just to start, why is it so crucial that organizations are thinking about operational context as it relates to enterprise AI right now? What makes it such a critical part of that transition I was talking about from experimentation to scale?</p>
+
+
+
+<p class="wp-block-paragraph"><em>Devavrat:</em> It&#8217;s a fantastic question. And as you correctly noted, we&#8217;re at the cusp of becoming experimental to mainstream as far as AI is concerned. As you know, I&#8217;ve been teaching AI at MIT as a professor for more than the last two decades, so it&#8217;s no surprise that I&#8217;m very bullish about AI&#8217;s future in enterprises.<br><br>The way I think about where AI can make the biggest difference in enterprises is in decision making, helping enterprise make decisions, or putting it other way, how do we bring decision intelligence to enterprises? As we think about decisions, how do we make decisions today? Take MIT Tech Review, take Celonis, take MIT, take any large organization. We have different types of decisions we want to make in very broad strokes. There are decisions which are strategic decisions like episodic, other decisions which are operational that need to be done with a high frequency. In either of them, we have some processes in place. You do this first, you do that first, you do that first, you do that first. Many of us help coordinate those things. Many of us play roles within it, what Jensen Huang calls task. And once you get those things done step by step, then you reach decision.<br><br>Now, it&#8217;s those tasks, or what I would call roles, that&#8217;s where AI can bring in an atomic manner agentic power so that we can at least parts of decisions, if not all of the decisions, we can augment support and maybe sometimes when it&#8217;s a painful automate. And to get to that, to know which role to do, which task to do, we really need to know the context. You can&#8217;t just do that in a vacuum. And that&#8217;s why context with AI put together in the right way would bring what I would call decision intelligence to enterprise. And that&#8217;s where I think there&#8217;ll be the biggest transformation that would come.</p>
+
+
+
+<p class="wp-block-paragraph"><em>Megan:</em> Right. To drill down into that into a bit more detail, we know many organizations are, as you say, embracing identic AI right now with this potential for increasingly autonomous decision making. If context isn&#8217;t introduced in parallel, what are the commercial risks at play?</p>
+
+
+
+<p class="wp-block-paragraph"><em>Devavrat:</em> Fantastic. Let&#8217;s just take the setting I was describing. We are trying to automate a role or support a role or augment a role depending on the type of decision, depending upon type of task. And let&#8217;s for a second imagine that all these, as they&#8217;re called, frontier labs have built these amazing models and amazing AI infrastructure so that everything that&#8217;s happened in the universe and it&#8217;s likely to happen in the universe is all there.<br><br>Now, we have a small decision that we want to make for that very specific context is there. And without having access to that, this massive system, this extremely bright person would figure that out eventually by asking lots of questions, the way we do it as humans, and then finally do the right thing. The problem is to get to that, it will do so much compute at some level that to get simple tasks done, we are spending massive amount of compute. So that&#8217;s scenario one.</p>
+
+
+
+<p class="wp-block-paragraph">In reality, that&#8217;s not going to be the scenario, and we&#8217;ll miss some important context, important constraint, important guardrail, and then we&#8217;ll make a mistake. And sometimes that mistake can be okay. It&#8217;s like me giving you a recommendation saying, go restaurant A, and maybe you may not enjoy the dinner, versus sometimes mistakes will be very, very expensive. That is me telling you what the financial forecast is and somehow that leads to the company&#8217;s doom.</p>
+
+
+
+<p class="wp-block-paragraph"><em>Megan:</em> Right. So in an enterprise setting, these are really business critical decisions that are being made. So the impact is that much more if we get this wrong, isn&#8217;t it? And on a practical level then, what are the different ways that organizations can add in this context layer we&#8217;re talking about? How does Celonis, for example, deliver that operational context via a real time digital twin of an organization?</p>
+
+
+
+<p class="wp-block-paragraph"><em>Devavrat:</em> Absolutely. I think if it might be useful just to double click on the history of Celonis. As you know, Celonis, as an organization, came into existence with the mission, with the goal of helping organizations adhere to their ideal processes, build better processes, enable people to work with multiple processes in an intertwined manner. And that&#8217;s where their primary, let&#8217;s call it a DNA, has been about what I would call process intelligence. Take how enterprises help put multiple things together, digitize them, enable people to get their processes better, understand where the issues are, and then how do you re-engineer the process within organizations so that things can happen better.</p>
+
+
+
+<p class="wp-block-paragraph">Now, if you want to bring decision intelligence into this, each atomic step of this process that was potentially was done before by experts, people, now we want agents to help us enable that. And that&#8217;s where knowing this context of a process within enterprise and then bringing AI agents along with that, what I would like to call it as a roled agents, exactly provide the right way to bring decision intelligence to enterprises. And this is how Celonis brings context to help enterprise make better decision.</p>
+
+
+
+<p class="wp-block-paragraph"><em>Megan:</em> Right. And then in terms of how this works as well, how does the context layer relate to both the layer below, that&#8217;s the systems of record layer, and also the layer above, that identic layer?</p>
+
+
+
+<p class="wp-block-paragraph"><em>Devavrat:</em> That&#8217;s a fantastic question, Megan. The layer below primarily is, if we call it system of record, primarily it&#8217;s the workflow tools that are there and then the event logs that they generate around it. The layer above is either business user experts consuming information, or they&#8217;re consuming that information maybe through agents working on top of that context layer. And this is where the way context model, as Celonis calls it, is designed is to do three things simultaneously. One is to get the right abstraction of the layer below, so that the right pieces of the process can be agentified. Two is to bring the rolled agents for each of these pieces in a structured guardrailed manner. And then the three is to be agent first so that if there are other agentic infrastructure that are already talking to it, they can naturally talk to it so that then they can bring the right output for humans or experts to review, look at it, approve, and maybe then at times automate.</p>
+
+
+
+<p class="wp-block-paragraph"><em>Megan:</em> Fantastic. And for all the benefits that we&#8217;re talking about with this, are there also challenges when it comes to implementing a context layer? For example, do most organizations have the right data in place to provide AI with the context it needs? And if not, I wonder what some of the practical steps are that they might need to take to address that.</p>
+
+
+
+<p class="wp-block-paragraph"><em>Devavrat:</em> It&#8217;s again, a crucial question to make this real. We can imagine an ideal world, but if we cannot reach the ideal world, then it&#8217;s just ideal. So now in this setting, as we discussed the three layers, one being the layer which is the layer below system of record and workflow tools. In some sense, those things already exist. They don&#8217;t need to be complete. They don&#8217;t need to be in the cleanest possible manner. The way context model is designed with agentic&#8217;s architecture, it manages to connect to those things and make sense of it.</p>
+
+
+
+<p class="wp-block-paragraph">And then things on top is very much in control of Celonis&#8217;s infrastructure, so it&#8217;s not that complicated. The crucial thing here though is when one goes to enterprise, when one opens up, let&#8217;s say a system of record or workflow tool, event logs or things like that, one has to go through, what I would call, classical InfoSec to make sure that you can trust a vendor&#8217;s software that&#8217;s coming into your organization. And I think that is the primary process that is a step between, before and after, if I may call it.</p>
+
+
+
+<p class="wp-block-paragraph"><em>Megan:</em> Right. So that&#8217;s the real crucial step for people to be taking here. And as AI agents with context are able to make more complex, more accurate hopefully decisions, I wonder what you think the role of human intelligence and input will be moving forward, and how can organizations perhaps strike the balance between the two?</p>
+
+
+
+<p class="wp-block-paragraph"><em>Devavrat:</em> There are the benefits and then there are the challenges. Benefits are clear. If you have right AI agents in a right role manner going through your decision processes, hopefully they&#8217;re doing it quicker and hence your decisions are taken earlier so that your opportunity cost is not lost. You are taking decisions in time, you can plan much better, et cetera, et cetera. This is especially useful when you have to take very manual, repetitive, grungy tasks where access to workforce, coordination between people become crucial parts of the decision process. In a sense, that&#8217;s where the huge value can come in. The flip side of that is that means that people won&#8217;t be doing that.<br><br>On the other hand, the other type of decision that we always make, which are strategic decisions. It could be a small strategic decision, it could be large strategic decision, but the strategic decisions that typically most organizations don&#8217;t have bandwidth to take to think, that opportunity would open up and that&#8217;s where likely lots of humans and experts would engage more. In a sense, now they would have better support helping them rationally think through what are the choices that they have, how do different choices compare? And then at the end of the day, it&#8217;s organization&#8217;s role to decide which of the option to take because it belongs to their interest in mind where they want to go.<br><br>And so in a sense, there will be what I would call shift of workforce in terms of instead of doing a lot more repetitive, a lot less repetitive, but a lot more strategic work and that&#8217;s where people will have to spend time.<br><br>The other place where I am personally very optimistic is like every technology change creates new work that it&#8217;s difficult to predict at the time of change. My hope is that there will be another type of opportunity and work that will be created where we&#8217;ll be engaging our workforce. Goes without saying, this would mean that we will have to carefully think through reeducating or educating some of our workforce thoughtfully. And I think as an academic in me, as an educator in me, I really feel that the timescale at which these changes are happening are so fast. So we need to also act in a similar manner.</p>
+
+
+
+<p class="wp-block-paragraph"><em>Megan:</em> For any decision maker listening to this, how should they start implementing these changes? For example, how can they prepare their workforce? What role should governance play as well?</p>
+
+
+
+<p class="wp-block-paragraph"><em>Devavrat:</em> Okay, that&#8217;s a great question. If you want to start, the first thing you need to do is identify a decision where you want to bring intelligence. Let&#8217;s identify the process around it. Let&#8217;s identify each step of the process. Let&#8217;s take the most crucial, difficult step in that. Let&#8217;s try to bring AI agents to help you to do that. And then from there you go and then let&#8217;s measure how much speed are we getting, how much value are we getting? And that&#8217;ll help us understand whether this was worth it. So that&#8217;s one.</p>
+
+
+
+<p class="wp-block-paragraph">Second is governance. Well, we&#8217;re going to bring AI in this prescriptive manner for each task in a role. That means that for that role, we can tell what it can or cannot do very clearly. And Celonis prescribes certified role agents for these things. This helps you clearly have an understanding of what sort of contract would be for this.<br><br>And the third thing, which is people, and now this is where it&#8217;s really important, is a part which gets automated, but then there&#8217;s a part where experts will be in the loop and this is where they need to understand the outputs of AI, how do you work with that and what its implication would be? And this is where some AI education is needed and then some tool education is needed.</p>
+
+
+
+<p class="wp-block-paragraph"><em>Megan:</em> Yes, absolutely. The pace is incredible, isn&#8217;t it, in this space? And speaking of, I suppose if we could close with a look ahead, given the right context, of course, what are the use cases perhaps for enterprise AI that are on the horizon that you think could be most impactful or perhaps what you&#8217;re simply most excited about?</p>
+
+
+
+<p class="wp-block-paragraph"><em>Devavrat:</em> I think I would categorize them into three types. They&#8217;re all decision intelligence, decision-making, but there are three types. One, what I would call many repetitive manual labor-intensive, so that&#8217;s one.<br><br>Two, what I would call coordination style tasks. A lot of work that we do right now as an information workforce that&#8217;s spent in coordination, that&#8217;s why email spreadsheets, et cetera. A lot of that would be done much better, much quicker and less boring, so to speak.<br><br>And then the third is where, especially as a support to human decision-makers to provide strategic support augmentation, and that&#8217;s a third type of decisions that would be done. If I think of any planning process in enterprises, so financial planning, workforce planning, marketing, sales, product, anything, all of those are business critical decisions that we make that take annual planning process, take annual time. Now maybe it should not take that much time, and people are actually making the right choices quickly.</p>
+
+
+
+<p class="wp-block-paragraph"><em>Megan:</em> That&#8217;d be fantastic, wouldn&#8217;t it? Fantastic. Thank you so much for that brilliant conversation, Devavrat. That was Devavrat Shah, chief scientist of enterprise AI at Celonis, whom I spoke with from Brighton in England.<br><br>That&#8217;s it for this episode of Business Lab. I&#8217;m your host, Megan Tatum. I&#8217;m a contributing editor and host for Insights, the custom publishing division of MIT Technology Review. We were founded in 1899 at the Massachusetts Institute of Technology, and you can find us in print, on the web, and at events each year around the world. For more information about us and the show, please check out our website at technologyreview.com.<br><br>This show is available wherever you get your podcasts. And if you enjoyed this episode, we hope you&#8217;ll take a moment to rate and review us. Business Lab is a production of MIT Technology Review, and this episode was produced by Giro Studios. Thanks so much for listening. Goodbye.</p>
+
+
+
+<p class="wp-block-paragraph"><em>This content was produced by Insights, MIT Technology Review’s custom content arm, not its editorial staff. It was researched and written by humans, with any AI tools that may have been used limited to production processes under human oversight.</em></p>
+
+
+
+<p class="wp-block-paragraph"></p>
+]]></content:encoded>
+					
+		
+		
+		<post-id xmlns="com-wordpress:feed-additions:1">1146812</post-id>	</item>
+		<item>
+		<title>Three things you should know about permafrost</title>
+		<link>https://www.technologyreview.com/2026/10/22/1147591/permafrost-primer/</link>
+		
+		<dc:creator><![CDATA[Casey Crownhart]]></dc:creator>
+		<pubDate>Thu, 22 Oct 2026 10:00:00 +0000</pubDate>
+				<category><![CDATA[Climate change and energy]]></category>
+		<category><![CDATA[App]]></category>
+		<category><![CDATA[Summary]]></category>
+		<category><![CDATA[The Spark]]></category>
+		<guid isPermaLink="false">https://www.technologyreview.com/?p=1147591</guid>
+
+					<description><![CDATA[How much do you know about permafrost? Maybe, like me, you’ve been aware that this layer of frozen soil is thawing, that it’s important in the global puzzle of climate change … and that’s about the extent of it.&#160;&#160; The great news for both of us is that my colleague James Temple just published two&#8230;]]></description>
+										<content:encoded><![CDATA[<div data-chronoton-summary="&lt;ul&gt;&lt;br&gt;&lt;li&gt;&lt;strong&gt;Permafrost is a massive blind spot in climate modeling:&lt;/strong&gt; Most UN climate models ignore gradual permafrost loss—and none account for sudden collapse from wildfires or heat waves, meaning we&#039;re likely underestimating how fast the planet will warm.&lt;/li&gt;&lt;br&gt;&lt;li&gt;&lt;strong&gt;Wildfires can add to the problem:&lt;/strong&gt; Fires can accelerate permafrost thawing, and this effect could release 80 billion metric tons of carbon dioxide into the atmosphere by the end of the century.&lt;/li&gt;&lt;br&gt;&lt;li&gt;&lt;strong&gt;The carbon math is messier than it looks:&lt;/strong&gt; With 1.5 trillion tons of carbon locked in permafrost, thawing releases powerful greenhouse gases. Recovering ecosystems and northward-spreading plants may partially offset those losses, making predictions incredibly complex.&lt;/li&gt;&lt;/ul&gt;" data-chronoton-post-id="1147591" data-chronoton-expand-collapse="1" data-chronoton-analytics-enabled="1"></div>
+
+
+<p class="wp-block-paragraph">How much do you know about permafrost?</p>
+
+
+
+<p class="wp-block-paragraph">Maybe, like me, you’ve been aware that this layer of frozen soil is thawing, that it’s important in the global puzzle of climate change … and that’s about the extent of it.&nbsp;&nbsp;</p>
+
+
+
+<p class="wp-block-paragraph">The great news for both of us is that my colleague James Temple just published two in-depth stories about permafrost. His reporting took him to the boreal forests of Alaska, where he helicoptered into the wilderness to learn more about how this material could affect our climate both now and in the future.</p>
+
+
+
+<p class="wp-block-paragraph">I’d recommend you give both of James’s stories a read. There’s <a href="https://www.technologyreview.com/2026/10/19/1146832/inside-the-quest-to-combat-arctic-fires-and-save-the-planets-frozen-carbon/" target="_blank" rel="noopener">this feature</a> about efforts to tackle the intensifying fires that are threatening permafrost, as well as <a href="https://www.technologyreview.com/2026/10/20/1147135/how-to-study-a-swiftly-melting-climate-disaster/" target="_blank" rel="noopener">this look</a> at how researchers are trying to understand the complicated tangle of potential climate effects. Here are three things I took away.</p>
+
+
+
+<h3 class="wp-block-heading"><strong>Permafrost is a massive blind spot for climate change</strong></h3>
+
+
+
+<p class="wp-block-paragraph">Permafrost is the frozen layer of soil that’s under about 15% of land around the Northern Hemisphere. While technically material needs to be frozen for only two consecutive years to count as permafrost, most of our current permafrost formed during the last ice age.</p>
+
+
+
+<p class="wp-block-paragraph">That means there’s organic material that’s been frozen, and essentially locked away, for thousands of years. But as global temperatures tick up and this layer thaws, microbes are able to break down that organic matter, releasing carbon dioxide and methane—powerful greenhouse gases that drive climate change. Those emissions form a feedback loop, accelerating warming further.</p>
+
+
+
+<p class="wp-block-paragraph">The steady rise in global temperatures has already shrunk the footprint of the Arctic permafrost by about 12% since 1850, and the pace has been picking up in the last 50 years.</p>
+
+
+
+<p class="wp-block-paragraph">The wild thing is, only a minority of the models that have been used in UN climate reports actually take into account the gradual loss of permafrost. And none of them include the abrupt thaw and collapse that can happen after events like heat waves and fires (more on those fires in a moment). There are efforts to make sure future UN reports reflect the growing science, but for now, all this means that we’re probably underestimating how much and how fast the planet is going to warm.</p>
+
+
+
+<h3 class="wp-block-heading"><strong>Wildfires can speed up permafrost loss</strong></h3>
+
+
+
+<p class="wp-block-paragraph">Fire is a natural part of boreal forests’ life cycle, but they’re getting <a href="https://www.nature.com/articles/s41561-026-01940-3" target="_blank" rel="noopener">more intense</a> because of climate change. And crucially, fires can accelerate the thawing of permafrost. By the end of the century, this effect could release the equivalent of 80 billion metric tons of carbon dioxide.</p>
+
+
+
+
+
+<p class="wp-block-paragraph">Today, the policy across remote parts of Canada and Alaska is generally to let wildfires burn as long as they’re not threatening human habitats. But some researchers say we should explore fighting these fires to save the carbon trapped in the forests and the permafrost beneath them.&nbsp;&nbsp;</p>
+
+
+
+<p class="wp-block-paragraph">Researchers at the Woodwell Climate Research Center are developing a map of burn risk and carbon vulnerability across Alaska, essentially highlighting areas where fires are most likely to spread and which areas are home to certain types of permafrost that would release the most emissions. (Yes, apparently there are different types of permafrost. Yedoma is a particularly deep, carbon-dense form from the late Pleistocene era.)</p>
+
+
+
+<p class="wp-block-paragraph">That’s all just the beginning—once we figure out potential targets, the question is what to do about it. Some suggest setting more prescribed fires, something Indigenous groups have done for thousands of years, partly to reduce the danger of massive blazes. Or resources could go to early detection and efforts to put out fires before they grow.</p>
+
+
+
+<h3 class="wp-block-heading"><strong>The carbon cycle of permafrost is incredibly complicated</strong></h3>
+
+
+
+<p class="wp-block-paragraph">There’s about 1.5 trillion tons of carbon locked away in permafrost, about twice the amount in the atmosphere. We know that permafrost thawing can release greenhouse-gas emissions and drive climate change. But there are complications.&nbsp;&nbsp;</p>
+
+
+
+
+
+<p class="wp-block-paragraph">One particularly big wrinkle: Other effects from permafrost thawing and fire recovery might counteract the carbon lost from those events. For example, as temperatures warm, plants can gradually move north and take hold where they couldn’t have before. Those plants soak up carbon from the atmosphere as they grow, at least partly locking away what was emitted.</p>
+
+
+
+<p class="wp-block-paragraph">Researchers are working to better understand this ecosystem. And the more we learn, the more complicated the picture looks. How much carbon is lost from permafrost, and how much a given area will recover its carbon, depend on a huge array of factors. How severe are the fires that have accelerated local thawing? What’s the local climate and environment? And what kind of permafrost is at stake?</p>
+
+
+
+<p class="wp-block-paragraph">The higher we push the planet’s temperature, the more we mess with complicated natural phenomena that we’re only beginning to understand.&nbsp;</p>
+
+
+
+<p class="wp-block-paragraph"><em>This article is from The Spark,</em> MIT Technology Review<em>’s weekly climate newsletter. To receive it in your inbox every Wednesday,</em> <em><a href="https://forms.technologyreview.com/newsletters/climate-energy-the-spark/" target="_blank" rel="noopener">sign up here</a>. </em></p>
+]]></content:encoded>
+					
+		
+		
+		<post-id xmlns="com-wordpress:feed-additions:1">1147591</post-id>	</item>
+		<item>
+		<title>AI&#8217;s hidden storage bill: What inference leaves behind</title>
+		<link>https://www.technologyreview.com/2026/10/22/1146948/ais-hidden-storage-bill-what-inference-leaves-behind/</link>
+		
+		<dc:creator><![CDATA[Tim Rausch]]></dc:creator>
+		<pubDate>Thu, 22 Oct 2026 08:41:18 +0000</pubDate>
+				<category><![CDATA[Artificial intelligence]]></category>
+		<category><![CDATA[sponsored]]></category>
+		<guid isPermaLink="false">https://www.technologyreview.com/?p=1146948</guid>
+
+					<description><![CDATA[Ask most executives to picture the cost of AI and they’ll likely see GPUs—racks of accelerators with gigawatts of power—and a waitlist for silicon. But that picture leaves something out: Data storage costs. What happens to data after a model responds? Much of the back-end data that’s generated—from billions of daily prompts, images, and videos—needs&#8230;]]></description>
+										<content:encoded><![CDATA[
+<p class="wp-block-paragraph">Ask most executives to picture the cost of AI and they’ll likely see GPUs—racks of accelerators with gigawatts of power—and a waitlist for silicon. But that picture leaves something out: Data storage costs.</p>
+
+
+
+<figure class="wp-block-image size-full"><img fetchpriority="high" decoding="async" width="2400" height="1350" src="https://wp.technologyreview.com/wp-content/uploads/2026/10/WD-MITTR-Infographic-Final@2x.png" alt="" class="wp-image-1147215" srcset="https://wp.technologyreview.com/wp-content/uploads/2026/10/WD-MITTR-Infographic-Final@2x.png 2400w, https://wp.technologyreview.com/wp-content/uploads/2026/10/WD-MITTR-Infographic-Final@2x.png?resize=300,169 300w, https://wp.technologyreview.com/wp-content/uploads/2026/10/WD-MITTR-Infographic-Final@2x.png?resize=768,432 768w, https://wp.technologyreview.com/wp-content/uploads/2026/10/WD-MITTR-Infographic-Final@2x.png?resize=1536,864 1536w, https://wp.technologyreview.com/wp-content/uploads/2026/10/WD-MITTR-Infographic-Final@2x.png?resize=2048,1152 2048w" sizes="(max-width: 2400px) 100vw, 2400px" /></figure>
+
+
+
+<p class="wp-block-paragraph">What happens to data after a model responds? <a></a>Much of the back-end data that’s generated—from billions of daily prompts, images, and videos—needs to be stored. But data storage is one of the harder infrastructure costs to plan for, and it’s often overlooked in initial AI infrastructure planning.</p>
+
+
+
+<h3 class="wp-block-heading"><strong>As inference scales, the data footprint grows with it</strong></h3>
+
+
+
+<p class="wp-block-paragraph">Traditionally, AI infrastructure conversations have centered on the compute-intensive process of training a model. Training is finite: a run starts, burns through compute, and ends. But inference runs continuously, every time a model answers a prompt. For infrastructure planning, that difference matters: A training run is a project you can budget for and retire. Inference doesn’t retire; every inference request leaves something behind.</p>
+
+
+
+<p class="wp-block-paragraph">Take AI-generated video. In this workload, the back-end spend can be significant. From internal measurements, WD found that an 8-second clip (returned to a user as a 3.97MB 720p file) left more than 500MB of associated data behind on the back end, including logs, cached context, immediate renders, backups, and safety records. That’s a 130x increase over the output file size the user saw. Scale this to an enterprise generating longer, higher resolution video and the back-end footprint grows into the hundreds of gigabytes per clip.</p>
+
+
+
+<p class="wp-block-paragraph">And that back-end footprint is growing fast. McKinsey <a href="https://www.mckinsey.com/industries/technology-media-and-telecommunications/our-insights/the-next-big-shifts-in-ai-workloads-and-hyperscaler-strategies" target="_blank" rel="noopener">projects AI inference demand</a> will grow at a 35% CAGR through 2030, versus 22% for training, making up more than 40% of total data center demand by the end of the decade.</p>
+
+
+
+<p class="wp-block-paragraph">A <a href="https://www.westerndigital.com/content/dam/doc-library/en_us/assets/public/western-digital/collateral/white-paper/white-paper-built-for-scale-the-enduring-role-of-hdds-in-the-ai-era.pdf" target="_blank" rel="noopener">recent WD-sponsored IDC</a> global white paper that surveyed 763 IT and business decision makers found that nearly 95% of respondents reported an increase in data volume due to generative AI over the past 12 months, with roughly 61% reporting growth of 25% or more.</p>
+
+
+
+<p class="wp-block-paragraph">“You can think of having more storage as an optimization for keeping the GPUs busy,” said a senior product manager of a hyperscale cloud service provider quoted in report. “The biggest challenge is to ensure that the GPUs are not idle, waiting for data to show up—hours of GPU idle time becomes very expensive, very fast.” Put in dollar terms: if your storage spend is growing 25% year over year while your compute budget grows in the more predictable cyclical way, storage ends up outpacing the budget line that receives the most attention.</p>
+
+
+
+<h3 class="wp-block-heading"><strong>Matching storage to the AI data life cycle</strong></h3>
+
+
+
+<p class="wp-block-paragraph">Compute demand rises and falls with training cycles, product launches, and hardware refreshes. But the volume of retained data doesn&#8217;t fall back down with it when compute demand slows. Model logs, synthetic outputs, inference results, and more keep accumulating, and organizations are holding onto more of it for longer.</p>
+
+
+
+<p class="wp-block-paragraph">This changes the role of retained data. Information that once moved into an archive and rarely surfaced can now become an input to future AI workloads. As more data is retained, retrieved, and reused, storage must support not only growing capacity, but increasingly dynamic access to it. The same WD-IDC survey found 96% of respondents anticipate needing faster archive retrieval to support inference or retrieval-augmented generation (RAG).</p>
+
+
+
+<p class="wp-block-paragraph">AI workloads require both performance and capacity, with different technologies serving different needs across the data lifecycle. And for the vast volumes of data that must be retained and revisited, HDDs provide a cost-effective, high-capacity foundation, with a significant cost-per-terabyte advantage &nbsp;</p>
+
+
+
+<h3 class="wp-block-heading"><a></a><strong>What this means for how AI gets budgeted</strong></h3>
+
+
+
+<p class="wp-block-paragraph">For a CFO or CIO, this means “AI infrastructure spend” may be scoped too narrowly on compute. A model that idles while data loads costs about as much as one idling for lack of a GPU. But the storage bottleneck stays hidden until it’s already a problem, surfacing in operating costs and retrieval delays rather than a CapEx line next to the accelerators.</p>
+
+
+
+<p class="wp-block-paragraph">Consider a retailer generating AI product videos for its catalog, or an insurer running claims documents through a RAG pipeline for faster underwriting. In both cases, the compute cost is a known, budgeted quantity: a per-generation or per-query rate that finance can forecast. The storage cost is different: It compounds with every video generated and every claim processed, because none of that back-end data disappears once the task is finished.</p>
+
+
+
+<p class="wp-block-paragraph">A team that budgets AI as “compute plus a rounding error for storage” may find, in 12 to 18 months, that the rounding error has become a significant fraction of the program’s total cost—right around the time leadership is deciding whether to expand.</p>
+
+
+
+<h3 class="wp-block-heading"><strong>Building for economically scalable capacity</strong></h3>
+
+
+
+<p class="wp-block-paragraph"><a></a>Addressing this challenge starts with architecture. Storage strategy tends to be designed for expensive, hot-tier performance (for data accessed instantly and constantly), while most AI data by volume accumulates in the warm, cool, and cold tiers behind it.</p>
+
+
+
+<p class="wp-block-paragraph">What enterprises need is economically scalable capacity: Infrastructure designed for the full AI data life cycle, balancing performance with capacity, power, reliability, and total cost of ownership as data persists, compounds, and is increasingly reused. That means treating archives that once sat untouched as active assets for RAG and inference, and setting retention policies for data’s growing strategic value rather than its original storage cost. It also means recognizing that decisions about storage play out across fleets, not individual drives.</p>
+
+
+
+<p class="wp-block-paragraph">Such infrastructure requires storage tiers, where individualized power consumption, reliability, density, and operational efficiency all determine whether the system remains economically sustainable as capacity scales.</p>
+
+
+
+<p class="wp-block-paragraph">There are three questions to ask about your organization’s AI infrastructure budget:</p>
+
+
+
+<ol class="wp-block-list">
+<li>What’s our data retention policy for AI-generated content, and who set(s) it?</li>
+
+
+
+<li>Is our storage procurement tied to training-time performance needs, or to the actual life cycle of the data we’re producing?</li>
+
+
+
+<li>If our AI usage doubled next year, would our storage cost double with it, or worse?</li>
+</ol>
+
+
+
+<p class="wp-block-paragraph">Most organizations cannot answer all three with confidence. That’s the gap worth closing before the next budget cycle, not after.</p>
+
+
+
+<p class="wp-block-paragraph"><em>This content was produced by WD. It was not written by MIT Technology Review’s editorial staff.</em></p>
+]]></content:encoded>
+					
+		
+		
+		<post-id xmlns="com-wordpress:feed-additions:1">1146948</post-id>	</item>
+		<item>
 		<title>The Download: introducing the Impossible issue</title>
 		<link>https://www.technologyreview.com/2026/10/21/1147573/the-download-introducing-impossible-issue/</link>
 		
@@ -408,7 +780,7 @@
 
 
 
-<figure class="wp-block-image size-full is-resized"><img decoding="async" width="387" height="48" src="https://wp.technologyreview.com/wp-content/uploads/2026/10/purple-20.svg" alt="" class="wp-image-1147277" style="width:764px;height:auto" /></figure>
+<figure class="wp-block-image size-full is-resized"><img loading="lazy" decoding="async" width="387" height="48" src="https://wp.technologyreview.com/wp-content/uploads/2026/10/purple-20.svg" alt="" class="wp-image-1147277" style="width:764px;height:auto" /></figure>
 
 
 
@@ -478,7 +850,7 @@
 
 
 
-<figure class="wp-block-image size-full is-resized"><img decoding="async" width="387" height="48" src="https://wp.technologyreview.com/wp-content/uploads/2026/10/purple-16.svg" alt="" class="wp-image-1147275" style="width:764px;height:auto" /></figure>
+<figure class="wp-block-image size-full is-resized"><img loading="lazy" decoding="async" width="387" height="48" src="https://wp.technologyreview.com/wp-content/uploads/2026/10/purple-16.svg" alt="" class="wp-image-1147275" style="width:764px;height:auto" /></figure>
 
 
 
@@ -632,158 +1004,5 @@
 		
 		
 		<post-id xmlns="com-wordpress:feed-additions:1">1146137</post-id>	</item>
-		<item>
-		<title>Eliminating traffic deaths</title>
-		<link>https://www.technologyreview.com/2026/10/21/1146141/eliminating-traffic-deaths-impossible-issue/</link>
-		
-		<dc:creator><![CDATA[Sara Kiley Watson]]></dc:creator>
-		<pubDate>Wed, 21 Oct 2026 09:00:00 +0000</pubDate>
-				<category><![CDATA[Culture]]></category>
-		<category><![CDATA[App]]></category>
-		<guid isPermaLink="false">https://www.technologyreview.com/?p=1146141</guid>
-
-					<description><![CDATA[Every year, traffic crashes kill more than one million people, and they’re the leading cause of death for children and young adults. In the US, 100 people a day lose their lives this way, in many cases not on highways but on rural and local streets. “Traffic deaths are a leading cause of preventable death,&#8230;]]></description>
-										<content:encoded><![CDATA[
-<p class="wp-block-paragraph">Every year, traffic crashes kill <a href="https://www.who.int/news-room/fact-sheets/detail/road-traffic-injuries">more than one million people</a>, and they’re the leading cause of death for children and young adults. In the US, <a href="https://crashstats.nhtsa.dot.gov/Api/Public/ViewPublication/813800">100 people a day</a> lose their lives this way, in many cases not on highways but on rural and local streets. “Traffic deaths are a leading cause of preventable death, yet we treat it like it’s inevitable,” says Leah Shahum, founder and director of the Vision Zero Network, a nonprofit focused on making streets less deadly.&nbsp;</p>
-
-
-
-<h3 class="wp-block-heading">The sticking points</h3>
-
-
-
-<p class="wp-block-paragraph">The causes of a crash can be muddy. Drivers make mistakes like speeding or getting distracted, but infrastructure fails them too: Perhaps they were on a road built for speed and not safety, in a screen-filled vehicle, or at an intersection where pedestrians, cyclists, and other cars aren’t visible.&nbsp;</p>
-
-
-
-<p class="wp-block-paragraph">Cheap and proven traffic-calming opportunities abound—from using <a href="https://visionzeronetwork.org/use-these-tools-to-save-lives/">planters to tighten intersections</a> to <a href="https://www.sciencedirect.com/science/article/abs/pii/S0965856422000040">lowering speed limits</a>—but government logjams and red tape can be speed bumps. “There’s so many moving parts,” says Laura Sandt of the University of North Carolina Highway Safety Research Center. “On the flip side, it shows that we have so many opportunities for injury prevention.”&nbsp;</p>
-
-
-
-<h3 class="wp-block-heading">The progress</h3>
-
-
-
-<p class="wp-block-paragraph">The total number of traffic deaths has increased over the last century. And though the <a href="https://injuryfacts.nsc.org/motor-vehicle/historical-fatality-trends/deaths-and-rates/">US rate has dipped</a> from a peak of 30.8 deaths per 100,000 people in the 1930s, the past decade has seen a <a href="https://pubmed.ncbi.nlm.nih.gov/40080454/">concerning jump in deadly pedestrian incidents</a>. At the same time, communities are waking up to the essential role of traffic safety policy, Shahum says.&nbsp;</p>
-
-
-
-<p class="wp-block-paragraph">One success story is Hoboken, New Jersey, which <a href="https://www.hobokennj.gov/news/city-of-hoboken-reaches-new-vision-zero-milestone-seven-consecutive-years-without-a-traffic-death">hasn’t had a traffic fatality since 2017</a>. This is due to a combination of efforts like boosting investment in public transit, promoting walkability by extending curbs, and using cameras to identify crash-prone intersections in need of a redesign. But even there, obstacles remain. If an intersection hasn’t been proved to be deadly, for example, it can be an uphill battle to argue for removing parking spaces to widen curbs. “You’re kind of selling insurance through these improvements, and that’s not always easy,” says Greg Francese, the city’s acting director of transportation and parking.</p>
-
-
-
-<p class="wp-block-paragraph">There’s also no silver bullet that will work everywhere. Situated directly across the river from New York City, Hoboken is a highly transit-oriented city of less than 60,000 people. Success there might not translate to traffic-death hot spots like <a href="https://www.smartcitymemphis.com/2026/06/36520/">Memphis</a> or <a href="https://www.nbcdfw.com/investigations/driven-to-death-dallas-traffic-death-rate-worst-among-10-largest-u-s-cities/3373511/">Dallas</a>. But it’s not impossible. Take Edmonton, Alberta, a sprawling, car-centric Canadian city of around one million people: Between 2015 and 2020, it cut <a href="https://www.edmonton.ca/sites/default/files/public-files/assets/Vision_Zero_Annual_Report_2020.pdf">traffic fatalities by 63% and serious injuries by 40%</a> by adjusting speed limits and improving signals at crosswalks.&nbsp;</p>
-
-
-
-<hr class="wp-block-separator has-alpha-channel-opacity"/>
-
-
-
-<h3 class="wp-block-heading">Progress meter &#8230;&#8230;&#8230;&#8230; 6</h3>
-
-
-
-<figure class="wp-block-image size-full is-resized"><img loading="lazy" decoding="async" width="387" height="48" src="https://wp.technologyreview.com/wp-content/uploads/2026/10/purple-24.svg" alt="" class="wp-image-1147261" style="width:764px;height:auto" /></figure>
-
-
-
-<p class="wp-block-paragraph"><strong>We know how to tweak intersections and adjust traffic signals. Getting the funding and will to roll out those changes is the big red light. </strong></p>
-]]></content:encoded>
-					
-		
-		
-		<post-id xmlns="com-wordpress:feed-additions:1">1146141</post-id>	</item>
-		<item>
-		<title>It’s a bird, it’s a plane … it’s a robo-puffin?</title>
-		<link>https://www.technologyreview.com/2026/10/20/1145205/its-a-bird-its-a-plane-its-a-robo-puffin/</link>
-		
-		<dc:creator><![CDATA[Jennifer Chu]]></dc:creator>
-		<pubDate>Tue, 20 Oct 2026 21:00:00 +0000</pubDate>
-				<category><![CDATA[Uncategorized]]></category>
-		<category><![CDATA[MIT Alumni News]]></category>
-		<guid isPermaLink="false">https://www.technologyreview.com/?p=1145205</guid>
-
-					<description><![CDATA[Given that water is 1,000 times denser than air, moving through those two mediums requires very different mechanics—or so one might assume. Yet birds like gulls and puffins can plunge into the sea, swim underwater, and leap back into the air to fly away. And now engineers at MIT and EPFL in Lausanne, Switzerland, have&#8230;]]></description>
-										<content:encoded><![CDATA[
-<p class="wp-block-paragraph">Given that water is 1,000 times denser than air, moving through those two mediums requires very different mechanics—or so one might assume. Yet birds like gulls and puffins can plunge into the sea, swim underwater, and leap back into the air to fly away. And now engineers at MIT and EPFL in Lausanne, Switzerland, have designed a robot that can do likewise.&nbsp;</p>
-
-
-
-<p class="wp-block-paragraph">The “flapping-wing aerial-aquatic vehicle,” or FAAV, weighs less than 300 grams (about half a pound) and is equipped with a central fuselage, two flexible wings, and a steerable tail. The body contains a battery and a waterproof electric motor that drives a crankshaft, which pumps the wings up and down at preset frequencies. The wings are made of thin membranes that are coated with hydrophobic nanoparticles to help wick away water. And the tail is motorized, enabling it to change its angle to help the robot fly up or dive down.</p>
-
-
-
-<p class="wp-block-paragraph">In experiments carried out in a water tank and at Lake Geneva, a team led by Raphael Zufferey, an assistant professor of mechanical engineering at MIT, identified combinations of wing size, flapping frequency, and tail angle that enable the robot to smoothly transition from swimming to flying.&nbsp;</p>
-
-
-
-<p class="wp-block-paragraph">The best results came with medium-size wings that were flexible enough to minimize flapping amplitude in water and also firm enough to keep the robot aloft in the air. The speeds and flapping frequencies were similar to those used by actual birds, and a pitch of 70 degrees—a relatively steep angle—allowed the robot to make the leap from water to air. Interestingly, although many diving birds paddle their feet to help them take off from the water’s surface, the team found that the bot didn’t need feet at all.</p>
-
-
-
-<p class="wp-block-paragraph">The engineers’ results could help pave the way for a new class of drones and vehicles that could fly to and sample from aquatic regions too dangerous for traditional vessels to access.</p>
-
-
-
-<p class="wp-block-paragraph">“Our dream vision is for oceanographers, marine biologists, and members of coastal communities to launch this robot from a boat, or from shore, and it would fly close to the area of interest, such as an iceberg or a port facility, or over a pod of whales,” says Zufferey. “It would dive into the water to take a measurement or collect a sample, and fly back to deliver the data at a fraction of the cost of traditional methods. Then it could go back out to dive for more.”&nbsp;</p>
-
-
-
-<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
-<iframe loading="lazy" title="Puffin-Inspired Robot that Swims and Flies" width="500" height="281" src="https://www.youtube.com/embed/9XJhrKpcBGI?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</div></figure>
-
-
-
-<p class="wp-block-paragraph">The researchers are now trying to design wings that can turn as well as flap. They will also test the robot’s performance under turbulent conditions, such as swimming in choppy waters and flying through wind. Then they hope to deploy the vehicle to help answer questions in ocean science.</p>
-
-
-
-<p class="wp-block-paragraph">“One of the major challenges in ocean science is collecting data both frequently and across many locations, which is something this robot could do in the future,” Zufferey says. “You could send this out not just every week, but every hour. It could fly out at high speeds, dive in, fly back, deliver its data, and go back out, multiple times.”&nbsp;</p>
-]]></content:encoded>
-					
-		
-		
-		<post-id xmlns="com-wordpress:feed-additions:1">1145205</post-id>	</item>
-		<item>
-		<title>Here’s the tea</title>
-		<link>https://www.technologyreview.com/2026/10/20/1145274/heres-the-tea/</link>
-		
-		<dc:creator><![CDATA[Benjamin Daniel]]></dc:creator>
-		<pubDate>Tue, 20 Oct 2026 21:00:00 +0000</pubDate>
-				<category><![CDATA[Uncategorized]]></category>
-		<category><![CDATA[MIT Alumni News]]></category>
-		<guid isPermaLink="false">https://www.technologyreview.com/?p=1145274</guid>
-
-					<description><![CDATA[When Tristan Brown, an associate professor of history at MIT, first examined a Chinese tea chest label displayed at Old South Meeting House, he had no reason to doubt its story. Descendants of the Boston blacksmith Thomas Wells had donated the label in 1987, saying it had been recovered after colonial protesters threw tea into&#8230;]]></description>
-										<content:encoded><![CDATA[
-<p class="wp-block-paragraph">When Tristan Brown, an associate professor of history at MIT, first examined a Chinese tea chest label displayed at Old South Meeting House, he had no reason to doubt its story. Descendants of the Boston blacksmith Thomas Wells had donated the label in 1987, saying it had been recovered after colonial protesters threw tea into Boston Harbor in 1773.&nbsp;</p>
-
-
-
-<p class="wp-block-paragraph">But after a year of research, Brown reached a different conclusion: The label was made nearly a century later. The decisive clue came when he read the Chinese text in Cantonese rather than Mandarin, as previous scholars had done. He found that the characters had been used phonetically, in slightly variant forms across contemporary sources, to represent the name of Smith, Archer &amp; Co., a US firm that acquired Asian tea for shipment to American markets during the 1860s and 1870s.</p>
-
-
-<div class="wp-block-image">
-<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="294" height="553" src="https://wp.technologyreview.com/wp-content/uploads/2026/09/label.jpg?w=294" alt="tea chest label" class="wp-image-1145314" srcset="https://wp.technologyreview.com/wp-content/uploads/2026/09/label.jpg 294w, https://wp.technologyreview.com/wp-content/uploads/2026/09/label.jpg?resize=159,300 159w" sizes="auto, (max-width: 294px) 100vw, 294px" /><div class="image-credit">COURTESY OF MIT GLOBAL HUMANITIES</div>
-</figure>
-</div>
-
-
-<p class="wp-block-paragraph">Working with the Wells family, he traced the label to a relative who traveled from Michigan to California during the Gold Rush era before returning and operating a business known as the California Tea Store. Brown argues that claims for its revolutionary pedigree probably developed later, amid the centennial commemorations of the 1870s.</p>
-
-
-
-<p class="wp-block-paragraph">The discovery does not make the label historically insignificant, he says. Instead, what began as an inquiry into a supposed artifact of the Boston Tea Party became a study of how ordinary objects acquire historical authority, and how historical memory itself is made.</p>
-
-
-
-<p class="wp-block-paragraph">“History is never finished,” he says. “Even objects that have sat in museums for decades can reveal entirely new stories when we ask new questions.”&nbsp;</p>
-]]></content:encoded>
-					
-		
-		
-		<post-id xmlns="com-wordpress:feed-additions:1">1145274</post-id>	</item>
 	</channel>
 </rss>
