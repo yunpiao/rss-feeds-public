@@ -1,16 +1,16 @@
 {
-  "checked_at": "2026-10-23T01:58:15.414129+00:00",
+  "checked_at": "2026-10-23T07:30:31.351019+00:00",
   "sources": {
     "36kr.xml": {
       "error": "not well-formed (invalid token): line 10, column 168",
       "ok": false
     },
     "aibase-daily.xml": {
-      "error": "HTTP Error 503: Service Unavailable",
-      "ok": false
+      "entries": 10,
+      "ok": true
     },
     "bbc-business.xml": {
-      "entries": 57,
+      "entries": 56,
       "ok": true
     },
     "bbc-technology.xml": {
@@ -18,7 +18,7 @@
       "ok": true
     },
     "bbc-world.xml": {
-      "entries": 37,
+      "entries": 28,
       "ok": true
     },
     "cloudflare-ai.xml": {
@@ -54,7 +54,7 @@
       "ok": true
     },
     "openai.xml": {
-      "entries": 1315,
+      "entries": 1316,
       "ok": true
     },
     "producthunt.xml": {
@@ -78,6 +78,6 @@
       "ok": false
     }
   },
-  "successful": 11,
+  "successful": 12,
   "total": 19
 }
