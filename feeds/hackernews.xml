@@ -1,108 +1,103 @@
-<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hacker News: Front Page</title><link>https://news.ycombinator.com/</link><description>Hacker News RSS</description><docs>https://hnrss.org/</docs><generator>hnrss v2.1.1</generator><lastBuildDate>Thu, 22 Oct 2026 23:22:41 +0000</lastBuildDate><atom:link href="https://hnrss.org/frontpage" rel="self" type="application/rss+xml"></atom:link><item><title><![CDATA[Show HN: CATT 0.2.1: Test agents/services against a Muse/Instinct-alike, in CI]]></title><description><![CDATA[
-<p>Hey HN, we recently open sourced our Consumer Agent Testing Tool to help teams iterate against proprietary assistants like Muse and Instinct. We built this to reduce our own frustrations with building an MCP/API for these agents to consume.<p>The problem: testing against these tools is hard! Agent memory + account statefulness make reproducibility, in the ways required for repeatable/reliable outcomes, between agents and the APIs/MCPs they interact with very challenging.<p>The solution: CATT lets devs test their services against a surrogate Muse or Instinct agent (not affiliated with either of these companies). Testers define starting conditions, approvals, and success conditions for their service's state. CATT then records the full interaction (incl. tool calls, responses) so it can diff what happened from what the agent reports. Runs can be tested in local builds or via CI, with or without LLM backing.<p>CATT is designed to emulate the important parts of personal assistant interactions. Its got:<p>- Tool calls and command-line tool access
-- Simulated approvals for service actions
-- Outcomes tracking and comparison
-- Optional MCP profile based on an unofficial Muse template<p>There are limitations to how much we know about different assistant specific behaviors so the tool labels its assumptions as `documented`, `unofficial`, `assumed` or `unknown` for developer review. We'll do our best to keep the tool updated as new insights about the internal workings of these assistants come to light. It is an area of active research and interest, a good example is this recent report on how Instinct uses Exa for web search [0].<p>Are you building a connector or MCP? If yes, we'd like to hear from you! Have you had assistants behave incoherently, use stale information, or procalim success without evidence? What else should we add tests for?<p>The best way to get started is...to point your coding assistant at the repo and ask it to integrate the tool with your CI or local testing pipeline!<p>Hope it's helpful!<p>[0]: <a href="https://www.sunbeam.ai/thoughts/instinct-is-using-exa-for-web-search" rel="nofollow">https://www.sunbeam.ai/thoughts/instinct-is-using-exa-for-we...</a></p>
-<hr>
-<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50201860">https://news.ycombinator.com/item?id=50201860</a></p>
-<p>Points: 4</p>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hacker News: Front Page</title><link>https://news.ycombinator.com/</link><description>Hacker News RSS</description><docs>https://hnrss.org/</docs><generator>hnrss v2.1.1</generator><lastBuildDate>Fri, 23 Oct 2026 01:57:15 +0000</lastBuildDate><atom:link href="https://hnrss.org/frontpage" rel="self" type="application/rss+xml"></atom:link><item><title><![CDATA[The foolishness of "natural language programming" (1978)]]></title><description><![CDATA[
+<p>Article URL: <a href="https://www.cs.utexas.edu/~EWD/transcriptions/EWD06xx/EWD667.html">https://www.cs.utexas.edu/~EWD/transcriptions/EWD06xx/EWD667.html</a></p>
+<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50203161">https://news.ycombinator.com/item?id=50203161</a></p>
+<p>Points: 22</p>
+<p># Comments: 13</p>
+]]></description><pubDate>Fri, 23 Oct 2026 00:52:01 +0000</pubDate><link>https://www.cs.utexas.edu/~EWD/transcriptions/EWD06xx/EWD667.html</link><dc:creator>xiaoyu2006</dc:creator><comments>https://news.ycombinator.com/item?id=50203161</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50203161</guid></item><item><title><![CDATA[Mapping the Northern Sky]]></title><description><![CDATA[
+<p>Article URL: <a href="https://www.maps.com/star-map-charts-stars-and-constellations-of-northern-hemisphere/">https://www.maps.com/star-map-charts-stars-and-constellations-of-northern-hemisphere/</a></p>
+<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50202766">https://news.ycombinator.com/item?id=50202766</a></p>
+<p>Points: 15</p>
+<p># Comments: 4</p>
+]]></description><pubDate>Thu, 22 Oct 2026 23:56:39 +0000</pubDate><link>https://www.maps.com/star-map-charts-stars-and-constellations-of-northern-hemisphere/</link><dc:creator>tmseidman</dc:creator><comments>https://news.ycombinator.com/item?id=50202766</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50202766</guid></item><item><title><![CDATA[Jank – The native Clojure dialect with seamless C++ interop]]></title><description><![CDATA[
+<p>Article URL: <a href="https://jank-lang.org/">https://jank-lang.org/</a></p>
+<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50202762">https://news.ycombinator.com/item?id=50202762</a></p>
+<p>Points: 7</p>
 <p># Comments: 0</p>
-]]></description><pubDate>Thu, 22 Oct 2026 22:18:40 +0000</pubDate><link>https://github.com/Coverage-Cat/consumer-agent-testing-tool</link><dc:creator>botacode</dc:creator><comments>https://news.ycombinator.com/item?id=50201860</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50201860</guid></item><item><title><![CDATA[Railpass]]></title><description><![CDATA[
+]]></description><pubDate>Thu, 22 Oct 2026 23:56:36 +0000</pubDate><link>https://jank-lang.org/</link><dc:creator>giancarlostoro</dc:creator><comments>https://news.ycombinator.com/item?id=50202762</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50202762</guid></item><item><title><![CDATA[Docker is weird]]></title><description><![CDATA[
+<p>Article URL: <a href="https://codeandcake.dev/posts/2026-10-22-docker-is-weird">https://codeandcake.dev/posts/2026-10-22-docker-is-weird</a></p>
+<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50202681">https://news.ycombinator.com/item?id=50202681</a></p>
+<p>Points: 124</p>
+<p># Comments: 50</p>
+]]></description><pubDate>Thu, 22 Oct 2026 23:45:56 +0000</pubDate><link>https://codeandcake.dev/posts/2026-10-22-docker-is-weird</link><dc:creator>psxuaw</dc:creator><comments>https://news.ycombinator.com/item?id=50202681</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50202681</guid></item><item><title><![CDATA[AI compute is the new oil–and needs a new market]]></title><description><![CDATA[
+<p>Article URL: <a href="https://www.economist.com/finance-and-economics/2026/10/22/ai-compute-is-the-new-oil-and-needs-a-new-market">https://www.economist.com/finance-and-economics/2026/10/22/ai-compute-is-the-new-oil-and-needs-a-new-market</a></p>
+<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50202671">https://news.ycombinator.com/item?id=50202671</a></p>
+<p>Points: 20</p>
+<p># Comments: 8</p>
+]]></description><pubDate>Thu, 22 Oct 2026 23:45:16 +0000</pubDate><link>https://www.economist.com/finance-and-economics/2026/10/22/ai-compute-is-the-new-oil-and-needs-a-new-market</link><dc:creator>ijidak</dc:creator><comments>https://news.ycombinator.com/item?id=50202671</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50202671</guid></item><item><title><![CDATA[LLMs are making formal software verification feasible at a much larger scale]]></title><description><![CDATA[
+<p>Article URL: <a href="https://www.anthropic.com/research/formal-verification">https://www.anthropic.com/research/formal-verification</a></p>
+<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50202217">https://news.ycombinator.com/item?id=50202217</a></p>
+<p>Points: 119</p>
+<p># Comments: 56</p>
+]]></description><pubDate>Thu, 22 Oct 2026 22:54:43 +0000</pubDate><link>https://www.anthropic.com/research/formal-verification</link><dc:creator>johnbender</dc:creator><comments>https://news.ycombinator.com/item?id=50202217</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50202217</guid></item><item><title><![CDATA[Railpass]]></title><description><![CDATA[
 <p>Article URL: <a href="https://train.samismith.com/">https://train.samismith.com/</a></p>
 <p>Comments URL: <a href="https://news.ycombinator.com/item?id=50201414">https://news.ycombinator.com/item?id=50201414</a></p>
-<p>Points: 23</p>
-<p># Comments: 3</p>
-]]></description><pubDate>Thu, 22 Oct 2026 21:38:32 +0000</pubDate><link>https://train.samismith.com/</link><dc:creator>CharlesW</dc:creator><comments>https://news.ycombinator.com/item?id=50201414</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50201414</guid></item><item><title><![CDATA[Jared Kushner Hacked Phone Reveals Secret Negotiations, Millions in Transactions]]></title><description><![CDATA[
-<p>Article URL: <a href="https://www.vanityfair.com/story/jared-kushner-hacked-phone-secret-negotiations">https://www.vanityfair.com/story/jared-kushner-hacked-phone-secret-negotiations</a></p>
-<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50201259">https://news.ycombinator.com/item?id=50201259</a></p>
-<p>Points: 149</p>
-<p># Comments: 53</p>
-]]></description><pubDate>Thu, 22 Oct 2026 21:24:41 +0000</pubDate><link>https://www.vanityfair.com/story/jared-kushner-hacked-phone-secret-negotiations</link><dc:creator>ck2</dc:creator><comments>https://news.ycombinator.com/item?id=50201259</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50201259</guid></item><item><title><![CDATA[Hedra is a 3D open world game I wrote from scratch while in highschool]]></title><description><![CDATA[
+<p>Points: 46</p>
+<p># Comments: 14</p>
+]]></description><pubDate>Thu, 22 Oct 2026 21:38:32 +0000</pubDate><link>https://train.samismith.com/</link><dc:creator>CharlesW</dc:creator><comments>https://news.ycombinator.com/item?id=50201414</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50201414</guid></item><item><title><![CDATA[Hedra is a 3D open world game I wrote from scratch while in highschool]]></title><description><![CDATA[
 <p>Article URL: <a href="https://github.com/maxilevi/project-hedra/tree/pre-ai">https://github.com/maxilevi/project-hedra/tree/pre-ai</a></p>
 <p>Comments URL: <a href="https://news.ycombinator.com/item?id=50199389">https://news.ycombinator.com/item?id=50199389</a></p>
-<p>Points: 99</p>
-<p># Comments: 25</p>
-]]></description><pubDate>Thu, 22 Oct 2026 18:44:36 +0000</pubDate><link>https://github.com/maxilevi/project-hedra/tree/pre-ai</link><dc:creator>maxilevi</dc:creator><comments>https://news.ycombinator.com/item?id=50199389</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50199389</guid></item><item><title><![CDATA[Show HN: UI micro interactions prompts for AI]]></title><description><![CDATA[
-<p>Article URL: <a href="https://www.typeui.sh/micro-interactions">https://www.typeui.sh/micro-interactions</a></p>
-<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50199290">https://news.ycombinator.com/item?id=50199290</a></p>
-<p>Points: 67</p>
-<p># Comments: 37</p>
-]]></description><pubDate>Thu, 22 Oct 2026 18:32:57 +0000</pubDate><link>https://www.typeui.sh/micro-interactions</link><dc:creator>elwingo1</dc:creator><comments>https://news.ycombinator.com/item?id=50199290</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50199290</guid></item><item><title><![CDATA[AI and the Enclosure of the Scientific Commons]]></title><description><![CDATA[
+<p>Points: 136</p>
+<p># Comments: 29</p>
+]]></description><pubDate>Thu, 22 Oct 2026 18:44:36 +0000</pubDate><link>https://github.com/maxilevi/project-hedra/tree/pre-ai</link><dc:creator>maxilevi</dc:creator><comments>https://news.ycombinator.com/item?id=50199389</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50199389</guid></item><item><title><![CDATA[AI and the Enclosure of the Scientific Commons]]></title><description><![CDATA[
 <p>Article URL: <a href="https://arxiv.org/abs/2610.27251">https://arxiv.org/abs/2610.27251</a></p>
 <p>Comments URL: <a href="https://news.ycombinator.com/item?id=50199230">https://news.ycombinator.com/item?id=50199230</a></p>
-<p>Points: 95</p>
-<p># Comments: 53</p>
-]]></description><pubDate>Thu, 22 Oct 2026 18:28:16 +0000</pubDate><link>https://arxiv.org/abs/2610.27251</link><dc:creator>jrepinc</dc:creator><comments>https://news.ycombinator.com/item?id=50199230</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50199230</guid></item><item><title><![CDATA[AI analysis of CT scans finds 42.9% of patients have coronary inflammation]]></title><description><![CDATA[
-<p>Article URL: <a href="https://www.biograph.com/newsroom/biograph-completes-first-u.s.-study-with-caristo-diagnostics%E2%80%99-ai-powered-coronary-inflammation-detection-finding-risk-in-over-42-of-asymptomatic-patients">https://www.biograph.com/newsroom/biograph-completes-first-u.s.-study-with-caristo-diagnostics%E2%80%99-ai-powered-coronary-inflammation-detection-finding-risk-in-over-42-of-asymptomatic-patients</a></p>
-<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50198940">https://news.ycombinator.com/item?id=50198940</a></p>
-<p>Points: 72</p>
-<p># Comments: 37</p>
-]]></description><pubDate>Thu, 22 Oct 2026 18:02:54 +0000</pubDate><link>https://www.biograph.com/newsroom/biograph-completes-first-u.s.-study-with-caristo-diagnostics%E2%80%99-ai-powered-coronary-inflammation-detection-finding-risk-in-over-42-of-asymptomatic-patients</link><dc:creator>brandonb</dc:creator><comments>https://news.ycombinator.com/item?id=50198940</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50198940</guid></item><item><title><![CDATA[OpenShell – A safe, private runtime for fleets of autonomous AI agents]]></title><description><![CDATA[
+<p>Points: 114</p>
+<p># Comments: 68</p>
+]]></description><pubDate>Thu, 22 Oct 2026 18:28:16 +0000</pubDate><link>https://arxiv.org/abs/2610.27251</link><dc:creator>jrepinc</dc:creator><comments>https://news.ycombinator.com/item?id=50199230</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50199230</guid></item><item><title><![CDATA[OpenShell – A safe, private runtime for fleets of autonomous AI agents]]></title><description><![CDATA[
 <p>Article URL: <a href="https://github.com/NVIDIA/OpenShell">https://github.com/NVIDIA/OpenShell</a></p>
 <p>Comments URL: <a href="https://news.ycombinator.com/item?id=50198675">https://news.ycombinator.com/item?id=50198675</a></p>
-<p>Points: 257</p>
-<p># Comments: 134</p>
+<p>Points: 304</p>
+<p># Comments: 162</p>
 ]]></description><pubDate>Thu, 22 Oct 2026 17:44:06 +0000</pubDate><link>https://github.com/NVIDIA/OpenShell</link><dc:creator>niemandhier</dc:creator><comments>https://news.ycombinator.com/item?id=50198675</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50198675</guid></item><item><title><![CDATA[A farewell to Arc browser]]></title><description><![CDATA[
 <p>Article URL: <a href="https://arc.net/">https://arc.net/</a></p>
 <p>Comments URL: <a href="https://news.ycombinator.com/item?id=50197601">https://news.ycombinator.com/item?id=50197601</a></p>
-<p>Points: 215</p>
-<p># Comments: 195</p>
-]]></description><pubDate>Thu, 22 Oct 2026 16:27:47 +0000</pubDate><link>https://arc.net/</link><dc:creator>suhdonghwi</dc:creator><comments>https://news.ycombinator.com/item?id=50197601</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50197601</guid></item><item><title><![CDATA[Mini brain organoids ‘reading’ Braille key step towards biohybrid computing]]></title><description><![CDATA[
-<p>Article URL: <a href="https://www.frontiersin.org/news/2026/10/16/mini-brain-organoids-reading-braille-biohybrid-computing-frontiers-artificial-intelligence">https://www.frontiersin.org/news/2026/10/16/mini-brain-organoids-reading-braille-biohybrid-computing-frontiers-artificial-intelligence</a></p>
-<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50197450">https://news.ycombinator.com/item?id=50197450</a></p>
-<p>Points: 35</p>
-<p># Comments: 37</p>
-]]></description><pubDate>Thu, 22 Oct 2026 16:16:45 +0000</pubDate><link>https://www.frontiersin.org/news/2026/10/16/mini-brain-organoids-reading-braille-biohybrid-computing-frontiers-artificial-intelligence</link><dc:creator>CharlesW</dc:creator><comments>https://news.ycombinator.com/item?id=50197450</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50197450</guid></item><item><title><![CDATA[Getting ready to operate GNU Taler in Germany]]></title><description><![CDATA[
+<p>Points: 230</p>
+<p># Comments: 210</p>
+]]></description><pubDate>Thu, 22 Oct 2026 16:27:47 +0000</pubDate><link>https://arc.net/</link><dc:creator>suhdonghwi</dc:creator><comments>https://news.ycombinator.com/item?id=50197601</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50197601</guid></item><item><title><![CDATA[Getting ready to operate GNU Taler in Germany]]></title><description><![CDATA[
 <p>Article URL: <a href="https://www.taler.net/en/news/2026-13.html">https://www.taler.net/en/news/2026-13.html</a></p>
 <p>Comments URL: <a href="https://news.ycombinator.com/item?id=50197404">https://news.ycombinator.com/item?id=50197404</a></p>
-<p>Points: 207</p>
-<p># Comments: 71</p>
+<p>Points: 228</p>
+<p># Comments: 85</p>
 ]]></description><pubDate>Thu, 22 Oct 2026 16:14:31 +0000</pubDate><link>https://www.taler.net/en/news/2026-13.html</link><dc:creator>dewey</dc:creator><comments>https://news.ycombinator.com/item?id=50197404</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50197404</guid></item><item><title><![CDATA[Every AI model has the same "controversial" take on humans]]></title><description><![CDATA[
 <p>Article URL: <a href="https://www.modelcompare.ai/blog/ai-models-controversial-take-on-humans">https://www.modelcompare.ai/blog/ai-models-controversial-take-on-humans</a></p>
 <p>Comments URL: <a href="https://news.ycombinator.com/item?id=50197313">https://news.ycombinator.com/item?id=50197313</a></p>
-<p>Points: 183</p>
-<p># Comments: 197</p>
+<p>Points: 246</p>
+<p># Comments: 310</p>
 ]]></description><pubDate>Thu, 22 Oct 2026 16:08:00 +0000</pubDate><link>https://www.modelcompare.ai/blog/ai-models-controversial-take-on-humans</link><dc:creator>rakannimer</dc:creator><comments>https://news.ycombinator.com/item?id=50197313</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50197313</guid></item><item><title><![CDATA[Run full iOS 16.5 firmware on Android Devices]]></title><description><![CDATA[
 <p><a href="https://hackios-web.vercel.app/en" rel="nofollow">https://hackios-web.vercel.app/en</a></p>
 <hr>
 <p>Comments URL: <a href="https://news.ycombinator.com/item?id=50196718">https://news.ycombinator.com/item?id=50196718</a></p>
-<p>Points: 291</p>
-<p># Comments: 112</p>
+<p>Points: 328</p>
+<p># Comments: 125</p>
 ]]></description><pubDate>Thu, 22 Oct 2026 15:26:22 +0000</pubDate><link>https://github.com/oosexgang/hackios-xnu-kernel</link><dc:creator>aghuang</dc:creator><comments>https://news.ycombinator.com/item?id=50196718</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50196718</guid></item><item><title><![CDATA[Quad9 (DNS Resolver) to Exit France]]></title><description><![CDATA[
 <p>Article URL: <a href="https://quad9.net/news/blog/au-revoir-france/">https://quad9.net/news/blog/au-revoir-france/</a></p>
 <p>Comments URL: <a href="https://news.ycombinator.com/item?id=50195959">https://news.ycombinator.com/item?id=50195959</a></p>
-<p>Points: 918</p>
-<p># Comments: 336</p>
+<p>Points: 1008</p>
+<p># Comments: 363</p>
 ]]></description><pubDate>Thu, 22 Oct 2026 14:32:38 +0000</pubDate><link>https://quad9.net/news/blog/au-revoir-france/</link><dc:creator>farrokhi</dc:creator><comments>https://news.ycombinator.com/item?id=50195959</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50195959</guid></item><item><title><![CDATA[What’s getting pwned right now]]></title><description><![CDATA[
 <p>Article URL: <a href="https://pwn.watch/">https://pwn.watch/</a></p>
 <p>Comments URL: <a href="https://news.ycombinator.com/item?id=50195543">https://news.ycombinator.com/item?id=50195543</a></p>
-<p>Points: 324</p>
-<p># Comments: 151</p>
+<p>Points: 346</p>
+<p># Comments: 161</p>
 ]]></description><pubDate>Thu, 22 Oct 2026 14:08:12 +0000</pubDate><link>https://pwn.watch/</link><dc:creator>mrkd</dc:creator><comments>https://news.ycombinator.com/item?id=50195543</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50195543</guid></item><item><title><![CDATA[eMudhra to exit global SSL/TLS certificate business]]></title><description><![CDATA[
 <p>Article URL: <a href="https://emudhra.com/en/press-release/emudhra-to-exit-global-ssl-tls-certificate-business">https://emudhra.com/en/press-release/emudhra-to-exit-global-ssl-tls-certificate-business</a></p>
 <p>Comments URL: <a href="https://news.ycombinator.com/item?id=50195110">https://news.ycombinator.com/item?id=50195110</a></p>
-<p>Points: 894</p>
-<p># Comments: 609</p>
+<p>Points: 937</p>
+<p># Comments: 634</p>
 ]]></description><pubDate>Thu, 22 Oct 2026 13:33:39 +0000</pubDate><link>https://emudhra.com/en/press-release/emudhra-to-exit-global-ssl-tls-certificate-business</link><dc:creator>bo0tzz</dc:creator><comments>https://news.ycombinator.com/item?id=50195110</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50195110</guid></item><item><title><![CDATA[Woman faces six years in prison over Cash App account she never opened]]></title><description><![CDATA[
 <p>Article URL: <a href="https://www.techspot.com/news/114296-woman-spends-three-nights-jail-faces-six-years.html">https://www.techspot.com/news/114296-woman-spends-three-nights-jail-faces-six-years.html</a></p>
 <p>Comments URL: <a href="https://news.ycombinator.com/item?id=50194833">https://news.ycombinator.com/item?id=50194833</a></p>
-<p>Points: 413</p>
-<p># Comments: 405</p>
-]]></description><pubDate>Thu, 22 Oct 2026 13:11:00 +0000</pubDate><link>https://www.techspot.com/news/114296-woman-spends-three-nights-jail-faces-six-years.html</link><dc:creator>oidar</dc:creator><comments>https://news.ycombinator.com/item?id=50194833</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50194833</guid></item><item><title><![CDATA[Show HN: Replacing CAPTCHAs with adaptive proof-of-work in WordPress]]></title><description><![CDATA[
-<p>When I founded my business a whistle-blowing-service for enterprises, I’ve seeked for a working solution to block spam bots on that home page. The solution was intended to comply with EU data privacy law, no cookies, no sniffing, light-weight-size, on my webserver only, beeing invisible for my site visitors and no running costs at all.<p>I came across Hashcash, a proof-of-work approach, to block spam. When I implemented it, it worked immediately and blocked 100 percent without blocking any incoming real posts.<p>I was astonished, that no solution existed in the ecosystem allready that covered all forms and was for free. Therefore I‘ve turned it into a free wordpress-plugin.<p>It is not only a technical solution, but starts with the business model of spam (mass  spamming at low cost), by producing a calculation effort for every single post, that unavoidable. And therefore is not exactly unbreakable but becomes very expensive for the spammer and therefore alows only for targeted high quality approaches that need other treatment. Up to now my own page remains spam free and users report the same.<p>Now, running since 2022 on 4000+ active installations, it is working with almost every webform and plugin combination that is running on any wordpress instance, using pattern recognition on http-post-level instead of specific proprietary integration for single specific form builders. It ships with 80+ starting patterns for the most relevant form builders and themes, but can be enhanced with any pattern by the user.<p>The plugin can be previewed  directly and immediately on wordpress.org. It ships with14 KB compressed under a GPL-2.0 license.<p>I’m looking forward to discuss about the proof-of-work approach, form detection, privacy implications, and tradeoffs.</p>
-<hr>
-<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50194762">https://news.ycombinator.com/item?id=50194762</a></p>
-<p>Points: 6</p>
-<p># Comments: 4</p>
-]]></description><pubDate>Thu, 22 Oct 2026 13:03:14 +0000</pubDate><link>https://wordpress.org/plugins/gdpr-compliant-recaptcha-for-all-forms/</link><dc:creator>MatthiasNordwig</dc:creator><comments>https://news.ycombinator.com/item?id=50194762</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50194762</guid></item><item><title><![CDATA[Xbox wants you to pay 24 to 40 cents per hour to stream games you bought]]></title><description><![CDATA[
+<p>Points: 500</p>
+<p># Comments: 523</p>
+]]></description><pubDate>Thu, 22 Oct 2026 13:11:00 +0000</pubDate><link>https://www.techspot.com/news/114296-woman-spends-three-nights-jail-faces-six-years.html</link><dc:creator>oidar</dc:creator><comments>https://news.ycombinator.com/item?id=50194833</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50194833</guid></item><item><title><![CDATA[Xbox wants you to pay 24 to 40 cents per hour to stream games you bought]]></title><description><![CDATA[
 <p>Article URL: <a href="https://arstechnica.com/gaming/2026/10/xbox-wants-you-to-pay-24-to-40-cents-per-hour-to-stream-games-you-already-bought/">https://arstechnica.com/gaming/2026/10/xbox-wants-you-to-pay-24-to-40-cents-per-hour-to-stream-games-you-already-bought/</a></p>
 <p>Comments URL: <a href="https://news.ycombinator.com/item?id=50194009">https://news.ycombinator.com/item?id=50194009</a></p>
-<p>Points: 161</p>
-<p># Comments: 179</p>
+<p>Points: 207</p>
+<p># Comments: 203</p>
 ]]></description><pubDate>Thu, 22 Oct 2026 11:42:03 +0000</pubDate><link>https://arstechnica.com/gaming/2026/10/xbox-wants-you-to-pay-24-to-40-cents-per-hour-to-stream-games-you-already-bought/</link><dc:creator>entryleveljobsc</dc:creator><comments>https://news.ycombinator.com/item?id=50194009</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50194009</guid></item><item><title><![CDATA[Tell HN: I unknowingly broke the PHP RCE embargo. I am sorry.]]></title><description><![CDATA[
 <p>I posted here about the then-upcoming PHP RCEs related to CVE-2026-109618 & CVE-2026-109619. I appreciate this has had considerable knock-on effects with the schedule for co-ordinated disclosure, and created additional workload.<p>I am truly sorry. I take full responsibility for my actions.<p>It was not remotely my intention to cause any of the subsequent side effects.<p>At the time of posting, I didn't know about any embargo. My contact had told me there was no embargo, and her contact had told her the same thing.<p>As someone who follows the 4-weekly PHP release cycle and compiles it from source, my intention was to alert others in a similar position to be aware of the importance/urgency of the updates.<p>That clearly backfired in a pretty wild fashion. I have learned my lesson.</p>
 <hr>
 <p>Comments URL: <a href="https://news.ycombinator.com/item?id=50193416">https://news.ycombinator.com/item?id=50193416</a></p>
-<p>Points: 316</p>
-<p># Comments: 130</p>
+<p>Points: 378</p>
+<p># Comments: 159</p>
 ]]></description><pubDate>Thu, 22 Oct 2026 10:11:44 +0000</pubDate><link>https://news.ycombinator.com/item?id=50193416</link><dc:creator>petecooper</dc:creator><comments>https://news.ycombinator.com/item?id=50193416</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50193416</guid></item></channel></rss>
