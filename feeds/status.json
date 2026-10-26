@@ -1,16 +1,12 @@
 {
-  "checked_at": "2026-10-26T01:13:52.716348+00:00",
+  "checked_at": "2026-10-26T01:49:53.561388+00:00",
   "sources": {
-    "36kr.xml": {
-      "error": "not well-formed (invalid token): line 10, column 168",
-      "ok": false
-    },
     "aibase-daily.xml": {
       "entries": 10,
       "ok": true
     },
     "bbc-business.xml": {
-      "entries": 56,
+      "entries": 55,
       "ok": true
     },
     "bbc-technology.xml": {
@@ -25,13 +21,17 @@
       "entries": 7,
       "ok": true
     },
+    "engadget.xml": {
+      "entries": 20,
+      "ok": true
+    },
+    "federalreserve.xml": {
+      "entries": 20,
+      "ok": true
+    },
     "forbes-ai.xml": {
       "entries": 25,
       "ok": true
-    },
-    "gs-insights.xml": {
-      "error": "HTTP Error 403: Forbidden",
-      "ok": false
     },
     "hackernews.xml": {
       "entries": 20,
@@ -45,10 +45,6 @@
       "entries": 5,
       "ok": true
     },
-    "linux-do.xml": {
-      "error": "HTTP Error 403: Forbidden",
-      "ok": false
-    },
     "mit-tech-ai.xml": {
       "entries": 10,
       "ok": true
@@ -58,26 +54,26 @@
       "ok": true
     },
     "producthunt.xml": {
-      "error": "response is not RSS 2.0",
-      "ok": false
+      "entries": 50,
+      "ok": true
+    },
+    "sciencedaily.xml": {
+      "entries": 60,
+      "ok": true
     },
     "techcrunch.xml": {
       "entries": 20,
       "ok": true
     },
-    "venturebeat.xml": {
-      "error": "HTTP Error 429: Too Many Requests",
-      "ok": false
+    "theverge.xml": {
+      "entries": 10,
+      "ok": true
     },
-    "yahoo-science.xml": {
-      "error": "HTTP Error 404: Not Found on Accelerator",
-      "ok": false
-    },
-    "yahoo-tech.xml": {
-      "error": "HTTP Error 404: Not Found on Accelerator",
-      "ok": false
+    "v2ex.xml": {
+      "entries": 50,
+      "ok": true
     }
   },
-  "successful": 12,
-  "total": 19
+  "successful": 18,
+  "total": 18
 }
