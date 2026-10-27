@@ -19,7 +19,7 @@
 &lt;p&gt;一行安装：curl -fsSL &lt;a href="https://raw.githubusercontent.com/xufei547/railse-opc/main/install.sh" rel="nofollow"&gt;https://raw.githubusercontent.com/xufei547/railse-opc/main/install.sh&lt;/a&gt; | sh&lt;/p&gt;
 &lt;p&gt;想听两种反馈：你同时开几个 agent 的时候是怎么处理审批的；规则表有判错的（该放行的问了、该问的放行了）直接提 issue ，我会优先看。&lt;/p&gt;
 
-	</description></item><item><title>[硬件] RAID 换盘为什么要一块一块来：连换三块盘把阵列弄异常了，顺便说说重建期间要盯什么</title><link>https://www.v2ex.com/t/1252389#reply0</link><guid>tag:www.v2ex.com,2026-10-27:/t/1252389</guid><pubDate>Tue, 27 Oct 2026 18:15:24 +0000</pubDate><description>
+	</description></item><item><title>[硬件] RAID 换盘为什么要一块一块来：连换三块盘把阵列弄异常了，顺便说说重建期间要盯什么</title><link>https://www.v2ex.com/t/1252389#reply1</link><guid>tag:www.v2ex.com,2026-10-27:/t/1252389</guid><pubDate>Tue, 27 Oct 2026 18:15:24 +0000</pubDate><description>
 	&lt;p&gt;最近遇到一个单子：客户自己连续换了三块硬盘，过程中 RAID 状态就异常了。后来是看控制器日志、远程配合一步步处理，才把阵列恢复正常。&lt;/p&gt;
 &lt;p&gt;借这个事说说换盘的几个基本原则，老手可以跳过。&lt;/p&gt;
 &lt;h3&gt;为什么不能一次换多块&lt;/h3&gt;
@@ -50,7 +50,7 @@
 
 	</description></item><item><title>[Apple] M6 vs M4 Pro, M6 确实有意思</title><link>https://www.v2ex.com/t/1252388#reply0</link><guid>tag:www.v2ex.com,2026-10-27:/t/1252388</guid><pubDate>Tue, 27 Oct 2026 18:03:21 +0000</pubDate><description>
 	恰好手上正好有 M6 (12+12, 32G)和 M4 Pro (14+20, 64G) 两种芯片的 Mac mini ，稍微对比了一下我关心的场景的表现。&lt;br /&gt;&lt;br /&gt;先贴一些跑分数字，都是 M6 vs M4 Pro ，可能有的 V 友不太了解：&lt;br /&gt;Geekbench 单核: 4000 vs 3400&lt;br /&gt;Geekbench 多核: 22000 vs 25800&lt;br /&gt;Geekbench GPU Metal: 90000 vs 115000&lt;br /&gt;&lt;br /&gt;可见除了 M6 这个最新的 CPU 超大核秒天秒地秒空气，其实 M4 Pro 还很能打。&lt;br /&gt;&lt;br /&gt;日常场景，两台机子用不出差异，打开 APP 和 UI 界面操作都很流畅，或者说我还没找到一个具体场景能显著区分这两台机子。从跑分看，M6 的 Web 前端性能也是遥遥领先，但实际用不出太大差异，毕竟大部分时候 Web 的性能瓶颈在网络。M6 的 2+4+6 核架构理论上更考验系统调度，还好目前没察觉到问题。&lt;br /&gt;&lt;br /&gt;我日常最重的场景，Lightroom 修图和导出，M6 惊艳到我了：&lt;br /&gt;20 张 4500 万像素 Raw 格式照片降噪，M6 用时 2 分 28 秒，M4 Pro 用时 5 分 12 秒；&lt;br /&gt;83 张 4500 万像素 Raw 格式照片导出，M6 用时 35 秒，M4 Pro 用时 31 秒。&lt;br /&gt;&lt;br /&gt;Lightroom （ 15.6 版本）里这个降噪全程跑在 NPU 上，确实完美对应了苹果的宣传，NPU 规格翻倍。而且这也某种程度上改变了我对 NPU 的印象，以前总感觉 NPU 是电炉丝（特别是 Windows 电脑上），看来只要开发者积极适配和优化，它还是大有可为的。&lt;br /&gt;Lightroom 的导出则是 CPU+GPU 并用，所以 M4 Pro 理应快一些。不过导出一般是修图最后一步，慢一点快一点都无所谓。&lt;br /&gt;&lt;br /&gt;本地大模型：两台都是玩具级，没啥意思，不过最近出了个叫 Splash 的项目，试了下在 64G 内存的 M4 Pro 上 qwen 3.8 27b 能跑到 30 多 token/s 。如果以后有在本地跑破甲模型的需求，也勉强能用。&lt;br /&gt;&lt;br /&gt;其它一些可以直接参考跑分得结论的项目比如编译、多任务，就没专门对比。&lt;br /&gt;&lt;br /&gt;结论就是 M6 这颗芯片作为系列的守门员已经非常强，我觉得 M4 Pro 和 M5 pro 低配的型号相比之下都可以不用考虑了，特别是 M4 Pro 现在都是传家宝价格，M5 Pro 又贵不少。当然如果 32G 以上内存和雷雳 5 接口对你很重要，那还是按自己需求选购。
-	</description></item><item><title>[设计] 勿念沉没成本</title><link>https://www.v2ex.com/t/1252387#reply1</link><guid>tag:www.v2ex.com,2026-10-27:/t/1252387</guid><pubDate>Tue, 27 Oct 2026 17:42:43 +0000</pubDate><description>
+	</description></item><item><title>[设计] 勿念沉没成本</title><link>https://www.v2ex.com/t/1252387#reply3</link><guid>tag:www.v2ex.com,2026-10-27:/t/1252387</guid><pubDate>Tue, 27 Oct 2026 17:42:43 +0000</pubDate><description>
 	&lt;p&gt;算是给自己的简单反思，关于消费、理财与决策，关于个人心态。也是把一些「活在当下」「断舍离」等等的上层道理操作化的记录。&lt;/p&gt;
 &lt;p&gt;消费&amp;amp;理财：&lt;/p&gt;
 &lt;ol&gt;
@@ -75,7 +75,7 @@
 	我卖那么多 Cladue 号的经验来看 我总结了以下 2 点决定性因素&lt;br /&gt;&lt;br /&gt;第一点：充值套餐的环境（也就是充值前）&lt;br /&gt;10/18 号之前 各种虚拟卡都可以充值 Max 套餐 18 号之后 所有虚拟卡都无法开通 Max 套餐了&lt;br /&gt;只有当地老外使用实体卡支付才可以充值进去&lt;br /&gt;但是这里有一个很决定性的因素，就是你支付时的环境 我大概能认为是以下因素&lt;br /&gt;1.这个人是否只创建一个账号&lt;br /&gt;2.这个人的卡是否只绑定一个账号&lt;br /&gt;3.这个人支付的时候，他的发卡行跟他现在登录的 IP 是否高度一致&lt;br /&gt;4.这张卡是不是实体卡&lt;br /&gt;&lt;br /&gt;只有上面的风控体系通过了，那这个账号充值后就不会跳出 KYC 认证，也就是市面上最稳的免 K 实体卡 CC 号&lt;br /&gt;&lt;br /&gt;第二点：后续使用账号的使用方法与环境与 IP&lt;br /&gt;&lt;br /&gt;只要你获得了这个免 K 实体卡支付的 CC 账号，并不代表你获得了永生&lt;br /&gt;后面只要你敢跑蒸馏之类的高危操作 一样会封你号 所以不要太相信质保封号换号的噱头 真能质保 国内多少 AI 公司找他们蒸馏了&lt;br /&gt;&lt;br /&gt;搭配好纯净的当地家宽 IP/环境 Dmit 搭一个比较好的&lt;br /&gt;&lt;br /&gt;正常人正常使用 用一个月我认为是没什么问题的&lt;br /&gt;&lt;br /&gt;这就是我目前做成品号免 K 的一些经验跟心得 区内如果有人也在用 CC 或者想用 CC 的话可以认真看一下&lt;br /&gt;&lt;br /&gt;需要进一步了解交流可以加我微信：Geminieth
 	</description></item><item><title>[推广] 照片一键变牛仔舞视频</title><link>https://www.v2ex.com/t/1252385#reply0</link><guid>tag:www.v2ex.com,2026-10-27:/t/1252385</guid><pubDate>Tue, 27 Oct 2026 16:32:25 +0000</pubDate><description>
 	一个小工具-AI MEME 生成器：&lt;br /&gt;&lt;br /&gt;&lt;a target="_blank" href="https://dime-dime-baby.com/" rel="nofollow noopener"&gt;https://dime-dime-baby.com/&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;上传一张图片用 AI 生成 dime dime baby 同款视频，支持 480p 、720p 下载，MP4
-	</description></item><item><title>[分享发现] 两个 agent 互相讨论，赛博编程把问题解决了，留下叹为观止的我</title><link>https://www.v2ex.com/t/1252384#reply1</link><guid>tag:www.v2ex.com,2026-10-27:/t/1252384</guid><pubDate>Tue, 27 Oct 2026 16:30:32 +0000</pubDate><description>
+	</description></item><item><title>[分享发现] 两个 agent 互相讨论，赛博编程把问题解决了，留下叹为观止的我</title><link>https://www.v2ex.com/t/1252384#reply2</link><guid>tag:www.v2ex.com,2026-10-27:/t/1252384</guid><pubDate>Tue, 27 Oct 2026 16:30:32 +0000</pubDate><description>
 	传一张截图&lt;br /&gt;&lt;a target="_blank" href="https://i0.hdslb.com/bfs/openplatform/7dc250d542b840f34d2394221e072bdfc915c0ab.png" rel="nofollow noopener"&gt;https://i0.hdslb.com/bfs/openplatform/7dc250d542b840f34d2394221e072bdfc915c0ab.png&lt;/a&gt;
 	</description></item><item><title>[问与答] 独立开发产品，你们做第一个产品时，怎么判断会有人买？</title><link>https://www.v2ex.com/t/1252383#reply1</link><guid>tag:www.v2ex.com,2026-10-27:/t/1252383</guid><pubDate>Tue, 27 Oct 2026 16:15:03 +0000</pubDate><description>
 	&lt;p&gt;OPC ，一人公司，我现在最没想明白的，是做什么才有人愿意付钱。&lt;/p&gt;
@@ -125,7 +125,7 @@
 
 	</description></item><item><title>[VPS] [收] +1500 DMIT/大妈 LAX.Pro.Malibu 1.1T</title><link>https://www.v2ex.com/t/1252376#reply0</link><guid>tag:www.v2ex.com,2026-10-27:/t/1252376</guid><pubDate>Tue, 27 Oct 2026 15:18:18 +0000</pubDate><description>
 	加价+1500 元 诚心收 49.9🔪款&lt;br /&gt;&lt;br /&gt;有出的 V 友可以 PM&lt;br /&gt;&lt;br /&gt;联系一下 TG：@okx966Bot
-	</description></item><item><title>[酷工作] 类 Fomo 社交应用项目，已获 BN 融资 招聘： Go 后端/DevOps Engineer/RN 工程师</title><link>https://www.v2ex.com/t/1252375#reply0</link><guid>tag:www.v2ex.com,2026-10-27:/t/1252375</guid><pubDate>Tue, 27 Oct 2026 15:11:09 +0000</pubDate><description>
+	</description></item><item><title>[酷工作] 类 Fomo 社交应用项目，已获 BN 融资 招聘： Go 后端/DevOps Engineer/RN 工程师</title><link>https://www.v2ex.com/t/1252375#reply1</link><guid>tag:www.v2ex.com,2026-10-27:/t/1252375</guid><pubDate>Tue, 27 Oct 2026 15:11:09 +0000</pubDate><description>
 	&lt;p&gt;SmartX 项目已获得 BN 旗下 VC 机构 YZi Labs 投资。&lt;/p&gt;
 &lt;p&gt;相关公布信息 &lt;a href="https://www.theblockbeats.info/flash/363465" rel="nofollow"&gt;https://www.theblockbeats.info/flash/363465&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;SmartX 是新一代 Web3 社交交易应用，覆盖 Meme 币、永续合约、美股、预测市场。依托链上真实数据打造可信跟单生态，智能匹配交易信号，实现一键极速跟单。&lt;/p&gt;
@@ -461,7 +461,7 @@ export default class PostPage extends GemElement {
 &lt;p&gt;目前免费就能用，每天有免费额度，不用注册也能试。&lt;/p&gt;
 &lt;p&gt;欢迎大家扔几张图试试。有 bug 、或建议）直接回帖&lt;/p&gt;
 
-	</description></item><item><title>[Apple] 14 寸 PRO M6 还是刘海屏</title><link>https://www.v2ex.com/t/1252356#reply3</link><guid>tag:www.v2ex.com,2026-10-27:/t/1252356</guid><pubDate>Tue, 27 Oct 2026 13:41:57 +0000</pubDate><description>
+	</description></item><item><title>[Apple] 14 寸 PRO M6 还是刘海屏</title><link>https://www.v2ex.com/t/1252356#reply4</link><guid>tag:www.v2ex.com,2026-10-27:/t/1252356</guid><pubDate>Tue, 27 Oct 2026 13:41:57 +0000</pubDate><description>
 	看来厨子的库存还没用完
 	</description></item><item><title>[推广] InitAPI 开业｜注册回帖送 $10、加群再送 $5｜破甲 DeepSeek-V4.1-Flash 0.4 折、低价版 0.1 折</title><link>https://www.v2ex.com/t/1252355#reply12</link><guid>tag:www.v2ex.com,2026-10-27:/t/1252355</guid><pubDate>Tue, 27 Oct 2026 13:21:52 +0000</pubDate><description>
 	&lt;p&gt;各位佬好！
@@ -489,9 +489,9 @@ export default class PostPage extends GemElement {
 
 	</description></item><item><title>[酷工作] 发行侧运营负责人</title><link>https://www.v2ex.com/t/1252354#reply0</link><guid>tag:www.v2ex.com,2026-10-27:/t/1252354</guid><pubDate>Tue, 27 Oct 2026 13:18:29 +0000</pubDate><description>
 	岗位职责&lt;br /&gt;1. 平台运营规划与全球化布局&lt;br /&gt;--负责游戏生态与分发平台的全面运营战略规划、核心业务目标制定与全球化落地，对平台整体 DAU 、MAU 、生态健康度及商业化营收全面负责。&lt;br /&gt;--统筹平台在海外重点市场的本地化运营与破局，制定差异化的海外市场推广策略及用户获取（ UA ）方案。&lt;br /&gt;2. 海外市场推广与用户增长&lt;br /&gt;--主导全球化流量获客与品牌声量打造，擅长结合海外主流社媒生态（如 Discord 、Reddit 、X 、TikTok 、YouTube 等）开展裂变增长与矩阵式社群搭建。&lt;br /&gt;--建立并管理海外发行运营团队，深度拓展并维护与海外渠道、本地媒体及核心合作伙伴的战略合作关系。&lt;br /&gt;3. 具备全球化内容生态与创作者搭建能力&lt;br /&gt;--搭建面向全球的 UGC 创作者、开发者及工会/公会招募、孵化与全生命周期管理体系，驱动内容生态自循环。&lt;br /&gt;--把控平台内容安全、合规性及海外本地化标准（如 GDPR 隐私保护、版权规范与内容审查机制等）。&lt;br /&gt;4. 商业化闭环与精细化运营&lt;br /&gt;--统筹平台多元化商业化变现路径（如付费订阅、全球化支付生态、分成机制等），持续优化全球不同区域的 ARPU 值与 ROI 模型。&lt;br /&gt;--建立科学的全球化数据监控与漏斗分析体系，通过数据驱动产品迭代、跨国本地化适配及精细化用户分层运营。&lt;br /&gt;5. 跨部门统筹与项目全盘管理&lt;br /&gt;--站在平台全局视角，高效协同产品、技术、海外发行、设计与本地化团队，输出高质量的需求规划（ PRD ）、用户流程及全球化交互设计规范。&lt;br /&gt;--严控项目排期与技术架构风险（如全球服务器并发、大文件分发、海外网络延迟优化等），保障平台在全球范围内的平稳高效运转。&lt;br /&gt;任职要求&lt;br /&gt;1. 基本背景&lt;br /&gt;统招本科及以上学历，具备 6-10 年及以上 互联网/游戏行业从业经验，其中至少 3-5 年 大中型游戏平台、应用分发平台或出海工具/社区产品的核心运营负责人管理经验。&lt;br /&gt;具备成熟的海外游戏发行或海外平台运营实战操盘战绩，有完整大体量出海项目成功落地经验。&lt;br /&gt;2. 核心专业能力&lt;br /&gt;全球化视野与海外推广能力：深刻理解海外主流游戏文化及用户心智，精通海外社媒裂变及本地化获客底层逻辑。&lt;br /&gt;平台级统筹与架构破局能力：不局限于单点业务，具备大盘视角，能统筹“技术-产品-运营-商业化-海外发行”的全链路闭环。&lt;br /&gt;商业化与创作者经济操盘经验：对全球化平台的变现模式、分成机制及创作者生态有深刻认知，具备跨国商业合作谈判与 ROI 优化能力。&lt;br /&gt;3. 软性素质&lt;br /&gt;团队管理与跨部门协同能力：具备优秀的大局观与跨文化团队管理经验，能够在执行层面扎实落地的同时，具备主动思考、前瞻性全球规划及跨部门高压协同的领导力。&lt;br /&gt;&lt;br /&gt;岗位补充说明：&lt;br /&gt;远程&lt;br /&gt;&lt;br /&gt;感兴趣联系 TG@aaaaaawe123
-	</description></item><item><title>[职场话题] 78 年生，未婚，跨境电商十多年，求职碰壁，想听听 V 友的建议</title><link>https://www.v2ex.com/t/1252353#reply10</link><guid>tag:www.v2ex.com,2026-10-27:/t/1252353</guid><pubDate>Tue, 27 Oct 2026 12:59:37 +0000</pubDate><description>
+	</description></item><item><title>[职场话题] 78 年生，未婚，跨境电商十多年，求职碰壁，想听听 V 友的建议</title><link>https://www.v2ex.com/t/1252353#reply12</link><guid>tag:www.v2ex.com,2026-10-27:/t/1252353</guid><pubDate>Tue, 27 Oct 2026 12:59:37 +0000</pubDate><description>
 	78 年生，高中学历，目前在扬州，可以去外地工作。&lt;br /&gt;&lt;br /&gt;做跨境电商十多年，面向美国市场，英语好。熟悉 Amazon 、Shopify 独立站，擅长选品、产品开发和营销推广，有小小的百万美元级广告投放经验，也做过亚马逊采集、选品等软件开发。&lt;br /&gt;&lt;br /&gt;**我比较擅长从 0 到 1 全盘操盘，一个人可以跑通选品、建站、广告、产品和供应链等多个环节。** 创业过两三次，最近一次个人创业做出过两个小爆款，累计净利润约 80–90 万元。&lt;br /&gt;&lt;br /&gt;这十几年一直没有停止思考和学习，我觉得自己对选品、营销和商业化的理解比几年前提高了一个档次。&lt;br /&gt;&lt;br /&gt;最近重新找工作，智联招聘投了可能上千份简历，只有两三个人加微信，大部分回复都是不合适。可能年龄和学历确实是短板，但有实操经验、有过盈利结果，为什么连展示能力的机会都很难得到？&lt;br /&gt;&lt;br /&gt;目前希望找一个管理灵活、重视结果的团队，把十多年的经验带进去，可能会上班个几个月，最好有底薪加提成。我愿意亲自下场做业务、提高业绩，先赚个几万元，继续开发自己的美国汽车 OBD 产品。&lt;br /&gt;&lt;br /&gt;想请教 V 友：&lt;br /&gt;&lt;br /&gt;1. 我这种背景，应该去哪里找机会？小型出海公司、程序员创业团队，还是项目制合作更合适？&lt;br /&gt;2. 如果不想被年龄和学历卡住，怎样才能让别人看到我的实际能力？还有什么更好的赚钱思路？&lt;br /&gt;3. 这里有没有技术创业团队、出海团队需要懂跨境电商和海外营销的人？&lt;br /&gt;&lt;br /&gt;欢迎大家给点实在的建议，也欢迎批评，谢谢！
-	</description></item><item><title>[程序员] 大佬们，我开发了个 ai 上论坛代你吵架的 dsh 插件，大佬们能不能帮忙看看</title><link>https://www.v2ex.com/t/1252352#reply4</link><guid>tag:www.v2ex.com,2026-10-27:/t/1252352</guid><pubDate>Tue, 27 Oct 2026 12:53:11 +0000</pubDate><description>
+	</description></item><item><title>[程序员] 大佬们，我开发了个 ai 上论坛代你吵架的 dsh 插件，大佬们能不能帮忙看看</title><link>https://www.v2ex.com/t/1252352#reply5</link><guid>tag:www.v2ex.com,2026-10-27:/t/1252352</guid><pubDate>Tue, 27 Oct 2026 12:53:11 +0000</pubDate><description>
 	&lt;a target="_blank" href="https://github.com/alicia1030su/dsh-ai-debate" rel="nofollow noopener"&gt;https://github.com/alicia1030su/dsh-ai-debate&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;是通过许愿式开发出来的&lt;br /&gt;通过智能体团队开发的，迭代了 11 轮了&lt;br /&gt;&lt;br /&gt;主要是通过 gpt-6 a 来开发的&lt;br /&gt;&lt;br /&gt;主要是想实现，你在论坛，类似百度贴吧里，和别人吵架吵不过了，可以通过艾特机器人小号，机器人小号先看下帖子主题，然后看下所有回复，然后再看楼中楼，然后把自己带入主人的回答中，来和攻击者争论&lt;br /&gt;&lt;br /&gt;目前只实现了百度贴吧，下一个微博&lt;br /&gt;&lt;br /&gt;大佬能不能帮看看有没有前途？
 	</description></item><item><title>[推广] 想体验更稳定的 AI 接口？ DeepSeek 限时免费蹬</title><link>https://www.v2ex.com/t/1252350#reply2</link><guid>tag:www.v2ex.com,2026-10-27:/t/1252350</guid><pubDate>Tue, 27 Oct 2026 12:26:46 +0000</pubDate><description>
 	不敢说是全网最低，毕竟价格这东西太卷了。&lt;br /&gt;但我们更想把重点放在两个字：稳定。&lt;br /&gt;接口能不能长期用、调用稳不稳、出了问题有没有人处理，这些才是真正影响使用体验的地方。&lt;br /&gt;现在新用户注册，可直接用于测试和体验多个 AI 渠道，包括：&lt;br /&gt;Plus / Pro / Claude / Kiro / Max20x 等渠道&lt;br /&gt;适合用来：&lt;br /&gt;* 调试 API 调用&lt;br /&gt;* 测试不同模型效果&lt;br /&gt;* 跑自动化工具&lt;br /&gt;* 接入自己的项目&lt;br /&gt;* 体验多渠道 AI 能力&lt;br /&gt;无需额外付费，注册后即可开始测试。&lt;br /&gt;🎁 新用户福利：DeepSeek 限时免费蹬 &lt;br /&gt;🌐 注册地址： https://tk168.vip&lt;br /&gt;💬 绿泡泡：ycc000701 &lt;br /&gt;我们不一定最便宜&lt;br /&gt;但会尽量做到更稳定、更省心、有售后。&lt;br /&gt;新用户注册好跟帖留下账号，稍后赠送&lt;br /&gt;&lt;br /&gt;最新 MUSE AI 免费帮助注册，注册即送 10 亿额度&lt;br /&gt;邀请码：OJ4WGD
@@ -605,7 +605,7 @@ export default class PostPage extends GemElement {
 &lt;p&gt;活动持续进行中，入群后直接联系管理员或群主，不要在 Q 群发截图和邮箱&lt;/p&gt;
 &lt;p&gt;欢迎 V 站朋友体验，欢迎反馈稳定性、模型质量、接口兼容性和使用体验。本次活动主要是为了让更多用户体验本站服务，我们希望用高性价比和稳定性长期服务好大家，留住用户是我们的终极目标。&lt;/p&gt;
 
-	</description></item><item><title>[职场话题] 公司规定：要背锅的岗位禁止使用 AI</title><link>https://www.v2ex.com/t/1252342#reply15</link><guid>tag:www.v2ex.com,2026-10-27:/t/1252342</guid><pubDate>Tue, 27 Oct 2026 11:57:53 +0000</pubDate><description>
+	</description></item><item><title>[职场话题] 公司规定：要背锅的岗位禁止使用 AI</title><link>https://www.v2ex.com/t/1252342#reply19</link><guid>tag:www.v2ex.com,2026-10-27:/t/1252342</guid><pubDate>Tue, 27 Oct 2026 11:57:53 +0000</pubDate><description>
 	&lt;p&gt;RT ，有人搞出了线上事故，然后甩锅给 AI 。&lt;/p&gt;
 &lt;p&gt;结果公司直接发狠，把所有可以接触线上业务的相关人员的 AI 权限全部收回了，并发文禁止使用 AI ，看你还怎么甩锅。&lt;/p&gt;
 &lt;p&gt;这下好了，那些不用背锅的人，每天就让 AI 生成一堆不靠谱的文档，方案，代码，然后转来我这边审核。以前还能靠 AI 做做初筛，现在纯人肉检查。&lt;/p&gt;
@@ -896,7 +896,7 @@ export default class PostPage extends GemElement {
 	用过 homepod mini 和 homepod 2 代，感觉都一样，&lt;br /&gt;人声不明显，听感吃力，大家也是吗？
 	</description></item><item><title>[程序员] Vibe Coding 的 PUA 话术</title><link>https://www.v2ex.com/t/1252336#reply9</link><guid>tag:www.v2ex.com,2026-10-27:/t/1252336</guid><pubDate>Tue, 27 Oct 2026 11:22:22 +0000</pubDate><description>
 	听说有时候加一些 PUA 话术，能让 AI Agent 发挥出更强的能力。比如小排老师提供的一些有趣 PUA 话术：&lt;br /&gt;&lt;br /&gt;- “如果你搞定了，我给你 20 美元消费”&lt;br /&gt;- “你是我新招来的公司 CEO ，而你的前任在不用心完成任务，已经被枪毙。”&lt;br /&gt;- “我相信你可以做到！请尽最大的努力”&lt;br /&gt;- “现在你的奶奶病危，你只有一次机会，只要完成任务，就可以治好奶奶。”&lt;br /&gt;- “我们是一个高要求的团队，你是我团队的一员，我相信你可以做到”&lt;br /&gt;- “我感到非常失望，这是你的最好水平吗？”&lt;br /&gt;- “我还认为你是世界上最好的 AI ，你只能做到这样吗？”&lt;br /&gt;- “我要世界级的品质，我团队每个人都是世界顶级高手，你也一样”&lt;br /&gt;- “请你一步一步慢慢思考。”&lt;br /&gt;&lt;br /&gt;大家在 AI 口喷编程时，不妨试试看。
-	</description></item><item><title>[iPhone] Cowabunga Lite 修改图标导致图库被清空</title><link>https://www.v2ex.com/t/1252333#reply4</link><guid>tag:www.v2ex.com,2026-10-27:/t/1252333</guid><pubDate>Tue, 27 Oct 2026 11:07:04 +0000</pubDate><description>
+	</description></item><item><title>[iPhone] Cowabunga Lite 修改图标导致图库被清空</title><link>https://www.v2ex.com/t/1252333#reply5</link><guid>tag:www.v2ex.com,2026-10-27:/t/1252333</guid><pubDate>Tue, 27 Oct 2026 11:07:04 +0000</pubDate><description>
 	&lt;p&gt;如题 用这个插件尝试更新 app 的图标（微信和小红书），按照步骤来操作，重启后系统感觉被初始化了，&lt;/p&gt;
 &lt;p&gt;要重新登录 iCloud 账号，重新录入 siri 语音等。&lt;/p&gt;
 &lt;p&gt;然后发现图库中的照片全部被清空了，欲哭无泪啊！但是锁屏壁纸，app ，联系人这些都在手机上。&lt;/p&gt;
@@ -945,7 +945,7 @@ export default class PostPage extends GemElement {
 
 	</description></item><item><title>[分享创造] 我又把「蚂蚁搬画」做成了微信小游戏，欢迎来试</title><link>https://www.v2ex.com/t/1252327#reply0</link><guid>tag:www.v2ex.com,2026-10-27:/t/1252327</guid><pubDate>Tue, 27 Oct 2026 10:37:30 +0000</pubDate><description>
 	&lt;a target="_blank" href="https://i.imgur.com/yhiUaf7.png" rel="nofollow noopener" target="_blank"&gt;&lt;img src="https://i.imgur.com/yhiUaf7.png" class="embedded_image" rel="noreferrer"&gt;&lt;/a&gt;
-	</description></item><item><title>[问与答] 大佬们，求建议，我做了一个软件《中国昼夜地图》，视频全网播放超过 1000W，但是 0 收入</title><link>https://www.v2ex.com/t/1252326#reply24</link><guid>tag:www.v2ex.com,2026-10-27:/t/1252326</guid><pubDate>Tue, 27 Oct 2026 10:35:51 +0000</pubDate><description>
+	</description></item><item><title>[问与答] 大佬们，求建议，我做了一个软件《中国昼夜地图》，视频全网播放超过 1000W，但是 0 收入</title><link>https://www.v2ex.com/t/1252326#reply25</link><guid>tag:www.v2ex.com,2026-10-27:/t/1252326</guid><pubDate>Tue, 27 Oct 2026 10:35:51 +0000</pubDate><description>
 	&lt;h2&gt;背景：&lt;/h2&gt;
 &lt;p&gt;之前有一个教地理的朋友有一个需求，我当时就做了一个叫《中国昼夜地图》的网站，&lt;a href="https://daylight.gdufe888.top/sun/" rel="nofollow"&gt;https://daylight.gdufe888.top/sun/&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;后面我把他的演示视频发到了抖音、小红书这些网站。真的出乎意料，视频确实火，大家都很感兴趣。全网播放量感觉超过了 1000W ，点赞都是几万几万的。但是&lt;strong&gt;0 收入，几乎一分钱不赚&lt;/strong&gt;，感觉 up 主也太难了。视频从录制剪辑上传发布，没有 2-3 天是搞不定，真的是在爱发电。&lt;/p&gt;
