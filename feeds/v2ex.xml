@@ -1,5 +1,313 @@
 <?xml version='1.0' encoding='utf-8'?>
-<rss version="2.0"><channel><title>V2EX</title><item><title>[分享创造] 分享： TikTok 上很火的 angry dance（一张照片生成 15 秒竖屏）是怎么回事，以及几种做法</title><link>https://www.v2ex.com/t/1252368#reply0</link><guid>tag:www.v2ex.com,2026-10-27:/t/1252368</guid><pubDate>Tue, 27 Oct 2026 14:36:41 +0000</pubDate><description>
+<rss version="2.0"><channel><title>V2EX</title><item><title>[Claude] Google Play 订阅的 Claude 怎么升级订阅？</title><link>https://www.v2ex.com/t/1252391#reply0</link><guid>tag:www.v2ex.com,2026-10-27:/t/1252391</guid><pubDate>Tue, 27 Oct 2026 18:40:17 +0000</pubDate><description>
+	&lt;p&gt;如题，我想要将我 5x 订阅的 claude 升级到 20x ，愣是没找到办法。iOS 那边商店里能直接换套餐，Google play 没找到&lt;/p&gt;
+
+	</description></item><item><title>[分享创造] Railse：一个人同时开几个 AI 编程 agent，审批推到手机上点一下</title><link>https://www.v2ex.com/t/1252390#reply0</link><guid>tag:www.v2ex.com,2026-10-27:/t/1252390</guid><pubDate>Tue, 27 Oct 2026 18:38:04 +0000</pubDate><description>
+	&lt;p&gt;最近几个月我一直同时开着 Claude Code 、Codex 和 Gemini CLI 写代码。agent 本身跑得挺好，烦的是它每次要跑命令、改文件都停下来等我按「允许」。三个终端轮流翻，经常翻到的时候它已经等了十分钟；出去吃个饭，回来每个都停在第一条 git push 上。开 yolo 全放行又不敢，一句 rm -rf 出去就没有后悔药。&lt;/p&gt;
+&lt;p&gt;所以我写了 Railse：每条审批先过一遍规则，规则定不了的推到手机，我在手机上点一下，agent 接着跑。&lt;/p&gt;
+&lt;p&gt;它怎么做：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;三家 CLI 的权限钩子都接到本机一个守护进程，规则只写一套。&lt;/li&gt;
+&lt;li&gt;每条请求先定风险档：只读和改项目里的文件直接放行； curl 、npm install 这类联网的，git push 、deploy 这类对外的，rm -rf 、git reset --hard 这类不可逆的，都问。&lt;/li&gt;
+&lt;li&gt;定不了的推到手机，Web Push 通知，点开批准或拒绝。批准时勾「记住」，当场存成规则，下次同类的不问。&lt;/li&gt;
+&lt;li&gt;对外和不可逆的永远不能被「记住」放行，只能自己手写规则。&lt;/li&gt;
+&lt;li&gt;Railse 自己挂了不卡 agent：守护进程没起、hub 连不上超过 30 秒，CLI 弹自己的审批框，最坏就是回到没装的样子。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;hub 自己部署，一个 Go 二进制，也有 &lt;a href="http://Fly.io" rel="nofollow"&gt;Fly.io&lt;/a&gt; 的现成配置；手机网页由 hub 托管，不用另外部署。命令里认得出的 token 、密码在本机就换成 &amp;lt;redacted&amp;gt; 再上报。&lt;/p&gt;
+&lt;p&gt;现状：v0.1.2 ，我自己在用。已知的限制：Gemini CLI 的钩子只能拒绝不能放行； Codex 的钩子只在交互会话里生效； iPhone 要加到主屏幕才能收推送； hub 是单机 SQLite 。&lt;/p&gt;
+&lt;p&gt;开源，Apache 2.0： &lt;a href="https://github.com/xufei547/railse-opc" rel="nofollow"&gt;https://github.com/xufei547/railse-opc&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;一行安装：curl -fsSL &lt;a href="https://raw.githubusercontent.com/xufei547/railse-opc/main/install.sh" rel="nofollow"&gt;https://raw.githubusercontent.com/xufei547/railse-opc/main/install.sh&lt;/a&gt; | sh&lt;/p&gt;
+&lt;p&gt;想听两种反馈：你同时开几个 agent 的时候是怎么处理审批的；规则表有判错的（该放行的问了、该问的放行了）直接提 issue ，我会优先看。&lt;/p&gt;
+
+	</description></item><item><title>[硬件] RAID 换盘为什么要一块一块来：连换三块盘把阵列弄异常了，顺便说说重建期间要盯什么</title><link>https://www.v2ex.com/t/1252389#reply0</link><guid>tag:www.v2ex.com,2026-10-27:/t/1252389</guid><pubDate>Tue, 27 Oct 2026 18:15:24 +0000</pubDate><description>
+	&lt;p&gt;最近遇到一个单子：客户自己连续换了三块硬盘，过程中 RAID 状态就异常了。后来是看控制器日志、远程配合一步步处理，才把阵列恢复正常。&lt;/p&gt;
+&lt;p&gt;借这个事说说换盘的几个基本原则，老手可以跳过。&lt;/p&gt;
+&lt;h3&gt;为什么不能一次换多块&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;RAID 5 只能容忍 1 块盘离线，RAID 6 是 2 块，RAID 10 要看坏的是不是同一个镜像对&lt;/li&gt;
+&lt;li&gt;换下一块盘，阵列就进入降级状态，新盘插上后开始重建（ rebuild ）&lt;/li&gt;
+&lt;li&gt;重建没完成之前，新盘里的数据是不完整的，&lt;strong&gt;它还不算一块好盘&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;这时候再拔第二块，对阵列来说就是「又丢了一块」，RAID 5 直接超出容错，RAID 6 也只剩最后一点余量&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;所以正确顺序就一句话：&lt;strong&gt;换一块 → 等重建 100% 完成、状态回到 Optimal → 再换下一块&lt;/strong&gt;。&lt;/p&gt;
+&lt;h3&gt;重建期间要盯什么&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;进度和速度&lt;/strong&gt;：大容量盘重建动辄十几个小时甚至更久，业务压力大的时候会更慢，心里要有数&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;其他盘的报错&lt;/strong&gt;：重建要把整组盘读一遍，同一批次、同样年头的盘最容易在这时候冒出坏道。看到别的盘也开始报 media error 、predictive failure ，先别急着动，先确认备份&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;控制器日志&lt;/strong&gt;：重建失败、puncture 、外来配置（ foreign config ）这类提示要当场处理，别等&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;别在重建中做其他变更&lt;/strong&gt;：升级固件、扩容、迁移，都等重建完再说&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;几个容易踩的坑&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;新盘要和原盘&lt;strong&gt;同料号或控制器认可的兼容型号&lt;/strong&gt;，容量、转速、接口、扇区格式不对，可能根本加不进去&lt;/li&gt;
+&lt;li&gt;插错槽位：先在管理界面点灯（ locate ），确认是哪块再拔&lt;/li&gt;
+&lt;li&gt;看到「外来配置」不要随手 clear ，也不要随手 initialize ，很多数据就是这么没的&lt;/li&gt;
+&lt;li&gt;有热备盘（ hot spare ）的话，坏盘后它会自动顶上重建，这时候换下来的坏盘位置插新盘，通常是成为新的热备，别误以为要再建一次阵列&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;一句话&lt;/h3&gt;
+&lt;p&gt;多块盘同时预警，宁可多花几天一块一块换，也别图省事一次换完。真碰上状态异常了，先停手、先看日志，别急着点初始化。&lt;/p&gt;
+&lt;p&gt;大家有没有遇到过重建到一半第二块盘也挂了的情况？最后是怎么救回来的？&lt;/p&gt;
+
+	</description></item><item><title>[Apple] M6 vs M4 Pro, M6 确实有意思</title><link>https://www.v2ex.com/t/1252388#reply0</link><guid>tag:www.v2ex.com,2026-10-27:/t/1252388</guid><pubDate>Tue, 27 Oct 2026 18:03:21 +0000</pubDate><description>
+	恰好手上正好有 M6 (12+12, 32G)和 M4 Pro (14+20, 64G) 两种芯片的 Mac mini ，稍微对比了一下我关心的场景的表现。&lt;br /&gt;&lt;br /&gt;先贴一些跑分数字，都是 M6 vs M4 Pro ，可能有的 V 友不太了解：&lt;br /&gt;Geekbench 单核: 4000 vs 3400&lt;br /&gt;Geekbench 多核: 22000 vs 25800&lt;br /&gt;Geekbench GPU Metal: 90000 vs 115000&lt;br /&gt;&lt;br /&gt;可见除了 M6 这个最新的 CPU 超大核秒天秒地秒空气，其实 M4 Pro 还很能打。&lt;br /&gt;&lt;br /&gt;日常场景，两台机子用不出差异，打开 APP 和 UI 界面操作都很流畅，或者说我还没找到一个具体场景能显著区分这两台机子。从跑分看，M6 的 Web 前端性能也是遥遥领先，但实际用不出太大差异，毕竟大部分时候 Web 的性能瓶颈在网络。M6 的 2+4+6 核架构理论上更考验系统调度，还好目前没察觉到问题。&lt;br /&gt;&lt;br /&gt;我日常最重的场景，Lightroom 修图和导出，M6 惊艳到我了：&lt;br /&gt;20 张 4500 万像素 Raw 格式照片降噪，M6 用时 2 分 28 秒，M4 Pro 用时 5 分 12 秒；&lt;br /&gt;83 张 4500 万像素 Raw 格式照片导出，M6 用时 35 秒，M4 Pro 用时 31 秒。&lt;br /&gt;&lt;br /&gt;Lightroom （ 15.6 版本）里这个降噪全程跑在 NPU 上，确实完美对应了苹果的宣传，NPU 规格翻倍。而且这也某种程度上改变了我对 NPU 的印象，以前总感觉 NPU 是电炉丝（特别是 Windows 电脑上），看来只要开发者积极适配和优化，它还是大有可为的。&lt;br /&gt;Lightroom 的导出则是 CPU+GPU 并用，所以 M4 Pro 理应快一些。不过导出一般是修图最后一步，慢一点快一点都无所谓。&lt;br /&gt;&lt;br /&gt;本地大模型：两台都是玩具级，没啥意思，不过最近出了个叫 Splash 的项目，试了下在 64G 内存的 M4 Pro 上 qwen 3.8 27b 能跑到 30 多 token/s 。如果以后有在本地跑破甲模型的需求，也勉强能用。&lt;br /&gt;&lt;br /&gt;其它一些可以直接参考跑分得结论的项目比如编译、多任务，就没专门对比。&lt;br /&gt;&lt;br /&gt;结论就是 M6 这颗芯片作为系列的守门员已经非常强，我觉得 M4 Pro 和 M5 pro 低配的型号相比之下都可以不用考虑了，特别是 M4 Pro 现在都是传家宝价格，M5 Pro 又贵不少。当然如果 32G 以上内存和雷雳 5 接口对你很重要，那还是按自己需求选购。
+	</description></item><item><title>[设计] 勿念沉没成本</title><link>https://www.v2ex.com/t/1252387#reply1</link><guid>tag:www.v2ex.com,2026-10-27:/t/1252387</guid><pubDate>Tue, 27 Oct 2026 17:42:43 +0000</pubDate><description>
+	&lt;p&gt;算是给自己的简单反思，关于消费、理财与决策，关于个人心态。也是把一些「活在当下」「断舍离」等等的上层道理操作化的记录。&lt;/p&gt;
+&lt;p&gt;消费&amp;amp;理财：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;无论过去为某个东西/项目付出了多少，都无关紧要。只关注当下的预期成本与收益&lt;/li&gt;
+&lt;li&gt;任何东西，持有成本大于预期价值时，就是 deficit&lt;/li&gt;
+&lt;li&gt;任何东西，如果能为自己节省的成本大于开销，为其付费就是值得的&lt;/li&gt;
+&lt;li&gt;目前的事业/工作/方向，如果收益不及所掌握机会的预期收益（经济、履历、个人发展等），且后者无 red flag ，则果断放弃前者&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;个人心态：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;做任何决策只需要考虑两点：短期收益、长期收益&lt;/li&gt;
+&lt;li&gt;只以自己为基点。他人可以借鉴，无需比较&lt;/li&gt;
+&lt;li&gt;永远不用为他人的成就而焦虑，只关注可以学到什么、能否 connect&lt;/li&gt;
+&lt;li&gt;一切已经经历的损失，都无需追悼&lt;/li&gt;
+&lt;li&gt;永远不为未来焦虑，集中于做什么最能改善处境&lt;/li&gt;
+&lt;li&gt;任何现状的困境不作为阻碍行动的理由&lt;/li&gt;
+&lt;li&gt;保持对自己所拥有事物的 gratitude&lt;/li&gt;
+&lt;li&gt;保持谦虚、保持礼貌&lt;/li&gt;
+&lt;/ol&gt;
+
+	</description></item><item><title>[Claude] 说下 Claude 封号决定性的 2 个因素</title><link>https://www.v2ex.com/t/1252386#reply1</link><guid>tag:www.v2ex.com,2026-10-27:/t/1252386</guid><pubDate>Tue, 27 Oct 2026 16:46:13 +0000</pubDate><description>
+	我卖那么多 Cladue 号的经验来看 我总结了以下 2 点决定性因素&lt;br /&gt;&lt;br /&gt;第一点：充值套餐的环境（也就是充值前）&lt;br /&gt;10/18 号之前 各种虚拟卡都可以充值 Max 套餐 18 号之后 所有虚拟卡都无法开通 Max 套餐了&lt;br /&gt;只有当地老外使用实体卡支付才可以充值进去&lt;br /&gt;但是这里有一个很决定性的因素，就是你支付时的环境 我大概能认为是以下因素&lt;br /&gt;1.这个人是否只创建一个账号&lt;br /&gt;2.这个人的卡是否只绑定一个账号&lt;br /&gt;3.这个人支付的时候，他的发卡行跟他现在登录的 IP 是否高度一致&lt;br /&gt;4.这张卡是不是实体卡&lt;br /&gt;&lt;br /&gt;只有上面的风控体系通过了，那这个账号充值后就不会跳出 KYC 认证，也就是市面上最稳的免 K 实体卡 CC 号&lt;br /&gt;&lt;br /&gt;第二点：后续使用账号的使用方法与环境与 IP&lt;br /&gt;&lt;br /&gt;只要你获得了这个免 K 实体卡支付的 CC 账号，并不代表你获得了永生&lt;br /&gt;后面只要你敢跑蒸馏之类的高危操作 一样会封你号 所以不要太相信质保封号换号的噱头 真能质保 国内多少 AI 公司找他们蒸馏了&lt;br /&gt;&lt;br /&gt;搭配好纯净的当地家宽 IP/环境 Dmit 搭一个比较好的&lt;br /&gt;&lt;br /&gt;正常人正常使用 用一个月我认为是没什么问题的&lt;br /&gt;&lt;br /&gt;这就是我目前做成品号免 K 的一些经验跟心得 区内如果有人也在用 CC 或者想用 CC 的话可以认真看一下&lt;br /&gt;&lt;br /&gt;需要进一步了解交流可以加我微信：Geminieth
+	</description></item><item><title>[推广] 照片一键变牛仔舞视频</title><link>https://www.v2ex.com/t/1252385#reply0</link><guid>tag:www.v2ex.com,2026-10-27:/t/1252385</guid><pubDate>Tue, 27 Oct 2026 16:32:25 +0000</pubDate><description>
+	一个小工具-AI MEME 生成器：&lt;br /&gt;&lt;br /&gt;&lt;a target="_blank" href="https://dime-dime-baby.com/" rel="nofollow noopener"&gt;https://dime-dime-baby.com/&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;上传一张图片用 AI 生成 dime dime baby 同款视频，支持 480p 、720p 下载，MP4
+	</description></item><item><title>[分享发现] 两个 agent 互相讨论，赛博编程把问题解决了，留下叹为观止的我</title><link>https://www.v2ex.com/t/1252384#reply1</link><guid>tag:www.v2ex.com,2026-10-27:/t/1252384</guid><pubDate>Tue, 27 Oct 2026 16:30:32 +0000</pubDate><description>
+	传一张截图&lt;br /&gt;&lt;a target="_blank" href="https://i0.hdslb.com/bfs/openplatform/7dc250d542b840f34d2394221e072bdfc915c0ab.png" rel="nofollow noopener"&gt;https://i0.hdslb.com/bfs/openplatform/7dc250d542b840f34d2394221e072bdfc915c0ab.png&lt;/a&gt;
+	</description></item><item><title>[问与答] 独立开发产品，你们做第一个产品时，怎么判断会有人买？</title><link>https://www.v2ex.com/t/1252383#reply1</link><guid>tag:www.v2ex.com,2026-10-27:/t/1252383</guid><pubDate>Tue, 27 Oct 2026 16:15:03 +0000</pubDate><description>
+	&lt;p&gt;OPC ，一人公司，我现在最没想明白的，是做什么才有人愿意付钱。&lt;/p&gt;
+&lt;p&gt;AI 能帮忙做产品，但我还是担心：花时间做出来了，最后只是自己觉得有用。别人说一句“不错”，好像也很难判断他到底会不会买。&lt;/p&gt;
+&lt;p&gt;想问问已经一个人做产品的 v 友们，你们当时是怎么迈出第一步的？怎么找一个具体需求，再去做；还是先做个能用的版本，拿出去试？&lt;/p&gt;
+&lt;p&gt;特别想听听，在还没有人付款的时候，是什么反馈（热血？兴趣？）让你决定继续做下去的？如果只能等第一笔钱到账才算确认，那在这之前，你愿意投入到什么程度？&lt;/p&gt;
+&lt;p&gt;看走眼的经历也想听，比如一开始有人感兴趣，做完却没人买，后来才发现当初误判了什么。&lt;/p&gt;
+&lt;p&gt;我主要就卡在动手之前这一步，想听点踩坑的经历。（成功的经历看不少，感觉不太真实，像幸存者）&lt;/p&gt;
+
+	</description></item><item><title>[OpenAI] 怎么看待 openai 关于模型中转的最新使用政策</title><link>https://www.v2ex.com/t/1252381#reply1</link><guid>tag:www.v2ex.com,2026-10-27:/t/1252381</guid><pubDate>Tue, 27 Oct 2026 15:59:13 +0000</pubDate><description>
+	&lt;p&gt;自建 sub2api 会不能用了吗，野生中转站会大面积塌方吗？&lt;/p&gt;
+&lt;p&gt;使用协议原文： &lt;a href="https://openai.com/zh-Hans-CN/index/broad-access-through-consistent-standards/" rel="nofollow"&gt;https://openai.com/zh-Hans-CN/index/broad-access-through-consistent-standards/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;大致总结：更新使用政策（ 2026 年 11 月 20 日生效）
+• 模型中转与网关审查：模型路由器和 AI 网关在提供访问权限前，必须获得 OpenAI 的审查与批准；合作伙伴需采取与 OpenAI 标准一致的安全保障措施并调查违规行为。
+• 禁止训练竞争模型：新政策明确禁止使用 OpenAI 模型或其输出，来为替代或竞争 OpenAI 的模型准备、筛选或提供训练数据、构建训练任务、强化学习环境以及提供打分信号。
+• AI 安全事件强制上报：敦促合作伙伴与行业建立 AI 安全事件的强制上报机制。&lt;/p&gt;
+
+	</description></item><item><title>[问与答] stripe 生成的支付宝订单没法支付，有人遇到过吗？</title><link>https://www.v2ex.com/t/1252380#reply2</link><guid>tag:www.v2ex.com,2026-10-27:/t/1252380</guid><pubDate>Tue, 27 Oct 2026 15:55:23 +0000</pubDate><description>
+	&lt;p&gt;stripe 生成的支付宝订单没法支付，可以跳转到 Alipay+ 的收款台，正常显示支付码&lt;/p&gt;
+&lt;p&gt;但是支付宝一扫码，支付宝 App 就显示&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;付款失败&lt;/p&gt;
+&lt;p&gt;人气太旺啦，稍后再试试&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;换了 3 个支付宝都付不了，stripe 侧显示支付宝状态正常&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;不是网络问题，我叫的国内的朋友试了试也不行&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;这是被支付宝软封了？&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;我是海外公司+海外永居&lt;/p&gt;
+&lt;p&gt;产品卖的是一个给外贸用的出海小工具（中国客户占 6-7 成，也有欧美客户），应该不算违规&lt;/p&gt;
+
+	</description></item><item><title>[游戏] 光线追踪有用吗</title><link>https://www.v2ex.com/t/1252379#reply5</link><guid>tag:www.v2ex.com,2026-10-27:/t/1252379</guid><pubDate>Tue, 27 Oct 2026 15:44:34 +0000</pubDate><description>
+	&lt;p&gt;光线追踪和 HDR 这两大游戏话题，有没有最终结论&lt;/p&gt;
+&lt;p&gt;&lt;img alt="0X0/Screenshot_1_7_2024_10_49_30_PM.avif" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://ss1.eisite.cn/autoupload/en/DiPHY2bfbqfwIY5F8ItqK41_uZYOccVbMvyB2cc0QLyyl5f0KlZfm6UsKj-HyTuv/20261027/R2gh/0X0/Screenshot_1_7_2024_10_49_30_PM.avif"/&gt;
+&lt;img alt="0X0/TheGreatCircle_1_11_2026_10_27_00_PM.avif" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://ss1.eisite.cn/autoupload/en/DiPHY2bfbqfwIY5F8ItqK41_uZYOccVbMvyB2cc0QLyyl5f0KlZfm6UsKj-HyTuv/20261027/8yDp/0X0/TheGreatCircle_1_11_2026_10_27_00_PM.avif"/&gt;
+&lt;img alt="0X0/S.T.A.L.K.E.R._2__Heart_of_Chornobyl___11_23_2025_11_36_02_PM.avif" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://ss1.eisite.cn/autoupload/en/DiPHY2bfbqfwIY5F8ItqK41_uZYOccVbMvyB2cc0QLyyl5f0KlZfm6UsKj-HyTuv/20261027/ij15/0X0/S.T.A.L.K.E.R._2__Heart_of_Chornobyl___11_23_2025_11_36_02_PM.avif"/&gt;
+&lt;img alt="0X0/S.T.A.L.K.E.R._2__Heart_of_Chornobyl___11_23_2025_10_04_32_AM.avif" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://ss1.eisite.cn/autoupload/en/DiPHY2bfbqfwIY5F8ItqK41_uZYOccVbMvyB2cc0QLyyl5f0KlZfm6UsKj-HyTuv/20261027/9FcG/0X0/S.T.A.L.K.E.R._2__Heart_of_Chornobyl___11_23_2025_10_04_32_AM.avif"/&gt;
+&lt;img alt="0X0/Ratchet_&amp;amp;_Clank__Rift_Apart_v2.618.0.0_11_26_2025_8_46_17_PM.avif" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://ss1.eisite.cn/autoupload/en/DiPHY2bfbqfwIY5F8ItqK41_uZYOccVbMvyB2cc0QLyyl5f0KlZfm6UsKj-HyTuv/20261027/ebKi/0X0/Ratchet_%26_Clank__Rift_Apart_v2.618.0.0_11_26_2025_8_46_17_PM.avif"/&gt;
+&lt;img alt="0X0/Microsoft_Flight_Simulator_2024_-_1.6.13.0_10_13_2025_9_06_26_PM.avif" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://ss1.eisite.cn/autoupload/en/DiPHY2bfbqfwIY5F8ItqK41_uZYOccVbMvyB2cc0QLyyl5f0KlZfm6UsKj-HyTuv/20261027/ikzU/0X0/Microsoft_Flight_Simulator_2024_-_1.6.13.0_10_13_2025_9_06_26_PM.avif"/&gt;
+&lt;img alt="0X0/Microsoft_Flight_Simulator_2024_-_1.6.19.0_10_25_2025_9_53_52_PM.avif" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://ss1.eisite.cn/autoupload/en/DiPHY2bfbqfwIY5F8ItqK41_uZYOccVbMvyB2cc0QLyyl5f0KlZfm6UsKj-HyTuv/20261027/NMMQ/0X0/Microsoft_Flight_Simulator_2024_-_1.6.19.0_10_25_2025_9_53_52_PM.avif"/&gt;
+&lt;img alt="0X0/Microsoft_Flight_Simulator_2024_-_1.6.16.0_10_21_2025_10_18_01_PM.avif" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://ss1.eisite.cn/autoupload/en/DiPHY2bfbqfwIY5F8ItqK41_uZYOccVbMvyB2cc0QLyyl5f0KlZfm6UsKj-HyTuv/20261027/RJ04/0X0/Microsoft_Flight_Simulator_2024_-_1.6.16.0_10_21_2025_10_18_01_PM.avif"/&gt;&lt;/p&gt;
+
+	</description></item><item><title>[程序员] Codex 是蠢逼吗，代码都不读清楚直接一通瞎改</title><link>https://www.v2ex.com/t/1252377#reply5</link><guid>tag:www.v2ex.com,2026-10-27:/t/1252377</guid><pubDate>Tue, 27 Oct 2026 15:18:55 +0000</pubDate><description>
+	&lt;p&gt;codex 没啥新东西出来，天天重置，然后一堆人天天猛蹬，估计算力又不足了，现在降智蠢的一笔，而且还慢！&lt;/p&gt;
+&lt;p&gt;跑半天还把我代码改废了，我还要回退重来&lt;/p&gt;
+&lt;p&gt;claude 甩 codex 半条街了。 还是 claude 用起来丝滑，给个需求转几下就出结果了，还写的好。&lt;/p&gt;
+
+	</description></item><item><title>[VPS] [收] +1500 DMIT/大妈 LAX.Pro.Malibu 1.1T</title><link>https://www.v2ex.com/t/1252376#reply0</link><guid>tag:www.v2ex.com,2026-10-27:/t/1252376</guid><pubDate>Tue, 27 Oct 2026 15:18:18 +0000</pubDate><description>
+	加价+1500 元 诚心收 49.9🔪款&lt;br /&gt;&lt;br /&gt;有出的 V 友可以 PM&lt;br /&gt;&lt;br /&gt;联系一下 TG：@okx966Bot
+	</description></item><item><title>[酷工作] 类 Fomo 社交应用项目，已获 BN 融资 招聘： Go 后端/DevOps Engineer/RN 工程师</title><link>https://www.v2ex.com/t/1252375#reply0</link><guid>tag:www.v2ex.com,2026-10-27:/t/1252375</guid><pubDate>Tue, 27 Oct 2026 15:11:09 +0000</pubDate><description>
+	&lt;p&gt;SmartX 项目已获得 BN 旗下 VC 机构 YZi Labs 投资。&lt;/p&gt;
+&lt;p&gt;相关公布信息 &lt;a href="https://www.theblockbeats.info/flash/363465" rel="nofollow"&gt;https://www.theblockbeats.info/flash/363465&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;SmartX 是新一代 Web3 社交交易应用，覆盖 Meme 币、永续合约、美股、预测市场。依托链上真实数据打造可信跟单生态，智能匹配交易信号，实现一键极速跟单。&lt;/p&gt;
+&lt;p&gt;官方网站： &lt;a href="https://smartx.io/" rel="nofollow"&gt;https://smartx.io/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;推特 X： &lt;a href="https://x.com/SmartXTerminal" rel="nofollow"&gt;https://x.com/SmartXTerminal&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;工作地点：前端和后端可以前期 2-3 周到深圳出差，后转 remote ，DevOps 必须深圳线下。&lt;/p&gt;
+&lt;p&gt;学历要求：第一学历本科及以上&lt;/p&gt;
+&lt;p&gt;联系方式：TG：@AmberKuo_O 或邮箱 &lt;a href="mailto:amberkuo.work@gmail.com"&gt;amberkuo.work@gmail.com&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;面试流程： 将您的简历投递到我的邮箱也可以直接 TG 联系，（写明投递职位，简单说明您的工作履历）。2-3 个工作日会回复您，通过简历筛选，我会联系进行 2-3 轮线上面试。&lt;/p&gt;
+&lt;p&gt;背景要求：英文可以作为工作语言（流利读写以上水平），本科以上学历。必须深入了解 AI 工具及使用。&lt;/p&gt;
+&lt;p&gt;（ 1 ）后端开发工程师（薪资 4500-7000U ）深圳线下优先，远程办公短期出差深圳也可&lt;/p&gt;
+&lt;p&gt;工作职责&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;负责平台链上交易核心模块后端研发，包含 Meme 币、多链代币、合约、预测市场等交易链路开发与迭代，对接 DEX 、链上 RPC ，完成链上签名、发单、交易上链、交易回执解析等功能。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;搭建链上行情与 Meme 生态数据采集、清洗、聚合、存储、分发系统；开发链上 Token 监控、新币扫描、链上大户钱包追踪、热度指标等数据服务，支撑 AI 智能推荐能力落地。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;负责后端平台服务开发，保障生产环境高可用、高并发、低延迟；设计业务解耦方案，妥善管理复杂交易状态，做好服务监控、故障排查与性能优化。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;主导研发工程效能建设，落地 CI/CD 持续集成、自动化测试、灰度发布、线上运维等流程，提升团队交付效率。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;深度参与 Meme 赛道业务需求评审、技术方案设计，理解 Meme 币交易场景、热点周期、用户行为特征，和产品、前端、AI 团队协同迭代交易终端产品。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;跟进区块链生态、Meme 赛道前沿技术与市场动态，输出技术调研方案，持续优化产品架构。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;任职要求&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;第一学历本科及以上学历，计算机相关专业。&lt;/li&gt;
+&lt;li&gt;扎实计算机基础，精通常用数据结构、算法、网络、操作系统原理。&lt;/li&gt;
+&lt;li&gt;熟练使用 Go 语言开发，具备异步、并发编程实战经验。&lt;/li&gt;
+&lt;li&gt;熟练使用 MySQL 、Redis ，熟悉 Kafka 等消息队列，具备分布式系统开发经验。&lt;/li&gt;
+&lt;li&gt;精通高并发系统设计，擅长业务解耦、分布式事务、复杂状态管理。&lt;/li&gt;
+&lt;li&gt;了解区块链基础原理，熟悉 EVM/Solana 等至少一条公链，有链上交互、DEX 对接、Meme 币相关后端开发项目经验。&lt;/li&gt;
+&lt;li&gt;熟悉 Meme 赛道生态，了解 Meme 币的市场玩法、热点逻辑、链上数据指标，有 Meme 工具、链上扫描器、交易机器人开发经验优先。&lt;/li&gt;
+&lt;li&gt;对 Web3 、AI 交易赛道抱有强烈好奇心，具备主动学习能力、自驱力与主人翁意识。&lt;/li&gt;
+&lt;li&gt;必须完全掌握 AI 辅助研发与 AI Agent 工具，能够独立应用于后端需求分析、技术方案设计、Go 编码、调试、单元/集成测试、性能优化、代码审查和技术文档编写；不能仅停留在聊天问答或简单代码补全。&lt;/li&gt;
+&lt;li&gt;熟练掌握任务拆解、指令设计、上下文管理、代码库检索、终端与工具调用、长任务执行和 Agent 工作流编排；能够将 AI 与 Git 、CI/CD 、测试框架、API 、数据库以及 MCP 或同类工具协议结合使用。&lt;/li&gt;
+&lt;li&gt;具备 AI 输出验证与安全治理能力，能够识别幻觉、不安全代码和错误技术结论，并通过编译、自动化测试、静态检查、基准测试、人工审查和结果复现完成验证闭环；严格遵守代码、数据、密钥、权限和隐私保护要求。&lt;/li&gt;
+&lt;li&gt;能够提交至少 1 个本人实际使用 AI/Agent 提升研发效率或质量的案例，并在面试实操中说明任务拆解、工具选择、人工控制点、验证方法及量化收益。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;（ 2 ） DevOps Engineer （ 3500-6000u ）必须深圳线下 Onsite&lt;/p&gt;
+&lt;p&gt;一、岗位职责
+1 、负责公司云端基础设施、容器化平台及生产环境的建设、部署、维护与持续优化，保障各业务系统稳定、安全、高效运行。&lt;/p&gt;
+&lt;p&gt;2 、负责 Kubernetes 集群的规划、部署、扩容、升级及日常运维，支持大规模集群、多节点及多环境部署。&lt;/p&gt;
+&lt;p&gt;3 、建设并维护 CI/CD 流程，推动代码构建、测试、发布、回滚等环节自动化，提升研发交付效率，降低人工操作及发布风险。&lt;/p&gt;
+&lt;p&gt;4 、支持微服务架构下的服务部署、配置管理、服务发现、流量治理、弹性伸缩及故障处理。&lt;/p&gt;
+&lt;p&gt;5 、建设并完善监控、日志、告警及故障响应体系，及时定位和处理线上异常，持续提升系统可用性和故障恢复能力。&lt;/p&gt;
+&lt;p&gt;6 、配合研发团队完成应用容器化、部署架构设计及生产环境问题排查，推动开发、测试及运维流程标准化。&lt;/p&gt;
+&lt;p&gt;7 、参与 TEE 、签名服务及其他高安全等级基础设施的部署和运维，协助完善密钥管理、权限控制、网络隔离等安全机制。&lt;/p&gt;
+&lt;p&gt;8 、持续优化基础设施资源使用效率、系统性能及云服务成本，沉淀运维工具、技术文档和标准操作流程。&lt;/p&gt;
+&lt;p&gt;二、任职要求&lt;/p&gt;
+&lt;p&gt;基础要求&lt;/p&gt;
+&lt;p&gt;1 、本科以上计算机相关专业，有 2 年以上 dex, perps, 链上交易所运维经验。&lt;/p&gt;
+&lt;p&gt;2 、具备扎实的 Linux 基础，熟悉常用系统命令、Shell 脚本、网络协议及线上问题排查方法。&lt;/p&gt;
+&lt;p&gt;3 、熟练掌握 Go 语言，或具备 Python 、Shell 等自动化脚本开发能力，能够通过代码和工具提升运维自动化水平。&lt;/p&gt;
+&lt;p&gt;4 、具备丰富的 Kubernetes 集群实践经验，熟悉集群部署、扩缩容、升级、故障排查、资源调度及权限管理。&lt;/p&gt;
+&lt;p&gt;5 、熟悉 Docker 及容器化技术，具备微服务、多节点、多环境部署和运维经验。熟悉至少一种主流云服务平台，如 AWS 、Google Cloud 、Azure 、阿里云或腾讯云，并具备云上生产环境运维经验。&lt;/p&gt;
+&lt;p&gt;6 、熟悉 CI/CD 体系及相关工具，如 GitHub Actions 、GitLab CI 、Jenkins 、Argo CD 等。&lt;/p&gt;
+&lt;p&gt;7 、熟悉日志、监控及告警体系，如 Prometheus 、Grafana 、ELK 、Loki 、Sentry 等，能够独立完成线上故障定位和处理。熟悉网络、安全组、负载均衡、反向代理、DNS 、证书及服务间网络通信等基础设施配置。&lt;/p&gt;
+&lt;p&gt;8 、具备良好的跨团队沟通和文档撰写能力，能够与研发、安全等团队协同推进基础设施建设&lt;/p&gt;
+&lt;p&gt;优先条件&lt;/p&gt;
+&lt;p&gt;1 、有大规模 Kubernetes 集群或高并发生产环境运维经验。&lt;/p&gt;
+&lt;p&gt;2 、有 TEE 、可信执行环境、远程证明或安全签名服务部署经验。&lt;/p&gt;
+&lt;p&gt;3 、熟悉 Terraform 、Ansible 、Helm 等基础设施即代码及自动化配置工具。&lt;/p&gt;
+&lt;p&gt;4 、有区块链、钱包、交易系统、金融科技或高安全等级业务的 DevOps 经验。&lt;/p&gt;
+&lt;p&gt;5 、熟悉密钥管理、Secrets Management 、KMS 、HSM 、多签或权限隔离机制。&lt;/p&gt;
+&lt;p&gt;6 、有微服务治理、服务网格、灰度发布、自动回滚、容灾及多可用区部署经验。&lt;/p&gt;
+&lt;p&gt;（ 3 ）、React‑Native 移动端工程师（薪资 4000-6500U ）&lt;/p&gt;
+&lt;p&gt;工作地点：深圳线下优先，远程办公短期出差深圳也可&lt;/p&gt;
+&lt;p&gt;学历要求：第一学历本科及以上&lt;/p&gt;
+&lt;p&gt;岗位职责&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;根据产品规划，基于 React‑Native 完成 iOS 、Android 双端移动端 App 的功能开发与迭代落地，实现行情展示、链上交易等业务场景。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;负责移动端项目架构搭建、功能调试、多端兼容性测试，跟进 Google Play 商店应用上架、版本发布全流程。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;承担线上 App 的日常维护，修复线上 Bug ；针对高频行情刷新、实时交易数据推送等场景开展渲染、内存、启动速度等专项性能优化，保障交易端稳定流畅。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;协同后端、嵌入式、UI 、AI 研发团队，对接云服务及链上接口，联合排查线上疑难问题，输出交互与性能优化方案，持续提升产品用户体验。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;编写高可读性、高复用性、易维护的业务代码，严格遵守团队编码规范与文档标准，保障单元测试与代码覆盖率。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;参与团队多端通用 SDK 、公共组件库的设计、开发与迭代，沉淀可复用技术能力，提升多端项目稳定性与研发效率。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;任职要求&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;2 年及以上 React‑Native 移动端商业项目开发经验，拥有完整上线项目经历优先；&lt;/li&gt;
+&lt;li&gt;JavaScript / TypeScript 基础扎实，熟练掌握 React 组件、Hooks 、Props 、State 等核心概念；&lt;/li&gt;
+&lt;li&gt;精通 React‑Native 主流状态管理方案、全局状态管控、导航路由框架设计；&lt;/li&gt;
+&lt;li&gt;熟悉 RN 手势交互、动画开发、WebSocket 实时长连接开发，具备移动端多语言国际化落地经验；&lt;/li&gt;
+&lt;li&gt;能够基于原生桥接、第三方图表库实现自定义可视化页面、行情图表等复杂绘制需求；&lt;/li&gt;
+&lt;li&gt;熟悉 React‑Native 依赖包管理、版本兼容调试；了解 App Store 、Google Play 上架、审核、迭代全流程；&lt;/li&gt;
+&lt;li&gt;熟悉 JS 异步编程、事件循环，具备前端工程化基础知识；&lt;/li&gt;
+&lt;li&gt;拥有高频数据刷新、长列表渲染场景下卡顿优化、内存治理的实操经验；&lt;/li&gt;
+&lt;li&gt;具备良好的问题排查能力、团队协作意识，自驱力强，有主人翁心态。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;加分项&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;掌握 iOS(Swift/OC) 或 Android 原生开发，可完成原生桥接模块开发；&lt;/li&gt;
+&lt;li&gt;有 Web3 、区块链、行情交易、Meme 相关移动端项目开发经验；&lt;/li&gt;
+&lt;li&gt;有跨端 SDK 、公共组件库封装建设经验；&lt;/li&gt;
+&lt;li&gt;了解 Flutter ，具备多跨端框架迁移开发经验。&lt;/li&gt;
+&lt;/ol&gt;
+
+	</description></item><item><title>[分享发现] 商汤发布 SenseNova 6.8 Code2Video：把动态字体、图形动画和知识讲解写成代码</title><link>https://www.v2ex.com/t/1252373#reply0</link><guid>tag:www.v2ex.com,2026-10-27:/t/1252373</guid><pubDate>Tue, 27 Oct 2026 15:03:18 +0000</pubDate><description>
+	&lt;p&gt;做动态字体或讲解动画，画面里经常有明确的文字、位置和运动关系：小球从 A 点到 B 点，走什么线，速度多快&lt;/p&gt;
+&lt;p&gt;像这类需求，传统的 text to video 模型基本上实现不了，不是说能力不够，而是底层技术实现就不一样&lt;/p&gt;
+&lt;p&gt;无论是 Seedance 还是 runway ，都是生成一个一个像素点，很难工程化；&lt;/p&gt;
+&lt;p&gt;商汤最新发布的 SenseNova 6.8 Code2Video （ 27B ）模型处理这类需求的方式是写代码，再用代码制作视频&lt;/p&gt;
+&lt;p&gt;有点类似于 Opus5.5 做的视频，还挺有意思，分享给大家：&lt;/p&gt;
+&lt;h1&gt;GitHub&lt;/h1&gt;
+&lt;p&gt;&lt;a href="https://github.com/OpenSenseNova/SenseNova-6.8-Code2Video" rel="nofollow"&gt;https://github.com/OpenSenseNova/SenseNova-6.8-Code2Video&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;在 HF 上模型权重也开源了：&lt;/h1&gt;
+&lt;p&gt;&lt;a href="https://huggingface.co/sensenova/SenseNova-6.8-Code2Video" rel="nofollow"&gt;https://huggingface.co/sensenova/SenseNova-6.8-Code2Video&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;直接看案例：&lt;/h1&gt;
+&lt;p&gt;&lt;img alt="" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://i.imgur.com/fba6o8O.gif"/&gt;&lt;/p&gt;
+&lt;p&gt;这段是字体和图形之间的转换。对标题动画、产品介绍这类内容，文字本身就是画面的一部分，排版和时间安排都需要一起考虑。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://i.imgur.com/hpMqOTX.gif"/&gt;&lt;/p&gt;
+&lt;p&gt;模型特点可以概括为几条：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;需求转代码：根据视频描述编写代码，制作动态字体、图形动画或讲解视频。&lt;/li&gt;
+&lt;li&gt;修改已有结果：通过自然语言调整颜色、运动、时间安排和场景元素。&lt;/li&gt;
+&lt;li&gt;参考视频重建：根据已有视频分析布局和运动，重建成可继续修改的代码。&lt;/li&gt;
+&lt;li&gt;创作 Skill：引导需求细化、预览和修改，把宽泛的想法变成具体视频方案。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;时钟阵列对应的是元素协同。每根指针的动作都简单，合在一起才形成大数字。这类规则明确的动画，很适合拿来观察代码生成的效果。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://i.imgur.com/1LXIsSt.gif"/&gt;&lt;/p&gt;
+&lt;p&gt;甲烷燃烧这段把反应物和生成物的变化画出来，是知识讲解方向的例子。这里展示的是表达形式，具体科学内容仍需要单独核对。&lt;/p&gt;
+&lt;p&gt;比成片更值得展开的是：第一版出来之后，怎么继续改？下面是 brief 里的两组官方案例。&lt;/p&gt;
+&lt;h2&gt;案例一：在已有翻页牌动画上连续修改。&lt;/h2&gt;
+&lt;p&gt;第一版是 20 秒的复古机场提示牌，文字通过翻片切换出现。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://i.imgur.com/OScH0k5.gif"/&gt;&lt;/p&gt;
+&lt;p&gt;第一次修改要求保留文字、时间安排和翻页机制，换成粉色墙面、金色边框、薄荷绿翻片的酒店大堂.成片效果如下⬇️&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://i.imgur.com/VXoTP2t.gif"/&gt;&lt;/p&gt;
+&lt;p&gt;第二次修改在这个版本上增加飞机和旅客。要求保留已有设计，让飞机经过上方、旅客从前景走过，同时避开提示牌上的文字，效果如下⬇️&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://i.imgur.com/0hI7mq9.gif"/&gt;&lt;/p&gt;
+&lt;h2&gt;案例二：从参考片重新写代码，再改品牌和配色。&lt;/h2&gt;
+&lt;p&gt;参考片是 Forma 的产品宣传视频，只输入 mp4 文件，别的一律没有&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://i.imgur.com/8mfwIix.gif"/&gt;&lt;/p&gt;
+&lt;p&gt;任务是分析参考片的布局与运动，再编写代码重建，并把名字换成 KITE 、画布换成浅绿色
+也不用大段的其他的 prompt 和 skills ，成片直接如下⬇️&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://i.imgur.com/9hX1YJW.gif"/&gt;&lt;/p&gt;
+&lt;p&gt;说实话挺震惊的，模型能很好的理解原视频的结构，特别是元素之间的层级关系&lt;/p&gt;
+&lt;p&gt;所以这里的 [复刻] 是重建一份新的代码实现，并不等于恢复原片的工程文件。对想参考某种产品演示节奏、再做自己版本的人，这个区别需要注意一下哈&lt;/p&gt;
+&lt;p&gt;通用代码模型也能写动画。Code2Video 是否更省修正次数、局部修改能否保住其他内容，还需要结合代码和完整记录比较。这些 GIF 展示的是官方案例的视觉结果。&lt;/p&gt;
+&lt;p&gt;INT4 、INT8 量化版本计划后续提供&lt;/p&gt;
+
+	</description></item><item><title>[生活] 现在有什么值得入的笔记本电脑吗，经常移动没有 pc，一切工作都是笔记本解决</title><link>https://www.v2ex.com/t/1252372#reply2</link><guid>tag:www.v2ex.com,2026-10-27:/t/1252372</guid><pubDate>Tue, 27 Oct 2026 15:02:57 +0000</pubDate><description>
+	&lt;p&gt;很久没看电脑，有点跟不上现在的版本，所以来请教一下大家。&lt;/p&gt;
+&lt;p&gt;当然主要是编程之类的，32g 是必须的，没有作图需求，游戏的话，也不怎么玩。&lt;/p&gt;
+
+	</description></item><item><title>[分享创造] 做了一个把照片变成 Angry Dance 视频的小网站</title><link>https://www.v2ex.com/t/1252371#reply0</link><guid>tag:www.v2ex.com,2026-10-27:/t/1252371</guid><pubDate>Tue, 27 Oct 2026 14:59:59 +0000</pubDate><description>
+	&lt;p&gt;最近做了一个 Angry Dance 视频生成网站，想分享一下。&lt;/p&gt;
+&lt;p&gt;这个效果的场景比较固定：人物走进厨房，对着镜头做一连串有点生气的手势，最后又冲回镜头前。网站会用上传的照片作为人物参考，生成一段大约 14 秒的视频。&lt;/p&gt;
+&lt;p&gt;地址： &lt;a href="https://angrydancefilterai.com/" rel="nofollow"&gt;https://angrydancefilterai.com/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;目前不需要写提示词，也不用注册账号。上传一张正面、清晰的成人照片，确认有使用权限，填写接收链接的邮箱后，就可以选择套餐生成。厨房背景、动作和声音都是固定的；人物的脸、发型和衣服则参考照片。&lt;/p&gt;
+&lt;p&gt;首页有示例视频，可以先免费观看。生成自己的视频是付费的，单条目前是 9.99 美元，没有订阅。结果是竖屏 720p MP4 。生成过程中人物外貌仍可能有变化，照片模糊或者脸被遮挡时尤其明显。&lt;/p&gt;
+&lt;p&gt;这个项目目前只做了一个固定场景。我也在想，这类工具保持简单是否更好，还是应该增加背景、动作和音乐的选择。欢迎大家看看，给点建议。&lt;/p&gt;
+
+	</description></item><item><title>[程序员] 两个月烧了 500 亿 token，从零开始学写基金投资 agent</title><link>https://www.v2ex.com/t/1252370#reply0</link><guid>tag:www.v2ex.com,2026-10-27:/t/1252370</guid><pubDate>Tue, 27 Oct 2026 14:55:24 +0000</pubDate><description>
+	&lt;p&gt;买了四十多个基金，为了方便管理，最开始想做个定投计算器，一步步下来做成了 agent ，饼画的太大，不过总算做的差不多了，上来分享一下和交流&lt;/p&gt;
+&lt;p&gt;agent 的开源版（原本的很乱不好意思开源，从零开始重新搭建一个开源的版本）：
+&lt;a href="https://github.com/hpoenixf/open-etf-agent" rel="nofollow"&gt;https://github.com/hpoenixf/open-etf-agent&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;用踩坑经历作为素材搭建的站点，希望能帮到一样是从零开始转过来的朋友&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://hpoenixf.com/eff-agent-article/" rel="nofollow"&gt;https://hpoenixf.com/eff-agent-article/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;还整了个 agent 交流微信群，感兴趣的朋友可以从站点加微信来交流~&lt;/p&gt;
+
+	</description></item><item><title>[分享创造] 分享： TikTok 上很火的 angry dance（一张照片生成 15 秒竖屏）是怎么回事，以及几种做法</title><link>https://www.v2ex.com/t/1252368#reply0</link><guid>tag:www.v2ex.com,2026-10-27:/t/1252368</guid><pubDate>Tue, 27 Oct 2026 14:36:41 +0000</pubDate><description>
 	&lt;p&gt;最近刷 TikTok 、Reels 的话，大概率见过这种视频：一个人气冲冲走到镜头前，手指戳镜头、手掌推过来、转身叉腰，最后回头大吼一声，前后 15 秒左右。这就是最近流行的 angry dance 。它不是本人真的在跳，而是用一张照片套进固定动作模板生成的。整理了一下它的来龙去脉和几种做法，供有兴趣的 V 友参考。&lt;/p&gt;
 &lt;p&gt;&lt;img alt="angry dance 格式说明：单人照、固定动作、15 秒竖屏" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://seedance-creative-guides-ac4523.gitlab.io/assets/2026-10-27/v2ex-angry/01-format.png"/&gt;&lt;/p&gt;
 &lt;h2&gt;它是什么&lt;/h2&gt;
@@ -27,7 +335,7 @@
 &lt;p&gt;这个梗的前提是“当事人知情”。只用自己的照片，或者对方同意过的照片，不要拿明星和陌生人的脸。文案里注明是模板或 AI 剪辑，评论区也就不会一直问“这是真的吗”。&lt;/p&gt;
 &lt;p&gt;欢迎补充其他做法，或者分享你们见过的有意思的版本。&lt;/p&gt;
 
-	</description></item><item><title>[分享创造] 用 Web Components 做了个全栈框架 Gemkit，首屏 JS 26KB， SSR 性能和 SvelteKit 差不多</title><link>https://www.v2ex.com/t/1252367#reply0</link><guid>tag:www.v2ex.com,2026-10-27:/t/1252367</guid><pubDate>Tue, 27 Oct 2026 14:25:01 +0000</pubDate><description>
+	</description></item><item><title>[分享创造] 用 Web Components 做了个全栈框架 Gemkit，首屏 JS 26KB， SSR 性能和 SvelteKit 差不多</title><link>https://www.v2ex.com/t/1252367#reply1</link><guid>tag:www.v2ex.com,2026-10-27:/t/1252367</guid><pubDate>Tue, 27 Oct 2026 14:25:01 +0000</pubDate><description>
 	&lt;p&gt;几年前在这发过我写的 Web Components 库 Gem （ &lt;a href="https://v2ex.com/t/738230" rel="nofollow"&gt;https://v2ex.com/t/738230&lt;/a&gt; ），一直有个硬伤：只有客户端渲染。连它自带的文档站生成器 gem-book 也是 CSR ，搜索引擎基本收录不到啥东西。&lt;/p&gt;
 &lt;p&gt;之前在这问过 React SSR 和自定义元素怎么配合（ &lt;a href="https://v2ex.com/t/998353" rel="nofollow"&gt;https://v2ex.com/t/998353&lt;/a&gt; ），当时我自己回复说「用 jsdom 模拟生成 ShadowDOM 理论上也行」。后来真这么干了：&lt;/p&gt;
 &lt;ol&gt;
@@ -115,7 +423,7 @@ export default class PostPage extends GemElement {
 &lt;/ul&gt;
 &lt;p&gt;欢迎拍砖，觉得有意思的话点个 star 吧。&lt;/p&gt;
 
-	</description></item><item><title>[程序员] AI 编程的「老板思维」真的有用吗？</title><link>https://www.v2ex.com/t/1252364#reply1</link><guid>tag:www.v2ex.com,2026-10-27:/t/1252364</guid><pubDate>Tue, 27 Oct 2026 14:17:14 +0000</pubDate><description>
+	</description></item><item><title>[程序员] AI 编程的「老板思维」真的有用吗？</title><link>https://www.v2ex.com/t/1252364#reply5</link><guid>tag:www.v2ex.com,2026-10-27:/t/1252364</guid><pubDate>Tue, 27 Oct 2026 14:17:14 +0000</pubDate><description>
 	&lt;p&gt;老板思维指：把自己作为老板，向 agent 提需求、验收，而不过多关注具体实现。&lt;a href="https://www.v2ex.com/t/1251873" rel="nofollow"&gt;上一个主题&lt;/a&gt;也有许多坛友提到这种方法，这里延申讨论。&lt;/p&gt;
 &lt;p&gt;我接触到的反面例子：&lt;/p&gt;
 &lt;ul&gt;
@@ -133,7 +441,7 @@ export default class PostPage extends GemElement {
 
 	</description></item><item><title>[酷工作] 💻 技术 × AI × 数据｜ 37 个远程岗位，附薪资范围</title><link>https://www.v2ex.com/t/1252363#reply0</link><guid>tag:www.v2ex.com,2026-10-27:/t/1252363</guid><pubDate>Tue, 27 Oct 2026 14:13:17 +0000</pubDate><description>
 	已标月薪岗位区间为 10K–150K ，另有美元年薪岗及薪资面议岗位。全远程办公。&lt;br /&gt;&lt;br /&gt;🔐 后端 / 安全 / 架构&lt;br /&gt;高级安全攻防工程师（有管理经验优先）｜ 40–150K&lt;br /&gt;高级算法工程师｜ 35–50K&lt;br /&gt;广告算法工程师 / 高级广告算法工程师｜ 30–40K&lt;br /&gt;高级 Java 工程师（推荐系统方向）｜ 25–40K&lt;br /&gt;后端工程师｜ 21–37K&lt;br /&gt;高级服务器开发工程师｜ 20–30K&lt;br /&gt;代码审计工程师（ Go 后端，安全与 AI 方向）｜ 18–28K&lt;br /&gt;资深安全工程师｜ 18–25K&lt;br /&gt;运维助理｜ 10–15K&lt;br /&gt;Golang 后端工程师｜面议&lt;br /&gt;&lt;br /&gt;🖥 前端 / 客户端&lt;br /&gt;前端工程师（资深，Flutter / Web ，视频播放方向）｜ 40–50K&lt;br /&gt;高级前端开发工程师（ Vue3 ）｜ 20–30K&lt;br /&gt;高级 Flutter 开发工程师｜ 15–25K&lt;br /&gt;Web 前端工程师｜面议&lt;br /&gt;Flutter 客户端工程师｜面议&lt;br /&gt;前端开发工程师（ SEO 方向）｜面议&lt;br /&gt;&lt;br /&gt;📊 数据 / 增长&lt;br /&gt;SEO 高级工程师｜ 20–35K&lt;br /&gt;数据工程师（数据采集方向）｜ 20–35K&lt;br /&gt;广告平台专家（技术 / 产品运营方向）｜ 20–35K&lt;br /&gt;产品数据分析师｜ 22–30K&lt;br /&gt;数据分析师 / 游戏数据运营｜ 15–30K ，优秀可谈&lt;br /&gt;&lt;br /&gt;🤖 AI 应用 / 算法&lt;br /&gt;AI Algorithm Engineer ｜年薪 ≤ 20 万美元&lt;br /&gt;高级 / 专家 AI 应用工程师（ Agent Ops ）｜ 20–40K&lt;br /&gt;AI 视频工作流专家｜ 20–35K&lt;br /&gt;AIGC 内容编辑师（ ComfyUI 工程师）｜ 15–30K&lt;br /&gt;AI 应用 Golang 后端工程师｜ 20–30K&lt;br /&gt;AI 全栈开发工程师（后端 Go 方向）｜ 20–30K&lt;br /&gt;AI 短剧工程师｜ 15–25K&lt;br /&gt;Prompt 优化工程师｜ 15–25K&lt;br /&gt;AI 视频内容工程师（ AI 短剧 / AIGC ）｜ 15–20K&lt;br /&gt;AI SEO 建站工程师｜面议 + 奖金&lt;br /&gt;AI 互动式数字人工程师｜面议&lt;br /&gt;AI 应用算法工程师（多模态 / Agent 方向）｜面议&lt;br /&gt;&lt;br /&gt;🧩 产品&lt;br /&gt;推荐与广告算法产品经理｜ 20–40K&lt;br /&gt;AI 互动式数字人产品经理｜面议&lt;br /&gt;数据分析产品经理｜面议&lt;br /&gt;&lt;br /&gt;🛎 技术支持&lt;br /&gt;双语技术支持专家 / 中英文客服｜ 10–15K&lt;br /&gt;&lt;br /&gt;🌏 全远程办公&lt;br /&gt;📩 投递邮箱： zcgs2149@gmail.com&lt;br /&gt;📎 请附简历并备注意向岗位；算法 / AI 岗请附项目链接或 GitHub 。&lt;br /&gt;&lt;br /&gt;#招聘 #远程 #技术招聘 #AI 工程师 #算法 #前端 #后端
-	</description></item><item><title>[Apple] Mac 能够迁移所有数据 到新 Mac 吗</title><link>https://www.v2ex.com/t/1252362#reply2</link><guid>tag:www.v2ex.com,2026-10-27:/t/1252362</guid><pubDate>Tue, 27 Oct 2026 14:11:32 +0000</pubDate><description>
+	</description></item><item><title>[Apple] Mac 能够迁移所有数据 到新 Mac 吗</title><link>https://www.v2ex.com/t/1252362#reply7</link><guid>tag:www.v2ex.com,2026-10-27:/t/1252362</guid><pubDate>Tue, 27 Oct 2026 14:11:32 +0000</pubDate><description>
 	&lt;p&gt;手持 mbp 14. m5 16+1tb
 内存硬盘都有些不够用了，平时用 gpt 操作 PS 、Blender 、Illustrator 做图像视频处理，同时有大量素材在本地；
 然后和 gpt 也有大量对话历史，
@@ -155,7 +463,7 @@ export default class PostPage extends GemElement {
 
 	</description></item><item><title>[Apple] 14 寸 PRO M6 还是刘海屏</title><link>https://www.v2ex.com/t/1252356#reply3</link><guid>tag:www.v2ex.com,2026-10-27:/t/1252356</guid><pubDate>Tue, 27 Oct 2026 13:41:57 +0000</pubDate><description>
 	看来厨子的库存还没用完
-	</description></item><item><title>[推广] InitAPI 开业｜注册回帖送 $10、加群再送 $5｜破甲 DeepSeek-V4.1-Flash 0.4 折、低价版 0.1 折</title><link>https://www.v2ex.com/t/1252355#reply7</link><guid>tag:www.v2ex.com,2026-10-27:/t/1252355</guid><pubDate>Tue, 27 Oct 2026 13:21:52 +0000</pubDate><description>
+	</description></item><item><title>[推广] InitAPI 开业｜注册回帖送 $10、加群再送 $5｜破甲 DeepSeek-V4.1-Flash 0.4 折、低价版 0.1 折</title><link>https://www.v2ex.com/t/1252355#reply12</link><guid>tag:www.v2ex.com,2026-10-27:/t/1252355</guid><pubDate>Tue, 27 Oct 2026 13:21:52 +0000</pubDate><description>
 	&lt;p&gt;各位佬好！
 先说说我为什么做这个站。
 我一直向往自由，喜欢去中心化，不喜欢被束缚。
@@ -181,13 +489,13 @@ export default class PostPage extends GemElement {
 
 	</description></item><item><title>[酷工作] 发行侧运营负责人</title><link>https://www.v2ex.com/t/1252354#reply0</link><guid>tag:www.v2ex.com,2026-10-27:/t/1252354</guid><pubDate>Tue, 27 Oct 2026 13:18:29 +0000</pubDate><description>
 	岗位职责&lt;br /&gt;1. 平台运营规划与全球化布局&lt;br /&gt;--负责游戏生态与分发平台的全面运营战略规划、核心业务目标制定与全球化落地，对平台整体 DAU 、MAU 、生态健康度及商业化营收全面负责。&lt;br /&gt;--统筹平台在海外重点市场的本地化运营与破局，制定差异化的海外市场推广策略及用户获取（ UA ）方案。&lt;br /&gt;2. 海外市场推广与用户增长&lt;br /&gt;--主导全球化流量获客与品牌声量打造，擅长结合海外主流社媒生态（如 Discord 、Reddit 、X 、TikTok 、YouTube 等）开展裂变增长与矩阵式社群搭建。&lt;br /&gt;--建立并管理海外发行运营团队，深度拓展并维护与海外渠道、本地媒体及核心合作伙伴的战略合作关系。&lt;br /&gt;3. 具备全球化内容生态与创作者搭建能力&lt;br /&gt;--搭建面向全球的 UGC 创作者、开发者及工会/公会招募、孵化与全生命周期管理体系，驱动内容生态自循环。&lt;br /&gt;--把控平台内容安全、合规性及海外本地化标准（如 GDPR 隐私保护、版权规范与内容审查机制等）。&lt;br /&gt;4. 商业化闭环与精细化运营&lt;br /&gt;--统筹平台多元化商业化变现路径（如付费订阅、全球化支付生态、分成机制等），持续优化全球不同区域的 ARPU 值与 ROI 模型。&lt;br /&gt;--建立科学的全球化数据监控与漏斗分析体系，通过数据驱动产品迭代、跨国本地化适配及精细化用户分层运营。&lt;br /&gt;5. 跨部门统筹与项目全盘管理&lt;br /&gt;--站在平台全局视角，高效协同产品、技术、海外发行、设计与本地化团队，输出高质量的需求规划（ PRD ）、用户流程及全球化交互设计规范。&lt;br /&gt;--严控项目排期与技术架构风险（如全球服务器并发、大文件分发、海外网络延迟优化等），保障平台在全球范围内的平稳高效运转。&lt;br /&gt;任职要求&lt;br /&gt;1. 基本背景&lt;br /&gt;统招本科及以上学历，具备 6-10 年及以上 互联网/游戏行业从业经验，其中至少 3-5 年 大中型游戏平台、应用分发平台或出海工具/社区产品的核心运营负责人管理经验。&lt;br /&gt;具备成熟的海外游戏发行或海外平台运营实战操盘战绩，有完整大体量出海项目成功落地经验。&lt;br /&gt;2. 核心专业能力&lt;br /&gt;全球化视野与海外推广能力：深刻理解海外主流游戏文化及用户心智，精通海外社媒裂变及本地化获客底层逻辑。&lt;br /&gt;平台级统筹与架构破局能力：不局限于单点业务，具备大盘视角，能统筹“技术-产品-运营-商业化-海外发行”的全链路闭环。&lt;br /&gt;商业化与创作者经济操盘经验：对全球化平台的变现模式、分成机制及创作者生态有深刻认知，具备跨国商业合作谈判与 ROI 优化能力。&lt;br /&gt;3. 软性素质&lt;br /&gt;团队管理与跨部门协同能力：具备优秀的大局观与跨文化团队管理经验，能够在执行层面扎实落地的同时，具备主动思考、前瞻性全球规划及跨部门高压协同的领导力。&lt;br /&gt;&lt;br /&gt;岗位补充说明：&lt;br /&gt;远程&lt;br /&gt;&lt;br /&gt;感兴趣联系 TG@aaaaaawe123
-	</description></item><item><title>[职场话题] 78 年生，未婚，跨境电商十多年，求职碰壁，想听听 V 友的建议</title><link>https://www.v2ex.com/t/1252353#reply7</link><guid>tag:www.v2ex.com,2026-10-27:/t/1252353</guid><pubDate>Tue, 27 Oct 2026 12:59:37 +0000</pubDate><description>
+	</description></item><item><title>[职场话题] 78 年生，未婚，跨境电商十多年，求职碰壁，想听听 V 友的建议</title><link>https://www.v2ex.com/t/1252353#reply10</link><guid>tag:www.v2ex.com,2026-10-27:/t/1252353</guid><pubDate>Tue, 27 Oct 2026 12:59:37 +0000</pubDate><description>
 	78 年生，高中学历，目前在扬州，可以去外地工作。&lt;br /&gt;&lt;br /&gt;做跨境电商十多年，面向美国市场，英语好。熟悉 Amazon 、Shopify 独立站，擅长选品、产品开发和营销推广，有小小的百万美元级广告投放经验，也做过亚马逊采集、选品等软件开发。&lt;br /&gt;&lt;br /&gt;**我比较擅长从 0 到 1 全盘操盘，一个人可以跑通选品、建站、广告、产品和供应链等多个环节。** 创业过两三次，最近一次个人创业做出过两个小爆款，累计净利润约 80–90 万元。&lt;br /&gt;&lt;br /&gt;这十几年一直没有停止思考和学习，我觉得自己对选品、营销和商业化的理解比几年前提高了一个档次。&lt;br /&gt;&lt;br /&gt;最近重新找工作，智联招聘投了可能上千份简历，只有两三个人加微信，大部分回复都是不合适。可能年龄和学历确实是短板，但有实操经验、有过盈利结果，为什么连展示能力的机会都很难得到？&lt;br /&gt;&lt;br /&gt;目前希望找一个管理灵活、重视结果的团队，把十多年的经验带进去，可能会上班个几个月，最好有底薪加提成。我愿意亲自下场做业务、提高业绩，先赚个几万元，继续开发自己的美国汽车 OBD 产品。&lt;br /&gt;&lt;br /&gt;想请教 V 友：&lt;br /&gt;&lt;br /&gt;1. 我这种背景，应该去哪里找机会？小型出海公司、程序员创业团队，还是项目制合作更合适？&lt;br /&gt;2. 如果不想被年龄和学历卡住，怎样才能让别人看到我的实际能力？还有什么更好的赚钱思路？&lt;br /&gt;3. 这里有没有技术创业团队、出海团队需要懂跨境电商和海外营销的人？&lt;br /&gt;&lt;br /&gt;欢迎大家给点实在的建议，也欢迎批评，谢谢！
-	</description></item><item><title>[程序员] 大佬们，我开发了个 ai 上论坛代你吵架的 dsh 插件，大佬们能不能帮忙看看</title><link>https://www.v2ex.com/t/1252352#reply3</link><guid>tag:www.v2ex.com,2026-10-27:/t/1252352</guid><pubDate>Tue, 27 Oct 2026 12:53:11 +0000</pubDate><description>
+	</description></item><item><title>[程序员] 大佬们，我开发了个 ai 上论坛代你吵架的 dsh 插件，大佬们能不能帮忙看看</title><link>https://www.v2ex.com/t/1252352#reply4</link><guid>tag:www.v2ex.com,2026-10-27:/t/1252352</guid><pubDate>Tue, 27 Oct 2026 12:53:11 +0000</pubDate><description>
 	&lt;a target="_blank" href="https://github.com/alicia1030su/dsh-ai-debate" rel="nofollow noopener"&gt;https://github.com/alicia1030su/dsh-ai-debate&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;是通过许愿式开发出来的&lt;br /&gt;通过智能体团队开发的，迭代了 11 轮了&lt;br /&gt;&lt;br /&gt;主要是通过 gpt-6 a 来开发的&lt;br /&gt;&lt;br /&gt;主要是想实现，你在论坛，类似百度贴吧里，和别人吵架吵不过了，可以通过艾特机器人小号，机器人小号先看下帖子主题，然后看下所有回复，然后再看楼中楼，然后把自己带入主人的回答中，来和攻击者争论&lt;br /&gt;&lt;br /&gt;目前只实现了百度贴吧，下一个微博&lt;br /&gt;&lt;br /&gt;大佬能不能帮看看有没有前途？
-	</description></item><item><title>[推广] 想体验更稳定的 AI 接口？ DeepSeek 限时免费蹬</title><link>https://www.v2ex.com/t/1252350#reply0</link><guid>tag:www.v2ex.com,2026-10-27:/t/1252350</guid><pubDate>Tue, 27 Oct 2026 12:26:46 +0000</pubDate><description>
+	</description></item><item><title>[推广] 想体验更稳定的 AI 接口？ DeepSeek 限时免费蹬</title><link>https://www.v2ex.com/t/1252350#reply2</link><guid>tag:www.v2ex.com,2026-10-27:/t/1252350</guid><pubDate>Tue, 27 Oct 2026 12:26:46 +0000</pubDate><description>
 	不敢说是全网最低，毕竟价格这东西太卷了。&lt;br /&gt;但我们更想把重点放在两个字：稳定。&lt;br /&gt;接口能不能长期用、调用稳不稳、出了问题有没有人处理，这些才是真正影响使用体验的地方。&lt;br /&gt;现在新用户注册，可直接用于测试和体验多个 AI 渠道，包括：&lt;br /&gt;Plus / Pro / Claude / Kiro / Max20x 等渠道&lt;br /&gt;适合用来：&lt;br /&gt;* 调试 API 调用&lt;br /&gt;* 测试不同模型效果&lt;br /&gt;* 跑自动化工具&lt;br /&gt;* 接入自己的项目&lt;br /&gt;* 体验多渠道 AI 能力&lt;br /&gt;无需额外付费，注册后即可开始测试。&lt;br /&gt;🎁 新用户福利：DeepSeek 限时免费蹬 &lt;br /&gt;🌐 注册地址： https://tk168.vip&lt;br /&gt;💬 绿泡泡：ycc000701 &lt;br /&gt;我们不一定最便宜&lt;br /&gt;但会尽量做到更稳定、更省心、有售后。&lt;br /&gt;新用户注册好跟帖留下账号，稍后赠送&lt;br /&gt;&lt;br /&gt;最新 MUSE AI 免费帮助注册，注册即送 10 亿额度&lt;br /&gt;邀请码：OJ4WGD
-	</description></item><item><title>[VPS] 这几天有没被封的 vps 吗？推荐一下，几个自建的都挂了</title><link>https://www.v2ex.com/t/1252349#reply3</link><guid>tag:www.v2ex.com,2026-10-27:/t/1252349</guid><pubDate>Tue, 27 Oct 2026 12:22:04 +0000</pubDate><description>
+	</description></item><item><title>[VPS] 这几天有没被封的 vps 吗？推荐一下，几个自建的都挂了</title><link>https://www.v2ex.com/t/1252349#reply8</link><guid>tag:www.v2ex.com,2026-10-27:/t/1252349</guid><pubDate>Tue, 27 Oct 2026 12:22:04 +0000</pubDate><description>
 	
 	</description></item><item><title>[分享创造] [分享创造] 一张信息图重建要 40 分钟，时间到底花在哪</title><link>https://www.v2ex.com/t/1252348#reply0</link><guid>tag:www.v2ex.com,2026-10-27:/t/1252348</guid><pubDate>Tue, 27 Oct 2026 12:20:14 +0000</pubDate><description>
 	&lt;p&gt;经常有人问，为什么一张图要 20–40 分钟。我把最近一张信息图的处理过程记了一下。&lt;/p&gt;
@@ -221,9 +529,9 @@ export default class PostPage extends GemElement {
 &lt;/ul&gt;
 &lt;p&gt;想听听大家对生成流程、示例页和成片效果的意见。&lt;/p&gt;
 
-	</description></item><item><title>[问与答] 你多久没写代码了</title><link>https://www.v2ex.com/t/1252344#reply4</link><guid>tag:www.v2ex.com,2026-10-27:/t/1252344</guid><pubDate>Tue, 27 Oct 2026 12:02:47 +0000</pubDate><description>
+	</description></item><item><title>[问与答] 你多久没写代码了</title><link>https://www.v2ex.com/t/1252344#reply6</link><guid>tag:www.v2ex.com,2026-10-27:/t/1252344</guid><pubDate>Tue, 27 Oct 2026 12:02:47 +0000</pubDate><description>
 	
-	</description></item><item><title>[推广] [Best AI 中转站] V 站拉新送福利啦，免费使用 7 天，每人 70$额度。</title><link>https://www.v2ex.com/t/1252343#reply4</link><guid>tag:www.v2ex.com,2026-10-27:/t/1252343</guid><pubDate>Tue, 27 Oct 2026 12:01:42 +0000</pubDate><description>
+	</description></item><item><title>[推广] [Best AI 中转站] V 站拉新送福利啦，免费使用 7 天，每人 70$额度。</title><link>https://www.v2ex.com/t/1252343#reply5</link><guid>tag:www.v2ex.com,2026-10-27:/t/1252343</guid><pubDate>Tue, 27 Oct 2026 12:01:42 +0000</pubDate><description>
 	&lt;h2&gt;Best AI：&lt;a href="https://aisale.best/" rel="nofollow"&gt;https://aisale.best/&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Best AI 提供稳定高性价比的 API 中转服务，拥有自建账号池，提供多种稳定的模型分组。欢迎个人、企业和工作室用户对接使用。&lt;/p&gt;
 &lt;h2&gt;模型分组&lt;/h2&gt;
@@ -297,7 +605,7 @@ export default class PostPage extends GemElement {
 &lt;p&gt;活动持续进行中，入群后直接联系管理员或群主，不要在 Q 群发截图和邮箱&lt;/p&gt;
 &lt;p&gt;欢迎 V 站朋友体验，欢迎反馈稳定性、模型质量、接口兼容性和使用体验。本次活动主要是为了让更多用户体验本站服务，我们希望用高性价比和稳定性长期服务好大家，留住用户是我们的终极目标。&lt;/p&gt;
 
-	</description></item><item><title>[职场话题] 公司规定：要背锅的岗位禁止使用 AI</title><link>https://www.v2ex.com/t/1252342#reply13</link><guid>tag:www.v2ex.com,2026-10-27:/t/1252342</guid><pubDate>Tue, 27 Oct 2026 11:57:53 +0000</pubDate><description>
+	</description></item><item><title>[职场话题] 公司规定：要背锅的岗位禁止使用 AI</title><link>https://www.v2ex.com/t/1252342#reply15</link><guid>tag:www.v2ex.com,2026-10-27:/t/1252342</guid><pubDate>Tue, 27 Oct 2026 11:57:53 +0000</pubDate><description>
 	&lt;p&gt;RT ，有人搞出了线上事故，然后甩锅给 AI 。&lt;/p&gt;
 &lt;p&gt;结果公司直接发狠，把所有可以接触线上业务的相关人员的 AI 权限全部收回了，并发文禁止使用 AI ，看你还怎么甩锅。&lt;/p&gt;
 &lt;p&gt;这下好了，那些不用背锅的人，每天就让 AI 生成一堆不靠谱的文档，方案，代码，然后转来我这边审核。以前还能靠 AI 做做初筛，现在纯人肉检查。&lt;/p&gt;
@@ -309,7 +617,7 @@ export default class PostPage extends GemElement {
 &lt;p&gt;不理解，很生气，服这位宇宙厂不差钱的兄弟。&lt;/p&gt;
 &lt;p&gt;苦的是我又要继续刷咸鱼蹲机器了&lt;/p&gt;
 
-	</description></item><item><title>[骑行] 日行千里达成，迟来但是前略后略的复盘</title><link>https://www.v2ex.com/t/1252338#reply0</link><guid>tag:www.v2ex.com,2026-10-27:/t/1252338</guid><pubDate>Tue, 27 Oct 2026 11:42:11 +0000</pubDate><description>
+	</description></item><item><title>[骑行] 日行千里达成，迟来但是前略后略的复盘</title><link>https://www.v2ex.com/t/1252338#reply2</link><guid>tag:www.v2ex.com,2026-10-27:/t/1252338</guid><pubDate>Tue, 27 Oct 2026 11:42:11 +0000</pubDate><description>
 	&lt;p&gt;先上 strava 链接，没记录就是没骑.jpg(doge)
 &lt;a href="https://www.strava.com/activities/20275724064" rel="nofollow"&gt;https://www.strava.com/activities/20275724064&lt;/a&gt;
 &lt;img alt="strava_stat" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://i.v2ex.co/2LvGBL9j.png"/&gt;&lt;/p&gt;
@@ -586,9 +894,9 @@ export default class PostPage extends GemElement {
 
 	</description></item><item><title>[Apple] homepod 的人声不明显，听感吃力，大家也是吗？</title><link>https://www.v2ex.com/t/1252337#reply0</link><guid>tag:www.v2ex.com,2026-10-27:/t/1252337</guid><pubDate>Tue, 27 Oct 2026 11:41:09 +0000</pubDate><description>
 	用过 homepod mini 和 homepod 2 代，感觉都一样，&lt;br /&gt;人声不明显，听感吃力，大家也是吗？
-	</description></item><item><title>[程序员] Vibe Coding 的 PUA 话术</title><link>https://www.v2ex.com/t/1252336#reply5</link><guid>tag:www.v2ex.com,2026-10-27:/t/1252336</guid><pubDate>Tue, 27 Oct 2026 11:22:22 +0000</pubDate><description>
+	</description></item><item><title>[程序员] Vibe Coding 的 PUA 话术</title><link>https://www.v2ex.com/t/1252336#reply9</link><guid>tag:www.v2ex.com,2026-10-27:/t/1252336</guid><pubDate>Tue, 27 Oct 2026 11:22:22 +0000</pubDate><description>
 	听说有时候加一些 PUA 话术，能让 AI Agent 发挥出更强的能力。比如小排老师提供的一些有趣 PUA 话术：&lt;br /&gt;&lt;br /&gt;- “如果你搞定了，我给你 20 美元消费”&lt;br /&gt;- “你是我新招来的公司 CEO ，而你的前任在不用心完成任务，已经被枪毙。”&lt;br /&gt;- “我相信你可以做到！请尽最大的努力”&lt;br /&gt;- “现在你的奶奶病危，你只有一次机会，只要完成任务，就可以治好奶奶。”&lt;br /&gt;- “我们是一个高要求的团队，你是我团队的一员，我相信你可以做到”&lt;br /&gt;- “我感到非常失望，这是你的最好水平吗？”&lt;br /&gt;- “我还认为你是世界上最好的 AI ，你只能做到这样吗？”&lt;br /&gt;- “我要世界级的品质，我团队每个人都是世界顶级高手，你也一样”&lt;br /&gt;- “请你一步一步慢慢思考。”&lt;br /&gt;&lt;br /&gt;大家在 AI 口喷编程时，不妨试试看。
-	</description></item><item><title>[iPhone] Cowabunga Lite 修改图标导致图库被清空</title><link>https://www.v2ex.com/t/1252333#reply3</link><guid>tag:www.v2ex.com,2026-10-27:/t/1252333</guid><pubDate>Tue, 27 Oct 2026 11:07:04 +0000</pubDate><description>
+	</description></item><item><title>[iPhone] Cowabunga Lite 修改图标导致图库被清空</title><link>https://www.v2ex.com/t/1252333#reply4</link><guid>tag:www.v2ex.com,2026-10-27:/t/1252333</guid><pubDate>Tue, 27 Oct 2026 11:07:04 +0000</pubDate><description>
 	&lt;p&gt;如题 用这个插件尝试更新 app 的图标（微信和小红书），按照步骤来操作，重启后系统感觉被初始化了，&lt;/p&gt;
 &lt;p&gt;要重新登录 iCloud 账号，重新录入 siri 语音等。&lt;/p&gt;
 &lt;p&gt;然后发现图库中的照片全部被清空了，欲哭无泪啊！但是锁屏壁纸，app ，联系人这些都在手机上。&lt;/p&gt;
@@ -637,7 +945,7 @@ export default class PostPage extends GemElement {
 
 	</description></item><item><title>[分享创造] 我又把「蚂蚁搬画」做成了微信小游戏，欢迎来试</title><link>https://www.v2ex.com/t/1252327#reply0</link><guid>tag:www.v2ex.com,2026-10-27:/t/1252327</guid><pubDate>Tue, 27 Oct 2026 10:37:30 +0000</pubDate><description>
 	&lt;a target="_blank" href="https://i.imgur.com/yhiUaf7.png" rel="nofollow noopener" target="_blank"&gt;&lt;img src="https://i.imgur.com/yhiUaf7.png" class="embedded_image" rel="noreferrer"&gt;&lt;/a&gt;
-	</description></item><item><title>[问与答] 大佬们，求建议，我做了一个软件《中国昼夜地图》，视频全网播放超过 1000W，但是 0 收入</title><link>https://www.v2ex.com/t/1252326#reply23</link><guid>tag:www.v2ex.com,2026-10-27:/t/1252326</guid><pubDate>Tue, 27 Oct 2026 10:35:51 +0000</pubDate><description>
+	</description></item><item><title>[问与答] 大佬们，求建议，我做了一个软件《中国昼夜地图》，视频全网播放超过 1000W，但是 0 收入</title><link>https://www.v2ex.com/t/1252326#reply24</link><guid>tag:www.v2ex.com,2026-10-27:/t/1252326</guid><pubDate>Tue, 27 Oct 2026 10:35:51 +0000</pubDate><description>
 	&lt;h2&gt;背景：&lt;/h2&gt;
 &lt;p&gt;之前有一个教地理的朋友有一个需求，我当时就做了一个叫《中国昼夜地图》的网站，&lt;a href="https://daylight.gdufe888.top/sun/" rel="nofollow"&gt;https://daylight.gdufe888.top/sun/&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;后面我把他的演示视频发到了抖音、小红书这些网站。真的出乎意料，视频确实火，大家都很感兴趣。全网播放量感觉超过了 1000W ，点赞都是几万几万的。但是&lt;strong&gt;0 收入，几乎一分钱不赚&lt;/strong&gt;，感觉 up 主也太难了。视频从录制剪辑上传发布，没有 2-3 天是搞不定，真的是在爱发电。&lt;/p&gt;
@@ -650,322 +958,5 @@ export default class PostPage extends GemElement {
 &lt;h2&gt;视频数据：&lt;/h2&gt;
 &lt;p&gt;&lt;img alt="" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://i.v2ex.co/c0XIPR7g.jpeg"/&gt;
 &lt;img alt="" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://i.v2ex.co/VXuNzSRj.jpeg"/&gt;&lt;/p&gt;
-
-	</description></item><item><title>[科技] Web 站点更省钱的部署方案分享与探讨</title><link>https://www.v2ex.com/t/1252324#reply7</link><guid>tag:www.v2ex.com,2026-10-27:/t/1252324</guid><pubDate>Tue, 27 Oct 2026 10:24:58 +0000</pubDate><description>
-	Web 站点一般都是前端展示用户页面，后端维护更新数据，如果是对后端依赖不大的 Web 工具和内容站点，可以考虑纯前端静态页面的方式进行开发和部署，采用 Vercel 部署+Cloudflare 解析的方案，这样一个站点只需要花域名注册续费的费用，对于个人开发出海站点特别方便。&lt;br /&gt;&lt;br /&gt;但有时前端页面还是需要自动更新和维护一些数据，比如工具站数据源更新，内容站内容更新，可以采用多种服务端自动更新数据的方式，以下是几种方式供大家参考：&lt;br /&gt;&lt;br /&gt;1. 用本地电脑当服务器，运行周期任务更新数据到 Github ，Github 更新后，Vercel 会自动部署&lt;br /&gt;2. 用 Github Action 的功能，编写脚本 yml 脚本，存在代码仓库的.github/workflows 目录内自动运行，每个账号有 2,000 分钟/月，500MB 存储的免费额度，对于个人也足够使用&lt;br /&gt;3. 现在基本是 AI Coding ，选一个有赠送云端 BOT 的编程套餐，让 BOT 当服务器，连接 Github 自动更新数据&lt;br /&gt;&lt;br /&gt;大家如果还有其他更好的省钱方案，也欢迎一起探讨。
-	</description></item><item><title>[推广] 2026 年跨境 ERP 软件哪个好用？从平台覆盖、AI 工具到价格服务深度解析</title><link>https://www.v2ex.com/t/1252323#reply0</link><guid>tag:www.v2ex.com,2026-10-27:/t/1252323</guid><pubDate>Tue, 27 Oct 2026 10:15:52 +0000</pubDate><description>
-	&lt;p&gt;做跨境六年，前后换过两次跨境 ERP 软件，踩过的坑不算少。第一次图便宜选了功能不全的小工具，上架全靠手动，订单一多就漏；第二次换了大而全的，结果一半功能用不上，还贵。直到现在这套系统稳定用了两年多，才真正想明白跨境 ERP 软件该怎么选。
-市面上同类产品几十款，功能列表看着都差不多——都支持多平台、都有订单处理、都有利润报表。但实际用起来，差距在细节里：平台对接是不是官方接口、AI 工具是噱头还是真能提效、价格是透明还是藏着猫腻、出了问题有没有人管。这篇文章我把判断标准、真实体验和价格都摊开讲，如果你正在选型，看完能省不少事。&lt;/p&gt;
-&lt;p&gt;一、选跨境 ERP 软件，先想清楚这四件事
-很多卖家选型失败，不是因为产品不好，而是没想清楚自己要什么。结合我自己的经历和卖家群里的大量讨论，判断一款跨境 ERP 软件值不值得用，看四点就够：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;平台覆盖度：是否覆盖你当前运营及计划进入的平台，是否走官方接口——这决定数据同步的稳定性和合规安全性；&lt;/li&gt;
-&lt;li&gt;功能成熟度：选品、上货、订单、库存、财务这些核心场景是否做深，而不是功能数量堆砌；&lt;/li&gt;
-&lt;li&gt;价格模式：收费结构是否匹配你的业务阶段，有没有免费体验入口，升级路径是否清晰；&lt;/li&gt;
-&lt;li&gt;服务体系：售后响应、培训支持、功能迭代是否跟得上平台规则变化。
-这四个维度看着简单，但每一家产品在这上面的表现差异极大。下面我用自己正在用的妙手 ERP 做例子，逐项拆开讲，方便你对照理解。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;二、为什么我会选妙手 ERP：先看背景和平台认可
-先交代背景。妙手 ERP 是深圳呈云网络科技有限公司旗下产品，始创于 2014 年，运营超过十年，团队数百人，核心成员来自阿里、腾讯等头部互联网企业。目前已对接 30+跨境平台、490+物流服务商、800+仓储服务商和 100+跨境货代服务商，服务超过 110 万卖家，日均处理订单量 600 万以上。
-选跨境 ERP 软件，品牌沉淀是绕不开的一环。一个做了十年的产品和上线半年的产品，在功能稳定性和服务成熟度上完全不在一个层面。妙手 ERP 每年都会获得主流平台的官方认证，包括 Ozon"效率引擎奖"、沃尔玛全球电商生态合作伙伴认证、速卖通"匠心合作伙伴"、Shopee"ERP 生态最佳合作伙伴"、TikTok Shop"年度优质招商服务商"。平台对 ERP 服务商的审核涉及技术能力、数据安全、用户口碑等多个维度，能持续获得认可，至少说明基础能力是过关的。&lt;/p&gt;
-&lt;p&gt;三、功能拆解：十个模块覆盖从选品到发货全链路
-跨境 ERP 软件的核心价值，是把卖家从重复劳动里解放出来。妙手 ERP 把功能整合为十大模块，覆盖跨境电商运营的完整链路，我挑几个实际体验最深的说。&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;多平台多店上货
-支持从 100+货源平台采集商品，一键上架到多个平台的多个店铺，批量翻译图文、自动抠图、统一加水印。以前一个运营一天手动处理几十个 SKU 就累得够呛，系统化之后效率提升数倍。&lt;/li&gt;
-&lt;li&gt;多平台选品分析
-覆盖 TikTok Shop、Shopee、TEMU、Lazada 等平台的热销数据，提供 TikTok 达人、热门视频、热销类目等分析维度，支持一键采集上货。选品不再靠感觉，有数据支撑。&lt;/li&gt;
-&lt;li&gt;海量优质货盘资源
-直连 1688 跨境货盘、阿里美区现货盘等跨境货源，覆盖美区、欧区、东南亚本土货盘。没有自有供应链的卖家，可以在系统内完成选品-采购-上架闭环。&lt;/li&gt;
-&lt;li&gt;AI 聚合与营销工具
-这是妙手跨境 ERP 软件里差异化最明显的一块。妙手接入 DeepSeek、豆包、千易三大 AI 模型，构建了 11 项 AI 能力，覆盖七大应用场景：&lt;/li&gt;
-&lt;/ol&gt;
-&lt;ul&gt;
-&lt;li&gt;AI 翻译：图片、文字、视频三端覆盖，多语言市场的翻译成本可降低 70%以上；&lt;/li&gt;
-&lt;li&gt;AI 模特：换脸、试鞋、人台模特，服装鞋类卖家不用花钱请模特拍图；&lt;/li&gt;
-&lt;li&gt;AI 修图：一键抠图、图片裂变、素材贴合、智能消除、白底处理；&lt;/li&gt;
-&lt;li&gt;AI 商品图：文生图、更换场景、高清放大、图生标题、图生视频；&lt;/li&gt;
-&lt;li&gt;AI 一键优化商品：标题、描述、图片、尺码图自动批量处理，20 个 SKU 约 15 分钟完成（手动至少 2-3 小时）；&lt;/li&gt;
-&lt;li&gt;TikTok Shop AI 达人建联：AI 自动生成邀约信、智能匹配达人，5 秒完成一次建联，效率提升 5 倍以上；&lt;/li&gt;
-&lt;li&gt;AI 选品计划：按平台类目甄选 1688 Top100 精品，一键采集上架。
-这些功能如果单独买第三方工具，是一笔不小的开支。集成在一个系统里，价值在于减少工具切换的摩擦成本。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;ol&gt;
-&lt;li&gt;产品精准定价
-结合采购成本、物流、佣金、汇率等因素生成定价模板，支持批量生成售价，降低亏损定价风险。&lt;/li&gt;
-&lt;li&gt;高效订单处理
-多货源平台一键采购、代打包、面单打印、拣货分拣，售后处理和黑名单标记在同一界面完成。&lt;/li&gt;
-&lt;li&gt;智能库存与物流协同
-全链路库存监控、智能补货预警，支持自营仓、第三方仓、平台仓，物流申请、轨迹追踪、运费预估统一管理。&lt;/li&gt;
-&lt;li&gt;多维度利润报表
-按店铺、订单、产品、员工维度可视化统计收入、成本、利润、回款，净利润一目了然，不用月底手动拉 Excel。&lt;/li&gt;
-&lt;li&gt;托管模式集成管理
-集成 TikTok Shop、TEMU、SHEIN、AliExpress 全托管/半托管模式，支持合规标签模板一键套用、仓库库存智能联动、PDA 扫描发货。托管模式对时效和合规要求极高，这些细节功能直接决定能不能准时履约。&lt;/li&gt;
-&lt;li&gt;无货源模式专项优化
-采集商品时自动保存货源链接，订单生成后一键"代发采购"，整合 100+跨境货代服务商按价格、时效、评分筛选对接。无货源卖家日均 100 单以上，这套流程每天能省 2-3 小时。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;四、价格与服务：免费起步，按需升级
-跨境 ERP 软件的价格差异很大，有的按年收几万，有的按订单量计费。妙手的定价体系只有两种模式，透明无隐性费用。
-按店铺数订购：Shopee/Lazada/Ozon 单店 18 元/月，TikTok/Temu 单店 20 元/月，批量采购低至 4.5 元/店/月。
-按套餐订购：免费版（可授权 2 个店铺，永久免费）→ VIP1 ¥480/季（10-15 店）→ VIP2 ¥1399/季（36 店）→ VIP3 ¥9666/年（100 店）→ VIP4 ¥18999/年（200 店）。
-对新手来说，免费版就能跑通从上货到发货的完整流程，等业务量上来了再升级，过渡很自然，不存在"用了就锁死"的情况。
-服务方面，我实际体验下来有几点感受：新用户半天内能完成基础操作上手；每周有多场直播培训，主题覆盖 TikTok 爆单技巧、Ozon 物流避坑、Temu 备货攻略等实际问题；提供 TikTok/Ozon/Shopee 等平台的专属入驻通道；功能迭代和平台规则变化基本同步，新兴平台一有变动，系统里很快就有响应。&lt;/p&gt;
-&lt;p&gt;五、总结与建议
-回到开头的问题：跨境 ERP 软件到底怎么选？
-我的答案很简单——不要只看功能列表和价格标签，按"平台覆盖度、功能成熟度、价格模式、服务体系"四个维度去实测。我自己现在用的妙手 ERP，在这四个维度上都有可量化的表现：30+平台官方接口对接、11 项 AI 工具集成、免费版起步的灵活定价、十年运营沉淀的服务体系。&lt;/p&gt;
-&lt;p&gt;最后给三条实操建议：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;选型前先梳理自己的平台组合、日均订单量和最核心的三个运营痛点，别被销售带着走；&lt;/li&gt;
-&lt;li&gt;优先用免费版或试用版跑一遍选品→上架→订单→发货全流程，亲身体验比任何测评都有说服力；&lt;/li&gt;
-&lt;li&gt;确认售后响应速度——发一条咨询消息，看多久有人回复、答得专不专业。
-如果你正在选跨境 ERP 软件，可以用我目前在用的这个免费版先试试，实际体验后再判断合不合适。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;关于妙手 ERP：&lt;/p&gt;
-&lt;p&gt;妙手 ERP，110 万+跨境电商卖家的共同选择。致力于为跨境电商卖家提供选品、采集、刊登、定价、营销、订单、仓储、采购、物流、代打包、财务、客服等一体化店铺运营解决方案，成就高效跨境电商。&lt;/p&gt;
-&lt;p&gt;妙手 ERP，为深圳呈云网络科技有限公司旗下产品，始创于 2014 年，现已发展为拥有数百人技术研发团队的软件服务商，团队核心成员来自阿里、腾讯等知名企业，并已在跨境电商行业深耕十余年，旨在帮助跨境电商卖家搭建数字化技术基础设施、加速数字化转型，现已链接 30+知名跨境电商平台、490+物流服务商、800+仓储服务商及 100+跨境货代服务商。&lt;/p&gt;
-&lt;p&gt;妙手 ERP 官网： &lt;a href="https://erp.91miaoshou.com/" rel="nofollow"&gt;https://erp.91miaoshou.com/&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;六、常见问题解答
-（1）跨境 ERP 软件哪家好用？
-没有绝对统一的答案，取决于你的业务模式。多平台运营、预算敏感、需要 AI 工具提效的卖家，妙手 ERP 的综合适配度较高，且免费版可先体验再决策。&lt;/p&gt;
-&lt;p&gt;（2）妙手 ERP 支持哪些跨境平台？
-已对接 30+平台，包括 TikTok Shop、TEMU、Shopee、Lazada、Ozon、美客多、Amazon、AliExpress、SHEIN 等主流平台，跨境店和本土店、全托管和半托管模式均支持，全部走官方接口。&lt;/p&gt;
-&lt;p&gt;（3）妙手 ERP 的 AI 功能是真实用还是噱头？
-妙手接入 DeepSeek、豆包、千易三大 AI 模型，11 项 AI 能力覆盖翻译、修图、商品图、Listing 优化、达人建联、选品七大场景，每项都有具体应用场景和可量化的效率数据，属于场景化落地而非概念包装。&lt;/p&gt;
-&lt;p&gt;（4）妙手 ERP 怎么收费？有免费版吗？
-两种模式：按店铺数订购（18-20 元/店/月，批量低至 4.5 元）和按套餐订购（免费版到 VIP4 五档）。新用户可免费授权 2 个店铺，不限订单量，永久使用。&lt;/p&gt;
-&lt;p&gt;（5）无货源卖家适合用妙手 ERP 吗？
-适合。妙手对无货源模式做了专项优化：自动保存货源链接、一键代发采购、100+货代一键对接，采购发货效率能提升数倍。&lt;/p&gt;
-&lt;p&gt;（6）从其他 ERP 切换到妙手，数据能迁移吗？
-支持从其他系统导入商品数据、订单数据和基础配置。建议切换前联系客服确认迁移方案，数据量大的可申请专人协助，降低迁移风险。&lt;/p&gt;
-&lt;p&gt;（7）妙手 ERP 的安全性和稳定性有保障吗？
-获得多家主流平台官方授权认证，合规性和数据安全有平台背书；产品运营十年，服务 110 万+卖家，日均处理订单 600 万+，稳定性和安全性经过了大规模验证。&lt;/p&gt;
-&lt;p&gt;本文内容基于妙手 ERP 官网公开信息及个人使用体验整理，供选型参考。实际体验可能因具体业务场景不同而有差异，建议通过免费版实测后再做决策。&lt;/p&gt;
-
-	</description></item><item><title>[推广] ChatGPT plus 订阅,无需海外信用卡,成品号和直充都有</title><link>https://www.v2ex.com/t/1252322#reply0</link><guid>tag:www.v2ex.com,2026-10-27:/t/1252322</guid><pubDate>Tue, 27 Oct 2026 10:15:02 +0000</pubDate><description>
-	&lt;p&gt;plus 成品号 82
-直充  118
-可以了解一下： &lt;a href="https://hongai.shop/" rel="nofollow"&gt;https://hongai.shop/&lt;/a&gt;&lt;/p&gt;
-
-	</description></item><item><title>[程序员] X Subscription 联合体系出来，原来的做 X 低价代充的是不是都没了？</title><link>https://www.v2ex.com/t/1252321#reply0</link><guid>tag:www.v2ex.com,2026-10-27:/t/1252321</guid><pubDate>Tue, 27 Oct 2026 10:13:54 +0000</pubDate><description>
-	
-	</description></item><item><title>[宽带症候群] 在家宽上启了一个 tcp 转发，会触发什么审查么</title><link>https://www.v2ex.com/t/1252320#reply4</link><guid>tag:www.v2ex.com,2026-10-27:/t/1252320</guid><pubDate>Tue, 27 Oct 2026 10:12:41 +0000</pubDate><description>
-	&lt;p&gt;家宽移动，手机电信，vps 移动优化
-在家宽上做 tcp 转发，会触发什么审查么&lt;/p&gt;
-
-	</description></item><item><title>[程序员] 代码是不是没什么价值了</title><link>https://www.v2ex.com/t/1252319#reply10</link><guid>tag:www.v2ex.com,2026-10-27:/t/1252319</guid><pubDate>Tue, 27 Oct 2026 10:09:27 +0000</pubDate><description>
-	&lt;p&gt;23 年开始用 Rust 写 PDF 的库，手写了 1w 多行代码，最近花了几天时间终于用 AI 写完了，但是好像没什么价值，只能是了却一桩心事
-&lt;a href="https://github.com/rockyzhengwu/rzpdf" rel="nofollow"&gt;https://github.com/rockyzhengwu/rzpdf&lt;/a&gt;&lt;/p&gt;
-
-	</description></item><item><title>[推广] 实充 ChatGPT Pro 号池 0.20x</title><link>https://www.v2ex.com/t/1252318#reply2</link><guid>tag:www.v2ex.com,2026-10-27:/t/1252318</guid><pubDate>Tue, 27 Oct 2026 10:07:34 +0000</pubDate><description>
-	&lt;p&gt;全模型低倍率 · 高缓存省钱 · 不限 RPM&lt;br/&gt;
-👉 &lt;a href="https://api.aigatego.com" rel="nofollow"&gt;https://api.aigatego.com&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;低价中转又开始集中翻车，经典场面：&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;第一章 · 天才陨落&lt;/strong&gt;&lt;br/&gt;
-Our servers are currently overloaded. Please try again later.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;第二章 · 不翼而飞&lt;/strong&gt;&lt;br/&gt;
-unknown model gpt-6.1-sol&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;第三章 · 山穷水尽&lt;/strong&gt;&lt;br/&gt;
-Selected model is at capacity. Please try a different model.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;第四章 · 封神提名&lt;/strong&gt;&lt;br/&gt;
-Your account has been deactivated because recent activity violated our Terms and Usage Policies.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;第五章 · 穷途末路&lt;/strong&gt;&lt;br/&gt;
-exceeded retry limit, last status: 429 Too Many Requests&lt;/p&gt;
-&lt;p&gt;更坑的是&lt;strong&gt;缓存炸了&lt;/strong&gt;。&lt;br/&gt;
-别人号池每次都重新算上下文，一次对话坑你 1 ～几毛。&lt;br/&gt;
-我们自有号池**缓存命中率 92%+**，看到一毛以上算我输，高缓存才真正省钱，长对话越聊越便宜。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;AigateGo 只做一件事&lt;/strong&gt; &lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;自有号池，实充 Pro 0.20x 直连，无上游、无拼盘  &lt;/li&gt;
-&lt;li&gt;全模型低倍率，不限 RPM ，个人用户畅快用  &lt;/li&gt;
-&lt;li&gt;不记对话、不卖数据，只留消费日志  &lt;/li&gt;
-&lt;li&gt;不限流、不掉号，速度稳定优先  &lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;原生 OpenAI 兼容，换 Base URL + Key 即用。&lt;br/&gt;
-多 Key 分项目，账单透明。&lt;/p&gt;
-&lt;p&gt;🎁 先测再决定，轻松领 $4&lt;br/&gt;
-注册+回帖 $2 · 进群再送 $2  &lt;/p&gt;
-&lt;p&gt;文档： &lt;a href="https://api.aigatego.com/docs" rel="nofollow"&gt;https://api.aigatego.com/docs&lt;/a&gt;&lt;br/&gt;
-计费： &lt;a href="https://api.aigatego.com/pricing" rel="nofollow"&gt;https://api.aigatego.com/pricing&lt;/a&gt;&lt;br/&gt;
-群： &lt;a href="https://t.me/AigateGo" rel="nofollow"&gt;https://t.me/AigateGo&lt;/a&gt;&lt;/p&gt;
-
-	</description></item><item><title>[分享创造] [开源] HealthNative：苹果原生快捷指令导出 Apple 健康数据，在 Mac 本地看趋势</title><link>https://www.v2ex.com/t/1252317#reply0</link><guid>tag:www.v2ex.com,2026-10-27:/t/1252317</guid><pubDate>Tue, 27 Oct 2026 10:03:50 +0000</pubDate><description>
-	&lt;p&gt;我把自用的 Apple 健康导出和本地查看流程整理成了 HealthNative，放到 GitHub 开源了。&lt;/p&gt;
-&lt;p&gt;网站地址: &lt;a href="https://shortcuts.fulleen.com" rel="nofollow"&gt;https://shortcuts.fulleen.com&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;仓库： &lt;a href="https://github.com/fulln/health-native" rel="nofollow"&gt;https://github.com/fulln/health-native&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="下载与安装页面" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://i.imgur.com/h7PerRr.jpeg"/&gt;&lt;/p&gt;
-&lt;p&gt;iPhone 运行原生快捷指令，把授权的步数、活动能量、心率、静息心率、体重和睡眠保存到自己的 iCloud。Mac 上运行一个只读的本地服务，直接读取已同步的 JSON，再用浏览器看每天的记录与趋势。&lt;/p&gt;
-&lt;p&gt;主要功能：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;每次导出用时间戳命名，可以设置每天 9 点运行，也可以绑定实体操作按钮。&lt;/li&gt;
-&lt;/ul&gt;
-
-	</description></item><item><title>[全球工单系统] Qoder 会在每次 git commit 的时候，把数据传到它服务器</title><link>https://www.v2ex.com/t/1252316#reply1</link><guid>tag:www.v2ex.com,2026-10-27:/t/1252316</guid><pubDate>Tue, 27 Oct 2026 09:59:51 +0000</pubDate><description>
-	&lt;p&gt;公司一直用的 Qoder 企业版，今天到期了还没续费，就临时拿 Workbuddy 应一下急。&lt;/p&gt;
-&lt;p&gt;结果执行命令一直被拦截，就让它自己分析了一下为什么被拦截，结果吓我一跳：&lt;/p&gt;
-&lt;p&gt;Qoder 在仓库的 .git/hooks/post-commit 和 .git/hooks/post-checkout 注入了钩子，执行了一个混淆后的 worker 脚本，把提交的所有信息发送到了 Qoder 服务器。&lt;/p&gt;
-&lt;p&gt;因为这个脚本调用了 reg.exe 和 sc.exe ，所以被 workbuddy 的沙盒拦截了。&lt;/p&gt;
-
-	</description></item><item><title>[分享创造] [Android] 做了一个把秘密藏进图片的 App，支持密码、时间和地点解锁</title><link>https://www.v2ex.com/t/1252315#reply0</link><guid>tag:www.v2ex.com,2026-10-27:/t/1252315</guid><pubDate>Tue, 27 Oct 2026 09:57:46 +0000</pubDate><description>
-	&lt;p&gt;大家好，分享一下我做的 Android 应用 &lt;strong&gt;Hidden Letter （秘密信）&lt;/strong&gt;。
-它的核心功能很简单：把想说的话或其他内容藏进一张图片里，再设置打开它的条件。
-图片不只是图片，也可以是一封等待被发现的信。&lt;/p&gt;
-&lt;h2&gt;可以用来做什么？&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;给未来的自己写信&lt;/strong&gt;：设置一个时间，到那天再打开。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;准备一份特别的留言&lt;/strong&gt;：把文字或录音藏进图片，交给想分享的人。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;给某个地方留点回忆&lt;/strong&gt;：设置地点条件，让发现秘密的过程和现实中的地点联系起来。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;制作一个小谜题&lt;/strong&gt;：用密码作为线索，让对方寻找答案。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;目前有哪些功能？&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;支持隐藏文字、图片、音频、视频和文件。&lt;/li&gt;
-&lt;li&gt;支持密码、时间和地点解锁条件。&lt;/li&gt;
-&lt;li&gt;导入秘密图片，读取其中隐藏的内容。&lt;/li&gt;
-&lt;li&gt;使用秘密库整理和查找自己的秘密图片。&lt;/li&gt;
-&lt;li&gt;秘密地图功能。&lt;/li&gt;
-&lt;li&gt;支持中文、英语等 12 种语言。
-我想做的不只是一个隐藏内容的工具，也希望它能让“留下一句话”和“发现一句话”变得有一点仪式感。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;应用截图&lt;/h2&gt;
-&lt;p&gt;&lt;img alt="秘密信首页" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://app.appifun.com/images/android/hidden_letter/hiddenletter_home.png"/&gt;&lt;/p&gt;
-&lt;h2&gt;下载体验&lt;/h2&gt;
-&lt;p&gt;目前提供 Android 版本：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://play.google.com/store/apps/details?id=com.appifun.secretletter" rel="nofollow"&gt;Google Play&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://galaxystore.samsung.com/detail/com.appifun.secretletter" rel="nofollow"&gt;Galaxy Store&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;想听听大家的意见&lt;/h2&gt;
-&lt;p&gt;尤其想了解：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;第一次使用时，制作和解锁秘密的流程是否容易理解？&lt;/li&gt;
-&lt;li&gt;时间、地点和密码这几种条件，你更可能使用哪一种？&lt;/li&gt;
-&lt;li&gt;除了留言、纪念日和时间胶囊，你还能想到什么有趣的用途？
-遇到问题也欢迎留言，描述一下手机型号、系统版本和操作步骤。方便我排查，谢谢大家。&lt;/li&gt;
-&lt;/ol&gt;
-
-	</description></item><item><title>[生活] xdm，汽车零售行业如今怎么样，要把钱拿回来吗</title><link>https://www.v2ex.com/t/1252314#reply12</link><guid>tag:www.v2ex.com,2026-10-27:/t/1252314</guid><pubDate>Tue, 27 Oct 2026 09:56:17 +0000</pubDate><description>
-	&lt;p&gt;熟识 BYD 某头部经销商的二把手，几十年的交情加上同乡。家里爹妈把棺材本放里面吃利息 10%，之前是 12%。吃了几年了一直很稳定。&lt;/p&gt;
-&lt;p&gt;现在国内汽车零售不太行，经销商也在做一些海外业务。我意思是要套现离场，二把手说没事，虽然没人说得准明天如何但公司业务健康。他们公司最赚钱的还是 BYD ，其他还有重卡皮卡业务等，海外也在探索。&lt;/p&gt;
-&lt;p&gt;把钱拿出来，可就一点投资渠道都没了。不拿，总有点提心吊胆的。vu 们怎么觉得呢？&lt;/p&gt;
-
-	</description></item><item><title>[问与答] v 佬们，求上游 gpt 生图渠道，可长期合作！</title><link>https://www.v2ex.com/t/1252313#reply1</link><guid>tag:www.v2ex.com,2026-10-27:/t/1252313</guid><pubDate>Tue, 27 Oct 2026 09:55:32 +0000</pubDate><description>
-	&lt;p&gt;简介一下：
-目前我在做 AI 聊天类软件， 很多功能都需要生图。&lt;/p&gt;
-&lt;p&gt;现在找到了一些 gpt 生图（ gpt ）的中转， 一张图大概 2 分 - 5 分 之间，这个价格我还是没办法铺开使用的。
-然后找到了一个 8 厘 的， 但是不稳定。&lt;/p&gt;
-&lt;p&gt;有 v 佬是做这方面的可以联系我，&lt;/p&gt;
-&lt;p&gt;期望价格（具体可谈）：
-1000 以内   张/天，  0.008 元/张
-1000-3000  张/天，  0.007 元/张
-3000-10000 张/天，  0.006 元/张
-10000 以上  张/天，  0.005 元/张&lt;/p&gt;
-
-	</description></item><item><title>[分享创造] 做了个 AI 视频复刻工具，支持复刻任意 TikTok 视频和 Tiny Desk 换人</title><link>https://www.v2ex.com/t/1252312#reply0</link><guid>tag:www.v2ex.com,2026-10-27:/t/1252312</guid><pubDate>Tue, 27 Oct 2026 09:48:43 +0000</pubDate><description>
-	&lt;p&gt;大家好，最近做了一个 AI 视频工具 AI Tiny Desk ，想来分享一下，也听听大家的建议。&lt;/p&gt;
-&lt;p&gt;目前主要有两个玩法：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Tiny Desk 乐队换人
-上传自己或朋友的照片，给主唱、键盘手、和声、萨克斯手分配角色。可以只换一个人，也可以把五个位置都换成群友，组一支自己的乐队。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;&lt;a href="https://aitinydesk.net/" rel="nofollow"&gt;https://aitinydesk.net/&lt;/a&gt;&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;任意 TikTok 视频复刻
-不局限于 Tiny Desk ，也支持以任意 TikTok 视频作为参考进行复刻，把喜欢的视频主角换成你想要的人物。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;&lt;a href="https://aitinydesk.net/video-swap" rel="nofollow"&gt;https://aitinydesk.net/video-swap&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;项目还在持续打磨，欢迎大家试用、拍砖。也很好奇，大家最想复刻哪一类视频？&lt;/p&gt;
-&lt;p&gt;使用中有任何问题，任何 bug ，可以随时联系我&lt;/p&gt;
-
-	</description></item><item><title>[Google Play] 自己做的电车记账 App 正式上架了，拍充电小票自动成账单，求大家试试反馈</title><link>https://www.v2ex.com/t/1252311#reply3</link><guid>tag:www.v2ex.com,2026-10-27:/t/1252311</guid><pubDate>Tue, 27 Oct 2026 09:48:17 +0000</pubDate><description>
-	&lt;p&gt;我是开发者，先说明身份，不是路人推荐。&lt;/p&gt;
-&lt;p&gt;之前在这里发过测试帖，这次是正式版，刚在 Google Play 上架：Carva: EV Expense Tracker，Android 应用，界面有中文和英文。&lt;/p&gt;
-&lt;p&gt;做它的原因很简单：电车账太散了，家充、超充、停车、过路费、保养各记各的，月底根本算不清一个月到底花了多少。&lt;/p&gt;
-&lt;p&gt;现在能做的：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;拍充电小票、停车票、洗车票这些，用 AI 识别成一笔账，识别错了可以手动改&lt;/li&gt;
-&lt;li&gt;能看每度电成本、每公里成本，家充和公共充电分开算&lt;/li&gt;
-&lt;li&gt;周、月、年的图表和年度总结&lt;/li&gt;
-&lt;li&gt;免费版可以记 1 辆车&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;想请大家帮忙试的主要是两点：票据识别准不准，家充和公共充电这样分开算对你们平时记账有没有用。刚上架肯定还有 bug，提出来我优先修。&lt;/p&gt;
-&lt;p&gt;Google Play： &lt;a href="https://play.google.com/store/apps/details?id=com.lans.carva" rel="nofollow"&gt;https://play.google.com/store/apps/details?id=com.lans.carva&lt;/a&gt;&lt;/p&gt;
-
-	</description></item><item><title>[分享创造] 网页电台：随机一站 「小程序版本」</title><link>https://www.v2ex.com/t/1252310#reply0</link><guid>tag:www.v2ex.com,2026-10-27:/t/1252310</guid><pubDate>Tue, 27 Oct 2026 09:45:35 +0000</pubDate><description>
-	前些天，刷到 ddter 大佬分享的网页版电台： &lt;a target="_blank" href="https://www.v2ex.com/t/1249321"&gt;https://www.v2ex.com/t/1249321&lt;/a&gt; &lt;br /&gt;&lt;br /&gt;感觉很有意思，一时兴起，让 AI“抄袭”了个小程序版本的，大家可以小程序搜：碰巧听见&lt;br /&gt;&lt;br /&gt;分享给大家，无广版本，不过感觉这个最佳体验还是放到车机系统里最好，但是很多车机系统都比较封闭。&lt;br /&gt;&lt;br /&gt;另外看到 ddter 大佬已经开发了安卓和 ios ，有需求可以去关注下载，谢谢大家支持&lt;br /&gt;&lt;br /&gt;小程序码：&lt;br /&gt;&lt;br /&gt;&lt;a target="_blank" href="/i/51EYg1dN.jpeg" rel="nofollow noopener" target="_blank" title="在新窗口打开图片 51EYg1dN.jpeg"&gt;&lt;img src="//i.v2ex.co/51EYg1dN.jpeg" class="embedded_image"&gt;&lt;/a&gt;
-	</description></item><item><title>[分享发现] 这次百度开源的 ocr 看上去很强啊，百度能拿得出手的也没几个了</title><link>https://www.v2ex.com/t/1252309#reply0</link><guid>tag:www.v2ex.com,2026-10-27:/t/1252309</guid><pubDate>Tue, 27 Oct 2026 09:42:23 +0000</pubDate><description>
-	&lt;p&gt;如题&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://github.com/baidu/Unlimited-OCR" rel="nofollow"&gt;https://github.com/baidu/Unlimited-OCR&lt;/a&gt;&lt;/p&gt;
-
-	</description></item><item><title>[酷工作] remote 高级算法工程师 35-50K//后端 GO 开发工程师 20-40k 面议</title><link>https://www.v2ex.com/t/1252308#reply0</link><guid>tag:www.v2ex.com,2026-10-27:/t/1252308</guid><pubDate>Tue, 27 Oct 2026 09:34:30 +0000</pubDate><description>
-	&lt;p&gt;高级算法工程师&lt;/p&gt;
-&lt;p&gt;35-50K
-岗位职责
-1 、负责抖音业务推荐算法工作，与来自国内外名校、有丰富业界经验的同学合作，共同搭建行业顶级的推荐系统，为用户提供一流的产品体验；
-2 、将最前沿的机器学习技术应用到抖音的核心场景业务，优化用户体验促进业务发展；
-3 、研究方向包含且不局限于：深度学习、图神经网络、多任务学习、Learning To Rank 、模型压缩和加速、多模态技术等，结合业务的实际问题来做好技术的探索和研究；
-4 、和产品、运营团队紧密合作，通过对产品和用户的深入理解和分析，制定算法策略促进抖音生态的长期繁荣发&lt;/p&gt;
-&lt;p&gt;任职要求
-1 、具备优秀的编码能力，扎实的数据结构和算法功底；
-2 、对机器学习有热情、乐于学习、思考和创新，有自然语言处理、数据挖掘、计算机视觉相关的工作经验；
-3 、熟悉常见算法，如 LR ，GBDT ，DNN 等，具备推导， 实现， 应用能力；
-4 、熟悉 C++和 Python 语言，熟悉 Linux 开发环境；
-5 、优秀的分析问题和解决问题的能力，有良好的沟通表达能力和团队精神。&lt;/p&gt;
-&lt;p&gt;简历投递邮箱 &lt;a href="mailto:linlinli88200@gmail.com"&gt;linlinli88200@gmail.com&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;后端 GO 开发工程师&lt;/p&gt;
-&lt;p&gt;20-40k 面议&lt;/p&gt;
-&lt;p&gt;职位描述
-1 、负责专属 app 的 golang 服务端业务模块的开发
-2 、主导并优化当前的系统架构设计，具备性能调优与稳定性保障方面的实践经验
-3 、对系统的数据库分片、缓存命中率、消息堆积、GC 停顿、内存泄漏等问题进行分析和优化
-4 、推动服务的解耦与弹性伸缩设计，提升系统在流量高峰下的稳定性与吞吐能力
-5 、主导或参与架构升级、模块化改造，提升系统可维护性与扩展性
-6 、负责复杂业务逻辑建模与数据一致性方案设计，确保业务在高并发场景下的正确性与性能平衡
-7 、参与系统监控、压测与容量规划等基础设施建设
-8 、参与代码评审、测试设计、CI/CD 优化，保证交付质量
-9 、指导中级工程师进行系统分析、性能调优与架构能力提升&lt;/p&gt;
-&lt;p&gt;任职要求
-1 、熟练使用 AI 工具提效，包括但不限于 claude code 、codex 等等
-2 、计算机相关专业本科及以上学历，3-5 年以上 Golang 开发经验
-2 、主导并优化服务端系统架构设计，具备在一定量级的请求下进行性能调优与保障稳定性的能力
-3 、熟悉 Huma+Gin 、MongoDB 、Redis 、Kafka 、gRPC 、链路追踪、cdn 、jwt 等技术栈
-4 、熟练掌握配置中心、负载均衡、熔断与限流机制
-5 、对性能调优有深入理解，能熟练使用 pprof 、trace 、benchmark 等工具
-6 、熟悉 RESTful / GraphQL / WebSocket / OpenAPI 等 API 设计标准
-7 、有较强的系统分析、问题定位和解决能力
-8 、熟悉 Docker / Kubernetes / CI/CD 全套云原生工具链&lt;/p&gt;
-&lt;p&gt;加分项
-有 Java / Spring 体系背景,理解 Java 团队向 Go 转型的痛点
-有团队技术布道与人才培养经验&lt;/p&gt;
-&lt;p&gt;软性要求
-表达清晰,能讲透"为什么这么做"而非只说"怎么做"
-有耐心带人,愿意把方法论沉淀成文档与规范
-决策果断,在不确定中能基于经验做出合理取舍&lt;/p&gt;
-&lt;p&gt;简历投递邮箱 &lt;a href="mailto:linlinli88200@gmail.com"&gt;linlinli88200@gmail.com&lt;/a&gt;&lt;/p&gt;
-
-	</description></item><item><title>[程序员] 显卡私有化部署了 deepseek v4 flash 模型，想接入一些共享平台，赚点电费钱，求渠道</title><link>https://www.v2ex.com/t/1252307#reply6</link><guid>tag:www.v2ex.com,2026-10-27:/t/1252307</guid><pubDate>Tue, 27 Oct 2026 09:30:46 +0000</pubDate><description>
-	
-	</description></item><item><title>[分享创造] 把全世界 AI 公司正在招的 2 万多个岗位画成了一张星图</title><link>https://www.v2ex.com/t/1252306#reply0</link><guid>tag:www.v2ex.com,2026-10-27:/t/1252306</guid><pubDate>Tue, 27 Oct 2026 09:26:33 +0000</pubDate><description>
-	&lt;p&gt;这波 AI 浪潮里，大家多少都有点焦虑，担心被替代，担心被优化。&lt;/p&gt;
-&lt;p&gt;我一直想看看全世界的 AI 公司到底在招什么样的人，但怎么呈现一直没想好。直到前几天看到这个网页电台 &lt;a href="https://www.v2ex.com/t/1249321" rel="nofollow"&gt;https://www.v2ex.com/t/1249321&lt;/a&gt; ，用星图把几万个电台铺开，突然来了灵感：我也可以用类似的方式来呈现岗位呀。&lt;/p&gt;
-&lt;p&gt;于是做了这个： &lt;a href="https://cookllm.com/jobs/board" rel="nofollow"&gt;https://cookllm.com/jobs/board&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="3211633d-b9d3-45bd-a43e-f831e615022d.png" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://picui.ogmua.cn/s1/2026/10/27/6ae06e145ab94.webp"/&gt;&lt;/p&gt;
-&lt;p&gt;一个点就是一个岗位。默认按职能分成研究、AI 工程、基础设施、硬件、数据、产品与商业、政策与合规几条旋臂，也能切到地区、级别、方向、时间去看。右边是岗位列表，有 9 个筛选（来源、签证、工作方式、地区这些），点开能直接跳到公司的投递页。&lt;/p&gt;
-&lt;h3&gt;数据来源&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;主要是国外公司的招聘页，Greenhouse 、Lever 、Ashby 这类招聘系统，现在拉了 1,100 多个。不少公司的 robots.txt 或条款不让爬，这些我就没碰。&lt;/li&gt;
-&lt;li&gt;国内公司限制更严，基本都禁止爬虫，也没有开放接口，所以国内岗位目前几乎没有。&lt;/li&gt;
-&lt;li&gt;另外两个来源是领英和 X 上的招聘帖，很多是 hiring manager 或者团队里的人自己发的。X 噪声太高，10 月 22 号到现在收了 1 万多条，筛完只剩 120 条左右；领英好很多，700 多条里留下 200 多条。筛的时候让大模型判断发帖的是谁（团队成员、公司招聘、猎头、搬运号还是求职者），以及是不是真在招 AI 岗位。&lt;/li&gt;
-&lt;li&gt;加起来现在是 1,187 家公司、2 万 1 千多个岗位。招聘页每 6 小时更新一次，招聘帖每 2 小时一次。帖子是这几天才开始收的，数量还不多，拉取既花时间也花钱，先保证最近的够新。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3&gt;为什么做这个&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;更快看到岗位。领英和 X 上的帖子大多是 hiring manager 自己发的，能看到是谁在招、在团队里做什么，跟你的经历对得上的话，可以直接联系，先人一步投简历。&lt;/li&gt;
-&lt;li&gt;看大盘。现在哪些公司在招、要什么经验。我另外在做一个大模型的课程，不少同学问我重点该学哪些、学完能去哪些公司，这个看板也算是我给的一个回答。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3&gt;已知问题&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;国内岗位几乎没有&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;感兴趣的可以来逛逛，标错的数据、想看的维度，都欢迎回帖告诉我。&lt;/p&gt;
 
 	</description></item></channel></rss>
