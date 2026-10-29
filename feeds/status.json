@@ -1,12 +1,12 @@
 {
-  "checked_at": "2026-10-29T00:54:30.801088+00:00",
+  "checked_at": "2026-10-29T07:03:19.707662+00:00",
   "sources": {
     "aibase-daily.xml": {
-      "entries": 10,
-      "ok": true
+      "error": "HTTP Error 503: Service Unavailable",
+      "ok": false
     },
     "bbc-business.xml": {
-      "entries": 52,
+      "entries": 39,
       "ok": true
     },
     "bbc-technology.xml": {
@@ -18,7 +18,7 @@
       "ok": true
     },
     "cloudflare-ai.xml": {
-      "entries": 3,
+      "entries": 4,
       "ok": true
     },
     "engadget.xml": {
@@ -74,6 +74,6 @@
       "ok": true
     }
   },
-  "successful": 18,
+  "successful": 17,
   "total": 18
 }
