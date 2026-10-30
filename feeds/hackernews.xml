@@ -1,103 +1,105 @@
-<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hacker News: Front Page</title><link>https://news.ycombinator.com/</link><description>Hacker News RSS</description><docs>https://hnrss.org/</docs><generator>hnrss v2.1.1</generator><lastBuildDate>Fri, 30 Oct 2026 16:41:33 +0000</lastBuildDate><atom:link href="https://hnrss.org/frontpage" rel="self" type="application/rss+xml"></atom:link><item><title><![CDATA[AI Isn't Replacing SREs. It's Deskilling Them]]></title><description><![CDATA[
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hacker News: Front Page</title><link>https://news.ycombinator.com/</link><description>Hacker News RSS</description><docs>https://hnrss.org/</docs><generator>hnrss v2.1.1</generator><lastBuildDate>Fri, 30 Oct 2026 20:59:49 +0000</lastBuildDate><atom:link href="https://hnrss.org/frontpage" rel="self" type="application/rss+xml"></atom:link><item><title><![CDATA[Through Captain Jean-Luc Picard, Patrick Stewart taught us the measure of a man]]></title><description><![CDATA[
+<p>Article URL: <a href="https://www.bostonglobe.com/2026/10/29/metro/patrick-stewart-picard-star-trek-the-next-generation/">https://www.bostonglobe.com/2026/10/29/metro/patrick-stewart-picard-star-trek-the-next-generation/</a></p>
+<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50309647">https://news.ycombinator.com/item?id=50309647</a></p>
+<p>Points: 24</p>
+<p># Comments: 3</p>
+]]></description><pubDate>Fri, 30 Oct 2026 20:23:30 +0000</pubDate><link>https://www.bostonglobe.com/2026/10/29/metro/patrick-stewart-picard-star-trek-the-next-generation/</link><dc:creator>apress</dc:creator><comments>https://news.ycombinator.com/item?id=50309647</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50309647</guid></item><item><title><![CDATA[Embraer's Atech aims to double in size by 2030 with drone traffic control]]></title><description><![CDATA[
+<p>Article URL: <a href="https://www.bloomberglinea.com.br/negocios/atech-da-embraer-quer-dobrar-de-tamanho-ate-2030-com-controle-de-trafego-de-drones/">https://www.bloomberglinea.com.br/negocios/atech-da-embraer-quer-dobrar-de-tamanho-ate-2030-com-controle-de-trafego-de-drones/</a></p>
+<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50309573">https://news.ycombinator.com/item?id=50309573</a></p>
+<p>Points: 9</p>
+<p># Comments: 1</p>
+]]></description><pubDate>Fri, 30 Oct 2026 20:18:18 +0000</pubDate><link>https://www.bloomberglinea.com.br/negocios/atech-da-embraer-quer-dobrar-de-tamanho-ate-2030-com-controle-de-trafego-de-drones/</link><dc:creator>dvaplima</dc:creator><comments>https://news.ycombinator.com/item?id=50309573</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50309573</guid></item><item><title><![CDATA[Programming at Light Speed: Building the Gravity Query Engine]]></title><description><![CDATA[
+<p>Article URL: <a href="https://pgrust.com/blog/programming-at-light-speed/">https://pgrust.com/blog/programming-at-light-speed/</a></p>
+<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50309571">https://news.ycombinator.com/item?id=50309571</a></p>
+<p>Points: 11</p>
+<p># Comments: 0</p>
+]]></description><pubDate>Fri, 30 Oct 2026 20:18:10 +0000</pubDate><link>https://pgrust.com/blog/programming-at-light-speed/</link><dc:creator>poly2it</dc:creator><comments>https://news.ycombinator.com/item?id=50309571</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50309571</guid></item><item><title><![CDATA[Product Managers aren't safe either]]></title><description><![CDATA[
+<p>Article URL: <a href="https://lucaskostka.com/posts/ai-challenges-more-than-devs">https://lucaskostka.com/posts/ai-challenges-more-than-devs</a></p>
+<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50309534">https://news.ycombinator.com/item?id=50309534</a></p>
+<p>Points: 12</p>
+<p># Comments: 4</p>
+]]></description><pubDate>Fri, 30 Oct 2026 20:14:39 +0000</pubDate><link>https://lucaskostka.com/posts/ai-challenges-more-than-devs</link><dc:creator>greatNespresso</dc:creator><comments>https://news.ycombinator.com/item?id=50309534</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50309534</guid></item><item><title><![CDATA[Show HN: Automatic deduction of FlashAttention kernel from ~25 lines of SQL]]></title><description><![CDATA[
+<p>In this demo, we automatically deduce a FlashAttention kernel with ~25 lines of SQL, which just expresses vanilla attention. This is possible due to three portable SQL extensions that we’re building:
+- xarray-sql: a library that efficiently represents petabyte scale array datasets in the cloud as tables (relations).
+- ddx: a database extension that adds automatic differentiation in the style of JAX to standard SQL, assuming the above array data model.
+- einfold: a modular query planner for fast tensor contractions in vanilla SQL, again, assuming the above array data model.<p>My hope is that the relational model and algebra provide fresh perspectives on how we might do accelerator programming. Here, our thesis is that separating the logical layers in a tensor program from the physical layers is both more correct and more scalable.<p>If the Bitter Lesson is a central dogma of machine learning, then why not formalize it with relational algebra?<p>If this interests you and you’d like to tinker with us at the intersection of database theory and ML systems, join us on Discord at <a href="https://xql.systems" rel="nofollow">https://xql.systems</a>  (link at the bottom). Cheers.</p>
+<hr>
+<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50309479">https://news.ycombinator.com/item?id=50309479</a></p>
+<p>Points: 6</p>
+<p># Comments: 0</p>
+]]></description><pubDate>Fri, 30 Oct 2026 20:09:47 +0000</pubDate><link>https://github.com/xqlsystems/xarray-sql/blob/6debe2495dcb4e8fac20ab97df5b89baae2a31a6/benchmarks/ml/01_attention.py</link><dc:creator>alxmrs</dc:creator><comments>https://news.ycombinator.com/item?id=50309479</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50309479</guid></item><item><title><![CDATA[An Arrogant Way of Killing (2016)]]></title><description><![CDATA[
+<p>Article URL: <a href="https://magazine.atavist.com/2016/an-arrogant-way-of-killing">https://magazine.atavist.com/2016/an-arrogant-way-of-killing</a></p>
+<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50309470">https://news.ycombinator.com/item?id=50309470</a></p>
+<p>Points: 7</p>
+<p># Comments: 0</p>
+]]></description><pubDate>Fri, 30 Oct 2026 20:08:52 +0000</pubDate><link>https://magazine.atavist.com/2016/an-arrogant-way-of-killing</link><dc:creator>firefax</dc:creator><comments>https://news.ycombinator.com/item?id=50309470</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50309470</guid></item><item><title><![CDATA[Jules Verne's Lost Novel]]></title><description><![CDATA[
+<p>Article URL: <a href="https://blue-continuum.com/verne-paris">https://blue-continuum.com/verne-paris</a></p>
+<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50309314">https://news.ycombinator.com/item?id=50309314</a></p>
+<p>Points: 14</p>
+<p># Comments: 1</p>
+]]></description><pubDate>Fri, 30 Oct 2026 19:55:10 +0000</pubDate><link>https://blue-continuum.com/verne-paris</link><dc:creator>dnetesn</dc:creator><comments>https://news.ycombinator.com/item?id=50309314</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50309314</guid></item><item><title><![CDATA[The oldest ice disappears and the Stone Age emerges from it]]></title><description><![CDATA[
+<p>Article URL: <a href="https://www.sciencenorway.no/archaeology-climate-culture/the-oldest-ice-is-disappearing-the-stone-age-is-emerging-from-the-melting-ice/2713921">https://www.sciencenorway.no/archaeology-climate-culture/the-oldest-ice-is-disappearing-the-stone-age-is-emerging-from-the-melting-ice/2713921</a></p>
+<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50309266">https://news.ycombinator.com/item?id=50309266</a></p>
+<p>Points: 14</p>
+<p># Comments: 4</p>
+]]></description><pubDate>Fri, 30 Oct 2026 19:51:33 +0000</pubDate><link>https://www.sciencenorway.no/archaeology-climate-culture/the-oldest-ice-is-disappearing-the-stone-age-is-emerging-from-the-melting-ice/2713921</link><dc:creator>dxs</dc:creator><comments>https://news.ycombinator.com/item?id=50309266</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50309266</guid></item><item><title><![CDATA[Infinite Mac: BeOS]]></title><description><![CDATA[
+<p>Article URL: <a href="https://blog.persistent.info/2026/10/infinite-mac-beos.html">https://blog.persistent.info/2026/10/infinite-mac-beos.html</a></p>
+<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50309029">https://news.ycombinator.com/item?id=50309029</a></p>
+<p>Points: 21</p>
+<p># Comments: 2</p>
+]]></description><pubDate>Fri, 30 Oct 2026 19:30:09 +0000</pubDate><link>https://blog.persistent.info/2026/10/infinite-mac-beos.html</link><dc:creator>ecliptik</dc:creator><comments>https://news.ycombinator.com/item?id=50309029</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50309029</guid></item><item><title><![CDATA[A Pickpocket's Guide to New York]]></title><description><![CDATA[
+<p>Article URL: <a href="https://www.newyorker.com/magazine/2026/11/02/a-pickpockets-guide-to-new-york">https://www.newyorker.com/magazine/2026/11/02/a-pickpockets-guide-to-new-york</a></p>
+<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50308986">https://news.ycombinator.com/item?id=50308986</a></p>
+<p>Points: 13</p>
+<p># Comments: 3</p>
+]]></description><pubDate>Fri, 30 Oct 2026 19:26:39 +0000</pubDate><link>https://www.newyorker.com/magazine/2026/11/02/a-pickpockets-guide-to-new-york</link><dc:creator>prismatic</dc:creator><comments>https://news.ycombinator.com/item?id=50308986</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50308986</guid></item><item><title><![CDATA[Bunny CDN Security Incident]]></title><description><![CDATA[
+<p>Article URL: <a href="https://status.bunny.net/incidents/p6gf1by9kr7m">https://status.bunny.net/incidents/p6gf1by9kr7m</a></p>
+<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50308697">https://news.ycombinator.com/item?id=50308697</a></p>
+<p>Points: 59</p>
+<p># Comments: 16</p>
+]]></description><pubDate>Fri, 30 Oct 2026 19:05:22 +0000</pubDate><link>https://status.bunny.net/incidents/p6gf1by9kr7m</link><dc:creator>SondreDag</dc:creator><comments>https://news.ycombinator.com/item?id=50308697</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50308697</guid></item><item><title><![CDATA[French digital tax may kill VideoLan non-profit]]></title><description><![CDATA[
+<p>Article URL: <a href="https://twitter.com/videolan/status/2116229135919919278">https://twitter.com/videolan/status/2116229135919919278</a></p>
+<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50308631">https://news.ycombinator.com/item?id=50308631</a></p>
+<p>Points: 63</p>
+<p># Comments: 41</p>
+]]></description><pubDate>Fri, 30 Oct 2026 19:01:14 +0000</pubDate><link>https://twitter.com/videolan/status/2116229135919919278</link><dc:creator>miohtama</dc:creator><comments>https://news.ycombinator.com/item?id=50308631</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50308631</guid></item><item><title><![CDATA[GitHub Incident with Actions, Pages, and Webhooks]]></title><description><![CDATA[
+<p>Article URL: <a href="https://www.githubstatus.com/incidents/pwxsjgnvrk6b">https://www.githubstatus.com/incidents/pwxsjgnvrk6b</a></p>
+<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50307723">https://news.ycombinator.com/item?id=50307723</a></p>
+<p>Points: 115</p>
+<p># Comments: 44</p>
+]]></description><pubDate>Fri, 30 Oct 2026 17:57:35 +0000</pubDate><link>https://www.githubstatus.com/incidents/pwxsjgnvrk6b</link><dc:creator>damontal</dc:creator><comments>https://news.ycombinator.com/item?id=50307723</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50307723</guid></item><item><title><![CDATA[Anthropic may not secure investment-grade rating after IPO, Blackstone says]]></title><description><![CDATA[
+<p>Article URL: <a href="https://www.ft.com/content/59383c7f-8d82-493f-bf01-d2e862a1018f">https://www.ft.com/content/59383c7f-8d82-493f-bf01-d2e862a1018f</a></p>
+<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50307219">https://news.ycombinator.com/item?id=50307219</a></p>
+<p>Points: 189</p>
+<p># Comments: 133</p>
+]]></description><pubDate>Fri, 30 Oct 2026 17:27:25 +0000</pubDate><link>https://www.ft.com/content/59383c7f-8d82-493f-bf01-d2e862a1018f</link><dc:creator>petethomas</dc:creator><comments>https://news.ycombinator.com/item?id=50307219</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50307219</guid></item><item><title><![CDATA[My favourite PowerMac is a Nintendo Wii]]></title><description><![CDATA[
+<p>Article URL: <a href="https://virtuallyfun.com/2026/10/29/my-favourite-powermac-is-a-nintendo-wii/">https://virtuallyfun.com/2026/10/29/my-favourite-powermac-is-a-nintendo-wii/</a></p>
+<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50307190">https://news.ycombinator.com/item?id=50307190</a></p>
+<p>Points: 154</p>
+<p># Comments: 40</p>
+]]></description><pubDate>Fri, 30 Oct 2026 17:25:15 +0000</pubDate><link>https://virtuallyfun.com/2026/10/29/my-favourite-powermac-is-a-nintendo-wii/</link><dc:creator>DHowett</dc:creator><comments>https://news.ycombinator.com/item?id=50307190</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50307190</guid></item><item><title><![CDATA[Show HN: A working Nintendo in ~1GB of Qwen weights]]></title><description><![CDATA[
+<p>Article URL: <a href="https://github.com/dbreunig/nesformer">https://github.com/dbreunig/nesformer</a></p>
+<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50306442">https://news.ycombinator.com/item?id=50306442</a></p>
+<p>Points: 138</p>
+<p># Comments: 95</p>
+]]></description><pubDate>Fri, 30 Oct 2026 16:40:22 +0000</pubDate><link>https://github.com/dbreunig/nesformer</link><dc:creator>dbreunig</dc:creator><comments>https://news.ycombinator.com/item?id=50306442</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50306442</guid></item><item><title><![CDATA[AI isn't replacing SREs, it's deskilling them]]></title><description><![CDATA[
 <p>Article URL: <a href="https://newsletter.signoz.io/p/ai-isnt-replacing-sres-its-deskilling">https://newsletter.signoz.io/p/ai-isnt-replacing-sres-its-deskilling</a></p>
 <p>Comments URL: <a href="https://news.ycombinator.com/item?id=50305693">https://news.ycombinator.com/item?id=50305693</a></p>
-<p>Points: 93</p>
-<p># Comments: 70</p>
-]]></description><pubDate>Fri, 30 Oct 2026 15:52:18 +0000</pubDate><link>https://newsletter.signoz.io/p/ai-isnt-replacing-sres-its-deskilling</link><dc:creator>dorianniemiec</dc:creator><comments>https://news.ycombinator.com/item?id=50305693</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50305693</guid></item><item><title><![CDATA[Geist Serif]]></title><description><![CDATA[
-<p>Article URL: <a href="https://vercel.com/blog/introducing-geist-serif">https://vercel.com/blog/introducing-geist-serif</a></p>
-<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50305601">https://news.ycombinator.com/item?id=50305601</a></p>
-<p>Points: 23</p>
-<p># Comments: 10</p>
-]]></description><pubDate>Fri, 30 Oct 2026 15:46:42 +0000</pubDate><link>https://vercel.com/blog/introducing-geist-serif</link><dc:creator>Zm44</dc:creator><comments>https://news.ycombinator.com/item?id=50305601</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50305601</guid></item><item><title><![CDATA[The Federated Code Forge]]></title><description><![CDATA[
+<p>Points: 394</p>
+<p># Comments: 301</p>
+]]></description><pubDate>Fri, 30 Oct 2026 15:52:18 +0000</pubDate><link>https://newsletter.signoz.io/p/ai-isnt-replacing-sres-its-deskilling</link><dc:creator>dorianniemiec</dc:creator><comments>https://news.ycombinator.com/item?id=50305693</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50305693</guid></item><item><title><![CDATA[Florilegium: Procedural Flowers in LaTeX]]></title><description><![CDATA[
+<p>Article URL: <a href="https://github.com/kevinraymond/florilegium">https://github.com/kevinraymond/florilegium</a></p>
+<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50305637">https://news.ycombinator.com/item?id=50305637</a></p>
+<p>Points: 150</p>
+<p># Comments: 26</p>
+]]></description><pubDate>Fri, 30 Oct 2026 15:48:12 +0000</pubDate><link>https://github.com/kevinraymond/florilegium</link><dc:creator>nanna</dc:creator><comments>https://news.ycombinator.com/item?id=50305637</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50305637</guid></item><item><title><![CDATA[The federated code forge]]></title><description><![CDATA[
 <p>Article URL: <a href="https://tangled.org/blog/forge/">https://tangled.org/blog/forge/</a></p>
 <p>Comments URL: <a href="https://news.ycombinator.com/item?id=50305573">https://news.ycombinator.com/item?id=50305573</a></p>
-<p>Points: 24</p>
-<p># Comments: 6</p>
+<p>Points: 170</p>
+<p># Comments: 59</p>
 ]]></description><pubDate>Fri, 30 Oct 2026 15:44:29 +0000</pubDate><link>https://tangled.org/blog/forge/</link><dc:creator>zlliang</dc:creator><comments>https://news.ycombinator.com/item?id=50305573</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50305573</guid></item><item><title><![CDATA[Blockchain intelligence firms link North Korea to $6.3B hack on Binance]]></title><description><![CDATA[
 <p>Article URL: <a href="https://www.npr.org/2026/10/30/g-s1-150902/blockchain-intelligence-firms-link-north-korea-to-6-3b-hack-on-binance">https://www.npr.org/2026/10/30/g-s1-150902/blockchain-intelligence-firms-link-north-korea-to-6-3b-hack-on-binance</a></p>
 <p>Comments URL: <a href="https://news.ycombinator.com/item?id=50305480">https://news.ycombinator.com/item?id=50305480</a></p>
-<p>Points: 24</p>
-<p># Comments: 0</p>
-]]></description><pubDate>Fri, 30 Oct 2026 15:39:05 +0000</pubDate><link>https://www.npr.org/2026/10/30/g-s1-150902/blockchain-intelligence-firms-link-north-korea-to-6-3b-hack-on-binance</link><dc:creator>paulpauper</dc:creator><comments>https://news.ycombinator.com/item?id=50305480</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50305480</guid></item><item><title><![CDATA[I didn't know I was lacking in Vitamin D until I collapsed at work]]></title><description><![CDATA[
-<p>Article URL: <a href="https://www.bbc.com/news/articles/cm78pxxe55v0o">https://www.bbc.com/news/articles/cm78pxxe55v0o</a></p>
-<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50305436">https://news.ycombinator.com/item?id=50305436</a></p>
-<p>Points: 45</p>
-<p># Comments: 37</p>
-]]></description><pubDate>Fri, 30 Oct 2026 15:36:18 +0000</pubDate><link>https://www.bbc.com/news/articles/cm78pxxe55v0o</link><dc:creator>tartoran</dc:creator><comments>https://news.ycombinator.com/item?id=50305436</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50305436</guid></item><item><title><![CDATA[Show HN: I built a multiplayer game where you're an aerial fighter cat]]></title><description><![CDATA[
-<p>Hi everyone!<p>I had the idea for catcopter on my mind for a long time (got the domain ~13 years ago). It's a web multiplayer game where you can fly a dangerous cat and engage in competition with other players and critters (pterodactyls, chickens and angry penguins). I made it initially for me and my friends but it was quite fun so I thought I'll share it here too.<p>The game is intentionally dorky and it was fun to develop. The tools I used were mostly Opus 5.5 (objects / rigging / motion), Tripo3d for some elements I struggled with and Fable for optimisation (cpu / networking). Backend physics are done with Rapier. Luckily I had a lot of elements / game dynamics done before from another project of mine (<a href="https://flat.social" rel="nofollow">https://flat.social</a>) so the actual iteration here took me around a week.</p>
-<hr>
-<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50305320">https://news.ycombinator.com/item?id=50305320</a></p>
-<p>Points: 9</p>
-<p># Comments: 2</p>
-]]></description><pubDate>Fri, 30 Oct 2026 15:29:40 +0000</pubDate><link>https://catcopter.com</link><dc:creator>pawelwentpawel</dc:creator><comments>https://news.ycombinator.com/item?id=50305320</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50305320</guid></item><item><title><![CDATA[Polymarket 1h halt after vendor compromise; affected users will be 'made whole']]></title><description><![CDATA[
-<p>Article URL: <a href="https://www.nbcnews.com/business/consumer/polymarket-trading-halt-hack-wallets-rcna606405">https://www.nbcnews.com/business/consumer/polymarket-trading-halt-hack-wallets-rcna606405</a></p>
-<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50305225">https://news.ycombinator.com/item?id=50305225</a></p>
-<p>Points: 26</p>
-<p># Comments: 8</p>
-]]></description><pubDate>Fri, 30 Oct 2026 15:23:41 +0000</pubDate><link>https://www.nbcnews.com/business/consumer/polymarket-trading-halt-hack-wallets-rcna606405</link><dc:creator>theanonymousone</dc:creator><comments>https://news.ycombinator.com/item?id=50305225</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50305225</guid></item><item><title><![CDATA[Northflank Breached]]></title><description><![CDATA[
-<p>Article URL: <a href="https://status.northflank.com">https://status.northflank.com</a></p>
-<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50305025">https://news.ycombinator.com/item?id=50305025</a></p>
-<p>Points: 75</p>
-<p># Comments: 38</p>
-]]></description><pubDate>Fri, 30 Oct 2026 15:10:31 +0000</pubDate><link>https://status.northflank.com</link><dc:creator>js4ever</dc:creator><comments>https://news.ycombinator.com/item?id=50305025</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50305025</guid></item><item><title><![CDATA[Medicare Will Pay $50k for Your Heart Attack. It Should Pay $100 to Prevent It]]></title><description><![CDATA[
-<p>Article URL: <a href="https://www.medpagetoday.com/opinion/second-opinions/123553?trw=no">https://www.medpagetoday.com/opinion/second-opinions/123553?trw=no</a></p>
-<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50304419">https://news.ycombinator.com/item?id=50304419</a></p>
-<p>Points: 137</p>
-<p># Comments: 103</p>
-]]></description><pubDate>Fri, 30 Oct 2026 14:27:44 +0000</pubDate><link>https://www.medpagetoday.com/opinion/second-opinions/123553?trw=no</link><dc:creator>brandonb</dc:creator><comments>https://news.ycombinator.com/item?id=50304419</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50304419</guid></item><item><title><![CDATA[The $6.3B Binance Hack Was Pulled Off in Just 20 Minutes]]></title><description><![CDATA[
-<p>Article URL: <a href="https://www.wired.com/story/the-dollar63-billion-binance-hack-was-pulled-off-in-just-20-minutes/">https://www.wired.com/story/the-dollar63-billion-binance-hack-was-pulled-off-in-just-20-minutes/</a></p>
-<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50303172">https://news.ycombinator.com/item?id=50303172</a></p>
-<p>Points: 171</p>
-<p># Comments: 127</p>
-]]></description><pubDate>Fri, 30 Oct 2026 12:50:01 +0000</pubDate><link>https://www.wired.com/story/the-dollar63-billion-binance-hack-was-pulled-off-in-just-20-minutes/</link><dc:creator>domhudson</dc:creator><comments>https://news.ycombinator.com/item?id=50303172</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50303172</guid></item><item><title><![CDATA[US Reps Lead Democratic Resolution Opposing A.I. Bubble Bailout for Big Tech]]></title><description><![CDATA[
-<p>Article URL: <a href="https://progressives.house.gov/2026/10/reps-casar-waters-lead-democratic-resolution-opposing-a-i-bubble-bailout-for-big-tech-commit-to-protecting-american-people-instead">https://progressives.house.gov/2026/10/reps-casar-waters-lead-democratic-resolution-opposing-a-i-bubble-bailout-for-big-tech-commit-to-protecting-american-people-instead</a></p>
-<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50302814">https://news.ycombinator.com/item?id=50302814</a></p>
-<p>Points: 479</p>
-<p># Comments: 307</p>
-]]></description><pubDate>Fri, 30 Oct 2026 12:08:00 +0000</pubDate><link>https://progressives.house.gov/2026/10/reps-casar-waters-lead-democratic-resolution-opposing-a-i-bubble-bailout-for-big-tech-commit-to-protecting-american-people-instead</link><dc:creator>DeepLogin</dc:creator><comments>https://news.ycombinator.com/item?id=50302814</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50302814</guid></item><item><title><![CDATA[Azure's Weakest Link – Five Full Cross-Tenant Compromises]]></title><description><![CDATA[
-<p>Article URL: <a href="https://www.binarysecurity.no/posts/2026/10/one-root-case">https://www.binarysecurity.no/posts/2026/10/one-root-case</a></p>
-<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50301854">https://news.ycombinator.com/item?id=50301854</a></p>
-<p>Points: 173</p>
-<p># Comments: 27</p>
-]]></description><pubDate>Fri, 30 Oct 2026 10:06:15 +0000</pubDate><link>https://www.binarysecurity.no/posts/2026/10/one-root-case</link><dc:creator>swq115</dc:creator><comments>https://news.ycombinator.com/item?id=50301854</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50301854</guid></item><item><title><![CDATA[Backdoor in Claude Code for VS Code extension on the Cursor Marketplace]]></title><description><![CDATA[
-<p><a href="https://cursor.com/blog/claude-code-extension-security-notice" rel="nofollow">https://cursor.com/blog/claude-code-extension-security-notic...</a><p><a href="https://cyberplace.social/@GossiTheDog/117528831681803563" rel="nofollow">https://cyberplace.social/@GossiTheDog/117528831681803563</a><p><a href="https://doublepulsar.com/anthropic-hacked-to-deliver-remote-access-trojan-to-claude-developer-laptops-worldwide-1148a92baae2" rel="nofollow">https://doublepulsar.com/anthropic-hacked-to-deliver-remote-...</a></p>
-<hr>
-<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50300683">https://news.ycombinator.com/item?id=50300683</a></p>
-<p>Points: 348</p>
-<p># Comments: 354</p>
-]]></description><pubDate>Fri, 30 Oct 2026 07:09:12 +0000</pubDate><link>https://phorion.io/blog/offical-claude-code-vsx-compromise/</link><dc:creator>_chall</dc:creator><comments>https://news.ycombinator.com/item?id=50300683</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50300683</guid></item><item><title><![CDATA[Wasmer (YC S19) Is Hiring OS/Hypervisor Experts in Europe]]></title><description><![CDATA[
-<p>Article URL: <a href="https://www.workatastartup.com/jobs/98722">https://www.workatastartup.com/jobs/98722</a></p>
-<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50300643">https://news.ycombinator.com/item?id=50300643</a></p>
-<p>Points: 0</p>
-<p># Comments: 0</p>
-]]></description><pubDate>Fri, 30 Oct 2026 07:00:35 +0000</pubDate><link>https://www.workatastartup.com/jobs/98722</link><dc:creator>syrusakbary</dc:creator><comments>https://news.ycombinator.com/item?id=50300643</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50300643</guid></item><item><title><![CDATA[Herdr has released native app]]></title><description><![CDATA[
-<p>Article URL: <a href="https://github.com/herdrdev/herdr-app">https://github.com/herdrdev/herdr-app</a></p>
-<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50298436">https://news.ycombinator.com/item?id=50298436</a></p>
-<p>Points: 311</p>
-<p># Comments: 206</p>
-]]></description><pubDate>Fri, 30 Oct 2026 00:42:41 +0000</pubDate><link>https://github.com/herdrdev/herdr-app</link><dc:creator>cherioo</dc:creator><comments>https://news.ycombinator.com/item?id=50298436</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50298436</guid></item><item><title><![CDATA[We ran AI agent swarms in Minecraft and Mindustry]]></title><description><![CDATA[
-<p>Article URL: <a href="https://labs.ycombinator.com/projects/games/index.html">https://labs.ycombinator.com/projects/games/index.html</a></p>
-<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50296486">https://news.ycombinator.com/item?id=50296486</a></p>
-<p>Points: 369</p>
-<p># Comments: 151</p>
-]]></description><pubDate>Thu, 29 Oct 2026 21:40:28 +0000</pubDate><link>https://labs.ycombinator.com/projects/games/index.html</link><dc:creator>sandslash</dc:creator><comments>https://news.ycombinator.com/item?id=50296486</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50296486</guid></item><item><title><![CDATA[Binance-hacker-1029 – $5.6B stolen from Binance]]></title><description><![CDATA[
-<p>Article URL: <a href="https://arkm.com/explorer/entity/21a94755-f604-45e5-9501-6542e23005e8">https://arkm.com/explorer/entity/21a94755-f604-45e5-9501-6542e23005e8</a></p>
-<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50296470">https://news.ycombinator.com/item?id=50296470</a></p>
-<p>Points: 1675</p>
-<p># Comments: 1133</p>
-]]></description><pubDate>Thu, 29 Oct 2026 21:38:59 +0000</pubDate><link>https://arkm.com/explorer/entity/21a94755-f604-45e5-9501-6542e23005e8</link><dc:creator>Tiberium</dc:creator><comments>https://news.ycombinator.com/item?id=50296470</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50296470</guid></item><item><title><![CDATA[A tiny world model running games on a Raspberry Pi Pico 2 W]]></title><description><![CDATA[
-<p>Article URL: <a href="https://github.com/SheepSeb/tinyworldformer">https://github.com/SheepSeb/tinyworldformer</a></p>
-<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50295450">https://news.ycombinator.com/item?id=50295450</a></p>
-<p>Points: 263</p>
-<p># Comments: 18</p>
-]]></description><pubDate>Thu, 29 Oct 2026 20:32:28 +0000</pubDate><link>https://github.com/SheepSeb/tinyworldformer</link><dc:creator>airinei</dc:creator><comments>https://news.ycombinator.com/item?id=50295450</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50295450</guid></item><item><title><![CDATA[H.264 Is Magic (2016)]]></title><description><![CDATA[
-<p>Article URL: <a href="https://sidbala.com/h-264-is-magic/">https://sidbala.com/h-264-is-magic/</a></p>
-<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50291054">https://news.ycombinator.com/item?id=50291054</a></p>
-<p>Points: 494</p>
-<p># Comments: 163</p>
-]]></description><pubDate>Thu, 29 Oct 2026 15:53:03 +0000</pubDate><link>https://sidbala.com/h-264-is-magic/</link><dc:creator>ea016</dc:creator><comments>https://news.ycombinator.com/item?id=50291054</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50291054</guid></item><item><title><![CDATA[LLM Voice]]></title><description><![CDATA[
-<p>Article URL: <a href="https://martinfowler.com/bliki/LLM-Voice.html">https://martinfowler.com/bliki/LLM-Voice.html</a></p>
-<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50290177">https://news.ycombinator.com/item?id=50290177</a></p>
-<p>Points: 567</p>
-<p># Comments: 302</p>
-]]></description><pubDate>Thu, 29 Oct 2026 14:57:55 +0000</pubDate><link>https://martinfowler.com/bliki/LLM-Voice.html</link><dc:creator>ibobev</dc:creator><comments>https://news.ycombinator.com/item?id=50290177</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50290177</guid></item></channel></rss>
+<p>Points: 161</p>
+<p># Comments: 105</p>
+]]></description><pubDate>Fri, 30 Oct 2026 15:39:05 +0000</pubDate><link>https://www.npr.org/2026/10/30/g-s1-150902/blockchain-intelligence-firms-link-north-korea-to-6-3b-hack-on-binance</link><dc:creator>paulpauper</dc:creator><comments>https://news.ycombinator.com/item?id=50305480</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50305480</guid></item></channel></rss>
