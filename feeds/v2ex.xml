@@ -1,5 +1,187 @@
 <?xml version='1.0' encoding='utf-8'?>
-<rss version="2.0"><channel><title>V2EX</title><item><title>[推广] 做了一个网站运维检测平台，来群里提提建议</title><link>https://www.v2ex.com/t/1253330#reply0</link><guid>tag:www.v2ex.com,2026-10-30:/t/1253330</guid><pubDate>Fri, 30 Oct 2026 19:23:24 +0000</pubDate><description>
+<rss version="2.0"><channel><title>V2EX</title><item><title>[分享创造] 做了一个处理真太阳时与夏令时边界的中英双语八字排盘站「小道」，顺手开放了免登录的八字与奇门 MCP 接口</title><link>https://www.v2ex.com/t/1253340#reply0</link><guid>tag:www.v2ex.com,2026-10-31:/t/1253340</guid><pubDate>Sat, 31 Oct 2026 00:42:56 +0000</pubDate><description>
+	&lt;p&gt;大家好，分享一个我们自己做的中英双语东方术数网站 &lt;strong&gt;「小道」&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;中文站： &lt;a href="https://xiaodaox.com" rel="nofollow"&gt;https://xiaodaox.com&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;英文站： &lt;a href="https://xiaodaox.com/en" rel="nofollow"&gt;https://xiaodaox.com/en&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;很多朋友平时可能会拿自己的出生时间去问 Claude 或 ChatGPT 排个八字，日常日子大多能排对，但一碰到节气交接、出生地真太阳时、历史夏令时、早晚子时或逆排大运起运岁数这些边界条件，AI 就容易出错。&lt;/p&gt;
+&lt;p&gt;为了把底层历法和排盘边界做扎实，我们把免登录的公开排盘页、中英双语历法知识库，以及一个直接给 AI 调的远程 MCP 接口都做好上线了，发出来请各位 V 友挑挑毛病。&lt;/p&gt;
+&lt;h3&gt;1. 做排盘时踩过的几个历法与时间边界坑&lt;/h3&gt;
+&lt;p&gt;老辈排四柱八字，表面看只是把年月日时换算成八个干支字，但写代码落地时全是边界条件：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;年柱、月柱看节气时刻，日柱、时柱看真太阳时&lt;/strong&gt;
+很多人以为四个柱都按真太阳时换算，其实在传统干支历法里，年柱和月柱是按太阳黄经到达二十四节气交接点的那一刻切换的（比如立春换年柱，不是农历正月初一换，而且交接时刻全球统一，不随出生地经度改变）；只有日柱和时柱才取决于出生地太阳在天空中的实际位置（真太阳时）。我们在输入逻辑里做了拆分：用户只需要直接填出生证明上的当地钟表时间并选定出生城市，程序会自动根据该城市的地理经度与当日均时差换算真太阳时，避免用户自己提前手算加减分钟数导致重复折算。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;1986 至 1991 年中国夏令时与海外夏令时回拨&lt;/strong&gt;
+中国大陆在 1986 到 1991 年实行过六年夏令时（其中 1986 年从 5 月 4 日开始，1987 到 1991 年都是 4 月中旬第一个周日开始（比如 1988 年是 4 月 17 日），9 月中旬第一个周日结束），欧美很多地区至今每年春秋季仍在切换夏令时。排盘最容易出错的地方就是「用户自己减了一小时，程序又自动减了一小时」。我们把中国历史夏令时和海外时区夏令时规则内置到了出生地与日期校验里，并且针对秋季夏令时回拨当天凌晨同一个钟点出现两次的极端情况，做了弹窗供用户确认是「第一次 · 调回前」还是「第二次 · 已调回」。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;节气交接当天与 23:00 晚子时换日&lt;/strong&gt;
+出生在立春、惊蛰等交节当天的人，出生时刻在交节前十几分钟还是交节后十几分钟，不仅月柱不同，连十年大运顺排或逆排往回数到哪一个节令、几岁起运都会差出好几岁。同样，23:00 到 23:59 （晚子时）与 00:00 到 00:59 （早子时）怎么换日柱和时柱也是常见争议点。遇到出生时刻压在节气、日柱或时辰交界附近时，页面会直接弹出交界说明，让用户看清两边差异后自己拍板。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;2. 给 Claude 等 AI 用的免费排盘接口（ MCP ）&lt;/h3&gt;
+&lt;p&gt;既然大模型在节气交接、真太阳时、夏令时、子时这些边界上容易出错，但归纳和对话能力很强，我们就把排盘计算这一步交给确定的程序，单独抽出来做成了一个公开的 MCP （ Model Context Protocol ） Server：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;MCP 地址&lt;/strong&gt;：&lt;code&gt;&lt;a href="https://xiaodaox.com/mcp" rel="nofollow"&gt;https://xiaodaox.com/mcp&lt;/a&gt;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;使用方式&lt;/strong&gt;：在 Claude 等支持 MCP 的 AI 客户端里，直接把这个地址加进去就能调用，&lt;strong&gt;不用登录、不用申请 API Key&lt;/strong&gt;。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;支持能力&lt;/strong&gt;：能排&lt;strong&gt;八字&lt;/strong&gt;（返回四柱、十神、藏干、大运等全部排盘信息）和&lt;strong&gt;奇门遁甲&lt;/strong&gt;（返回整张奇门盘面信息）。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;设计边界&lt;/strong&gt;：这个接口&lt;strong&gt;只给排盘，不给解读&lt;/strong&gt;。也就是说，它只负责把天文历法和干支盘面老老实实算清楚交给 AI ，至于怎么结合你的具体问题分析，完全交给你的 AI 和你自己的提示词。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;3. 站内目前哪些免费、哪些需要用道点&lt;/h3&gt;
+&lt;p&gt;我们把基础工具、科普资料和需要消耗算力的生成功能分得很清楚：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;strong&gt;完全免费（不用登录也能直接用）&lt;/strong&gt;：&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;排八字&lt;/strong&gt;：中文 &lt;a href="https://xiaodaox.com/bazi-calculator" rel="nofollow"&gt;https://xiaodaox.com/bazi-calculator&lt;/a&gt; ，英文 &lt;a href="https://xiaodaox.com/en/bazi-calculator" rel="nofollow"&gt;https://xiaodaox.com/en/bazi-calculator&lt;/a&gt; 。支持公历、农历和按四柱干支反查，不登录也能直接排盘看四柱、十神和藏干；注册保存档案后可以展开大运、流年、流月时间轴。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;历法与排盘知识库&lt;/strong&gt;：中文 &lt;a href="https://xiaodaox.com/learn" rel="nofollow"&gt;https://xiaodaox.com/learn&lt;/a&gt; ，英文 &lt;a href="https://xiaodaox.com/en/learn" rel="nofollow"&gt;https://xiaodaox.com/en/learn&lt;/a&gt; 。中英一一对应，目前写了：出生时间怎么填与真太阳时、1986–1991 中国夏令时与海外夏令时、十二时辰与早晚子时、大运顺逆与起运岁数、交节当天的月柱与逆排大运、四柱反查与不知道时辰怎么排、奇门与八字的区别、八字命盘怎么看、日主与十天干对照、八字合盘、本命年与立春交界。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;八字报告完整示例&lt;/strong&gt;： &lt;a href="https://xiaodaox.com/guide/bazi-report/sample" rel="nofollow"&gt;https://xiaodaox.com/guide/bazi-report/sample&lt;/a&gt; （英文 &lt;a href="https://xiaodaox.com/en/guide/bazi-report/sample" rel="nofollow"&gt;https://xiaodaox.com/en/guide/bazi-report/sample&lt;/a&gt; ）。用一位虚构人物「陈某」的生辰生成了一份从总述到各章都完整的八字报告，纯粹用来展示报告长什么样、包含哪些章节，不拿真人说事。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;每日一面&lt;/strong&gt;：每天更新一道传统面相知识题。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;MCP 排盘接口&lt;/strong&gt;：&lt;code&gt;&lt;a href="https://xiaodaox.com/mcp" rel="nofollow"&gt;https://xiaodaox.com/mcp&lt;/a&gt;&lt;/code&gt;，免登录直接调。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;排盘只是第一步，难的是怎么有取舍地用古籍&lt;/strong&gt;：
+说到底，把出生时间换成八个干支字，只要把天文历法和边界条件写成确定性的程序，哪家都能排出来；真正难的不是排盘，而是排完之后怎么解。
+现在很多人把排好的八字直接丢给普通聊天 AI 解盘，最常出错的高发区就是「混用古籍」。传统命理古籍从来不是一本口径统一的教科书，历代典籍各成一套体系：有的重月令格局顺逆，有的先看四季寒暖调候，有的重五行气势流通，有的专讲病药去留，面对同一个问题常常各说各的，有的地方甚至直接互相打架。普通聊天 AI 解盘时分不清这些体系的边界，往往把不同书里的说法拼在一起：这一段照这本书判，下一段又照那本书推，前后根本对不上，结论自己跟自己打架。
+小道解读用的每一条，都是我自己从古籍里有取舍地挑出来的，先后跟多位真人算命先生一起、拿他们的命例和我自己线下看过的命例一盘盘验证过，又用 AI 反复试，试出哪里该用哪本书、怎么写，模型才会用对。不是把一堆古籍原文凑在一起，也不是随便写一段提示词。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;注册后用道点的功能&lt;/strong&gt;：
+包括&lt;strong&gt;八字报告&lt;/strong&gt;、对着报告追问的&lt;strong&gt;八字千问&lt;/strong&gt;、&lt;strong&gt;今日运道&lt;/strong&gt;、奇门形式的&lt;strong&gt;生活野趣&lt;/strong&gt;（钓趣、今日宜饮、近日美甲、近期旅游、麻运）、会前梳理工具&lt;strong&gt;有个会&lt;/strong&gt;，以及根据命盘推导的&lt;strong&gt;一键 MBTI&lt;/strong&gt;。&lt;strong&gt;新用户首次注册送的道点够免费玩一局。&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;网站刚迭代到 1.6 版本，无论你是对传统历法计算感兴趣、想拿自己的生辰试一下真太阳时和交界处理，还是想把 &lt;code&gt;&lt;a href="https://xiaodaox.com/mcp" rel="nofollow"&gt;https://xiaodaox.com/mcp&lt;/a&gt;&lt;/code&gt; 挂进 Claude 里试玩，都非常欢迎来挑毛病。遇到任何排盘边界 Bug 或体验槽点，直接在本帖回复就行，我都在看。&lt;/p&gt;
+
+	</description></item><item><title>[职场话题] 大家从事程序开发工作几年了</title><link>https://www.v2ex.com/t/1253339#reply0</link><guid>tag:www.v2ex.com,2026-10-31:/t/1253339</guid><pubDate>Sat, 31 Oct 2026 00:31:58 +0000</pubDate><description>
+	想问问大家都工作几年了，我感觉程序员这行业能有 10 年已经很长了
+	</description></item><item><title>[分享创造] [补送码] Navidrome 最佳播放器： Mu3ic</title><link>https://www.v2ex.com/t/1253338#reply1</link><guid>tag:www.v2ex.com,2026-10-31:/t/1253338</guid><pubDate>Sat, 31 Oct 2026 00:30:32 +0000</pubDate><description>
+	&lt;p&gt;&lt;img alt="" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://i.imgur.com/YCcQoUr.jpg"/&gt;
+&lt;img alt="" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://i.imgur.com/H6zheAP.jpg"/&gt;
+&lt;a href="https://mu3ic.xyz" rel="nofollow"&gt;主页&lt;/a&gt; 进行了升级重构，更新的所有内容都可以直接在主页上体验，无需下载应用即可上手体验，玩起来：&lt;/p&gt;
+&lt;h2&gt;本帖专属福利规则&lt;/h2&gt;
+&lt;p&gt;鉴于&lt;a href="https://www.v2ex.com/t/1252164" rel="nofollow"&gt;上一贴&lt;/a&gt;贴出的激活码有 37/70 未在 24h 内激活，真正有需要的 xd 刚看到帖子就已经领完了，故在此&lt;strong&gt;补送 37 个激活码&lt;/strong&gt;，为最后一批赠送激活码，后续桌面端和 ios 端上线将不会再直接发放激活码，而会以优惠码的形式发福利，本帖下 37 个激活码赠完后，可以领取 6 元代金券，11.5 前叠加代金券可以史低价格 12 元激活 Pro ，代金券我会贴在 1 楼，可重复使用，截止日期到 11.5&lt;/p&gt;
+&lt;h2&gt;进群&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;进群可以&lt;strong&gt;许愿&lt;/strong&gt;！&lt;/li&gt;
+&lt;li&gt;🎉任何问题和需求都会被重视，让我们共同提升应用体验🎉&lt;/li&gt;
+&lt;li&gt;资源交流（博文也写的很详细，曲目自动化入库 prompt 进群获取）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;主要更新内容&lt;/h2&gt;
+&lt;p&gt;详见 1.7.0 更新贴： &lt;a href="https://www.v2ex.com/t/1252164" rel="nofollow"&gt;https://www.v2ex.com/t/1252164&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;相关链接&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;产品主页&lt;/strong&gt;： &lt;a href="https://mu3ic.xyz" rel="nofollow"&gt;https://mu3ic.xyz&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;软件直链下载&lt;/strong&gt;： &lt;a href="https://dl.robb3n.site/mu3ic/Mu3ic-stable.apk" rel="nofollow"&gt;https://dl.robb3n.site/mu3ic/Mu3ic-stable.apk&lt;/a&gt; （海外慢的话用 &lt;a href="https://mu3ic.xyz/dl/Mu3ic-stable.apk" rel="nofollow"&gt;https://mu3ic.xyz/dl/Mu3ic-stable.apk&lt;/a&gt; ）&lt;/li&gt;
+&lt;li&gt;
+&lt;strong&gt;相关 Blog&lt;/strong&gt;：&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://robb3n.site/posts/turn-phone-sideways-play-vinyl/" rel="nofollow"&gt;黑胶唱机：横过手机，放一张唱片&lt;/a&gt; &lt;/li&gt;
+&lt;li&gt;&lt;a href="https://robb3n.site/posts/folder-to-music-library-tagging-best-practices/" rel="nofollow"&gt;从文件夹到曲库：音乐文件标签最佳实践&lt;/a&gt; &lt;/li&gt;
+&lt;li&gt;&lt;a href="https://robb3n.site/posts/song-ingestion-automation-gates/" rel="nofollow"&gt;入库自动化：一首歌进曲库要过的几道闸&lt;/a&gt; &lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;更新日志&lt;/strong&gt;： &lt;a href="https://mu3ic.xyz/changelog/" rel="nofollow"&gt;https://mu3ic.xyz/changelog/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;官方讨论群&lt;/strong&gt;： &lt;a href="https://t.me/+wQQlVDMami4xNzNl" rel="nofollow"&gt;https://t.me/+wQQlVDMami4xNzNl&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;后续开发计划&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;桌面三端播放器&lt;/li&gt;
+&lt;li&gt;ios 端&lt;/li&gt;
+&lt;/ol&gt;
+
+	</description></item><item><title>[职场话题] 聊聊 Team Health 与 eNPS：为什么团队脉冲调查（Pulse Survey）往往收不到真话？</title><link>https://www.v2ex.com/t/1253337#reply0</link><guid>tag:www.v2ex.com,2026-10-31:/t/1253337</guid><pubDate>Sat, 31 Oct 2026 00:23:58 +0000</pubDate><description>
+	&lt;p&gt;在带技术团队或做 Engineering Management 时，定期做 Team Health / eNPS 调研看起来很美，但实际落地往往非常尴尬：第一期大家还写写心声，第二期回复率砍半，第三期全在打满分走过场。&lt;/p&gt;
+&lt;p&gt;要让团队 Pulse Survey 真正有意义，在工程和管理层面上其实有几个挺值得讨论的冲突点：&lt;/p&gt;
+&lt;p&gt;1. &lt;strong&gt;数据呈现的粒度：&lt;/strong&gt;
+只看大盘平均分（ Mean Score ）几乎没意义，真正的问题全在切片里。但如果切片太细（比如 3-5 人的 Team ），就算底层删了 IP 和 Session ，成员也会因为“怕被猜出身份”而不敢说真话。大家在系统设计上一般怎么设定 Group Ceiling （数据切片下限）？&lt;/p&gt;
+&lt;p&gt;2. &lt;strong&gt;eNPS vs 维度满意度：&lt;/strong&gt;
+单一的 eNPS 指标适合拉长期趋势，但指导不了具体的 Action ； 1-5 分的维度满意度能定位问题，但容易让 TL 产生疲劳感。如果在 Dashboards 上只展示分类柱状图，TL 做了很多努力（如 4.0 提升到 4.9 ）在图表上可能根本看不出变化，直接打击改进积极性。&lt;/p&gt;
+&lt;p&gt;3. &lt;strong&gt;只收集不 De-brief （反馈闭环）：&lt;/strong&gt;
+这是 90% 调研失败的原因。如果在 30 天内不对 Team 做 De-brief 、不公布 2-3 个明确的 Action Items ，就是在用实际行动教育大家“填写没有任何意义”。&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;&lt;strong&gt;想问问各位 EM / Tech Lead / 开发者：&lt;/strong&gt;
+大家所在的公司平时会做这种 Pulse Survey 吗？对于这类匿名反馈，你觉得最大的痛点是&lt;strong&gt;“不敢说真话”&lt;/strong&gt;，还是&lt;strong&gt;“说了也没人理”&lt;/strong&gt;？&lt;/p&gt;
+&lt;p&gt;如果让你设计一个让 Dev 愿意表达真实想法的机制，你会更看重&lt;strong&gt;绝对的架构级匿名&lt;/strong&gt;，还是&lt;strong&gt;管理层的 Action 落地&lt;/strong&gt;？&lt;/p&gt;
+
+	</description></item><item><title>[Apple] Apple 智能即将登陆中国</title><link>https://www.v2ex.com/t/1253336#reply3</link><guid>tag:www.v2ex.com,2026-10-31:/t/1253336</guid><pubDate>Sat, 31 Oct 2026 00:00:39 +0000</pubDate><description>
+	&lt;p&gt;&lt;strong&gt;Apple 智能的首批核心功能包括实时翻译、照片 app 中的消除工具以及写作工具等，将于 11 月 4 日起开放测试&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Apple 今日宣布，首批旨在进一步提升 iPhone 用户体验的 Apple 智能功能即将在中国推出。Apple 智能深度整合于用户日常使用的各种 app 与体验中，助力用户轻松书写、表达自我，并高效处理各项事务。Apple 智能由 Apple 构建的生成式模型驱动，帮助用户通过实时翻译功能跨越语言障碍；通过写作工具改写、校对和摘要；通过视觉智能快速了解身边事物的更多信息；通过消除工具去除照片中的干扰对象；通过智绘表情创作契合当下心境的新表情符号，以及更多其他功能。此外，Apple 与阿里巴巴达成合作，在部分 Apple 智能体验中加入对千问的支持，让中国用户能直接在 Siri 、写作工具以及视觉智能中使用阿里巴巴的千问，包括文本与图像理解相关功能。这一系列 Apple 智能功能将自 11 月 4 日起随最新的 iOS 开发者 Beta 版开放测试，并将于 12 月 iOS 27.3 正式发布时面向中国用户推出。其他平台的支持将在获得必要审批后推出。&lt;/p&gt;
+&lt;p&gt;以下是 Apple 即将在支持的 iPhone 上向中国用户推出的首批功能：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;实时翻译&lt;/strong&gt;功能帮助用户在发送信息或交谈时跨特定语言进行交流，并无缝整合在信息、FaceTime 通话和电话 app 中。用户还可通过支持主动降噪的 AirPods 4 ，以及 AirPods Pro 2 及后续机型使用该功能，实时翻译面对面对话。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;写作工具&lt;/strong&gt;可帮助用户改写、校对和摘要输入的文本。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;视觉智能&lt;/strong&gt;帮助用户通过 iPhone 摄像头即时了解周围的物体和场所。&lt;/li&gt;
+&lt;li&gt;照片 app 的&lt;strong&gt;消除工具&lt;/strong&gt;可去除干扰对象，同时原样呈现拍摄当时的意境。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;智绘表情&lt;/strong&gt;让用户仅需输入文字描述，便可生成专属于自己的表情符号。&lt;/li&gt;
+&lt;li&gt;照片 app 中的&lt;strong&gt;自然语言搜索&lt;/strong&gt;让用户只需输入一段描述，就能更轻松地寻找某张照片或某段视频。&lt;/li&gt;
+&lt;li&gt;用户仅需输入描述即可在照片 app 中&lt;strong&gt;创建回忆影片&lt;/strong&gt;。&lt;/li&gt;
+&lt;li&gt;邮件 app 收件箱顶部的&lt;strong&gt;优先邮件&lt;/strong&gt;区域会显示最紧急的电子邮件，例如当日的午餐邀请或登机牌。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;邮件摘要&lt;/strong&gt;让用户只需轻点“生成摘要”，即可查看某封电子邮件或长邮件对话的关键要点。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;智能回复&lt;/strong&gt;可在邮件 app 和信息 app 中为用户生成快速答复文本建议。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;通知摘要&lt;/strong&gt;直接在锁定屏幕上提供关键信息，方便用户速览篇幅较长或分类叠放的通知。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;首要通知&lt;/strong&gt;会将最紧急的事项置于通知顶部，让用户立即看到可能需要关注的事项。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;减少干扰&lt;/strong&gt;专注模式仅会推送需要立刻处理的通知。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;备忘录 app 中的音频转录摘要&lt;/strong&gt;会自动生成，让重要信息一目了然。&lt;/li&gt;
+&lt;li&gt;用户可生成&lt;strong&gt;通话转录文本的摘要&lt;/strong&gt;，凸显重要细节。&lt;/li&gt;
+&lt;li&gt;Siri 变得更加自然且实用。用户可使用&lt;strong&gt;输⼊⽂字与 Siri 对话&lt;/strong&gt;功能，即使用户在表述时不够连贯，Siri 也能准确理解其意图，并在连续的对话中保持上下文的连贯。&lt;/li&gt;
+&lt;li&gt;在处理特定请求时，Siri 能够接入&lt;strong&gt;千问&lt;/strong&gt;，利用其广博的知识为用户提供协助。用户还可以针对照片以及包含 PDF 与演示文稿的文档进行提问。只需登录千问账户，或使用通过 Apple 登录，用户即可在 Apple 智能中顺畅访问千问。&lt;/li&gt;
+&lt;li&gt;借助&lt;strong&gt;创作&lt;/strong&gt;功能，用户可以直接在系统全局的写作工具中，让千问从零开始创作原创内容。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;本次更新不包含 Siri AI 及 Apple 在 WWDC 2026 上宣布的其他下一代 Apple 智能功能。&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;注 1: 首批核心 Apple 智能功能将随 iOS 27.3 面向中国用户提供，&lt;strong&gt;支持的设备包括：iPhone 16 及后续机型、iPhone Duo 、iPhone 15 Pro 、iPhone 15 Pro Max 和 iPhone Air&lt;/strong&gt;，且 Siri 与设备语言均需设置为英文和中文（简体）。&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.apple.com.cn/newsroom/2026/10/apple-intelligence-features-are-coming-to-users-in-china/" rel="nofollow"&gt;https://www.apple.com.cn/newsroom/2026/10/apple-intelligence-features-are-coming-to-users-in-china/&lt;/a&gt;&lt;/p&gt;
+
+	</description></item><item><title>[Claude] 大家目前被封禁了几个 Claude 账户？</title><link>https://www.v2ex.com/t/1253335#reply4</link><guid>tag:www.v2ex.com,2026-10-30:/t/1253335</guid><pubDate>Fri, 30 Oct 2026 23:47:21 +0000</pubDate><description>
+	&lt;p&gt;看了最近不少 Claude 封号的帖子，也想分享一下自己的情况&lt;/p&gt;
+&lt;p&gt;我的账号目前都还正常，最早的一个已经使用了 1 年 3 个月。注册初期甚至有 3 个月是在设备设置为北京时间的 iPhone 上使用的，后来还在 iPhone 上订阅过一个月 Pro&lt;/p&gt;
+&lt;p&gt;目前没有 Max 的需求&lt;/p&gt;
+&lt;p&gt;大家的 Claude 账号都是什么情况？最长用了多久？&lt;/p&gt;
+
+	</description></item><item><title>[iOS] Apple 智能将于 11 月 4 日上线</title><link>https://www.v2ex.com/t/1253334#reply1</link><guid>tag:www.v2ex.com,2026-10-30:/t/1253334</guid><pubDate>Fri, 30 Oct 2026 23:31:31 +0000</pubDate><description>
+	&lt;p&gt;&lt;img alt="" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://i.imgur.com/4KVby1k.jpeg"/&gt; &lt;/p&gt;
+&lt;p&gt;&lt;img alt="" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://i.v2ex.co/DRPZ94wl.jpeg"/&gt;&lt;/p&gt;
+&lt;p&gt;官网页面放出了，新闻稿说是 11 月 4 号上 beta 。首批机型列表里只有 iPhone ，没有 iPad 和 Mac 。&lt;/p&gt;
+
+	</description></item><item><title>[分享创造] 不想再为了改一句英文切去 ChatGPT 了，我做了个在任何输入框里一键搞定的 Mac 工具</title><link>https://www.v2ex.com/t/1253333#reply0</link><guid>tag:www.v2ex.com,2026-10-30:/t/1253333</guid><pubDate>Fri, 30 Oct 2026 22:34:05 +0000</pubDate><description>
+	&lt;p&gt;在外企打工，每天都是是脑子里想的是中文，手上还得敲英文。Slack、邮件写完总要读两遍，感觉怪怪的，又不知道怎么改。&lt;/p&gt;
+&lt;p&gt;之前一直用 Raycast 的 AI 改英文，但输入框太小，prompt 改起来也不太顺手。干脆自己搓了一个，叫 Inklet，常驻 Mac 菜单栏，专门干这件事。&lt;/p&gt;
+&lt;p&gt;用起来很简单：&lt;/p&gt;
+&lt;p&gt;在任何输入框按 &lt;code&gt;⌥ Space&lt;/code&gt;（可以随意设置），中文英文随便写，回车生成自然的英文，再回车直接填回原来的输入框。不用切窗口，也不用复制粘贴。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Inklet" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://getinklet.app/zh/opengraph-image.png"/&gt;&lt;/p&gt;
+&lt;p&gt;另外还加了几个自己常用的功能：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;免费开源&lt;/strong&gt;，MIT 协议&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;不用 API Key&lt;/strong&gt;，M 系列 Mac 可以直接跑本地模型，断网也能用&lt;/li&gt;
+&lt;li&gt;也支持 DeepSeek、Claude、OpenAI、Gemini 等云端模型&lt;/li&gt;
+&lt;li&gt;按住右 Option 直接说话，本地语音识别，中英混说也行&lt;/li&gt;
+&lt;li&gt;选中文字就能翻译、朗读&lt;/li&gt;
+&lt;li&gt;Prompt 随便改，比如「礼貌一点但别太客套」&lt;/li&gt;
+&lt;li&gt;不用注册，没有埋点。用本地模型的话，数据不出电脑&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;支持 macOS 14+，安装包也做了苹果签名和公证。&lt;/p&gt;
+&lt;p&gt;官网： &lt;a href="https://getinklet.app/zh" rel="nofollow"&gt;https://getinklet.app/zh&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;GitHub： &lt;a href="https://github.com/wanming/Inklet" rel="nofollow"&gt;https://github.com/wanming/Inklet&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;目前还在自己慢慢迭代，欢迎试用，有什么不好用的直接吐槽。如果觉得还行，也求个 Star，给独立开发者一点动力哈哈。&lt;/p&gt;
+
+	</description></item><item><title>[酷工作] 我新上线一个小项目，帮大家快速查找大厂外企工作的，求职者营地： qzzyd.com。</title><link>https://www.v2ex.com/t/1253332#reply4</link><guid>tag:www.v2ex.com,2026-10-30:/t/1253332</guid><pubDate>Fri, 30 Oct 2026 21:47:30 +0000</pubDate><description>
+	&lt;p&gt;背景很简单：之前帮朋友看机会，发现一个挺反直觉的事——真正靠谱的大厂和外企岗位，
+很多压根不上 BOSS 这类招聘软件，只挂在自己官网的 careers 页上。
+于是问题来了：几十上百家公司，每家一个招聘门户，有的用 Moka 、有的用北森、有的干脆自己造一套，挨个刷一遍一下午就没了。&lt;/p&gt;
+&lt;p&gt;所以干脆写了个程序去干这件事：直接对接各家公司的官网招聘页，每天定时抓一遍，把在招岗位归集到一块儿。站点叫求职者营地，&lt;a href="http://qzzyd.com" rel="nofollow"&gt;qzzyd.com&lt;/a&gt; （域名是「求职者营地」拼音首字母，不是打错）。&lt;/p&gt;
+&lt;p&gt;现在的规模：2600+ 个官网直连源，2 万家公司，14 万+ 在招岗位，每天新增两千多条。
+按城市、行业、经验、学历过滤，每两条之间可以直接对比，岗位详情跳回的是它自己的官网投递页——所有岗位都标了「岗位以官网为准」，抓错了欢迎回帖锤我。另外做了个不太常见的小功能：AI 匹配分析。传一份简历上去，它不光告诉你匹配哪些岗，还会明确告诉你差在哪（哪些要求你没满足），而不是为了留着你一直刷，全都给你打 90 分。
+产品还糙，很多功能是半成品，界面也谈不上好看，但数据是真每天在更新的。
+感兴趣的可以拿自己想看的外企试试，如果发现哪家大厂明明在招人但站内没有，回帖告诉我公司名，我把它加进抓取源。
+（纯个人项目，欢迎提意见。）&lt;/p&gt;
+
+	</description></item><item><title>[推广] dlbcode 回帖送 2 刀，注册送 0.5 刀， GPT 不降智 0.16 起，福利 0.08， ds0.1 起。1 元 1 刀 充值无手续费</title><link>https://www.v2ex.com/t/1253331#reply0</link><guid>tag:www.v2ex.com,2026-10-30:/t/1253331</guid><pubDate>Fri, 30 Oct 2026 21:20:33 +0000</pubDate><description>
+	&lt;p&gt;dlbcode 现已正式运营，支持 GPT 、Claude 、DS 反代，官转 API 接入欢迎大家体验。&lt;/p&gt;
+&lt;p&gt;主站： &lt;a href="https://www.dlbcode.com" rel="nofollow"&gt;https://www.dlbcode.com&lt;/a&gt; &lt;/p&gt;
+&lt;p&gt;🎁 福利：注册送 0.5 刀+回帖送 2 刀体验金&lt;/p&gt;
+&lt;p&gt;在本帖回复你的 dlbcode 用户名，赠送 2 刀体验金。每个账号限领一次，额度无使用期限。&lt;/p&gt;
+&lt;p&gt;💰 价格
+福利 GPT 0.08 起 ，不降智 GPT 0.16 起
+DS 0.1 起
+Claude 0.1 起 MAX0.95
+1 元 = 1 刀，实际扣费以官网价格页和控制台账单为准，充值无手续费
+公开模型监控
+有问题可以直接在楼里反馈或加 qq 群反馈。遇到模型报错、卡顿或上游拥堵，可切换分组或联系客服处理。&lt;/p&gt;
+&lt;p&gt;赠金 12 小时内看见了就会补上&lt;/p&gt;
+
+	</description></item><item><title>[推广] 做了一个网站运维检测平台，来群里提提建议</title><link>https://www.v2ex.com/t/1253330#reply0</link><guid>tag:www.v2ex.com,2026-10-30:/t/1253330</guid><pubDate>Fri, 30 Oct 2026 19:23:24 +0000</pubDate><description>
 	网址： &lt;a target="_blank" href="https://www.kkce.com/" rel="nofollow noopener"&gt;https://www.kkce.com/&lt;/a&gt;&lt;br /&gt;QQ 群：591111150&lt;br /&gt;飞机群： &lt;a target="_blank" href="https://t.me/+g8n0Bc7Y6ixkYWQx" rel="nofollow noopener"&gt;https://t.me/+g8n0Bc7Y6ixkYWQx&lt;/a&gt;&lt;br /&gt;&lt;a target="_blank" href="/i/mBBi8Qg9.png" rel="nofollow noopener" target="_blank" title="在新窗口打开图片 mBBi8Qg9.png"&gt;&lt;img src="//i.v2ex.co/mBBi8Qg9.png" class="embedded_image"&gt;&lt;/a&gt;
 	</description></item><item><title>[程序员] 写了一个 AI 桌面应用(gpt claude 反重力)的免全局、TUN 的进程代理软件，欢迎大家试用</title><link>https://www.v2ex.com/t/1253329#reply3</link><guid>tag:www.v2ex.com,2026-10-30:/t/1253329</guid><pubDate>Fri, 30 Oct 2026 19:05:33 +0000</pubDate><description>
 	&lt;h1&gt;Local-AI-Route&lt;/h1&gt;
@@ -32,7 +214,7 @@
 &lt;p&gt;&lt;img alt="Snipaste_2026-10-30_07-34-08.png" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://picui.ogmua.cn/s1/2026/10/31/6ae4e8f533e16.webp"/&gt;&lt;/p&gt;
 &lt;p&gt;最后是项目地址： &lt;a href="https://github.com/hongye007/open-pose-costume" rel="nofollow"&gt;https://github.com/hongye007/open-pose-costume&lt;/a&gt;&lt;/p&gt;
 
-	</description></item><item><title>[浏览器] 除了 360 极速 X，还有哪家浏览器把“代理切换”和“鼠标手势”都做进了设置里？</title><link>https://www.v2ex.com/t/1253327#reply1</link><guid>tag:www.v2ex.com,2026-10-30:/t/1253327</guid><pubDate>Fri, 30 Oct 2026 18:50:37 +0000</pubDate><description>
+	</description></item><item><title>[浏览器] 除了 360 极速 X，还有哪家浏览器把“代理切换”和“鼠标手势”都做进了设置里？</title><link>https://www.v2ex.com/t/1253327#reply2</link><guid>tag:www.v2ex.com,2026-10-30:/t/1253327</guid><pubDate>Fri, 30 Oct 2026 18:50:37 +0000</pubDate><description>
 	&lt;p&gt;目前一直在用 360 极速浏览器 X ，但是他内核更新比较缓慢，一些插件或网站对浏览器内核有要求，例如 360 极速 X 的 132 内核访问 Codeberg 时会被对方识别为版本过低而拦截
 &lt;img alt="pn6fwqO.png" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://s41.ax1x.com/2026/10/31/pn6fwqO.png"/&gt;&lt;/p&gt;
 &lt;p&gt;但是又用习惯了 360 内置的代理切换功能
@@ -86,7 +268,7 @@
 &lt;h2&gt;想问问大家&lt;/h2&gt;
 &lt;p&gt;你们的存储阵列，备盘是按原厂料号备的，还是按容量和接口备的？有没有遇到过「物理能插、阵列不认」的情况？&lt;/p&gt;
 
-	</description></item><item><title>[NAS] 中了勒索病毒后，我觉得 NAS 有必要装个杀毒软件吧</title><link>https://www.v2ex.com/t/1253321#reply6</link><guid>tag:www.v2ex.com,2026-10-30:/t/1253321</guid><pubDate>Fri, 30 Oct 2026 16:06:12 +0000</pubDate><description>
+	</description></item><item><title>[NAS] 中了勒索病毒后，我觉得 NAS 有必要装个杀毒软件吧</title><link>https://www.v2ex.com/t/1253321#reply7</link><guid>tag:www.v2ex.com,2026-10-30:/t/1253321</guid><pubDate>Fri, 30 Oct 2026 16:06:12 +0000</pubDate><description>
 	普通人 nas 一般都没有杀毒软件监控啥的吧，这次中了勒索病毒，文件全被加密，如果装了杀毒软件，总能止损吧？
 	</description></item><item><title>[分享发现] 这个工具能帮你用不同的浏览器 Profile 打开不同的链接</title><link>https://www.v2ex.com/t/1253319#reply0</link><guid>tag:www.v2ex.com,2026-10-30:/t/1253319</guid><pubDate>Fri, 30 Oct 2026 15:55:16 +0000</pubDate><description>
 	&lt;p&gt;&lt;a href="https://github.com/pluveto/linklane" rel="nofollow"&gt;https://github.com/pluveto/linklane&lt;/a&gt;&lt;/p&gt;
@@ -103,7 +285,7 @@
 
 	</description></item><item><title>[分享创造] 扒了本周 HN 的 12 个新站：病毒传播的平均 184 分，认真做 SEO 的平均 49 分</title><link>https://www.v2ex.com/t/1253315#reply1</link><guid>tag:www.v2ex.com,2026-10-30:/t/1253315</guid><pubDate>Fri, 30 Oct 2026 15:27:24 +0000</pubDate><description>
 	最近在琢磨一件事：**怎么判断一个网站是怎么起量的**——是靠搜索慢慢长出来的，还是靠一波社交传播炸出来的。&lt;br /&gt;&lt;br /&gt;这周拿 Hacker News 上 12 个新站练了手。方法没用任何付费数据，只用了三个免费接口：HN 的 Algolia API 拿热度，RDAP 拿域名注册日，sitemap.xml 数内容页。&lt;br /&gt;&lt;br /&gt;结果有点反直觉。&lt;br /&gt;&lt;br /&gt;## 热度最高的那批，没有一个在做 SEO&lt;br /&gt;&lt;br /&gt;本周 HN 上 624 分的那个站（ &lt;a target="_blank" href="http://stealmybitcoin.com" rel="nofollow noopener"&gt;stealmybitcoin.com&lt;/a&gt; ），域名是 10 月 23 号才注册的，**7 天**。零 sitemap 、零内容页。&lt;br /&gt;&lt;br /&gt;它靠的是一个能被一句话说清的概念 + HN 首页。&lt;br /&gt;&lt;br /&gt;同类还有 4 个：域名都在一个月内，内容资产全是零。这一组的平均热度是 **184 分**。&lt;br /&gt;&lt;br /&gt;## 认真做 SEO 的那两个，热度垫底&lt;br /&gt;&lt;br /&gt;- **&lt;a target="_blank" href="http://arsaze.com" rel="nofollow noopener"&gt;arsaze.com&lt;/a&gt;**：60 分。域名 2 个月，**574 个内容页**，密度 207 页/月。&lt;br /&gt;- **&lt;a target="_blank" href="http://freehire.me" rel="nofollow noopener"&gt;freehire.me&lt;/a&gt;**：38 分。**583 个内容页**，做的是职位聚合。&lt;br /&gt;&lt;br /&gt;这一组平均 **49 分**，不到病毒组的零头。&lt;br /&gt;&lt;br /&gt;但它们的 sitemap 暴露了真实策略：**它们在 HN 之外，还铺了一条能被搜索找到的路**。&lt;br /&gt;&lt;br /&gt;HN 的热度是一天，500 个内容页是三年。&lt;br /&gt;&lt;br /&gt;## 三个可能对你有用的结论&lt;br /&gt;&lt;br /&gt;**1. 别用 HN 热度当需求验证。**&lt;br /&gt;这周 624 分的站和 38 分的站，热度差 16 倍，但后者大概率活得更久。&lt;br /&gt;&lt;br /&gt;**2. 想抄站，先看 sitemap 页数。**&lt;br /&gt;低于 50 页、域名又很新的，基本是一波流，你抄不了——因为你没法计划"我这周火一下"。&lt;br /&gt;&lt;br /&gt;**3. 想学方法，去看 100 页以上、域名 3 个月以上的站。**&lt;br /&gt;它们已经熬过了冷启动，说明路子是通的。&lt;br /&gt;&lt;br /&gt;## 方法本身&lt;br /&gt;&lt;br /&gt;判断规则很简单，全靠公开数据：&lt;br /&gt;&lt;br /&gt;- 内容页密度 = sitemap 页数 ÷ 域名年龄（月）&lt;br /&gt;- 密度 &amp;gt; 80 页/月 → SEO 驱动&lt;br /&gt;- 无 sitemap + 域名 &amp;lt; 1 个月 + 高热度 → 病毒/社交驱动&lt;br /&gt;- 低页数 + 老域名 → 品牌/口碑驱动&lt;br /&gt;&lt;br /&gt;**先说清楚局限**：这是**推断，不是实测流量**。它不回答"这个站有多少访问"，只回答"这个站除了这波热度，还有没有第二条路"。样本只有 12 个，全来自 HN ，偏技术偏英文，结论只当线索。&lt;br /&gt;&lt;br /&gt;## 想继续做下去，求点反馈&lt;br /&gt;&lt;br /&gt;我打算每周出一期，把这套东西做成一个固定栏目：**每周扫一遍正在起量的站，标出它是靠 SEO 、GEO （ AI 助手引用）、社交还是病毒起来的，以及这个热度可不可抄。**&lt;br /&gt;&lt;br /&gt;两个问题想请教：&lt;br /&gt;&lt;br /&gt;1. 这个角度对你有用吗？还是说你更关心别的东西（比如某个具体赛道里谁在赚钱）？&lt;br /&gt;2. **如果你想让我拆某个站，直接把域名回在下面，我下周拆给你看。** 不管是你自己的站还是竞争对手的。&lt;br /&gt;&lt;br /&gt;---&lt;br /&gt;&lt;br /&gt;*数据都在，欢迎质疑具体数字，我能一条条对。*
-	</description></item><item><title>[问与答] 一旦动了离婚的念头，结局是不是基本确定了？</title><link>https://www.v2ex.com/t/1253314#reply9</link><guid>tag:www.v2ex.com,2026-10-30:/t/1253314</guid><pubDate>Fri, 30 Oct 2026 15:26:47 +0000</pubDate><description>
+	</description></item><item><title>[生活] 一旦动了离婚的念头，结局是不是基本确定了？</title><link>https://www.v2ex.com/t/1253314#reply18</link><guid>tag:www.v2ex.com,2026-10-30:/t/1253314</guid><pubDate>Fri, 30 Oct 2026 15:26:47 +0000</pubDate><description>
 	&lt;p&gt;有了这种想法，但仍继续坚持的老哥，后面都怎么样了？&lt;/p&gt;
 &lt;p&gt;基本情况：爸妈健在，家在珠三角边缘农村，现在 30 出头了，对方相亲认识的，也是老家附近的人，因为各种各样的原因，各种吵吵闹闹，心里不舒服，可见的未来大概率也是这样，难以为继，还不如一个人，如果离婚了，我估计不会再婚，一是觉得自己内向，难找到伴侣，二是觉得幸福家庭应该是极小概率事件。&lt;/p&gt;
 &lt;p&gt;但有现实问题是：
@@ -126,7 +308,7 @@
 &lt;p&gt;奖品是免费协助服务，不是现金或保证退款。接口受理、任务完成不代表退款获批或到账，退款金额与到账结果以 OpenAI 及支付渠道的实际处理为准。本活动为个人发起，与 OpenAI 官方无关。仅限本人拥有或获得合法授权、能够正常登录的账号。&lt;/p&gt;
 &lt;p&gt;请勿在帖子或公开评论中提供密码、2FA 密钥、Cookie 、Access Token 或支付信息。&lt;/p&gt;
 
-	</description></item><item><title>[分享创造] 开源一个家庭试卷工作台</title><link>https://www.v2ex.com/t/1253312#reply3</link><guid>tag:www.v2ex.com,2026-10-30:/t/1253312</guid><pubDate>Fri, 30 Oct 2026 15:21:07 +0000</pubDate><description>
+	</description></item><item><title>[分享创造] 开源一个家庭试卷工作台</title><link>https://www.v2ex.com/t/1253312#reply4</link><guid>tag:www.v2ex.com,2026-10-30:/t/1253312</guid><pubDate>Fri, 30 Oct 2026 15:21:07 +0000</pubDate><description>
 	&lt;p&gt;初衷很简单：要在网上搜试卷，打印给妹妹做（成绩实在惨不忍睹了）。偶然发现小红书上资源挺不错，一开始就是个简单网页，后来嫌操作繁琐——先用浏览器脚本下载图片，再本地合成 PDF 打印，有时候还得调整图片。趁着 ZCode 还在送 token ，干脆让它直接做成了程序。中间经历了几次迭代，有些功能边界我自己可能都没用到，目前基本功能差不多了，感兴趣的可以试试。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;它能做什么&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
@@ -170,7 +352,7 @@
 &lt;p&gt;App Store： &lt;a href="https://apps.apple.com/app/id6804753844" rel="nofollow"&gt;https://apps.apple.com/app/id6804753844&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;欢迎下载体验，有任何 bug 、想要的功能，都欢迎回帖。&lt;/p&gt;
 
-	</description></item><item><title>[问与答] 有人知道马斯克的 8 美元的综合会员 build 写代码的用量有多少吗？</title><link>https://www.v2ex.com/t/1253307#reply0</link><guid>tag:www.v2ex.com,2026-10-30:/t/1253307</guid><pubDate>Fri, 30 Oct 2026 14:48:08 +0000</pubDate><description>
+	</description></item><item><title>[grok] 有人知道马斯克的 8 美元的综合会员 build 写代码的用量有多少吗？</title><link>https://www.v2ex.com/t/1253307#reply0</link><guid>tag:www.v2ex.com,2026-10-30:/t/1253307</guid><pubDate>Fri, 30 Oct 2026 14:48:08 +0000</pubDate><description>
 	
 	</description></item><item><title>[Claude] 用 apple store 订阅 claude 但总是提示“Apple 需要审查”</title><link>https://www.v2ex.com/t/1253306#reply6</link><guid>tag:www.v2ex.com,2026-10-30:/t/1253306</guid><pubDate>Fri, 30 Oct 2026 14:41:44 +0000</pubDate><description>
 	&lt;p&gt;我第一个号被封了之后，我又注册了新的号，用了新的 gmail 和家宽 + apple store id&lt;/p&gt;
@@ -179,7 +361,7 @@
 &lt;p&gt;我自己也有美国的虚拟信用卡但是自从第一个号被封了之后似乎整个卡段被风控了，我用新号做过实验，只要一支付就会弹 kyc&lt;/p&gt;
 &lt;p&gt;所以还有别的支付方式吗？有那种提供物理、固定且一号一卡（防止被关联批量封号）的信用卡帮忙支付的服务吗？&lt;/p&gt;
 
-	</description></item><item><title>[Apple] Loon 用可莉插件的注意一下，后续插件内容会被加密</title><link>https://www.v2ex.com/t/1253305#reply13</link><guid>tag:www.v2ex.com,2026-10-30:/t/1253305</guid><pubDate>Fri, 30 Oct 2026 14:40:34 +0000</pubDate><description>
+	</description></item><item><title>[Apple] Loon 用可莉插件的注意一下，后续插件内容会被加密</title><link>https://www.v2ex.com/t/1253305#reply18</link><guid>tag:www.v2ex.com,2026-10-30:/t/1253305</guid><pubDate>Fri, 30 Oct 2026 14:40:34 +0000</pubDate><description>
 	好像是有人不遵守协议肆意转发把作者搞生气了，然后 Loon 光速推出了之前的废案，现在允许插件加密了。我作为白嫖党很感谢大佬的贡献，不过后面我是真不敢用了...&lt;br /&gt;当然有人说你平时也不看插件源码，对你有影响吗？这个例子就像路边的摄像头，我平时也没法看，但是我知道这么多用户里面总有几个盯着更新的（我身边知道的就有一个，从来不开自动更新，都是手动维护），而且在大众的监督下，做手脚的风险很低，也能追溯。后续插件全面加密之后，只能通过抓包分析流量来判断插件的内容了，就像把大街上的摄像头全拆了，一举一动全靠大家的良心。作者用爱发电了好几年，我也信任最近一段时间的插件肯定没有问题，就怕在用一两年之后，人总是会变的，我也见过开源项目偷偷卖给企业的例子出现，那时候谁也说不好...&lt;br /&gt;还是自己维护一个仓库更方便，可惜可莉的插件更新的又快又好用，希望未来环境好一点了还能用上吧
 	</description></item><item><title>[macOS] 受不了目录半天点不开的 bug，升 27.2 不知道有没有解决</title><link>https://www.v2ex.com/t/1253304#reply1</link><guid>tag:www.v2ex.com,2026-10-30:/t/1253304</guid><pubDate>Fri, 30 Oct 2026 14:38:20 +0000</pubDate><description>
 	目录半天点不开，这 bug 都会出现，Ternus 服了！&lt;br /&gt;&lt;br /&gt;&lt;a target="_blank" href="https://i.imgur.com/OulnG1L.png" rel="nofollow noopener" target="_blank"&gt;&lt;img src="https://i.imgur.com/OulnG1L.png" class="embedded_image" rel="noreferrer"&gt;&lt;/a&gt;
@@ -195,7 +377,7 @@
 	</description></item><item><title>[OpenAI] astra 的智商</title><link>https://www.v2ex.com/t/1253300#reply4</link><guid>tag:www.v2ex.com,2026-10-30:/t/1253300</guid><pubDate>Fri, 30 Oct 2026 13:42:28 +0000</pubDate><description>
 	&lt;p&gt;我让他研究研究同行的验证是怎么做的 然后继续研究发邮件，已经研究好多轮 给相关机构发过很多邮件了，结果他给同行发了邮件。 马币我爆粗了&lt;/p&gt;
 
-	</description></item><item><title>[问与答] 所以其实是工程师造出来 AI，然后 AI 反噬，把程序员这个行业消灭掉？</title><link>https://www.v2ex.com/t/1253298#reply0</link><guid>tag:www.v2ex.com,2026-10-30:/t/1253298</guid><pubDate>Fri, 30 Oct 2026 13:36:45 +0000</pubDate><description>
+	</description></item><item><title>[问与答] 所以其实是工程师造出来 AI，然后 AI 反噬，把程序员这个行业消灭掉？</title><link>https://www.v2ex.com/t/1253298#reply1</link><guid>tag:www.v2ex.com,2026-10-30:/t/1253298</guid><pubDate>Fri, 30 Oct 2026 13:36:45 +0000</pubDate><description>
 	&lt;p&gt;感觉好讽刺啊...&lt;/p&gt;
 
 	</description></item><item><title>[北京] 北京车牌有没有指标过户</title><link>https://www.v2ex.com/t/1253297#reply4</link><guid>tag:www.v2ex.com,2026-10-30:/t/1253297</guid><pubDate>Fri, 30 Oct 2026 13:26:26 +0000</pubDate><description>
@@ -276,7 +458,7 @@
 &lt;/ul&gt;
 &lt;p&gt;欢迎拍砖，特别想知道哪类论文的阅读顺序会出问题。Issue 、Discussions 都可以，有问题也可以直接在帖子里回复。&lt;/p&gt;
 
-	</description></item><item><title>[Claude] Claude 和 gpt 送的那个官你们不要可以丢我</title><link>https://www.v2ex.com/t/1253293#reply3</link><guid>tag:www.v2ex.com,2026-10-30:/t/1253293</guid><pubDate>Fri, 30 Oct 2026 12:57:06 +0000</pubDate><description>
+	</description></item><item><title>[Claude] Claude 和 gpt 送的那个官你们不要可以丢我</title><link>https://www.v2ex.com/t/1253293#reply4</link><guid>tag:www.v2ex.com,2026-10-30:/t/1253293</guid><pubDate>Fri, 30 Oct 2026 12:57:06 +0000</pubDate><description>
 	最近有任务 需要不少 额度基本 200 刀&lt;br /&gt;我赞助了论坛的广告 交易不用担心安全
 	</description></item><item><title>[问与答] vision pro 已经成鸡肋了么？</title><link>https://www.v2ex.com/t/1253292#reply5</link><guid>tag:www.v2ex.com,2026-10-30:/t/1253292</guid><pubDate>Fri, 30 Oct 2026 12:46:11 +0000</pubDate><description>
 	现在几乎已经听不到这个设备的消息了
@@ -330,86 +512,5 @@
 &lt;p&gt;或者是否有三方的 API 呢？&lt;/p&gt;
 &lt;p&gt;哪位老铁有了解的给说说呗。&lt;/p&gt;
 &lt;p&gt;另外 Instagram 呢，是否也有官方的？或者三方的。&lt;/p&gt;
-
-	</description></item><item><title>[分享创造] 申研速达 GradOfferNow 留学申研资料库采集完成</title><link>https://www.v2ex.com/t/1253280#reply1</link><guid>tag:www.v2ex.com,2026-10-30:/t/1253280</guid><pubDate>Fri, 30 Oct 2026 11:23:00 +0000</pubDate><description>
-	作为海外授课型硕士申请资料库，经过本人和多个智能体合作已经完成收录的 17 个国家 290 所 QS 2027 收录学校数据的深度采集，整理出 2987 个硕士项目的数据，进行科学排序整理，所有资料跟相关学校仔细核对并给出对应链接。&lt;br /&gt;&lt;br /&gt;全部免费开放让需要的人使用，并且免费提供 按你的背景逐项核对官网门槛，给出选校分析报告，提供冲刺 / 匹配 / 保底清单 1 个工作日内邮件交付。&lt;br /&gt;&lt;br /&gt;完全开放、不需任何费用。&lt;br /&gt;&lt;br /&gt;&lt;a target="_blank" href="https://www.GradOfferNow.com" rel="nofollow noopener"&gt;https://www.GradOfferNow.com&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;因为是新开发的，如果你认为对你有帮助，请帮宣传和回复鼓励下。
-	</description></item><item><title>[酷工作] Kimi AI ｜体验运营实习生（Harness）</title><link>https://www.v2ex.com/t/1253279#reply0</link><guid>tag:www.v2ex.com,2026-10-30:/t/1253279</guid><pubDate>Fri, 30 Oct 2026 11:20:26 +0000</pubDate><description>
-	体验运营实习生（ Harness 业务方向）&lt;br /&gt;毕业时间：2027 年 6 月之后&lt;br /&gt;出勤要求：优先一周到岗 5 天，可实习 4 个月以上，优先长期实习&lt;br /&gt;&lt;br /&gt;核心职责&lt;br /&gt;1. Harness 业务运营支持&lt;br /&gt;- 深入调研 AI 业务场景，挖掘高价值 AI 应用需求，将用户反馈转化为可落地的业务洞察&lt;br /&gt;- 协助面向 AI 原生产品的用户体验分析与流程优化，优化用户交互路径与工具易用性&lt;br /&gt;- 参与产品效果评测体系的设计与执行，跟踪 Agent 与模型在实际场景中的表现数据&lt;br /&gt;2. AI 工具与智能客服能力建设&lt;br /&gt;- 协助 Harness 相关客服策略设计、流程搭建与效果调优，将业务知识转化为 AI 语言&lt;br /&gt;- 运用 Coding/Vibe Coding 能力进行知识训练、Prompt 精调与效果优化，推动 AI 在客服场景的应用&lt;br /&gt;- 善用各类 Agent 工具提效，对 LLM 应用、RAG 、工作流编排有基本认知或实践经验&lt;br /&gt;3. 跨团队协作与体验闭环&lt;br /&gt;- 与产品、工程、算法团队紧密协作，推动 Harness 业务体验问题有效解决并跟踪改进效果&lt;br /&gt;- 对接相关方推动数据接入与产品集成，协同优化对「人」和「 Agent 」均友好的工具与接口&lt;br /&gt;- 参与客服反馈机制搭建，推动用户问题闭环管理&lt;br /&gt; &lt;br /&gt;职位要求&lt;br /&gt;能力与技能：&lt;br /&gt;- 具备良好的逻辑思维、数据分析、快速学习能力，对改善用户体验有强烈的热情和主人翁意识&lt;br /&gt;- 具备一定的 Coding/Vibe Coding 能力，能运用 AI 工具辅助工作，熟悉 Python/SQL 者优先&lt;br /&gt;- 逻辑清晰，能快速理解技术与业务的交叉需求，具备与工程师、数据商、客户多方协作的能力&lt;br /&gt;- 能主动发现问题并推动解决&lt;br /&gt;&lt;br /&gt;加分项（非必须）：&lt;br /&gt;- 对 AI 行业和 AI 产品有浓厚兴趣，并有一定了解&lt;br /&gt;- 擅长撰写 prompt 、搭建 AI agent&lt;br /&gt;- 有过用户研究、客服、产品或运营相关的实习经验&lt;br /&gt;- 能独立完成数据清洗、分析或轻量脚本开发&lt;br /&gt;&lt;br /&gt;请把你的简历，名字，以及实习时长投递到： zhailangxi@moonshot.ai
-	</description></item><item><title>[投资] 各位 10 月亏多少了，展望 11 月有信心么</title><link>https://www.v2ex.com/t/1253277#reply2</link><guid>tag:www.v2ex.com,2026-10-30:/t/1253277</guid><pubDate>Fri, 30 Oct 2026 11:11:27 +0000</pubDate><description>
-	月初清了大部分 a 股相关基金，结果这个月还是爆亏，主要是被黄金和剩下的个别大 a 基金拖累，然后纳指也跌了一点，这个月把去年的收益亏完了。。。如果月初没清，这个月就真成金融消费者，也算是不幸中的万幸了。&lt;br /&gt;&lt;br /&gt;11 月，，应该会好起来罢，再降下去怕是形成破窗效应大家一起清仓等 3000 点。其实到现在我也不懂大 a 市场，是受到什么刺激看到什么信号又发病狂泻，像科技我感觉我们在稳步发展呀，却从 6 月跌到现在突然又一波暴跌，不会是清仓换钱过双 11 吧。
-	</description></item><item><title>[程序员] codex claude 代充，成品号</title><link>https://www.v2ex.com/t/1253276#reply0</link><guid>tag:www.v2ex.com,2026-10-30:/t/1253276</guid><pubDate>Fri, 30 Oct 2026 11:03:26 +0000</pubDate><description>
-	&lt;p&gt;&lt;a href="https://easyoo.xyz/" rel="nofollow"&gt;https://easyoo.xyz/&lt;/a&gt;
-发现一个好用的 codex claude 代充，成品号网站&lt;/p&gt;
-
-	</description></item><item><title>[分享发现] 电饭煲避坑苏泊尔</title><link>https://www.v2ex.com/t/1253275#reply10</link><guid>tag:www.v2ex.com,2026-10-30:/t/1253275</guid><pubDate>Fri, 30 Oct 2026 11:00:31 +0000</pubDate><description>
-	&lt;p&gt;年初买的，9 月份坏了，煮好饭后打不开盖子，与京东客服协商后给免费换新。最近又坏了，用了不到两个月。目前还在找京东客服申请退货。&lt;/p&gt;
-&lt;p&gt;我认为应该是产品有缺陷，在此分享给大家避坑。最近在买电饭煲的朋友参考。&lt;/p&gt;
-&lt;p&gt;商品名：
-苏泊尔（ SUPOR ）有钛 IH 鲜呼吸电压力锅 5L 高压 112kPa 电饭煲 4-6 人 316L 球釜 &amp;amp;SY-50HC8015Q 面板丝印批次随机发货&lt;/p&gt;
-
-	</description></item><item><title>[程序员] hark 也挺好用的，没比 muse 差多少，还好注册</title><link>https://www.v2ex.com/t/1253274#reply2</link><guid>tag:www.v2ex.com,2026-10-30:/t/1253274</guid><pubDate>Fri, 30 Oct 2026 10:51:53 +0000</pubDate><description>
-	试了几个任务都挺不错的。
-	</description></item><item><title>[奇思妙想] 怎么才能用 ai 搜索到更多的情报呢</title><link>https://www.v2ex.com/t/1253273#reply5</link><guid>tag:www.v2ex.com,2026-10-30:/t/1253273</guid><pubDate>Fri, 30 Oct 2026 10:47:58 +0000</pubDate><description>
-	&lt;p&gt;我发现一个很大的问题，大家包括我都会觉得 agent 搜索的能力很强，遇到什么事情就会让其进行调研&lt;/p&gt;
-&lt;p&gt;诚然 agent 能解决多数时候的浅搜索，但诸如“想要找到尽可能多的被动收入开发者平台”这样的问题，ai 似乎只会给几个出名的大平台，让人不是很满意。&lt;/p&gt;
-&lt;p&gt;到底是什么导致了这个问题呢，我和 gemini-4 聊了聊，意识到这是 agent 的 search 工具的缘故，其基本遵循了搜索引擎的最优结果。这就导致了 seo 做的好的平台也会被 search 推荐，agent 给出的结果也就只剩下大平台了。&lt;/p&gt;
-&lt;p&gt;不过，seo 好的结果并不一定是我们需要的结果，正如我上面举的找被动收入平台的例子&lt;/p&gt;
-&lt;p&gt;那怎么才能拖出 seo 进行搜索呢？我了解到市面上有一些网页向量搜索产品（这里不具体推荐），能够返回和标的网页语意相似度高的页面&lt;/p&gt;
-&lt;p&gt;于是我设计一个如下流程，能某种程度缓解信息的集中。应该在想要尽可能发散搜索消息时很有用，即&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;根网页-&amp;gt;向量搜索 N 个相似的网页-&amp;gt;AI 筛选和意图相关的 n 个网页-&amp;gt;继续基于这 n 个网页进行向量搜索扩展&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;我测试了找被动收入平台的例子，找到了几十个可能有关的网站，部分甚至刚准备上线或者还处于测试阶段。这满足了我对这个 case 的期待。&lt;/p&gt;
-&lt;p&gt;来这分享给大家，说不定有些许启发&lt;/p&gt;
-
-	</description></item><item><title>[酷工作] Kimi AI ｜ 体验运营实习生（Kimi Code 业务方向）</title><link>https://www.v2ex.com/t/1253272#reply0</link><guid>tag:www.v2ex.com,2026-10-30:/t/1253272</guid><pubDate>Fri, 30 Oct 2026 10:39:54 +0000</pubDate><description>
-	体验运营实习生（ Kimi Code 业务方向）&lt;br /&gt;毕业时间：2028 年 6 月之后&lt;br /&gt;出勤要求：优先一周到岗 5 天，可实习 4 个月以上，优先长期实习&lt;br /&gt;&lt;br /&gt;核心职责&lt;br /&gt;1. Code 业务理解及知识库沉淀&lt;br /&gt;	- 深入理解 Kimi Code 产品功能与技术逻辑，负责产品功能说明文档、API 文档、开发者指南的撰写与维护，		将复杂技术概念转化为清晰易懂的用户文档&lt;br /&gt;	- 协助撰写产品更新日志、功能介绍推文、使用教程，参与用户案例的收集与整理&lt;br /&gt;	- 基于用户反馈持续优化文档结构和内容表达，协助进行文档可用性测试，提升文档易读性和实用性&lt;br /&gt;	- 调研竞品技术文档体系和内容策略，整理行业最佳实践，为产品文档体系提供建议&lt;br /&gt;	- 参与客服知识库搭建，将 Code 业务知识转化为标准化客服话术与解决方案&lt;br /&gt;2. AI Coding 体验分析与智能客服能力建设&lt;br /&gt;	- 深入梳理 AI Coding 使用流程中各环节问题（包括但不限于 Code Agent 与模型表现、不同 Code Agent 及		模型间差异），发现问题并提出优化建议&lt;br /&gt;	- 协助 Code 相关客服策略设计、流程搭建与效果调优，将技术知识转化为 AI 客服语言，进行知识训练与		Prompt 精调&lt;br /&gt;	- 运用 Coding/Vibe Coding 能力推动 AI 在客服场景的应用，熟悉至少一门编程语言，对开发者工具场景有&lt;br /&gt;		基本认知&lt;br /&gt;3. 跨团队协作与体验闭环&lt;br /&gt;	- 从用户视角参与 Kimi Code 相关产品体验设计与优化，协同 Agent 团队、API 团队、商业化团队推进需求上		线&lt;br /&gt;	- 联动算法团队和 Infra 团队协作推进体验改进，推动用户问题闭环管理&lt;br /&gt;	- 协同工程团队优化产品交互，跟踪改进效果并建立 benchmark 或评测体系验证方案有效性&lt;br /&gt; &lt;br /&gt;职位要求&lt;br /&gt;能力与技能：&lt;br /&gt;	- 搭建过自己的 AI Agent 助手，可以将自身问题处理经验沉淀成 skill 迭代 Agent ，能主动发现问题并推		动解决&lt;br /&gt;	- 具备良好的逻辑思维、数据分析、快速学习能力，对改善用户体验有强烈的热情和主人翁意识&lt;br /&gt;	- 优秀的中英文书面表达能力，能撰写清晰、准确的技术内容&lt;br /&gt;	- Data-driven ，能够从数据中获得 insight ，敏锐抓住用户痛点并给出可落地方案&lt;br /&gt;&lt;br /&gt;加分项（非必须）：&lt;br /&gt;    - 对 AI 行业和 AI 产品有浓厚兴趣，并有一定了解； Kimi Code 重度用户或相关社区活跃用户优先&lt;br /&gt;    - 有技术博客、开源项目文档或技术社区内容创作经验&lt;br /&gt;    - 熟悉 Markdown 、Git 、Docs-as-Code 工作流&lt;br /&gt;    - 了解 Cursor 、CodeX 、Claude Code 等 AI 编程工具&lt;br /&gt;&lt;br /&gt;请把你的名字，简历，实习时长投递到： zhailangxi@moonshot.ai
-	</description></item><item><title>[分享发现] Muse 应该开放注册了，之前总不通过提示地区未开通邮箱现在直接通过</title><link>https://www.v2ex.com/t/1253271#reply0</link><guid>tag:www.v2ex.com,2026-10-30:/t/1253271</guid><pubDate>Fri, 30 Oct 2026 10:32:31 +0000</pubDate><description>
-	&lt;p&gt;给还没有注册的兄弟 10 亿个 Muse 词元。&lt;/p&gt;
-&lt;p&gt;邀请码：BFVJ0Z&lt;/p&gt;
-
-	</description></item><item><title>[问与答] 求推一个好看+防摔手机壳，</title><link>https://www.v2ex.com/t/1253270#reply6</link><guid>tag:www.v2ex.com,2026-10-30:/t/1253270</guid><pubDate>Fri, 30 Oct 2026 10:24:52 +0000</pubDate><description>
-	&lt;p&gt;op 是大学生，不想在手机壳上高消费&lt;br/&gt;
-预算撑死 150&lt;br/&gt;
-手机计划再撑 18 个月左右，随后作为备用机使用&lt;br/&gt;
-把 iPhone17 pro 返厂了（无 care ）才发现到问题：&lt;br/&gt;
-便宜硅胶壳（＜ 15cny ）的防摔防磕性能为图一乐。中框被干出几个坑出来。左上角和左下角被售后观测到变形（我倒是没啥感觉）。&lt;br/&gt;
-硅胶壳用久之后的变黄的同时，代表着手油沾满了手机壳，其变得更加得滑，最近几次摔手机纯手滑。&lt;br/&gt;
-终于理解为什么抖音一直给我推 80 元以上的手机壳,20 以内的壳确实是图一乐。&lt;br/&gt;&lt;/p&gt;
-&lt;p&gt;期望的手机壳：&lt;br/&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;最好可以把摄影模组保护住&lt;/li&gt;
-&lt;li&gt;相机按键包裹&lt;/li&gt;
-&lt;li&gt;支架无所谓&lt;/li&gt;
-&lt;li&gt;磁吸的话也要有/或者保证能吸住比较重的磁吸充电宝和卡包。&lt;/li&gt;
-&lt;li&gt;中框防滑，四角有额外保护&lt;br/&gt;
-目前看上了影视飓风和雪雾壳&lt;br/&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr/&gt;
-&lt;p&gt;题外话：为什么要返厂？+维修过程&lt;br/&gt;
-9 月中旬，一次从兜里掏手机（手机壳已经严重发黄），中框已经比较滑了，那个动作姿势恰好给手机一个动能，让手机飞出去了。手机屏幕朝向地面，撞上一个金属物件。具体位置是屏幕最下方处和屏幕最右侧（电源键）边缝，钢化膜的撞击部位的膜已经崩飞了，只留下了胶层。揭开钢化膜后外屏无损伤。&lt;br/&gt;
-两周以后天津气温温差加剧，偶发出现了绿线。在过保前几天，出现了一次屏幕绿线出现时间长达 2h 。&lt;/p&gt;
-&lt;p&gt;经门店工程师检验后，告知必须返厂（ 10.22 ）。&lt;br/&gt;
-工单：&lt;br/&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;问题:
-顾客描述，设备屏幕间歇性出现绿色竖线
-
-重现问题的步骤:
-吧台可见，顾客数据风险已知晓，返厂维修维修若设备存在非官方操作及物理损坏将拒绝维修
-
-外观状况:
-左上角变形，左侧左下角磕伤
-
-建议的解决方案:
-返厂维修，结果以工厂检测为准
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;门店提供了 iPhone14-128G ，恰好是上一个人归还的备用机。购买了一根 1m 的 c to l 的线。立即前往最近的世纪威锋贴了一张 10 块钱的钢化膜。从京东上下单了最便宜的 iPhone14 手机壳（ 7.87cny ），pdd 下单了最便宜的数据线（ 4cny ）。&lt;br/&gt;
-Apple 对面的京东数码店给出的价格是壳+膜=35cny&lt;br/&gt;
-由于学业繁忙怕过了 14 天退款时间，在昨天花费 26 的车费极速去了一趟 Apple 把线退了。&lt;br/&gt;
-时间节点：&lt;br/&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;10.28 送达上海（ find my ）&lt;/li&gt;
-&lt;li&gt;10.29web 显示“你的维修已完成。”&lt;/li&gt;
-&lt;li&gt;10.30web 显示“你的维修已完成。你的产品正在返还给你的途中。”&lt;br/&gt;
-上述期间未收到电话，短信。预测是更换屏幕了或者压根没有更换。&lt;/li&gt;
-&lt;/ul&gt;
 
 	</description></item></channel></rss>
