@@ -1,5 +1,139 @@
 <?xml version='1.0' encoding='utf-8'?>
-<rss version="2.0"><channel><title>V2EX</title><item><title>[Claude] claude 的 max 套餐开始送 api 额度了。</title><link>https://www.v2ex.com/t/1253618#reply0</link><guid>tag:www.v2ex.com,2026-11-01:/t/1253618</guid><pubDate>Sun, 01 Nov 2026 16:19:18 +0000</pubDate><description>
+<rss version="2.0"><channel><title>V2EX</title><item><title>[技术栈] 做了一个免费的 400+节点的网站测速的平台。提提意见。</title><link>https://www.v2ex.com/t/1253628#reply0</link><guid>tag:www.v2ex.com,2026-11-01:/t/1253628</guid><pubDate>Sun, 01 Nov 2026 20:17:50 +0000</pubDate><description>
+	网站： &lt;a target="_blank" href="https://www.kkce.com" rel="nofollow noopener"&gt;https://www.kkce.com&lt;/a&gt;&lt;br /&gt;QQ 群：591111150&lt;br /&gt;飞机群： &lt;a target="_blank" href="https://t.me/china_kkce" rel="nofollow noopener"&gt;https://t.me/china_kkce&lt;/a&gt;&lt;br /&gt;&lt;a target="_blank" href="/i/mBBi8Qg9.png" rel="nofollow noopener" target="_blank" title="在新窗口打开图片 mBBi8Qg9.png"&gt;&lt;img src="//i.v2ex.co/mBBi8Qg9.png" class="embedded_image"&gt;&lt;/a&gt;
+	</description></item><item><title>[分享创造] 做了一个网页旁的画布：收藏带来源，圈出细节交给 Codex / Claude Code</title><link>https://www.v2ex.com/t/1253627#reply0</link><guid>tag:www.v2ex.com,2026-11-01:/t/1253627</guid><pubDate>Sun, 01 Nov 2026 19:42:17 +0000</pubDate><description>
+	&lt;p&gt;最近在做一个独立项目 Galta ，已经开源，也有可安装的公开测试版。&lt;/p&gt;
+&lt;p&gt;我想解决的是这样一段工作：浏览网页时收了几张参考，有了一点模糊的想法，
+还不想把它整理成一条完整 prompt 。能不能先把参考放在一起，写两句、画两笔，
+再指着其中一个细节，和 Agent 接着做？&lt;/p&gt;
+&lt;p&gt;Galta 是放在网页旁的无限画布。图片带着网页来源进来；参考、草图和后续结果
+留在同一张画布上。可以接 Codex 或 Claude Code ，让它在这张画布里工作。&lt;/p&gt;
+&lt;p&gt;想找几位最近正在整理视觉参考、做灵感板的人，拿自己的一个小任务试试。
+尤其想知道三件事：第一次哪里卡住；什么时候“指给它看”有用；什么时候
+你仍然会回到原来的工具。能描述具体卡点就很有帮助。&lt;/p&gt;
+&lt;p&gt;安装需要 Chrome 141+ 或 Dia ；原生 Agent 连接还需要 Apple 芯片 Mac 和
+macOS 15 或更新版本。画布绘制、导入与历史可以先独立使用。模型账号和
+可选生成服务使用你自己的连接，画布在本机不等于所有推理都在本机。&lt;/p&gt;
+&lt;p&gt;演示里的 Agent 步骤是界面重演；它用来展示交互，不是模型成功率证明。&lt;/p&gt;
+&lt;p&gt;第一次可以只做一件小事：把三张自己的参考放进画布，打开一个来源，再标明一个取舍。不连接 Agent 也能试完。这里是完整任务、结果判断和安装入口：
+&lt;a href="https://galta.art/zh-hans/guides/web-reference-canvas/?utm_source=v2ex&amp;amp;utm_medium=community&amp;amp;utm_campaign=2026-11-first-users&amp;amp;utm_content=galta-creator-post" rel="nofollow"&gt;https://galta.art/zh-hans/guides/web-reference-canvas/?utm_source=v2ex&amp;amp;utm_medium=community&amp;amp;utm_campaign=2026-11-first-users&amp;amp;utm_content=galta-creator-post&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;源码： &lt;a href="https://github.com/aha-labs-hq/galta" rel="nofollow"&gt;https://github.com/aha-labs-hq/galta&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;如果你也遇到“参考收了不少，下一步却很难接着做”的情况，想听听你现在怎么处理。&lt;/p&gt;
+
+	</description></item><item><title>[分享创造] 看到有人在站内分享逆向搜狗输入法，于是厚着脸皮推荐下自家的开源输入法：水杉输入法</title><link>https://www.v2ex.com/t/1253625#reply1</link><guid>tag:www.v2ex.com,2026-11-01:/t/1253625</guid><pubDate>Sun, 01 Nov 2026 18:47:24 +0000</pubDate><description>
+	&lt;p&gt;纯净版： &lt;a href="https://github.com/metasequoiaime/msime-windows" rel="nofollow"&gt;https://github.com/metasequoiaime/msime-windows&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;全平台版： &lt;a href="https://github.com/metasequoiaime/msime" rel="nofollow"&gt;https://github.com/metasequoiaime/msime&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;自家训练的输入法模型，用来排序、联想等等： &lt;a href="https://github.com/metasequoiaime/chinese-ime-lm" rel="nofollow"&gt;https://github.com/metasequoiaime/chinese-ime-lm&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;最后，再厚着脸皮求个 star ，谢谢 v 友们~&lt;/p&gt;
+
+	</description></item><item><title>[推广] [把 90% 利润还给用户] OffRails 低价无审查 AI｜文字、做图、改图，无日志｜使用就拿 RAIL，分帐合约开源、帐务链上可验</title><link>https://www.v2ex.com/t/1253624#reply0</link><guid>tag:www.v2ex.com,2026-11-01:/t/1253624</guid><pubDate>Sun, 01 Nov 2026 18:17:46 +0000</pubDate><description>
+	&lt;p&gt;&lt;strong&gt;发想与实现一个收益分配都写进智能合约的 AI：用户付费使用，也能分享平台创造的价值。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;OffRails 提供低价无审查 AI ，文字对话使用 Qwen 无审查模型，并支援图片生成与改图。我希望大家使用 AI 获得服务的同时，也有机会参与平台的收益分配，因为机制公平，团队无薪，还请大家支持！&lt;/p&gt;
+&lt;h2&gt;目前的特色&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;文字、做图、改图均支援无审查模型&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;不保存聊天日志&lt;/strong&gt;，聊天记录由使用者自己的装置保存&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;不需要 KYC 、Email 或信用卡&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;使用 API 即可获得 RAIL 用量奖励&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;90% 可分配利润回馈用户&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;分帐合约开源，金库收支与分配纪录链上可查&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;RAIL 初始分配：用量奖励 100%&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;创办人：&lt;strong&gt;0%&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;VC ／投资人：&lt;strong&gt;0%&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;团队：&lt;strong&gt;0%&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;用量奖励合约：&lt;strong&gt;100%&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;全部 RAIL 在部署时进入用量奖励合约，依照 API 用量发放。&lt;/p&gt;
+&lt;h2&gt;90% 利润怎么回到用户手上？&lt;/h2&gt;
+&lt;p&gt;平台支付营运成本、保留必要储备后，将 &lt;strong&gt;90% 可分配利润投入 Fare 金库&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;使用者取得 RAIL 并质押后，依质押数量与时间参与 Fare 分配。Fare 可以兑回 USDC ，也能用于 API 额度。&lt;/p&gt;
+&lt;p&gt;分帐规则、金库收支与分配纪录公开，可以直接核对合约和链上执行结果。&lt;/p&gt;
+&lt;h2&gt;欢迎试用，也欢迎查帐&lt;/h2&gt;
+&lt;p&gt;模型效果、价格、隐私设计、收益分配，都欢迎直接提问。&lt;/p&gt;
+&lt;p&gt;我希望使用者在这里拿到好用的 AI ，也能参与它创造的价值。欢迎实际试用、翻合约、核对帐务，把问题丢在楼里。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;英文站：&lt;a href="https://offrails.ai/" rel="nofollow"&gt;offrails.ai&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;中文站：&lt;a href="https://offrails.ai/cn/" rel="nofollow"&gt;offrails.ai/cn&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;加社區：&lt;a href="https://discord.gg/offrails" rel="nofollow"&gt;Discord OffRails&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;介紹片：&lt;a href="https://youtu.be/0pvbtjdiKqw" rel="nofollow"&gt;YouTube OffRails 介紹&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+	</description></item><item><title>[分享创造] Dirtbound | Free 3D Browser Rally Game</title><link>https://www.v2ex.com/t/1253623#reply0</link><guid>tag:www.v2ex.com,2026-11-01:/t/1253623</guid><pubDate>Sun, 01 Nov 2026 17:57:43 +0000</pubDate><description>
+	&lt;p&gt;Experience high-octane rally racing with &lt;a href="https://dirtbound.me/" rel="nofollow"&gt;Dirtbound&lt;/a&gt;, a thrilling 3D browser racer featuring realistic vehicle dynamics, procedural dirt tracks, and global daily challenges. Master precision drift control and conquer tough gravel stages in the free &lt;a href="https://dirtbound.me/" rel="nofollow"&gt;Dirtbound game&lt;/a&gt; right in your browser with zero downloads!&lt;/p&gt;
+
+	</description></item><item><title>[分享创造] 把 DeepSeek 的 Super-agent 思路做成一个人的桌面助手： AnyModelBot，首个开箱即用的 DeepSeek Super Agent</title><link>https://www.v2ex.com/t/1253622#reply0</link><guid>tag:www.v2ex.com,2026-11-01:/t/1253622</guid><pubDate>Sun, 01 Nov 2026 17:56:09 +0000</pubDate><description>
+	&lt;p&gt;DeepSeek 前阵子开源了 &lt;a href="https://github.com/deepseek-ai/dsh-superagent-prototype" rel="nofollow"&gt;dsh-superagent 原型&lt;/a&gt;，核心原则就一句：&lt;strong&gt;占用尽量少的注意力，带来尽量多的价值。&lt;/strong&gt; 不过它是面向团队、盯着 GitHub 仓库的研究原型，个人没法直接用。&lt;/p&gt;
+&lt;p&gt;我们把这套思路做进了开源桌面助手 &lt;strong&gt;AnyModelBot&lt;/strong&gt;，装好就是开箱即用的 DeepSeek Super Agent ，这是它的首个实现，不需要任何配置。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="AnyModelBot 演示" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://raw.githubusercontent.com/modelflare-ai/AnyModelBot/master/docs/assets/hero/hero-demo.gif"/&gt;&lt;/p&gt;
+&lt;h2&gt;Super Agent 三件套&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;后台任务&lt;/strong&gt;：调研、做报告这类要跑一阵子的事，交代一句就在后台做，聊天照常，不用排队等。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;定时规则&lt;/strong&gt;：一句话写下长期吩咐，比如「每天早上 8 点看看 X 的价格，低于 200 告诉我」，按时自动执行。新规则可以先用「观察」模式试跑，只读、不打扰你。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;「需要你」&lt;/strong&gt;：所有等你回答、批准的事集中在一处，没事时不占地方。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;不打扰是硬规矩：只推结果、决定和失败三种消息，默认 22:00–08:00 免打扰，每个任务和规则都有预算上限。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="后台读写文件" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://raw.githubusercontent.com/modelflare-ai/AnyModelBot/master/docs/assets/features/agent-files.gif"/&gt;&lt;/p&gt;
+&lt;h2&gt;它本来就是一个完整的 AI 机器人&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;一个账号 70+ 模型&lt;/strong&gt;：GPT 、Claude 、Gemini 、Grok 、DeepSeek 、Kimi 、GLM……每个对话用 &lt;code&gt;/model&lt;/code&gt; 随时切换。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img alt="切换模型" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://raw.githubusercontent.com/modelflare-ai/AnyModelBot/master/docs/assets/features/model-switch.gif"/&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;在微信和飞书里也能用&lt;/strong&gt;：微信扫码连接，支持图片和文件；飞书是流式回复卡片。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img alt="微信里使用" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://raw.githubusercontent.com/modelflare-ai/AnyModelBot/master/docs/assets/features/channels-wechat.gif"/&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;能操作你的电脑&lt;/strong&gt;：读写文件、沙箱执行命令、电脑操作（ macOS 为 Beta ），三档权限加审批卡片，你说了算。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img alt="电脑操作" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://raw.githubusercontent.com/modelflare-ai/AnyModelBot/master/docs/assets/features/computer-use.gif"/&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;本地优先、开源免费&lt;/strong&gt;：对话、记忆、文件和 Key 都留在你的电脑上； MIT 开源，Windows / macOS / Linux / Docker 都能跑，模型按量付费、没有订阅。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;想深入看&lt;/h2&gt;
+&lt;p&gt;设计细节（和原型的差别、DeepSeek Harness 怎么跑、权限和预算怎么设计）都写在 GitHub 的设计文档里，功能介绍和下载在官网：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;GitHub： &lt;a href="https://github.com/modelflare-ai/AnyModelBot" rel="nofollow"&gt;https://github.com/modelflare-ai/AnyModelBot&lt;/a&gt; （欢迎 Star ⭐）&lt;/li&gt;
+&lt;li&gt;Super Agent 设计文档： &lt;a href="https://github.com/modelflare-ai/AnyModelBot/blob/master/docs/blog/superagent.md" rel="nofollow"&gt;https://github.com/modelflare-ai/AnyModelBot/blob/master/docs/blog/superagent.md&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;官网： &lt;a href="https://anymodel.bot/" rel="nofollow"&gt;https://anymodel.bot/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;项目还很新（ v0.1.x ），是独立开源项目，与 DeepSeek 官方无关。欢迎试用、提 issue 、拍砖 🙏&lt;/p&gt;
+
+	</description></item><item><title>[推广] 《我享云》机场代理 · 性价比之王 · 十一月份优惠码 · 注册免费试用 5-15 天 · 一块钱用上专线</title><link>https://www.v2ex.com/t/1253621#reply0</link><guid>tag:www.v2ex.com,2026-11-01:/t/1253621</guid><pubDate>Sun, 01 Nov 2026 17:04:40 +0000</pubDate><description>
+	&lt;h2&gt;所有级别套餐节点资源一致，套餐倍率不同，两种套餐模式，按需选择，让一块钱也能用上专线！&lt;/h2&gt;
+&lt;h3&gt;直连节点 | 住宅节点 | 优化节点 | 大带宽节点 | 下载专用节点 | 专线节点，应有尽有！&lt;/h3&gt;
+&lt;h1&gt;套餐优惠信息&lt;/h1&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;套餐类型&lt;/th&gt;
+&lt;th&gt;折扣&lt;/th&gt;
+&lt;th&gt;优惠码&lt;/th&gt;
+&lt;th&gt;适用场景&lt;/th&gt;
+&lt;th&gt;领取地址&lt;/th&gt;
+&lt;th&gt;有效期&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;周期性套餐（订阅制）&lt;/td&gt;
+&lt;td&gt;6.8 折&lt;/td&gt;
+&lt;td&gt;eZSdiffE&lt;/td&gt;
+&lt;td&gt;适合长期稳定使用的用户，按周期自动续费，性价比极高&lt;/td&gt;
+&lt;td&gt;&lt;a href="https://m.vxcloud.cfd/coupon.html" rel="nofollow"&gt;https://m.vxcloud.cfd/coupon.html&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;2026/11/01 — 2026/11/15&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;无时间限制套餐（买断制）&lt;/td&gt;
+&lt;td&gt;7 折&lt;/td&gt;
+&lt;td&gt;disNPffz&lt;/td&gt;
+&lt;td&gt;适合一次性投入、长期拥有的用户，无到期压力，灵活省心&lt;/td&gt;
+&lt;td&gt;&lt;a href="https://m.vxcloud.cfd/coupon.html" rel="nofollow"&gt;https://m.vxcloud.cfd/coupon.html&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;2026/11/01 — 2026/11/15&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+	</description></item><item><title>[Claude] claude 的 max 套餐开始送 api 额度了。</title><link>https://www.v2ex.com/t/1253618#reply2</link><guid>tag:www.v2ex.com,2026-11-01:/t/1253618</guid><pubDate>Sun, 01 Nov 2026 16:19:18 +0000</pubDate><description>
 	送了我 100 额度。&lt;br /&gt;这个额度可以卖多少钱？
 	</description></item><item><title>[分享创造] 给开源 AI 雷达做了 WorkBuddy 技能，想把选型从名单变成可核查记录</title><link>https://www.v2ex.com/t/1253615#reply0</link><guid>tag:www.v2ex.com,2026-11-01:/t/1253615</guid><pubDate>Sun, 01 Nov 2026 16:10:25 +0000</pubDate><description>
 	&lt;p&gt;之前做了 AI 开源项目雷达，这次把研究与选型流程适配成 WorkBuddy 技能「开源 AI 项目研究与选型」，已审核上架。&lt;/p&gt;
@@ -147,7 +281,7 @@ delivery_rate:64.3kbps
 &lt;p&gt;我会保留测试日志、付款记录和退款截图。如商家后续修复线路或妥善退款，也会如实更新本文。&lt;/p&gt;
 &lt;p&gt;希望这次经历能为其他正在选购香港 VPS 的朋友提供参考。&lt;/p&gt;
 
-	</description></item><item><title>[NAS] 我的群晖也被勒索病毒攻击过，但是似乎防住了。</title><link>https://www.v2ex.com/t/1253610#reply0</link><guid>tag:www.v2ex.com,2026-11-01:/t/1253610</guid><pubDate>Sun, 01 Nov 2026 15:30:59 +0000</pubDate><description>
+	</description></item><item><title>[NAS] 我的群晖也被勒索病毒攻击过，但是似乎防住了。</title><link>https://www.v2ex.com/t/1253610#reply1</link><guid>tag:www.v2ex.com,2026-11-01:/t/1253610</guid><pubDate>Sun, 01 Nov 2026 15:30:59 +0000</pubDate><description>
 	&lt;p&gt;今天让 codex 帮我分析了下日志，看上去应该是被执行了一样的脚本，好在我个人习惯，总是喜欢直接更新到最新系统，这次似乎防住了。&lt;/p&gt;
 &lt;p&gt;之前网上看到几例声称最新系统也有中招的，搞得我现在依然挺慌的。&lt;/p&gt;
 &lt;p&gt;直接看 Codex 给我的分析结论：&lt;/p&gt;
@@ -222,7 +356,7 @@ delivery_rate:64.3kbps
 &lt;p&gt;想请 V 友帮忙看看：双人的左右位置说明是否直观？从选模板到上传照片，有没有让人看不懂的地方？如果做这类短视频，你更想要哪种构图或变装模板？&lt;/p&gt;
 &lt;p&gt;欢迎直接提问题和建议。&lt;/p&gt;
 
-	</description></item><item><title>[职场话题] 失业快半年，回老家消费低但也没啥斗气了，是不是应该回去出租屋给自己压力？</title><link>https://www.v2ex.com/t/1253607#reply0</link><guid>tag:www.v2ex.com,2026-11-01:/t/1253607</guid><pubDate>Sun, 01 Nov 2026 15:22:02 +0000</pubDate><description>
+	</description></item><item><title>[职场话题] 失业快半年，回老家消费低但也没啥斗气了，是不是应该回去出租屋给自己压力？</title><link>https://www.v2ex.com/t/1253607#reply1</link><guid>tag:www.v2ex.com,2026-11-01:/t/1253607</guid><pubDate>Sun, 01 Nov 2026 15:22:02 +0000</pubDate><description>
 	这年头 AI 太牛了，自己本地开发项目用 AI 都觉得确实不需要那么多人，也不知道找啥工作或换行。
 	</description></item><item><title>[推广] CDN3900U/P Ai 模型最低至 4 折 阿里腾讯华为火山国内站 7 折 阿里国际/GCP 可至 65 折 AWS 新号 65 折/老号无需迁移 85 折 腾讯国际 55 折 欢迎资源交流</title><link>https://www.v2ex.com/t/1253606#reply0</link><guid>tag:www.v2ex.com,2026-11-01:/t/1253606</guid><pubDate>Sun, 01 Nov 2026 15:15:42 +0000</pubDate><description>
 	&lt;p&gt;阿里云 7 折 腾讯云 7 折 华为云 7 折&lt;/p&gt;
@@ -232,7 +366,7 @@ delivery_rate:64.3kbps
 &lt;p&gt;AWS 全球节点 CDN 加速 1 折 Ai 模型低至 4 折 火山国际 7 折&lt;/p&gt;
 &lt;p&gt;TG 详聊：@Tiangua7&lt;/p&gt;
 
-	</description></item><item><title>[职场话题] 想从事青少年 AI 方面的教育工作，如何能让家长们觉得这种教育的价值？</title><link>https://www.v2ex.com/t/1253604#reply1</link><guid>tag:www.v2ex.com,2026-11-01:/t/1253604</guid><pubDate>Sun, 01 Nov 2026 14:57:13 +0000</pubDate><description>
+	</description></item><item><title>[职场话题] 想从事青少年 AI 方面的教育工作，如何能让家长们觉得这种教育的价值？</title><link>https://www.v2ex.com/t/1253604#reply4</link><guid>tag:www.v2ex.com,2026-11-01:/t/1253604</guid><pubDate>Sun, 01 Nov 2026 14:57:13 +0000</pubDate><description>
 	&lt;h2&gt;1 、对青少年的定义&lt;/h2&gt;
 &lt;p&gt;5 年纪以上到高中之下，低于这个年纪的小孩，字都认不全，高中的小孩没时间学这个。&lt;/p&gt;
 &lt;h2&gt;2 、目前看到青少年的现状&lt;/h2&gt;
@@ -250,7 +384,7 @@ delivery_rate:64.3kbps
 &lt;h2&gt;综上&lt;/h2&gt;
 &lt;p&gt;看看 v 站老哥们对这个问题有没有独到的见解。&lt;/p&gt;
 
-	</description></item><item><title>[Claude] claude 识别 IP 地址和机场不一样</title><link>https://www.v2ex.com/t/1253603#reply3</link><guid>tag:www.v2ex.com,2026-11-01:/t/1253603</guid><pubDate>Sun, 01 Nov 2026 14:53:07 +0000</pubDate><description>
+	</description></item><item><title>[Claude] claude 识别 IP 地址和机场不一样</title><link>https://www.v2ex.com/t/1253603#reply5</link><guid>tag:www.v2ex.com,2026-11-01:/t/1253603</guid><pubDate>Sun, 01 Nov 2026 14:53:07 +0000</pubDate><description>
 	&lt;p&gt;机场这边挂 WAS 美国，多个 ip 检测也是&lt;/p&gt;
 &lt;p&gt;登录 claude 显示登陆地点确实新加坡&lt;/p&gt;
 &lt;p&gt;难道是 CDN 原因&lt;/p&gt;
@@ -385,9 +519,9 @@ VX：KirinChew&lt;/p&gt;
 &lt;pre&gt;&lt;code class="language-微信"&gt;KirinChew
 &lt;/code&gt;&lt;/pre&gt;
 
-	</description></item><item><title>[职场话题] 请教各位 V 友上班在工位如何摸鱼打发时间</title><link>https://www.v2ex.com/t/1253601#reply1</link><guid>tag:www.v2ex.com,2026-11-01:/t/1253601</guid><pubDate>Sun, 01 Nov 2026 14:37:05 +0000</pubDate><description>
+	</description></item><item><title>[职场话题] 请教各位 V 友上班在工位如何摸鱼打发时间</title><link>https://www.v2ex.com/t/1253601#reply2</link><guid>tag:www.v2ex.com,2026-11-01:/t/1253601</guid><pubDate>Sun, 01 Nov 2026 14:37:05 +0000</pubDate><description>
 	现在业务需求并不算多，加上 AI 提效，有时候上班如坐牢。&lt;br /&gt;&lt;br /&gt;但是工作电脑存在内部监控，不想通过公司电脑和网络浏览过多非工作相关的内容。低头玩手机又太明显，新增一台别的设备可行吗，主要是浏览文字相关的内容，V 友们有什么心得分享吗？
-	</description></item><item><title>[问与答] 国内上架 APP,接入类似于 Deepseek 的接口,需要什么备案啊?</title><link>https://www.v2ex.com/t/1253599#reply0</link><guid>tag:www.v2ex.com,2026-11-01:/t/1253599</guid><pubDate>Sun, 01 Nov 2026 14:14:37 +0000</pubDate><description>
+	</description></item><item><title>[问与答] 国内上架 APP,接入类似于 Deepseek 的接口,需要什么备案啊?</title><link>https://www.v2ex.com/t/1253599#reply1</link><guid>tag:www.v2ex.com,2026-11-01:/t/1253599</guid><pubDate>Sun, 01 Nov 2026 14:14:37 +0000</pubDate><description>
 	&lt;p&gt;有没有大佬知道?
 互联网信息服务算法备案?
 马云搜了下 ,要几千块...&lt;/p&gt;
@@ -432,7 +566,7 @@ VX：KirinChew&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;网站地址：&lt;/strong&gt; &lt;a href="https://zombie-couple-video-ai.com/" rel="nofollow"&gt;https://zombie-couple-video-ai.com/&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;感谢各位 V 友！&lt;/p&gt;
 
-	</description></item><item><title>[推广] [拼团] 双 11 服务器活动：境外 99 元/年、国内 4 核 109 元/年，还有 3 年 528 元方案</title><link>https://www.v2ex.com/t/1253592#reply1</link><guid>tag:www.v2ex.com,2026-11-01:/t/1253592</guid><pubDate>Sun, 01 Nov 2026 13:39:25 +0000</pubDate><description>
+	</description></item><item><title>[推广] [拼团] 双 11 服务器活动：境外 99 元/年、国内 4 核 109 元/年，还有 3 年 528 元方案</title><link>https://www.v2ex.com/t/1253592#reply2</link><guid>tag:www.v2ex.com,2026-11-01:/t/1253592</guid><pubDate>Sun, 01 Nov 2026 13:39:25 +0000</pubDate><description>
 	&lt;p&gt;腾讯云双 11 活动已开启，包含轻量服务器、CVM 、GPU 、对象存储、CDN 等产品，也有面向常规服务器或其他云产品的续费代金券，准备续费或升级的 v 友记得先领取代金券。&lt;/p&gt;
 &lt;p&gt;活动主页：*链接有 aff ，下同，感谢支持&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://ourl.co/tcact" rel="nofollow"&gt;腾讯云双 11 活动&lt;/a&gt; &lt;/p&gt;
@@ -498,18 +632,18 @@ VX：KirinChew&lt;/p&gt;
 &lt;p&gt;便携版： &lt;a href="https://github.com/zhoudeqiang9527/rebased/releases" rel="nofollow"&gt;Win64&lt;/a&gt; （家里没有 mac 。所以只有 windows 版本）
 github： [&lt;a href="https://github.com/zhoudeqiang9527/rebased" rel="nofollow"&gt;https://github.com/zhoudeqiang9527/rebased&lt;/a&gt;]&lt;/p&gt;
 
-	</description></item><item><title>[生活] 别人给东西的时候应不应该接受？</title><link>https://www.v2ex.com/t/1253589#reply4</link><guid>tag:www.v2ex.com,2026-11-01:/t/1253589</guid><pubDate>Sun, 01 Nov 2026 13:34:53 +0000</pubDate><description>
+	</description></item><item><title>[生活] 别人给东西的时候应不应该接受？</title><link>https://www.v2ex.com/t/1253589#reply5</link><guid>tag:www.v2ex.com,2026-11-01:/t/1253589</guid><pubDate>Sun, 01 Nov 2026 13:34:53 +0000</pubDate><description>
 	&lt;p&gt;&lt;a href="https://lixiucheng.com/about-receive/" rel="nofollow"&gt;https://lixiucheng.com/about-receive/&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;小时候没有太多的场景去接受给予别人的东西，过年收压岁钱可能是为数不多的一个场景。收压岁钱这个过程中充斥的拉扯和客套。&lt;/p&gt;
 &lt;p&gt;受这套方式的影响，我以为接受给予就应该是这样子的。所以我从小到大对于别人给我东西，我都是套用了收红包这套公式，基本上都会拒绝。&lt;/p&gt;
 
-	</description></item><item><title>[分享创造] 我发现 grokbot 竟然附赠了免费的翻墙方案</title><link>https://www.v2ex.com/t/1253588#reply5</link><guid>tag:www.v2ex.com,2026-11-01:/t/1253588</guid><pubDate>Sun, 01 Nov 2026 13:34:02 +0000</pubDate><description>
+	</description></item><item><title>[分享创造] 我发现 grokbot 竟然附赠了免费的翻墙方案</title><link>https://www.v2ex.com/t/1253588#reply6</link><guid>tag:www.v2ex.com,2026-11-01:/t/1253588</guid><pubDate>Sun, 01 Nov 2026 13:34:02 +0000</pubDate><description>
 	&lt;p&gt;背景是这样的，一到月底我的梯子套餐流量就不够了，购买流量包巨贵，我只舍得买点闲时流量包，今天我摸索了下 claudeflare 隧道+grokbot 翻墙，终于跑通了，梯子速度虽然比不上商用梯子，但是也够用了，关键是还不限流量。&lt;/p&gt;
 &lt;p&gt;给你的 grokbot 发送以下 Prompt：&lt;/p&gt;
 &lt;p&gt;从 &lt;a href="https://github.com/fenfenxu/cloudflare-tunnel-proxy" rel="nofollow"&gt;https://github.com/fenfenxu/cloudflare-tunnel-proxy&lt;/a&gt; 安装 Cloudflare Tunnel Proxy skill ，然后按它的 Setup 带我从零搭好。&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://www.xiaohongshu.com/explore/6ae737d2000000000e02e1a6?xsec_token=YBkiWTeKYg2ybfAvVu83uf4kocRQIeZng6cU-JkeEzjgg=&amp;amp;xsec_source=pc_creatormng" rel="nofollow"&gt;https://www.xiaohongshu.com/explore/6ae737d2000000000e02e1a6?xsec_token=YBkiWTeKYg2ybfAvVu83uf4kocRQIeZng6cU-JkeEzjgg=&amp;amp;xsec_source=pc_creatormng&lt;/a&gt;&lt;/p&gt;
 
-	</description></item><item><title>[分享发现] giffgaff 第三方充值的都可以成功退款到自己指定的卡里</title><link>https://www.v2ex.com/t/1253587#reply0</link><guid>tag:www.v2ex.com,2026-11-01:/t/1253587</guid><pubDate>Sun, 01 Nov 2026 13:33:24 +0000</pubDate><description>
+	</description></item><item><title>[分享发现] giffgaff 第三方充值的都可以成功退款到自己指定的卡里</title><link>https://www.v2ex.com/t/1253587#reply1</link><guid>tag:www.v2ex.com,2026-11-01:/t/1253587</guid><pubDate>Sun, 01 Nov 2026 13:33:24 +0000</pubDate><description>
 	&lt;a target="_blank" href="https://i.imgur.com/31QRGf2.jpeg" rel="nofollow noopener" target="_blank"&gt;&lt;img src="https://i.imgur.com/31QRGf2.jpeg" class="embedded_image" rel="noreferrer"&gt;&lt;/a&gt;&lt;br /&gt;有点惊讶。还以为只能原路退回，还好当时没有捐了 😂
 	</description></item><item><title>[阅读] [记录]-2026-11-01 Goodreads 的 RSS 功能消失</title><link>https://www.v2ex.com/t/1253586#reply0</link><guid>tag:www.v2ex.com,2026-11-01:/t/1253586</guid><pubDate>Sun, 01 Nov 2026 13:33:01 +0000</pubDate><description>
 	&lt;p&gt;&lt;a href="https://www.goodreads.com/blog/show/20-more-rss-feeds" rel="nofollow"&gt;https://www.goodreads.com/blog/show/20-more-rss-feeds&lt;/a&gt;&lt;/p&gt;
@@ -621,7 +755,7 @@ github： [&lt;a href="https://github.com/zhoudeqiang9527/rebased" rel="nofollow
 &lt;p&gt;2 ）生成前没有免费成片体验的情况下，你觉得产品页面需要展示哪些信息，才能让用户放心付费？真实样片、生成效果、价格说明，还是其他内容？&lt;/p&gt;
 &lt;p&gt;我会根据真实反馈继续调整产品。欢迎大家提意见，谢谢。&lt;/p&gt;
 
-	</description></item><item><title>[分享创造] 受够了 Linux 装不了企业微信、虚拟机复制粘贴难，做了个 Text Dropbox（内测）。 http://8.130.10.208:40000</title><link>https://www.v2ex.com/t/1253579#reply0</link><guid>tag:www.v2ex.com,2026-11-01:/t/1253579</guid><pubDate>Sun, 01 Nov 2026 12:59:30 +0000</pubDate><description>
+	</description></item><item><title>[分享创造] 受够了 Linux 装不了企业微信、虚拟机复制粘贴难，做了个 Text Dropbox（内测）。 http://8.130.10.208:40000</title><link>https://www.v2ex.com/t/1253579#reply1</link><guid>tag:www.v2ex.com,2026-11-01:/t/1253579</guid><pubDate>Sun, 01 Nov 2026 12:59:30 +0000</pubDate><description>
 	&lt;h2&gt;起因&lt;/h2&gt;
 &lt;p&gt;21 世纪的现在，当我要在不同设备之间传哪怕是“helloworld”这几个字母的时候，可能都无法实现。我不知道是咋回事儿。烧心。&lt;/p&gt;
 &lt;p&gt;我的日常环境比较割裂：&lt;/p&gt;
@@ -765,7 +899,7 @@ github： [&lt;a href="https://github.com/zhoudeqiang9527/rebased" rel="nofollow
 &lt;p&gt;&lt;img alt="Imgur" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://i.imgur.com/ks5fRcR.png"/&gt;&lt;/p&gt;
 &lt;p&gt;当然，可能有人会比较诟病直接让 Agent 操作偏重要的内容，目前来说我没有碰到什么灾难级事故，比如 &lt;code&gt;rm -rf /&lt;/code&gt; 之类的，甚至前阵子让 deepseek 也帮我处理了一轮服务器搬迁（从 Zeabur 迁出），不过我的都是个人项目，其实也没太大所谓就是了~&lt;/p&gt;
 
-	</description></item><item><title>[程序员] 百度网盘容量从 2T 降到 100G</title><link>https://www.v2ex.com/t/1253569#reply8</link><guid>tag:www.v2ex.com,2026-11-01:/t/1253569</guid><pubDate>Sun, 01 Nov 2026 11:30:17 +0000</pubDate><description>
+	</description></item><item><title>[程序员] 百度网盘容量从 2T 降到 100G</title><link>https://www.v2ex.com/t/1253569#reply9</link><guid>tag:www.v2ex.com,2026-11-01:/t/1253569</guid><pubDate>Sun, 01 Nov 2026 11:30:17 +0000</pubDate><description>
 	&lt;p&gt;RT ，这个问题咨询谁可以帮忙恢复之前的 quota ？还是只有开会员一条路啊？&lt;/p&gt;
 
 	</description></item><item><title>[分享创造] 一个不到 2M 的安卓直播源客户端</title><link>https://www.v2ex.com/t/1253568#reply3</link><guid>tag:www.v2ex.com,2026-11-01:/t/1253568</guid><pubDate>Sun, 01 Nov 2026 11:29:23 +0000</pubDate><description>
@@ -820,57 +954,4 @@ github： [&lt;a href="https://github.com/zhoudeqiang9527/rebased" rel="nofollow
 
 	</description></item><item><title>[分享创造] 写了一个 p2p 通信应用</title><link>https://www.v2ex.com/t/1253564#reply2</link><guid>tag:www.v2ex.com,2026-11-01:/t/1253564</guid><pubDate>Sun, 01 Nov 2026 10:45:06 +0000</pubDate><description>
 	有桌面(windows+macos)+android 版本，可以音视频通话和发消息，直接使用，无需注册。&lt;br /&gt;&lt;br /&gt;简单一句话说明，我自己是拿来让家里旧手机不插卡联网打电话用的。&lt;br /&gt;&lt;br /&gt;演示： &lt;div class="embedded_video_wrapper"&gt;&lt;iframe src="https://www.youtube.com/embed/2QF7xbiXzbg" class="embedded_video" allowfullscreen="" type="text/html" id="ytplayer" frameborder="0"&gt;&lt;/iframe&gt;&lt;/div&gt;网站： https://direct-chat.clifftop.win/&lt;br /&gt;&lt;br /&gt;追加说明：官网和 android 版本都有挂广告，桌面版本没有广告。
-	</description></item><item><title>[问与答] 美区亚马逊买东西，是不是信用卡的电话号码，要匹配上账号的电话号码？</title><link>https://www.v2ex.com/t/1253563#reply2</link><guid>tag:www.v2ex.com,2026-11-01:/t/1253563</guid><pubDate>Sun, 01 Nov 2026 10:39:58 +0000</pubDate><description>
-	&lt;p&gt;账号 7 ，8 个月前注册的，但一直都没有完成 payment 设定，28 号美亚的账号做了设置，绑了美区的电话号码,&lt;br/&gt;
-payment method 在 29 号挂上了民生 VISA 双币带芯片卡，1 刀授权即时扣成功，&lt;br/&gt;
-即时下单买了一张 apple gift 卡试水，order 成功(但信用卡无发生扣款)；
-30 分钟左右收邮件被 hold on 了账号，根据提示交了对账单和护照资料，6 小时后，账号恢复;&lt;br/&gt;
-今天 1 月 1 号，现在 order details 还是提示 Processing ，订单选项也没有取消的操作项，就一直卡在那里;&lt;br/&gt;
-这个是操作逻辑次序出了偏差，需要电话去客服那边手工干预？&lt;br/&gt;
-还是万圣节的原因？&lt;br/&gt;
-1 刀的授权款也还未退...&lt;/p&gt;
-
-	</description></item><item><title>[程序员] 如何爬取美团外卖和淘宝闪购的个人订单记录</title><link>https://www.v2ex.com/t/1253562#reply11</link><guid>tag:www.v2ex.com,2026-11-01:/t/1253562</guid><pubDate>Sun, 01 Nov 2026 10:30:26 +0000</pubDate><description>
-	好像不是用的 http 协议，怎么抓包抓不到。&lt;br /&gt;&lt;br /&gt;请问大佬们有比较好的办法吗
-	</description></item><item><title>[Twitter] 登录 X 推特普遍要人脸验证吗，还是特殊案例？</title><link>https://www.v2ex.com/t/1253561#reply9</link><guid>tag:www.v2ex.com,2026-11-01:/t/1253561</guid><pubDate>Sun, 01 Nov 2026 10:26:05 +0000</pubDate><description>
-	换了一个设备登录 x 推特账号，每次都要求人脸验证（提示说不是身份验证，是活体验证）&lt;br /&gt;&lt;br /&gt;搞的老设备上账号都不敢登出了😮&lt;br /&gt;&lt;br /&gt;现在登录 X 推特普遍要人脸验证吗，还是遇到了特殊个别情况？
-	</description></item><item><title>[Claude] 一个苹果账号，可以给多个 claude 账户充值吗？</title><link>https://www.v2ex.com/t/1253560#reply13</link><guid>tag:www.v2ex.com,2026-11-01:/t/1253560</guid><pubDate>Sun, 01 Nov 2026 10:22:42 +0000</pubDate><description>
-	&lt;p&gt;一个苹果账号，可以给多个 claude 账户充值吗？&lt;/p&gt;
-&lt;p&gt;各位大佬，有没有试过的？我看 ios 的 claude app ，似乎是可以预存多个账号，然后在 app 内切换账号的，是不是意味着可以通过切换账号，然后实现一个苹果账号给多个 claude 订阅充值？&lt;/p&gt;
-&lt;p&gt;最近被封禁了，账号里还有很多余额没用完，想着继续给后续的新号使用，不知道行不行得通。&lt;/p&gt;
-
-	</description></item><item><title>[Apple] 除了 quanX Loon 和小火箭，大佬们还有推荐的代理工具不？</title><link>https://www.v2ex.com/t/1253559#reply10</link><guid>tag:www.v2ex.com,2026-11-01:/t/1253559</guid><pubDate>Sun, 01 Nov 2026 10:11:25 +0000</pubDate><description>
-	不知道 clash mi 怎么样？
-	</description></item><item><title>[分享创造] 备考 TCF 期间做了个啥都有的 Anki 法语卡组</title><link>https://www.v2ex.com/t/1253558#reply0</link><guid>tag:www.v2ex.com,2026-11-01:/t/1253558</guid><pubDate>Sun, 01 Nov 2026 10:10:46 +0000</pubDate><description>
-	&lt;p&gt;虽然标题是 TCF,其实学法语都通用&lt;br/&gt;
-半年前开始学法语,备考 TCF,一开始用的是 AnkiWeb 上随便找的一个 5000 words 卡组,用了几个月发现不少问题,而且用英语释义学法语经常理解出偏差。一直没找到好用的中文法语卡组,就索性自己做了一个&lt;br/&gt;
-这种基础学习资源本应该公开出来大家一起维护,尤其是日语已经有很好的例子例子,好在现在有了 AI,这件事变得没那么难了&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://github.com/bonorca/the-only-french-deck" rel="nofollow"&gt;Github&lt;/a&gt;&lt;/p&gt;
-&lt;h2&gt;卡组内容&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;6900+ 常用词，按 A1–C1 分成五个子卡组&lt;/li&gt;
-&lt;li&gt;中文释义，仅保留常用义项&lt;/li&gt;
-&lt;li&gt;每个词 1–2 句例句，及中文翻译&lt;/li&gt;
-&lt;li&gt;单词+例句发音，多轮全库校对&lt;/li&gt;
-&lt;li&gt;动词变位&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;img alt="maison" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://github.com/bonorca/the-only-french-deck/raw/main/docs/maison.png"/&gt;
-&lt;img alt="petit" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://github.com/bonorca/the-only-french-deck/raw/main/docs/petit.png"/&gt;&lt;/p&gt;
-&lt;h2&gt;词汇&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;合并三个来源：Wiktionary 的 OpenSubtitles 法语词频表（词形归并成原形后取前 5000 ）、CLE 教材 A1–B2 词汇、FLELex 分级词表（ A1–B1 全部，加上 B2 常见词），去重后约 7800 词&lt;/li&gt;
-&lt;li&gt;删掉俚语、粗俗用语、专有名词、专业术语和古雅的文学词，共约 900 个&lt;/li&gt;
-&lt;li&gt;参考 FLELex 等级和 Lexique 3 词频，把每个词定到 A1–C1&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2&gt;音频&lt;/h2&gt;
-&lt;p&gt;全部用 Gemini 3.8 flash TTS 生成，1.2 万多个单词和词形发音、1.28 万句例句发音。&lt;/p&gt;
-&lt;p&gt;然后用多个语音识别模型转写，再和卡片上的文字、音标逐个比对，读错的重新生成，最后人工试听。&lt;/p&gt;
-&lt;h2&gt;下载&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;GitHub （完整版，带例句发音）： &lt;a href="https://github.com/bonorca/the-only-french-deck/releases/latest" rel="nofollow"&gt;https://github.com/bonorca/the-only-french-deck/releases/latest&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-	</description></item><item><title>[职场话题] 失业在家，房租快到期了，是先回老家呆着投简历，还是租个便宜的一室</title><link>https://www.v2ex.com/t/1253555#reply12</link><guid>tag:www.v2ex.com,2026-11-01:/t/1253555</guid><pubDate>Sun, 01 Nov 2026 09:55:19 +0000</pubDate><description>
-	&lt;p&gt;工作太难找了，只能外包了吗&lt;/p&gt;
-
 	</description></item></channel></rss>
