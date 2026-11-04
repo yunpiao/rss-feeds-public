@@ -1,34 +1,65 @@
-<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hacker News: Front Page</title><link>https://news.ycombinator.com/</link><description>Hacker News RSS</description><docs>https://hnrss.org/</docs><generator>hnrss v2.1.1</generator><lastBuildDate>Tue, 03 Nov 2026 20:34:01 +0000</lastBuildDate><atom:link href="https://hnrss.org/frontpage" rel="self" type="application/rss+xml"></atom:link><item><title><![CDATA[Pratt parsing is a black box]]></title><description><![CDATA[
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hacker News: Front Page</title><link>https://news.ycombinator.com/</link><description>Hacker News RSS</description><docs>https://hnrss.org/</docs><generator>hnrss v2.1.1</generator><lastBuildDate>Wed, 04 Nov 2026 00:54:31 +0000</lastBuildDate><atom:link href="https://hnrss.org/frontpage" rel="self" type="application/rss+xml"></atom:link><item><title><![CDATA[The Internals of PostgreSQL]]></title><description><![CDATA[
+<p>Article URL: <a href="https://www.interdb.jp/pg/index.html">https://www.interdb.jp/pg/index.html</a></p>
+<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50358702">https://news.ycombinator.com/item?id=50358702</a></p>
+<p>Points: 78</p>
+<p># Comments: 2</p>
+]]></description><pubDate>Tue, 03 Nov 2026 21:51:06 +0000</pubDate><link>https://www.interdb.jp/pg/index.html</link><dc:creator>ibobev</dc:creator><comments>https://news.ycombinator.com/item?id=50358702</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50358702</guid></item><item><title><![CDATA[The Little Book of Generative AI Foundations: An Intuitive Mathematical Primer]]></title><description><![CDATA[
+<p>Article URL: <a href="https://arxiv.org/abs/2605.29713">https://arxiv.org/abs/2605.29713</a></p>
+<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50358582">https://news.ycombinator.com/item?id=50358582</a></p>
+<p>Points: 196</p>
+<p># Comments: 31</p>
+]]></description><pubDate>Tue, 03 Nov 2026 21:40:53 +0000</pubDate><link>https://arxiv.org/abs/2605.29713</link><dc:creator>ibobev</dc:creator><comments>https://news.ycombinator.com/item?id=50358582</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50358582</guid></item><item><title><![CDATA[Safari introduces Adaptive Dark Mode in 27.3]]></title><description><![CDATA[
+<p>Article URL: <a href="https://webkit.org/blog/18541/introducing-adaptive-dark-mode/">https://webkit.org/blog/18541/introducing-adaptive-dark-mode/</a></p>
+<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50358562">https://news.ycombinator.com/item?id=50358562</a></p>
+<p>Points: 257</p>
+<p># Comments: 160</p>
+]]></description><pubDate>Tue, 03 Nov 2026 21:39:05 +0000</pubDate><link>https://webkit.org/blog/18541/introducing-adaptive-dark-mode/</link><dc:creator>paddingtone</dc:creator><comments>https://news.ycombinator.com/item?id=50358562</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50358562</guid></item><item><title><![CDATA[US tech giants' hidden AI debt swells 90% to $3.2T in 6 months]]></title><description><![CDATA[
+<p>Article URL: <a href="https://asia.nikkei.com/business/technology/artificial-intelligence/us-tech-giants-hidden-ai-debt-swells-90-to-3.2tn-in-6-months">https://asia.nikkei.com/business/technology/artificial-intelligence/us-tech-giants-hidden-ai-debt-swells-90-to-3.2tn-in-6-months</a></p>
+<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50358422">https://news.ycombinator.com/item?id=50358422</a></p>
+<p>Points: 200</p>
+<p># Comments: 70</p>
+]]></description><pubDate>Tue, 03 Nov 2026 21:26:44 +0000</pubDate><link>https://asia.nikkei.com/business/technology/artificial-intelligence/us-tech-giants-hidden-ai-debt-swells-90-to-3.2tn-in-6-months</link><dc:creator>angry_impala</dc:creator><comments>https://news.ycombinator.com/item?id=50358422</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50358422</guid></item><item><title><![CDATA[Show HN: Kairos – Open-source risk and fraud decisioning platform]]></title><description><![CDATA[
+<p>Hey HN, Ayan here from Finic. We’re launching Kairos, an open source alternative to Sift, Sardine, and other real-time fraud decisioning platforms. Kairos addresses two of the biggest problems facing traditional decisioning tools: a lack of labeled data to train on and dealing with fraudsters that are constantly changing their tactics.<p>1. Traditional fraud solutions use ML models such as XGBoost to detect fraud, but these models are dependent on quality labeled data which many businesses do not have. We address this by using “System One” decision models in additional to traditional models such as XGBoost and logistic regression. This allows you to incorporate plain language questions such as “Is this a throwaway email” into your decisioning, bypassing the need for large amounts of labeled data. This also allows you to capture aspects of fraud that are more unstructured, which is something that XGBoost models struggle with.<p>2. Fraud teams are facing off with live players that are constantly changing their behavior to bypass the detection logic they have in place. You can train a detection model or define a ruleset once, but it will become obsolete in a matter of weeks as fraudsters figure out what your detection logic is. This means that you need a team regularly training models and updating rules based on new fraud patterns. Typically this takes a large data science/ML team. Kairos addresses this by introducing an MCP server, so that your agent (Claude Code, Cursor, Codex, etc.) can define a decision workflow, train models on your data, and pick the variant that performs best.<p>You can self-host Kairos with Docker or use the hosted version at <a href="https://kairos.finic.ai">https://kairos.finic.ai</a></p>
+<hr>
+<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50358314">https://news.ycombinator.com/item?id=50358314</a></p>
+<p>Points: 48</p>
+<p># Comments: 5</p>
+]]></description><pubDate>Tue, 03 Nov 2026 21:16:48 +0000</pubDate><link>https://github.com/finic-ai/kairos</link><dc:creator>ayanb9440</dc:creator><comments>https://news.ycombinator.com/item?id=50358314</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50358314</guid></item><item><title><![CDATA[Pratt parsing is a black box]]></title><description><![CDATA[
 <p>Article URL: <a href="https://vinipsmaker.github.io/blog/article/pratt-parsing-is-a-black-box/">https://vinipsmaker.github.io/blog/article/pratt-parsing-is-a-black-box/</a></p>
 <p>Comments URL: <a href="https://news.ycombinator.com/item?id=50357457">https://news.ycombinator.com/item?id=50357457</a></p>
-<p>Points: 7</p>
-<p># Comments: 1</p>
+<p>Points: 35</p>
+<p># Comments: 16</p>
 ]]></description><pubDate>Tue, 03 Nov 2026 20:07:41 +0000</pubDate><link>https://vinipsmaker.github.io/blog/article/pratt-parsing-is-a-black-box/</link><dc:creator>ibobev</dc:creator><comments>https://news.ycombinator.com/item?id=50357457</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50357457</guid></item><item><title><![CDATA[Preparing for the Flipper One Kickstarter and opening pre-orders]]></title><description><![CDATA[
 <p><a href="https://docs.flipper.net/one" rel="nofollow">https://docs.flipper.net/one</a></p>
 <hr>
 <p>Comments URL: <a href="https://news.ycombinator.com/item?id=50356994">https://news.ycombinator.com/item?id=50356994</a></p>
-<p>Points: 53</p>
-<p># Comments: 20</p>
-]]></description><pubDate>Tue, 03 Nov 2026 19:32:13 +0000</pubDate><link>https://flipper.net/pages/flipper-one</link><dc:creator>user_7832</dc:creator><comments>https://news.ycombinator.com/item?id=50356994</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50356994</guid></item><item><title><![CDATA[Introduction to Programming in ATS]]></title><description><![CDATA[
+<p>Points: 167</p>
+<p># Comments: 77</p>
+]]></description><pubDate>Tue, 03 Nov 2026 19:32:13 +0000</pubDate><link>https://flipper.net/pages/flipper-one</link><dc:creator>user_7832</dc:creator><comments>https://news.ycombinator.com/item?id=50356994</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50356994</guid></item><item><title><![CDATA[macOS 27 does not support CoreStorage volumes]]></title><description><![CDATA[
+<p>Article URL: <a href="https://wadetregaskis.com/macos-27-golden-gate-does-not-actually-support-corestorage-or-hfs-volumes/">https://wadetregaskis.com/macos-27-golden-gate-does-not-actually-support-corestorage-or-hfs-volumes/</a></p>
+<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50356944">https://news.ycombinator.com/item?id=50356944</a></p>
+<p>Points: 95</p>
+<p># Comments: 57</p>
+]]></description><pubDate>Tue, 03 Nov 2026 19:27:53 +0000</pubDate><link>https://wadetregaskis.com/macos-27-golden-gate-does-not-actually-support-corestorage-or-hfs-volumes/</link><dc:creator>colejohnson66</dc:creator><comments>https://news.ycombinator.com/item?id=50356944</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50356944</guid></item><item><title><![CDATA[Introduction to Programming in ATS]]></title><description><![CDATA[
 <p>Article URL: <a href="https://ats-lang.sourceforge.net/DOCUMENT/INT2PROGINATS/HTML/book1.html">https://ats-lang.sourceforge.net/DOCUMENT/INT2PROGINATS/HTML/book1.html</a></p>
 <p>Comments URL: <a href="https://news.ycombinator.com/item?id=50356913">https://news.ycombinator.com/item?id=50356913</a></p>
-<p>Points: 24</p>
-<p># Comments: 2</p>
-]]></description><pubDate>Tue, 03 Nov 2026 19:25:18 +0000</pubDate><link>https://ats-lang.sourceforge.net/DOCUMENT/INT2PROGINATS/HTML/book1.html</link><dc:creator>ibobev</dc:creator><comments>https://news.ycombinator.com/item?id=50356913</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50356913</guid></item><item><title><![CDATA[How to write comparison content that doesn't age like milk]]></title><description><![CDATA[
-<p>Article URL: <a href="https://posthog.com/blog/comparison-content-guide">https://posthog.com/blog/comparison-content-guide</a></p>
-<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50355365">https://news.ycombinator.com/item?id=50355365</a></p>
-<p>Points: 17</p>
-<p># Comments: 5</p>
-]]></description><pubDate>Tue, 03 Nov 2026 17:46:58 +0000</pubDate><link>https://posthog.com/blog/comparison-content-guide</link><dc:creator>rbaudibert</dc:creator><comments>https://news.ycombinator.com/item?id=50355365</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50355365</guid></item><item><title><![CDATA[Qwen 3.8 27B on my laptop can interpret model weights, too]]></title><description><![CDATA[
+<p>Points: 51</p>
+<p># Comments: 7</p>
+]]></description><pubDate>Tue, 03 Nov 2026 19:25:18 +0000</pubDate><link>https://ats-lang.sourceforge.net/DOCUMENT/INT2PROGINATS/HTML/book1.html</link><dc:creator>ibobev</dc:creator><comments>https://news.ycombinator.com/item?id=50356913</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50356913</guid></item><item><title><![CDATA[How I use AI (Oct 2026)]]></title><description><![CDATA[
+<p>Article URL: <a href="https://ben.stolovitz.com/posts/how-use-ai-oct-2026/">https://ben.stolovitz.com/posts/how-use-ai-oct-2026/</a></p>
+<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50355767">https://news.ycombinator.com/item?id=50355767</a></p>
+<p>Points: 74</p>
+<p># Comments: 72</p>
+]]></description><pubDate>Tue, 03 Nov 2026 18:11:11 +0000</pubDate><link>https://ben.stolovitz.com/posts/how-use-ai-oct-2026/</link><dc:creator>citelao</dc:creator><comments>https://news.ycombinator.com/item?id=50355767</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50355767</guid></item><item><title><![CDATA[Qwen 3.8 27B on my laptop can interpret model weights, too]]></title><description><![CDATA[
 <p>Article URL: <a href="https://simonwillison.net/2026/Nov/3/qwen-can-interpret-model-weights/">https://simonwillison.net/2026/Nov/3/qwen-can-interpret-model-weights/</a></p>
 <p>Comments URL: <a href="https://news.ycombinator.com/item?id=50355251">https://news.ycombinator.com/item?id=50355251</a></p>
-<p>Points: 308</p>
-<p># Comments: 97</p>
+<p>Points: 474</p>
+<p># Comments: 149</p>
 ]]></description><pubDate>Tue, 03 Nov 2026 17:40:00 +0000</pubDate><link>https://simonwillison.net/2026/Nov/3/qwen-can-interpret-model-weights/</link><dc:creator>theanonymousone</dc:creator><comments>https://news.ycombinator.com/item?id=50355251</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50355251</guid></item><item><title><![CDATA[Postman silently auto-installs AI plugins and attempts to share all API data]]></title><description><![CDATA[
 <p>Article URL: <a href="https://github.com/postmanlabs/postman-app-support/issues/14370">https://github.com/postmanlabs/postman-app-support/issues/14370</a></p>
 <p>Comments URL: <a href="https://news.ycombinator.com/item?id=50354960">https://news.ycombinator.com/item?id=50354960</a></p>
-<p>Points: 717</p>
-<p># Comments: 232</p>
+<p>Points: 997</p>
+<p># Comments: 331</p>
 ]]></description><pubDate>Tue, 03 Nov 2026 17:22:37 +0000</pubDate><link>https://github.com/postmanlabs/postman-app-support/issues/14370</link><dc:creator>sidgarimella</dc:creator><comments>https://news.ycombinator.com/item?id=50354960</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50354960</guid></item><item><title><![CDATA[Ashby (YC W19) Is Hiring EMs]]></title><description><![CDATA[
 <p>Article URL: <a href="https://www.ashbyhq.com/careers?ashby_jid=695b1ce6-c375-4fad-94ef-61b50a3fbd28&utm_source=hn">https://www.ashbyhq.com/careers?ashby_jid=695b1ce6-c375-4fad-94ef-61b50a3fbd28&utm_source=hn</a></p>
 <p>Comments URL: <a href="https://news.ycombinator.com/item?id=50354582">https://news.ycombinator.com/item?id=50354582</a></p>
@@ -37,93 +68,36 @@
 ]]></description><pubDate>Tue, 03 Nov 2026 17:00:53 +0000</pubDate><link>https://www.ashbyhq.com/careers?ashby_jid=695b1ce6-c375-4fad-94ef-61b50a3fbd28&amp;utm_source=hn</link><dc:creator>abhikp</dc:creator><comments>https://news.ycombinator.com/item?id=50354582</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50354582</guid></item><item><title><![CDATA[Stringman, an $800 open-source room scale gripper robot]]></title><description><![CDATA[
 <p>Article URL: <a href="https://neufangled.com/">https://neufangled.com/</a></p>
 <p>Comments URL: <a href="https://news.ycombinator.com/item?id=50354358">https://news.ycombinator.com/item?id=50354358</a></p>
-<p>Points: 134</p>
-<p># Comments: 73</p>
-]]></description><pubDate>Tue, 03 Nov 2026 16:47:29 +0000</pubDate><link>https://neufangled.com/</link><dc:creator>nharada</dc:creator><comments>https://news.ycombinator.com/item?id=50354358</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50354358</guid></item><item><title><![CDATA[Gitbook Breached]]></title><description><![CDATA[
-<p>We opened a ticket with support about Gitbook availability issues and got this in reply. We have yet to see any official customer communication or breach notification. Apologies for the formatting, did the best I could as it's a mobile paste.<p>Update:<p>GitBook security incident update
- Hey <$name>,
- The GitBook app, the GitBook API, and published docs are available again. A few services may still be degraded as we finish restoring everything to full performance.<p>*What happened*
- GitBook has been the target of a sophisticated, highly targeted attack using AI agents. 
- At 19:00 CET, November 2, the attacker gained unauthorized access to some of our infrastructure credentials. We detected the attack immediately and acted swiftly to block further impact. 
- To make sure our infrastructure was fully secure, we then took the GitBook app and authenticated docs sites offline. We kept publicly published content live for as long as possible, using cached data.<p>*What we did immediately*
-* Blocked the attacker and closed the vulnerabilities involved
-* Replaced every credential and secret across our infrastructure
-* Brought services back only once we were confident they were secure
-* Invalidated every customer’s API tokens on our platform<p>*Your data*
- Our investigation shows that the attacker may have accessed the following:
-* Git Sync secrets.
-* GitBook API tokens.
-* Third-party API tokens used to connect external tools to GitBook.
-* Questions asked to GitBook Assistant by your site visitors.<p>At this stage, we have found no evidence that any of your content in GitBook was modified.<p>*What you need to do now*
-* Rotate any existing GitBook API tokens. We revoked all personal API tokens during the incident.
-* Rotate any third-party API tokens or secrets you use to connect other tools to GitBook.
-* If you have published integrations that use secrets, rotate those secrets.
-* If you use the GitBook MCP server, re-authenticate it.
- Please contact your GitBook organization’s admin to assist with this process.<p>*What we are doing next*
-* Monitoring the situation in case of further attacks.
-* Introducing further security measures to our platform.
-* Writing a full post mortem that will be published soon with more detailed information about the incident.
-* If you have any further questions, please reach out to your account manager or our support team. You can also check status.gitbook.com for updates<p>Thank you for your patience, and we apologize again for the disruption
- The GitBook team</p>
-<hr>
-<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50354336">https://news.ycombinator.com/item?id=50354336</a></p>
-<p>Points: 111</p>
-<p># Comments: 28</p>
-]]></description><pubDate>Tue, 03 Nov 2026 16:45:49 +0000</pubDate><link>https://news.ycombinator.com/item?id=50354336</link><dc:creator>punchmesan</dc:creator><comments>https://news.ycombinator.com/item?id=50354336</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50354336</guid></item><item><title><![CDATA[USDB: Scaling Storage for Next-Generation Recommender Systems at ByteDance]]></title><description><![CDATA[
+<p>Points: 353</p>
+<p># Comments: 136</p>
+]]></description><pubDate>Tue, 03 Nov 2026 16:47:29 +0000</pubDate><link>https://neufangled.com/</link><dc:creator>nharada</dc:creator><comments>https://news.ycombinator.com/item?id=50354358</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50354358</guid></item><item><title><![CDATA[USDB: Scaling Storage for Next-Generation Recommender Systems at ByteDance]]></title><description><![CDATA[
 <p>Article URL: <a href="https://arxiv.org/abs/2611.02618">https://arxiv.org/abs/2611.02618</a></p>
 <p>Comments URL: <a href="https://news.ycombinator.com/item?id=50354250">https://news.ycombinator.com/item?id=50354250</a></p>
-<p>Points: 31</p>
-<p># Comments: 6</p>
-]]></description><pubDate>Tue, 03 Nov 2026 16:40:02 +0000</pubDate><link>https://arxiv.org/abs/2611.02618</link><dc:creator>1equalsequals1</dc:creator><comments>https://news.ycombinator.com/item?id=50354250</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50354250</guid></item><item><title><![CDATA[Show HN: HackerChurn – which SaaS tools HN wants to cancel]]></title><description><![CDATA[
-<p>Article URL: <a href="https://hissingkitty.com/hacker-churn">https://hissingkitty.com/hacker-churn</a></p>
-<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50353386">https://news.ycombinator.com/item?id=50353386</a></p>
-<p>Points: 61</p>
-<p># Comments: 21</p>
-]]></description><pubDate>Tue, 03 Nov 2026 15:41:52 +0000</pubDate><link>https://hissingkitty.com/hacker-churn</link><dc:creator>drewlem</dc:creator><comments>https://news.ycombinator.com/item?id=50353386</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50353386</guid></item><item><title><![CDATA[Study estimates 75% of NFL players who died over 15-year span had CTE]]></title><description><![CDATA[
-<p>Article URL: <a href="https://www.nbcnews.com/health/health-news/study-estimates-75-nfl-players-died-15-year-span-may-cte-rcna605975">https://www.nbcnews.com/health/health-news/study-estimates-75-nfl-players-died-15-year-span-may-cte-rcna605975</a></p>
-<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50353335">https://news.ycombinator.com/item?id=50353335</a></p>
-<p>Points: 218</p>
-<p># Comments: 164</p>
-]]></description><pubDate>Tue, 03 Nov 2026 15:38:04 +0000</pubDate><link>https://www.nbcnews.com/health/health-news/study-estimates-75-nfl-players-died-15-year-span-may-cte-rcna605975</link><dc:creator>gmays</dc:creator><comments>https://news.ycombinator.com/item?id=50353335</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50353335</guid></item><item><title><![CDATA[Kalshi and its co-founders face felony charges for violating Utah gambling laws]]></title><description><![CDATA[
-<p>Article URL: <a href="https://arstechnica.com/tech-policy/2026/10/trump-admin-sues-utah-to-save-kalshi-from-the-states-total-ban-on-gambling/">https://arstechnica.com/tech-policy/2026/10/trump-admin-sues-utah-to-save-kalshi-from-the-states-total-ban-on-gambling/</a></p>
-<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50353229">https://news.ycombinator.com/item?id=50353229</a></p>
-<p>Points: 324</p>
-<p># Comments: 246</p>
-]]></description><pubDate>Tue, 03 Nov 2026 15:29:15 +0000</pubDate><link>https://arstechnica.com/tech-policy/2026/10/trump-admin-sues-utah-to-save-kalshi-from-the-states-total-ban-on-gambling/</link><dc:creator>rbanffy</dc:creator><comments>https://news.ycombinator.com/item?id=50353229</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50353229</guid></item><item><title><![CDATA[Google will turn off search for schools that reject AI]]></title><description><![CDATA[
-<p><a href="https://archive.ph/RuwsB" rel="nofollow">https://archive.ph/RuwsB</a><p><a href="https://blog.google/products-and-platforms/products/education/ai-learning-era-updates-2026/" rel="nofollow">https://blog.google/products-and-platforms/products/educatio...</a></p>
-<hr>
-<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50353192">https://news.ycombinator.com/item?id=50353192</a></p>
-<p>Points: 400</p>
-<p># Comments: 300</p>
-]]></description><pubDate>Tue, 03 Nov 2026 15:25:47 +0000</pubDate><link>https://www.nytimes.com/2026/11/03/us/google-search-schools-restrict-ai.html</link><dc:creator>ceejayoz</dc:creator><comments>https://news.ycombinator.com/item?id=50353192</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50353192</guid></item><item><title><![CDATA[Tiny Basic for Arduino]]></title><description><![CDATA[
+<p>Points: 44</p>
+<p># Comments: 7</p>
+]]></description><pubDate>Tue, 03 Nov 2026 16:40:02 +0000</pubDate><link>https://arxiv.org/abs/2611.02618</link><dc:creator>1equalsequals1</dc:creator><comments>https://news.ycombinator.com/item?id=50354250</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50354250</guid></item><item><title><![CDATA[Tiny Basic for Arduino]]></title><description><![CDATA[
 <p>Article URL: <a href="https://dilshan.github.io/tiny-basic/">https://dilshan.github.io/tiny-basic/</a></p>
 <p>Comments URL: <a href="https://news.ycombinator.com/item?id=50353073">https://news.ycombinator.com/item?id=50353073</a></p>
-<p>Points: 53</p>
-<p># Comments: 14</p>
-]]></description><pubDate>Tue, 03 Nov 2026 15:17:07 +0000</pubDate><link>https://dilshan.github.io/tiny-basic/</link><dc:creator>AlexeyBrin</dc:creator><comments>https://news.ycombinator.com/item?id=50353073</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50353073</guid></item><item><title><![CDATA[Handles are the better pointers (2018)]]></title><description><![CDATA[
-<p>Article URL: <a href="https://floooh.github.io/2018/06/17/handles-vs-pointers.html">https://floooh.github.io/2018/06/17/handles-vs-pointers.html</a></p>
-<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50352767">https://news.ycombinator.com/item?id=50352767</a></p>
-<p>Points: 38</p>
+<p>Points: 63</p>
 <p># Comments: 19</p>
-]]></description><pubDate>Tue, 03 Nov 2026 14:54:30 +0000</pubDate><link>https://floooh.github.io/2018/06/17/handles-vs-pointers.html</link><dc:creator>vinhnx</dc:creator><comments>https://news.ycombinator.com/item?id=50352767</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50352767</guid></item><item><title><![CDATA[Mac at Any Scale]]></title><description><![CDATA[
+]]></description><pubDate>Tue, 03 Nov 2026 15:17:07 +0000</pubDate><link>https://dilshan.github.io/tiny-basic/</link><dc:creator>AlexeyBrin</dc:creator><comments>https://news.ycombinator.com/item?id=50353073</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50353073</guid></item><item><title><![CDATA[Mac at Any Scale]]></title><description><![CDATA[
 <p>Article URL: <a href="https://namespace.so/blog/mac-at-any-scale">https://namespace.so/blog/mac-at-any-scale</a></p>
 <p>Comments URL: <a href="https://news.ycombinator.com/item?id=50352758">https://news.ycombinator.com/item?id=50352758</a></p>
-<p>Points: 233</p>
-<p># Comments: 120</p>
-]]></description><pubDate>Tue, 03 Nov 2026 14:53:42 +0000</pubDate><link>https://namespace.so/blog/mac-at-any-scale</link><dc:creator>anner_</dc:creator><comments>https://news.ycombinator.com/item?id=50352758</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50352758</guid></item><item><title><![CDATA[OpenAI seems to be silently re-enabling model training on Codex chats]]></title><description><![CDATA[
-<p>My company is pretty paranoid about leaking IP to the frontier labs through prompts, so we've all been diligent about disabling data sharing in Codex/Claude Code/etc. But yesterday my coworkers and I noticed that the setting had been silently reenabled in Codex. None of us knowingly opted back in.<p>You can check your settings here: https://chatgpt.com/settings/data-controls. Look for "Improve the model for everyone".<p>Curious if this is an isolated issue or something more widespread.<p>EDIT: looks like this has been noted before https://news.ycombinator.com/item?id=49643556<p>EDIT: apparently you can also turn off data sharing here: https://privacy.openai.com/policies?modal=take-control</p>
-<hr>
-<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50352757">https://news.ycombinator.com/item?id=50352757</a></p>
-<p>Points: 361</p>
-<p># Comments: 106</p>
-]]></description><pubDate>Tue, 03 Nov 2026 14:53:41 +0000</pubDate><link>https://news.ycombinator.com/item?id=50352757</link><dc:creator>user052919</dc:creator><comments>https://news.ycombinator.com/item?id=50352757</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50352757</guid></item><item><title><![CDATA[Practice speaking Japanese with real YouTube videos, graded line by line]]></title><description><![CDATA[
+<p>Points: 309</p>
+<p># Comments: 174</p>
+]]></description><pubDate>Tue, 03 Nov 2026 14:53:42 +0000</pubDate><link>https://namespace.so/blog/mac-at-any-scale</link><dc:creator>anner_</dc:creator><comments>https://news.ycombinator.com/item?id=50352758</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50352758</guid></item><item><title><![CDATA[There is no posttraining data commons]]></title><description><![CDATA[
+<p>Article URL: <a href="https://openathena.ai/blog/there-is-no-posttraining-data-commons/">https://openathena.ai/blog/there-is-no-posttraining-data-commons/</a></p>
+<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50352641">https://news.ycombinator.com/item?id=50352641</a></p>
+<p>Points: 9</p>
+<p># Comments: 1</p>
+]]></description><pubDate>Tue, 03 Nov 2026 14:45:47 +0000</pubDate><link>https://openathena.ai/blog/there-is-no-posttraining-data-commons/</link><dc:creator>lukasschwab</dc:creator><comments>https://news.ycombinator.com/item?id=50352641</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50352641</guid></item><item><title><![CDATA[Practice speaking Japanese with real YouTube videos, graded line by line]]></title><description><![CDATA[
 <p>Article URL: <a href="https://jivx.com/yt">https://jivx.com/yt</a></p>
 <p>Comments URL: <a href="https://news.ycombinator.com/item?id=50352577">https://news.ycombinator.com/item?id=50352577</a></p>
-<p>Points: 49</p>
-<p># Comments: 15</p>
+<p>Points: 82</p>
+<p># Comments: 31</p>
 ]]></description><pubDate>Tue, 03 Nov 2026 14:41:02 +0000</pubDate><link>https://jivx.com/yt</link><dc:creator>momentmaker</dc:creator><comments>https://news.ycombinator.com/item?id=50352577</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50352577</guid></item><item><title><![CDATA[The 'Astra can read and write weights to improve Qwen' post is misleading]]></title><description><![CDATA[
 <p>Article URL: <a href="https://honnibal.dev/blog/astra-read-write-misleading">https://honnibal.dev/blog/astra-read-write-misleading</a></p>
 <p>Comments URL: <a href="https://news.ycombinator.com/item?id=50351111">https://news.ycombinator.com/item?id=50351111</a></p>
-<p>Points: 790</p>
-<p># Comments: 183</p>
+<p>Points: 886</p>
+<p># Comments: 190</p>
 ]]></description><pubDate>Tue, 03 Nov 2026 12:21:17 +0000</pubDate><link>https://honnibal.dev/blog/astra-read-write-misleading</link><dc:creator>syllogism</dc:creator><comments>https://news.ycombinator.com/item?id=50351111</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50351111</guid></item></channel></rss>
