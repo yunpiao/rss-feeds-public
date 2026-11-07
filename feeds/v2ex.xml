@@ -1,11 +1,17 @@
 <?xml version='1.0' encoding='utf-8'?>
-<rss version="2.0"><channel><title>V2EX</title><item><title>[推广] 做了个在线 AI 母带处理：免费试用，不用注册，不用绑卡</title><link>https://www.v2ex.com/t/1255287#reply0</link><guid>tag:www.v2ex.com,2026-11-07:/t/1255287</guid><pubDate>Sat, 07 Nov 2026 20:05:01 +0000</pubDate><description>
+<rss version="2.0"><channel><title>V2EX</title><item><title>[程序员] 用 codex 把 飞书 消息模块用 solidjs 重写了一遍，体验瞬间变得丝滑了</title><link>https://www.v2ex.com/t/1255290#reply0</link><guid>tag:www.v2ex.com,2026-11-07:/t/1255290</guid><pubDate>Sat, 07 Nov 2026 23:58:06 +0000</pubDate><description>
+	
+	</description></item><item><title>[程序员] 微软壁纸应用已经被垃圾 AI 生图夺舍，可见 AI 时代也不能有更好的软件用户体验</title><link>https://www.v2ex.com/t/1255289#reply0</link><guid>tag:www.v2ex.com,2026-11-07:/t/1255289</guid><pubDate>Sat, 07 Nov 2026 23:09:49 +0000</pubDate><description>
+	&lt;p&gt;微软壁纸可以每天更新壁纸原本还觉得挺好用的。今天发现居然完全变成 AI 生图的链接入口，只能管理 AI 生成的图片。一个壁纸应用居然连切换壁纸的功能都没有，纯纯的垃圾。&lt;/p&gt;
+&lt;p&gt;程序员失业也挺好的，最少不用面对这些傻叉产品需求了。&lt;/p&gt;
+
+	</description></item><item><title>[推广] 做了个在线 AI 母带处理：免费试用，不用注册，不用绑卡</title><link>https://www.v2ex.com/t/1255287#reply0</link><guid>tag:www.v2ex.com,2026-11-07:/t/1255287</guid><pubDate>Sat, 07 Nov 2026 20:05:01 +0000</pubDate><description>
 	分享一下这两天上线的 MasteringKit： &lt;a target="_blank" href="https://masteringkit.com/zh" rel="nofollow noopener"&gt;https://masteringkit.com/zh&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;起因：自己做歌，最后一步总是“这首到底能不能发”。市面上的在线母带工具大多要先注册或先绑卡才让你听效果，我想反过来：免费试用，不用注册，不用信用卡，先听再决定。&lt;br /&gt;&lt;br /&gt;现在的做法：&lt;br /&gt;- 拖一首混音进去（ WAV / MP3 / FLAC / AIFF / M4A / OGG ，最大 1.5 GB 、22 分 30 秒），不用注册，大约一分钟听到母带效果&lt;br /&gt;- 能调：11 个控制项（响度、峰值上限、立体声宽度、单声道兼容、饱和、温暖度、齿音消除、压缩等）、强度、6 段均衡器，还有 6 种“工程师”风格（只是 6 个不同的起点，不是真人）&lt;br /&gt;- 也可以直接写一句话，比如“更温暖一点，高频别那么刺耳”，会生成一个新版本，并说明改了哪些参数&lt;br /&gt;- 每次改动都是新版本，播放时可以来回切换，在同一个位置听差别&lt;br /&gt;- 下载格式是 24-bit WAV 和 320 kbps MP3 （下载完整曲目需要会员）&lt;br /&gt;- 免费账号每首歌多 10 个版本；上传的歌只有你自己能听，不用来训练模型，可以随时删项目&lt;br /&gt;- 顺手做了几个免费工具：LUFS 响度表、流媒体响度惩罚检测（看 Spotify 、YouTube 等会把歌调小多少）、BPM 和调性检测，全部在浏览器本地跑，文件不上传&lt;br /&gt;&lt;br /&gt;技术上：页面是 Astro 静态生成加 Cloudflare Workers ，数据在 D1 ，文件在 R2 ；母带处理链是 Python 写的（均衡、压缩、饱和、立体声宽度、限幅），放在 Modal 上跑。中英文双语。&lt;br /&gt;&lt;br /&gt;还有不完善的地方：目前只做了立体声混音的整首母带，没有 DAW 插件；试听片段和整首导出的响度可能略有差别，我还在对。&lt;br /&gt;&lt;br /&gt;欢迎免费试用，尤其想听哪里用着别扭、哪个控制项听不出变化。&lt;br /&gt;&lt;br /&gt;来一波 SEO&lt;br /&gt;#AI 母带处理 #在线母带处理 #免费试用 #无需注册 #无需信用卡 #音乐母带 #LUFS 响度 #Spotify 母带 #Suno 母带 #音乐制作&lt;br /&gt;#AIMastering #OnlineMastering #FreeToTry #NoSignup #NoCreditCard #MusicMastering #AudioMastering #LUFSMeter #SunoMastering #MusicProduction&lt;br /&gt;#AIマスタリング #オンラインマスタリング #無料お試し #登録不要 #クレジットカード不要 #音楽マスタリング #ラウドネス #音楽制作&lt;br /&gt;#AI마스터링 #온라인마스터링 #무료체험 #가입불필요 #카드불필요 #음악마스터링 #라우드니스 #음악제작
 	</description></item><item><title>[VPS] 咸鱼云</title><link>https://www.v2ex.com/t/1255286#reply2</link><guid>tag:www.v2ex.com,2026-11-07:/t/1255286</guid><pubDate>Sat, 07 Nov 2026 18:32:24 +0000</pubDate><description>
 	&lt;p&gt;收个 saltyfish 咸鱼云的机
 有没有不需要的大佬&lt;/p&gt;
 
-	</description></item><item><title>[广州] 这大环境看来是很差了</title><link>https://www.v2ex.com/t/1255285#reply7</link><guid>tag:www.v2ex.com,2026-11-07:/t/1255285</guid><pubDate>Sat, 07 Nov 2026 18:19:52 +0000</pubDate><description>
+	</description></item><item><title>[职场话题] 这大环境看来是很差了</title><link>https://www.v2ex.com/t/1255285#reply11</link><guid>tag:www.v2ex.com,2026-11-07:/t/1255285</guid><pubDate>Sat, 07 Nov 2026 18:19:52 +0000</pubDate><description>
 	前两天入职了一家公司，干的广州黄埔某国企外包深圳融创项目，新入职的一共几个人。早上开完会，下午去现场，这边一个叶姓领导去联系那边领路开门。&lt;br /&gt;/&lt;br /&gt;到了门口等了十几分钟门没开，电话里问他到底联系对地方没有、确认下情况，结果这哥们张嘴就 TMTM 地说话。&lt;br /&gt;/&lt;br /&gt;我反驳了几句，让他就事论事，不要拿情绪说话。我才第一天进来，就见过一眼，这哥们就搁那儿喷。我翻开他的钉钉职位一看，副经理。难怪对第一面、第一天入职的人都这么横。果不其然，第二天就被穿小鞋公报私仇了，说什么“不符合试用期录用标准”。合着第一面、第一天，能忍受得了对父母问候，才是你们公司的企业文化考核是吧？还问我到底懂没懂，这哥们自己没懂别人想表达啥，还觉得自己有道理。&lt;br /&gt;/&lt;br /&gt;这哥们也能当经理、还能做到这个位置，应该是历史遗留产物了。学历背景我不评价，但沟通素质确实拉胯，对素不相识、第一天入职的人直接爆粗口，这管理水平我是不敢恭维。&lt;br /&gt;/&lt;br /&gt;说起来其他入职的几个哥们也是人才，短期项目、没有正儿八经的合同都要去做，都是五六年经验的人了，这行情这么差么？我了解到的情况是短期项目、合同和社保情况都不太清晰。这家公司叫铭思，Boss 上写的是 14-16 ，结果面过了又是另一个价格，还是短期项目，然后还说自己不知情，到底知不知情我就不知道了。有时间的可以去 Boss 搜索，现在还挂着呢。&lt;br /&gt;/&lt;br /&gt;说这么多也不是完全为了泄愤。收到消息的时候，我完全觉得很正常，毕竟他能对一个素不相识的人放屁，干出这种事情也在我预判范围。林子大了啥鸟都有，给兄弟们插个眼，自己留个心眼。
 	</description></item><item><title>[反馈] 站内打赏没有显示</title><link>https://www.v2ex.com/t/1255284#reply0</link><guid>tag:www.v2ex.com,2026-11-07:/t/1255284</guid><pubDate>Sat, 07 Nov 2026 17:26:54 +0000</pubDate><description>
 	&lt;p&gt;这个是交易： &lt;a href="https://solscan.io/tx/2kjVm6fwCvesFpfYdxbnBNK9WLtAvtexUynxpEY9BnyBVtvQTe2zgLm9PN4v66s8sq3yNmWAvYKrVdetjBGx9Hrb" rel="nofollow"&gt;https://solscan.io/tx/2kjVm6fwCvesFpfYdxbnBNK9WLtAvtexUynxpEY9BnyBVtvQTe2zgLm9PN4v66s8sq3yNmWAvYKrVdetjBGx9Hrb&lt;/a&gt;&lt;/p&gt;
@@ -270,7 +276,7 @@ rea-game extract "/path/to/gameplay.mp4" -o out/my-game
 &lt;h3&gt;💡 性能总结&lt;/h3&gt;
 &lt;p&gt;当前宿主机属于&lt;strong&gt;强算力计算型节点&lt;/strong&gt;（第四代至强 Xeon Platinum 8481C + 企业级高速 NVMe 存储），物理磁盘直写吞吐高达 &lt;strong&gt;1.5 GB/s&lt;/strong&gt;，内存直拷吞吐达 &lt;strong&gt;44.1 GB/s&lt;/strong&gt;，完全能够承载百万级 QPS 高并发与长效 7 天不间断的断电崩溃、混沌注入和高压读写任务。&lt;/p&gt;
 
-	</description></item><item><title>[问与答] 现在农村还有住草房窝棚的吗？</title><link>https://www.v2ex.com/t/1255269#reply10</link><guid>tag:www.v2ex.com,2026-11-07:/t/1255269</guid><pubDate>Sat, 07 Nov 2026 14:35:22 +0000</pubDate><description>
+	</description></item><item><title>[问与答] 现在农村还有住草房窝棚的吗？</title><link>https://www.v2ex.com/t/1255269#reply11</link><guid>tag:www.v2ex.com,2026-11-07:/t/1255269</guid><pubDate>Sat, 07 Nov 2026 14:35:22 +0000</pubDate><description>
 	&lt;p&gt;我东大都 top2 了，草房窝棚应该已经被消灭了吧？&lt;/p&gt;
 
 	</description></item><item><title>[云计算] KKCE： 400+在线节点的网站测速平台，提提意见</title><link>https://www.v2ex.com/t/1255268#reply0</link><guid>tag:www.v2ex.com,2026-11-07:/t/1255268</guid><pubDate>Sat, 07 Nov 2026 14:29:59 +0000</pubDate><description>
@@ -466,7 +472,7 @@ rea-game extract "/path/to/gameplay.mp4" -o out/my-game
 
 	</description></item><item><title>[分享创造] 用 AI 做了个智能导航 咖喱饭导航</title><link>https://www.v2ex.com/t/1255258#reply0</link><guid>tag:www.v2ex.com,2026-11-07:/t/1255258</guid><pubDate>Sat, 07 Nov 2026 13:26:12 +0000</pubDate><description>
 	入口： &lt;a target="_blank" href="https://dh.gali.fan" rel="nofollow noopener"&gt;https://dh.gali.fan&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;特点：&lt;br /&gt;1.人人都可以提交自己的网站 网站自动抓取 AI 分析内容（性质、归类、收费、访问速度等） 当然网站如果禁止爬取就不会收录&lt;br /&gt;2.后台自己提交导航 会抓取页面所有网站 写进队列 如果识别到导航网站，会继续加入提交导航数据&lt;br /&gt;3.前端搜索使用 AI 识别 自动推荐&lt;br /&gt;4.游客可以对网站进行评估 打分 &lt;br /&gt;&lt;br /&gt;页脚可以提交自己的网站。&lt;br /&gt;&lt;br /&gt;后续会继续补充用户收藏的功能，暂时只做智能分析网站、搜索，个人很想尝试一下智能导航这个想法。&lt;br /&gt;&lt;br /&gt;以下是后台抓取的统计信息&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;抓取进程：在线 · 任务运行中&lt;br /&gt;&lt;br /&gt;今日处理 5838 / 10000 次 · 成功 1382 次 · 成功率 23.7%&lt;br /&gt;&lt;br /&gt;今日 AI 请求 1453 次，成功 1388 次 · 输入 6210093 Token · 输出 1990623 Token&lt;br /&gt;&lt;br /&gt;Token 以接口返回为准，未返回的用量无法计入；金额请以服务商账单为准。&lt;br /&gt;&lt;br /&gt;队列：blacklisted 1761 / processing 1 / published 1733 / queued 993 / rejected 7&lt;br /&gt;&lt;br /&gt;今日 AI 预估费用：USD 4.251776&lt;br /&gt;&lt;br /&gt;输入费用 USD 1.863028 + 输出费用 USD 2.388748 ；每百万 Token 单价：输入 0.30 / 输出 1.20&lt;br /&gt;&lt;br /&gt;按当前配置的非缓存单价统一估算，未扣缓存或闲时优惠；历史记录也按当前单价重算，实际以服务商账单为准。&lt;br /&gt;&lt;br /&gt;用量不完整：61 次请求没有记录到 Token ，预估未包含其可能产生的费用。
-	</description></item><item><title>[程序员] AI 时代，并行开发多项目，感觉电脑配置不够了</title><link>https://www.v2ex.com/t/1255255#reply6</link><guid>tag:www.v2ex.com,2026-11-07:/t/1255255</guid><pubDate>Sat, 07 Nov 2026 12:53:50 +0000</pubDate><description>
+	</description></item><item><title>[程序员] AI 时代，并行开发多项目，感觉电脑配置不够了</title><link>https://www.v2ex.com/t/1255255#reply7</link><guid>tag:www.v2ex.com,2026-11-07:/t/1255255</guid><pubDate>Sat, 07 Nov 2026 12:53:50 +0000</pubDate><description>
 	&lt;p&gt;自动用上了 AI ，每天的想法很多，虽然很多都是没什么用的东西，但是架不住开发效率太高了 ，常常并行开发好几个项目，明显电脑卡了很多（台式机），但是最近换电脑又不划算，有什么办法么&lt;/p&gt;
 &lt;p&gt;有时候甚至想 vibe 一个应用，自动去云服务商开抢占式实例，关闭的时候自动保存快照，开启的时候自动加载对应的快照，后面都在云上开发了。&lt;/p&gt;
 
@@ -479,7 +485,7 @@ rea-game extract "/path/to/gameplay.mp4" -o out/my-game
 &lt;p&gt;&lt;img alt="截图" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://github.com/welefen/TidyMac/blob/main/screenshots/zh/uninstaller.png?raw=true"/&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img alt="截图" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://github.com/welefen/TidyMac/blob/main/screenshots/zh/large.png?raw=true"/&gt;&lt;/p&gt;
 
-	</description></item><item><title>[程序员] 在 agent 时代，深度还是广度更重要？</title><link>https://www.v2ex.com/t/1255253#reply12</link><guid>tag:www.v2ex.com,2026-11-07:/t/1255253</guid><pubDate>Sat, 07 Nov 2026 12:30:15 +0000</pubDate><description>
+	</description></item><item><title>[程序员] 在 agent 时代，深度还是广度更重要？</title><link>https://www.v2ex.com/t/1255253#reply14</link><guid>tag:www.v2ex.com,2026-11-07:/t/1255253</guid><pubDate>Sat, 07 Nov 2026 12:30:15 +0000</pubDate><description>
 	&lt;p&gt;指知识、经验与技能的深度与广度。以及，如果只能选一个的话，什么是最重要的领域？&lt;/p&gt;
 
 	</description></item><item><title>[MacBook Pro] 请问大佬们买 Macbook 各种系列 24GB 以上的都是什么需求</title><link>https://www.v2ex.com/t/1255251#reply22</link><guid>tag:www.v2ex.com,2026-11-07:/t/1255251</guid><pubDate>Sat, 07 Nov 2026 12:29:31 +0000</pubDate><description>
@@ -492,7 +498,7 @@ rea-game extract "/path/to/gameplay.mp4" -o out/my-game
 &lt;p&gt;&lt;a href="https://raw.githubusercontent.com/fatelei/photo-sticker-samples/main/images/bead-pattern/mard-bunny-labeled.png" rel="nofollow"&gt;查看高清色号图&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://www.workbuddy.cn/share/asset?shareCode=RI8TGvwYianNTUAz88Exoa&amp;amp;sig=samnJw9P3N8zNomz" rel="nofollow"&gt;WorkBuddy 体验链接&lt;/a&gt;&lt;/p&gt;
 
-	</description></item><item><title>[分享创造] Herdr 的终端界面能把事情做好。Shepi 让你在 Mac 上用得更愉快。</title><link>https://www.v2ex.com/t/1255246#reply4</link><guid>tag:www.v2ex.com,2026-11-07:/t/1255246</guid><pubDate>Sat, 07 Nov 2026 12:11:33 +0000</pubDate><description>
+	</description></item><item><title>[分享创造] Herdr 的终端界面能把事情做好。Shepi 让你在 Mac 上用得更愉快。</title><link>https://www.v2ex.com/t/1255246#reply5</link><guid>tag:www.v2ex.com,2026-11-07:/t/1255246</guid><pubDate>Sat, 07 Nov 2026 12:11:33 +0000</pubDate><description>
 	&lt;p&gt;同时让几个 AI 编程 agent 做事，难点不只在于怎么给任务。一个在本机改接口，一个在检查测试，服务器上还有一个处理数据。你得不断切回终端，确认谁还在工作，谁正等着你。&lt;/p&gt;
 &lt;p&gt;我做的 &lt;a href="https://shepi.app/?v=20261107" rel="nofollow"&gt;Shepi&lt;/a&gt;，是 Herdr 的原生 Mac 客户端，与 Herdr TUI 实时共享同一套工作空间、标签页和 agents ，并支持简体中文、英文和日文。它不是另建一份桌面会话，也不需要你迁移现有工作。Herdr 负责维持 AI 编程 agent 的终端会话，Shepi 提供桌面入口，让任务、进度、产物和需要你参与的时刻，都有清楚的位置。&lt;/p&gt;
 &lt;h2&gt;01 · 现有的终端会话，打开就在那里&lt;/h2&gt;
@@ -949,17 +955,4 @@ Apple 全家桶 （包括 avp ）、kindle 、掌阅、键盘&lt;em&gt;3 、主�
 
 	</description></item><item><title>[问与答] 现在新闻网站是不是只有爬虫和 AI 访问？</title><link>https://www.v2ex.com/t/1255218#reply5</link><guid>tag:www.v2ex.com,2026-11-07:/t/1255218</guid><pubDate>Sat, 07 Nov 2026 08:50:49 +0000</pubDate><description>
 	想问一下大家，还有人会专门去新闻网站、门户网站上看新闻报道吗？&lt;br /&gt;&lt;br /&gt;现在新闻网站的运营模式是不是已经放弃了真人用户，都是给爬虫和 AI 访问的？&lt;br /&gt;&lt;br /&gt;以前还有聚合站做摘要，然后用户回来看全文，现在 AI 干脆全文都看了，用户连跳回来看全文的必要都没有了吧
-	</description></item><item><title>[问与答] 哎，惨败。指望不工作没戏了，付出大量精力我的第三个项目是有史以来最差的。</title><link>https://www.v2ex.com/t/1255217#reply0</link><guid>tag:www.v2ex.com,2026-11-07:/t/1255217</guid><pubDate>Sat, 07 Nov 2026 08:40:20 +0000</pubDate><description>
-	甚至都没上新品榜，开发这个项目花了一年多，报了太大的期望，失望太大了。当时第二个游戏上了热门总榜 2 ，原本想的这个至少不会差，结果连新品榜都没上。&lt;br /&gt;现在反思我感觉可能是投入的期望越大，越希望成功，最后就越失败&lt;br /&gt;&lt;br /&gt;我当时第二个游戏做的我都想放弃了，最后想着反正都这样了上上去看看吧。结果爆了，taptap 主动签独家，吉比特和找来谈投资/代理但最后次留等数据实在差的有点远没成，当时在榜上也就持续了近一周吧赚了几万。&lt;br /&gt;&lt;br /&gt;后来因为当时太抗拒了本来也没看好这个项目很快就主动放弃，全部精力投入第三个游戏开发，想好好重新做过，至少希望能达到上班一半收入就行全职来做独立游戏，结果就是现在这个情况，第三个项目惨败。。&lt;br /&gt;&lt;br /&gt;游戏啊或者内容行业，自己都不知道为什么爆火了，以为抓住了当时爆火的关键原因，结果什么都不是。&lt;br /&gt;&lt;br /&gt;这个周末好好想想以后要咋办了，各位老哥有什么好的建议吗？游戏叫墨刃千军
-	</description></item><item><title>[推广] 超低倍率 Ai 中转聚合站全天绿色,gpt 稳定不降智 0.06.注册赠送 1 刀体验额度</title><link>https://www.v2ex.com/t/1255216#reply1</link><guid>tag:www.v2ex.com,2026-11-07:/t/1255216</guid><pubDate>Sat, 07 Nov 2026 08:33:17 +0000</pubDate><description>
-	&lt;p&gt;11 月 7 日中转倍率
-福利分组 「严禁破限违规』：0.069x
-codex-pro 「不降智』 ：0.1x
-claude-krio：0.25x
-GPT- vip 企业级分组 「稳定不降智』 ：0.12x
-gemini 「底线低』：0.15x 支持生图
-马斯克 grok：0.1x
-gpt 不限速，不降智模式 主打稳定
-联系客服赠送 2 刀体验额度&lt;/p&gt;
-
 	</description></item></channel></rss>

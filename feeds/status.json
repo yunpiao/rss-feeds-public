@@ -1,9 +1,9 @@
 {
-  "checked_at": "2026-11-07T20:30:23.670417+00:00",
+  "checked_at": "2026-11-07T23:58:28.599473+00:00",
   "sources": {
     "aibase-daily.xml": {
-      "error": "HTTP Error 503: Service Unavailable",
-      "ok": false
+      "entries": 10,
+      "ok": true
     },
     "bbc-business.xml": {
       "entries": 54,
@@ -14,7 +14,7 @@
       "ok": true
     },
     "bbc-world.xml": {
-      "entries": 24,
+      "entries": 25,
       "ok": true
     },
     "cloudflare-ai.xml": {
@@ -26,8 +26,8 @@
       "ok": true
     },
     "federalreserve.xml": {
-      "error": "HTTP Error 404: Not Found",
-      "ok": false
+      "entries": 20,
+      "ok": true
     },
     "forbes-ai.xml": {
       "entries": 25,
@@ -74,6 +74,6 @@
       "ok": true
     }
   },
-  "successful": 16,
+  "successful": 18,
   "total": 18
 }
