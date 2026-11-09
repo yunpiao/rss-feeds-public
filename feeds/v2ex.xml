@@ -1,5 +1,677 @@
 <?xml version='1.0' encoding='utf-8'?>
-<rss version="2.0"><channel><title>V2EX</title><item><title>[问与答] 有没有视觉设计平面设计比较好的模型推荐</title><link>https://www.v2ex.com/t/1255413#reply0</link><guid>tag:www.v2ex.com,2026-11-08:/t/1255413</guid><pubDate>Sun, 08 Nov 2026 20:12:30 +0000</pubDate><description>
+<rss version="2.0"><channel><title>V2EX</title><item><title>[分享创造] 写了一个 Google 网页流量使用统计插件</title><link>https://www.v2ex.com/t/1255457#reply0</link><guid>tag:www.v2ex.com,2026-11-09:/t/1255457</guid><pubDate>Mon, 09 Nov 2026 01:55:02 +0000</pubDate><description>
+	各位 &lt;br /&gt;&lt;br /&gt;通过 AI 手搓了一个 Google 的网页流量统计插件，数据在纯本地的，各位可以看看，还有什么意见可以提供&lt;br /&gt;&lt;br /&gt;Github 仓库： &lt;a target="_blank" href="https://github.com/Karldai/Network-Speed-Test-Google-WEB" rel="nofollow noopener"&gt;https://github.com/Karldai/Network-Speed-Test-Google-WEB&lt;/a&gt;
+	</description></item><item><title>[大连] 这里没有讨论区球的啊？今年大连夺冠,和成都一起创造力了历史</title><link>https://www.v2ex.com/t/1255455#reply0</link><guid>tag:www.v2ex.com,2026-11-09:/t/1255455</guid><pubDate>Mon, 09 Nov 2026 01:53:44 +0000</pubDate><description>
+	
+	</description></item><item><title>[问与答] 一穿 3 了，我大 BLG 能完成一穿四的壮举吗？</title><link>https://www.v2ex.com/t/1255454#reply0</link><guid>tag:www.v2ex.com,2026-11-09:/t/1255454</guid><pubDate>Mon, 09 Nov 2026 01:46:00 +0000</pubDate><description>
+	&lt;p&gt;我大 T1 啊，明年再见吧&lt;/p&gt;
+
+	</description></item><item><title>[分享创造] [开源] 网络卡顿到底卡在哪一段？做了个纯浏览器的网络诊断， 20 秒给结论</title><link>https://www.v2ex.com/t/1255453#reply0</link><guid>tag:www.v2ex.com,2026-11-09:/t/1255453</guid><pubDate>Mon, 09 Nov 2026 01:44:13 +0000</pubDate><description>
+	&lt;p&gt;&lt;img alt="" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://i.v2ex.co/s8w38u39.png"/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;一句话&lt;/strong&gt;： &lt;a href="https://lag.1ms.dog" rel="nofollow"&gt;https://lag.1ms.dog&lt;/a&gt; 在浏览器里同时测几条网络路径，把「卡了」定位到具体哪一段：Wi-Fi/路由器、自家宽带、跨境长途线路、代理入口还是出口、某个网站本身。20 秒先给结论，之后可以继续监测并记录每次卡顿。&lt;/p&gt;
+&lt;h3&gt;它回答什么问题&lt;/h3&gt;
+&lt;p&gt;「网卡了」这句话没法排查。这个工具每 5 秒对每条路径做一次判断，把问题归到具体的一段，并列出依据和把握程度，让你不用猜是不是运营商在抽风。&lt;/p&gt;
+&lt;h3&gt;测了什么&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;设备&lt;/strong&gt;：专用 Worker 里 250 ms 定时器的迟到时间（ p95 ），设备或浏览器太忙时先提醒你其他数字不可信&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;近处&lt;/strong&gt;：最近的 Cloudflare 节点，每秒一次，代表宽带接入&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;远处&lt;/strong&gt;：AWS 东京 / 法兰克福 / 弗吉尼亚三个区域的 &lt;code&gt;/ping&lt;/code&gt;，每 5 秒一次，代表跨境长途&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;UDP&lt;/strong&gt;：向公共 STUN 服务器握手，用重传延迟推算丢包；游戏和通话卡不卡主要看这条&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;常用服务&lt;/strong&gt;：ChatGPT 、Google 、GitHub 等自选站点，单独看是不是某个服务自己的问题&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;路由器&lt;/strong&gt;：Chrome 允许本地网络访问时多测一行网关，把 Wi-Fi 和宽带拆开&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;判断规则：几条路径一起变差 → 问题在你这一侧；近处正常、远处变差 → 跨境线路；只有一个服务变差 → 那个服务； HTTPS 正常但 UDP 丢包 → 游戏和视频通话会卡。结论会写清依据和把握程度。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://i.v2ex.co/R0Je0Qpq.png"/&gt;&lt;/p&gt;
+&lt;h3&gt;除了红绿灯，还给出分数&lt;/h3&gt;
+&lt;p&gt;视频通话 MOS 、游戏「每 10 分钟卡几次」、打开网页的建连耗时、满载延迟等级（下载时延迟涨多少，A+ 到 F ）。&lt;/p&gt;
+&lt;h3&gt;几个认真实测过的细节&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;后台标签页里普通定时器会被 Chrome 压到 60 秒一次，专用 Worker 稳定 1 秒一次 → 调度和 HTTPS 探测都放 Worker 里&lt;/li&gt;
+&lt;li&gt;STUN 推算丢包在 Linux VPS 上用 iptables 随机丢回包验证过：注入 2% / 5% / 10%，读回 1.3–2.0% / 4.4–4.8% / 8.2–9.1%&lt;/li&gt;
+&lt;li&gt;要准确数字可以点「精确测一下」：20 秒 UDP 精确丢包 + 看 QUIC 通不通&lt;/li&gt;
+&lt;li&gt;代理场景单独建模：国内直连、代理节点、代理之后分三段判断&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;隐私与部署&lt;/h3&gt;
+&lt;p&gt;全部在浏览器里测，结果不上传、不存服务器，也不需要注册。分享链接把结论编码进 URL ，不带 IP 和运营商（国家和节点是可选项）。前端纯静态，Worker 只处理分享页的预览标题。MIT 开源，10 种语言，可以自己部署。&lt;/p&gt;
+&lt;h3&gt;已知局限，先说清楚&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;代理软件 TUN / 全局模式下，UDP 测到的是代理而不是你家线路；这恰恰是工具要帮你区分的东西，但「本地 UDP 丢包」这个数字会失真&lt;/li&gt;
+&lt;li&gt;精确 UDP 测试依赖东京的 WebRTC 回声服务器，自部署需要自己起一份（ speed-test 的 &lt;code&gt;server/&lt;/code&gt;）&lt;/li&gt;
+&lt;li&gt;路由器这一行需要 Chrome 的本地网络访问权限，拒绝授权就没有这一行&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;链接： &lt;a href="https://lag.1ms.dog" rel="nofollow"&gt;https://lag.1ms.dog&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;卡顿的时候测两分钟，把分享链接贴出来，我可以帮看结论。有问题或者想加判断规则的欢迎提 issue：&lt;/p&gt;
+&lt;p&gt;GitHub: &lt;a href="https://github.com/yt1988/net-diagnosis" rel="nofollow"&gt;https://github.com/yt1988/net-diagnosis&lt;/a&gt;&lt;/p&gt;
+
+	</description></item><item><title>[程序员] 开发与运维人员比例一般是多少？</title><link>https://www.v2ex.com/t/1255451#reply0</link><guid>tag:www.v2ex.com,2026-11-09:/t/1255451</guid><pubDate>Mon, 09 Nov 2026 01:43:00 +0000</pubDate><description>
+	&lt;p&gt;google 内部开发与运维人员比例是 7:1 到 10:1&lt;/p&gt;
+&lt;p&gt;初创公司大概是 15:1 到 20:1&lt;/p&gt;
+&lt;p&gt;这里的开发，不只是服务器端开发，而是所有能提交代码的开发&lt;/p&gt;
+&lt;p&gt;我前东家差不多是是 100:1 以上，累死人了&lt;/p&gt;
+&lt;p&gt;各位公司的比例大概是多少？&lt;/p&gt;
+
+	</description></item><item><title>[分享发现] blg 做到了，牛逼！</title><link>https://www.v2ex.com/t/1255450#reply3</link><guid>tag:www.v2ex.com,2026-11-09:/t/1255450</guid><pubDate>Mon, 09 Nov 2026 01:42:06 +0000</pubDate><description>
+	
+	</description></item><item><title>[中转站] 有没有这种可能</title><link>https://www.v2ex.com/t/1255448#reply0</link><guid>tag:www.v2ex.com,2026-11-09:/t/1255448</guid><pubDate>Mon, 09 Nov 2026 01:39:23 +0000</pubDate><description>
+	我弄一台电脑,放在海外朋友的家里,在这台电脑上搭建 sub2api 中转,让这位朋友进行账号注册、支付,这样整套环境都是海外的,而且是家庭宽带,比 VPS 的方案是不是好很多？
+	</description></item><item><title>[分享发现] meow： iOS 上从界面到内核全部开源的代理客户端，直接导入 Clash / mihomo 订阅，也有安卓版</title><link>https://www.v2ex.com/t/1255446#reply0</link><guid>tag:www.v2ex.com,2026-11-09:/t/1255446</guid><pubDate>Mon, 09 Nov 2026 01:33:55 +0000</pubDate><description>
+	&lt;p&gt;meow 是一个 iPhone / iPad / Apple TV 上的代理客户端，也有安卓版。&lt;/p&gt;
+&lt;h2&gt;全部开源&lt;/h2&gt;
+&lt;p&gt;iOS 上的代理客户端大多闭源，跑在 Network Extension 里的代码看不到。meow 从 SwiftUI 界面、Network Extension 、tun2socks 到代理内核全部开源，MIT 协议，可以自己审计，也可以自己编译：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;iOS App： &lt;a href="https://github.com/meow-rs/meow-ios" rel="nofollow"&gt;https://github.com/meow-rs/meow-ios&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;内核 meow-rs： &lt;a href="https://github.com/meow-rs/meow-rs" rel="nofollow"&gt;https://github.com/meow-rs/meow-rs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;安卓版： &lt;a href="https://github.com/meow-rs/meow-android" rel="nofollow"&gt;https://github.com/meow-rs/meow-android&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;App 不收集任何数据，订阅、配置、DNS 查询和流量都只在本机；也不提供节点，需要自带 Clash / mihomo 订阅。&lt;/p&gt;
+&lt;h2&gt;内核&lt;/h2&gt;
+&lt;p&gt;meow-rs 是用 Rust 写的 mihomo （ Clash Meta ）兼容内核，iOS 、安卓、桌面、路由器上跑的都是它。iOS 的 Network Extension 进程常驻内存超过约 50 MB 就会被系统杀掉，最早的 Go 内核加上 Go runtime 就占掉大半，流量一上来就没有余量。换成纯 Rust 之后内核成了一个静态库，TLS 全部走同一份 BoringSSL （ Hysteria2 的 QUIC 也是），没有 GC ，内存和体积都压下来了。&lt;/p&gt;
+&lt;h2&gt;功能&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;协议：Shadowsocks 、Trojan 、VLESS （ XTLS-Vision 、REALITY ）、VMess 、Hysteria2 、AnyTLS 、Snell 、HTTP / SOCKS5 ；传输层 WS 、gRPC 、H2 、HTTPUpgrade 、XHTTP&lt;/li&gt;
+&lt;li&gt;mihomo 规则（ DOMAIN / IP-CIDR / GEOIP / GEOSITE / RULE-SET 等），代理组 select / url-test / fallback / load-balance / relay ，dialer-proxy 链式代理&lt;/li&gt;
+&lt;li&gt;订阅按天或按周自动更新，内置 YAML 编辑器&lt;/li&gt;
+&lt;li&gt;Apple TV：在 iPhone 上把配置通过 iCloud 发到电视&lt;/li&gt;
+&lt;li&gt;主屏、锁屏、控制中心小组件：开关 VPN ，切换规则 / 全局 / 直连&lt;/li&gt;
+&lt;li&gt;iPad 和折叠屏双栏布局&lt;/li&gt;
+&lt;li&gt;（按实际上架版本增删）流量统计、节点详情（延迟、出口 IP 、NAT 类型、测速）、连接详情、猫爪印（记录引擎事件，重启后还在）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;价格和限制&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;App Store 一次性买断 $1.99 ，没有内购也没有订阅； TestFlight 公测免费&lt;/li&gt;
+&lt;li&gt;需要 iOS 18 及以上&lt;/li&gt;
+&lt;li&gt;国区 App Store 不上架这类应用，需要外区账号&lt;/li&gt;
+&lt;li&gt;暂不支持 TUIC 、Mieru&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;下载&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;App Store： &lt;a href="https://apps.apple.com/us/app/meow-smart-vpn/id6778303404" rel="nofollow"&gt;https://apps.apple.com/us/app/meow-smart-vpn/id6778303404&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;TestFlight： &lt;a href="https://testflight.apple.com/join/HSptQN3h" rel="nofollow"&gt;https://testflight.apple.com/join/HSptQN3h&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;安卓：Google Play &lt;a href="https://play.google.com/store/apps/details?id=io.github.madeye.meow" rel="nofollow"&gt;https://play.google.com/store/apps/details?id=io.github.madeye.meow&lt;/a&gt; ，或 GitHub Releases &lt;a href="https://github.com/meow-rs/meow-android/releases/latest" rel="nofollow"&gt;https://github.com/meow-rs/meow-android/releases/latest&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+	</description></item><item><title>[分享创造] 人机合肝一个月，数千用户 4.9 分好评的多 AI 同屏对比工具 Simple Chat Hub 推出 Win/Mac/ Linux 客户端了</title><link>https://www.v2ex.com/t/1255445#reply0</link><guid>tag:www.v2ex.com,2026-11-09:/t/1255445</guid><pubDate>Mon, 09 Nov 2026 01:32:39 +0000</pubDate><description>
+	&lt;p&gt;&lt;img alt="" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://i.imgur.com/3KoL1VV.png"/&gt;&lt;/p&gt;
+&lt;p&gt;首先感谢 Codex ，人机合作肝了一个月，天翻地覆的重构，顺利搞定客户端。&lt;/p&gt;
+&lt;p&gt;客户端版本彻底避开了浏览器扩展版本的限制。扩展里无法正常使用的 Grok 、Mimo ，现在可以在桌面版打开并对话。&lt;/p&gt;
+&lt;p&gt;再次介绍一下：&lt;/p&gt;
+&lt;p&gt;Simple Chat Hub 把 ChatGPT 、Gemini 、DeepSeek 、豆包、Kimi 等 AI 平台的网页版并排放在一个窗口里。通过统一输入栏，把同一个问题发送到多个平台，方便并排比较回答。&lt;/p&gt;
+&lt;p&gt;内置支持 30+国际/国内主流 AI 平台，另有任意布局、空间切换、会话保存、提示词召回/优化、长截图等高效的功能。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;官网： &lt;a href="https://chathub.aipilot.cc/?lang=zh-CN" rel="nofollow"&gt;https://chathub.aipilot.cc/?lang=zh-CN&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;浏览器扩展：在各大扩展商店（ Chrome / Edge / Firefox ）搜索 Simple Chat Hub&lt;/li&gt;
+&lt;li&gt;客户端下载： &lt;a href="https://github.com/jackyr/simple-chat-hub-extension/releases" rel="nofollow"&gt;https://github.com/jackyr/simple-chat-hub-extension/releases&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;客户端支持 Windows x64 、Mac （ Apple Silicon ）、Linux x86_64 。Windows / macOS 当前未签名，首次运行可能出现系统提示，安装说明见发布页。&lt;/p&gt;
+&lt;p&gt;欢迎使用～有任何想法随时找我。&lt;/p&gt;
+
+	</description></item><item><title>[生活] 楼层上下投诉问题</title><link>https://www.v2ex.com/t/1255444#reply7</link><guid>tag:www.v2ex.com,2026-11-09:/t/1255444</guid><pubDate>Mon, 09 Nov 2026 01:25:38 +0000</pubDate><description>
+	&lt;p&gt;我家有个业主群，有个 A 邻居投诉他楼上 B 邻居的中午或者晚上休息阶段蹦迪现象，
+B 邻居说孩子的问题，喜欢闹和吵，脾气不稳定爱哭。&lt;/p&gt;
+&lt;p&gt;这两个邻居吵了很多次，在群里，大家觉得很膈应，500 人的群，天天看他们简直。。。&lt;/p&gt;
+&lt;p&gt;有一天，A 邻居找了物业解决，某次可能达成一致了，或者投诉有效了，然后就结束了。&lt;/p&gt;
+&lt;p&gt;然后昨日，又发生了，A 邻居又发了楼上 B 中午大概 13 点左右蹦迪的现象，然后 A 忍无可忍又发到群里，又是一场意料之中的大战，7 点吵到了现在。&lt;/p&gt;
+&lt;p&gt;B 说有本事报警，A 说你等着。。物业说，可以调节。。。&lt;/p&gt;
+&lt;p&gt;我很好奇，上下楼关系大家怎么解决的？如果遇到强硬之人&lt;/p&gt;
+
+	</description></item><item><title>[程序员] [发码小程序] 写了一个发码的通用小程序，欢迎大家开发者试用。</title><link>https://www.v2ex.com/t/1255443#reply1</link><guid>tag:www.v2ex.com,2026-11-09:/t/1255443</guid><pubDate>Mon, 09 Nov 2026 01:24:33 +0000</pubDate><description>
+	&lt;p&gt;主要每次看 op 们发的兑换码都被搬运或大部分人用了不说话，搞了一个小程序。&lt;/p&gt;
+&lt;p&gt;小程序完全免费，只是 op 们发码的时候，我会占用一个名额给自己 😁&lt;/p&gt;
+&lt;p&gt;我这边自己加班 app 发码也是这样弄的。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://s41.ax1x.com/2026/11/06/pnWar1U.jpg"/&gt;&lt;/p&gt;
+
+	</description></item><item><title>[推广] [中转站] 小众中转站推广，特色分组 opus-4.6，进来领鸡蛋 10$</title><link>https://www.v2ex.com/t/1255439#reply9</link><guid>tag:www.v2ex.com,2026-11-09:/t/1255439</guid><pubDate>Mon, 09 Nov 2026 01:14:07 +0000</pubDate><description>
+	站点： &lt;a target="_blank" href="https://minitoken.cc/" rel="nofollow noopener"&gt;https://minitoken.cc/&lt;/a&gt;&lt;br /&gt;充值比例 1:1&lt;br /&gt;&lt;br /&gt;主营模型&lt;br /&gt;claude-opus-4-6&lt;br /&gt;claude-sonnet-4-6&lt;br /&gt;gpt-6-astra&lt;br /&gt;gpt-6.1-sol&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;留下用户名送 5$,加入 qq 群留下用户名送 5$，一共 10$ 有效期一个月&lt;br /&gt;点击链接加入群聊： &lt;a target="_blank" href="https://qm.qq.com/q/P2hDQlEPus" rel="nofollow noopener"&gt;https://qm.qq.com/q/P2hDQlEPus&lt;/a&gt;
+	</description></item><item><title>[分享创造] 周末做了一个 3D 动物游戏 lion</title><link>https://www.v2ex.com/t/1255438#reply2</link><guid>tag:www.v2ex.com,2026-11-09:/t/1255438</guid><pubDate>Mon, 09 Nov 2026 01:13:52 +0000</pubDate><description>
+	&lt;p&gt;👉 &lt;a href="http://muselabs.co/food-chain" rel="nofollow"&gt;muselabs.co/food-chain&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;免费、不用下载、不用注册，手机和电脑的浏览器都能玩 &lt;/p&gt;
+&lt;p&gt;我儿子提的需求&lt;/p&gt;
+&lt;p&gt;🐰 从一只小野兔开始，在非洲大草原上吃草长大 &lt;/p&gt;
+&lt;p&gt;⚔️ 打败比你弱的动物也会长大，进化条满了就去挑战更强的 &lt;/p&gt;
+&lt;p&gt;✨ 打赢了，你就变成它！胡狼、鬣狗、猎豹、狮子……最后变成大象🐘 &lt;/p&gt;
+&lt;p&gt;🦅 每种动物都有本领：狮子吼一声大家都晕、大象用鼻子喷水、猛雕能飞上天 &lt;/p&gt;
+&lt;p&gt;🌅 草原上有白天黑夜、雨季，还有角马大迁徙，河边的鳄鱼要小心哦🐊 &lt;/p&gt;
+&lt;p&gt;📖 一共 26 种动物，都可以当，动物图鉴帮你记下当过的每一种&lt;/p&gt;
+&lt;p&gt;🛠️ 怎么做的：Claude Code 写代码，Codex 画图，Tripo 做 3D 模型&lt;/p&gt;
+&lt;p&gt;👨‍👩‍👧 给家长：网址后面加上 ?kid=1 会打开儿童模式：周一到周五每天一共可以玩 25 分钟（只算真正打开着的时间，可以分几次玩），周末每玩 25 分钟自动休息 1 小时，不用一直盯着～&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://i.imgur.com/NiiSPxQ.jpeg" rel="nofollow"&gt;https://i.imgur.com/NiiSPxQ.jpeg&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://i.imgur.com/v6dlt5h.mp4" rel="nofollow"&gt;https://i.imgur.com/v6dlt5h.mp4&lt;/a&gt;&lt;/p&gt;
+
+	</description></item><item><title>[分享创造] [Ginkgo] 又造了个剪切板轮子</title><link>https://www.v2ex.com/t/1255437#reply2</link><guid>tag:www.v2ex.com,2026-11-09:/t/1255437</guid><pubDate>Mon, 09 Nov 2026 01:11:44 +0000</pubDate><description>
+	&lt;p&gt;最近把 Ginkgo 发出来了：&lt;a href="https://ginkgo.ink" rel="nofollow"&gt;https://ginkgo.ink&lt;/a&gt; 。总体来说还是又 1 个 macOS 剪切板工具，不过我想补的，是复制之后那几步。&lt;/p&gt;
+&lt;h2&gt;复制完先能看懂&lt;/h2&gt;
+&lt;p&gt;很多时候复制完并不是立刻粘贴，而是要先搞清楚这段内容是什么意思：时间戳对应几点、JSON 能不能读、单词是什么意思。常见做法是再开别的软件去查，查完再切回来。&lt;/p&gt;
+&lt;p&gt;Ginkgo 是复制发生时，右下角出 1 个小面板：上面是原文，下面是能读懂的结果。面板不抢焦点，你还在原来的软件里打字。觉得结果对，点「采纳」才写回剪切板；关掉则什么都不改。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="复制时间戳时的轻浮层：原文在上，可读时间在下，点「采用」才写回剪切板" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://cdn.imgpile.com/f/NZ9xjuo_xl.webp"/&gt;&lt;/p&gt;
+&lt;h2&gt;过一阵还能找到，也能再改&lt;/h2&gt;
+&lt;p&gt;文本、图片、文件会进本地历史。之后可以搜索、打标签、置顶，再贴回去。如果还想继续改，可以在历史里做翻译、格式化、OCR 、Markdown 预览这类转换，结果保存在那条记录上，需要时再拷出去。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="历史窗口：左侧可搜索、置顶与标签；详情页底部可以从插件继续转换" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://cdn.imgpile.com/f/oSlsTVh_xl.webp"/&gt;&lt;/p&gt;
+&lt;h2&gt;多台 Mac 时可选同步&lt;/h2&gt;
+&lt;p&gt;内容默认留在这台 Mac 。如果有几台机器，可以打开官方同步：历史先在本机加密再上传，服务端只存密文；同步口令只在本地包裹密钥，不会上传。新电脑用一台已经加入的 Mac 生成一次性配对码，输进去就能进来。不打开同步，就一直是本机历史。&lt;/p&gt;
+&lt;h2&gt;几个原则&lt;/h2&gt;
+&lt;p&gt;不点「采纳」就不改剪切板；浮层不抢键盘；没开同步就不把历史送出去。这些是我自己天天用，不能接受它乱动。&lt;/p&gt;
+&lt;p&gt;了解更多请访问： &lt;a href="https://ginkgo.ink" rel="nofollow"&gt;https://ginkgo.ink&lt;/a&gt; 。有反馈可直接访问：&lt;a href="https://feedback.ginkgo.ink" rel="nofollow"&gt;https://feedback.ginkgo.ink&lt;/a&gt; 提交。&lt;/p&gt;
+
+	</description></item><item><title>[问与答] 是不是都在摸鱼看 LOL 呢？</title><link>https://www.v2ex.com/t/1255436#reply4</link><guid>tag:www.v2ex.com,2026-11-09:/t/1255436</guid><pubDate>Mon, 09 Nov 2026 01:09:36 +0000</pubDate><description>
+	BLG 加油！！！
+	</description></item><item><title>[程序员] 我觉得 CSDN 是彻底废了吧</title><link>https://www.v2ex.com/t/1255435#reply21</link><guid>tag:www.v2ex.com,2026-11-09:/t/1255435</guid><pubDate>Mon, 09 Nov 2026 01:09:04 +0000</pubDate><description>
+	&lt;p&gt;如题&lt;/p&gt;
+&lt;p&gt;&lt;img alt="图片" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://i.imgur.com/KBegB4J.jpeg" title="图片"/&gt;&lt;/p&gt;
+
+	</description></item><item><title>[问与答] 除了硅基流动，还有哪家有 deepseek 3.2?</title><link>https://www.v2ex.com/t/1255434#reply2</link><guid>tag:www.v2ex.com,2026-11-09:/t/1255434</guid><pubDate>Mon, 09 Nov 2026 01:08:54 +0000</pubDate><description>
+	谢谢。
+	</description></item><item><title>[Local LLM] 腾讯开源的 DSpine 推测解码挺有意思，但什么时候能在 Mac 上支持 Qwen3.8-27B？</title><link>https://www.v2ex.com/t/1255433#reply0</link><guid>tag:www.v2ex.com,2026-11-09:/t/1255433</guid><pubDate>Mon, 09 Nov 2026 01:08:50 +0000</pubDate><description>
+	&lt;p&gt;最近一直在研究 Apple Silicon 本地运行大模型的性能，发现腾讯开源了一个推测解码项目 &lt;strong&gt;DSpine&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;GitHub： &lt;a href="https://github.com/Tencent/DSpine" rel="nofollow"&gt;https://github.com/Tencent/DSpine&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;DSpine 的思路是通过多层并行预测、逐层传递前一位置的预测信息，提高草稿 Token 的接受率，从而减少大模型实际执行的解码轮次。&lt;/p&gt;
+&lt;p&gt;它不是新的大语言模型，而是一种推理加速方案。&lt;/p&gt;
+&lt;h2&gt;一、Mac 上已经有比较明显的加速效果&lt;/h2&gt;
+&lt;p&gt;腾讯官方提供了一组 Apple Silicon 测试：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;硬件：M4 Pro 、64GB 内存、16 核 GPU&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;模型：Qwen3-8B BF16&lt;/p&gt;
+&lt;p&gt;在 T=0 的单流 MLX 测试中，平均解码速度：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;推理方案&lt;/th&gt;
+&lt;th&gt;速度&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;普通 mlx-lm&lt;/td&gt;
+&lt;td&gt;15.37 tok/s&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;DFlash&lt;/td&gt;
+&lt;td&gt;29.81 tok/s&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;DSpine&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;38.52 tok/s&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;&lt;p&gt;相对于普通 MLX ，DSpine 达到了约 &lt;strong&gt;2.5 倍&lt;/strong&gt;的生成速度。&lt;/p&gt;
+&lt;p&gt;在另一个 SGLang-MLX 服务测试中，单并发、贪心解码下，DSpine 平均达到 60.46 tok/s ，对照基线为 14.77 tok/s ，约 4.09 倍。&lt;/p&gt;
+&lt;p&gt;这些数据来自不同测试配置，不能直接混为一谈，但至少证明 DSpine 在 Apple Silicon 上已经实现了有意义的加速。&lt;/p&gt;
+&lt;h2&gt;二、Qwen3.8-27B 的数据更值得关注&lt;/h2&gt;
+&lt;p&gt;腾讯还发布了针对 Qwen3.8-27B 的 DSpine 草稿模型。&lt;/p&gt;
+&lt;p&gt;在官方 SWE-bench Pro Agent 请求回放测试中：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;模型：Qwen3.8-27B BF16&lt;/li&gt;
+&lt;li&gt;推理：SGLang + CUDA&lt;/li&gt;
+&lt;li&gt;并发：8&lt;/li&gt;
+&lt;li&gt;思考级别：xhigh&lt;/li&gt;
+&lt;li&gt;开启 Prefix Cache&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;测试结果：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;方案&lt;/th&gt;
+&lt;th&gt;总吞吐量&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;普通自回归解码&lt;/td&gt;
+&lt;td&gt;248.17 tok/s&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;DFlash2&lt;/td&gt;
+&lt;td&gt;711.60 tok/s&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;DSpine&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;791.30 tok/s&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;&lt;p&gt;DSpine 相比普通解码达到约 &lt;strong&gt;3.19 倍吞吐量&lt;/strong&gt;，相比 DFlash2 也有约 11% 的优势。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;注意：791 tok/s 是 CUDA 环境下 8 路并发 Agent 回放的总吞吐量，不是单用户速度，更不是 Mac 上的测试成绩。&lt;/strong&gt;&lt;/p&gt;
+&lt;h2&gt;三、真正的问题：Mac 目前还没有完整的 27B 方案&lt;/h2&gt;
+&lt;p&gt;目前项目虽然已经提供 Apple Silicon 的 MLX 实现，但公开的 Mac 实现主要支持 Qwen3-8B 这类全注意力模型。&lt;/p&gt;
+&lt;p&gt;Qwen3.8-27B 的官方高性能实现依赖 SGLang CUDA 路线，包括 FlashAttention 3 、Triton 、ReplaySSM 等组件。&lt;/p&gt;
+&lt;p&gt;因此，目前不能直接把 27B 的 DSpine 草稿模型放进 MLX 或 oMLX ，就获得官方 CUDA 测试中的加速效果。&lt;/p&gt;
+&lt;h2&gt;四、我自己的使用场景&lt;/h2&gt;
+&lt;p&gt;目前设备：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;MacBook Pro M5 Pro ，64GB 内存&lt;/li&gt;
+&lt;li&gt;Qwen3.8-27B ，Jundot oQ4e-mtp 量化版本&lt;/li&gt;
+&lt;li&gt;使用 ZCode 进行实际项目开发&lt;/li&gt;
+&lt;li&gt;需要至少 128K 上下文&lt;/li&gt;
+&lt;li&gt;任务涉及代码库分析、工具调用、多文件修改及 UI 实现&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;我测试过 oMLX 、Kapitsa 等推理引擎。&lt;/p&gt;
+&lt;p&gt;目前实际长上下文编程时，常见生成速度大约 27 tok/s ，Kapitsa 快的时候能达到 35 tok/s 。&lt;/p&gt;
+&lt;p&gt;模型的代码实现效果可以，但完整 Agent 任务仍然可能执行接近两个小时。&lt;/p&gt;
+&lt;p&gt;所以我现在更关心的不是 4K 短上下文跑分，而是 &lt;strong&gt;80K ～ 128K 上下文下，单用户持续编程任务的真实执行效率&lt;/strong&gt;。&lt;/p&gt;
+&lt;h2&gt;五、想讨论几个问题&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;腾讯 DSpine 是否有计划把 Qwen3.8-27B 完整适配到 Apple Silicon / MLX ？&lt;/li&gt;
+&lt;li&gt;27B 的混合架构、ReplaySSM 等部分，在 Metal / MLX 上移植的主要难点是什么？&lt;/li&gt;
+&lt;li&gt;现有 27B 4bit 量化模型，未来能否搭配 DSpine 草稿模型使用？&lt;/li&gt;
+&lt;li&gt;有没有开发者已经测试过 Mac M5 Pro / M5 Max 上的 DSpine 27B ？&lt;/li&gt;
+&lt;li&gt;最关心的一点：&lt;strong&gt;在 128K 长上下文、单并发编程 Agent 场景下，DSpine 还能保持多少实际加速收益？&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;个人感觉，Apple Silicon 本地推理现在已经可以运行不少质量很好的 27B 模型，代码能力也逐渐达到可用水平。&lt;/p&gt;
+&lt;p&gt;但长时间 Agent 任务的速度依然是一个明显瓶颈。&lt;/p&gt;
+&lt;p&gt;希望后续能有更多针对 Apple Silicon 、长上下文、真实 Agent 工作负载的优化，而不只是短提示词的 tokens/s 跑分。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;相关资料：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;DSpine GitHub： &lt;a href="https://github.com/Tencent/DSpine" rel="nofollow"&gt;https://github.com/Tencent/DSpine&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Mac MLX 实现： &lt;a href="https://github.com/Tencent/DSpine/tree/main/dspine_mlx" rel="nofollow"&gt;https://github.com/Tencent/DSpine/tree/main/dspine_mlx&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Qwen3.8-27B 草稿模型： &lt;a href="https://huggingface.co/tencent/Qwen3.8-27B-DSpine-b16" rel="nofollow"&gt;https://huggingface.co/tencent/Qwen3.8-27B-DSpine-b16&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;论文： &lt;a href="https://arxiv.org/abs/2609.36173" rel="nofollow"&gt;https://arxiv.org/abs/2609.36173&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;欢迎有相关经验的开发者交流。&lt;/p&gt;
+
+	</description></item><item><title>[业界八卦] 皮衣黄这瓜，是不是辞任的借口？</title><link>https://www.v2ex.com/t/1255432#reply16</link><guid>tag:www.v2ex.com,2026-11-09:/t/1255432</guid><pubDate>Mon, 09 Nov 2026 01:07:36 +0000</pubDate><description>
+	皮衣黄发文承认婚外情，不知道是真的瓜，还是自己摘个瓜报平安啊&lt;br /&gt;&lt;br /&gt;现在已经发文自认，接下来是不是可能要辞任英伟达了？英伟达这股价还保得住吗？
+	</description></item><item><title>[推广] [机场推荐] 你的机场送中了吗？</title><link>https://www.v2ex.com/t/1255431#reply0</link><guid>tag:www.v2ex.com,2026-11-09:/t/1255431</guid><pubDate>Mon, 09 Nov 2026 01:01:31 +0000</pubDate><description>
+	&lt;p&gt;最近看到 V 友说自行搭建的代理被送中了。&lt;/p&gt;
+&lt;p&gt;好评推荐一款巨性价比专线机场。使用优惠卷后每月之需要一瓶怡宝矿泉水。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;套餐类型&lt;/th&gt;
+&lt;th&gt;折扣&lt;/th&gt;
+&lt;th&gt;优惠码&lt;/th&gt;
+&lt;th&gt;适用场景&lt;/th&gt;
+&lt;th&gt;领取地址&lt;/th&gt;
+&lt;th&gt;有效期&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;周期性套餐（订阅制）&lt;/td&gt;
+&lt;td&gt;6.8 折&lt;/td&gt;
+&lt;td&gt;eZSdiffE&lt;/td&gt;
+&lt;td&gt;适合长期稳定使用的用户，按周期自动续费，性价比极高&lt;/td&gt;
+&lt;td&gt;&lt;a href="https://m.vxcloud.cfd/coupon.html" rel="nofollow"&gt;https://m.vxcloud.cfd/coupon.html&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;2026/11/01 — 2026/11/15&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;无时间限制套餐（买断制）&lt;/td&gt;
+&lt;td&gt;7 折&lt;/td&gt;
+&lt;td&gt;disNPffz&lt;/td&gt;
+&lt;td&gt;适合一次性投入、长期拥有的用户，无到期压力，灵活省心&lt;/td&gt;
+&lt;td&gt;&lt;a href="https://m.vxcloud.cfd/coupon.html" rel="nofollow"&gt;https://m.vxcloud.cfd/coupon.html&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;2026/11/01 — 2026/11/15&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;&lt;p&gt;&lt;img alt="线路图片" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://i.imgant.com/v2/bax42mL.png"/&gt;&lt;/p&gt;
+
+	</description></item><item><title>[生活] 希望 BLG 抗韩成功</title><link>https://www.v2ex.com/t/1255430#reply45</link><guid>tag:www.v2ex.com,2026-11-09:/t/1255430</guid><pubDate>Mon, 09 Nov 2026 00:57:00 +0000</pubDate><description>
+	
+	</description></item><item><title>[Claude] IOS 还是可以订购的，前提是要过 KYC</title><link>https://www.v2ex.com/t/1255429#reply0</link><guid>tag:www.v2ex.com,2026-11-09:/t/1255429</guid><pubDate>Mon, 09 Nov 2026 00:55:17 +0000</pubDate><description>
+	
+	</description></item><item><title>[分享发现] 2017-2026 看过的书分享</title><link>https://www.v2ex.com/t/1255427#reply11</link><guid>tag:www.v2ex.com,2026-11-09:/t/1255427</guid><pubDate>Mon, 09 Nov 2026 00:49:45 +0000</pubDate><description>
+	&lt;p&gt;下面是记录，很多看完就忘记了！&lt;/p&gt;
+&lt;h3&gt;2026(6)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;《长夜未明》紫金陈 2026/11/2&lt;/li&gt;
+&lt;li&gt;《高智商犯罪 1-4 》紫禁陈 2026/11/1&lt;/li&gt;
+&lt;li&gt;《细说宋史》虞云国 2026/10/26&lt;/li&gt;
+&lt;li&gt;《蛙》莫言 2026/10/14&lt;/li&gt;
+&lt;li&gt;《大地之上》罗欣顿.米斯特里 2026/10/12&lt;/li&gt;
+&lt;li&gt;《当呼吸化为空气》 2026/09/29&lt;/li&gt;
+&lt;li&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;2025(2)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;《小小浮浪人》小小 2025/3/12&lt;/li&gt;
+&lt;li&gt;《张忠谋自传上》张忠谋 2025/2/26&lt;/li&gt;
+&lt;li&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;2024(5)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;《 Delivering Happiness 》谢家华 2024/8/3&lt;/li&gt;
+&lt;li&gt;《动物农场》乔治奥威尔 2024/7/16&lt;/li&gt;
+&lt;li&gt;《中国是部金融史 1 》陈雨露 杨忠怒 2024/7/9&lt;/li&gt;
+&lt;li&gt;《 Diary of a wimpy kid 》 Jeff Kinney 2024/4/19&lt;/li&gt;
+&lt;li&gt;《 What do you care what other people think 》 Richard P. Feynman 2024/4/9&lt;/li&gt;
+&lt;li&gt;《我在北京送快递》胡安焉 2024/2/29&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;2023(40)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;《牛棚杂忆》季羡林 2023/11/09&lt;/li&gt;
+&lt;li&gt;《简读中国史》张宏杰 2023/11/04&lt;/li&gt;
+&lt;li&gt;《十亿消费者》 James McGregor 2023/10/27&lt;/li&gt;
+&lt;li&gt;《无路可逃 66-76 》冯骥才 2023/10/16&lt;/li&gt;
+&lt;li&gt;《一百个人的十年 66-76 》冯骥才 2023/10/7&lt;/li&gt;
+&lt;li&gt;《埃隆马斯克传》 Walter Isaacson 2023/9/24&lt;/li&gt;
+&lt;li&gt;《 The Secret Garden 》 Frances hodgson burneet 2023/8/27&lt;/li&gt;
+&lt;li&gt;《红色赌盘》沈栋 2023/8/24&lt;/li&gt;
+&lt;li&gt;《 How the Grinch Stole Christmas 》 Dr.Seuss 2023/8/14 &lt;/li&gt;
+&lt;li&gt;《 the Cat in the Hat 》 Dr.Seuss 2023/8/14 &lt;/li&gt;
+&lt;li&gt;《 Nate the Great 1-30 》 Weinman Sharmat 2023/7/25-8/22 &lt;/li&gt;
+&lt;li&gt;《 the Naked Face 》 Sheldon Sidney 2023/8/2 &lt;/li&gt;
+&lt;li&gt;《 Magic Tree House 1-31 》 Osborne 2023/4/25-6/25 &lt;/li&gt;
+&lt;li&gt;《 Fantastic Mr Fox 》 Dahl Roald 2023/5/24 &lt;/li&gt;
+&lt;li&gt;《 the Magic Finger 》 Dahl Roald 2023/5/1 &lt;/li&gt;
+&lt;li&gt;《 Charlie and the Chocolate Factory 》 Dahl 2023/4/20&lt;/li&gt;
+&lt;li&gt;《走出戈壁》单伟建 2023/4/5&lt;/li&gt;
+&lt;li&gt;《长安的荔枝》马伯庸 2023/3/16&lt;/li&gt;
+&lt;li&gt;《我亲爱的甜橙树》若泽 2023/3/14&lt;/li&gt;
+&lt;li&gt;《心若菩提》曹德旺 2023/3/12&lt;/li&gt;
+&lt;li&gt;《巴菲特的嘉年华》坎宁安 2023/3/5&lt;/li&gt;
+&lt;li&gt;《少年凯歌》陈凯歌 2023/2/23&lt;/li&gt;
+&lt;li&gt;《跳着踢踏舞去上班》卡萝尔·卢米斯 2023/2/21&lt;/li&gt;
+&lt;li&gt;《三双鞋》谢家华  2023/2/15&lt;/li&gt;
+&lt;li&gt;《巴菲特传》罗杰·洛温斯坦  2023/2/16&lt;/li&gt;
+&lt;li&gt;《估值的艺术：110 个阶段案例》尼古拉斯·斯密德林  2023/2/13&lt;/li&gt;
+&lt;li&gt;《与巴菲特共进午餐，我顿悟的 5 个真理》盖伊·斯皮尔  2023/2/12&lt;/li&gt;
+&lt;li&gt;《资本帝国：巴菲特和芒格的伯克希尔》叶允平  2023/2/09&lt;/li&gt;
+&lt;li&gt;《芙蓉镇》古华  2023/2/5&lt;/li&gt;
+&lt;li&gt;《在峡江的转弯处：陈行甲人生笔记》陈行甲  2023/2/1&lt;/li&gt;
+&lt;li&gt;《巴菲特的第一桶金》格伦·阿诺德  2023/1/30&lt;/li&gt;
+&lt;li&gt;《巴菲特的护城河》帕特·多尔西 2023/1/27&lt;/li&gt;
+&lt;li&gt;《巴菲特之道》罗伯特·哈格斯特朗 2023/1/20&lt;/li&gt;
+&lt;li&gt;《狼战》冀永庆 2023/1/19&lt;/li&gt;
+&lt;li&gt;《股市稳赚》乔尔·格林布拉特 2023/1/16&lt;/li&gt;
+&lt;li&gt;《此生未完》于娟 2023/1/15&lt;/li&gt;
+&lt;li&gt;《在细雨中呼喊》余华 2023/1/15&lt;/li&gt;
+&lt;li&gt;《遥远的救世主》豆豆 2023/1/12&lt;/li&gt;
+&lt;li&gt;《兄弟》余华 2023/1/9&lt;/li&gt;
+&lt;li&gt;《悟空传》今何在 2023/1/4&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;2022(31)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;《费曼手札》 2022/12/28&lt;/li&gt;
+&lt;li&gt;《金钱博弈》 2022/12/24&lt;/li&gt;
+&lt;li&gt;《蓝筹孩子》 2022/12/19&lt;/li&gt;
+&lt;li&gt;《十亿美金的教训》林军 2022/12/14&lt;/li&gt;
+&lt;li&gt;《沧浪之水》阎真 2022/12/1&lt;/li&gt;
+&lt;li&gt;《柳林风声》肯尼思·格雷厄姆 2022/11/27&lt;/li&gt;
+&lt;li&gt;《三体 3 死神永生》 2022/11/24&lt;/li&gt;
+&lt;li&gt;《三体 2 黑暗森林》 2022/11/20&lt;/li&gt;
+&lt;li&gt;《三体 1 》刘慈欣 2022/11/17&lt;/li&gt;
+&lt;li&gt;《悉达多》黑塞 2022/11/13&lt;/li&gt;
+&lt;li&gt;《一生的旅程》[美] 罗伯特·艾格 2022/11/9&lt;/li&gt;
+&lt;li&gt;《幸福的勇气》岸见一郎 2022/11/6&lt;/li&gt;
+&lt;li&gt;《高敏感优势》长沼睦雄 2022/10/29&lt;/li&gt;
+&lt;li&gt;《廖凡四训》袁了凡 2022/10/27&lt;/li&gt;
+&lt;li&gt;《如何拥抱一只刺猬》段鑫星&lt;/li&gt;
+&lt;li&gt;《恋爱心理必修课》段鑫星&lt;/li&gt;
+&lt;li&gt;《如何让你爱的人爱上你》莉尔·朗兹&lt;/li&gt;
+&lt;li&gt;《女人这东西》渡边纯一&lt;/li&gt;
+&lt;li&gt;《男人这东西》渡边纯一&lt;/li&gt;
+&lt;li&gt;《给大人们的情绪使用说明书》水岛广子 2022/10/26&lt;/li&gt;
+&lt;li&gt;《脱单修炼手册》宏桑 2022/10/16&lt;/li&gt;
+&lt;li&gt;《钝感力》渡边纯一 2022/10/6&lt;/li&gt;
+&lt;li&gt;《价值投资实用手册 2 》唐朝 2022/6/10&lt;/li&gt;
+&lt;li&gt;《 UNIX 传奇》（美） Brian W. Kernighan2022/5/29&lt;/li&gt;
+&lt;li&gt;《赌金者：长期资本管理公司的升腾与陨落》（美）罗杰·洛温斯坦  2022/5/18&lt;/li&gt;
+&lt;li&gt;《定位》 杰克·特劳特 2022/4/17&lt;/li&gt;
+&lt;li&gt;《竞争优势》布鲁斯·格林沃尔德 2022/4/10&lt;/li&gt;
+&lt;li&gt;《巴菲特的护城河》帕特·多尔西 2022/2/16&lt;/li&gt;
+&lt;li&gt;《大败局 2 》吴晓波 2022/1/29&lt;/li&gt;
+&lt;li&gt;《大败局 1 》吴晓波 2022/1/26&lt;/li&gt;
+&lt;li&gt;《十年一梦》青泽 2022/1/10&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;2021(28)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;《沸腾新十年 下》林军 2021/12/27&lt;/li&gt;
+&lt;li&gt;《腾讯传》吴晓波 2021/12/7&lt;/li&gt;
+&lt;li&gt;《沸腾新十年 上》林军 2021/12/5&lt;/li&gt;
+&lt;li&gt;《金瓶梅的艺术》孙述宇 2021/11/24&lt;/li&gt;
+&lt;li&gt;《美国陷阱》弗雷德里·克皮耶鲁齐 2021/11/20&lt;/li&gt;
+&lt;li&gt;《财报背后的投资秘密--韭菜的自我修养》孙旭龙 2021/11/19&lt;/li&gt;
+&lt;li&gt;《梅次故事》王跃文 2021/11/11&lt;/li&gt;
+&lt;li&gt;《置身事内》兰小欢 2021/11/9&lt;/li&gt;
+&lt;li&gt;《蛤蟆先生看心理医生》 2021/11/8&lt;/li&gt;
+&lt;li&gt;《攻守》饕餮海 2021/11/8&lt;/li&gt;
+&lt;li&gt;《国画》王跃文 2021/11/6&lt;/li&gt;
+&lt;li&gt;《红顶商人胡雪岩 1-6 》高阳 2021/11/6&lt;/li&gt;
+&lt;li&gt;《曾国藩--黑雨 3 》唐浩明 2021/10/20&lt;/li&gt;
+&lt;li&gt;《曾国藩--野焚 2 》唐浩明 2021/09/10&lt;/li&gt;
+&lt;li&gt;《曾国藩--血祭 1 》唐浩明 2021/8/30&lt;/li&gt;
+&lt;li&gt;《文明 现代化 价值投资与中国》 李录 2021/8/24&lt;/li&gt;
+&lt;li&gt;《股惑》 孙骁骥 2021/7/28&lt;/li&gt;
+&lt;li&gt;《一往无前--雷军亲述小米 10 年》范海涛 2021/7/14&lt;/li&gt;
+&lt;li&gt;《定投十年财务自由》银行螺丝钉 2021/7/12&lt;/li&gt;
+&lt;li&gt;《骗局之王 : 查尔斯·庞兹自传》庞兹 2021/6/27&lt;/li&gt;
+&lt;li&gt;《抢占心智》江南春 2021/6/25&lt;/li&gt;
+&lt;li&gt;《巴芒演义》 x2 唐朝 2021/6/7&lt;/li&gt;
+&lt;li&gt;《人心红利》 江南春 2021/5/27&lt;/li&gt;
+&lt;li&gt;《官场笔记 1-8 》小桥老树 2021/4/1&lt;/li&gt;
+&lt;li&gt;《如何高效学习》 2021/3/2&lt;/li&gt;
+&lt;li&gt;《巴菲特和查理·芒格的内部讲话》 2021/2/9&lt;/li&gt;
+&lt;li&gt;《手把手教你读财报 新版》唐朝 2021/1/24&lt;/li&gt;
+&lt;li&gt;《局外人》 [法] 阿尔贝·加缪 2021/1/21&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;2020(22)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;《日本制造》盛田昭夫 2020/12/22&lt;/li&gt;
+&lt;li&gt;《肖星的财务思维课》肖星 2020/11/22&lt;/li&gt;
+&lt;li&gt;《投资最重要的事》霍华德·马克斯  2020/11/20&lt;/li&gt;
+&lt;li&gt;《百万富翁的思维密码》 T.哈维·埃克 2020/11/14&lt;/li&gt;
+&lt;li&gt;《投资中最简单的事》邱国鹭 2020/11/10&lt;/li&gt;
+&lt;li&gt;《指数基金投资指南》银行螺丝钉 2020/11/2&lt;/li&gt;
+&lt;li&gt;《巴芒演义》唐朝 2020/10/18&lt;/li&gt;
+&lt;li&gt;《价值投资入门与实践》叶城 2020/10/5&lt;/li&gt;
+&lt;li&gt;《价值投资实用手册》唐朝 2020/10/3&lt;/li&gt;
+&lt;li&gt;《手把手教你读财报》唐朝 2020/10/1&lt;/li&gt;
+&lt;li&gt;《爱的五种语言》盖瑞·查普曼 2020/9/15&lt;/li&gt;
+&lt;li&gt;《爱的五种能力》赵永久 2020/9/11&lt;/li&gt;
+&lt;li&gt;《冲破人生的冰河》刘墉 2020/9/2&lt;/li&gt;
+&lt;li&gt;《小王子》安托万·德·圣埃克苏佩里 2020/9/1&lt;/li&gt;
+&lt;li&gt;《中国改革年的的政治斗争》杨继绳 🈲️ 2020/3/13&lt;/li&gt;
+&lt;li&gt;《中国，溃而不崩》何清涟、陈晓农 🈲️&lt;/li&gt;
+&lt;li&gt;《上学记》何兆武&lt;/li&gt;
+&lt;li&gt;《改革历程》赵紫阳 🈲️&lt;/li&gt;
+&lt;li&gt;《骆驼祥子》老舍&lt;/li&gt;
+&lt;li&gt;《美国宪政历程》任东来、陈伟、白雪峰&lt;/li&gt;
+&lt;li&gt;《夹边沟记事》杨显惠 🈲️&lt;/li&gt;
+&lt;li&gt;《血疫：埃博拉的故事》理查德·普雷斯顿&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;2019(21)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;《非暴力沟通》马歇尔卢森堡&lt;/li&gt;
+&lt;li&gt;《孙中山大传》王丰&lt;/li&gt;
+&lt;li&gt;《动物农场》乔治·奥维尔 🈲️&lt;/li&gt;
+&lt;li&gt;《废都》贾平凹&lt;/li&gt;
+&lt;li&gt;《我们仨》杨绛&lt;/li&gt;
+&lt;li&gt;《中国近代史》将挺黻&lt;/li&gt;
+&lt;li&gt;《天朝的奔溃：鸦片战争再研究》茅海建 🈲️&lt;/li&gt;
+&lt;li&gt;《三民主义》孙中山&lt;/li&gt;
+&lt;li&gt;《中国之惑》唐德刚&lt;/li&gt;
+&lt;li&gt;《李鸿章》梁启超&lt;/li&gt;
+&lt;li&gt;《晚清七十年(全五册)》唐德刚&lt;/li&gt;
+&lt;li&gt;《曾国藩的正面与侧面》张宏杰&lt;/li&gt;
+&lt;li&gt;《高效休息法》久贺谷亮&lt;/li&gt;
+&lt;li&gt;《人间失格》太宰治&lt;/li&gt;
+&lt;li&gt;《无人生还》阿加莎·克里斯蒂&lt;/li&gt;
+&lt;li&gt;《 C 专家编程》 Peter Van Der Linden&lt;/li&gt;
+&lt;li&gt;《编写可读代码的艺术》 Boswell, D.、Foucher, T.&lt;/li&gt;
+&lt;li&gt;《蒋介石》张树标&lt;/li&gt;
+&lt;li&gt;《上帝投掷骰子吗》曹天元&lt;/li&gt;
+&lt;li&gt;《大明王朝的七张面孔》张宏杰&lt;/li&gt;
+&lt;li&gt;《黑客与画家》 Paul Graham&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;2018(11)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;《 Android 群英会》徐宜生&lt;/li&gt;
+&lt;li&gt;《许三观卖血记》余华&lt;/li&gt;
+&lt;li&gt;《 C 和指针》 Kenneth A.Reek&lt;/li&gt;
+&lt;li&gt;《漫长的告别》雷蒙德·钱德勒&lt;/li&gt;
+&lt;li&gt;《金瓶梅》兰陵笑笑生 🈲️&lt;/li&gt;
+&lt;li&gt;《月亮与六便士》威廉·萨默塞特·毛姆&lt;/li&gt;
+&lt;li&gt;《万历十五年》黄仁宇&lt;/li&gt;
+&lt;li&gt;《终身成长》卡罗尔·德韦克&lt;/li&gt;
+&lt;li&gt;《一直特立直行的猪》王小波&lt;/li&gt;
+&lt;li&gt;《图解 HTTP 》上野宣&lt;/li&gt;
+&lt;li&gt;《激荡十年，水大鱼大》吴晓波&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;2017(30)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;《浮生六记》沈复&lt;/li&gt;
+&lt;li&gt;《乡土中国》费孝通&lt;/li&gt;
+&lt;li&gt;《雪落香杉树》戴维·伽特森&lt;/li&gt;
+&lt;li&gt;《鬼吹灯之精绝古城》天下霸唱&lt;/li&gt;
+&lt;li&gt;《巨婴国》武志红 🈲️&lt;/li&gt;
+&lt;li&gt;《杀死一只知更鸟》哈珀·李&lt;/li&gt;
+&lt;li&gt;《暗时间》刘未鹏&lt;/li&gt;
+&lt;li&gt;《一个人的朝圣》蕾秋·乔伊斯&lt;/li&gt;
+&lt;li&gt;《认知突围：做复杂时代的明白人》蔡垒磊&lt;/li&gt;
+&lt;li&gt;《 Python 核心编程》 Wesley Chun&lt;/li&gt;
+&lt;li&gt;《财务自由之路》博多·舍费尔&lt;/li&gt;
+&lt;li&gt;《异类》马尔科姆·格拉德威尔&lt;/li&gt;
+&lt;li&gt;《小岛经济学》彼得·希夫、安德鲁·希夫&lt;/li&gt;
+&lt;li&gt;《富爸爸穷爸爸》罗伯特・T・清崎、莎伦・L・莱希特&lt;/li&gt;
+&lt;li&gt;《一课经济学》亨利·黑兹利特&lt;/li&gt;
+&lt;li&gt;《聪明的投资者》本杰明·格雷厄姆&lt;/li&gt;
+&lt;li&gt;《被讨厌的勇气》岸见一郎、古贺史健&lt;/li&gt;
+&lt;li&gt;《城南旧事》林海音&lt;/li&gt;
+&lt;li&gt;《摆渡人》克莱儿·麦克福尔&lt;/li&gt;
+&lt;li&gt;《拆掉思维的墙》古典&lt;/li&gt;
+&lt;li&gt;《乌合之众》勒庞&lt;/li&gt;
+&lt;li&gt;《 1984 》乔治·奥威尔&lt;/li&gt;
+&lt;li&gt;《老人与海》海明威&lt;/li&gt;
+&lt;li&gt;《岛上书店》加布瑞埃拉·泽文&lt;/li&gt;
+&lt;li&gt;《从你的全世界走过》张嘉佳&lt;/li&gt;
+&lt;li&gt;《天才在左疯子在右》高铭&lt;/li&gt;
+&lt;li&gt;《挪威的森林》村上春树&lt;/li&gt;
+&lt;li&gt;《解忧杂货铺》东野圭吾&lt;/li&gt;
+&lt;li&gt;《追风筝的人》卡勒德·胡赛尼&lt;/li&gt;
+&lt;li&gt;《偷影子的人》马克·李维&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Early(8)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;《人生》路遥&lt;/li&gt;
+&lt;li&gt;《平凡的世界》路遥&lt;/li&gt;
+&lt;li&gt;《狼图腾》姜戎&lt;/li&gt;
+&lt;li&gt;《活着》余华&lt;/li&gt;
+&lt;li&gt;《简·爱》夏洛蒂·勃朗特&lt;/li&gt;
+&lt;li&gt;《飘（上下）》玛格丽特·米切尔&lt;/li&gt;
+&lt;li&gt;《红楼梦》曹雪芹&lt;/li&gt;
+&lt;li&gt;《三国演义》罗贯中&lt;/li&gt;
+&lt;/ul&gt;
+
+	</description></item><item><title>[问与答] 有没有基于 Home Assistant 的成熟产品？</title><link>https://www.v2ex.com/t/1255426#reply4</link><guid>tag:www.v2ex.com,2026-11-09:/t/1255426</guid><pubDate>Mon, 09 Nov 2026 00:48:56 +0000</pubDate><description>
+	看过 matter ，重新拥抱 ha 。没玩过。只和 ai 几轮 chat 理论理解了。&lt;br /&gt;并且在找路由器插件形式的 ha ，或者集成了 haos+路由器能力的硬件设备。&lt;br /&gt;自己单独安排一台小主机 incus 分 vm 装 haos 和路由，通用性太低了。&lt;br /&gt;&lt;br /&gt;路由器 aio 最好,不行再考虑 nuc 。&lt;br /&gt;&lt;br /&gt;主要想要的效果是：&lt;br /&gt;1.快速发现，一次性 Integration ，通信协议绘制大致的拓扑来点灭 device 。&lt;br /&gt;2.整合 agent ，对暴露的 Entities 能快速自然语义化。&lt;br /&gt;3.支持 tts 。&lt;br /&gt;&lt;br /&gt;顺便，求一个小爱的刷机固件，去智障，只保留 mic 的 io ，还有 wake 能力。
+	</description></item><item><title>[推广] 熊市持续中就开个银河定投纳指或者红利低波 ETF 吧，“万一免五”股票基金免 5 大笑脸开户</title><link>https://www.v2ex.com/t/1255423#reply22</link><guid>tag:www.v2ex.com,2026-11-09:/t/1255423</guid><pubDate>Mon, 09 Nov 2026 00:40:55 +0000</pubDate><description>
+	熊市中少买股票，就开个银河买买纳指或者红利低波 ETF 就行，胆子大的可以抄底!&lt;br /&gt;这周抽键盘迈从 Ace 68 V2 ；鼠标迈从 A7 V3 PRO+&lt;br /&gt;⚠️回帖即可参与抽奖！&lt;br /&gt;⚠️大笑脸开户，股票基金 etf 最低费率，etf 低至“万 0.5 免五”，欢迎来开！&lt;br /&gt;⚠️大笑脸开户推荐：&lt;br /&gt;YH 证券：ETF 万 0.5 免 5 [etf 费率最低，适合 etf ，打新，纳指，宽基，逆回购 1 折，新手必备]&lt;br /&gt;GF 证券：ETF 万 0.5 免 5 [ETF 费率低]&lt;br /&gt;GD 证券： 万 1 免 5 [低门槛股票 etf 双免 5 ，龙头券商]&lt;br /&gt;CC 证券： 万 1 免 5 [低门槛股票 etf 双免 5]&lt;br /&gt;DB 证券： 万 0.741 免 5 [国企券商，股票 etf 费率低]&lt;br /&gt;GX 证券： 万 0.851 免 5 [头部龙头券商，综合费率很低]&lt;br /&gt;&lt;br /&gt;⚠️大笑脸联系方式和最新券商表格清单，随时更新 &lt;a target="_blank" href="http://www.daxiaolian.com" rel="nofollow noopener"&gt;www.daxiaolian.com&lt;/a&gt;&lt;br /&gt;备用链接 &lt;a target="_blank" href="https://shimo.im/docs/rp3OMVG1KaCV6Lkm" rel="nofollow noopener"&gt;https://shimo.im/docs/rp3OMVG1KaCV6Lkm&lt;/a&gt;&lt;br /&gt;备用联系方式 Z2FveWEyNTAw&lt;br /&gt;ZHhnODg0NA==
+	</description></item><item><title>[分享创造] 免费开源的 Android 终端 Terminal Spike，支持 SSH/Mosh、tmux/herdr、AI Agent</title><link>https://www.v2ex.com/t/1255422#reply1</link><guid>tag:www.v2ex.com,2026-11-09:/t/1255422</guid><pubDate>Mon, 09 Nov 2026 00:39:56 +0000</pubDate><description>
+	&lt;p&gt;市面上 Android 操作 ai 的工具够多了，codex 这些直接就可以。终端 App 也已经很多了，但我一直没找到真正足够顺手的。&lt;/p&gt;
+&lt;p&gt;有的不能自由设置快捷键，有的喜欢另起炉灶，自己实现一套工作流，而不是围绕我已经用得很顺手的 Herdr 、tmux 等工具。&lt;/p&gt;
+&lt;p&gt;另外，我也想充分利用 Fold 大折叠屏的空间，同时兼顾普通手机的使用体验。所以干脆自己做了一个 Terminal Spike ，完全免费、开源。&lt;/p&gt;
+&lt;p&gt;核心思路&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;足够轻，不重新造轮子。通过 SSH 或 Mosh 连上自己的 Linux 主机就够了，不需要在手机上重新搭建一套工作流。尽量把屏幕空间留给终端本身，不强制导航栏、侧边栏或者各种额外 UI 。你原来怎么工作，现在继续怎么工作。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;让 Herdr 决定手机上显示什么。这是我最喜欢的部分。Herdr 本身就已经有很强的自定义能力，没必要在 Android App 里重新实现一套。你在 Herdr 里怎么配置，手机上就怎么显示。比如调整 group 样式、布局、状态栏，或者显示 Codex 每周用量等信息。改好 Herdr 配置，手机上的显示也跟着变化。真正做到千人千面，而不是所有人都被迫使用同一套手机 UI 。同时，App 自己的快捷键也可以自由配置，方便触屏操作。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;内置 code-server ，充分利用折叠屏。我希望 Fold 展开后不仅能看终端，还能方便地查看和修改代码。所以集成了 code-server ，并且支持文件上传、图片上传和 Diff 查看。平时用手机跟 AI Coding Agent 协作，不必每次都回到电脑前。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;本地 Arch Linux ，顺便玩点 AI 时代的新东西。还内置了一个本地 Arch Linux 环境，算是附赠的小玩具。更有意思的是，可以在里面登录 AI Agent ，让 Agent 帮你修改这个 App 的设置。比如直接告诉它：「帮我加几个适合单手操作的快捷键。」「我想把这个 UI 调整一下，折叠屏展开时换一种布局。」不需要自己在设置页面里点来点去，而是直接用自然语言描述需求，让 Agent 修改配置。我觉得这才更像 AI 时代应该有的 App 。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;其他- 原生 Android ，安装包尽量保持小巧- 支持 SSH / Mosh- 推荐搭配 Tailscale ，随时连接自己的主机&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;免费、开源，没有订阅。目前还在不断完善，肯定还有不少可以改进的地方。&lt;/p&gt;
+&lt;p&gt;项目主页： &lt;a href="https://yanjiyu.com/zh/terminal-spike/" rel="nofollow"&gt;https://yanjiyu.com/zh/terminal-spike/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;GitHub： &lt;a href="https://github.com/Anderbone/terminal-spike" rel="nofollow"&gt;https://github.com/Anderbone/terminal-spike&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;欢迎大家试试，也想听听大家现在都用什么 Android app 来操作 AI ，以及有什么一直想要却没找到的功能。&lt;/p&gt;
+
+	</description></item><item><title>[分享创造] 把 DeepSeek Harness 搬上云端：免本地配置、持续在线的 miuAgent [V 友送 1 个月会员]</title><link>https://www.v2ex.com/t/1255421#reply6</link><guid>tag:www.v2ex.com,2026-11-09:/t/1255421</guid><pubDate>Mon, 09 Nov 2026 00:23:23 +0000</pubDate><description>
+	&lt;p&gt;各位 V 友大家好！&lt;/p&gt;
+&lt;p&gt;大家可能听说过 DeepSeek Harness 这个开源项目。它自带独立 Linux 运行时环境（基于沙箱），能够自主编写代码、跑 Bash 、调用工具并自动完成复杂的长链路任务。&lt;/p&gt;
+&lt;p&gt;但在本地跑 Agent 常常有些痛点：关了电脑就断、需要长时间跑的任务得一直守在屏幕前、定时自动化也很难全天候待命。我相信 Agent 的形态应该是&lt;strong&gt;云端持续在线、全天候待命&lt;/strong&gt;的，于是我做了一个开箱即用的云端托管版本：&lt;a href="https://miuagent.com/?lang=zh" rel="nofollow"&gt;miuAgent&lt;/a&gt;。&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h3&gt;产品核心特性&lt;/h3&gt;
+&lt;h4&gt;1. 免部署、全天候云端沙箱：&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;无需在本地折腾 Docker 、Node.js 或环境依赖，打开浏览器就能用；&lt;/li&gt;
+&lt;li&gt;任务在独立的云端 Linux 沙箱中运行，关掉电脑也能在后台持续执行，长时间的复杂分析任务再也不用挂机守着。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;2. 全天候定时任务（ Cron ）：&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;
+完美结合云端随叫随到的特性，解锁真正的自动化场景：&lt;ul&gt;
+&lt;li&gt;比如：&lt;strong&gt;每个工作日开盘前自动检索指定美股标的的最新资讯与财报动态、每周一定时抓取竞品价格变化并整理成报表等&lt;/strong&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img alt="" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://i.v2ex.co/7532k0Opl.png"/&gt;&lt;/p&gt;
+&lt;h4&gt;3. 丰富的外部数据与生产力工具打通：&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;
+内置多种调研与数据分析工具（如小红书调研、抖音评论互动、出海电商与海外社媒监控等）；&lt;ul&gt;
+&lt;li&gt;支持通过标准授权连接 &lt;strong&gt;Google Calendar 、Notion 、Todoist 等常见生产力应用&lt;/strong&gt;，让 Agent 直接操作你的工作流。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img alt="" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://i.v2ex.co/y2aAH3X8l.png"/&gt;&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h3&gt;算力与隐私&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;最新模型加持&lt;/strong&gt;：当前已接入最新的 &lt;strong&gt;deepseek-v4.1-flash-1017&lt;/strong&gt;，响应极快且推理能力强劲。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;全天享平谷价&lt;/strong&gt;：推理费用&lt;strong&gt;全天享受官方平谷期价格&lt;/strong&gt;（相当于官方高峰期的 5 折）。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;零数据留存（ ZDR ）&lt;/strong&gt;：所有推理均采用 Zero Data Retention 供应商，数据绝不用于任何模型训练，严格保障隐私。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr/&gt;
+&lt;h3&gt;价格与支付方式&lt;/h3&gt;
+&lt;p&gt;miuAgent 的&lt;a href="https://miuagent.com/pricing?lang=zh" rel="nofollow"&gt;费用结构&lt;/a&gt;由基础订阅（用于维护云端独立沙箱及运行时）与资源按量计费（模型推理、第三方数据 API 等）组成：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;订阅价格&lt;/strong&gt;：月付 15 美元，年付折合每月 10 美元（订阅期间每月直接赠送 5 美元资源额度，相当于订阅费的一半直接返还为算力！）。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;国内友好支付&lt;/strong&gt;：接入 Stripe ，支持&lt;strong&gt;国内双币信用卡&lt;/strong&gt;直接订阅；同时支持&lt;strong&gt;微信&lt;/strong&gt;、&lt;strong&gt;支付宝&lt;/strong&gt;以及&lt;strong&gt;稳定币（ USDC 等）预付&lt;/strong&gt;使用，免去外卡门槛。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr/&gt;
+&lt;h3&gt;🎁 V2EX 专属福利：免费领 1 个月会员（价值 15 USD ）&lt;/h3&gt;
+&lt;p&gt;为了感谢 V2EX 社区的朋友们，大家可以使用我的专属邀请链接注册，&lt;strong&gt;直接免费获得 1 个月会员资格（价值 15 美元）&lt;/strong&gt;：&lt;/p&gt;
+&lt;p&gt;👉 邀请链接： &lt;a href="https://miuagent.com/invite?code=9be2564c1dd1004707d895e4" rel="nofollow"&gt;https://miuagent.com/invite?code=9be2564c1dd1004707d895e4&lt;/a&gt;
+👉 邀请码：9be2564c1dd1004707d895e4&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h3&gt;交流与反馈&lt;/h3&gt;
+&lt;p&gt;产品刚刚上线，难免有不完善之处，非常渴望听到大家的真实反馈和吐槽！&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;可以在帖子下方直接回复；&lt;/li&gt;
+&lt;li&gt;或者添加我的个人微信沟通交流（微信二维码见下方）：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img alt="" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://i.v2ex.co/IE10EiC8s.jpeg"/&gt;&lt;/p&gt;
+&lt;p&gt;欢迎大家体验与交流！&lt;/p&gt;
+
+	</description></item><item><title>[程序员] 收集了 100 多家老牌机场, 整理成文档分享了</title><link>https://www.v2ex.com/t/1255420#reply23</link><guid>tag:www.v2ex.com,2026-11-09:/t/1255420</guid><pubDate>Mon, 09 Nov 2026 00:10:40 +0000</pubDate><description>
+	因为众所周知的原因, 中转都干爬下了, 对延迟敏感, 不得不寻找新机场了.&lt;br /&gt;从网上各大机场推荐扒的, 还有 v 站的 aff man, 关闭注册/无效的机场已去除.&lt;br /&gt;&lt;br /&gt;&lt;a target="_blank" href="https://i.imgur.com/0KKCugb.jpeg" rel="nofollow noopener" target="_blank"&gt;&lt;img src="https://i.imgur.com/0KKCugb.jpeg" class="embedded_image" rel="noreferrer"&gt;&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;文档地址: &lt;a target="_blank" href="http://404ms.com/vpn" rel="nofollow noopener"&gt;404ms.com/vpn&lt;/a&gt;
+	</description></item><item><title>[推广] 🎁ChatGPT Plus/Pro 长期稳定 直充账户</title><link>https://www.v2ex.com/t/1255419#reply1</link><guid>tag:www.v2ex.com,2026-11-09:/t/1255419</guid><pubDate>Mon, 09 Nov 2026 00:07:57 +0000</pubDate><description>
+	&lt;h2&gt;🎁 ChatGPT Plus/Pro 长期稳定充值 直充账户 (可开票)&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;ChatGPT Plus -&amp;gt; 125&lt;/li&gt;
+&lt;li&gt;ChatGPT 10x -&amp;gt; 660&lt;/li&gt;
+&lt;li&gt;ChatGPT 20x -&amp;gt; 1150&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;现在 ChatGPT Pro 订阅额度翻倍 ，Pro5x 目前最具性价比，是 10 倍 plus 用量了&lt;/p&gt;
+&lt;p&gt;欢迎 v 友咨询，已服务 100+ v 友&lt;/p&gt;
+&lt;p&gt;可以 +v(备注 v2) : Y2F0Y2hhZG1pbg==&lt;/p&gt;
+
+	</description></item><item><title>[推广] [送码] 好看又好用的 iOS V2EX 客户端历经一个月终于上架了，送些码看看反馈</title><link>https://www.v2ex.com/t/1255418#reply24</link><guid>tag:www.v2ex.com,2026-11-09:/t/1255418</guid><pubDate>Mon, 09 Nov 2026 00:04:11 +0000</pubDate><description>
+	#### 前情提要 [吹出去的牛逼] &lt;br /&gt;首先是基于爱好，小白做了自用，啥都不懂，希望大家温柔一点。&lt;br /&gt;之前吹了一顿牛逼，然后新手小白从入会，到上 TF ，到上架，驳回三次，差点放弃。&lt;br /&gt;&lt;br /&gt;### 新手口喷了最好看最好用的 iOS V2EX 客户端，帮我看看值得上架 App Store 吗？&lt;br /&gt;&lt;a target="_blank" href="https://v2ex.com/t/1247152" rel="nofollow noopener"&gt;https://v2ex.com/t/1247152&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;### 最好看最好用的 iOS V2EX 客户端过审了，欢迎 TestFlight 体验打脸&lt;br /&gt;&lt;a target="_blank" href="https://v2ex.com/t/1248562" rel="nofollow noopener"&gt;https://v2ex.com/t/1248562&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;### App Store 链接&lt;br /&gt;&lt;a target="_blank" href="https://apps.apple.com/us/app/weave-%E6%8D%A2%E4%B8%AA%E6%96%B9%E5%BC%8F%E9%80%9B-v-%E7%AB%99/id6819915911?l=zh-Hans-CN" rel="nofollow noopener"&gt;https://apps.apple.com/us/app/weave-%E6%8D%A2%E4%B8%AA%E6%96%B9%E5%BC%8F%E9%80%9B-v-%E7%AB%99/id6819915911?l=zh-Hans-CN&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;### 关于付费&lt;br /&gt;付费解锁只用于解锁部分个性化功能，值不值看个人喜好，不付费也不影响使用，解锁权当是打赏吧，如下图。&lt;br /&gt;其它核心功能不受任何影响，免费版完全可用，所以大家领不到码也不用担心功能限制。&lt;br /&gt;&lt;br /&gt;&lt;a target="_blank" href="https://i.imgur.com/z0WCnW1.jpeg" rel="nofollow noopener" target="_blank"&gt;&lt;img src="https://i.imgur.com/z0WCnW1.jpeg" class="embedded_image" rel="noreferrer"&gt;&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;### 反馈&lt;br /&gt;欢迎进群反馈。&lt;br /&gt;&lt;a target="_blank" href="https://t.me/+PFlFs3wXBwNlZDU1" rel="nofollow noopener"&gt;https://t.me/+PFlFs3wXBwNlZDU1&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;### 送码  [领用记得回贴，如果给个评分就更好了] &lt;br /&gt;&lt;a target="_blank" href="https://apps.apple.com/redeem?ctx=offercodes&amp;amp;id=6819915911&amp;amp;code=M6N7NNW8YTYLXFFT3K" rel="nofollow noopener"&gt;https://apps.apple.com/redeem?ctx=offercodes&amp;amp;id=6819915911&amp;amp;code=M6N7NNW8YTYLXFFT3K&lt;/a&gt;&lt;br /&gt;&lt;a target="_blank" href="https://apps.apple.com/redeem?ctx=offercodes&amp;amp;id=6819915911&amp;amp;code=6NWN4FAMLMAFNJ7XHH" rel="nofollow noopener"&gt;https://apps.apple.com/redeem?ctx=offercodes&amp;amp;id=6819915911&amp;amp;code=6NWN4FAMLMAFNJ7XHH&lt;/a&gt;&lt;br /&gt;&lt;a target="_blank" href="https://apps.apple.com/redeem?ctx=offercodes&amp;amp;id=6819915911&amp;amp;code=NAPXR64H3EHXYTA4P7" rel="nofollow noopener"&gt;https://apps.apple.com/redeem?ctx=offercodes&amp;amp;id=6819915911&amp;amp;code=NAPXR64H3EHXYTA4P7&lt;/a&gt;&lt;br /&gt;&lt;a target="_blank" href="https://apps.apple.com/redeem?ctx=offercodes&amp;amp;id=6819915911&amp;amp;code=HPLAL3FKAENEKT66TL" rel="nofollow noopener"&gt;https://apps.apple.com/redeem?ctx=offercodes&amp;amp;id=6819915911&amp;amp;code=HPLAL3FKAENEKT66TL&lt;/a&gt;&lt;br /&gt;&lt;a target="_blank" href="https://apps.apple.com/redeem?ctx=offercodes&amp;amp;id=6819915911&amp;amp;code=R3J364H8J7EN4EPEKA" rel="nofollow noopener"&gt;https://apps.apple.com/redeem?ctx=offercodes&amp;amp;id=6819915911&amp;amp;code=R3J364H8J7EN4EPEKA&lt;/a&gt;&lt;br /&gt;&lt;a target="_blank" href="https://apps.apple.com/redeem?ctx=offercodes&amp;amp;id=6819915911&amp;amp;code=A3Y34JFPMXKEHEYLHX" rel="nofollow noopener"&gt;https://apps.apple.com/redeem?ctx=offercodes&amp;amp;id=6819915911&amp;amp;code=A3Y34JFPMXKEHEYLHX&lt;/a&gt;&lt;br /&gt;&lt;a target="_blank" href="https://apps.apple.com/redeem?ctx=offercodes&amp;amp;id=6819915911&amp;amp;code=PM6AA8APL8REAFAK3R" rel="nofollow noopener"&gt;https://apps.apple.com/redeem?ctx=offercodes&amp;amp;id=6819915911&amp;amp;code=PM6AA8APL8REAFAK3R&lt;/a&gt;&lt;br /&gt;&lt;a target="_blank" href="https://apps.apple.com/redeem?ctx=offercodes&amp;amp;id=6819915911&amp;amp;code=JFEKX47A6YYFJXKM36" rel="nofollow noopener"&gt;https://apps.apple.com/redeem?ctx=offercodes&amp;amp;id=6819915911&amp;amp;code=JFEKX47A6YYFJXKM36&lt;/a&gt;&lt;br /&gt;&lt;a target="_blank" href="https://apps.apple.com/redeem?ctx=offercodes&amp;amp;id=6819915911&amp;amp;code=77PYWN8RRKXEXRKF6F" rel="nofollow noopener"&gt;https://apps.apple.com/redeem?ctx=offercodes&amp;amp;id=6819915911&amp;amp;code=77PYWN8RRKXEXRKF6F&lt;/a&gt;&lt;br /&gt;&lt;a target="_blank" href="https://apps.apple.com/redeem?ctx=offercodes&amp;amp;id=6819915911&amp;amp;code=TTL7WEWRYM7KPYAR4Y" rel="nofollow noopener"&gt;https://apps.apple.com/redeem?ctx=offercodes&amp;amp;id=6819915911&amp;amp;code=TTL7WEWRYM7KPYAR4Y&lt;/a&gt;&lt;br /&gt;&lt;a target="_blank" href="https://apps.apple.com/redeem?ctx=offercodes&amp;amp;id=6819915911&amp;amp;code=33REFYFMMEN4EYPPNR" rel="nofollow noopener"&gt;https://apps.apple.com/redeem?ctx=offercodes&amp;amp;id=6819915911&amp;amp;code=33REFYFMMEN4EYPPNR&lt;/a&gt;&lt;br /&gt;&lt;a target="_blank" href="https://apps.apple.com/redeem?ctx=offercodes&amp;amp;id=6819915911&amp;amp;code=RNNE8WEKPNJJ78Y64L" rel="nofollow noopener"&gt;https://apps.apple.com/redeem?ctx=offercodes&amp;amp;id=6819915911&amp;amp;code=RNNE8WEKPNJJ78Y64L&lt;/a&gt;&lt;br /&gt;&lt;a target="_blank" href="https://apps.apple.com/redeem?ctx=offercodes&amp;amp;id=6819915911&amp;amp;code=7MYXPH3667KHW86WNP" rel="nofollow noopener"&gt;https://apps.apple.com/redeem?ctx=offercodes&amp;amp;id=6819915911&amp;amp;code=7MYXPH3667KHW86WNP&lt;/a&gt;&lt;br /&gt;&lt;a target="_blank" href="https://apps.apple.com/redeem?ctx=offercodes&amp;amp;id=6819915911&amp;amp;code=HTXK8R4XHAAJNE3MN6" rel="nofollow noopener"&gt;https://apps.apple.com/redeem?ctx=offercodes&amp;amp;id=6819915911&amp;amp;code=HTXK8R4XHAAJNE3MN6&lt;/a&gt;&lt;br /&gt;&lt;a target="_blank" href="https://apps.apple.com/redeem?ctx=offercodes&amp;amp;id=6819915911&amp;amp;code=MY3ARF44AKW6FW68FY" rel="nofollow noopener"&gt;https://apps.apple.com/redeem?ctx=offercodes&amp;amp;id=6819915911&amp;amp;code=MY3ARF44AKW6FW68FY&lt;/a&gt;&lt;br /&gt;&lt;a target="_blank" href="https://apps.apple.com/redeem?ctx=offercodes&amp;amp;id=6819915911&amp;amp;code=RE4JJ73NMYNFHMF4L7" rel="nofollow noopener"&gt;https://apps.apple.com/redeem?ctx=offercodes&amp;amp;id=6819915911&amp;amp;code=RE4JJ73NMYNFHMF4L7&lt;/a&gt;&lt;br /&gt;&lt;a target="_blank" href="https://apps.apple.com/redeem?ctx=offercodes&amp;amp;id=6819915911&amp;amp;code=7NARNKRYFHA6N7HWJ4" rel="nofollow noopener"&gt;https://apps.apple.com/redeem?ctx=offercodes&amp;amp;id=6819915911&amp;amp;code=7NARNKRYFHA6N7HWJ4&lt;/a&gt;&lt;br /&gt;&lt;a target="_blank" href="https://apps.apple.com/redeem?ctx=offercodes&amp;amp;id=6819915911&amp;amp;code=F68EYFNR7WMJLXPX68" rel="nofollow noopener"&gt;https://apps.apple.com/redeem?ctx=offercodes&amp;amp;id=6819915911&amp;amp;code=F68EYFNR7WMJLXPX68&lt;/a&gt;&lt;br /&gt;&lt;a target="_blank" href="https://apps.apple.com/redeem?ctx=offercodes&amp;amp;id=6819915911&amp;amp;code=EJAXKAFHTJK4TYFN3L" rel="nofollow noopener"&gt;https://apps.apple.com/redeem?ctx=offercodes&amp;amp;id=6819915911&amp;amp;code=EJAXKAFHTJK4TYFN3L&lt;/a&gt;&lt;br /&gt;&lt;a target="_blank" href="https://apps.apple.com/redeem?ctx=offercodes&amp;amp;id=6819915911&amp;amp;code=EL7HTFTT8YEYLJ6KEL" rel="nofollow noopener"&gt;https://apps.apple.com/redeem?ctx=offercodes&amp;amp;id=6819915911&amp;amp;code=EL7HTFTT8YEYLJ6KEL&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;直接上 Store 的截图吧&lt;br /&gt;&lt;a target="_blank" href="https://i.imgur.com/amQ73sw.jpeg" rel="nofollow noopener" target="_blank"&gt;&lt;img src="https://i.imgur.com/amQ73sw.jpeg" class="embedded_image" rel="noreferrer"&gt;&lt;/a&gt; &lt;a target="_blank" href="https://i.imgur.com/IqL6jB5.jpeg" rel="nofollow noopener" target="_blank"&gt;&lt;img src="https://i.imgur.com/IqL6jB5.jpeg" class="embedded_image" rel="noreferrer"&gt;&lt;/a&gt;&lt;br /&gt;&lt;a target="_blank" href="https://i.imgur.com/EN8Eb2D.jpeg" rel="nofollow noopener" target="_blank"&gt;&lt;img src="https://i.imgur.com/EN8Eb2D.jpeg" class="embedded_image" rel="noreferrer"&gt;&lt;/a&gt; &lt;a target="_blank" href="https://i.imgur.com/BbHQxwC.jpeg" rel="nofollow noopener" target="_blank"&gt;&lt;img src="https://i.imgur.com/BbHQxwC.jpeg" class="embedded_image" rel="noreferrer"&gt;&lt;/a&gt; &lt;br /&gt;&lt;a target="_blank" href="https://i.imgur.com/gBUAOe5.jpeg" rel="nofollow noopener" target="_blank"&gt;&lt;img src="https://i.imgur.com/gBUAOe5.jpeg" class="embedded_image" rel="noreferrer"&gt;&lt;/a&gt; &lt;a target="_blank" href="https://i.imgur.com/2Q8yfXt.jpeg" rel="nofollow noopener" target="_blank"&gt;&lt;img src="https://i.imgur.com/2Q8yfXt.jpeg" class="embedded_image" rel="noreferrer"&gt;&lt;/a&gt; &lt;br /&gt;&lt;a target="_blank" href="https://i.imgur.com/PvWdGYg.jpeg" rel="nofollow noopener" target="_blank"&gt;&lt;img src="https://i.imgur.com/PvWdGYg.jpeg" class="embedded_image" rel="noreferrer"&gt;&lt;/a&gt;
+	</description></item><item><title>[问与答] 各位还记得自己第一台手机什么品牌型号吗</title><link>https://www.v2ex.com/t/1255417#reply64</link><guid>tag:www.v2ex.com,2026-11-08:/t/1255417</guid><pubDate>Sun, 08 Nov 2026 23:30:15 +0000</pubDate><description>
+	我的第一台是西门子 2128 ，2002 年的一款夜光壳手机，夜里会发光，d 记得电视广告是在海洋馆拍的，a 手机会发淡绿色很神奇
+	</description></item><item><title>[Apple] 重新定义全平台 IPTV 播放器，自研内核极速快， V 友专属福利来了</title><link>https://www.v2ex.com/t/1255416#reply24</link><guid>tag:www.v2ex.com,2026-11-08:/t/1255416</guid><pubDate>Sun, 08 Nov 2026 23:15:32 +0000</pubDate><description>
+	&lt;p&gt;做了几个月，发上来给大家鉴定鉴定。&lt;/p&gt;
+&lt;p&gt;TiviMini 跟常见的 IPTV 播放器不太一样的地方：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;没用 FFmpeg 。TS 拆包、DASH （.mpd ）解析和 fMP4 拆包、码流分析都是自己用 Rust 写的，解完直接交给芯片硬解，界面是各平台原生控件（ UIKit / AppKit / Android View ）&lt;/li&gt;
+&lt;li&gt;起播快：从点击到画面动起来约 0.26 秒，系统播放器同一个源大概 1.1 秒&lt;/li&gt;
+&lt;li&gt;轻：Android 安装包 3.3 MB ，两万个频道的列表解析 12 ms&lt;/li&gt;
+&lt;li&gt;1080i 隔行台专门处理过，没有梳齿、不黑屏； Apple 设备上做了 25i→50p 去隔行&lt;/li&gt;
+&lt;li&gt;HLS 、DASH 、组播 rtp:// 都能直接播，多音轨、字幕（文字和 DVB 图片字幕）、回看、时移、XMLTV 节目单、多播放源这些都有&lt;/li&gt;
+&lt;li&gt;Apple TV 和 Android 电视盒子都是专门做的遥控器界面，不是手机界面放大&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;给 V 友福利：&lt;/strong&gt;
+苹果版 Pro 订阅了以后 iPhone / iPad 、Apple TV 、Mac 都能用，&lt;strong&gt;活动期间送全 Android （手机和平板电视）&lt;/strong&gt;。Pro 页面会显示激活码，在 Android 上输入就行。&lt;/p&gt;
+&lt;p&gt;下载： &lt;a href="https://tivimini.app" rel="nofollow"&gt;https://tivimini.app&lt;/a&gt;
+（国区 App Store 还在备案，暂时要用外区账号）&lt;/p&gt;
+&lt;p&gt;就是个播放器：导入 m3u / txt 列表，点一下就播，不带任何源，用你自己的。&lt;/p&gt;
+&lt;p&gt;有问题、有 bug 直接回帖，App 里也能一键发反馈日志。&lt;/p&gt;
+
+	</description></item><item><title>[问与答] 有没有视觉设计平面设计比较好的模型推荐</title><link>https://www.v2ex.com/t/1255413#reply0</link><guid>tag:www.v2ex.com,2026-11-08:/t/1255413</guid><pubDate>Sun, 08 Nov 2026 20:12:30 +0000</pubDate><description>
 	
 	</description></item><item><title>[推广] [推广] 用自己的 Google AI Pro / Ultra 订阅调用 API： Flow（Veo 3.1、Omni、Nano Banana）、Vids、NotebookLM、Flow Music</title><link>https://www.v2ex.com/t/1255411#reply0</link><guid>tag:www.v2ex.com,2026-11-08:/t/1255411</guid><pubDate>Sun, 08 Nov 2026 19:04:08 +0000</pubDate><description>
 	&lt;p&gt;利益相关：我是 &lt;a href="http://useapi.net" rel="nofollow"&gt;useapi.net&lt;/a&gt; 的维护者。&lt;a href="http://useapi.net" rel="nofollow"&gt;useapi.net&lt;/a&gt; 是第三方 API ，与 Google 无关联。&lt;/p&gt;
@@ -137,10 +809,10 @@ curl -fsSL https://raw.githubusercontent.com/Helloyryr/vps-bench-script/main/sup
 
 	</description></item><item><title>[VXNA] 申请重新收录</title><link>https://www.v2ex.com/t/1255400#reply0</link><guid>tag:www.v2ex.com,2026-11-08:/t/1255400</guid><pubDate>Sun, 08 Nov 2026 15:30:04 +0000</pubDate><description>
 	&lt;a target="_blank" href="https://z.arlmy.me/atom.xml" rel="nofollow noopener"&gt;https://z.arlmy.me/atom.xml&lt;/a&gt;&lt;br /&gt;之前好像 xml 文件编译错了，已修正
-	</description></item><item><title>[职场话题] 怎么才能稳定的副业搞点钱 ？</title><link>https://www.v2ex.com/t/1255399#reply3</link><guid>tag:www.v2ex.com,2026-11-08:/t/1255399</guid><pubDate>Sun, 08 Nov 2026 15:21:11 +0000</pubDate><description>
+	</description></item><item><title>[职场话题] 怎么才能稳定的副业搞点钱 ？</title><link>https://www.v2ex.com/t/1255399#reply7</link><guid>tag:www.v2ex.com,2026-11-08:/t/1255399</guid><pubDate>Sun, 08 Nov 2026 15:21:11 +0000</pubDate><description>
 	&lt;p&gt;怎么才能稳定的副业搞点钱？靠谱的；&lt;/p&gt;
 
-	</description></item><item><title>[分享创造] 做了个中国城市历史时间轴， 32 座城，拖着看</title><link>https://www.v2ex.com/t/1255398#reply2</link><guid>tag:www.v2ex.com,2026-11-08:/t/1255398</guid><pubDate>Sun, 08 Nov 2026 15:20:51 +0000</pubDate><description>
+	</description></item><item><title>[分享创造] 做了个中国城市历史时间轴， 32 座城，拖着看</title><link>https://www.v2ex.com/t/1255398#reply3</link><guid>tag:www.v2ex.com,2026-11-08:/t/1255398</guid><pubDate>Sun, 08 Nov 2026 15:20:51 +0000</pubDate><description>
 	&lt;p&gt;&lt;a href="https://fangzhi.defiabell.com" rel="nofollow"&gt;https://fangzhi.defiabell.com&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;选一座城，拖下面的画轴或者点播放，从远古走到今天。左边全国图的疆域跟着朝代变，右边城市图的辖区和古河道跟着年份变，旁边列着那几年城里的事。&lt;/p&gt;
 &lt;p&gt;几个我觉得有意思的入口&lt;/p&gt;
@@ -292,7 +964,7 @@ curl -fsSL https://raw.githubusercontent.com/Helloyryr/vps-bench-script/main/sup
 &lt;p&gt;选择国内 ChatGPT 代充平台时，建议先确认交付方式，再核对退款政策和售后条件，最后比较价格。&lt;/p&gt;
 &lt;p&gt;比起单纯寻找价格最低的平台，能够看清楚付款之后会发生什么，往往更加重要。&lt;/p&gt;
 
-	</description></item><item><title>[程序员] 人月神话依旧存在</title><link>https://www.v2ex.com/t/1255394#reply6</link><guid>tag:www.v2ex.com,2026-11-08:/t/1255394</guid><pubDate>Sun, 08 Nov 2026 14:39:45 +0000</pubDate><description>
+	</description></item><item><title>[程序员] 人月神话依旧存在</title><link>https://www.v2ex.com/t/1255394#reply9</link><guid>tag:www.v2ex.com,2026-11-08:/t/1255394</guid><pubDate>Sun, 08 Nov 2026 14:39:45 +0000</pubDate><description>
 	&lt;p&gt;为什么 AI 即便达到无限速度也无法终结人月神话？&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;A: 个人的注意力容量有限，因此最大速度有限&lt;/li&gt;
@@ -315,335 +987,6 @@ B: 人在社会中，社会有权责体系&lt;ul&gt;
 &lt;p&gt;AWS 全球节点 CDN 加速 1 折 Ai 模型低至 4 折 火山国际 7 折&lt;/p&gt;
 &lt;p&gt;TG 详聊：@Tiangua7&lt;/p&gt;
 
-	</description></item><item><title>[分享发现] 看了《持械入宋》这类历史遗憾题材，赛道似乎还有机会啊😂</title><link>https://www.v2ex.com/t/1255392#reply13</link><guid>tag:www.v2ex.com,2026-11-08:/t/1255392</guid><pubDate>Sun, 08 Nov 2026 13:46:14 +0000</pubDate><description>
+	</description></item><item><title>[分享发现] 看了《持械入宋》这类历史遗憾题材，赛道似乎还有机会啊😂</title><link>https://www.v2ex.com/t/1255392#reply22</link><guid>tag:www.v2ex.com,2026-11-08:/t/1255392</guid><pubDate>Sun, 08 Nov 2026 13:46:14 +0000</pubDate><description>
 	RT ，有点后知后觉了，最近才知道 持械入宋 这部剧，刷了两三季颇为上头。有种历史遗憾被弥补的幻觉。&lt;br /&gt;然后对这个团队感兴趣搜了下，大致：&lt;br /&gt;&lt;br /&gt;张汉生	总策划、团队创始人	54 岁，2025 年开始学习 AI 影视制作，是“老十一”厂牌的主要发起者&lt;br /&gt;李朝华	总制片、总编剧	负责剧本统筹、内容制作及项目组织，是主要创作负责人之一&lt;br /&gt;何秀山	总导演	负责导演层面的制作统筹，已接受媒体联合专访&lt;br /&gt;新乡市瑾叶传媒有限公司	出品账号关联企业	2026 年 2 月成立，注册资本 50 万元，法定代表人朱露露&lt;br /&gt;老十一剧场 / 瑾叶剧场	内容厂牌及平台账号	抖音侧使用“老十一剧场”，红果侧使用“瑾叶剧场”&lt;br /&gt;&lt;br /&gt;根据 10 月 29 日发布的《一个“草根”团队的两年》主创访谈，张汉生原本是自由职业者，2025 年 3 月加入雪宝工作室学习 AI 视频制作，编号为第 11 号学员，因此后来使用了“老十一”这个名字。&lt;br /&gt;&lt;br /&gt;至于张汉生背景似乎没有多少深度发现，团队这些人似乎也既不是影视科班也不是互联网科班出生，唯一专业的可能在河南纽约这个传说中的 自媒体/打粉 著称的特殊地区。&lt;br /&gt;&lt;br /&gt;纵观中外历史，让人意难平的故事还是有很多啊，不知道还有没有机会？有懂的朋友讲解下，纯 token 入局和上设备入局成本情况，以及人力产出/推流投放大概在一个什么规模呢？ thx
-	</description></item><item><title>[程序员] 分析一个 macos 的文件管理器</title><link>https://www.v2ex.com/t/1255391#reply0</link><guid>tag:www.v2ex.com,2026-11-08:/t/1255391</guid><pubDate>Sun, 08 Nov 2026 13:42:54 +0000</pubDate><description>
-	&lt;p&gt;开源免费，自己做的
-之前用 qspace 感觉太重了，而且收费，参考的做了一个，性能和大小感觉都不错
-希望大家提出建议
-&lt;a href="https://liceal.github.io/maple/" rel="nofollow"&gt;https://liceal.github.io/maple/&lt;/a&gt;
-&lt;a href="https://github.com/liceal/maple" rel="nofollow"&gt;https://github.com/liceal/maple&lt;/a&gt;&lt;/p&gt;
-
-	</description></item><item><title>[问与答] iOS 的李跳跳？还是 Mitm 去贴片广告更好</title><link>https://www.v2ex.com/t/1255389#reply3</link><guid>tag:www.v2ex.com,2026-11-08:/t/1255389</guid><pubDate>Sun, 08 Nov 2026 13:16:15 +0000</pubDate><description>
-	&lt;p&gt;项目 1： &lt;a href="https://github.com/swipt-automation/swipt" rel="nofollow"&gt;https://github.com/swipt-automation/swipt&lt;/a&gt;
-项目 2https://&lt;a href="http://github.com/swipt-automation/official-swiplets" rel="nofollow"&gt;github.com/swipt-automation/official-swiplets&lt;/a&gt;
-推文： &lt;a href="https://x.com/nek0hasekai/status/2118666707380412482" rel="nofollow"&gt;https://x.com/nek0hasekai/status/2118666707380412482&lt;/a&gt;
-开发者的介绍：
-向您介绍我为 Swipt 开发的第一个 Swiplet：&lt;/p&gt;
-&lt;p&gt;跳过（中国流氓应用的开屏）广告，iOS 终于有这个了 👀&lt;/p&gt;
-&lt;p&gt;多亏了不可思议的 ipatool 和 unfairplay，我用 Opus 5.5 下载和逆向了国区所有热门应用，并制作了这个。&lt;/p&gt;
-&lt;p&gt;它预先兼容了热门应用，并且可以通过无障碍树精确识别常见广告 SDK，并且学习；下次出现广告时，可以尽可能快地跳过它。&lt;/p&gt;
-&lt;p&gt;即使它的设计目标是事件驱动和尽可能快，但许多流氓应用（如 Bilibili）为跳过按钮设置了延迟（看起来接近半秒之后才关闭），所以它只能比您点的更快 🤡&lt;/p&gt;
-
-	</description></item><item><title>[分享创造] 做了个不限时的短文打字练习工具，支持粘贴自己的文本</title><link>https://www.v2ex.com/t/1255388#reply0</link><guid>tag:www.v2ex.com,2026-11-08:/t/1255388</guid><pubDate>Sun, 08 Nov 2026 13:16:07 +0000</pubDate><description>
-	&lt;p&gt;我做了一个叫 KeySprint 的网页工具，主要用完整短文练习打字，想在随机单词练习之外，提供一种包含空格、标点和大小写的练习方式。&lt;/p&gt;
-&lt;p&gt;体验地址：&lt;a href="https://keysprint.kokoship.com/zh?utm_source=v2ex&amp;amp;utm_medium=community&amp;amp;utm_campaign=launch&amp;amp;utm_content=first_post" rel="nofollow"&gt;KeySprint&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;目前可以做这些事：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;无需注册就能开始练习，没有倒计时，首次输入后开始记录用时。&lt;/li&gt;
-&lt;li&gt;支持英文、中文等多种语言，可以选择 50 、100 、500 字符目标篇幅，材料按完整句子选取。&lt;/li&gt;
-&lt;li&gt;可以粘贴自己的学习笔记、邮件表达或短文，自定义文本不受上述篇幅档位限制。&lt;/li&gt;
-&lt;li&gt;输入时有逐字反馈，完成后查看 CPM 、准确率和易错字符，也能回看本浏览器里的练习统计。&lt;/li&gt;
-&lt;li&gt;可以使用系统语音朗读当前短文，具体支持情况取决于浏览器和系统。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;粘贴的原文只用于当前练习，不上传到服务端，也不持久保存；刷新或切换后无法恢复。完成成绩保存在当前浏览器，登录不会自动同步历史。&lt;/p&gt;
-&lt;p&gt;目前短文库还在补充，部分语言和篇幅组合会重复，也还有一些材料需要校对。工具更适合在电脑上配合键盘使用。&lt;/p&gt;
-&lt;p&gt;想听听大家的反馈：用完整短文、或者自己的材料练打字，对你有没有用？输入反馈、材料选择和成绩展示，有哪些地方不够顺手？&lt;/p&gt;
-
-	</description></item><item><title>[推广] ChatGPT 公益代充站</title><link>https://www.v2ex.com/t/1255384#reply3</link><guid>tag:www.v2ex.com,2026-11-08:/t/1255384</guid><pubDate>Sun, 08 Nov 2026 12:58:42 +0000</pubDate><description>
-	&lt;h3&gt;地址： &lt;a href="https://pay.ai-club.win" rel="nofollow"&gt;https://pay.ai-club.win&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;不保存用户卡片信息，自带订阅代理，也可以自己传代理&lt;/p&gt;
-
-	</description></item><item><title>[Apple] [送码] 折腾了小半年的 Mac 菜单栏 App - BuhoBarX，想听听大家用起来怎么样</title><link>https://www.v2ex.com/t/1255383#reply9</link><guid>tag:www.v2ex.com,2026-11-08:/t/1255383</guid><pubDate>Sun, 08 Nov 2026 12:46:58 +0000</pubDate><description>
-	之前发过 BuhoNTFS 2.0 的公测贴，有 V 友帮忙测试，赠送了 200 多个激活码，收到了不少使用上的建议，谢谢大家 🙏😄&lt;br /&gt;&lt;br /&gt;这次带着另一个 Mac 小工具来啦：BuhoBarX (耗时小半年，调配电脑简直是噩梦) - 一个整理菜单栏图标的工具。&lt;br /&gt;&lt;br /&gt;在我们 Mac 上，装的软件一多，右上角空间就比较紧张。微信、网盘、输入法、各种小工具……有些图标平时不怎么看，但真要用的时候又希望它在。&lt;br /&gt;&lt;br /&gt;于是就跟很多人一样，开始用 Bartender 、Ice 之类的工具整理菜单栏。尤其是带刘海的 MacBook ，菜单栏中间被占了一块，能留给图标的空间更有限。软件稍微开多一点，有些图标就被挤到刘海后面，想找的时候还得找半天 😅&lt;br /&gt;&lt;br /&gt;这么多年，我们团队很多小伙伴都在用 Ice ，但是 macOS 26 、27 对菜单栏相关的机制和权限做了调整，在新系统上可能就会碰到兼容性问题。我们自己测试的时候也发现，同一个工具，在不同系统版本、不同显示器和不同 App 组合下，表现可能不太一样。&lt;br /&gt;&lt;br /&gt;所以我们立项并尝试做了 BuhoBarX 。&lt;br /&gt;&lt;br /&gt;原本以为就是把几个图标藏起来，应该……不算太难吧？😂&lt;br /&gt;&lt;br /&gt;真正做起来才发现，菜单栏虽然地方小，要考虑的情况还真不少：刘海屏、外接显示器、不同系统版本，还有每个人电脑里那一堆不一样的常驻软件。好不容易在一台测试机上调顺了，换个环境，又可能冒出新问题。&lt;br /&gt;&lt;br /&gt;这一年里我们一直在边做边改，也跟着 macOS 的更新调整。最近 2.1 版本在团队内部测试了一轮，在我们测试过的一些场景里，表现已经超过了我们对比过的同类软件。&lt;br /&gt;&lt;br /&gt;不过我们的测试机器和日常使用习惯毕竟有限。大家电脑上的软件组合千奇百怪，说不定刚装上就能帮我们找到一个藏了很久的 Bug 😅&lt;br /&gt;&lt;br /&gt;所以这次想把 BuhoBarX 2.1 Beta 免费开放给大家体验，也请各位 V 友帮忙看看，在你们自己的 Mac 上用起来怎么样。&lt;br /&gt;&lt;br /&gt;公测地址： &lt;a target="_blank" href="https://www.drbuho.com/beta-program/buhobarx" rel="nofollow noopener"&gt;https://www.drbuho.com/beta-program/buhobarx&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;Beta 版无需购买或激活，可以直接体验。如果遇到问题，或者觉得哪里用着别扭，欢迎在帖子里聊聊，也可以通过 App 内的反馈入口告诉我们。&lt;br /&gt;&lt;br /&gt;跟上次一样，前 100 位向我们提供使用反馈的用户，我们会送出 BuhoBarX 终身版激活码，感谢大家帮忙测试！&lt;br /&gt;&lt;br /&gt;也想问问大家：你们现在还在用菜单栏管理工具吗？升级 macOS 之后，有没有遇到过什么奇奇怪怪的问题？或者系统自带的功能已经够用了？&lt;br /&gt;&lt;br /&gt;欢迎来聊聊，先谢谢大家～
-	</description></item><item><title>[Apple] 挺神奇的，经常登录国行 Apple ID 的时候提示「账户已锁定」，但又可以自助解锁</title><link>https://www.v2ex.com/t/1255382#reply2</link><guid>tag:www.v2ex.com,2026-11-08:/t/1255382</guid><pubDate>Sun, 08 Nov 2026 12:44:16 +0000</pubDate><description>
-	&lt;p&gt;动不动在登录时候就提示锁定，输入手机号验证短信后就可以解锁。。。
-搞不懂啥情况。。。&lt;/p&gt;
-
-	</description></item><item><title>[分享创造] 做了个菜单栏小工具：听写的时候把音乐静音</title><link>https://www.v2ex.com/t/1255381#reply2</link><guid>tag:www.v2ex.com,2026-11-08:/t/1255381</guid><pubDate>Sun, 08 Nov 2026 12:39:38 +0000</pubDate><description>
-	用豆包输入法听写的时候，音乐还在响，每次都要自己去按暂停。做了个菜单栏小工具 Autopause：麦克风在用的时候，把正在放的音乐静音或暂停，说完再回来。&lt;br /&gt;&lt;br /&gt;两种方式：&lt;br /&gt;&lt;br /&gt;- 静音：歌继续放，系统音量淡下去，说完再淡回来。&lt;br /&gt;- 暂停：停掉 Music 、Spotify ，以及当前正在播放的内容。只有它自己暂停的才会再播放。中途按了播放，它就不再插手。&lt;br /&gt;&lt;br /&gt;默认再等 1.5 秒才恢复，两句话之间音乐不会弹一下。也可以只让指定的 App 触发，开会、打电话就不会把歌停掉。&lt;br /&gt;&lt;br /&gt;不录音，不打开麦克风，不申请麦克风权限，没有账号。macOS 14 或更新，Developer ID 签名并公证，不在 App Store 。&lt;br /&gt;&lt;br /&gt;&lt;a target="_blank" href="https://autopause.reily.app" rel="nofollow noopener"&gt;https://autopause.reily.app&lt;/a&gt;&lt;br /&gt;&lt;a target="_blank" href="https://github.com/zhigang1992/autopause/releases/download/v1.1.1/Autopause-1.1.1.zip" rel="nofollow noopener"&gt;https://github.com/zhigang1992/autopause/releases/download/v1.1.1/Autopause-1.1.1.zip&lt;/a&gt;&lt;br /&gt;&lt;a target="_blank" href="https://github.com/zhigang1992/autopause#这是做什么的" rel="nofollow noopener"&gt;https://github.com/zhigang1992/autopause#这是做什么的&lt;/a&gt;
-	</description></item><item><title>[随想] 刚刚突然意识到人到了 35 岁，人生基本已经将近过半</title><link>https://www.v2ex.com/t/1255380#reply4</link><guid>tag:www.v2ex.com,2026-11-08:/t/1255380</guid><pubDate>Sun, 08 Nov 2026 12:03:57 +0000</pubDate><description>
-	&lt;p&gt;好恐怖&lt;/p&gt;
-
-	</description></item><item><title>[反馈] v 站 rss 订阅地址遇到 cloudflare 盾校验</title><link>https://www.v2ex.com/t/1255379#reply2</link><guid>tag:www.v2ex.com,2026-11-08:/t/1255379</guid><pubDate>Sun, 08 Nov 2026 11:48:25 +0000</pubDate><description>
-	rss 阅读器客户端使用 &lt;a target="_blank" href="https://www.v2ex.com/index.xml"&gt;https://www.v2ex.com/index.xml&lt;/a&gt; ，目前无法正常使用，排查是返回 403 ，需要人工通过 cloudflare 盾校验，但是好多 rss 客户端都不支持&lt;br /&gt;站长是否可以优化下，@livid
-	</description></item><item><title>[分享创造] 做了一个早高峰通勤小游戏：早八骑士</title><link>https://www.v2ex.com/t/1255377#reply2</link><guid>tag:www.v2ex.com,2026-11-08:/t/1255377</guid><pubDate>Sun, 08 Nov 2026 11:29:07 +0000</pubDate><description>
-	&lt;p&gt;&lt;img alt="早八骑士" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://zaoba.caydock.com/screenshots/hero.jpg"/&gt;&lt;/p&gt;
-&lt;p&gt;因为自己平常就是骑电动车上班，于是做了这个小游戏&lt;/p&gt;
-&lt;p&gt;玩法很简单，骑着电动车穿过 3 公里的早高峰，躲车流、躲横穿的行人，平安到公司就算赢。&lt;/p&gt;
-&lt;p&gt;左右移动，↑ 加速、↓ 刹车，空格按喇叭让前面的人让路，碰撞五次就结束。&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://zaoba.caydock.com" rel="nofollow"&gt;https://zaoba.caydock.com&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;欢迎提建议&lt;/p&gt;
-
-	</description></item><item><title>[分享创造] 分享创造 | 因为 Craig Newmark 的一条推文，我复刻了个纯净版克雷格列表（已支持 24 城）</title><link>https://www.v2ex.com/t/1255376#reply1</link><guid>tag:www.v2ex.com,2026-11-08:/t/1255376</guid><pubDate>Sun, 08 Nov 2026 11:28:36 +0000</pubDate><description>
-	各位 V 友，大家好！&lt;br /&gt;&lt;br /&gt;前段时间在 X 上刷到 Craig Newmark （ Craigslist 创始人）转发的一条推文，极其感慨。&lt;br /&gt;&lt;br /&gt;一位工程师问另一位工程师：“如果今天让你重新做一个 Craigslist ，要花多少钱？”&lt;br /&gt;对方的回答直击灵魂：“我们做不出来了。我们已经不知道该怎么把网站做得这么简单了。”&lt;br /&gt;&lt;br /&gt;确实，现在的互联网太“重”了。去现在的分类网站（ FB Marketplace 、58 、Carousell ）挂个二手闲置，不仅注册流程繁琐，只要稍微留下点痕迹，马上就会招来铺天盖地的 Bot 爬虫、垃圾短信和钓鱼邮件。虽然 Craigslist 是最早玩“匿名邮件中继”的，但它的技术栈和体验早就停在了上个时代。&lt;br /&gt;&lt;br /&gt;为了找回当年那种“纯粹的本地交易”体验，我作为一个独立开发者，决定自己动手写一个精神续作：MingList 。&lt;br /&gt;&lt;br /&gt;💡 它长什么样？&lt;br /&gt;极简、无广告、无弹窗。回归最早的 Web 1.0 逛论坛的感觉，没有任何推荐算法和繁琐的社交绑定。&lt;br /&gt;&lt;br /&gt;🛡️ 核心：一套原生的“匿名隐私中继”&lt;br /&gt;为了解决隐私痛点，我重构了中继逻辑。买家想联系你，不需要注册；系统会自动生成一个类似 reply-xxx@minglist.top 的临时中继邮箱。&lt;br /&gt;双方通过这个加密地址双向收发邮件。在你们建立绝对信任之前，你的真实邮箱对全网 100% 隐身。 从根源上切断了爬虫抓取你的真实联系方式的可能。&lt;br /&gt;&lt;br /&gt;(坦诚交底：为了防刷和机器人，目前发帖需要一键 Google 登录，但买家浏览和回信是完全免注册的，绝对保护隐私。)&lt;br /&gt;&lt;br /&gt;🛠️ 技术架构 &amp;amp; 踩坑&lt;br /&gt;既然要“轻”，那架构就必须极致。&lt;br /&gt;&lt;br /&gt;前端/计算：托管在 Cloudflare Pages / Workers 上。&lt;br /&gt;&lt;br /&gt;数据/存储：用了 D1 边缘数据库。&lt;br /&gt;&lt;br /&gt;发信：Resend 免费版。&lt;br /&gt;&lt;br /&gt;成果：直接铺开了美国、英国、加拿大、澳洲、新加坡的 24 个核心城市，而且目前服务器成本几乎为 0 。&lt;br /&gt;&lt;br /&gt;🚀 目前的困境与求助&lt;br /&gt;网站刚上线不久，最核心的邮件中继送达率我已经反复测试跑通了。但现在遇到了所有双边市场最痛的“冷启动”问题——很多城市的列表还是空的，用户来了又走。&lt;br /&gt;&lt;br /&gt;传送门： &lt;a target="_blank" href="https://minglist.top" rel="nofollow noopener"&gt;https://minglist.top&lt;/a&gt;&lt;br /&gt;灵感出处： &lt;a target="_blank" href="https://x.com/craignewmark/status/2107052870163952117" rel="nofollow noopener"&gt;https://x.com/craignewmark/status/2107052870163952117&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;想请教 V 站的各位大神，给点硬核的建议：&lt;br /&gt;&lt;br /&gt;架构拓展：这种纯 Cloudflare 的边缘 Serverless 方案，如果真遇到恶意刷接口或大批量并发，D1 数据库大概在什么量级会遇到瓶颈？我该提前做哪些限流预案？&lt;br /&gt;&lt;br /&gt;极客冷启动：在没有一分钱推广预算的情况下，除了去 Reddit 的相关板块硬发帖，还有哪些“野路子”可以快速搞到第一批真实的种子用户？&lt;br /&gt;&lt;br /&gt;产品吐槽：欢迎直接点进网站疯狂拍砖，说它太简陋也没关系！&lt;br /&gt;&lt;br /&gt;感谢各位！
-	</description></item><item><title>[OpenAI] chatgpt 拒绝回答有安全风险的生物问题，怎么破</title><link>https://www.v2ex.com/t/1255375#reply4</link><guid>tag:www.v2ex.com,2026-11-08:/t/1255375</guid><pubDate>Sun, 08 Nov 2026 11:23:38 +0000</pubDate><description>
-	&lt;p&gt;chatgpt 总是提示问的生物问题有安全风险，不给任何回答。如何能够绕开这个限制？&lt;/p&gt;
-&lt;p&gt;This content can’t be shown
-We’re especially careful with requests involving biological research and applications that could pose safety risks. Eligible researchers can apply for Trusted Access.&lt;/p&gt;
-
-	</description></item><item><title>[分享创造] [iOS] 做了一个一次只给你 20 张旧照片的相册清理 App，下滑顺手归进相簿，全程本地，送 20 个 Pro 码</title><link>https://www.v2ex.com/t/1255373#reply1</link><guid>tag:www.v2ex.com,2026-11-08:/t/1255373</guid><pubDate>Sun, 08 Nov 2026 11:09:17 +0000</pubDate><description>
-	&lt;p&gt;我手机里有一万多张照片，「找个周末好好清一下」说了两年，一次都没成。
-不是没有工具，是每次打开都面对一条望不到头的时间线，翻 50 张就累了，然后关掉。&lt;/p&gt;
-&lt;p&gt;所以做了「轻轻」，核心就一条：&lt;strong&gt;一次只给你 20 张，而且是从整个相册里随机翻出来的。&lt;/strong&gt;
-整完一组是一组，随时可以停。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;怎么用&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;右滑留，左滑删，上滑先放过（下次再说，不逼你二选一）&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;下滑直接归进相簿&lt;/strong&gt;：手指往下带，底部升起一排相簿，不松手左右挪一下选中、松手落地；
-不挪就落在上次那个相簿上。删照片和分类一遍做完，不用整理完再回相册重新归一遍&lt;/li&gt;
-&lt;li&gt;删除前有一页复核，确认后才走系统删除，全部进「最近删除」，30 天内能捞回来&lt;/li&gt;
-&lt;li&gt;「去年今日」专挑几年前的同一天；也可以按月、按相簿、按类型（截屏 / 连拍 / 实况…）、
-或者只看还没进任何相簿的照片&lt;/li&gt;
-&lt;li&gt;相似照片自动成组，默认已经帮你挑好留哪张、并写出理由（更清晰 / 人脸拍得更好 / 分辨率更高），
-你只需要否决不同意的&lt;/li&gt;
-&lt;li&gt;1.3 加了视频：竖屏一条条刷，最占空间的排最前&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;几个我比较在意的取舍&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;全程本地。&lt;/strong&gt; 没有服务器、没有账号、没有统计 SDK 、没有广告 SDK ，隐私标签是「不收集数据」。
-开了「优化 iPhone 存储空间」的话，缩略图会经 PhotoKit 从你自己的 iCloud 下载，
-界面上会明确写「只下载，不上传」——同类 App 有因为跑流量被质疑偷传照片的，所以这件事我写在明面上&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;没有一键清理。&lt;/strong&gt; 删照片是不可逆的，「 AI 帮你删了 3000 张」这种事我不做，每一张都是你自己决定&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;额度是每天回满的，不是冷却。&lt;/strong&gt; 滑动整理和视频整理永久免费、不限次数；
-相似分组和下滑归档每天各 5 组免费，第二天回满。不是「用完等 8 小时」那种&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;买断不订阅。&lt;/strong&gt; Pro ¥68 一次性买断，没有订阅、不会自动续费&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;有任何吐槽、bug 、想要的功能都欢迎直接回帖，我每条都会看。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;下载&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;App Store （ iPhone / iPad ，iOS 18+）：
-&lt;a href="https://apps.apple.com/app/apple-store/id6801997805?pt=129315844&amp;amp;ct=v2ex&amp;amp;mt=8" rel="nofollow"&gt;https://apps.apple.com/app/apple-store/id6801997805?pt=129315844&amp;amp;ct=v2ex&amp;amp;mt=8&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;送 20 个 Pro 终身版兑换码&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;规则很简单：直接拿，用掉了请回复一声「已用 第 N 个」，方便后面的人跳过。
-点下面的链接会直接跳到 App Store 兑换页（也可以在 App Store →头像→兑换充值卡或代码里手动输入）：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt; 1. 4WRTXJKKF7RX6FNJAM  https://apps.apple.com/redeem?ctx=offercodes&amp;amp;id=6801997805&amp;amp;code=4WRTXJKKF7RX6FNJAM
- 2. XL7L4JMLY47TFMEMKH  https://apps.apple.com/redeem?ctx=offercodes&amp;amp;id=6801997805&amp;amp;code=XL7L4JMLY47TFMEMKH
- 3. NYL4JH7K4A3FJNHLKT  https://apps.apple.com/redeem?ctx=offercodes&amp;amp;id=6801997805&amp;amp;code=NYL4JH7K4A3FJNHLKT
- 4. ALLKP8K6487XFAET73  https://apps.apple.com/redeem?ctx=offercodes&amp;amp;id=6801997805&amp;amp;code=ALLKP8K6487XFAET73
- 5. YARA77YE8436MKEWH7  https://apps.apple.com/redeem?ctx=offercodes&amp;amp;id=6801997805&amp;amp;code=YARA77YE8436MKEWH7
- 6. 8K8AYW68NEY34LJMK8  https://apps.apple.com/redeem?ctx=offercodes&amp;amp;id=6801997805&amp;amp;code=8K8AYW68NEY34LJMK8
- 7. M6KPP7HMEJP3EPT3PJ  https://apps.apple.com/redeem?ctx=offercodes&amp;amp;id=6801997805&amp;amp;code=M6KPP7HMEJP3EPT3PJ
- 8. 7T8H7JXATP4HTAXLLH  https://apps.apple.com/redeem?ctx=offercodes&amp;amp;id=6801997805&amp;amp;code=7T8H7JXATP4HTAXLLH
- 9. TJM3YTMHTM7LJWTXPL  https://apps.apple.com/redeem?ctx=offercodes&amp;amp;id=6801997805&amp;amp;code=TJM3YTMHTM7LJWTXPL
-10. 8LNP4RY6NL38NWEK8X  https://apps.apple.com/redeem?ctx=offercodes&amp;amp;id=6801997805&amp;amp;code=8LNP4RY6NL38NWEK8X
-11. Y6683Y4RJA3E48JHMM  https://apps.apple.com/redeem?ctx=offercodes&amp;amp;id=6801997805&amp;amp;code=Y6683Y4RJA3E48JHMM
-12. PL8Y833ELJJN6NXJLP  https://apps.apple.com/redeem?ctx=offercodes&amp;amp;id=6801997805&amp;amp;code=PL8Y833ELJJN6NXJLP
-13. 6WYTF47JXNX6PXNNRH  https://apps.apple.com/redeem?ctx=offercodes&amp;amp;id=6801997805&amp;amp;code=6WYTF47JXNX6PXNNRH
-14. LWAKAXAY63ERJXRK3X  https://apps.apple.com/redeem?ctx=offercodes&amp;amp;id=6801997805&amp;amp;code=LWAKAXAY63ERJXRK3X
-15. F8YXLYWXNEJN4P3FH4  https://apps.apple.com/redeem?ctx=offercodes&amp;amp;id=6801997805&amp;amp;code=F8YXLYWXNEJN4P3FH4
-16. MKWNTKX3NJMYKNJ7AX  https://apps.apple.com/redeem?ctx=offercodes&amp;amp;id=6801997805&amp;amp;code=MKWNTKX3NJMYKNJ7AX
-17. AKE8FX8LRHF7YJHRLW  https://apps.apple.com/redeem?ctx=offercodes&amp;amp;id=6801997805&amp;amp;code=AKE8FX8LRHF7YJHRLW
-18. EXPNWXYWANM47M8WJ3  https://apps.apple.com/redeem?ctx=offercodes&amp;amp;id=6801997805&amp;amp;code=EXPNWXYWANM47M8WJ3
-19. 777XKK6AEJ36HTE43F  https://apps.apple.com/redeem?ctx=offercodes&amp;amp;id=6801997805&amp;amp;code=777XKK6AEJ36HTE43F
-20. XWA7WNRT3LTAHWKAPL  https://apps.apple.com/redeem?ctx=offercodes&amp;amp;id=6801997805&amp;amp;code=XWA7WNRT3LTAHWKAPL
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;说明：兑换码只对&lt;strong&gt;从没买过 Pro&lt;/strong&gt; 的 Apple ID 有效，2026-12-31 前兑换。
-兑换后打开 App 会自动生效；没生效的话去「设置 → 轻轻 Pro → 恢复购买」。&lt;/p&gt;
-
-	</description></item><item><title>[Android] 对于号称手机重置也能恢复数据的，我觉得这么理解.......</title><link>https://www.v2ex.com/t/1255372#reply2</link><guid>tag:www.v2ex.com,2026-11-08:/t/1255372</guid><pubDate>Sun, 08 Nov 2026 11:09:17 +0000</pubDate><description>
-	&lt;p&gt;对于号称手机重置也能恢复数据的&lt;/p&gt;
-&lt;p&gt;假定是真的从重置后的手机恢复，而不是云副本，不是社工学拿密码的话&lt;/p&gt;
-&lt;p&gt;我觉得可能情况只有：&lt;/p&gt;
-&lt;p&gt;1 、用户数据在非加密区有副本。或者存储器短暂存放过明文版本的副本。由于 SSD 特性，不能保证删除即覆盖销毁。&lt;/p&gt;
-&lt;p&gt;2 、TEE / Secure Element / Titan M 硬件芯片有重大隐患，或者根本就留有后门。取证设备可以拿到重置前的旧密钥。&lt;/p&gt;
-&lt;p&gt;所以根本原因就是手机厂商故意留后门的。&lt;/p&gt;
-&lt;p&gt;特别是那些极少情况出现的，号称手机用着用着，即使十分确定没有修改过密码，也发现输入正确密码也不能解锁的。可以尝试输入曾经用过的密码，或手机初始化时候第一次的密码，有一定概率可以解开。&lt;/p&gt;
-&lt;p&gt;原因简单说就是 TEE / Secure Element / Titan M 芯片里面的旧密钥槽位没有清理，发生了极小概率的匹配到旧密钥槽位，所以出现解锁密码回滚情况。&lt;/p&gt;
-&lt;p&gt;结合这样的原理，对重置后的手机取证恢复数据是不是就能好理解一点。&lt;/p&gt;
-
-	</description></item><item><title>[分享创造] RouteX 极简终身轨迹永久会员</title><link>https://www.v2ex.com/t/1255369#reply16</link><guid>tag:www.v2ex.com,2026-11-08:/t/1255369</guid><pubDate>Sun, 08 Nov 2026 10:51:23 +0000</pubDate><description>
-	&lt;p&gt;RouteX —— 一款记录生活足迹的极简轨迹 App。&lt;/p&gt;
-&lt;p&gt;• 自动 / 手动打点记录&lt;/p&gt;
-&lt;p&gt;• 极低功耗，告别耗电焦虑&lt;/p&gt;
-&lt;p&gt;• 追光时刻与时光回忆&lt;/p&gt;
-&lt;p&gt;• 3D 轨迹地球&lt;/p&gt;
-&lt;p&gt;• 体积仅 5MB 评论区送出部分永久 VIP 👇&lt;/p&gt;
-&lt;p&gt;已支持 iPhone/iPhone Duo/iPad/Mac&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://apps.apple.com/redeem?ctx=offercodes&amp;amp;id=6753095851&amp;amp;code=ROUTEXVIP" rel="nofollow"&gt;https://apps.apple.com/redeem?ctx=offercodes&amp;amp;id=6753095851&amp;amp;code=ROUTEXVIP&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;欢迎体验 ~&lt;/p&gt;
-
-	</description></item><item><title>[分享创造] 做了个随打字随翻译的小工具 GlowTrans,免费可用,支持 macOS / Windows</title><link>https://www.v2ex.com/t/1255368#reply5</link><guid>tag:www.v2ex.com,2026-11-08:/t/1255368</guid><pubDate>Sun, 08 Nov 2026 10:43:08 +0000</pubDate><description>
-	&lt;p&gt;&lt;strong&gt;GlowTrans 追光快译:用你习惯的输入法打母语,停一下,译文就出现在光标旁边。免费可用,支持 macOS / Windows 。&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;官网: &lt;a href="https://glowtrans.beautare.com/" rel="nofollow"&gt;https://glowtrans.beautare.com/&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="输入中文后，译文出现在光标旁" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://i.imgur.com/e9xm73i.gif"/&gt;&lt;/p&gt;
-&lt;p&gt;我经常回英文邮件、在海外客户群聊天，或者逛海外论坛，总是写两句就切到翻译网站、复制、粘贴、再切回来，思路断在半路。所以做了这个: 翻译直接发生在输入框旁边。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;怎么用&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;照常用你的输入法或语音输入母语&lt;/li&gt;
-&lt;li&gt;文字上屏后稍停一下,译文出现在光标附近(浮窗不抢输入焦点)&lt;/li&gt;
-&lt;li&gt;满意就点一下替换，想改就先复制走，发不发送仍由你决定&lt;/li&gt;
-&lt;li&gt;快捷键只有两个: &lt;code&gt;⌘/Ctrl+Shift+Y&lt;/code&gt; 手动翻译当前输入框，&lt;code&gt;⌘/Ctrl+Alt+Shift+P&lt;/code&gt; 开关自动翻译&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;不用换输入法，原来的词库和手感都在。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;译文从哪来(你自己选)&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;MyMemory 公共服务&lt;/strong&gt;:默认，开箱即用，不用注册、不用填 Key ，对方有每日额度限制。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;自己的 OpenAI 兼容接口&lt;/strong&gt;: 费用直接和你的服务商结算&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;macOS 系统翻译&lt;/strong&gt;: 设备端翻译,完全在本机完成，完全免费&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;官方翻译&lt;/strong&gt;: LLM 翻译，每天有重置的额度(约 800 个短句)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;官方翻译比公共服务强在"能把话说到合适的语气":&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;预设风格:自然、商务、轻松、忠实，也能自定义; 浮窗里可临时换风格重译&lt;/li&gt;
-&lt;li&gt;语言偏好:美式/英式英语，日语、韩语可选礼貌或普通语气&lt;/li&gt;
-&lt;li&gt;带上文:把待译内容前面几句作为参考，译文更贴切&lt;/li&gt;
-&lt;li&gt;术语表:把产品名、专业词固定成你想要的译法&lt;/li&gt;
-&lt;li&gt;注意: 原文和启用的上下文会经官方服务器发给上游模型&lt;/li&gt;
-&lt;li&gt;付费是时长卡， 买一段用一段，不自动续费，不会忘取消被扣钱&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;隐私&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;密码框不读取&lt;/li&gt;
-&lt;li&gt;关掉自动翻译后，不再自动读取其他应用&lt;/li&gt;
-&lt;li&gt;翻译历史默认不写磁盘，最近译文只缓存在内存,退出即清空&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;适合的场景&lt;/strong&gt;
-外贸沟通、回英文邮件、海外客户群、逛外文论坛、写 GitHub issue / PR 描述、填英文表单或和房东客服沟通、游戏里和国际队友沟通。也适合高频沉浸学习外语表达等等场景。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;当前限制&lt;/strong&gt;
-目前支持 macOS 和 Windows 上部分应用的输入框，不同应用和控件的效果有差别，还在持续打磨。遇到不灵的地方请直接告诉我。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;福利&lt;/strong&gt;
-回复你注册用的邮箱（自己 base64 ），送一个月会员，限前 20 位。&lt;/p&gt;
-
-	</description></item><item><title>[问与答] kindle 里的几本书甚至更多被删除</title><link>https://www.v2ex.com/t/1255367#reply3</link><guid>tag:www.v2ex.com,2026-11-08:/t/1255367</guid><pubDate>Sun, 08 Nov 2026 10:29:26 +0000</pubDate><description>
-	&lt;p&gt;里面的孙割的两本书都打不开了，连接电脑看 kindle 盘里，还有一些新民主文化主义，领导们写的书都没了，只剩空文件夹了， &lt;/p&gt;
-&lt;p&gt;我靠 怎么做到的，看来以后只 usb 导入，不能联网了&lt;/p&gt;
-
-	</description></item><item><title>[问与答] UU 远程支持副屏了，有没有便宜的 PAD 推荐，二手的也行。</title><link>https://www.v2ex.com/t/1255366#reply1</link><guid>tag:www.v2ex.com,2026-11-08:/t/1255366</guid><pubDate>Sun, 08 Nov 2026 10:26:38 +0000</pubDate><description>
-	但目前只支持平板，IOS 或安卓，如果能支持，MAC OS 和 Windows 就好了。&lt;br /&gt;价格要便宜的，以后出去多带一个平板，就可以多个屏幕了，手机太小了。
-	</description></item><item><title>[OpenAI] 分享一下这段时间深挖 GPT 代充源头的个人理解</title><link>https://www.v2ex.com/t/1255363#reply1</link><guid>tag:www.v2ex.com,2026-11-08:/t/1255363</guid><pubDate>Sun, 08 Nov 2026 09:37:59 +0000</pubDate><description>
-	&lt;p&gt;GPT 自动代充无非就是几个方面需要注意&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;解决支付的卡片/付款卡，&lt;/li&gt;
-&lt;li&gt;解决支付的自动化协议/session 注入登录付款&lt;/li&gt;
-&lt;li&gt;解决折支付环境的 ip/每个国家需要每个国家的 IP&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;我已经把这些都聚合起来了，更方便大家付款和选卡,下面是最近的价格。完整的可能需要大家去平台上自己查看了。需要的话可以直接私我, 用户名就是 v
-&lt;img alt="套餐" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://i.v2ex.co/vNYaL94E.png"/&gt;
-![卡片]( &lt;a href="https://i.v2ex.co/Vz4ItO8kl.png" rel="nofollow"&gt;https://i.v2ex.co/Vz4ItO8kl.png&lt;/a&gt;
-&lt;img alt="报价" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://i.v2ex.co/Ns4RNLP1l.png"/&gt;
-&lt;img alt="协议支付图" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://i.v2ex.co/b4S5owEtl.png"/&gt;&lt;/p&gt;
-
-	</description></item><item><title>[Visual Studio Code] 感觉被背刺： VSCode Remote SSH 远程服务器可以反向调用本地命令</title><link>https://www.v2ex.com/t/1255361#reply8</link><guid>tag:www.v2ex.com,2026-11-08:/t/1255361</guid><pubDate>Sun, 08 Nov 2026 09:22:45 +0000</pubDate><description>
-	&lt;p&gt;一直用 VSCode Remote SSH 连接服务器做开发，不同服务器承当不同任务，比如 AI YOLO 模式、运行一些不太信任的开源项目等。&lt;/p&gt;
-&lt;p&gt;原本觉得这样挺安全的，即使出了什么问题，最多也就是一台服务器被搞坏，直接删掉就行，不会影响到本地 Mac 上的重要文件和项目。&lt;/p&gt;
-&lt;p&gt;觉得自己隔离做得还不错，没想到最近发现，&lt;strong&gt;VSCode Remote SSH 连接的远程服务器，居然可以反过来让本地 Mac 执行命令。&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;更离谱的是，这还不是什么意外的漏洞，而是 VSCode 故意这么设计的。。。（震惊我一百年。。。&lt;/p&gt;
-&lt;p&gt;这就很反直觉了。我用 SSH 连接远程服务器，不就是为了把代码放到远程执行，避免影响本地吗？结果远程服务器一旦被攻陷，攻击者还有机会通过 VSCode 反过来攻击我的 Mac 。&lt;/p&gt;
-&lt;p&gt;自信满满做了隔离，结果被开发工具自己开了个口子。真是有点绷不住了 😂&lt;/p&gt;
-&lt;p&gt;相关讨论：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://news.ycombinator.com/item?id=42979467" rel="nofollow"&gt;https://news.ycombinator.com/item?id=42979467&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://github.com/microsoft/vscode-remote-release/issues/6608" rel="nofollow"&gt;https://github.com/microsoft/vscode-remote-release/issues/6608&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-	</description></item><item><title>[分享创造] 女儿生病出不了门，给她做了 100+体感小游戏：打开网页，站到摄像头前就能玩</title><link>https://www.v2ex.com/t/1255360#reply8</link><guid>tag:www.v2ex.com,2026-11-08:/t/1255360</guid><pubDate>Sun, 08 Nov 2026 09:03:38 +0000</pubDate><description>
-	&lt;p&gt;前段时间上幼儿园中班的女儿生病，在家休养，不能出门。小孩子精力旺盛，平时下楼跑跑跳跳的运动量一下子全没了，总不能天天坐着看动画片。&lt;/p&gt;
-&lt;p&gt;想让她在家也多动一动，家里又没有游戏机，也不想为这个专门买设备。手边只有一台笔记本，那就用笔记本自带的摄像头：她在屏幕前跳，屏幕里的小人跟着跳；挥手切水果、蹲下躲激光、摆姿势穿墙洞……&lt;/p&gt;
-&lt;p&gt;一个游戏接一个游戏地做下来，就有了 &lt;strong&gt;动动乐园&lt;/strong&gt;： &lt;a href="https://dongdongpark.com" rel="nofollow"&gt;https://dongdongpark.com&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="女儿在客厅玩：穿墙洞、水果忍者、激光走廊" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://i.v2ex.co/3GcunZCh.gif"/&gt;&lt;/p&gt;
-&lt;p&gt;（真实录像，游戏自带的录像功能录的。她头上那顶蓝帽子不是真帽子，是游戏里的装扮，会跟着头动。）&lt;/p&gt;
-&lt;h2&gt;它是什么&lt;/h2&gt;
-&lt;p&gt;一句话：&lt;strong&gt;打开网页、站到摄像头前就能玩的体感小游戏合集&lt;/strong&gt;。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;不用手柄、不用安装、不用买设备，笔记本或台式机的摄像头就行（ Chrome / Edge ）&lt;/li&gt;
-&lt;li&gt;现在 100 多个游戏，幼儿园到高中（ 3 ～ 18 岁）都有，每个学段三档难度&lt;/li&gt;
-&lt;li&gt;中文语音带着做，不识字的小朋友也听得懂&lt;/li&gt;
-&lt;li&gt;免费。不登录可以先试玩，大人登录后不限次数&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;img alt="一部分游戏" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://i.v2ex.co/A532hOOB.jpeg"/&gt;&lt;/p&gt;
-&lt;p&gt;孩子怎么动，屏幕里的小人就怎么动（右下角小窗是摄像头画面）：&lt;/p&gt;
-&lt;p&gt;&lt;img alt="镜子舞对决" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://i.v2ex.co/L61JoI7c.gif"/&gt;&lt;/p&gt;
-&lt;h2&gt;做着做着，有了几个我自己最喜欢的设计&lt;/h2&gt;
-&lt;h3&gt;1. 举手就能点，不用跑回电脑前&lt;/h3&gt;
-&lt;p&gt;孩子站在离摄像头两三米的地方玩，以前每局结束都得跑回电脑前点「再玩一次」，再退回去站好，一来一回特别扫兴。现在结算页上举起手，屏幕上会出现一个跟着手走的光点，停在按钮上就能"隔空点"，一局接一局不用碰电脑。&lt;/p&gt;
-&lt;p&gt;&lt;img alt="举手隔空点「再玩一次」" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://i.v2ex.co/t3HAJ7Y2.gif"/&gt;&lt;/p&gt;
-&lt;h3&gt;2. 跳绳、深蹲、开合跳，摄像头帮你数&lt;/h3&gt;
-&lt;p&gt;学校布置了体育家庭作业要打卡？打开「跳绳计数」，摄像头自动数一分钟，带绳跳、空手摇着跳都行。另外还有深蹲、开合跳、高抬腿，两个人还能并排各数各的。&lt;/p&gt;
-&lt;p&gt;&lt;img alt="四个计数游戏（演示模式录的）" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://i.v2ex.co/8f91vE2F.gif"/&gt;&lt;/p&gt;
-&lt;h3&gt;3. 一个班也能一起玩&lt;/h3&gt;
-&lt;p&gt;后来我把它带到女儿幼儿园的班上，三十几个小朋友排着队轮流上，所以加了班级功能：每个孩子起个小名（不用真名），一局结束点「下一位小朋友」就按名单换人；投到教室的大屏幕上，全班一起看、一起喊加油。每周还能一键生成一张班级运动小报，老师直接发到家长群。&lt;/p&gt;
-&lt;p&gt;&lt;img alt="本周班级运动小报（示例数据）" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://i.v2ex.co/5Z59o3Mb.jpeg"/&gt;&lt;/p&gt;
-&lt;h2&gt;还有一些&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;两人比赛，也有两人配合的合作游戏&lt;/li&gt;
-&lt;li&gt;连续打卡、每日小任务、贴纸扭蛋、每个游戏的铜牌银牌金牌&lt;/li&gt;
-&lt;li&gt;好友挑战：同一关发个链接过去，看谁分高&lt;/li&gt;
-&lt;li&gt;每局自动录像，玩得好的可以存下来（上面的动图就是这么来的）&lt;/li&gt;
-&lt;li&gt;装到桌面以后，不联网也能玩&lt;/li&gt;
-&lt;li&gt;给老师的：体感游戏教案、学生体测评分标准查询&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;关于隐私&lt;/h2&gt;
-&lt;p&gt;摄像头画面只在你自己的电脑上处理，不上传；录像也只存在这台电脑上。大人登录以后同步的只有成绩、名单这些数据，不含画面。&lt;/p&gt;
-&lt;h2&gt;怎么玩&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;电脑用 Chrome 或 Edge 打开 &lt;a href="https://dongdongpark.com" rel="nofollow"&gt;https://dongdongpark.com&lt;/a&gt; ，点「开始玩」&lt;/li&gt;
-&lt;li&gt;离摄像头 2 ～ 3 米，从头到脚都进画面（第一次玩可以先做一下「设备检测」，一分钟查完摄像头、光线和站位）&lt;/li&gt;
-&lt;li&gt;动起来！接上电视或投影更带劲&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2&gt;最后&lt;/h2&gt;
-&lt;p&gt;到现在已经迭代了 50 多个版本，游戏难度按孩子们真实玩下来的成绩调过，但肯定还有识别不准、太难或太简单的地方。欢迎带娃来试试，有问题可以在网站里点「意见反馈」，或者直接在帖子里说，我都会看。&lt;/p&gt;
-&lt;p&gt;也想问问大家：你家孩子最喜欢哪一个？&lt;/p&gt;
-
-	</description></item><item><title>[职场话题] 技术不存在了</title><link>https://www.v2ex.com/t/1255357#reply14</link><guid>tag:www.v2ex.com,2026-11-08:/t/1255357</guid><pubDate>Sun, 08 Nov 2026 08:40:07 +0000</pubDate><description>
-	
-	</description></item><item><title>[分享创造] [分享创造] Setem： macOS 原生语音输入法，支持豆包/微信/千问 + 离线模型</title><link>https://www.v2ex.com/t/1255355#reply2</link><guid>tag:www.v2ex.com,2026-11-08:/t/1255355</guid><pubDate>Sun, 08 Nov 2026 08:21:09 +0000</pubDate><description>
-	&lt;p&gt;做了个 macOS 菜单栏语音输入法 Setem ，开源免费（ MIT ），&lt;a href="https://github.com/zcyoung2000/Setem" rel="nofollow"&gt;https://github.com/zcyoung2000/Setem&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;用法很简单：按住右 Option （可改）说话，松开后在浮窗里看到定稿，确认后一次性输入到光标处；也可以点按开始、再点按结束，适合说长段。识别有四个渠道：豆包、微信、千问三个云端，以及本机离线模型（ Apple 芯片，断网也能用）。&lt;/p&gt;
-&lt;p&gt;技术上是 Swift 原生实现，本体常驻内存占用小，安装包 6.1 MB ，没有 Electron 依赖。基于 VoiceKey fork 改的：云端走 WebSocket + protobuf 流式识别，音频 20ms 一帧 Opus 编码上传；全局快捷键用 CGEventTap 监听。做的时候踩过的坑主要是各家输入法协议都不公开，得自己抠客户端协议，而且接口随时可能变（ README 里也声明了这一点）。&lt;/p&gt;
-&lt;p&gt;求反馈：尤其想听听大家在别的同类工具上觉得最难受的点，我看看哪些值得先修。安装包在 Releases 里，ad-hoc 签名，首次运行要先去一下隔离属性。&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://i.imgur.com/c4vECLH.png"/&gt;&lt;/p&gt;
-
-	</description></item><item><title>[分享创造] 纯外行做了一个微信割草小游戏,分享一些经验之谈</title><link>https://www.v2ex.com/t/1255354#reply0</link><guid>tag:www.v2ex.com,2026-11-08:/t/1255354</guid><pubDate>Sun, 08 Nov 2026 08:14:59 +0000</pubDate><description>
-	&lt;p&gt;用"经验之谈"这四个字属实班门弄斧了.毕竟之前从未了解游戏这个行业.不过做任何事,但凡经历后,都会有一些想法,我也想聊聊.&lt;/p&gt;
-&lt;p&gt;对于我做的游戏来说,ai 确实非常的厉害,可以说只要我有任何的想法,他总是能想办法给我实现.我只需要动动嘴皮子,然后接受成果就行,非常的轻松.&lt;/p&gt;
-&lt;p&gt;我以前以为,做游戏最难的就是代码相关的,只要能解决代码,任何想法做成游戏都是信手拈来, 但是当 ai 解决了代码的问题,给我展示游戏的时候,我就发现了一个问题.&lt;/p&gt;
-&lt;p&gt;为什么画面这么丑?这么 low? &lt;/p&gt;
-&lt;p&gt;我开始质问它,命令它,我觉得做 ui,特效,都可以像写代码一样,直接告诉 ai:给我弄个好看的画面,给我捏个好看的模型.我发现他完全做不到,或者说是,我根本没有审美.我只知道漂亮,却不知道为什么漂亮.&lt;/p&gt;
-&lt;p&gt;然后我开始变得愤怒,疑惑,茫然. 我从未像现在这样尊重过从业美术相关的人,他们简直就是神,可以绘制出那样精美的画面. &lt;/p&gt;
-&lt;p&gt;这不单单是我一个人的问题,我这段时间在网上看多太多做小游戏的,都是这个问题,玩法千奇百怪,但是基本上那画面一看,就知道纯业余的,画面不一定能决定游戏的质量,但是粗糙的画面绝对让用户一眼就拒之门外.&lt;/p&gt;
-&lt;p&gt;但是这些也不影响每个人做出一个小游戏,毕竟谁都有梦想嘛,这不我也来推一下我的&lt;/p&gt;
-&lt;p&gt;割草爽游,技能花样多,下回再说说做小游戏踩的坑&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://i.imgur.com/TsvZlZ6.jpeg"/&gt;&lt;/p&gt;
-
-	</description></item><item><title>[酷工作] 杭州下沙｜找一起做 Agent 与算法的队友，实习 / 正式均可</title><link>https://www.v2ex.com/t/1255353#reply0</link><guid>tag:www.v2ex.com,2026-11-08:/t/1255353</guid><pubDate>Sun, 08 Nov 2026 08:13:14 +0000</pubDate><description>
-	&lt;p&gt;组里想找对 Agent 和算法有好奇心的同学，一起探索模型除了回答问题，还能怎样理解任务、调用工具，把复杂的事情做下去。&lt;/p&gt;
-&lt;p&gt;会涉及 Agent 编排、长任务执行与状态管理，以及 pi-durable 、dsh 等相关架构的探索。具体应用在内容创作场景，包括影视、动漫和短剧，但更想聊的是这些场景背后的 Agent 与算法问题。&lt;/p&gt;
-&lt;p&gt;我们最看重的是&lt;strong&gt;好奇心、热爱和责任心&lt;/strong&gt;：愿意主动尝试，对没想明白的问题追一追，也认真对待自己接下来的事情。&lt;strong&gt;开发经验和工程能力是加分项&lt;/strong&gt;，不需要一上来就是成熟的全栈工程师。有自己折腾过的实验、小项目，或者一个想继续研究的问题，都欢迎拿来聊。&lt;/p&gt;
-&lt;p&gt;我们是国内短剧头部公司的团队，公司规模比较大。&lt;strong&gt;组里都是年轻人，直招负责人超好沟通，氛围非常 nice 。&lt;/strong&gt; 地点在&lt;strong&gt;杭州下沙和达湖畔中心&lt;/strong&gt;，紧邻杭电等周边高校。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;实习 300–400 元/天，正式岗面议。&lt;/strong&gt; 感兴趣可以把简历、做过的项目或实验发到 &lt;code&gt;empkZGluZ0BnbWFpbC5jb20=（ Base64 ）&lt;/code&gt;，也可以顺便说说你最近在关注什么、最想尝试什么。&lt;/p&gt;
-&lt;p&gt;邮件标题注明「应聘 Agent ＋姓名＋实习/正式」就好。&lt;/p&gt;
-
-	</description></item><item><title>[程序员] 写了个剪贴板管理器，抄的 Paste for Mac， Windows 和 macOS 都能用</title><link>https://www.v2ex.com/t/1255352#reply8</link><guid>tag:www.v2ex.com,2026-11-08:/t/1255352</guid><pubDate>Sun, 08 Nov 2026 08:10:03 +0000</pubDate><description>
-	功能就是抄 Paste 的：&lt;br /&gt;&lt;br /&gt;复制过的所有东西都留着，文字、图片、文件、链接都行&lt;br /&gt;快捷键呼出一个卡片条，回车就粘贴&lt;br /&gt;常用的内容可以置顶，不会被冲掉&lt;br /&gt;能搜索，支持多显示器&lt;br /&gt;Windows 版和 macOS （ Apple Silicon ）版都有，代码在 GitHub：&lt;br /&gt;&lt;br /&gt;&lt;a target="_blank" href="https://github.com/SillyShalong/paste" rel="nofollow noopener"&gt;https://github.com/SillyShalong/paste&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;写完自己用了段时间，还行。
-	</description></item><item><title>[分享创造] 最近迷《大明王朝 1566》《雍正王朝》，写了个给嘉靖、雍正上奏的网站</title><link>https://www.v2ex.com/t/1255351#reply17</link><guid>tag:www.v2ex.com,2026-11-08:/t/1255351</guid><pubDate>Sun, 08 Nov 2026 07:55:23 +0000</pubDate><description>
-	&lt;p&gt;最近在看《大明王朝 1566 》和《雍正王朝》，奏折、朱批看多了，就写了个小网站：选一位皇帝（嘉靖 / 康熙 / 雍正），用白话写你要奏的事，师爷帮你誊成文言奏折，封进折匣递上去，等皇帝亲笔批回来。&lt;/p&gt;
-&lt;p&gt;我跟嘉靖说这几天天气很好，他批：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;讀了你的奏章，知道你體諒我修道的心意。但天道深奧，不是單純看天氣好就能理解的。你們應該更加謹慎，努力修煉道教儀式，來回應上天的恩賜。批准你的建議。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;img alt="" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://shangzou.000ooo.ooo/screenshots/jiajing-weather.jpg"/&gt;&lt;/p&gt;
-&lt;p&gt;尽量照着史实做的几个地方：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;竖排，自右向左，经折装。写到「皇上」「聖恩」就另起一行高出两格（抬头），自称的「臣」「奴才」写成小字偏在右边&lt;/li&gt;
-&lt;li&gt;嘉靖的本章走 通政司 → 内阁票拟（首辅按年份换，严嵩、徐阶……）→ 西苑 → 司礼监批红，他不想理你就留中不发&lt;/li&gt;
-&lt;li&gt;雍正七年以后的折子才会经过军机处；雍正会夹批、圈点，还会骂人&lt;/li&gt;
-&lt;li&gt;皇帝只知道当年为止的事，选嘉靖四十五年上疏，海瑞刚骂过他&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;纯静态页面，挂在 GitHub Pages 上，AI 是用一行 script 接的 OneTag AI ，代码开源： &lt;a href="https://github.com/fengyiqicoder/shangzou" rel="nofollow"&gt;https://github.com/fengyiqicoder/shangzou&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;地址： &lt;a href="https://shangzou.000ooo.ooo" rel="nofollow"&gt;https://shangzou.000ooo.ooo&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;欢迎去给雍正上一本，被骂了记得截图回来 😂&lt;/p&gt;
-
-	</description></item><item><title>[程序员] 突然想起来, 微软居然没拿出一个能用得模型?</title><link>https://www.v2ex.com/t/1255350#reply28</link><guid>tag:www.v2ex.com,2026-11-08:/t/1255350</guid><pubDate>Sun, 08 Nov 2026 07:45:39 +0000</pubDate><description>
-	&lt;p&gt;不正常啊&lt;/p&gt;
-&lt;p&gt;按理微软也投入大量资源, 本来收购 github 也有优势&lt;/p&gt;
-&lt;p&gt;copilot 早期也发展可以, 但感觉自从 A/, Openai 占主流彻底没啥声音了啊&lt;/p&gt;
-
-	</description></item><item><title>[分享发现] Antigravity 发重置了</title><link>https://www.v2ex.com/t/1255349#reply0</link><guid>tag:www.v2ex.com,2026-11-08:/t/1255349</guid><pubDate>Sun, 08 Nov 2026 07:44:42 +0000</pubDate><description>
-	现在浓眉大眼的 Open AI 也开始封号了&lt;br /&gt;需要弄些预案了，谷歌的 Antigravity 也许是个还凑合的选择&lt;br /&gt;昨天 Antigravity 的负责人发了一批重置，可以薅一波&lt;br /&gt;&lt;a target="_blank" href="https://antigravityreset.com/（做了个工具，方便监控重置提醒）" rel="nofollow noopener"&gt;https://antigravityreset.com/（做了个工具，方便监控重置提醒）&lt;/a&gt;
-	</description></item><item><title>[问与答] 日常用 gpt 设计素材做 ppt，有没有必要换 macbook</title><link>https://www.v2ex.com/t/1255347#reply4</link><guid>tag:www.v2ex.com,2026-11-08:/t/1255347</guid><pubDate>Sun, 08 Nov 2026 07:40:58 +0000</pubDate><description>
-	好像这类工具 mac 端会更好些？
-	</description></item><item><title>[分享创造] ShipFree：给学生开发者的免费额度目录站，每周重新核验，公开记录每次变动</title><link>https://www.v2ex.com/t/1255346#reply0</link><guid>tag:www.v2ex.com,2026-11-08:/t/1255346</guid><pubDate>Sun, 08 Nov 2026 07:31:03 +0000</pubDate><description>
-	
-	</description></item><item><title>[VXNA] 申请收录个人博客： https://blog.bigfisharc.cn/</title><link>https://www.v2ex.com/t/1255344#reply0</link><guid>tag:www.v2ex.com,2026-11-08:/t/1255344</guid><pubDate>Sun, 08 Nov 2026 07:25:18 +0000</pubDate><description>
-	
 	</description></item></channel></rss>
