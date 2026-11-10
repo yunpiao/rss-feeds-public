@@ -1,1131 +1,408 @@
 <?xml version='1.0' encoding='utf-8'?>
-<rss version="2.0"><channel><title>V2EX</title><item><title>[Claude] fable 正式发布 65 分继续登顶榜首</title><link>https://www.v2ex.com/t/1255708#reply0</link><guid>tag:www.v2ex.com,2026-11-09:/t/1255708</guid><pubDate>Mon, 09 Nov 2026 20:03:18 +0000</pubDate><description>
-	&lt;p&gt;A/大家虽然骂归骂
-但是模型给力 蹬起来也爽 &lt;/p&gt;
-&lt;hr/&gt;
-&lt;p&gt;反观 o/ 折腾来折腾去 新模型也不敢先发布&lt;/p&gt;
+<rss version="2.0"><channel><title>V2EX</title><item><title>[推广] dsf 上游，提供官 key 直连， 3.5 折</title><link>https://www.v2ex.com/t/1255789#reply0</link><guid>tag:www.v2ex.com,2026-11-10:/t/1255789</guid><pubDate>Tue, 10 Nov 2026 02:40:58 +0000</pubDate><description>
+	同官方峰谷价，缓存命中 95%，3.5 折直出，官 key 直连，质量保证，隐私无忧&lt;br /&gt;&lt;br /&gt;欢迎中转老板和公司采购，可以开票&lt;br /&gt;&lt;br /&gt;微信号（ base64 ）：eXlxYW5kemhq
+	</description></item><item><title>[Mac Studio] 收 Mac Studio M1/M2 Max 64G+1T</title><link>https://www.v2ex.com/t/1255787#reply0</link><guid>tag:www.v2ex.com,2026-11-10:/t/1255787</guid><pubDate>Tue, 10 Nov 2026 02:39:05 +0000</pubDate><description>
+	
+	</description></item><item><title>[程序员] AI 写代码会不会暴雷</title><link>https://www.v2ex.com/t/1255786#reply0</link><guid>tag:www.v2ex.com,2026-11-10:/t/1255786</guid><pubDate>Tue, 10 Nov 2026 02:38:41 +0000</pubDate><description>
+	最近网上经常刷到“程序员的最后一个冬天”。&lt;br /&gt;话说 AI 写的代码你们会看吗，提交代码时慌不慌。&lt;br /&gt;&lt;br /&gt;现在别人问你这个功能怎么实现的，你会怎么说？&lt;br /&gt;1.阿巴阿巴阿巴&lt;br /&gt;2.《和我的 agent 说去吧》&lt;br /&gt;&lt;br /&gt;当所有古法编程代码都被 AI 改了一遍后是不是已经没人知道代码写的什么了&lt;br /&gt;当古法编程的人都被裁员取代是不是没人懂这些了，出了问题 AI 兜得住吗
+	</description></item><item><title>[问与答] 奇怪了，我的 GPT 5x pro 按理说今天已经过期了，怎么还能用</title><link>https://www.v2ex.com/t/1255784#reply0</link><guid>tag:www.v2ex.com,2026-11-10:/t/1255784</guid><pubDate>Tue, 10 Nov 2026 02:37:40 +0000</pubDate><description>
+	
+	</description></item><item><title>[分享创造] 写了个跨平台进程管理工具 ProcHub</title><link>https://www.v2ex.com/t/1255783#reply0</link><guid>tag:www.v2ex.com,2026-11-10:/t/1255783</guid><pubDate>Tue, 10 Nov 2026 02:37:04 +0000</pubDate><description>
+	&lt;p&gt;机器上常驻几个自建服务，以前每次开机都要挨个手动点一遍。&lt;/p&gt;
+&lt;p&gt;现成的也试过，有的只支持一个系统，有的配置文件写起来比服务本身还麻烦，索性自己写了。叫 ProcHub ，Wails + Go + Vue 3 ，Apache 2.0 ，代码在 &lt;a href="https://github.com/modstart-lib/prochub" rel="nofollow"&gt;https://github.com/modstart-lib/prochub&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="ProcHub 主界面" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://open-cdn.tecmz.com/theme/apps/prochub/images/home.png"/&gt;&lt;/p&gt;
+&lt;p&gt;界面就长这样。加进程时填命令、参数、工作目录，启动停止重启都在列表里点，停之前会让进程自己退出。挂了可以按 always 、on_failure 、never 自动重启，PID 、重启次数、上次的报错都显示在行里。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="设置页" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://open-cdn.tecmz.com/theme/apps/prochub/images/setting.png"/&gt;&lt;/p&gt;
+&lt;p&gt;开机自启没做统一封装，三个系统各用各的机制：macOS 走 LaunchAgent ，Linux 用 XDG Autostart ，Windows 写注册表。想过抽一层，试了两天放弃了，出问题还是得看系统自己的东西。&lt;/p&gt;
+&lt;p&gt;日志按进程存在数据目录，stdout 和 stderr 分开，界面关了也能用编辑器打开，平时就 tail -f 。&lt;/p&gt;
+&lt;p&gt;另外有 CLI：process list 、start 、stop ，logs 支持 --follow ，status 看状态。WSL 的自启能单独关，不用跟着整机开机一起等。&lt;/p&gt;
+&lt;p&gt;没做好的地方：进程依赖没排，谁先起谁后起得自己管； Windows 上优雅关闭经常不灵，只能强杀。&lt;/p&gt;
 
-	</description></item><item><title>[Claude] fable 5.2 都试了吗?</title><link>https://www.v2ex.com/t/1255707#reply1</link><guid>tag:www.v2ex.com,2026-11-09:/t/1255707</guid><pubDate>Mon, 09 Nov 2026 19:38:20 +0000</pubDate><description>
-	&lt;p&gt;个人感受, 没感觉有太大提升, 可能 opus 5.5 已经很强了&lt;/p&gt;
+	</description></item><item><title>[分享创造] 为了更早听到用户的反馈，同时又不想每个产品都折腾一遍，我做了一个一键接入的交流平台 tell.st，也欢迎大家接入使用～</title><link>https://www.v2ex.com/t/1255782#reply0</link><guid>tag:www.v2ex.com,2026-11-10:/t/1255782</guid><pubDate>Tue, 10 Nov 2026 02:35:56 +0000</pubDate><description>
+	做了好几款产品之后，越来越觉得：更早听见用户的真实声音、与用户交流，比埋头加功能重要得多。&lt;br /&gt;&lt;br /&gt;但每做一个新产品，都要从头搭一套反馈后台和邮件通知，实在太折腾了。于是我做了 &lt;a target="_blank" href="http://tell.st" rel="nofollow noopener"&gt;tell.st&lt;/a&gt; 。&lt;br /&gt;&lt;br /&gt;直接给你的 Coding Agent 发一段指令，就能为网站接入一个完整的用户交流空间：&lt;br /&gt;&lt;br /&gt;- 访客免注册就能提建议（支持公开讨论或私密反馈）&lt;br /&gt;- 支持投票、站长回复、状态跟进与邮件通知&lt;br /&gt;- 免费接入认领，开箱即用（还支持页面截图标注与外观自适应）&lt;br /&gt;&lt;br /&gt;不用再耗费精力自建后台，把时间留给真正的业务。&lt;br /&gt;&lt;br /&gt;我自己的几款产品已经接上了，可以来 &lt;a target="_blank" href="https://tell.st/explore" rel="nofollow noopener"&gt;https://tell.st/explore&lt;/a&gt; 看看实际效果。&lt;br /&gt;&lt;br /&gt;想早点听到用户声音的，可以试试 &lt;a target="_blank" href="https://tell.st" rel="nofollow noopener"&gt;https://tell.st&lt;/a&gt;
+	</description></item><item><title>[Apple] AppleTV 能自签吗？</title><link>https://www.v2ex.com/t/1255781#reply1</link><guid>tag:www.v2ex.com,2026-11-10:/t/1255781</guid><pubDate>Tue, 10 Nov 2026 02:31:16 +0000</pubDate><description>
+	想买个新版 AppleTV ，想问一下有经验的老哥，Apple TV 是否支持侧载，自签，自己安装各种破解软件和开源的包。我只自签过 iOS 。
+	</description></item><item><title>[问与答] 小红书薯条推广显示需要有「教学辅助工具」或「技能培训」或「在线教育平台」资质的账号 才能投。问题：如何在不注册公司的情况下拿到这个资质或者找到有这个资质的账号投放？实际采纳的建议或者真正解决问题的建议 付费 500+</title><link>https://www.v2ex.com/t/1255780#reply2</link><guid>tag:www.v2ex.com,2026-11-10:/t/1255780</guid><pubDate>Tue, 10 Nov 2026 02:31:15 +0000</pubDate><description>
+	
+	</description></item><item><title>[问与答] Mac 无线鼠标如何选择</title><link>https://www.v2ex.com/t/1255779#reply2</link><guid>tag:www.v2ex.com,2026-11-10:/t/1255779</guid><pubDate>Tue, 10 Nov 2026 02:29:31 +0000</pubDate><description>
+	之前尝试过迈从和罗技的无线，但是连 Mac 总感觉卡卡的，连 windows 很流畅；&lt;br /&gt;然后买了触控板，感觉还行，但是操作没有鼠标快，我觉得这个是从使用上杜绝了卡的问题&lt;br /&gt;大家有好用的连 Mac 的无线鼠标推荐吗
+	</description></item><item><title>[酷工作] 远程技术招聘｜ 36 类岗位，覆盖 Go、 Java 、Flutter、AI、算法与安全</title><link>https://www.v2ex.com/t/1255777#reply0</link><guid>tag:www.v2ex.com,2026-11-10:/t/1255777</guid><pubDate>Tue, 10 Nov 2026 02:25:08 +0000</pubDate><description>
+	技术岗位招聘，欢迎投递或推荐合适的人选。&lt;br /&gt;&lt;br /&gt;岗位名称及薪资如下：&lt;br /&gt;&lt;br /&gt;H5 游戏开发工程师（海外社区方向）｜ 20–25K&lt;br /&gt;iOS ／ Flutter 开发工程师｜ 21–35K&lt;br /&gt;高级 Flutter 工程师（ Android ／ iOS ／ Web ）｜ 20–25K&lt;br /&gt;高级 Flutter 开发工程师｜ 18–30K&lt;br /&gt;Flutter 客户端工程师｜面议&lt;br /&gt;高级前端开发｜ 20–30K&lt;br /&gt;前端开发工程师（ SEO 方向）｜面议&lt;br /&gt;Golang 后端工程师｜面议&lt;br /&gt;后端工程师（ Golang ＋高级）｜ 25–40K&lt;br /&gt;高级后端开发｜ 20–30K&lt;br /&gt;高级 Java 工程师｜ 25–40K&lt;br /&gt;SpringBoot 后端开发工程师（ AI 应用方向）｜ 20–30K&lt;br /&gt;高级服务器开发工程师｜ 20–30K&lt;br /&gt;高级 PHP 开发工程师｜ 18–25K&lt;br /&gt;高级全栈工程师（ PHP 为主，Flutter ／ Vue 方向）｜ 36–42K&lt;br /&gt;AI 全栈工程师｜ 25–30K&lt;br /&gt;AI 全栈开发工程师（后端 Go 方向）｜ 20–30 ，原表未标单位，单位待确认&lt;br /&gt;AI 研发工程师｜面议＋奖金&lt;br /&gt;前线交付工程师（ FDE ）｜ 30–45K&lt;br /&gt;技术负责人助理｜ 20–35K&lt;br /&gt;运维工程师（ SRE ／混合云）｜ 30–35K&lt;br /&gt;高级算法工程师｜ 35–50K&lt;br /&gt;算法工程师（ TTS 真人语音合成方向）｜ 22–35K&lt;br /&gt;算法工程师（生图生视频及人物一致性方向）｜ 22–35K&lt;br /&gt;AI Algorithm Engineer ｜年薪 20 万美元以内&lt;br /&gt;Prompt 优化工程师｜ 18–30K&lt;br /&gt;高级安全攻防工程师（管理经验优先）｜ 40–150K&lt;br /&gt;代码审计工程师（ Go 后端、安全与 AI 方向）｜ 18–28K&lt;br /&gt;测试工程师｜ 6–15K ／ 10–20K&lt;br /&gt;测试工程师（视频播放器方向）｜ 18–22K&lt;br /&gt;高级测试工程师｜ 20–30K&lt;br /&gt;游戏 Mod 适配工程师｜ 10–15K&lt;br /&gt;SEO 工程师｜ 20–25K&lt;br /&gt;SEO 技术工程师｜ 10–15K&lt;br /&gt;双语技术支持专家／中英文客服｜ 10–15K&lt;br /&gt;技术项目经理（游戏运维中台方向）｜ 15–20K&lt;br /&gt;&lt;br /&gt;远程办公，具体岗位职责、任职要求及薪资详情可通过邮箱咨询。&lt;br /&gt;&lt;br /&gt;投递邮箱： zcgs2149@gmail.com&lt;br /&gt;请附简历，并备注意向岗位、主技术栈、期望薪资与到岗时间；有项目链接、GitHub 或作品集可一并附上。
+	</description></item><item><title>[分享发现] libgdiplus 吞字 bug</title><link>https://www.v2ex.com/t/1255776#reply0</link><guid>tag:www.v2ex.com,2026-11-10:/t/1255776</guid><pubDate>Tue, 10 Nov 2026 02:22:43 +0000</pubDate><description>
+	&lt;p&gt;这几天想把一个 dotNET WinForm 程序移植到 Linux 平台，界面上某些标签最后一个字老是不显示。经过分析定位到了 libgdiplus 并完成修复。鉴于 libgdiplus 已经凉了上游不太可能修复，发出来给大家闭坑。&lt;/p&gt;
+&lt;h1&gt;环境&lt;/h1&gt;
+&lt;p&gt;银河麒麟 V10 SP1 （ glibc 2.31 ，x86_64 ）、libgdiplus 6.0.4 、Mono 6.8 。&lt;/p&gt;
+&lt;h1&gt;复现&lt;/h1&gt;
+&lt;pre&gt;&lt;code class="language-c"&gt;#include &amp;lt;stdio.h&amp;gt;
+#include &amp;lt;ctype.h&amp;gt;
+#include &amp;lt;locale.h&amp;gt;
+int main(void) {
+    setlocale(LC_ALL, "");
+    printf("isspace(般) = %d\n", isspace(0x822C));
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;$ gcc demo.c -o a.out
+$ LC_ALL=zh_CN.UTF-8 ./a.out
+isspace(般) = 8192      ← 8192 = 0x2000 = _ISspace ，被判成空格了
+$ LC_ALL=C ./a.out
+isspace(般) = 0
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;值和库相同，仅仅 locale 不同结果就不一致。在 &lt;code&gt;zh_CN.UTF-8&lt;/code&gt; / &lt;code&gt;en_US.UTF-8&lt;/code&gt; + glibc 2.31 上实测，这 32 个常用字作为&lt;strong&gt;末字&lt;/strong&gt;时会被吞：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;也 自 而 第 美 从 但 前 行 动 位 名 使 力 公 做
+十 像 加 表 克 员 稜 先 住 色 候 变 呢 低 般 健
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1&gt;bug 位置&lt;/h1&gt;
+&lt;p&gt;拉取 libgdiplus 6.0.4 源码后一路测试，定位到了 &lt;code&gt;src/text-cairo.c&lt;/code&gt; 的&lt;br/&gt;
+&lt;code&gt;MeasureString()&lt;/code&gt;：&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-c"&gt;/* 除非指定要量尾随空格，否则裁掉（ GDI+ 的老行为，issue #80680 ） */
+if ((format-&amp;gt;formatFlags &amp;amp; StringFormatFlagsMeasureTrailingSpaces) == 0) {
+    while ((StringLen &amp;gt; 0) &amp;amp;&amp;amp; (isspace ((int) ( *(Src + StringLen - 1)))))
+        StringLen--;
+    if (StringLen == 0)
+        StringLen = 1;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;Src&lt;/code&gt; 是 &lt;code&gt;GDIPCONST WCHAR *&lt;/code&gt;，也就是 &lt;strong&gt;16 位宽的 UTF-16 码元&lt;/strong&gt;；而 &lt;code&gt;isspace()&lt;/code&gt; 是 &lt;code&gt;ctype.h&lt;/code&gt;&lt;br/&gt;
+里的&lt;strong&gt;窄字符&lt;/strong&gt;函数，只对 &lt;code&gt;EOF&lt;/code&gt; 和 0–255 有定义。把 &lt;code&gt;般&lt;/code&gt;（ U+822C = 33324 ）传进去，是标准的&lt;br/&gt;
+&lt;strong&gt;未定义行为&lt;/strong&gt;。&lt;/p&gt;
+&lt;h1&gt;修复&lt;/h1&gt;
+&lt;pre&gt;&lt;code class="language-diff"&gt;-		while ((StringLen &amp;gt; 0) &amp;amp;&amp;amp; (isspace ((int) ( *(Src + StringLen - 1)))))
++		while ((StringLen &amp;gt; 0) &amp;amp;&amp;amp; (g_unichar_isspace ((gunichar)(*(Src + StringLen - 1)))))
+ 			StringLen--;
+&lt;/code&gt;&lt;/pre&gt;
 
-	</description></item><item><title>[分享创造] 用 Codex 做了个圣诞交换礼物抽签小工具，分享一下</title><link>https://www.v2ex.com/t/1255706#reply0</link><guid>tag:www.v2ex.com,2026-11-09:/t/1255706</guid><pubDate>Mon, 09 Nov 2026 19:09:48 +0000</pubDate><description>
-	&lt;p&gt;之前一直做内容站和联盟站，最近想换个方向，试做一个工具站&lt;/p&gt;
-&lt;p&gt;刚好圣诞节也快到了，就想有没有什么抽签、聚会小游戏之类的需求，可以拿来做第一次尝试.最后选了交换礼物抽签，也就是海外比较常见的 Secret Santa：一群人参加，每个人抽到一个人，给对方准备礼物.&lt;/p&gt;
-&lt;p&gt;功能简单, 第一次上手容易 填上活动名称、参加的人，再设置一下规则，就可以抽签了。比如情侣之间不想互相抽到，就把这两个人设成不能配对。每个人都会送出一份、收到一份，也不会抽到自己.&lt;/p&gt;
-&lt;p&gt;这些基础功能，DrawNames 之类的网站都有。我自己多想了了一点的是就抽完以后怎么分享&lt;/p&gt;
-&lt;p&gt;我把它做成了每个人都有一个单独的邀请链接，可以分别发给来参加聚会的人.对方打开，就能看到时间、地点、预算这些信息，再点一下看自己抽到了谁
-组织者不用抽完签以后，再挨个打字告诉大家.不过组织者自己是可以查看全部结果的&lt;/p&gt;
-&lt;p&gt;网站叫 &lt;strong&gt;Gift Name Picker&lt;/strong&gt;，目前是英文的，免费，不用注册.如果公司里面有办互相抽奖有可以用一下：
-&lt;a href="https://giftnamepicker.com/" rel="nofollow"&gt;https://giftnamepicker.com/&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;这次做下来，我还挺喜欢现在这个 UI 的!&lt;/p&gt;
-&lt;p&gt;整个站都是用 Codex 第一版就是那种比较常见的、 墨绿色,很像鹈鹕骑单车的风格，但我觉得少了点自己的风格&lt;/p&gt;
-&lt;p&gt;后来就去 Behance 和 Dribbble 找了喜欢的设计，截个图丢给 Codex ，它着照那个感觉改。改完反而挺惊喜的，配色、favicon ，还有页面上的一些小装饰，都一起帮我搭出来了.来回调了一版，就变成了现在这样。&lt;/p&gt;
-&lt;p&gt;现在网站主要就是三块：
-抽签工具、其他交换礼物玩法的介绍，还有礼品推荐.其他玩法目前只是介绍，还没做成工具。&lt;/p&gt;
-&lt;p&gt;礼品推荐页里放了联盟链接，用这个方式变现, 现在是放 Amazon 的,但其实 Temu 佣金比较高,还在纠结&lt;/p&gt;
-&lt;p&gt;我之前做联盟站，所以还是会往这个方向想：既然大家是已经在组织交换礼物了，接下来可能就要考虑买什么，看看这两个需求能不能接起来。当然，目前只是这么想，能不能赚到钱还不知道.&lt;/p&gt;
-&lt;p&gt;至于广告，我的感觉是，这种工具很多人可能一年就来用一两次，暂时也没太指望靠广告赚钱。&lt;/p&gt;
-&lt;p&gt;后面还想加一个 Wishlist ，让参加的人填一下自己想收到什么。这样抽到他的人也有个参考，不用完全靠猜, 我看其他同类产品里有这个功能，感觉挺适合这个场景&lt;/p&gt;
-&lt;p&gt;第一次做工具站，先拿一个小需求练练手，如果你们组织过交换礼物，挺想知道实际最麻烦的是哪一步，有没有其他场景的类似需求之类的&lt;/p&gt;
+	</description></item><item><title>[iPhone] 国行 esim 也可以突破 2 张和境外限制了</title><link>https://www.v2ex.com/t/1255775#reply3</link><guid>tag:www.v2ex.com,2026-11-10:/t/1255775</guid><pubDate>Tue, 10 Nov 2026 02:22:08 +0000</pubDate><description>
+	&lt;p&gt;&lt;a href="https://github.com/huamidev/GestaltX/tree/main" rel="nofollow"&gt;https://github.com/huamidev/GestaltX/tree/main&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;某书上已实测&lt;/p&gt;
 
-	</description></item><item><title>[Claude] 快兩個月第一次開通不需要手機號驗證的 Claude Ultra</title><link>https://www.v2ex.com/t/1255705#reply0</link><guid>tag:www.v2ex.com,2026-11-09:/t/1255705</guid><pubDate>Mon, 09 Nov 2026 18:13:35 +0000</pubDate><description>
-	&lt;p&gt;自從把我的卡給號商大量開以後，我自己開 Max 20 都至少要手機號驗證了。剛剛在閒魚上接了一單代註冊，這次居然沒要手機號。自從號商搞爛後快兩個月了第一次可以。 其實前幾天也有一次 Claude 沒問手機號的，但是 Stripe 風控攔住了。估計又是號商做了什麼讓 Stripe 也加強風控了。&lt;/p&gt;
-&lt;p&gt;但是你從 Anthropic 的角度想，它不可能讓每一個美國用戶都去做 KYC 的。但是新號一上來就開 Ultra 觸發手機驗證似乎已經百分百了。沒想到還是有號可以不用驗證手機號的。&lt;/p&gt;
+	</description></item><item><title>[程序员] Claude &amp; GPT &amp; DS 模型锐评</title><link>https://www.v2ex.com/t/1255774#reply0</link><guid>tag:www.v2ex.com,2026-11-10:/t/1255774</guid><pubDate>Tue, 10 Nov 2026 02:19:53 +0000</pubDate><description>
+	&lt;p&gt;目前用了累计几万块人民币的 API ，近一月 200 亿 tokens&lt;/p&gt;
+&lt;p&gt;Claude opus 5.5: 前端的神，平时主对话窗口喜欢用，对话起来比较舒适，不会像 gpt 那样无限核验导致任务无法推进，但是有时候做事做一半然后就不输出了，主动能力不强&lt;/p&gt;
+&lt;p&gt;Sonnet 5.5：写前端的便宜替代品，适合 opus 打样之后，sonnet 负责一些内容的改动，同时保持风格一致&lt;/p&gt;
+&lt;p&gt;gpt sol 6.1：后端的神，解决了几乎 99%的后端 BUG ，只要有合适的 DEBUG 手段都能解，不适合作为对话模型，罗里吧嗦废话太多，而且来回核验浪费 token ，适合干活&lt;/p&gt;
+&lt;p&gt;terra 6.1：后端替代品，适合批量写普通的后端逻辑，有 bug 再请 sol 来解&lt;/p&gt;
+&lt;p&gt;deepseek flash：适合跑繁琐的构建测试验收 cicd ，便宜好用，让主会话写详细的提示词和验收还有脚本，基本上跑起来没问题&lt;/p&gt;
+&lt;p&gt;fable &amp;amp; astra：decode 速度太慢，而且价格五倍以上，平时很少用，实际上真遇到 sol 级别解不了的 bug ，astra 上来也基本上解不出来。fable 前端打不过 opus5.5&lt;/p&gt;
 
-	</description></item><item><title>[程序员] cursor 重置了，还没重新计算重置天数</title><link>https://www.v2ex.com/t/1255704#reply0</link><guid>tag:www.v2ex.com,2026-11-09:/t/1255704</guid><pubDate>Mon, 09 Nov 2026 17:24:37 +0000</pubDate><description>
-	&lt;p&gt;Musk yyds!&lt;/p&gt;
+	</description></item><item><title>[分享创造] 你们有没有为了报销，把上个月的订票短信翻一遍？</title><link>https://www.v2ex.com/t/1255773#reply0</link><guid>tag:www.v2ex.com,2026-11-10:/t/1255773</guid><pubDate>Tue, 10 Nov 2026 02:18:27 +0000</pubDate><description>
+	我在北京驻场，家在桂林，一个月来回两三趟。以前每个月都要专门找一段时间干这件事，还老是漏。&lt;br /&gt;我做了一个小程序在记账的时候就勾选了报销等到月底的时候就可以直接将数据导出成 json 然后让 AI 做报销单。&lt;br /&gt;&lt;a target="_blank" href="https://i.imgur.com/RXEUXo8.png" rel="nofollow noopener" target="_blank"&gt;&lt;img src="https://i.imgur.com/RXEUXo8.png" class="embedded_image" rel="noreferrer"&gt;&lt;/a&gt;&lt;br /&gt;&lt;a target="_blank" href="https://i.imgur.com/750BFp0.png" rel="nofollow noopener" target="_blank"&gt;&lt;img src="https://i.imgur.com/750BFp0.png" class="embedded_image" rel="noreferrer"&gt;&lt;/a&gt;&lt;br /&gt;&lt;a target="_blank" href="https://i.imgur.com/3OKBSHC.png" rel="nofollow noopener" target="_blank"&gt;&lt;img src="https://i.imgur.com/3OKBSHC.png" class="embedded_image" rel="noreferrer"&gt;&lt;/a&gt;
+	</description></item><item><title>[问与答] Win11 笔记本主屏幕最高分辨率比副屏高，副屏播放视频会有点卡顿，怎样才能比较好的解决？</title><link>https://www.v2ex.com/t/1255772#reply0</link><guid>tag:www.v2ex.com,2026-11-10:/t/1255772</guid><pubDate>Tue, 10 Nov 2026 02:18:00 +0000</pubDate><description>
+	&lt;p&gt;也不太想调低主屏分辨率，请问大家有比较好的办法解决么？&lt;/p&gt;
 
-	</description></item><item><title>[问与答] 请教个关于代理软件 三级或四级选择问题</title><link>https://www.v2ex.com/t/1255703#reply1</link><guid>tag:www.v2ex.com,2026-11-09:/t/1255703</guid><pubDate>Mon, 09 Nov 2026 17:06:44 +0000</pubDate><description>
-	我希望代理软件支持「应用 → 订阅 → 地区 → 节点」的四级独立选择，具体需求如下：&lt;br /&gt;&lt;br /&gt;同时使用多个订阅&lt;br /&gt;可以同时添加并使用订阅 A 、B 、C 等多个订阅。&lt;br /&gt;&lt;br /&gt;为每个应用独立指定订阅、地区和节点&lt;br /&gt;例如：&lt;br /&gt;&lt;br /&gt;应用 1 → 订阅 A → 香港地区 → 节点 11&lt;br /&gt;应用 2 → 订阅 A → 新加坡地区 → 节点 12&lt;br /&gt;应用 3 → 订阅 B → 香港地区 → 节点 3&lt;br /&gt;应用 4 → 订阅 C → 美国地区 → 节点 1&lt;br /&gt;即使多个应用使用同一个订阅，也能分别选择不同地区、不同节点，互不影响。&lt;br /&gt;&lt;br /&gt;支持只选地区，由软件自动选择最佳节点&lt;br /&gt;节点应当是可选项。例如，将应用 1 设置为「订阅 A → 香港地区」，不手动指定节点，软件就会在该订阅的香港节点中，根据延迟、可用性等指标自动选择质量最好的节点，并在节点质量变化或失效时自动切换。&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;这个目前市面上有软件能做到吗
-	</description></item><item><title>[硅基生活] 本地部署原生精度 DeepSeek-V4.1-Flash-1017 方案</title><link>https://www.v2ex.com/t/1255702#reply0</link><guid>tag:www.v2ex.com,2026-11-09:/t/1255702</guid><pubDate>Mon, 09 Nov 2026 16:49:23 +0000</pubDate><description>
-	&lt;p&gt;单台 Mac Studio M5U 512G 可以完整运行 dsf v4.1 ，而且能跑权重与官方完全一致的版本。最佳组合是：oMLX 0.7.3 + &lt;a href="https://huggingface.co/mlx-community/DeepSeek-V4.1-Flash-1017-oQ4e-ngram-mtp" rel="nofollow"&gt;oQ4e-ngram-mtp&lt;/a&gt;（常驻约 288 GiB ，Engram 表放 SSD 按需读取），打开 DSpark 投机解码、CED prefill 和前缀缓存。&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;项目&lt;/th&gt;
-&lt;th&gt;选择&lt;/th&gt;
-&lt;th&gt;理由&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;推理引擎&lt;/td&gt;
-&lt;td&gt;oMLX 0.7.3 或更新（固定版本）&lt;/td&gt;
-&lt;td&gt;完整支持 V4.1 的 Engram 、CSA2 、DSpark ； prefill 已用上 M5 的 GPU 张量单元&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;模型&lt;/td&gt;
-&lt;td&gt;mlx-community/DeepSeek-V4.1-Flash-1017-oQ4e-ngram-mtp&lt;/td&gt;
-&lt;td&gt;专家、主干和 Engram 都保持官方原生精度，没有额外量化；包含 DSpark 权重&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Engram 表&lt;/td&gt;
-&lt;td&gt;放内置 SSD ，按需读取&lt;/td&gt;
-&lt;td&gt;每个 token 每张表只读一行，几乎不影响 decode ；省下约 189 GiB 内存&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;投机解码&lt;/td&gt;
-&lt;td&gt;DSpark ，每轮草拟 5 个 token&lt;/td&gt;
-&lt;td&gt;单机最大的提速手段&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Prefill&lt;/td&gt;
-&lt;td&gt;CED prefill + INT8 Activation Prefill&lt;/td&gt;
-&lt;td&gt;1M 上下文时 prefill 时间是主要瓶颈&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;缓存&lt;/td&gt;
-&lt;td&gt;前缀缓存 + SSD 快照&lt;/td&gt;
-&lt;td&gt;agent 多轮对话不用每次重算整段上下文&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;&lt;p&gt;上下文按 1M token 规划。内存余量约 180 GiB ，完全够用；冷启动 prefill 约需 6–8 分钟，配置和用法见第 6 节。&lt;/p&gt;
-&lt;p&gt;预期性能如下。prefill 和并发数据来自 oMLX 0.7.3 在 M5 Ultra 上的实测（发布说明未注明量化版本）；&lt;strong&gt;单路 decode 仍是推算值&lt;/strong&gt;，拿到机器后用第 8 节的流程替换成实测值。&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;指标&lt;/th&gt;
-&lt;th&gt;数值&lt;/th&gt;
-&lt;th&gt;依据&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;decode ，不开 DSpark&lt;/td&gt;
-&lt;td&gt;约 55–60 tok/s （推算）&lt;/td&gt;
-&lt;td&gt;M5 Ultra 实测：3.0bpw 版本 67–72 tok/s （ mlx-serve ）； 4-bit 每 token 多读约 20% 权重&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;decode ，开 DSpark&lt;/td&gt;
-&lt;td&gt;约 80–110 tok/s （推算，代码偏高）&lt;/td&gt;
-&lt;td&gt;同一实测：3.0bpw 版本开 DSpark 96–126 tok/s&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;prefill ，128K&lt;/td&gt;
-&lt;td&gt;2,390 tok/s （实测）&lt;/td&gt;
-&lt;td&gt;oMLX 0.7.3 ，开 Engram 预取&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;prefill ，64K / 195K&lt;/td&gt;
-&lt;td&gt;3,507 / 3,200 tok/s （实测）&lt;/td&gt;
-&lt;td&gt;oMLX 0.7.3 ，开 INT8 Activation Prefill&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;冷启动 TTFT ，8K / 128K / 1M&lt;/td&gt;
-&lt;td&gt;约 3 秒 / 45–55 秒 / 6–8 分钟&lt;/td&gt;
-&lt;td&gt;由上两行推算&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;12 个并发请求合计 decode&lt;/td&gt;
-&lt;td&gt;125.7 tok/s （实测）&lt;/td&gt;
-&lt;td&gt;oMLX 0.7.3&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;峰值功耗&lt;/td&gt;
-&lt;td&gt;约 300 W&lt;/td&gt;
-&lt;td&gt;Apple 论文实测&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;&lt;h2&gt;模型特点与内存预算&lt;/h2&gt;
-&lt;p&gt;oQ4e-ngram-mtp 共 476.8 GiB ，其中 Engram 表 188.8 GiB 留在 SSD 上按需读取，常驻内存约 288 GiB 。把 GPU 可用内存上限调到约 469 GiB 后，还剩约 180 GiB 给 KV cache 、prefill 缓冲、并发会话和 MLX 缓存。&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;组件&lt;/th&gt;
-&lt;th&gt;存储大小&lt;/th&gt;
-&lt;th&gt;位置&lt;/th&gt;
-&lt;th&gt;说明&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;语言主干&lt;/td&gt;
-&lt;td&gt;279.5 GiB&lt;/td&gt;
-&lt;td&gt;内存&lt;/td&gt;
-&lt;td&gt;路由专家 MXFP4 ，注意力和稠密层 MXFP8 ，都是官方原生精度&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;DSpark 头&lt;/td&gt;
-&lt;td&gt;7.5 GiB&lt;/td&gt;
-&lt;td&gt;内存&lt;/td&gt;
-&lt;td&gt;投机解码要用&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;视觉编码器&lt;/td&gt;
-&lt;td&gt;0.9 GiB&lt;/td&gt;
-&lt;td&gt;内存&lt;/td&gt;
-&lt;td&gt;图片输入要用&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Engram 表&lt;/td&gt;
-&lt;td&gt;188.8 GiB&lt;/td&gt;
-&lt;td&gt;内置 SSD&lt;/td&gt;
-&lt;td&gt;保持官方 FP8 （ E4M3 + 每 32 通道一个 E8M0 scale ），无损&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;strong&gt;合计&lt;/strong&gt;&lt;/td&gt;
-&lt;td&gt;&lt;strong&gt;476.8 GiB&lt;/strong&gt;&lt;/td&gt;
-&lt;td&gt;常驻约 288 GiB&lt;/td&gt;
-&lt;td&gt;下载大小 512 GB&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;&lt;p&gt;和部署方式直接相关的几个架构特点：&lt;/p&gt;
+	</description></item><item><title>[问与答] V 友们，求推荐临时 Gmail 邮箱接码平台</title><link>https://www.v2ex.com/t/1255771#reply1</link><guid>tag:www.v2ex.com,2026-11-10:/t/1255771</guid><pubDate>Tue, 10 Nov 2026 02:17:46 +0000</pubDate><description>
+	&lt;p&gt;接码指的是 Gmail 邮箱接收验证码，不是接用来注册 Google 账号的电话号码哈&lt;/p&gt;
+
+	</description></item><item><title>[分享创造] 昨天发的海外 44 万产品流量与网站配色库 EarlyLore 写太长没人回，今天回帖补送一波永久加油包（可叠加）</title><link>https://www.v2ex.com/t/1255770#reply1</link><guid>tag:www.v2ex.com,2026-11-10:/t/1255770</guid><pubDate>Tue, 10 Nov 2026 02:16:27 +0000</pubDate><description>
+	&lt;p&gt;昨天发帖介绍做的竞品调研产品 EarlyLore ，写的太长了没人回复。&lt;/p&gt;
+&lt;p&gt;今天 1 句话来简单介绍下：产品主要是查海外 44.5 万款产品的真实月访问量、搜索词来源、定价档位，以及 4.3 万个真实出海网站的首屏配色与字体搭配。免登录直达： &lt;a href="https://earlylore.com/zh" rel="nofollow"&gt;https://earlylore.com/zh&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;完整功能介绍、截图和 [ 24 小时 Pro 会员体验码] 都在昨天的原帖里，没领过会员的朋友可以直接去原帖自取：
+&lt;a href="https://v2ex.com/t/1255546" rel="nofollow"&gt;https://v2ex.com/t/1255546&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;看后台昨天不少朋友领了 24h 码，估计快到期了。今天专门补送一波 [永不过期的评估加油包] （含深度立项评估 + 10 轮深访 + 竞品完整详情，可与原帖 24h 会员叠加）。&lt;/p&gt;
+&lt;p&gt;大家体验后，在楼下简单聊两句体验或建议，留下邮箱前几位或 Base64 ，我去后台把永久加油包充进你账号里。&lt;/p&gt;
+&lt;p&gt;欢迎多体验，多反馈，新上线还有很多 bug 在修，如果遇到评估失败，可能是在修 bug ，等会儿重试就行。&lt;/p&gt;
+&lt;p&gt;对技术架构感兴趣，也想做同类产品的也可以沟通，我可以分享一下技术方案。&lt;/p&gt;
+
+	</description></item><item><title>[问与答] 在公司被冷处理了，如果劳动仲裁，可以从哪些方向入手呢？</title><link>https://www.v2ex.com/t/1255769#reply2</link><guid>tag:www.v2ex.com,2026-11-10:/t/1255769</guid><pubDate>Tue, 10 Nov 2026 02:15:47 +0000</pubDate><description>
+	&lt;p&gt;我在这家公司已经第 6 年了。公司租借其他公司资质成立了新的分公司，老公司缩减资质、业务逐步转移，现在旧公司只剩三四个人。&lt;/p&gt;
+&lt;p&gt;前两年我的计件收入高一点，后来公司找理由下调计件薪资，我对此不认可，和经理在办公室闹了 N 次，闹得比较僵。然后我摆烂了两年（事照做但是没那么积极，慢慢做）
+这次成立新公司没有把我纳入，感觉是想让我主动离职。（不开除是因为公司经不起举报，坐实了会被罚款甚至倒闭，这个公司也没有开除人的先例）但小县城里同类型岗位很少，不太好找下家，目前只能先耗着。&lt;/p&gt;
+&lt;p&gt;我现在的情况：&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;MoE&lt;/strong&gt;：552B 主干参数，每层 384 个路由专家激活 6 个，另有 1 个共享专家。decode 时每个 token 激活 16B ，速度主要受内存带宽限制。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Causal Encoder-Decoder （ CED ）&lt;/strong&gt;：40 层分成 20 层 encoder 和 20 层 decoder 。decoder 的全局 KV 由 encoder 最后一层投影得到，所以 prefill 只需激活 8B 。这就是 CED prefill 优化的前提。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;CSA2 稀疏注意力&lt;/strong&gt;：只有 4 层计算自己的 KV ，其余层共用。KV cache 只有 890 字节/token ，1M 上下文的全局 KV 也只有约 0.83 GiB 。&lt;strong&gt;上下文长度几乎不受内存限制，受的是 prefill 时间限制。&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Engram n-gram 记忆&lt;/strong&gt;：第 1 层和第 14 层各有一张约 3.84 亿行 × 256 维的哈希表。每个 token 只查几行，&lt;strong&gt;可以放在 SSD 上按需读取&lt;/strong&gt;。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Hyper-Connections&lt;/strong&gt;：残差流有 4 路副本，每个子层做 20 次 Sinkhorn 迭代。小算子很多，所以引擎有没有做算子融合对速度影响很大。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;DSpark&lt;/strong&gt;：共 3 级，每级 128 个专家激活 3 个，读主模型第 37–39 层的输入，每轮草拟 5 个 token 。它和主模型绑在一起，必须在同一台机器上跑。&lt;/li&gt;
+&lt;li&gt;劳动合同原件没有给到我；合同签的是长期 基本工资 3000 元，实际薪资结构是：2000 元底薪 + 计件提成&lt;/li&gt;
+&lt;li&gt;现在业务基本停掉，每月只发底薪 2000 元，低于当地 2200 元的最低工资标准&lt;/li&gt;
+&lt;li&gt;社保一直按最低基数缴纳&lt;/li&gt;
+&lt;li&gt;节假日只按日历正常放假，没有年假
+没有仲裁经验，想请教下各位，如果仲裁维权的话可以从哪些方面入手呢？&lt;/li&gt;
 &lt;/ul&gt;
 
-	</description></item><item><title>[分享创造] Zebkit - Chromium as an embeddable library</title><link>https://www.v2ex.com/t/1255700#reply0</link><guid>tag:www.v2ex.com,2026-11-09:/t/1255700</guid><pubDate>Mon, 09 Nov 2026 16:24:41 +0000</pubDate><description>
-	&lt;p&gt;一个新项目, 将 chromium 作为一个库的形式存在, 供应用直接集成使用, 提供浏览器能力, 做了一定程度精简, 比 electron 小 33%, native 层实现了 AI 控制工具, 比如 playwright 等 CDP 操作快 3 ~ 10 倍, Chrome 依赖的 7000+ 库函数都被直接导出, 可以供上层直接调用使用.&lt;/p&gt;
-&lt;p&gt;感兴趣的大佬们可以支持一下.&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://github.com/ikey4u/zebkit" rel="nofollow"&gt;https://github.com/ikey4u/zebkit&lt;/a&gt;&lt;/p&gt;
+	</description></item><item><title>[问与答] 有没有三个月瘦 30 斤的办法</title><link>https://www.v2ex.com/t/1255768#reply23</link><guid>tag:www.v2ex.com,2026-11-10:/t/1255768</guid><pubDate>Tue, 10 Nov 2026 02:13:39 +0000</pubDate><description>
+	&lt;p&gt;从现在开始，想在过年前减肥减掉 30 斤，惊艳那些亲戚们，也给自己涨个面
+有没有什么方法？平常工作时间朝九晚六，一坐就是一天。
+离我最近的健身房，三个月 500 元子，有必要办一个吗&lt;/p&gt;
 
-	</description></item><item><title>[问与答] 转眼， 33 了</title><link>https://www.v2ex.com/t/1255699#reply8</link><guid>tag:www.v2ex.com,2026-11-09:/t/1255699</guid><pubDate>Mon, 09 Nov 2026 16:16:06 +0000</pubDate><description>
-	&lt;p&gt;转眼 33 岁了，一直觉得自己没长大，却已经是中登了。&lt;/p&gt;
-&lt;p&gt;前两年遇到些事情，都抑郁了，好在去年熬过来了，可能也是正好装修房子把我的很大一部分精力都占据的缘故吧。&lt;/p&gt;
-&lt;p&gt;今年本来觉得各方面都好起来了，结果上个月工作上的事情又很不顺心，导致现在赋闲在家吃软饭了。&lt;/p&gt;
-&lt;p&gt;希望，前往 34 岁的人生旅途能顺吧。&lt;/p&gt;
-&lt;p&gt;祝自己生日快乐。&lt;/p&gt;
-
-	</description></item><item><title>[分享创造] 开源一个在线生成 Grok Bot 风格的机器人头像制作工具</title><link>https://www.v2ex.com/t/1255698#reply1</link><guid>tag:www.v2ex.com,2026-11-09:/t/1255698</guid><pubDate>Mon, 09 Nov 2026 15:54:25 +0000</pubDate><description>
-	&lt;p&gt;分享一个自己写的开源小工具：GrotBot Studio ，在线生成 Grok Bot 风格的机器人头像。&lt;/p&gt;
-&lt;p&gt;地址： &lt;a href="https://viyozc.github.io/botstyle_studio/" rel="nofollow"&gt;https://viyozc.github.io/botstyle_studio/&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;简单功能：&lt;/p&gt;
+	</description></item><item><title>[分享创造] FeedGarden 公测开放：双端原生 RSS 阅读器，欢迎测试 🌱</title><link>https://www.v2ex.com/t/1255767#reply9</link><guid>tag:www.v2ex.com,2026-11-10:/t/1255767</guid><pubDate>Tue, 10 Nov 2026 02:13:35 +0000</pubDate><description>
+	&lt;p&gt;&lt;img alt="FeedGarden" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://i.imgur.com/Rod7QID.jpeg"/&gt;&lt;/p&gt;
+&lt;p&gt;7 月在这里发帖征求过 RSS 阅读器的想法，收获不少建议，感谢当时留言的各位。现在产品做出来了，TestFlight 公测昨天开放，原计划 200 个名额一晚被抢空，已扩容到 2000 ，目前 700+ 人在测。&lt;/p&gt;
+&lt;h2&gt;FeedGarden 是为 iPhone 与 Mac 打造的原生 RSS 阅读器，几个核心设计决策：&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;多种类似 Grok Bot 的预设造型：火焰方块、云朵、六边形、水滴、海星、爱心、火箭、苹果等&lt;/li&gt;
-&lt;li&gt;可调表情：开心、眨眼、好奇、震惊、困、眯眼、爱心眼、晕眩&lt;/li&gt;
-&lt;li&gt;可自定义配色、身体倾斜角度、背景纹理（网格/点阵/纯色）&lt;/li&gt;
-&lt;li&gt;带微动效预览（抖动/弹跳/点头/旋转）&lt;/li&gt;
-&lt;li&gt;一键导出 SVG 矢量图，可直接拿去做头像、图标&lt;/li&gt;
+&lt;li&gt;双端同步走 iCloud 只同步订阅+已读状态的路线（对齐 Reeder 新版思路），文章各端自己拉，不怕后端跑路，也不需要注册任何账号&lt;/li&gt;
+&lt;li&gt;OPML 增量导入（同 URL 替换、失败保留、GB18030 老编码容错）&lt;/li&gt;
+&lt;li&gt;智能文件夹（未读/收藏/稍后读）、三级去重、已读历史持久化&lt;/li&gt;
+&lt;li&gt;11 套主题、11 种语言，运行时切换&lt;/li&gt;
+&lt;li&gt;Mac 菜单栏快览、iPhone 边界续滑翻页这些平台特性都做了&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;纯前端实现，托管在 GitHub Pages ，无需登录、无广告。
-仓库在页面里也能找到，欢迎提 issue / PR 。&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://imgur.com/a/5UkQ4aS" rel="nofollow"&gt;https://imgur.com/a/5UkQ4aS&lt;/a&gt;&lt;/p&gt;
-
-	</description></item><item><title>[推广] 一小时手搓了一个比心视频生成器，最近 tiktok 很火，快来一起玩吧</title><link>https://www.v2ex.com/t/1255697#reply0</link><guid>tag:www.v2ex.com,2026-11-09:/t/1255697</guid><pubDate>Mon, 09 Nov 2026 15:50:57 +0000</pubDate><description>
-	&lt;p&gt;最近 tiktok 刷屏 bicep heart 视频生成并广泛传播，我用一小时手搓了一个通过 ai 生成 bicep heart 视频，一键生成即可在 tiktok 上发布。地址： &lt;a href="https://bicep-heart.net" rel="nofollow"&gt;https://bicep-heart.net&lt;/a&gt; 。&lt;/p&gt;
-
-	</description></item><item><title>[程序员] 一周 2 个外包二面，全部挂掉</title><link>https://www.v2ex.com/t/1255696#reply10</link><guid>tag:www.v2ex.com,2026-11-09:/t/1255696</guid><pubDate>Mon, 09 Nov 2026 15:14:05 +0000</pubDate><description>
-	- 本人前端开发，最近也花时间去学了智能体，Python 之类的。&lt;br /&gt;- 差不多是刷了一个多月的 boss 才确定了这 2 个外包的面试的。&lt;br /&gt;- 一面都过了，谈的也都比较好。&lt;br /&gt;- 二面的时候不知道啥原因，有一个技术问题答的没那么好吧，有一个可能是年龄问题。&lt;br /&gt;- 现在十分丧，已经失业 4 个月了。也不知道会不会离婚。唉。
-	</description></item><item><title>[问与答] 甲骨文云你们注册对地区了吗</title><link>https://www.v2ex.com/t/1255695#reply1</link><guid>tag:www.v2ex.com,2026-11-09:/t/1255695</guid><pubDate>Mon, 09 Nov 2026 15:09:49 +0000</pubDate><description>
-	&lt;p&gt;看到许多人开的东京、圣何塞的机器，不懂就问这俩地区对住在国内的用户有什么好处吗？我有点后悔，开的新加坡实例延迟有 250ms+。&lt;/p&gt;
-&lt;p&gt;还有，如果销号可以用同一张信用卡注册新地区吗？&lt;/p&gt;
-
-	</description></item><item><title>[Android] S23u 谷歌账号被识别</title><link>https://www.v2ex.com/t/1255694#reply0</link><guid>tag:www.v2ex.com,2026-11-09:/t/1255694</guid><pubDate>Mon, 09 Nov 2026 15:07:16 +0000</pubDate><description>
-	&lt;p&gt;2026 年 11 月，装了谷歌框架，买了谷歌账号，过了一天就显示账号不对劲，要我输入手机号。这期间我用电脑端登录过。&lt;/p&gt;
-&lt;p&gt;另外，我的 codex 一直无法绑定我的 pc 。到最后一步授权失败。&lt;/p&gt;
-&lt;p&gt;有懂的大佬，支支招吗？&lt;/p&gt;
-
-	</description></item><item><title>[宽带症候群] 宽带疑似被限速但又没证据，咋办？</title><link>https://www.v2ex.com/t/1255693#reply3</link><guid>tag:www.v2ex.com,2026-11-09:/t/1255693</guid><pubDate>Mon, 09 Nov 2026 15:06:38 +0000</pubDate><description>
-	&lt;p&gt;家宽 1000 兆，一般来讲上传 70 多兆左右，有 ipv6 。这几天偶尔有网速很慢，但是经过测速发现能达到下载 1000 兆，但是部分测速只有 1 兆左右。但有的测速软件又能达到千兆。
-比如： &lt;a href="https://test.ustc.edu.cn/" rel="nofollow"&gt;https://test.ustc.edu.cn/&lt;/a&gt; 就只能测到 1 兆上传。
-而“全球网测”app 能测出 70 兆上传。
-特别的 同一个城市都是电信宽带，从家里到公司上传也只有 1 兆，但是从公司到家里就有 300 多。（公司宽带是 2000 兆，上传 370 左右），以上说的是 ipv6 的情形。ipv4 由于没有公网 ip 不好测。
-刚开始还以为被 pcdn 了。但是打了 10000 号，叫师傅来检测也没有这个情况。
-现在就很尴尬，你说不达标吧，电信师傅来一测，完全没问题。可是你说达标吧，部分网络的确只有 1 兆左右。&lt;/p&gt;
-
-	</description></item><item><title>[Claude] [11.9 号新号] 中国护照 KYC 已过，看看能坚持多久</title><link>https://www.v2ex.com/t/1255692#reply7</link><guid>tag:www.v2ex.com,2026-11-09:/t/1255692</guid><pubDate>Mon, 09 Nov 2026 15:03:42 +0000</pubDate><description>
-	11.9 号 晚上苹果礼品卡新号，开通 pro 立马弹出 KYC ，中国护照过了，看看能坚持多久&lt;br /&gt;&lt;br /&gt;&lt;a target="_blank" href="/i/S6kkqtqr.png" rel="nofollow noopener" target="_blank" title="在新窗口打开图片 S6kkqtqr.png"&gt;&lt;img src="//i.v2ex.co/S6kkqtqr.png" class="embedded_image"&gt;&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;&lt;a target="_blank" href="/i/tq9s8l1v.png" rel="nofollow noopener" target="_blank" title="在新窗口打开图片 tq9s8l1v.png"&gt;&lt;img src="//i.v2ex.co/tq9s8l1v.png" class="embedded_image"&gt;&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;&lt;a target="_blank" href="/i/1V5rAUdR.png" rel="nofollow noopener" target="_blank" title="在新窗口打开图片 1V5rAUdR.png"&gt;&lt;img src="//i.v2ex.co/1V5rAUdR.png" class="embedded_image"&gt;&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;&lt;a target="_blank" href="/i/wKdj3Z93.png" rel="nofollow noopener" target="_blank" title="在新窗口打开图片 wKdj3Z93.png"&gt;&lt;img src="//i.v2ex.co/wKdj3Z93.png" class="embedded_image"&gt;&lt;/a&gt;
-	</description></item><item><title>[macOS] Howler -- v0.1.14 截图即解释</title><link>https://www.v2ex.com/t/1255691#reply1</link><guid>tag:www.v2ex.com,2026-11-09:/t/1255691</guid><pubDate>Mon, 09 Nov 2026 14:58:44 +0000</pubDate><description>
-	&lt;p&gt;Hi 👋 大家晚上好&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://assets.arieszhou.com/howler-0.1.14.png"/&gt;&lt;/p&gt;
-&lt;p&gt;Howler 有了新进展，v0.1.14 来啦🥳，这次的使用场景是 —— 快速解释，之前我们需要手动输入进行问询，现在可以：&lt;/p&gt;
-&lt;p&gt;按 ⌥⇧H 框选一块屏幕，Howler 会直接开始介绍图里的内容，不用再补一句“解释一下”。看到不懂的英文说明、概念或代码，都可以这样做。&lt;/p&gt;
-&lt;p&gt;无论截图中是什么语言，默认使用你的系统语言进行解释，也可以在设置里指定。例如截一段三体文，直接看中文解释（不是&lt;/p&gt;
-&lt;p&gt;另外，还在交互配置和安全策略上做了一些改进：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;公测开放：&lt;a href="https://testflight.apple.com/join/SvjWFQCw" rel="nofollow"&gt;TestFlight 公开链接&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;官网地址：&lt;a href="https://feedgarden.app" rel="nofollow"&gt;feedgarden.app&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;顺手做了两个免费网页小工具（无需登录）：&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;之前点击羊皮纸外部会自动焚烧，现在会维持状态，按 esc 或者右下角小火苗去烧掉羊皮纸&lt;/li&gt;
-&lt;li&gt;支持一键 agent 辅助配置和手动配置 API key 两种途径&lt;/li&gt;
-&lt;li&gt;对错误信息进行了脱敏&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://opml.feedgarden.app" rel="nofollow"&gt;OPML 在线编辑器&lt;/a&gt; — 换阅读器前整理订阅源&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://feedgarden.app/feeds" rel="nofollow"&gt;精选源目录&lt;/a&gt; — 不知道订什么，从这里挑&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;欢迎大家从官网或 GitHub 下载体验，欢迎一切反馈🙏
-Home - &lt;a href="https://howler.arieszhou.com" rel="nofollow"&gt;https://howler.arieszhou.com&lt;/a&gt;
-GitHub - &lt;a href="https://github.com/HiAriesZhou/Howler" rel="nofollow"&gt;https://github.com/HiAriesZhou/Howler&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;iPhone 上的老 RSS 用户欢迎来测，测试期反馈直接决定正式版路线。也想听听大家的方案：你们的 RSS 阅读器是怎么解决同步问题的？&lt;/p&gt;
 
-	</description></item><item><title>[Apple] FaceTime 视频无法在 apple tv 上成功通话吗？ 港版 iPhone 打给大陆版 iPhone</title><link>https://www.v2ex.com/t/1255688#reply1</link><guid>tag:www.v2ex.com,2026-11-09:/t/1255688</guid><pubDate>Mon, 09 Nov 2026 14:53:01 +0000</pubDate><description>
-	&lt;p&gt;呼出设备和接听设备都必须支持 FaceTime Audio （非行货 iPhone / 所有版本 iPad ）
-是这样吗？&lt;/p&gt;
-&lt;p&gt;我的港版 iPhone 和家人的国行 iPhone 平时 FaceTime 视频都正常。最近测试新的 Apple TV 时，哪怕手机接通后再转移过去也会突然中断；但如果打给 iPad 就能正常视频，只是会变成三方通话（我的客厅）。想请教大家，有什么办法能在 Apple TV 上成功进行视频通话吗？&lt;/p&gt;
+	</description></item><item><title>[问与答] 北漂四年的河北小夫妻，想去南方城市看看，想听听大家的意见</title><link>https://www.v2ex.com/t/1255766#reply16</link><guid>tag:www.v2ex.com,2026-11-10:/t/1255766</guid><pubDate>Tue, 10 Nov 2026 02:10:26 +0000</pubDate><description>
+	&lt;p&gt;如题，北漂四年的河北小夫妻，无孩，想去南方城市看看，想听听大家的想法。
+是否推荐去南方工作 or 定居
+如果推荐的话，大家都推荐哪些城市呢
+男生 4 年服务端开发经验，女生 4 年数据分析，均为普通本科，今年 26 周岁&lt;/p&gt;
 
-	</description></item><item><title>[分享创造] 做了一个 3D AI 办公室，都是真实数据</title><link>https://www.v2ex.com/t/1255687#reply0</link><guid>tag:www.v2ex.com,2026-11-09:/t/1255687</guid><pubDate>Mon, 09 Nov 2026 14:40:28 +0000</pubDate><description>
-	&lt;p&gt;真实在跑的业务，搭配上 agent ，然后放到一起。&lt;/p&gt;
-&lt;p&gt;&lt;img alt="Xnip2026-11-09_21-47-13.jpg" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://img.monk.party/file/8R1bKjGt.jpg"/&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="Xnip2026-11-09_21-45-28.jpg" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://img.monk.party/file/nwf1hvu8.jpg"/&gt;&lt;/p&gt;
-&lt;p&gt;最后留一个地址，欢迎提意见。https://monk.party/office/3d/&lt;/p&gt;
+	</description></item><item><title>[分享创造] 开源 Aidget，让 AI Agent 直接在桌面写小组件（跨平台）</title><link>https://www.v2ex.com/t/1255764#reply0</link><guid>tag:www.v2ex.com,2026-11-10:/t/1255764</guid><pubDate>Tue, 10 Nov 2026 02:10:03 +0000</pubDate><description>
+	&lt;p&gt;V 友们好，&lt;/p&gt;
+&lt;p&gt;做了个桌面工具，来分享一下。&lt;/p&gt;
+&lt;p&gt;起因是我平时老让 Agent 记点东西，待办、提醒、每天的新闻摘要。结果都留在对话里，窗口一关就没了。&lt;/p&gt;
+&lt;p&gt;我想让 Agent 能把东西直接放到桌面上，最好还不是固定模板，是它自己看着办。&lt;/p&gt;
+&lt;p&gt;所有有了 Aidget（Widget → Aidget）。&lt;/p&gt;
+&lt;p&gt;Aidget 是跨平台桌面应用，内置 MCP 服务和 Skill。接上 Codex、Claude Code 这类 Agent，输入 &lt;code&gt;/aidget&lt;/code&gt;，就能让它写组件、放桌面、后面继续改。&lt;/p&gt;
+&lt;p&gt;比如：&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-text"&gt;/aidget 做一个 24 节气翻牌组件，并启动定时任务在节气日展示它。
 
-	</description></item><item><title>[问与答] 有谁薅完了七牛云送的 10 亿 Token</title><link>https://www.v2ex.com/t/1255686#reply3</link><guid>tag:www.v2ex.com,2026-11-09:/t/1255686</guid><pubDate>Mon, 09 Nov 2026 14:29:26 +0000</pubDate><description>
-	&lt;p&gt;今天看了一篇文章，说是七牛云每天送 10 亿 Token ，然后登录账号看了一下，确实有 10 亿 Token ，刚好有个东西要补充一些数据，就准备对接一下。对接后人都麻了，请求了 3-4 次，限制频率了，然后再又等了几十秒，又能再请求个两三次。那我就合并大一点后发，也是各种限制频率。
-也不知道有谁薅完了这 10 亿。哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈，玩不起就别玩吗。&lt;/p&gt;
+用生图工具生成国画风背景，点击卡片有翻转动效，背面简短介绍这个节气的特点。
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;然后 Agent 会自己做卡片、写样式和交互，Aidget 只负责渲染和管理。&lt;/p&gt;
+&lt;p&gt;像是今日金句、B 站热搜、股票、桌宠，聊聊需求就能出来。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Aidget 桌面效果" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://aidget-ai.github.io/widgets/assets/site/product-preview.webp"/&gt;&lt;/p&gt;
+&lt;p&gt;技术上是个 Tauri 应用。MCP、CLI 和 GUI 都在本地跑，组件文件也放在本地。&lt;/p&gt;
+&lt;p&gt;组件跑在安全的受限窗口里，只能干 Aidget 允许的事，碰不到系统其他部分。&lt;/p&gt;
+&lt;p&gt;目前是 v0.1.15，MIT 协议，三个平台都能跑，安装包都小于 10MB。&lt;/p&gt;
+&lt;p&gt;官网 / 社区组件：&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://aidget-ai.github.io/widgets/?utm_source=v2ex&amp;amp;utm_medium=post&amp;amp;utm_campaign=launch" rel="nofollow"&gt;https://aidget-ai.github.io/widgets/?utm_source=v2ex&amp;amp;utm_medium=post&amp;amp;utm_campaign=launch&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;项目和下载：&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/aidget-ai/aidget" rel="nofollow"&gt;https://github.com/aidget-ai/aidget&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;轻拍，欢迎提 issue。&lt;/p&gt;
 
-	</description></item><item><title>[Terminal] 你还需要 Terminal 吗？我为什么选择 Kaku？</title><link>https://www.v2ex.com/t/1255685#reply0</link><guid>tag:www.v2ex.com,2026-11-09:/t/1255685</guid><pubDate>Mon, 09 Nov 2026 14:28:05 +0000</pubDate><description>
-	&lt;h1&gt;AI 会影响生活中的细枝末节&lt;/h1&gt;
-&lt;p&gt;&lt;img alt="image-20261109211812637" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://assets.arieszhou.com/image-20261109211812637.png"/&gt;&lt;/p&gt;
-&lt;p&gt;事情的起因是上周看到图拉鼎不用终端了，现在连 vscode 都扔垃圾桶了，AI 带来的变化多端在这一刻具像化了，不像是自媒体或者技术 KOL 们颠覆业界、重新定义“编程”的宏大叙事，从日常工作流中被剔除的 terminal 和 vscode 才是更能让我感同身受的 AI moment 。&lt;/p&gt;
-&lt;p&gt;我自己是长达十年的命令行用户，从入行嵌入式使用串口，到 Linux bash shell ，Android adb ，Mac zsh ，命令行一直是我认为程序员很 cool 的一个象征，《命运石之门》里的 Daru 、《某科学的超电磁炮》中的初春、《良医》中的 Lea ，都是我觉得很酷的 hacker/engineer ，所以我一直对命令行情有独钟，也体验过很多不同的终端产品，因而我也从来没想过要不要完全不使用终端这个问题，即便看到图拉鼎不用终端我也只是惊叹一下然后就翻篇了。&lt;/p&gt;
-&lt;p&gt;但偏偏在看到废纸篓里的 vscode 时，我脑子里突然产生了“AI 的影响真是面面俱到”的想法。它不单是降低了编程门槛、放大个人能力、加速科技进程，对于日常工作和生活中的一些零零碎碎、边边角角都有影响，细微处渗透到你解锁电脑的第一步是打开浏览器还是 agent ，以及你和工作的交互入口还是否还是传统的命令行与 vscode 。&lt;/p&gt;
-&lt;p&gt;经过一番思考，我发现 vscode 我真的可以不用，但终端不行，我完全离不开终端，&lt;/p&gt;
+	</description></item><item><title>[分享发现] 看到 open ai 游戏机，是不是 3ds 类似的也能自己开发游戏玩了？</title><link>https://www.v2ex.com/t/1255763#reply2</link><guid>tag:www.v2ex.com,2026-11-10:/t/1255763</guid><pubDate>Tue, 10 Nov 2026 02:08:03 +0000</pubDate><description>
+	&lt;p&gt;&lt;a href="https://openai.com/zh-Hans-CN/supply/co-lab/chromatic/" rel="nofollow"&gt;https://openai.com/zh-Hans-CN/supply/co-lab/chromatic/&lt;/a&gt;&lt;/p&gt;
+
+	</description></item><item><title>[酷工作] 招聘：
+商务经理（机构）</title><link>https://www.v2ex.com/t/1255761#reply0</link><guid>tag:www.v2ex.com,2026-11-10:/t/1255761</guid><pubDate>Tue, 10 Nov 2026 02:01:35 +0000</pubDate><description>
+	Position：商务经理&lt;br /&gt;Job Type: Full-Time ，Remote&lt;br /&gt;PS：&lt;br /&gt;1 、核心职责：负责“B 端机构客户销售”与“全球优质策略方拓展”双端商务闭环，推广 AI 交易策略产品并促成策略入驻、收益分成及联合运营。&lt;br /&gt;2 、任职要求：要求 3 年以上金融 BD 或机构销售经验，熟悉量化/AI/衍生品逻辑，自带私募、资管或策略方资源，能独立完成商务闭环并适应全远程办公。&lt;br /&gt;3 、岗位亮点：提供极具竞争力的“底薪+高比例提成”，依托 Group 全生态资源，切入 AI+金融与 Web3 投资的黄金赛道，拥有广阔的成长空间。&lt;br /&gt;&lt;br /&gt;请携带简历咨询，谢谢；&lt;br /&gt;TG：@jtx_2023&lt;br /&gt;E: justinxu@futuretalent.com.cn
+	</description></item><item><title>[分享创造] 有《肥话连篇》的听友么？ 肥话地图来了</title><link>https://www.v2ex.com/t/1255760#reply0</link><guid>tag:www.v2ex.com,2026-11-10:/t/1255760</guid><pubDate>Tue, 10 Nov 2026 02:00:50 +0000</pubDate><description>
+	&lt;p&gt;听肥话听了挺久了，肥杰和惠子每期都会聊到吃的喝的，听的时候想着下次去，过两天就忘了是哪期哪家，翻节目找又很费劲。我把它做成地图了：&lt;a href="https://dapai.app/feihua" rel="nofollow"&gt;dapai.app/feihua&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;第一次用手机指挥 claude opus5.5 干的活，做完惊呆了，程序员以后真的只要聊天聊清楚就行了&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://i.v2ex.co/jo1PF0N6l.png"/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://i.v2ex.co/3vFBuVrRl.png"/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://i.v2ex.co/sFXcgv96l.png"/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://i.v2ex.co/Z9TH4g11l.png"/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://i.v2ex.co/Z9v1eOB5l.png"/&gt;&lt;/p&gt;
+
+	</description></item><item><title>[宽带症候群] 避雷 TP-Link 的千元以内级别的网管交换机产品</title><link>https://www.v2ex.com/t/1255758#reply4</link><guid>tag:www.v2ex.com,2026-11-10:/t/1255758</guid><pubDate>Tue, 10 Nov 2026 01:57:11 +0000</pubDate><description>
+	已经坏了三个了...之前两个都是一个网口直接失效，排查了好久才发现插上网口直接没数据，把配置复制到另一个口就好了。今天早上又断网了，发现光猫到交换机的网口接触不良，把网线晃一晃就好了，再晃一晃又断了，我人都麻了......这品控也太烂了，而且问题都可相似，都是网口的问题，怀疑买到了一批货品控都有瑕疵。刚买的时候都是好的，用了一两年了才出问题都过保了
+	</description></item><item><title>[分享创造] 开源一个 windows 下的窗口组合工具 WhimGroupWin</title><link>https://www.v2ex.com/t/1255757#reply0</link><guid>tag:www.v2ex.com,2026-11-10:/t/1255757</guid><pubDate>Tue, 10 Nov 2026 01:54:37 +0000</pubDate><description>
+	&lt;h1&gt;WhimGroupWin&lt;/h1&gt;
+&lt;p&gt;&lt;img alt="nl" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://raw.githubusercontent.com/whim0w0/WhimGroupWin/refs/heads/main/ico/whim_group_full.png"/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/whim0w0/WhimGroupWin" rel="nofollow"&gt;项目地址: WhimGroupWin&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;一个基于 .NET 10 和 WPF 的 Windows 窗口分组工具。通过独立的组合标题栏，将多个应用窗口组合在一起，支持标签切换、左右分屏、同步移动及自动组合.&lt;/p&gt;
+&lt;p&gt;之前用过 stardock 家的 groupy, 感觉功能上是适配了, 但总觉得还差几个顺手的小功能;&lt;/p&gt;
+&lt;p&gt;例如组合后, 通过一个快捷键激活, 左右分屏等, 所以后面重装系统后, 就没再使用了.&lt;/p&gt;
+&lt;p&gt;这几天突然有了这个想法, vibe 了一个, 功能实现的很快.&lt;/p&gt;
+&lt;p&gt;但是图标纠结了好几天, 前后换了两版, 感觉还是有点不得劲, 是不是直接改成黄色作为主体色比较好?&lt;/p&gt;
+&lt;p&gt;下载地址在 Release 中, 欢迎试用，也欢迎吐槽！&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/whim0w0/WhimGroupWin/releases/tag/v0.1" rel="nofollow"&gt;下载地址: WhimGroupWin&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;下面放张截图, 更多截图请移步到仓库观看, 这里就不占太多位置了&lt;/p&gt;
+&lt;p&gt;&lt;img alt="overlap" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://raw.githubusercontent.com/whim0w0/WhimGroupWin/refs/heads/main/images/overlap.png"/&gt;&lt;/p&gt;
+&lt;p&gt;KDE 版本也在慢慢 vibe 中, 有 v 友有想法吗?&lt;/p&gt;
+
+	</description></item><item><title>[推广] [HyperAPI 中转站]新老用户们来领鸡蛋了，评论留 ID，送$10 体验额度</title><link>https://www.v2ex.com/t/1255755#reply8</link><guid>tag:www.v2ex.com,2026-11-10:/t/1255755</guid><pubDate>Tue, 10 Nov 2026 01:51:37 +0000</pubDate><description>
+	&lt;p&gt;站点： &lt;a href="https://hyperapi.cc" rel="nofollow"&gt;https://hyperapi.cc&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;QQ 交流群：1095326876&lt;/p&gt;
+
+	</description></item><item><title>[推广] Codex 自建站｜平民价用企业级线路</title><link>https://www.v2ex.com/t/1255754#reply0</link><guid>tag:www.v2ex.com,2026-11-10:/t/1255754</guid><pubDate>Tue, 10 Nov 2026 01:50:44 +0000</pubDate><description>
+	• 纯 Pro 池，多线路稳定供应，成功率长期 99.9+&lt;br /&gt;• Codex 全模型可用&lt;br /&gt;• 高 RPM / 高并发，适合长时间持续跑&lt;br /&gt;• 按量全场 0.2 ，充值立享 0.17 优惠，月度阶梯最低 0.15&lt;br /&gt;• 订阅套餐还可以共享官方重置&lt;br /&gt;• 源头站，可接下游，注册送免费额度（ agent 延迟发放）&lt;br /&gt;&lt;br /&gt;地址：&lt;a target="_blank" href="http://codex.zhuanyedaili.com" rel="nofollow noopener"&gt;codex.zhuanyedaili.com&lt;/a&gt;⁠&lt;br /&gt;联系方式：QQ 群：1106944249 &lt;a target="_blank" href="https://codex.zhuanyedaili.com/scripts/codex-qq-group.jpg" rel="nofollow noopener"&gt;https://codex.zhuanyedaili.com/scripts/codex-qq-group.jpg&lt;/a&gt;
+	</description></item><item><title>[分享创造] 分享一个自用的插件，利用和 Agent 的交互来学英语</title><link>https://www.v2ex.com/t/1255753#reply0</link><guid>tag:www.v2ex.com,2026-11-10:/t/1255753</guid><pubDate>Tue, 10 Nov 2026 01:50:15 +0000</pubDate><description>
+	现在大部分的工作时间是和 AI Agent 在交流，这其实是一个很好的锻炼英文的机会。想掌握一门语言，就是要实际的使用它。不过默认的情况下，AI 只会帮你处理任务，哪怕你说的有错误它也能理解你的需求，有时候复杂一点的需求也会让自己切回中文交流，因为缺乏合适的反馈，错过了很好的练习机会。&lt;br /&gt;&lt;br /&gt;为了激励自己更多地使用英文交流，开发了一个插件，把日常对话中的语法错误自动收集成卡片，既能获得即时反馈，也能通过不断犯错，意识到自己的问题并改正。&lt;br /&gt;&lt;br /&gt;用了这个插件后，发现自己更愿意用英文和 AI 交流了。有时候看到同样的错误犯了好几次，才意识到自己的习惯，也能慢慢改正过来。&lt;br /&gt;&lt;br /&gt;项目 GitHub： &lt;a target="_blank" href="https://github.com/aoilang/dsh-english-cards" rel="nofollow noopener"&gt;https://github.com/aoilang/dsh-english-cards&lt;/a&gt;&lt;br /&gt;不得不说，dsh 的一切皆插件的架构还是挺好的，能扩展的地方很多。&lt;br /&gt;&lt;br /&gt;效果预览：&lt;br /&gt;输入框上方，展示当前会话中的卡片&lt;br /&gt;&lt;a target="_blank" href="/i/Q78k1Ouv.png" rel="nofollow noopener" target="_blank" title="在新窗口打开图片 Q78k1Ouv.png"&gt;&lt;img src="//i.v2ex.co/Q78k1Ouv.png" class="embedded_image"&gt;&lt;/a&gt;&lt;br /&gt;侧边栏，展示所有卡片&lt;br /&gt;&lt;a target="_blank" href="/i/wic8618A.png" rel="nofollow noopener" target="_blank" title="在新窗口打开图片 wic8618A.png"&gt;&lt;img src="//i.v2ex.co/wic8618A.png" class="embedded_image"&gt;&lt;/a&gt;
+	</description></item><item><title>[问与答] 各位老哥帮忙理性分析一下，有必要考个非全研究生吗</title><link>https://www.v2ex.com/t/1255751#reply0</link><guid>tag:www.v2ex.com,2026-11-10:/t/1255751</guid><pubDate>Tue, 10 Nov 2026 01:44:59 +0000</pubDate><description>
+	&lt;p&gt;目前在国企混日子，空闲时间比较多，还没结婚，感觉就这么几年有时间
+本科学校是个 xx 学院，想考一个双非的非全研究生，专业电子信息专业，人工智能方向，说是学校有望申请双一流
+考数 2 、英语、政治、操作系统+数据结构
+学校在工作的城市，通勤成本不高，三年学费 5w
+公司对考非全没有任何补助激励，但是据我观察技术这块研究生很少&lt;/p&gt;
+
+	</description></item><item><title>[Apple] 用上新版 Siri 了，可是第一次用就没额度了</title><link>https://www.v2ex.com/t/1255750#reply1</link><guid>tag:www.v2ex.com,2026-11-10:/t/1255750</guid><pubDate>Tue, 10 Nov 2026 01:40:49 +0000</pubDate><description>
+	&lt;p&gt;如题，我才第一次用，就说没额度了，是 bug 么？&lt;br/&gt;
+You have reached your daily request limit and can try this request again later.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://i.imgur.com/8s85FAC.jpeg"/&gt;&lt;/p&gt;
+
+	</description></item><item><title>[iPhone] 国行 iPhone 18 系列要起飞了</title><link>https://www.v2ex.com/t/1255748#reply17</link><guid>tag:www.v2ex.com,2026-11-10:/t/1255748</guid><pubDate>Tue, 10 Nov 2026 01:35:58 +0000</pubDate><description>
+	刚在 x 上看到 GestaltX 项目可以让国行 iphone 在境内添加境外 esim,我 18pm 试了一下，果真可以，顺带还解了一下 facetime,至于能不能超过 2 张 esim,我还没试，有 esim 多的 V 友快试试
+	</description></item><item><title>[求职] 个人独立开发者， AI 全栈能力，寻找业务机会</title><link>https://www.v2ex.com/t/1255747#reply0</link><guid>tag:www.v2ex.com,2026-11-10:/t/1255747</guid><pubDate>Tue, 10 Nov 2026 01:35:38 +0000</pubDate><description>
+	&lt;p&gt;15 年前端 / 全栈研发经验，前美团前端 Leader 。&lt;/p&gt;
+&lt;p&gt;2017 - 2026 在美团带骑手运营前端团队，15-20 人规模，主导过 200+ H5 页面迁移 RN 、前端稳定性体系建设，后期在团队内推 AI-SDLC 研发流程，团队吞吐提升约 50%。&lt;/p&gt;
+&lt;p&gt;2026 年 7 月离职后开始独立开发，运营工作室「智创码坊」，目前两个方向都开放聊：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;全职机会：&lt;/strong&gt; 北京，AI 工程化 / AI 全栈 / FDE 方向，可接受出差，可接受创业公司&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;项目合作：&lt;/strong&gt; 产品原型、Web 平台、移动应用、AI Agent 落地&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;技术栈&lt;/h3&gt;
+&lt;p&gt;前端：React / React Native / TypeScript / H5 复杂业务
+后端：Node.js / 常见服务端部署与运维，能独立完成从需求、开发、部署到上线运维全链路
+AI：LLM 应用、RAG 知识库、Agent 工作流、AI 编程流程工程化，日常主力用 WorkBuddy / Codex 等工具做专家包和技能开发&lt;/p&gt;
+&lt;h3&gt;近期独立项目&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;一是内存占用问题，我的 MacBook Air 不支持我高强度通过 GUI 使用 Agent ，尤其是我还经常开十几个 Chrome 标签页；&lt;/li&gt;
-&lt;li&gt;二是我实际感受客户端多窗口切换没有终端方便，无论是在效率还是美观方面；&lt;/li&gt;
-&lt;li&gt;三是对命令行的一点点执念，偶尔的还会在看到满屏指令时幻想自己是石之门里的 Daru （其实更喜欢初春）。 &lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;AI-Native SDLC&lt;/strong&gt;：一套 AI 原生研发方法论与管理端，已在实际服务器部署运行&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;付费 AI Skill 系统&lt;/strong&gt;：打通 商品 - 支付 - 自动交付 闭环，已上线&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;企业级 Agent / 专家包&lt;/strong&gt;：自建 A 股复盘、竞彩分析等专家系统，含数据抓取、概率建模、回测验证&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;词记 WordNest&lt;/strong&gt;：全栈语言学习应用&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;公众号 AI 资讯自动化&lt;/strong&gt;：采集、摘要、排版、发布全流程自动化&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;但说到 VS Code 情况就不一样了，好像上次打开还是一两个月之前？删了删了，等我决定不再用终端的时候对我来说才是一个巨大的改变 hhhh.&lt;/p&gt;
-&lt;p&gt;值得一提的是，我一直感觉 GUI 的多窗口使用体验没有在 TUI 中好，界面很容易乱，大小不一、堆叠混乱，尤其是窗口多的时候，即便在 Mac 四指上滑使用多窗口视图也很难快速切换到自己想要的窗口。而使用终端就没有这个烦恼，统一的风格和布局，在一个大窗口里放置有限的分隔，通常一个项目最多开 4 个小窗口，完全可以放在一个会话/屏幕内，多个项目使用多个 tab ，通过快捷键或者点击切换都很方便，这么看来似乎和 DHH 的偏好很契合，难道 Omarchy 才是我的理想 OS ？？？（慎重、慎重。。。&lt;/p&gt;
-&lt;p&gt;除了观感上的区别，在性能和内存占用上，我依然推崇 TUI ，毕竟刨掉 UI 壳确实省不少内存，我想目前阶段每个 agent 开发者都不会允许自己的电脑只跑一个主 agent+几个 subagent ，这显然无法充分压榨自己的 coding plan ，不把 weekly limits 用完应该是睡不着觉的。当然受限于笔记本性能而选择终端是我的问题，agent 是无辜的，图大显然也没有这个顾虑，等我什么时候通过业余产品有收入了会升级一下设备并严肃思考如何在“一点执念”和效能上做权衡。&lt;/p&gt;
-&lt;h1&gt;非严肃 Terminal 主观评测与 Kaku&lt;/h1&gt;
-&lt;p&gt;&lt;img alt="image-20261109222513948" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://assets.arieszhou.com/image-20261109222513948.png"/&gt;&lt;/p&gt;
-&lt;p&gt;目前我的主力终端是优雅至极的 &lt;a href="https://github.com/tw93/Kaku" rel="nofollow"&gt;Kaku&lt;/a&gt; 选手，一款轻量、快速、AI 友好的基于 WezTerm 深度定制的终端，出自 @&lt;a href="/member/tw93"&gt;tw93&lt;/a&gt; 之手（这就是口碑.gif ）。&lt;/p&gt;
-&lt;p&gt;在接触 Kaku 之前，我使用了大概两年多的 iTerm2 ，它的优点我现在能想到的就是成熟、成熟、成熟，再就想不到了，额外的印象就是偶尔的卡顿，但也不确定就是它的问题。当初倒也没有很想换，我时不时地会改改 ohmyzsh 的配置和 p10k 主题，就是觉得无聊想寻觅看看有没有有意思的新的终端产品，然后自然而然 Kaku 进入了视野。&lt;/p&gt;
-&lt;p&gt;它的第一优点很明显，开箱即用，不用做什么配置，主题风格对胃口，字体好看，配置页清晰明了，非常有限的配置项，刚好能满足我的日常使用和轻度 diy 需求，以及我真的太喜欢纸质主题了，这就是纸质书读者、墨水屏爱好者、浅色主题倾向性的福音。&lt;/p&gt;
-&lt;p&gt;这种丝滑上手的体验，有点像我之前从小米手机换成 iphone 时的手感上的那种爽感，看上去的区别和盘起来的区别是不一样的，后者更让人想去细品。第一天使用下来，我就知道 iTerm2 可以卸载了。你很难拒绝一款刚刚好适配你的产品，iTerm2 没毛病，它更强大、更普适、DIY 空间更大、有庞大的生态和解决方案，但就是因为太“大”了，Warp 也很好，但那不是我想要的好，Warp 比 iTerm2 和 Kaku 都更加 AI Native ，但可能是我还没有那么的 AI Native ，我目前也接受不了注册登陆使用和 block 的类 Notion 操作交互。&lt;/p&gt;
-&lt;p&gt;iTerm2 好比优衣库 Levi's ，Warp 好比耐克始祖鸟，Kaku 好比山本耀司或者小众精品定制裁缝店里的成衣款？😂不知道这么形容有没有冒犯到，但给我体感是这样的，它的定制成衣穿我身上刚好。&lt;/p&gt;
-&lt;p&gt;目前高强度使用两个月了吧，每天在里面猛蹬 cc 和 codex ，没有出现过使用 ChatGPT 客户端时频发的界面卡顿现象，偶然间发现小 bug 还能提个 pr ，这也是另一项优势了，给 iTerm2 提 pr 估计得等猴年马月，Warp 干脆不支持。&lt;/p&gt;
-&lt;p&gt;&lt;img alt="image-20261109165606786" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://assets.arieszhou.com/image-20261109165606786.png"/&gt;&lt;/p&gt;
-&lt;p&gt;对了，搞笑的是我初期过于沉迷好看的界面和流畅的交互，居然忘了试试 Kaku 介绍中的"AI friendly"，国庆的时候一次偶然使用 command+L 打开了 AI 对话界面，原本是打算在 typora 中打开大纲的，但是忘记把窗口焦点切到主屏幕了，意外触发了放在扩展屏的 Kaku AI ，然后简单寒暄一下就可以用了。&lt;/p&gt;
-&lt;p&gt;&lt;img alt="image-20261109170411329" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://assets.arieszhou.com/image-20261109170411329.png"/&gt;&lt;/p&gt;
-&lt;p&gt;这个一键呼出快捷对话的交互体验，我感觉比 Claude 的 /btw 方便一些，和 &lt;a href="https://github.com/HiAriesZhou/Howler" rel="nofollow"&gt;Howler&lt;/a&gt; 有异曲同工之妙🤣。初次之外，终端主界面支持在底部显示 plan 的用量，在达到 25%/10%/5%会有一行预警提示，这些细节处的设计很巧，够用且不觉打扰。&lt;/p&gt;
-&lt;p&gt;美中不足也是有的，比如右键菜单缺少 Open in finder 选项，因为 Agent 经常会在 /tmp 等路径生成一些文件，emmm...可以考虑开个 pr 看看。&lt;/p&gt;
-&lt;p&gt;洋洋洒洒写了些，算是梳理一下对于 Terminal 的些许看法，顺带推荐一下 Kaku 。我觉得深度定制化会是 AI 加持下一个很有趣的产品趋势，以前受限于生产力瓶颈，很多产品希望通过做的大而全去满足更多人的需求，但现在百花齐放匹配上众口难调，完全可以更聚焦于深度而非广度，Kaku 就是一个很好的案例。这对独立开发者或者业余开发者来说，都是挺有搞头的。&lt;/p&gt;
-&lt;p&gt;以上。&lt;/p&gt;
+&lt;h3&gt;能承接的典型需求&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;AI 智能客服中枢：5-8 个工作日交付&lt;/li&gt;
+&lt;li&gt;企业知识库问答：把文档/产品资料变成可直接提问的 AI 助手，10-15 个工作日&lt;/li&gt;
+&lt;li&gt;业务流程自动化：15-25 个工作日&lt;/li&gt;
+&lt;li&gt;中小团队的产品原型 / MVP / Web 平台定制开发&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;一个人对接到底，沟通直接，不转包，交付结果说话。&lt;/p&gt;
+&lt;p&gt;有合适的全职岗位，或者有想落地的 AI / 软件项目，欢迎站内私信或回帖联系，我看到会第一时间回复。简历和 GitHub 项目可私聊发送。&lt;/p&gt;
 
-	</description></item><item><title>[推广] 🎁 11.11 提前开跑，在 ChinaPlay 满 111 元并抽游戏激活码！</title><link>https://www.v2ex.com/t/1255684#reply0</link><guid>tag:www.v2ex.com,2026-11-09:/t/1255684</guid><pubDate>Mon, 09 Nov 2026 14:19:18 +0000</pubDate><description>
-	&lt;a target="_blank" href="/i/c7ZZ2li9.png" rel="nofollow noopener" target="_blank" title="在新窗口打开图片 c7ZZ2li9.png"&gt;&lt;img src="//i.v2ex.co/c7ZZ2li9.png" class="embedded_image"&gt;&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;大家好！今年的 11.11 ChinaPlay 决定提前两天开始——从今天（ 11 月 9 日）起就能参与，让大家不用等到最后一刻，从容把想玩的游戏都收入囊中。&lt;br /&gt;&lt;br /&gt;11.11 抽奖 · 玩法说明：&lt;br /&gt;&lt;br /&gt;🔗ChinaPlay 官网： &lt;a target="_blank" href="https://cnplay.io/11v2" rel="nofollow noopener"&gt;https://cnplay.io/11v2&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;🎟️ 促销码：V2PromoCP&lt;br /&gt;&lt;br /&gt;🗓️ 活动时间：2026 年 11 月 9 日 — 11 月 16 日（开奖：11 月 17 日）&lt;br /&gt;&lt;br /&gt;🎯 参与门槛：在 ChinaPlay 完成一笔实付满 111 元的订单（以折扣 / 优惠码后的最终金额为准），系统自动获得抽奖资格，无需报名&lt;br /&gt;&lt;br /&gt;🎲 中奖规则：每一笔满 111 元的订单都单独计入抽奖，下单越多、中奖率越高；同一账号凭不同订单可赢得多个奖品&lt;br /&gt;&lt;br /&gt;🏆 奖池：共 11 个激活码，抽出 11 份奖品&lt;br /&gt;&lt;br /&gt;📢 结果公布：11 月 17 日开奖，结果将公布于 ChinaPlay 的社交平台与帖子中&lt;br /&gt;&lt;br /&gt;※ 预购订单、以及开奖时已取消或已退款的订单不计入抽奖。领奖：公布之日起 5 个自然日内，用抽奖时绑定账号的邮箱联系 ChinaPlay 客服，激活码将发送至同一邮箱，无需提供其他信息；逾期视为放弃。公布后若取消 / 退款该笔订单，中奖资格作废。&lt;br /&gt;&lt;br /&gt; [奖池一览] &lt;br /&gt;🎮影之刃零 Phantom Blade Zero （ 2 个）&lt;br /&gt;🎮The Elder Scrolls IV: Oblivion Remastered - Deluxe Edition&lt;br /&gt;🎮WARDOGS - Supporter Edition&lt;br /&gt;🎮Heroes of Might and Magic: Olden Era&lt;br /&gt;🎮Wo Long: Fallen Dynasty - Complete Edition&lt;br /&gt;🎮DragonSword: Awakening - Deluxe Edition&lt;br /&gt;🎮Hell Let Loose: Vietnam&lt;br /&gt;🎮MENACE&lt;br /&gt;🎮Corsair Cove&lt;br /&gt;🎮Ravenswatch - Year 1 Edition&lt;br /&gt;（各 1 个）&lt;br /&gt;&lt;br /&gt;当然，平台直接提供游戏折扣。这一次我的选择是：&lt;br /&gt;1) Clive Barker's Hellraiser: Revival - Deluxe Edition - ¥148.57&lt;br /&gt;2) Sid Meier’s Civilization® VI: Anthology - ¥50.4&lt;br /&gt;3) Last Chickenburg - ¥46.6&lt;br /&gt;4) Airframe Ultra - ¥34.49&lt;br /&gt;5) Faraway - ¥22.12&lt;br /&gt;6) MOUSE: P.I. For Hire - ¥64.45&lt;br /&gt;7) Warhounds - ¥86.13&lt;br /&gt;&lt;br /&gt;还有数百折扣的产品，来了解 ChinaPlay 目录！
-	</description></item><item><title>[摄影] 拍到了武汉最忧郁的地方！</title><link>https://www.v2ex.com/t/1255683#reply1</link><guid>tag:www.v2ex.com,2026-11-09:/t/1255683</guid><pubDate>Mon, 09 Nov 2026 14:17:07 +0000</pubDate><description>
-	&lt;a target="_blank" href="https://i.imgur.com/1N84eJB.jpeg" rel="nofollow noopener" target="_blank"&gt;&lt;img src="https://i.imgur.com/1N84eJB.jpeg" class="embedded_image" rel="noreferrer"&gt;&lt;/a&gt;&lt;br /&gt;&lt;a target="_blank" href="https://i.imgur.com/vAgl0C1.jpeg" rel="nofollow noopener" target="_blank"&gt;&lt;img src="https://i.imgur.com/vAgl0C1.jpeg" class="embedded_image" rel="noreferrer"&gt;&lt;/a&gt;&lt;br /&gt;&lt;a target="_blank" href="https://i.imgur.com/ooBbSid.jpeg" rel="nofollow noopener" target="_blank"&gt;&lt;img src="https://i.imgur.com/ooBbSid.jpeg" class="embedded_image" rel="noreferrer"&gt;&lt;/a&gt;&lt;br /&gt;&lt;a target="_blank" href="https://i.imgur.com/yUYcFdK.jpeg" rel="nofollow noopener" target="_blank"&gt;&lt;img src="https://i.imgur.com/yUYcFdK.jpeg" class="embedded_image" rel="noreferrer"&gt;&lt;/a&gt;&lt;br /&gt;&lt;a target="_blank" href="https://i.imgur.com/vbhrzxC.jpeg" rel="nofollow noopener" target="_blank"&gt;&lt;img src="https://i.imgur.com/vbhrzxC.jpeg" class="embedded_image" rel="noreferrer"&gt;&lt;/a&gt;&lt;br /&gt;&lt;a target="_blank" href="https://i.imgur.com/UchJk5n.jpeg" rel="nofollow noopener" target="_blank"&gt;&lt;img src="https://i.imgur.com/UchJk5n.jpeg" class="embedded_image" rel="noreferrer"&gt;&lt;/a&gt;
-	</description></item><item><title>[推广] [Sidrune AI 中转站双十一] 留 UID 送 3U｜抽奖 2000R，充值加赠最高$1000</title><link>https://www.v2ex.com/t/1255682#reply3</link><guid>tag:www.v2ex.com,2026-11-09:/t/1255682</guid><pubDate>Mon, 09 Nov 2026 14:12:27 +0000</pubDate><description>
-	&lt;p&gt;买号、续费、配环境、小心翼翼像间谍一样 - - 折腾一圈刚准备好好干活，账号又封了……这是自从 10 月中旬开始，Claude 用户的常态；而本月初似乎 ChatGPT 也开始了。&lt;/p&gt;
-&lt;p&gt;用 &lt;a href="https://cn.sidrune.ai/register?promo=V2EX1111CCMAX2026" rel="nofollow"&gt;Sidrune AI&lt;/a&gt;，账号、Key 和可用性都交给专业人士维护，大佬们只需要即充（值）即用就行，100+条线路覆盖性价比之选、高智稳定和超低价。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Claude 推荐 CC Max 1.0 分组（如用非 Claude 客户端请选 1.2 的外接分组），约官方 API 的 1.7 折；&lt;/li&gt;
-&lt;li&gt;GPT 限时特价组 0.1 倍率约 0.15 折还活着，且蹬且珍惜；&lt;/li&gt;
-&lt;li&gt;支持开票、U 支付及对公转账，代理商最高返现 13.5%。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;已经用过的朋友，也欢迎到之前的&lt;a href="https://www.v2ex.com/t/1254252" rel="nofollow"&gt;产品评价帖&lt;/a&gt;聊聊真实体验，好评差评都欢迎。&lt;/p&gt;
-&lt;p&gt;注册： &lt;a href="https://cn.sidrune.ai/register?promo=V2EX1111CCMAX2026" rel="nofollow"&gt;https://cn.sidrune.ai/register?promo=V2EX1111CCMAX2026&lt;/a&gt;&lt;/p&gt;
-&lt;hr/&gt;
-&lt;h3&gt;双十一钜惠：抽奖 2000R ，充值加赠最高 1000 元&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;充值加赠&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;北京时间 11 月 10 日 00:00 至 11 月 12 日结束：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;充值 100 元起、不满 300 元：加赠 **6%**；&lt;/li&gt;
-&lt;li&gt;300 元起、不满 2000 元：加赠 **8%**；&lt;/li&gt;
-&lt;li&gt;2000 元及以上：加赠 **10%**。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;每个账号活动期累计加赠最高 1000 元。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;充值满 200 元即可参与，抽 108 个名额&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;11 月 11 日 20:00 开奖，活动期间、开奖前累计充值满 200 元即可参加。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;特等奖 3 名&lt;/strong&gt;：报销未来四天本站实际 Token 费用，每人最高 &lt;strong&gt;200 元&lt;/strong&gt;；&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;一等奖 5 名&lt;/strong&gt;：每人最高 &lt;strong&gt;100 元&lt;/strong&gt;；&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;二等奖 30 名&lt;/strong&gt;：每人最高 &lt;strong&gt;20 元&lt;/strong&gt;；&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;三等奖 70 名&lt;/strong&gt;：各赠 &lt;strong&gt;11 元余额&lt;/strong&gt;。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;前三档均按四天实际合格 Token 费用、在对应上限内返还站内余额；四天精确起止及开奖细则见本站正式活动说明。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Q 群兑换码掉落&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;11 月 11 日全天，群内不定时掉落$1–3 余额兑换码，先到先得。&lt;/p&gt;
-&lt;p&gt;👉 &lt;a href="https://qm.qq.com/q/lUoCGyXFo4" rel="nofollow"&gt;加入 AI 灌水交流二群&lt;/a&gt;&lt;/p&gt;
-&lt;hr/&gt;
-&lt;h3&gt;V 站用户专属福利：留 UID 送 3U&lt;/h3&gt;
-&lt;p&gt;本帖回复本人 Sidrune AI 站内数字 UID ，即送$3 余额.&lt;/p&gt;
-&lt;p&gt;注：以上所有奖励均为 Sidrune AI 站内使用余额，不能折现。&lt;/p&gt;
-&lt;p&gt;注册 Sidrune AI： &lt;a href="https://cn.sidrune.ai/register?promo=V2EX1111CCMAX2026" rel="nofollow"&gt;https://cn.sidrune.ai/register?promo=V2EX1111CCMAX2026&lt;/a&gt;&lt;/p&gt;
+	</description></item><item><title>[Claude] 现在才发现送了 Fable5.2 额度。现在我是免费用户今天开 Claude Pro 还来得及嘛哈哈</title><link>https://www.v2ex.com/t/1255746#reply0</link><guid>tag:www.v2ex.com,2026-11-10:/t/1255746</guid><pubDate>Tue, 10 Nov 2026 01:32:13 +0000</pubDate><description>
+	
+	</description></item><item><title>[问与答] 全网 claude pro 用户第一个测评 fable 的人</title><link>https://www.v2ex.com/t/1255745#reply6</link><guid>tag:www.v2ex.com,2026-11-10:/t/1255745</guid><pubDate>Tue, 10 Nov 2026 01:31:59 +0000</pubDate><description>
+	到美西时间 11 月 16 日晚截止，最多可以占每周额度的一半，另外还送一次额度重置。&lt;br /&gt;&lt;br /&gt;不会用。。。不知道干啥子。。。你们会用来干啥子？
+	</description></item><item><title>[生活] 突然想到个一直没有想的事情，各位一般多久剪一次头发</title><link>https://www.v2ex.com/t/1255744#reply64</link><guid>tag:www.v2ex.com,2026-11-10:/t/1255744</guid><pubDate>Tue, 10 Nov 2026 01:31:42 +0000</pubDate><description>
+	&lt;p&gt;之前一直是 20-30 天一次，头发乱糟糟的。今天刷到别人说 2 周一次，有点怀疑自己一直没有好好对待自己的头发了。&lt;/p&gt;
 
-	</description></item><item><title>[分享创造] Cyber API： Rust + GPUI 构建的原生 API 客户端</title><link>https://www.v2ex.com/t/1255681#reply0</link><guid>tag:www.v2ex.com,2026-11-09:/t/1255681</guid><pubDate>Mon, 09 Nov 2026 13:51:21 +0000</pubDate><description>
-	项目地址： &lt;a target="_blank" href="https://github.com/vicanso/cyberapi" rel="nofollow noopener"&gt;https://github.com/vicanso/cyberapi&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;## 项目简介&lt;br /&gt;  Cyber API 基于 Rust 编写，UI 层使用了与 Zed Editor 同款的渲染引擎 GPUI 。这意味着 Cyber API 的每一个像素都是由 GPU 直接绘制的，告别了 Electron 的内存占用与卡顿，带来了原生、60 FPS 丝般顺滑的 API 调试体验；同时同一份代码既能构建原生桌面版，也能编译为 WebAssembly 作为团队网页版自行部署。&lt;br /&gt;&lt;br /&gt;## 核心特性一览&lt;br /&gt;  🚀 极速渲染：告别 HTML/CSS 的重绘负担，不是 Electron 也不套壳网页，数千个接口的大型项目也能秒开，大体积响应报文依然流畅不卡顿。&lt;br /&gt;&lt;br /&gt;  🧩 全协议覆盖：一套工具搞定各类接口调试：&lt;br /&gt;&lt;br /&gt;  - 支持标准 REST 请求（ JSON 、表单、Multipart 、XML 等）与直接粘贴 cURL 导入。&lt;br /&gt;&lt;br /&gt;  - 支持 GraphQL （拉取 Schema 自动补全查询、错误行定位与流式订阅）。&lt;br /&gt;&lt;br /&gt;  - 支持 gRPC （支持 Server Reflection 反射或导入 .proto 文件，覆盖一元与流式调用）。&lt;br /&gt;&lt;br /&gt;  - 支持 WebSocket 双向通信与 SSE （ text/event-stream ）流式实时输出，非常适合调试大模型流式接口。&lt;br /&gt;&lt;br /&gt;  🔍 请求与响应深度洞察：&lt;br /&gt;&lt;br /&gt;  - 耗时拆解：清晰展示 DNS 、TCP 、TLS 、服务器处理和传输各阶段耗时，实际发出的原始报文原样可查。&lt;br /&gt;&lt;br /&gt;  - 智能视图：JSON/NDJSON 支持树形浏览与 JSONPath 过滤；图片二进制流直接预览；内置历史记录与响应 Diff 对比。&lt;br /&gt;&lt;br /&gt;  - 自动化验证：支持响应断言、JSON Schema 校验、Mock 服务与接口压测，并可通过 cyberapi-cli 在终端或 CI 中直接运行检查。&lt;br /&gt;&lt;br /&gt;  🔗 高效联动与无痛迁移：&lt;br /&gt;&lt;br /&gt;  - 支持多环境切换（可标记生产环境防误触）、目录级认证/变量继承，还能用 {{g(接口, data.token)}} 直接引用其他接口的响应字段，告别手动复制粘贴。&lt;br /&gt;&lt;br /&gt;  - 兼容导入 Postman 、Insomnia 、Hoppscotch 、Bruno 、OpenAPI/Swagger 、HAR 等格式；绑定 OpenAPI 地址后可随时增量同步，自动保留本地已填参数与密钥。&lt;br /&gt;&lt;br /&gt;  🤖 AI 助手与团队协作：内置 MCP Server ，Claude Code 、Cursor 等客户端可直接读取接口（敏感值自动打码）并按权限辅助调试；网页版支持 Docker&lt;br /&gt;  一键自托管，桌面版登录后可离线编辑、按需同步并查看历史版本对比。&lt;br /&gt;&lt;br /&gt;  💻 全平台支持：支持 macOS 、Windows 和 Linux （均可在 GitHub Release 下载），同时提供 Docker 镜像支持私有化 Web 部署（在线体验： &lt;a target="_blank" href="https://cyberapi.pingap.io/" rel="nofollow noopener"&gt;https://cyberapi.pingap.io/&lt;/a&gt; ）。&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;a target="_blank" href="https://i.imgur.com/v180kYL.png" rel="nofollow noopener" target="_blank"&gt;&lt;img src="https://i.imgur.com/v180kYL.png" class="embedded_image" rel="noreferrer"&gt;&lt;/a&gt;
-	</description></item><item><title>[Apple] Apple Developer 账号注册经验分享</title><link>https://www.v2ex.com/t/1255680#reply4</link><guid>tag:www.v2ex.com,2026-11-09:/t/1255680</guid><pubDate>Mon, 09 Nov 2026 13:50:45 +0000</pubDate><description>
-	&lt;h1&gt;Apple Developer Program 个人账号注册经验分享&lt;/h1&gt;
-&lt;h2&gt;一、注册与身份认证&lt;/h2&gt;
+	</description></item><item><title>[OpenAI] Codex 登录不上去了</title><link>https://www.v2ex.com/t/1255743#reply2</link><guid>tag:www.v2ex.com,2026-11-10:/t/1255743</guid><pubDate>Tue, 10 Nov 2026 01:31:34 +0000</pubDate><description>
+	今天手抽更新了下，然后就登录不上去了。大家有什么解决方案吗？&lt;br /&gt;Error code&lt;br /&gt;token_exchange_failed&lt;br /&gt;Details&lt;br /&gt;Token exchange failed: error sending request for url ( &lt;a target="_blank" href="https://auth.openai.com/oauth/token" rel="nofollow noopener"&gt;https://auth.openai.com/oauth/token&lt;/a&gt;)
+	</description></item><item><title>[分享创造] 电动车双电池互锁（斥）方案已完成，还是让京东小哥上门帮忙弄的，我打下手</title><link>https://www.v2ex.com/t/1255742#reply3</link><guid>tag:www.v2ex.com,2026-11-10:/t/1255742</guid><pubDate>Tue, 10 Nov 2026 01:30:36 +0000</pubDate><description>
+	原帖： &lt;a target="_blank" href="https://www.v2ex.com/t/1254340"&gt;https://www.v2ex.com/t/1254340&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;最终的和京东上门安装小哥弄的方案：&lt;br /&gt;&lt;a target="_blank" href="https://i.imgur.com/5qZoydt.png" rel="nofollow noopener" target="_blank"&gt;&lt;img src="https://i.imgur.com/5qZoydt.png" class="embedded_image" rel="noreferrer"&gt;&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;天一下子冷了，今年应该没太多骑的机会了
+	</description></item><item><title>[分享创造] 墨知 2.0 更新：全新外观、日程管理与微信读书笔记同步</title><link>https://www.v2ex.com/t/1255741#reply1</link><guid>tag:www.v2ex.com,2026-11-10:/t/1255741</guid><pubDate>Tue, 10 Nov 2026 01:29:19 +0000</pubDate><description>
+	&lt;p&gt;最近利用业余时间，结合日常使用需求给墨知做了一轮更新，主要是外观、写作体验、日程管理和微信读书笔记同步。&lt;/p&gt;
+&lt;p&gt;这个版本值得一个独立主页：&lt;a href="https://mozi.yunz93.dev/" rel="nofollow"&gt;mozi&lt;/a&gt;，欢迎访问。&lt;/p&gt;
+&lt;h2&gt;全新的视觉风格&lt;/h2&gt;
+&lt;p&gt;2.0 版本采用纸质白和金属灰两种外观，支持自定义主题色。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="墨知浅色主界面|800" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://blog.yunz93.dev/static/images/mozi/v234-writing.jpg"/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="墨知深色主界面|800" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://blog.yunz93.dev/static/images/mozi/v234-dark.jpg"/&gt;
+&lt;img alt="墨知蓝色主题示例|800" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://blog.yunz93.dev/static/images/mozi/v234-accent.jpg"/&gt;&lt;/p&gt;
+&lt;h2&gt;小知助手&lt;/h2&gt;
+&lt;p&gt;内置本地语义检索模型，可以在知识库中查找相关内容，也支持配置在线模型 API 进行智能问答。回答附有来源引用，点击即可回到笔记原文。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="小知助手本地检索与来源片段|800" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://blog.yunz93.dev/static/images/mozi/v234-assistant.jpg"/&gt;&lt;/p&gt;
+&lt;h2&gt;微信读书笔记同步&lt;/h2&gt;
+&lt;p&gt;支持将微信读书笔记同步到本地，保留划线和个人想法，继续整理成自己的笔记。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="微信读书笔记同步设置|800" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://blog.yunz93.dev/static/images/mozi/v234-weread-settings.jpg"/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="微信读书摘录的本地整理示例|800" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://blog.yunz93.dev/static/images/mozi/v234-weread.jpg"/&gt;&lt;/p&gt;
+&lt;h2&gt;Excalidraw 画板&lt;/h2&gt;
+&lt;p&gt;Excalidraw 是我工作中常用的开源画图工具，现已集成到墨知，新建画板即可使用。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="墨知 Excalidraw 画板|800" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://blog.yunz93.dev/static/images/mozi/v234-canvas.jpg"/&gt;&lt;/p&gt;
+&lt;h2&gt;待办与日程管理&lt;/h2&gt;
+&lt;p&gt;在日记或项目笔记里，用 &lt;code&gt;@日期&lt;/code&gt; 标记待办的到期日，也可以写成 &lt;code&gt;@YYYY-MM-DD HH:mm&lt;/code&gt;，精确到分钟。输入 &lt;code&gt;@&lt;/code&gt; 后可直接选择日期和时间，保存后在月历和清单里统一查看，点击待办即可返回原笔记。&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-markdown"&gt;- [ ] 写完本周文章 @2026-11-12 15:00
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img alt="墨知日期与时间选择|800" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://blog.yunz93.dev/static/images/mozi/v234-time-picker.jpg"/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="墨知待办事项月历弹窗|800" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://blog.yunz93.dev/static/images/mozi/v234-calendar.jpg"/&gt;
+&lt;img alt="墨知待办事项清单|800" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://blog.yunz93.dev/static/images/mozi/v234-tasks.jpg"/&gt;&lt;/p&gt;
+&lt;p&gt;指定时间的待办到点提醒；只写日期时，可以在设置里安排多个提醒时刻。开启后台运行后，关窗也能继续提醒，完全退出后停止。macOS 还可将待办单向同步到系统日历。&lt;/p&gt;
+&lt;p&gt;点击系统托盘图标，可以直接展开原生待办菜单，按日期和逾期状态查看事项，再打开来源笔记或返回墨知。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="墨知待办与日程统一设置|800" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://blog.yunz93.dev/static/images/mozi/v234-settings.jpg"/&gt;&lt;/p&gt;
+&lt;h2&gt;专注模式&lt;/h2&gt;
+&lt;p&gt;开启后进入全屏，隐藏侧边栏和工具栏，并突出当前段落，减少写作时的干扰。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="墨知专注模式示例|800" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://blog.yunz93.dev/static/images/mozi/v234-focus.jpg"/&gt;&lt;/p&gt;
+&lt;h2&gt;写作与发布&lt;/h2&gt;
+&lt;p&gt;支持发布到配套的 Simple Blog 博客和微信公众号草稿箱，也能导出为 PDF 、HTML 和长图。公众号草稿提交后，仍可在公众号平台继续编辑和发布。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="墨知导出 PDF 、HTML 与长图入口|800" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://blog.yunz93.dev/static/images/mozi/v234-publish.jpg"/&gt;&lt;/p&gt;
+&lt;h2&gt;更好的写作体验&lt;/h2&gt;
+&lt;p&gt;修复了编辑不连贯、部分 Markdown 语法渲染异常和中文输入时误关弹窗等问题，并优化了长文编辑、滚动和预览切换的体验。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="约 3 万字长文输入、滚动与预览切换演示|800" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://raw.githubusercontent.com/Yunz93/PicRepo/main/images/mozi-20261108-long-edit.gif"/&gt;&lt;/p&gt;
+&lt;p&gt;文件树支持按名称、创建时间、更新时间和文件类型排序，拖动文件时自动滚动，也可以把本地文件拖入知识库，或将文件拖出到桌面。&lt;/p&gt;
+&lt;p&gt;Live 模式的编辑体验仍会继续优化，欢迎反馈使用中遇到的问题。&lt;/p&gt;
+&lt;h2&gt;安装&lt;/h2&gt;
+&lt;p&gt;在 macOS （ Apple Silicon ）上打开「终端」，复制执行：&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-bash"&gt;curl -fsSL https://raw.githubusercontent.com/Yunz93/Mozi/main/scripts/install-macos.sh | bash
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;脚本会自动下载最新版本，并安装到「应用程序」。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Windows 和 Linux 用户可在 &lt;a href="https://github.com/Yunz93/Mozi/releases/latest" rel="nofollow"&gt;发布页&lt;/a&gt; 下载安装包； Linux 提供 x64 &lt;code&gt;.deb&lt;/code&gt; 包。 三个平台均可在「设置 → 关于」检查更新，Linux 应用内升级需要系统授权。MacOS 做了相对全面的真机测试验证，Windows 和 Linux 主要通过云端环境和 CI 进行测试覆盖，有问题可以 issue 反馈。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;项目地址：&lt;a href="https://github.com/Yunz93/Mozi" rel="nofollow"&gt;GitHub&lt;/a&gt;，欢迎 Star 、Fork ，感谢支持。&lt;/p&gt;
+
+	</description></item><item><title>[问与答] 求冬天骑电瓶车护脖护脸法</title><link>https://www.v2ex.com/t/1255740#reply12</link><guid>tag:www.v2ex.com,2026-11-10:/t/1255740</guid><pubDate>Tue, 10 Nov 2026 01:27:21 +0000</pubDate><description>
+	&lt;p&gt;冬天骑电瓶车太冷了，尤其是风大的时候，大家是怎么保护脖子和脸的&lt;/p&gt;
+
+	</description></item><item><title>[问与答] AI 在工作时电脑明显变卡</title><link>https://www.v2ex.com/t/1255739#reply8</link><guid>tag:www.v2ex.com,2026-11-10:/t/1255739</guid><pubDate>Tue, 10 Nov 2026 01:21:42 +0000</pubDate><description>
+	&lt;p&gt;我用的是 Windows 系统，大家有没有遇到过在用 AI 的时候电脑变卡，在用 codex ，Claude ，DeepSeek 都能感觉到在写代码和文档的时候，鼠标经常会卡住不能动，半秒或者一秒后才能正常。键盘按下没有反应，之后会一直输入卡之前的键位(字母，空格，删除，复制等)。&lt;/p&gt;
+&lt;p&gt;下面是我的配置
+处理器	Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz   2.90 GHz
+机带 RAM	32.0 GB
+存储	1.82 TB HDD ST2000DM008-2FR102, 238 GB SSD MTFDHBA256TCK-1AS1AABHA, 447 GB SSD J.ZAO 3 SERIES 2.5 INCH 480GB SATA SSD
+显卡	NVIDIA GeForce GT 1030 (2 GB), Intel(R) UHD Graphics 630 (128 MB)&lt;/p&gt;
+
+	</description></item><item><title>[分享创造] BriefFeed 新增网易新闻的自动总结，现在已支持 24 个站点</title><link>https://www.v2ex.com/t/1255738#reply1</link><guid>tag:www.v2ex.com,2026-11-10:/t/1255738</guid><pubDate>Tue, 10 Nov 2026 01:20:32 +0000</pubDate><description>
+	&lt;p&gt;&lt;img alt="Netease News" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://cdnv2.ruguoapp.com/FopLKeEI3ROMnmfMJExS13A0nx5Uv3.png?imageMogr2/meta-keep-list/ZXhpZixVc2VyQ29tbWVudA==/auto-orient"/&gt;&lt;/p&gt;
+&lt;p&gt;收到用户在&lt;a href="https://brieffeed.app" rel="nofollow"&gt;BriefFeed&lt;/a&gt; App 里边的反馈希望支持网易新闻后，周末好天气没有出去做了下，已经上线，现在已支持 24 个站点的内嵌自动总结了：&lt;/p&gt;
+&lt;p&gt;&lt;img alt="All" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://cdnv2.ruguoapp.com/Fh4pK9LWfqcroNHLmRvI8UvI_Ap1v3.png?imageMogr2/meta-keep-list/ZXhpZixVc2VyQ29tbWVudA==/auto-orient"/&gt;&lt;/p&gt;
+&lt;p&gt;各个版本地址：&lt;a href="https://chromewebstore.google.com/detail/brieffeed/lpolefkhiipebkomajgkcjglnfdjkeik" rel="nofollow"&gt;Chrome&lt;/a&gt;、&lt;a href="https://apps.apple.com/app/brieffeed/id6791816597" rel="nofollow"&gt;iOS 、iPad&lt;/a&gt;、&lt;a href="https://apps.apple.com/cn/app/brieffeed-reader/id6791817778" rel="nofollow"&gt;Mac&lt;/a&gt;、&lt;a href="https://microsoftedge.microsoft.com/addons/detail/brieffeed-ai-summaries-f/edmfeodpdplilhciggjhdalooanjpaia" rel="nofollow"&gt;Edge&lt;/a&gt;、&lt;a href="https://addons.mozilla.org/firefox/addon/brieffeed/" rel="nofollow"&gt;Firefox&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;产品故事可看之前的&lt;a href="https://www.v2ex.com/t/1211756" rel="nofollow"&gt;内测介绍&lt;/a&gt;，欢迎使用反馈，感兴趣了可以进产品群：&lt;/p&gt;
+&lt;p&gt;&lt;img alt="group" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://i.imgur.com/LX22977.png"/&gt;&lt;/p&gt;
+
+	</description></item><item><title>[问与答] 我是不是真的老年痴呆了？还是说被骗了？</title><link>https://www.v2ex.com/t/1255737#reply34</link><guid>tag:www.v2ex.com,2026-11-10:/t/1255737</guid><pubDate>Tue, 10 Nov 2026 01:20:08 +0000</pubDate><description>
+	年纪大了，想喷点香水遮老人味，朋友推荐了大卫杜夫冷水，说是一百多左右。&lt;br /&gt;按自己的购物习惯，打开京东，搜索，选自营的挑个价格可以 99 的下单。&lt;br /&gt;然后给我寄来了个 1.2ml 小样，我以为寄错了，&lt;br /&gt;查了一下订单发现我买的就是小样。&lt;br /&gt;此时我怀疑自己是不是有老年痴呆。&lt;br /&gt;我咋就买错了呢，&lt;br /&gt;花了 95 买了个 1.2ml 的小样。200ml 的也只要 150 元左右。&lt;br /&gt;&lt;a target="_blank" href="https://i.imgur.com/NEsUqtL.jpeg" rel="nofollow noopener" target="_blank"&gt;&lt;img src="https://i.imgur.com/NEsUqtL.jpeg" class="embedded_image" rel="noreferrer"&gt;&lt;/a&gt;&lt;br /&gt;&lt;a target="_blank" href="https://i.imgur.com/rTcCyyQ.jpeg" rel="nofollow noopener" target="_blank"&gt;&lt;img src="https://i.imgur.com/rTcCyyQ.jpeg" class="embedded_image" rel="noreferrer"&gt;&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;好像也退不了，现在能理解年纪大的人容易被诈骗了。真的是脑子跟不上了。记录一下防止以后忘记了
+	</description></item><item><title>[优惠信息] 20261110 移动领 1-9 元话费</title><link>https://www.v2ex.com/t/1255736#reply22</link><guid>tag:www.v2ex.com,2026-11-10:/t/1255736</guid><pubDate>Tue, 10 Nov 2026 01:19:55 +0000</pubDate><description>
+	&lt;p&gt;打开中国移动 APP - 下方中间点击“灵犀” - 发送口令“羊汤好鲜美”（今天 10 点开始）&lt;/p&gt;
+
+	</description></item><item><title>[推广] 🥭 芒果 AI 更新： Grok / GLM / Kimi 上新， GPT 全系列 0.1 倍率，国产模型 0.1 折起</title><link>https://www.v2ex.com/t/1255735#reply1</link><guid>tag:www.v2ex.com,2026-11-10:/t/1255735</guid><pubDate>Tue, 10 Nov 2026 01:19:15 +0000</pubDate><description>
+	&lt;p&gt;最近芒果 AI 更新了一批模型和计费口径，简单同步一下，给有 API 调用需求的 V 友参考。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;更新内容：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Grok 、GLM 、Kimi 上新&lt;/li&gt;
+&lt;li&gt;GPT 全系列统一按 0.1 倍率计费&lt;/li&gt;
+&lt;li&gt;国产模型 0.1 折起&lt;/li&gt;
+&lt;li&gt;AI 生图 ¥0.015 起，高质量档 ¥0.15 起&lt;/li&gt;
+&lt;li&gt;新用户注册送 1 元体验额度&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;芒果 AI 提供统一 API 入口，DeepSeek 、Kimi 、GLM 、Grok 、GPT 系列等可按需选择，具体模型、价格和可用能力以官网为准。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;适合哪些场景：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;AI 编程：&lt;/strong&gt; 代码生成、修 Bug 、项目分析，降低高频调用成本&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;终端 Agent：&lt;/strong&gt; 多轮思考、反复执行任务，不必每步都上高价模型&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;批量任务：&lt;/strong&gt; 文本处理、内容生成、自动化工作流，更容易控制整体预算&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;AI 生图：&lt;/strong&gt; 低成本尝试不同生成需求&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;选型上不建议每个任务都用最贵模型。简单任务交给经济型模型，复杂任务再选更合适的模型，把预算花在真正需要高性能的地方。&lt;/p&gt;
+&lt;p&gt;有大量 API 调用需求的，可以先领 1 元额度，用自己的任务跑一下实际成本。&lt;/p&gt;
+&lt;p&gt;官网： &lt;a href="https://mgoole.com/" rel="nofollow"&gt;https://mgoole.com/&lt;/a&gt;&lt;br/&gt;
+交流群：1124355926&lt;/p&gt;
+&lt;p&gt;欢迎试用，也欢迎 V 友反馈模型体验和计费问题。&lt;/p&gt;
+
+	</description></item><item><title>[分享创造] 为了学英语，开源 肉鸽游戏 背单词，启动！</title><link>https://www.v2ex.com/t/1255734#reply4</link><guid>tag:www.v2ex.com,2026-11-10:/t/1255734</guid><pubDate>Tue, 10 Nov 2026 01:16:07 +0000</pubDate><description>
+	&lt;p&gt;在线体验： &lt;a href="https://piclex.v2fy.com/piclex-web/#/settings/lab" rel="nofollow"&gt;https://piclex.v2fy.com/piclex-web/#/settings/lab&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;开源地址： &lt;a href="https://github.com/zhaoolee/piclex-web/" rel="nofollow"&gt;https://github.com/zhaoolee/piclex-web/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;核心玩法是，限时关卡杀怪物，获得经验，金币，购买强大的道具（购买道具时，把单词正确填入孔槽，即可解锁道具，否则就只扣款不发货），再杀下一轮更强大的怪物，直到撑到 20 轮，解锁更强大的道具与角色。&lt;/p&gt;
+&lt;p&gt;如果不想在游戏中拼词，可以在 App 内拍照生成单词，拼写单词，获取经验，经验可以在游戏中，免拼获取道具&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://i.v2ex.co/vd7U6F9I.gif"/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://i.v2ex.co/15l237C0.jpeg"/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://i.v2ex.co/1HUT6z9u.png"/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://i.v2ex.co/P3e09TxK.png"/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://i.v2ex.co/35d8Z0U6.png"/&gt;&lt;/p&gt;
+
+	</description></item><item><title>[分享创造] 浏览器插件，一键备份 b 站视频到百度网盘</title><link>https://www.v2ex.com/t/1255732#reply5</link><guid>tag:www.v2ex.com,2026-11-10:/t/1255732</guid><pubDate>Tue, 10 Nov 2026 01:14:20 +0000</pubDate><description>
+	&lt;p&gt;给之前做的 bilibili 无限历史记录浏览器插件增加了一个新功能，一键备份 b 站视频到百度网盘。&lt;/p&gt;
+&lt;p&gt;插件地址： &lt;a href="https://chromewebstore.google.com/detail/bilibili-%E6%97%A0%E9%99%90%E5%8E%86%E5%8F%B2%E8%AE%B0%E5%BD%95/cfloggaggkeocfoflejkmhdhbehjojga?hl=zh" rel="nofollow"&gt;https://chromewebstore.google.com/detail/bilibili-%E6%97%A0%E9%99%90%E5%8E%86%E5%8F%B2%E8%AE%B0%E5%BD%95/cfloggaggkeocfoflejkmhdhbehjojga?hl=zh&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;步骤：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;使用新的邮箱注册 Apple 账号（我使用的是 QQ 邮箱）。
-&lt;a href="https://developer.apple.com/cn/" rel="nofollow"&gt;https://developer.apple.com/cn/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;安装插件，打开一个视频页，点击“备份该视频”这个按钮
+&lt;img alt="" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://i.imgur.com/UCoTZh1.jpeg"/&gt; &lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;iPhone 下载 &lt;strong&gt;Apple Developer&lt;/strong&gt; App ，登录刚注册的账号。&lt;/p&gt;
+&lt;p&gt;点击后会自动打开插件的标签页进行下载和上传
+&lt;img alt="" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://i.imgur.com/9vk2qZP.png"/&gt; &lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;按要求填写真实完整的姓名、身份证信息，以及与身份证实名对应的手机号。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;英文姓名：&lt;/strong&gt; 直接使用身份证姓名的汉语拼音，不需要专门取英文名。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;张三：Zhang San&lt;/li&gt;
-&lt;li&gt;张三丰：Zhang Sanfeng&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;地址：&lt;/strong&gt; 按身份证上的地址，使用简体中文填写。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;街道地址：从区县填写到乡镇、村或小区。&lt;/li&gt;
-&lt;li&gt;楼号、单元号、房间号：填写具体门牌信息，例如 143 号。&lt;/li&gt;
-&lt;li&gt;市/镇：填写市级，例如武汉市。&lt;/li&gt;
-&lt;li&gt;州/省：填写省级，例如湖北省。&lt;/li&gt;
-&lt;li&gt;邮政编码：填写地址对应的街道级邮编，查询： &lt;a href="https://www.ip138.com/43/wuhan/%EF%BC%88%E8%A1%97%E9%81%93%EF%BC%89" rel="nofollow"&gt;https://www.ip138.com/43/wuhan/（街道）&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;手机号：与前面填写的实名手机号保持一致。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;提交前建议关闭 VPN 、代理，使用国内正常网络。&lt;/p&gt;
+&lt;p&gt;上传完成以后可以在百度网盘中看到该视频
+&lt;img alt="" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://i.imgur.com/x93Jpk5.png"/&gt;
+&lt;img alt="" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://i.imgur.com/cg1hg5s.png"/&gt; &lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;完成以上步骤后，后续按需选择主体即可。&lt;/p&gt;
-&lt;h2&gt;二、支付&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;按提示进入会员购买页面。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;如果显示美元（$99 ），说明当前关联的 App Store 商店账号可能是美区账号。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;切换方式：&lt;/p&gt;
-&lt;p&gt;iPhone 设置 → Apple 账号 → 媒体与购买项目 → 退出登录 → 登录国区商店账号。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;返回 Developer App ，继续支付。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;&lt;strong&gt;注意：&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;不需要退出 iCloud 主账号，只切换（商店的账号）即可。&lt;/li&gt;
-&lt;li&gt;支付过程中可以退出，切换商店账号后重新进入，不需要重新注册或重新进行人脸认证。&lt;/li&gt;
-&lt;li&gt;付款前确认显示的是人民币价格，且付款账号正确。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;三、审核&lt;/h2&gt;
-&lt;p&gt;付款成功后，会员申请可能仍处于审核状态，等待 Apple 通知即可。注意检查注册邮箱，包括垃圾邮件。&lt;/p&gt;
-&lt;p&gt;可能会要求到指定网站上传证件照片，按照要求上传就行了，随后几个小时后应该就可以收到欢迎加入的邮件了（他们可能会在任何时候处理你的审核，回复你的邮件）。&lt;/p&gt;
-&lt;p&gt;最终以开发者账户显示 &lt;strong&gt;Active&lt;/strong&gt; 为准。&lt;/p&gt;
-&lt;p&gt;以上为个人实际注册经验，具体流程以 Apple 当前页面要求为准。&lt;/p&gt;
+&lt;p&gt;该功能完全免费，主要解决的是一些 b 友因为珍贵的 b 站视频失效而痛心疾首的问题。&lt;br/&gt;
+以前可能有人做过备份到 nas 的方案，但是对大多数普通人来说，百度网盘才是更好的方案。&lt;/p&gt;
+&lt;p&gt;插件官网：&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://bilibilihistory.com" rel="nofollow"&gt;https://bilibilihistory.com&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://bilibilihistory.mundane.ink" rel="nofollow"&gt;https://bilibilihistory.mundane.ink&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;(下面这个便于国内访问)&lt;/p&gt;
 
-	</description></item><item><title>[OpenAI] 有没有一种感觉， gpt 的模型越来越拉， 6.1 还不如之前的 5.6 好用呢</title><link>https://www.v2ex.com/t/1255679#reply8</link><guid>tag:www.v2ex.com,2026-11-09:/t/1255679</guid><pubDate>Mon, 09 Nov 2026 13:32:24 +0000</pubDate><description>
-	随便一个任务就能跑十分钟以上,早晨让配置下代理，搞了 40 分钟，然后改错了
-	</description></item><item><title>[程序员] [自荐] SPX：基于 Next.js + Supabase + Stripe 的独立产品网站源码</title><link>https://www.v2ex.com/t/1255678#reply0</link><guid>tag:www.v2ex.com,2026-11-09:/t/1255678</guid><pubDate>Mon, 09 Nov 2026 13:24:00 +0000</pubDate><description>
-	&lt;p&gt;大家好，来分享一下我整理的网站源码产品 SPX ，也给自己的产品做个自荐。&lt;/p&gt;
-&lt;p&gt;做独立产品，核心功能之外，总有一批需要处理的事情：产品介绍页、用户登录、支付、购买后的访问权限、博客，以及部署配置。&lt;/p&gt;
-&lt;p&gt;这些事情每一项都有现成方案，但把它们接起来，仍然要花时间处理配置和流程细节。&lt;/p&gt;
-&lt;p&gt;SPX 就是把这些基础模块整理到一个项目里，让有开发基础、准备做产品的人，可以从已有代码开始修改。&lt;/p&gt;
-&lt;p&gt;目前包含：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;网站页面：产品介绍、价格展示、FAQ 等基础页面。&lt;/li&gt;
-&lt;li&gt;用户登录：基于 Supabase Auth ，支持邮箱验证码，可配置 Google 登录。&lt;/li&gt;
-&lt;li&gt;支付与权限：Stripe 一次性付款，支付完成后通过 Webhook 更新用户访问权限。&lt;/li&gt;
-&lt;li&gt;会员工作区：登录后的用户页面和产品访问入口。&lt;/li&gt;
-&lt;li&gt;博客与 SEO 基础：文章、分类、作者页及 sitemap 配置。&lt;/li&gt;
-&lt;li&gt;部署文档：本地启动、数据库配置、支付配置和上线步骤。
-技术栈是 Next.js 14 App Router 、TypeScript 、Supabase 、Stripe 、Tailwind CSS 和 DaisyUI 。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;IndieXYZ 这套站点本身也用于展示 SPX 的页面和模块，可以先看看效果，再判断是否符合自己的需求：&lt;/p&gt;
-&lt;p&gt;产品介绍： &lt;a href="https://indiexyz.com/#spx" rel="nofollow"&gt;https://indiexyz.com/#spx&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;使用指南： &lt;a href="https://indiexyz.com/blog/spx-usage-guide" rel="nofollow"&gt;https://indiexyz.com/blog/spx-usage-guide&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;提前说明一下使用边界：交付的是网站源码，需要自行配置 Supabase 、Stripe 、邮件服务和部署环境；目前支付流程是一次性购买。它适合愿意改代码、希望少做一些基础搭建的开发者。&lt;/p&gt;
-&lt;p&gt;价格： [补充实际金额及币种] ，一次性购买。 第三方服务的费用需要另外承担。&lt;/p&gt;
-&lt;p&gt;也想听听大家的意见：你们做独立产品时，登录、支付、部署这些环节，哪个最耗时间？对于这类源码产品，最在意的是代码结构、文档完整度，还是后续维护？&lt;/p&gt;
-&lt;p&gt;欢迎提具体问题，我会在评论里回复。&lt;/p&gt;
-
-	</description></item><item><title>[分享创造] [开源] 写了个 Antigravity 进程级代理补丁（附 IDE 插件），不挂 TUN、不动内网路由~</title><link>https://www.v2ex.com/t/1255677#reply3</link><guid>tag:www.v2ex.com,2026-11-09:/t/1255677</guid><pubDate>Mon, 09 Nov 2026 13:18:46 +0000</pubDate><description>
-	&lt;h1&gt;又又造了个轮子：不挂 TUN 、不动内网路由，让 Antigravity 独立走代理的免驱动补丁&lt;/h1&gt;
-&lt;p&gt;用 Antigravity 时，遇到过系统代理已经开了，部分请求还是连不上的情况。开 TUN 能解决一些问题，但我只是想让 Antigravity 走代理，不想为了它再调整其他软件的网络规则。&lt;/p&gt;
-&lt;p&gt;所以写了个 Antigravity Proxy：给 Antigravity 单独指定代理，不用开 TUN ，也不修改系统代理设置。&lt;/p&gt;
-&lt;p&gt;项目地址：&lt;a href="https://github.com/yuaotian/antigravity-proxy" rel="nofollow"&gt;GitHub · antigravity-proxy&lt;/a&gt;，BSD-2-Clause 开源。&lt;/p&gt;
-&lt;h2&gt;能做什么&lt;/h2&gt;
-&lt;p&gt;目前支持 Windows 下的 Antigravity IDE 、桌面版和 CLI ，提供 x86 / x64 版本。支持 SOCKS5 和 HTTP 代理，也支持账号密码认证。&lt;/p&gt;
-&lt;p&gt;使用前需要自己准备好可用的代理。比如已经在用 Clash ，就填它的本地代理地址和端口，继续用原来的节点。&lt;/p&gt;
-&lt;p&gt;IDE 版还配了一个插件，日常操作可以直接在界面里完成：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;修改代理地址、端口，测试连接；&lt;/li&gt;
-&lt;li&gt;查看代理状态、实时日志和出口 IP ；&lt;/li&gt;
-&lt;li&gt;检测 Gemini 可达性，辅助排查连接问题。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;另外处理了一个比较麻烦的情况：Antigravity 更新后，安装目录里的补丁可能被清掉。IDE 插件会在下次启动时检查并补回，按提示重启即可，不用再手动复制。&lt;/p&gt;
-&lt;h2&gt;怎么安装&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;IDE 用户&lt;/strong&gt;可以直接在扩展市场搜索 &lt;code&gt;Antigravity Proxy&lt;/code&gt;，或从 &lt;a href="https://open-vsx.org/extension/yuaotian/antigravity-proxy" rel="nofollow"&gt;Open VSX&lt;/a&gt; 安装，按提示配置代理并重启。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;桌面版和 CLI 用户&lt;/strong&gt;可以使用仓库里的在线安装脚本，也可以从 &lt;a href="https://github.com/yuaotian/antigravity-proxy/releases" rel="nofollow"&gt;Releases&lt;/a&gt; 下载对应的发布包。具体步骤放在 README 里，帖子就不贴长命令了。&lt;/p&gt;
-&lt;h2&gt;原理和适用范围&lt;/h2&gt;
-&lt;p&gt;底层是放在应用目录里的 &lt;code&gt;version.dll&lt;/code&gt;，通过 Hook 网络连接，让 Antigravity 相关进程使用配置好的代理。不装虚拟网卡，也不接管整台电脑的流量。&lt;/p&gt;
-&lt;p&gt;有两个使用边界提前说一下：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;补丁作用于 Windows 进程，WSL 内的程序需要单独配置代理。&lt;/li&gt;
-&lt;li&gt;代理连通不等于服务端一定接受请求。遇到 &lt;code&gt;User location is not supported&lt;/code&gt;，还需要排查出口地区和服务端限制，安装补丁并不保证解决这类报错。（ PS：换其他国家 IP ，比如新加坡、日本、美国等）&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;如果你也只是想让 Antigravity 单独走代理，可以试试。遇到问题欢迎提 Issue ，附上应用版本和脱敏日志，方便定位；有改进想法也欢迎交流或提 PR 。&lt;/p&gt;
-
-	</description></item><item><title>[股票] 做了一个 A 股看盘和复盘工具 StockClaw，欢迎体验</title><link>https://www.v2ex.com/t/1255675#reply2</link><guid>tag:www.v2ex.com,2026-11-09:/t/1255675</guid><pubDate>Mon, 09 Nov 2026 12:52:56 +0000</pubDate><description>
-	&lt;p&gt;大家好，我是 StockClaw 的开发者，来介绍一下自己在做的网站。&lt;/p&gt;
-&lt;p&gt;地址： &lt;a href="https://stockclaw.dkluge.com/" rel="nofollow"&gt;https://stockclaw.dkluge.com/&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;StockClaw 是一个 A 股市场观察和复盘工具。想解决的问题很具体：读完一条消息之后，能接着看相关题材、成分股和当天表现；盘后再回到同一个日期，把消息和实际行情对照起来，少在几个页面之间反复找。&lt;/p&gt;
-&lt;p&gt;目前主要有这些内容：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;盘前与盘后资讯&lt;/strong&gt;：每日财经资讯、7×24 快讯、早盘情报，把消息和相关题材放在一起看。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;涨跌停复盘&lt;/strong&gt;：查看涨停、跌停、炸板和连板天梯，按日期、板数和题材梳理当天的市场情况。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;题材观察&lt;/strong&gt;：查看题材强度、成分股和不同展示方式，继续进入个股行情、K 线及历史涨停记录。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;同屏对比与自选&lt;/strong&gt;：把多只股票放在同一屏查看分时走势，配合自选股持续观察。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;龙虎榜与资金信息&lt;/strong&gt;：整理公开披露记录，方便回查。席位关联只代表公开资料中的关联，不等同于确认实际账户归属。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;网页版适合大屏看盘和盘后整理，也有 iPhone 、iPad 和 Android 客户端，下载入口在网站里。网站有公开页面，部分功能需要登录或有效订阅权益，具体范围在站内说明。&lt;/p&gt;
-&lt;p&gt;我更希望它能帮助使用者把信息串起来、保留复盘上下文。数据和整理内容都可能存在延迟或遗漏，AI 整理的内容也需要结合原始来源核对；它不提供代客交易，也不承诺收益。&lt;/p&gt;
-&lt;p&gt;欢迎大家试用后提意见。尤其想了解：你平时复盘最费时间的是哪一步？现在的题材、天梯和同屏展示，还有哪些地方读起来不顺手？&lt;/p&gt;
-
-	</description></item><item><title>[MacBook] 收 MacBook Pro 16 32G，走🐟自带价</title><link>https://www.v2ex.com/t/1255674#reply0</link><guid>tag:www.v2ex.com,2026-11-09:/t/1255674</guid><pubDate>Mon, 09 Nov 2026 12:47:12 +0000</pubDate><description>
-	有出手的老板吗
-	</description></item><item><title>[问与答] 哪里的菜市场/超市能买到比较正宗的猪血?</title><link>https://www.v2ex.com/t/1255672#reply1</link><guid>tag:www.v2ex.com,2026-11-09:/t/1255672</guid><pubDate>Mon, 09 Nov 2026 12:25:34 +0000</pubDate><description>
-	&lt;p&gt;坐标深圳,上周在家附近的农批市场买了猪血,是那种已经红色成块,类似布丁的外观.做来吃怎么都没有老家杀年猪的那种糯.V 友们哪里的菜市场/超市能买到比较正宗的猪血?&lt;/p&gt;
-
-	</description></item><item><title>[游戏] 最终幻想：共鸣优化问题</title><link>https://www.v2ex.com/t/1255671#reply0</link><guid>tag:www.v2ex.com,2026-11-09:/t/1255671</guid><pubDate>Mon, 09 Nov 2026 12:23:44 +0000</pubDate><description>
-	&lt;p&gt;Steam 版，4K 120Hz 下，即便游戏内锁 60 帧，显卡功耗也会非常高。但如果将显示器分辨率刷新率改为 4K 60Hz ，显卡功耗会显著下降。二者游戏体验不会有实质性差别，显卡风扇声音差别非常大。&lt;/p&gt;
-&lt;p&gt;我是如何发现的呢？我平常关闭 HDR 的，这次不小心打开了，HDR 下会默认将刷新率切换到 60Hz ，发现风扇声音一下子下降了，查看 N 卡的功耗也从 200 多 W 降低到了 120W 。这种情况下只要将刷新率改为 120Hz ，几秒后风扇就开始狂转了。&lt;/p&gt;
-&lt;p&gt;感觉有点神奇，可能是换了显示器以后，很久没有玩过这种优化的游戏了。SE 总能整一些新花样出来。&lt;/p&gt;
-
-	</description></item><item><title>[网络安全] 有没有安全大佬，从 10.19 号开始多个账号接连被登陆导致被封或者被限制，该如何查起</title><link>https://www.v2ex.com/t/1255670#reply5</link><guid>tag:www.v2ex.com,2026-11-09:/t/1255670</guid><pubDate>Mon, 09 Nov 2026 12:21:46 +0000</pubDate><description>
-	&lt;p&gt;时间线 10.19 早晨发现 chatgpt 无法登陆，前一天晚上还正常使用，显示邮箱已更改，好在 chatgpt 比较友好，通过一周多的交涉，把号又给我了，我登陆上去之后网页版的聊天记录有几条俄语的会话记录。&lt;/p&gt;
-&lt;p&gt;时间线 10 月 21 号早上发现我的 x 账号登陆状态掉了，然后我重新登陆之后 x 账号的昵称，用户名，头像等都被改了，我把用户名改回来之后然后更改密码，然后到 10.26 号早上被通知“不真实行为”封号，我怀疑是登陆人做了什么，，申诉也无法解封。&lt;/p&gt;
-&lt;p&gt;时间线 11.6 号我访问我的 GitHub ，发现我上面仓库的 release 都没了，然后我寻思 GitHub 出问题了，就去 action 点击 workflow 运行一下准备再做一个 release 包，然后因为当天周五，点完开会后来就忘了，今天周一去 GitHub 仓库发现还是没有 release ，然后我就又去 action run workflow ，发现没反应根本不创建任务，然后我就让 AI 检查我的账户有什么问题，AI 检查说是 GitHub 账户被限制了，然后让 AI 检查 GitHub 日志发现在 11.6 号早上 6 点进行了如下操作：“06:10:08	添加 &lt;a href="mailto:beno93@germmail.com"&gt;beno93@germmail.com&lt;/a&gt;	87.19.85.138 ，显示意大利
-06:13:00	移除并新增两步验证方式	188.81.116.161 ，显示葡萄牙
-06:13:02–06:13:11	查看、下载恢复码	同上”   就是也被盗了。&lt;/p&gt;
-&lt;p&gt;时间线不清楚：因为 telegram 不是每天用，发生以上事件之后，我登陆我的 telegram ，发现我之前的聊天全没了，然后我的用户名昵称也变了，聊天群组全是俄语。&lt;/p&gt;
-&lt;p&gt;有没有安全大佬帮我分析下我该怎么检查我的电脑，因为让 AI 检查也没检查出什么，我现在正在用 360 全盘扫描，能有用吗，是我的电脑被黑了呢，还是其他原因呢，问题是我的账户都有二次验证，然后在我的邮箱里也没发现什么通知邮件，是我的邮箱也被黑了吗，现在邮箱都已改密码，二次验证也都重新设置。我现在比较担心是不是电脑被人毛子远程监控了。&lt;/p&gt;
-
-	</description></item><item><title>[推广] dsf 上游，提供官 key， 超低折扣，质量保证，欢迎联系</title><link>https://www.v2ex.com/t/1255669#reply1</link><guid>tag:www.v2ex.com,2026-11-09:/t/1255669</guid><pubDate>Mon, 09 Nov 2026 12:17:50 +0000</pubDate><description>
-	同官方峰谷价，缓存命中 90%-95%，3.5 折直出，官 key 速度，质量保证&lt;br /&gt;&lt;br /&gt;微信号（ base64 ）：eXlxYW5kemhq
-	</description></item><item><title>[问与答] 有靠谱的 surface 的商家吗，想买前几代的机器，便宜点的</title><link>https://www.v2ex.com/t/1255668#reply0</link><guid>tag:www.v2ex.com,2026-11-09:/t/1255668</guid><pubDate>Mon, 09 Nov 2026 12:14:49 +0000</pubDate><description>
-	大佬们有推荐的吗
-	</description></item><item><title>[问与答] 有没有适合 4 年级小学生看的英文动画片呀？</title><link>https://www.v2ex.com/t/1255667#reply6</link><guid>tag:www.v2ex.com,2026-11-09:/t/1255667</guid><pubDate>Mon, 09 Nov 2026 12:12:44 +0000</pubDate><description>
-	腾讯视频上的动画片都看完了 😭
-	</description></item><item><title>[分享发现] [分享发现] 答辩前改框架图，为什么我更建议拿到可编辑版本</title><link>https://www.v2ex.com/t/1255666#reply0</link><guid>tag:www.v2ex.com,2026-11-09:/t/1255666</guid><pubDate>Mon, 09 Nov 2026 12:07:38 +0000</pubDate><description>
-	&lt;p&gt;每年答辩季都会遇到同一件事：导师在框架图上批注“这个框往左挪一点”“字号统一一下”“把这一层拆成两页”。&lt;/p&gt;
-&lt;p&gt;如果手上只有一张截图，这些意见只能靠自己重画一遍；如果是可编辑的版本，改的是形状和文本框，位置、连线、配色都在，改完还能保持原来的版式。&lt;/p&gt;
-&lt;p&gt;我自己给学生整理资料时，会先把旧图转成可编辑的，攒成一个母版库。同一套框架图，换课题就换文字，结构和配色不动，比每次从零画快得多。&lt;/p&gt;
-&lt;p&gt;要注意的是，转出来的东西不能盲信：先核对文字有没有漏、层级有没有串，再动手改。把它当成一个起点，而不是成品。&lt;/p&gt;
-&lt;p&gt;工具入口在这里： &lt;a href="https://image2ppt.asia?utm_source=v2ex" rel="nofollow"&gt;https://image2ppt.asia?utm_source=v2ex&lt;/a&gt;
-（图片、截图、单页 PDF 都能转成可编辑的 PPTX ，成品无水印。）&lt;/p&gt;
-&lt;p&gt;一个例子（原图 → 可编辑成品）：&lt;/p&gt;
-&lt;p&gt;&lt;img alt="商务汇报 PPT 模板 原图" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://raw.githubusercontent.com/showerberich/editable-ppt-materials/main/materials/%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/139_%E5%95%86%E5%8A%A1%E6%B1%87%E6%8A%A5PPT%E6%A8%A1%E6%9D%BF_p01/%E5%8E%9F%E5%9B%BE.jpg"/&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="商务汇报 PPT 模板 成品" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://raw.githubusercontent.com/showerberich/editable-ppt-materials/main/materials/%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/139_%E5%95%86%E5%8A%A1%E6%B1%87%E6%8A%A5PPT%E6%A8%A1%E6%9D%BF_p01/%E6%88%90%E5%93%81%E9%A2%84%E8%A7%88.jpg"/&gt;&lt;/p&gt;
-&lt;p&gt;素材库里随手挑的几页，这类图都能这么转：&lt;/p&gt;
-&lt;p&gt;&lt;img alt="010_年终总结数据可视化 PPT 模板_p08" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://raw.githubusercontent.com/showerberich/editable-ppt-materials/main/materials/_showcase/s026.jpg"/&gt;
-&lt;img alt="17_科技风技术架构结构金融 PPT" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://raw.githubusercontent.com/showerberich/editable-ppt-materials/main/materials/_showcase/s053.jpg"/&gt;&lt;/p&gt;
-
-	</description></item><item><title>[酷工作] [内推]20261109 渣打银行 广州 &amp; 天津 | 61 个在招岗位</title><link>https://www.v2ex.com/t/1255665#reply1</link><guid>tag:www.v2ex.com,2026-11-09:/t/1255665</guid><pubDate>Mon, 09 Nov 2026 12:01:34 +0000</pubDate><description>
-	&lt;p&gt;广州 27 个 | 天津 34 个&lt;/p&gt;
-&lt;p&gt;社招，5 年以上经验，硕士以上学历可放宽。Work life balance，年假 15-20 天，每周两到三天居家办公, 五险一金 + 补充商业险。&lt;/p&gt;
-&lt;p&gt;英文水平要求高，全英面试，硬性要求，部分面试官不一定全英面试，不保证。&lt;/p&gt;
-&lt;p&gt;简历发我内推, 自行投递不走内推渠道，之前自行投递过的不用再联系我了，节约大家时间（ wechat base64 ）：Um9ybzc0NTY5ODE0MA==&lt;/p&gt;
-&lt;p&gt;职级：band 数字越小职级越高（4 最高，8 最低），band5 高于 band6 高于 band7，建议根据自身工作履历选择&lt;/p&gt;
-&lt;p&gt;标 ×N 的是同一职位有多个 HC；截止写区间的，以最晚的那个为准。点击岗位名称可调转对应具体 JD，自行投递不走内推渠道且之后不能再进行内推&lt;/p&gt;
-&lt;p&gt;📍 广州（ 27 个岗位）&lt;/p&gt;
-&lt;p&gt;Band 4&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;岗位&lt;/th&gt;
-&lt;th&gt;部门&lt;/th&gt;
-&lt;th&gt;截止&lt;/th&gt;
-&lt;th&gt;概括&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href="https://jobs.standardchartered.com/job/FSS-Investor-Services-Tech-Head/63618-en_GB" rel="nofollow"&gt;FSS Investor Services Tech Head&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;FSS&lt;/td&gt;
-&lt;td&gt;2027/1/1&lt;/td&gt;
-&lt;td&gt;基金行政与过户代理平台技术负责人，主导代币化架构，需 15 年以上经验&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;&lt;p&gt;Band 5&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;岗位&lt;/th&gt;
-&lt;th&gt;部门&lt;/th&gt;
-&lt;th&gt;截止&lt;/th&gt;
-&lt;th&gt;概括&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href="https://jobs.standardchartered.com/job/AVP%2C-Business-Analyst%2C-WRB-Tech/64891-en_GB" rel="nofollow"&gt;AVP, Business Analyst, WRB Tech&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;WRB&lt;/td&gt;
-&lt;td&gt;2027/1/1&lt;/td&gt;
-&lt;td&gt;资深业务分析师，负责财富管理与金融市场后台交易生命周期系统需求，无年限硬门槛&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href="https://jobs.standardchartered.com/job/Cash-Equities-Product-Owner-%28Malaysia%29/56692-en_GB" rel="nofollow"&gt;Cash Equities Product Owner (Malaysia)&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;Markets&lt;/td&gt;
-&lt;td&gt;2026/11/13&lt;/td&gt;
-&lt;td&gt;产品负责人，主导现金股票报价与执行平台，需 5-8 年经验，本科&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href="https://jobs.standardchartered.com/job/Engineering-Lead/59990-en_GB" rel="nofollow"&gt;Engineering Lead&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;WRB&lt;/td&gt;
-&lt;td&gt;2026/12/31&lt;/td&gt;
-&lt;td&gt;AI 工程负责人，主导 LLM/RAG 方案架构与微服务 API 设计&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href="https://jobs.standardchartered.com/job/Lead-Software-Engineer/62173-en_GB" rel="nofollow"&gt;Lead Software Engineer&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;Technology&lt;/td&gt;
-&lt;td&gt;2027/1/1&lt;/td&gt;
-&lt;td&gt;交易控制系统后端负责人，Java/Spring Boot/Kafka，需 10 年以上、本科计算机相关专业&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href="https://jobs.standardchartered.com/job/Principal-AI-Engineer/59473-en_GB" rel="nofollow"&gt;Principal AI Engineer&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;Technology&lt;/td&gt;
-&lt;td&gt;2027/1/1&lt;/td&gt;
-&lt;td&gt;AI 平台首席工程师，用 OCR/VLM、RAG 与 Agentic AI 做银行文档处理，需 10 年以上经验&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href="https://jobs.standardchartered.com/job/Principal-Software-Engineer-Distributed-Systems-%28Singapore-China%29/59504-en_GB" rel="nofollow"&gt;Principal Software Engineer Distributed Systems (Singapore / China)&lt;/a&gt; ×3&lt;/td&gt;
-&lt;td&gt;Technology&lt;/td&gt;
-&lt;td&gt;2026/11/20&lt;/td&gt;
-&lt;td&gt;分布式系统首席工程师，用 Go/Java 构建高吞吐、低延迟的交易服务；熟悉 Temporal 持久化执行框架者优先&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href="https://jobs.standardchartered.com/job/Principal-Solution-Architect-%28China-India%29/62411-en_GB" rel="nofollow"&gt;Principal Solution Architect (China / India)&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;WRB&lt;/td&gt;
-&lt;td&gt;2026/11/30&lt;/td&gt;
-&lt;td&gt;数字渠道解决方案架构师，统管 Mobile、Web 与 AI 的云原生架构与路线图，需 8 年以上，本科&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href="https://jobs.standardchartered.com/job/Product-Owner-Structured-Product/63983-en_GB" rel="nofollow"&gt;Product Owner - Structured Product&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;Markets&lt;/td&gt;
-&lt;td&gt;2026/12/31&lt;/td&gt;
-&lt;td&gt;结构化产品 Product Owner，主导报价与执行平台及上下游系统对接，需 5-8 年经验、相关专业本科&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href="https://jobs.standardchartered.com/job/Senior-AI-Data-Engineer%2C-Wealth-Management/61994-en_GB" rel="nofollow"&gt;Senior AI Data Engineer, Wealth Management&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;Wealth Management&lt;/td&gt;
-&lt;td&gt;2027/1/1&lt;/td&gt;
-&lt;td&gt;AI 数据工程师，用 Databricks 搭建 LLM 检索与数据管道，本科计算机相关专业&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href="https://jobs.standardchartered.com/job/Solution-Architecture/61060-en_GB" rel="nofollow"&gt;Solution Architecture&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;Financial Markets&lt;/td&gt;
-&lt;td&gt;2027/1/1&lt;/td&gt;
-&lt;td&gt;数据架构负责人，主导逻辑与物理数据建模，需 20 年以上，本科计算机专业&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href="https://jobs.standardchartered.com/job/VP%2C-Engineering-Lead%2C-AI-Wealth/55454-en_GB" rel="nofollow"&gt;VP, Engineering Lead, AI Wealth&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;Retail Banking&lt;/td&gt;
-&lt;td&gt;2027/1/1&lt;/td&gt;
-&lt;td&gt;财富管理 AI 工程负责人，主导 AI/ML 方案落地与 MLOps，本科计算机相关专业&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;&lt;p&gt;Band 6&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;岗位&lt;/th&gt;
-&lt;th&gt;部门&lt;/th&gt;
-&lt;th&gt;截止&lt;/th&gt;
-&lt;th&gt;概括&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href="https://jobs.standardchartered.com/job/AI-Ops-Engineer/62088-en_GB" rel="nofollow"&gt;AI Ops Engineer&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;Technology&lt;/td&gt;
-&lt;td&gt;2027/1/1&lt;/td&gt;
-&lt;td&gt;AI Ops 工程师，Databricks 与本地集群的 MLOps/LLMOps 流水线及 GPU 算力运维，需 4-6 年经验，工程学位&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href="https://jobs.standardchartered.com/job/Backend-Engineer/65220-en_GB" rel="nofollow"&gt;Backend Engineer&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;Retail Banking&lt;/td&gt;
-&lt;td&gt;2027/1/1&lt;/td&gt;
-&lt;td&gt;后端工程师，用 Kotlin/Spring Boot 微服务自动化合规审计与安全风险检查&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href="https://jobs.standardchartered.com/job/Business-Analyst%2C-FM-Ref_-&amp;amp;-Market-Data/58863-en_GB" rel="nofollow"&gt;Business Analyst, FM Ref. &amp;amp; Market Data&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;FM&lt;/td&gt;
-&lt;td&gt;2027/1/1&lt;/td&gt;
-&lt;td&gt;金融市场数据 BA，在 Alveo/Asset Control 平台整合行情与参考数据，需统计或工程本科&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href="https://jobs.standardchartered.com/job/Data-Engineer/65226-en_GB" rel="nofollow"&gt;Data Engineer&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;Retail Banking&lt;/td&gt;
-&lt;td&gt;2027/1/1&lt;/td&gt;
-&lt;td&gt;数据工程师，用 Python 与 Airflow 构建 S3/Athena 数据湖 ETL 管道，本科计算机相关专业&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href="https://jobs.standardchartered.com/job/Lead-Developer/62044-en_GB" rel="nofollow"&gt;Lead Developer&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;Financial Markets&lt;/td&gt;
-&lt;td&gt;2027/1/1&lt;/td&gt;
-&lt;td&gt;Java 后端工程师，为 FALCON 市场与参考数据服务构建 API 与事件流，需 5-10 年经验&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href="https://jobs.standardchartered.com/job/Lead-Developer%2C-Asset-Control-IDR/61974-en_GB" rel="nofollow"&gt;Lead Developer, Asset Control IDR&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;CCIB&lt;/td&gt;
-&lt;td&gt;2027/1/1&lt;/td&gt;
-&lt;td&gt;开发负责人，专注用 Asset Control 做金融数据处理算法优化、Java 微服务性能调优&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href="https://jobs.standardchartered.com/job/Senior-SRE-Engineer/58870-en_GB" rel="nofollow"&gt;Senior SRE Engineer&lt;/a&gt; ×2&lt;/td&gt;
-&lt;td&gt;Markets&lt;/td&gt;
-&lt;td&gt;2026/12/31&lt;/td&gt;
-&lt;td&gt;SRE 工程师，为 Markets 应用构建 SLI/SLO 与可观测性体系，落地 AI 运维助手&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href="https://jobs.standardchartered.com/job/Senior-Software-Engineer-Distributed-Systems-%28Singapore-China%29/59510-en_GB" rel="nofollow"&gt;Senior Software Engineer Distributed Systems (Singapore / China)&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;Technology&lt;/td&gt;
-&lt;td&gt;2026/11/13&lt;/td&gt;
-&lt;td&gt;分布式系统后端工程师，Go/Java 构建高吞吐交易服务，涉及服务编排与容错恢复&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href="https://jobs.standardchartered.com/job/Sr_-Assoc%2C-BackEnd-Eng%2C-WRB-Tech/64186-en_GB" rel="nofollow"&gt;Sr. Assoc, BackEnd Eng, WRB Tech&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;WRB&lt;/td&gt;
-&lt;td&gt;2027/1/1&lt;/td&gt;
-&lt;td&gt;Java 微服务 API 后端工程师，Spring Boot 与容器化交付，需 10 年以上开发经验&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href="https://jobs.standardchartered.com/job/Sr_-Assoc%2C-Business-Analyst%2C-WRB-Tech/64081-en_GB" rel="nofollow"&gt;Sr. Assoc, Business Analyst, WRB Tech&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;WRB&lt;/td&gt;
-&lt;td&gt;2026/12/31&lt;/td&gt;
-&lt;td&gt;Banca 平台业务分析师，梳理银保渠道端到端旅程与需求，需 8 年以上，本科计算机相关专业&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href="https://jobs.standardchartered.com/job/Sr_-Assoc%2C-Fullstack-Eng%2C-WRB-Tech/64184-en_GB" rel="nofollow"&gt;Sr. Assoc, Fullstack Eng, WRB Tech&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;WRB&lt;/td&gt;
-&lt;td&gt;2027/1/1&lt;/td&gt;
-&lt;td&gt;前端工程师，React/TypeScript 开发财富管理产品，个人贡献者不带队&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href="https://jobs.standardchartered.com/job/Test-Manager/59306-en_GB" rel="nofollow"&gt;Test Manager&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;CIB&lt;/td&gt;
-&lt;td&gt;2027/1/1&lt;/td&gt;
-&lt;td&gt;CIB API 平台测试经理，主导 API 自动化测试与缺陷排查，本科计算机相关专业&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;&lt;p&gt;Band 7&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;岗位&lt;/th&gt;
-&lt;th&gt;部门&lt;/th&gt;
-&lt;th&gt;截止&lt;/th&gt;
-&lt;th&gt;概括&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href="https://jobs.standardchartered.com/job/Assoc%2C-BackEnd-Eng%2C-WRB-Tech/64182-en_GB" rel="nofollow"&gt;Assoc, BackEnd Eng, WRB Tech&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;WRB&lt;/td&gt;
-&lt;td&gt;2027/1/1&lt;/td&gt;
-&lt;td&gt;Java 微服务后端工程师，用 Spring Boot 开发 REST/SOAP API，需 6 年以上经验&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href="https://jobs.standardchartered.com/job/Assoc%2C-Prod-Specialist-ODM%2C-WRB-Tech/64077-en_GB" rel="nofollow"&gt;Assoc, Prod Specialist - ODM, WRB Tech&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;WRB&lt;/td&gt;
-&lt;td&gt;2027/1/1&lt;/td&gt;
-&lt;td&gt;Java 后端工程师，迁移 IBM ODM 规则至 Spring Boot 微服务，需 5 年以上，本科计算机专业&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href="https://jobs.standardchartered.com/job/Manager%2C-Data-Analytics/62002-en_GB" rel="nofollow"&gt;Manager, Data Analytics&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;CPBB&lt;/td&gt;
-&lt;td&gt;2026/12/1&lt;/td&gt;
-&lt;td&gt;数据分析经理，设计前线计分卡与销售激励方案，本科及以上&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;&lt;p&gt;📍 天津（ 34 个岗位）&lt;/p&gt;
-&lt;p&gt;Band 4&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;岗位&lt;/th&gt;
-&lt;th&gt;部门&lt;/th&gt;
-&lt;th&gt;截止&lt;/th&gt;
-&lt;th&gt;概括&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href="https://jobs.standardchartered.com/job/Head%2C-Data-Technology/64555-en_GB" rel="nofollow"&gt;Head, Data Technology&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;Markets&lt;/td&gt;
-&lt;td&gt;2026/12/31&lt;/td&gt;
-&lt;td&gt;全球交易后数据技术负责人，统筹数据质量、结算报表与市场数据平台&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href="https://jobs.standardchartered.com/job/Head%2C-FX-Trade-Processing-Technology/64556-en_GB" rel="nofollow"&gt;Head, FX Trade Processing Technology&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;Financial Markets&lt;/td&gt;
-&lt;td&gt;2027/1/1&lt;/td&gt;
-&lt;td&gt;外汇交易处理技术负责人，统管 booking、validation 与生命周期事件平台&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href="https://jobs.standardchartered.com/job/Head%2C-Prime-Clearing-&amp;amp;-Collateral-Services-Technology/64551-en_GB" rel="nofollow"&gt;Head, Prime Clearing &amp;amp; Collateral Services Technology&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;Financial Markets&lt;/td&gt;
-&lt;td&gt;2027/1/31&lt;/td&gt;
-&lt;td&gt;全球清算与抵押品技术负责人，主导中央对手方接入与 ION XTP、PaCman 平台现代化&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href="https://jobs.standardchartered.com/job/Head%2C-Settlements-Technology/64554-en_GB" rel="nofollow"&gt;Head, Settlements Technology&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;Markets&lt;/td&gt;
-&lt;td&gt;2027/1/31&lt;/td&gt;
-&lt;td&gt;交易后结算技术负责人，统管结算处理、净额、支付与例外处理平台&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href="https://jobs.standardchartered.com/job/Head%2C-Trading-Control-&amp;amp;-Supervision-Technology/64461-en_GB" rel="nofollow"&gt;Head, Trading Control &amp;amp; Supervision Technology&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;Financial Markets&lt;/td&gt;
-&lt;td&gt;2027/1/1&lt;/td&gt;
-&lt;td&gt;全球交易控制与监督技术负责人，主管交易复核、异常管理与 AI 风控平台&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;&lt;p&gt;Band 5&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;岗位&lt;/th&gt;
-&lt;th&gt;部门&lt;/th&gt;
-&lt;th&gt;截止&lt;/th&gt;
-&lt;th&gt;概括&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href="https://jobs.standardchartered.com/job/AVP%2C-CL%2C-FrontEnd-Eng%2C-WRB-Tech/64900-en_GB" rel="nofollow"&gt;AVP, CL, FrontEnd Eng, WRB Tech&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;WRB&lt;/td&gt;
-&lt;td&gt;2026/12/31&lt;/td&gt;
-&lt;td&gt;React 前端 Chapter Lead，带团队并 hands-on 交付，需 10 年以上、本科计算机相关专业&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href="https://jobs.standardchartered.com/job/AVP%2C-Engineering-Lead%2C-WRB-Tech/59972-en_GB" rel="nofollow"&gt;AVP, Engineering Lead, WRB Tech&lt;/a&gt; ×2&lt;/td&gt;
-&lt;td&gt;WRB&lt;/td&gt;
-&lt;td&gt;2026/11/30~2026/12/31&lt;/td&gt;
-&lt;td&gt;微服务工程负责人，主导 API 设计与架构评审会&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href="https://jobs.standardchartered.com/job/Digital-Product-Owner/58037-en_GB" rel="nofollow"&gt;Digital Product Owner&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;Retail Banking&lt;/td&gt;
-&lt;td&gt;2026/12/31&lt;/td&gt;
-&lt;td&gt;移动端客户旅程 Product Owner，以 AI-first 方式推动转化与实验，本科市场营销或计算机相关专业&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href="https://jobs.standardchartered.com/job/Engineering-Lead-Mobile-Web/58671-en_GB" rel="nofollow"&gt;Engineering Lead - Mobile / Web&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;Technology&lt;/td&gt;
-&lt;td&gt;2026/12/31&lt;/td&gt;
-&lt;td&gt;移动与 Web 工程负责人，主导微服务与 API 设计并参与架构评审&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href="https://jobs.standardchartered.com/job/Lead-Software-Engineer/59660-en_GB" rel="nofollow"&gt;Lead Software Engineer&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;Financial Markets&lt;/td&gt;
-&lt;td&gt;2026/11/30&lt;/td&gt;
-&lt;td&gt;Java 工程师，为金融市场 SABRE 风险与 PnL 平台开发高并发组件，需 8 年以上投行 IT 经验，本科计算机专业&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href="https://jobs.standardchartered.com/job/Lead%2C-Securities-&amp;amp;-Loan-Trade-Processing-Technology/64676-en_GB" rel="nofollow"&gt;Lead, Securities &amp;amp; Loan Trade Processing Technology&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;Markets&lt;/td&gt;
-&lt;td&gt;2026/12/31&lt;/td&gt;
-&lt;td&gt;证券与二级贷款交易处理技术负责人，主导交易捕获到结算的平台现代化&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href="https://jobs.standardchartered.com/job/Product-Owner-%28CMPS%29/61842-en_GB" rel="nofollow"&gt;Product Owner (CMPS)&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;Markets&lt;/td&gt;
-&lt;td&gt;2026/11/30&lt;/td&gt;
-&lt;td&gt;资本市场产品 Product Owner，搭建报价与交易执行数字平台，需 5-8 年财富管理经验、本科&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href="https://jobs.standardchartered.com/job/Product-Owner-OTC-Derivatives/61841-en_GB" rel="nofollow"&gt;Product Owner - OTC Derivatives&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;Markets&lt;/td&gt;
-&lt;td&gt;2026/11/30&lt;/td&gt;
-&lt;td&gt;OTC 衍生品交易平台 Product Owner，搭建报价执行与上下游系统对接，需 5-8 年财富管理或投行经验&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href="https://jobs.standardchartered.com/job/Product-Owner%2C-Digital-Banking/61997-en_GB" rel="nofollow"&gt;Product Owner, Digital Banking&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;Retail Banking&lt;/td&gt;
-&lt;td&gt;2026/11/30&lt;/td&gt;
-&lt;td&gt;数字银行 Product Owner，主导 mobile 产品愿景与 backlog 排序，需 8 年以上，本科商科或金融专业&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href="https://jobs.standardchartered.com/job/Product-Owner%2C-SME-Banking-Digital/62583-en_GB" rel="nofollow"&gt;Product Owner, SME Banking Digital&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;Retail Banking&lt;/td&gt;
-&lt;td&gt;2026/11/30&lt;/td&gt;
-&lt;td&gt;SME 数字银行产品负责人，主导结构化票据与基金外汇旅程，需 8 年以上，本科金融相关&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href="https://jobs.standardchartered.com/job/Product-Specialist/64895-en_GB" rel="nofollow"&gt;Product Specialist&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;Technology&lt;/td&gt;
-&lt;td&gt;2026/12/31&lt;/td&gt;
-&lt;td&gt;技术交付专家，设计微服务与 API 架构，落地 RAG/LLM 对话机器人，需 10 年以上经验&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;&lt;p&gt;Band 6&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;岗位&lt;/th&gt;
-&lt;th&gt;部门&lt;/th&gt;
-&lt;th&gt;截止&lt;/th&gt;
-&lt;th&gt;概括&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href="https://jobs.standardchartered.com/job/Engineering-Lead%2C-WRB-Tech-role/61522-en_GB" rel="nofollow"&gt;Engineering Lead, WRB Tech role&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;WRB&lt;/td&gt;
-&lt;td&gt;2026/11/30&lt;/td&gt;
-&lt;td&gt;全栈工程负责人，主导微服务、API 与容器平台方案设计；需 10 年以上，本科计算机相关专业&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href="https://jobs.standardchartered.com/job/Front-End-Engineering%2C-WRB-Tech/59676-en_GB" rel="nofollow"&gt;Front End Engineering, WRB Tech&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;WRB&lt;/td&gt;
-&lt;td&gt;2026/11/30&lt;/td&gt;
-&lt;td&gt;前端工程师，用 React/TypeScript 打造数字银行渠道，需 5 年以上经验，本科计算机或软件工程专业&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href="https://jobs.standardchartered.com/job/Lead-Developer%2C-Markets-DQMA/61970-en_GB" rel="nofollow"&gt;Lead Developer, Markets DQMA&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;Markets&lt;/td&gt;
-&lt;td&gt;2026/11/30&lt;/td&gt;
-&lt;td&gt;金融市场数据质量平台开发负责人，负责 Java/Spring Boot 微服务交付，需 10 年以上银行 IT 经验&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href="https://jobs.standardchartered.com/job/Product-Owner%2C-Digital-Wealth/63957-en_GB" rel="nofollow"&gt;Product Owner, Digital Wealth&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;Wealth Management&lt;/td&gt;
-&lt;td&gt;2026/12/31&lt;/td&gt;
-&lt;td&gt;数字财富产品负责人，基于 Finantix 定义财富管理流程与交付优先级，本科及以上&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href="https://jobs.standardchartered.com/job/Product-Owner%2C-WM-Core-Platform-%28Malaysia%2C-China%29/63669-en_GB" rel="nofollow"&gt;Product Owner, WM Core Platform (Malaysia, China)&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;Wealth Management&lt;/td&gt;
-&lt;td&gt;2026/11/9&lt;/td&gt;
-&lt;td&gt;财富管理核心平台 Product Owner，主导单位信托系统 UTS 需求定义与上线&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href="https://jobs.standardchartered.com/job/Senior-DevOps-Engineer/62176-en_GB" rel="nofollow"&gt;Senior DevOps Engineer&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;Financial Markets&lt;/td&gt;
-&lt;td&gt;2026/11/30&lt;/td&gt;
-&lt;td&gt;DevOps 工程师，为金融市场业务搭建 CI/CD、Terraform 与 Kubernetes 平台，3-8 年经验&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href="https://jobs.standardchartered.com/job/Senior-Experience-Designer%2C-SC-Design-%28UIUX%29/58955-en_GB" rel="nofollow"&gt;Senior Experience Designer, SC Design (UI/UX)&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;Retail Banking&lt;/td&gt;
-&lt;td&gt;2026/12/31&lt;/td&gt;
-&lt;td&gt;UI/UX 设计师，面向移动端与 Web 银行客户制作 Figma 全屏稿与可点击原型，需 7 年以上、设计相关学历&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href="https://jobs.standardchartered.com/job/Sr_-Assoc%2C-BackEnd-Eng%2C-WRB-Tech/64705-en_GB" rel="nofollow"&gt;Sr. Assoc, BackEnd Eng, WRB Tech&lt;/a&gt; ×2&lt;/td&gt;
-&lt;td&gt;WRB&lt;/td&gt;
-&lt;td&gt;2026/11/30~2026/12/31&lt;/td&gt;
-&lt;td&gt;Java 后端工程师，Spring Boot 微服务与 RESTful API 开发，需 7 年以上，本科计算机相关专业&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href="https://jobs.standardchartered.com/job/Technical-Manager/63682-en_GB" rel="nofollow"&gt;Technical Manager&lt;/a&gt; ×5&lt;/td&gt;
-&lt;td&gt;Technology&lt;/td&gt;
-&lt;td&gt;2026/12/31&lt;/td&gt;
-&lt;td&gt;托管运营技术经理，负责 Java/Scala 数据平台方案落地与 UAT 交付&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;&lt;p&gt;Band 7&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;岗位&lt;/th&gt;
-&lt;th&gt;部门&lt;/th&gt;
-&lt;th&gt;截止&lt;/th&gt;
-&lt;th&gt;概括&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href="https://jobs.standardchartered.com/job/Assoc%2C-FrontEnd-Eng%2C-WRB-Tech/65287-en_GB" rel="nofollow"&gt;Assoc, FrontEnd Eng, WRB Tech&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;WRB&lt;/td&gt;
-&lt;td&gt;2026/12/31&lt;/td&gt;
-&lt;td&gt;Android 工程师，用 Kotlin/Jetpack Compose 开发手机银行，并用 WebView 混合架构；需 5 年经验，本科计算机相关专业&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href="https://jobs.standardchartered.com/job/Assoc%2C-Production-Eng%2C-WRB-Tech/64628-en_GB" rel="nofollow"&gt;Assoc, Production Eng, WRB Tech&lt;/a&gt; ×2&lt;/td&gt;
-&lt;td&gt;WRB&lt;/td&gt;
-&lt;td&gt;2026/11/30~2026/12/31&lt;/td&gt;
-&lt;td&gt;线上与手机银行 SRE 支持工程师，诊断 Java 应用故障并做 RCA，硕士技术相关专业优先&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href="https://jobs.standardchartered.com/job/Development-Analyst/64712-en_GB" rel="nofollow"&gt;Development Analyst&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;FSS&lt;/td&gt;
-&lt;td&gt;2026/12/31&lt;/td&gt;
-&lt;td&gt;开发分析师，以 Java、React 做全栈交付，负责系统集成与数据库方案&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href="https://jobs.standardchartered.com/job/Senior-Data-Engineer/64376-en_GB" rel="nofollow"&gt;Senior Data Engineer&lt;/a&gt; ×2&lt;/td&gt;
-&lt;td&gt;Technology&lt;/td&gt;
-&lt;td&gt;2026/12/31&lt;/td&gt;
-&lt;td&gt;PostgreSQL 性能调优与高可用工程师，负责托管业务的生产支持&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href="https://jobs.standardchartered.com/job/Senior-Support-Specialist/58855-en_GB" rel="nofollow"&gt;Senior Support Specialist&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;Markets&lt;/td&gt;
-&lt;td&gt;2027/2/28&lt;/td&gt;
-&lt;td&gt;负责金融市场应用的生产支持工程师，通过 ITRS/Control-M 监控系统和排查故障，需 5 年以上经验、本科&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href="https://jobs.standardchartered.com/job/Spl%27st%2C-Tech-Support/58868-en_GB" rel="nofollow"&gt;Spl'st, Tech Support&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;Financial Markets&lt;/td&gt;
-&lt;td&gt;2027/2/28&lt;/td&gt;
-&lt;td&gt;金融市场生产支持工程师，Geneos ITRS 与 Control-M 监控，UNIX/Shell 与 SQL&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href="https://jobs.standardchartered.com/job/Support-Specialist/57561-en_GB" rel="nofollow"&gt;Support Specialist&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;FM&lt;/td&gt;
-&lt;td&gt;2027/2/28&lt;/td&gt;
-&lt;td&gt;应用支持专员，负责 Scrittura/CDU 等 8 套金融市场系统的生产事故与监控&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;&lt;p&gt;Band 8&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;岗位&lt;/th&gt;
-&lt;th&gt;部门&lt;/th&gt;
-&lt;th&gt;截止&lt;/th&gt;
-&lt;th&gt;概括&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href="https://jobs.standardchartered.com/job/Spl%27st%2C-QA-&amp;amp;-Testing/63928-en_GB" rel="nofollow"&gt;Spl'st, QA &amp;amp; Testing&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;Technology&lt;/td&gt;
-&lt;td&gt;2026/12/31&lt;/td&gt;
-&lt;td&gt;核心银行测试工程师，负责用 Java 自动化脚本测试 API 与微服务，需 6-8 年经验&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href="https://jobs.standardchartered.com/job/Sr_-Analyst%2C-Production-Eng%2C-WRB-Tech/55369-en_GB" rel="nofollow"&gt;Sr. Analyst, Production Eng, WRB Tech&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;WRB&lt;/td&gt;
-&lt;td&gt;2026/11/30&lt;/td&gt;
-&lt;td&gt;线上与手机银行 SRE 生产支持分析师，Java/Spring Boot 故障排查与问题单处理，硕士技术专业优先&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;&lt;p&gt;📮 简历发我内推，自行投递不走内推渠道。&lt;/p&gt;
-
-	</description></item><item><title>[分享创造] 做了一份 Switch 2 模拟器 Lichii 的安装指南，支持 Windows、 Linux 和 Mac</title><link>https://www.v2ex.com/t/1255664#reply0</link><guid>tag:www.v2ex.com,2026-11-09:/t/1255664</guid><pubDate>Mon, 09 Nov 2026 11:57:02 +0000</pubDate><description>
-	&lt;p&gt;Lichii 是一个开源的 Switch / Switch 2 模拟器，支持 Windows 、Linux 和 Apple Silicon Mac ，目前还在开发中。&lt;/p&gt;
-&lt;p&gt;整理了一份安装指南，包括官方下载、各系统安装步骤和常见问题：&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://lichiiemulator.org" rel="nofollow"&gt;https://lichiiemulator.org&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;不同游戏和设备的兼容性差异比较大。用过的朋友欢迎帮忙看看，有问题我再修改。&lt;/p&gt;
-
-	</description></item><item><title>[Apple] 国行强开 Apple 智能他又来了</title><link>https://www.v2ex.com/t/1255663#reply9</link><guid>tag:www.v2ex.com,2026-11-09:/t/1255663</guid><pubDate>Mon, 09 Nov 2026 11:43:02 +0000</pubDate><description>
-	&lt;p&gt;一样的原理修改销售地区实现开启 Apple intelligence ， 项目地址 &lt;a href="https://github.com/huamidev/GestaltX" rel="nofollow"&gt;https://github.com/huamidev/GestaltX&lt;/a&gt;&lt;/p&gt;
-
-	</description></item><item><title>[分享创造] homepod 27 版本下 tuneblade 不支持了，用 go 做了个 mac/win 双端的 airplay2 软件</title><link>https://www.v2ex.com/t/1255662#reply1</link><guid>tag:www.v2ex.com,2026-11-09:/t/1255662</guid><pubDate>Mon, 09 Nov 2026 11:42:33 +0000</pubDate><description>
-	&lt;a target="_blank" href="https://github.com/4202217/saundo" rel="nofollow noopener"&gt;https://github.com/4202217/saundo&lt;/a&gt; &lt;br /&gt;&lt;br /&gt;用 go+mygo 做的，花了不少心思，但是完全只有我自己一个人用。。。我感觉肯定有人有 homepod 连接 mac 和 win 的需求，发出来应该会有人用得到吧？连接延迟比苹果官方的要低要稳。我还额外做了一些有意思的小功能。&lt;br /&gt;&lt;br /&gt;目前只支持同时连接一台或一组立体声组设备，多设备同时连接在做但要改的比较多。homepod mini 、macbook 作为 airplay 接收端都测试 ok 。
-	</description></item><item><title>[加密货币] 求教下，币安还有 2w 刀，怎么回国？没有香港 za，只有香港工银和香港汇丰</title><link>https://www.v2ex.com/t/1255661#reply14</link><guid>tag:www.v2ex.com,2026-11-09:/t/1255661</guid><pubDate>Mon, 09 Nov 2026 11:33:53 +0000</pubDate><description>
-	&lt;p&gt;求教下，币安还有 2w 刀，怎么回国？没有香港 za ，只有香港工银和香港汇丰&lt;/p&gt;
-&lt;p&gt;怎么赚的，玩什么币？
-不好意思，这是亏剩下的，42w 人民币本钱，好多年前入金了&lt;/p&gt;
-
-	</description></item><item><title>[微信] 微信小程序审核提示属社交-笔记范畴，怎么办？</title><link>https://www.v2ex.com/t/1255660#reply4</link><guid>tag:www.v2ex.com,2026-11-09:/t/1255660</guid><pubDate>Mon, 09 Nov 2026 11:27:30 +0000</pubDate><description>
-	&lt;p&gt;腾讯的审核结果如下：
-你好，你的小程序涉及用户自行生成内容（文字、图片、音/）的记录、分享，属社交-笔记范畴，为个人主体小程序未开放类目，建议申请企业主体小程序。&lt;/p&gt;
-&lt;p&gt;我其实是一个记账的小程序，之前流量不大，现在流量大了，审核就非常严了。看了一些腾讯到了后面就会认定：
-1 、用户可以自定义内容。
-2 、可以分享出去。&lt;/p&gt;
-&lt;p&gt;符合这两点，就要归属于社交-笔记，就要企业主体了，我感觉可能很多小程序都会触犯哦。大家有什么好的办法，还是说只能去注册一个企业主体吗？&lt;/p&gt;
-
-	</description></item><item><title>[分享创造] 为了和邻居拼山姆，我用 AI 做了个小程序</title><link>https://www.v2ex.com/t/1255659#reply0</link><guid>tag:www.v2ex.com,2026-11-09:/t/1255659</guid><pubDate>Mon, 09 Nov 2026 11:26:11 +0000</pubDate><description>
-	&lt;p&gt;看到了太多食品安全相关的新闻，后来开通了山姆会员，买下来感觉还不错&lt;/p&gt;
-&lt;p&gt;不管是我平时买的 17.9 元的鲜牛奶、21.8 元 30 枚的鸡蛋，还是水果和零食，都挺满意&lt;/p&gt;
-&lt;p&gt;不过分量确实大，我这边下单还要凑满 99 元才包邮&lt;/p&gt;
-&lt;p&gt;后来加入小区山姆拼单群，可以和群里的伙伴拼单、凑包邮。但随之而来的问题是：&lt;/p&gt;
-&lt;p&gt;每次发完消息，群里就不断有人回复、 @我&lt;/p&gt;
-&lt;p&gt;下单前，要翻聊天记录，确认大家买什么，还有哪些没拼满&lt;/p&gt;
-&lt;p&gt;买完之后，要算每个人付多少钱、包装费和运费怎么分，最后还得提醒大家来取货……&lt;/p&gt;
-&lt;p&gt;有一天，我突然想到，是不是可以用 Workbuddy 手搓一个小程序，来解决这个问题？&lt;/p&gt;
-&lt;p&gt;于是花了几天的调试、审核，小程序“拼拼账单”终于正式上线了&lt;/p&gt;
-&lt;p&gt;分享到群里后，收到了不少好评，连群里的外国友人都在使用&lt;/p&gt;
-&lt;p&gt;&lt;img alt="BE87C7ED-3EE7-448C-ABF6-3A90D12A2DA6.jpeg" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://blog.scond.me/img/article-studio/2026-11-09-%E4%B8%BA%E4%BA%86%E5%92%8C%E9%82%BB%E5%B1%85%E6%8B%BC%E5%B1%B1%E5%A7%86-%E6%88%91%E7%94%A8-AI-%E5%81%9A%E4%BA%86%E4%B8%AA%E5%B0%8F%E7%A8%8B%E5%BA%8F-2-0/01-3f8ef84fbdefba765e8567461ef06c085cf425572ba7df31e8761b7a14c42a92-85a53154.jpg"/&gt;&lt;/p&gt;
-&lt;p&gt;那么它解决了什么问题呢？&lt;/p&gt;
-&lt;h2&gt;01 谁要买什么，大家自己填&lt;/h2&gt;
-&lt;p&gt;群友自己添加物品、认领份数；发起人可以配置常购清单，群友也可以添加自己的常购物品&lt;/p&gt;
-&lt;p&gt;大份商品支持拆分后拼单，比如一盒瑞士卷，可以拆成几份，大家选择自己要的份数，页面会实时显示还差多少没拼满&lt;/p&gt;
-&lt;p&gt;&lt;img alt="拆分商品和认领份数" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://blog.scond.me/img/article-studio/2026-11-09-%E4%B8%BA%E4%BA%86%E5%92%8C%E9%82%BB%E5%B1%85%E6%8B%BC%E5%B1%B1%E5%A7%86-%E6%88%91%E7%94%A8-AI-%E5%81%9A%E4%BA%86%E4%B8%AA%E5%B0%8F%E7%A8%8B%E5%BA%8F-2-0/02-08baac22b1eb715566c5997ab91a3e066f2e33d0f7d596feb85b4ac44e213a83-e64610dc.png"/&gt;&lt;/p&gt;
-&lt;p&gt;拆成几份，大家各自认领｜旧版界面示意&lt;/p&gt;
-&lt;p&gt;遇到限购商品，发起人可以按实际限制，在首页「常购物品」里设置限购件数&lt;/p&gt;
-&lt;p&gt;比如给小码鸡蛋、大码鸡蛋各设「限购 2 件」，配置一次，之后自己发起的拼单继续使用&lt;/p&gt;
-&lt;p&gt;群友仍能自由添加，同款商品在整单里共用限购额度，小码、大码分别计算&lt;/p&gt;
-&lt;h2&gt;02 每个人该付多少，自动算清楚&lt;/h2&gt;
-&lt;p&gt;认领时能看到自己买了什么、商品合计多少；生成账单后，再看包含费用和优惠的最终应付金额&lt;/p&gt;
-&lt;p&gt;运费和包装费，可以选择怎么分。发起人填好运费、包装费，可以按购买人数均摊，也可以按购买金额比例分&lt;/p&gt;
-&lt;p&gt;&lt;img alt="个人账单示例" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://blog.scond.me/img/article-studio/2026-11-09-%E4%B8%BA%E4%BA%86%E5%92%8C%E9%82%BB%E5%B1%85%E6%8B%BC%E5%B1%B1%E5%A7%86-%E6%88%91%E7%94%A8-AI-%E5%81%9A%E4%BA%86%E4%B8%AA%E5%B0%8F%E7%A8%8B%E5%BA%8F-2-0/03-48a8791ffacbe1f0f264b08fa7c336d6aefc5fcab3474f0b5686280284879758-3d0b8fad.png"/&gt;&lt;/p&gt;
-&lt;p&gt;个人账单示例｜旧版界面&lt;/p&gt;
-&lt;h2&gt;03 谁的钱到了，一眼看清&lt;/h2&gt;
-&lt;p&gt;谁的钱到了、谁还差着，首页卡片上直接写。待收金额和未付人数一目了然，发起人不用再点两层才看得到&lt;/p&gt;
-&lt;p&gt;小程序只负责计算和记录，大家自行转账，发起人核实到账后，再在小程序里确认&lt;/p&gt;
-&lt;p&gt;&lt;img alt="实际收款记录" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://blog.scond.me/img/article-studio/2026-11-09-%E4%B8%BA%E4%BA%86%E5%92%8C%E9%82%BB%E5%B1%85%E6%8B%BC%E5%B1%B1%E5%A7%86-%E6%88%91%E7%94%A8-AI-%E5%81%9A%E4%BA%86%E4%B8%AA%E5%B0%8F%E7%A8%8B%E5%BA%8F-2-0/04-42015c9d107985d59d2b84fb1b67686f4ef85171bd529adb1dede028621a3a7d-79cad550.png"/&gt;&lt;/p&gt;
-&lt;p&gt;收款管理：这单已经收齐&lt;/p&gt;
-&lt;h2&gt;04 货到了，一键喊人&lt;/h2&gt;
-&lt;p&gt;支持群友订阅通知，订阅过提醒的群友会收到微信通知；没订阅的人，详情页上也一直挂着取货时间和地点&lt;/p&gt;
-&lt;p&gt;&lt;img alt="实际到货提醒" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://blog.scond.me/img/article-studio/2026-11-09-%E4%B8%BA%E4%BA%86%E5%92%8C%E9%82%BB%E5%B1%85%E6%8B%BC%E5%B1%B1%E5%A7%86-%E6%88%91%E7%94%A8-AI-%E5%81%9A%E4%BA%86%E4%B8%AA%E5%B0%8F%E7%A8%8B%E5%BA%8F-2-0/05-a293df22ecde18260a020da56e905c0dfaeb00af536f65a758fb22279f1b0487-90a6ad16.png"/&gt;&lt;/p&gt;
-&lt;p&gt;群友收到的到货提醒&lt;/p&gt;
-&lt;hr/&gt;
-&lt;p&gt;从有这个想法，到学习小程序开发、上架流程，再到测试上线，前后花了大概一个星期，主要时间花在等小程序备案&lt;/p&gt;
-&lt;p&gt;费用主要是 30 元的小程序认证费，消耗的 token 没有统计&lt;/p&gt;
-&lt;p&gt;如果你也经常和邻居、朋友拼单，欢迎体验使用～&lt;/p&gt;
-&lt;p&gt;&lt;img alt="拼拼账单小程序码" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://blog.scond.me/img/article-studio/2026-11-09-%E4%B8%BA%E4%BA%86%E5%92%8C%E9%82%BB%E5%B1%85%E6%8B%BC%E5%B1%B1%E5%A7%86-%E6%88%91%E7%94%A8-AI-%E5%81%9A%E4%BA%86%E4%B8%AA%E5%B0%8F%E7%A8%8B%E5%BA%8F-2-0/06-64f34a965fac958b2bdaf30900069d836fb5cb0028dab846cf914268bef13b32-bbee2bb0.png"/&gt;&lt;/p&gt;
-&lt;p&gt;长按识别，打开拼拼账单&lt;/p&gt;
-&lt;hr/&gt;
-&lt;p&gt;&lt;strong&gt;关于我&lt;/strong&gt;&lt;br/&gt;
-旅行、跑步、看书，也喜欢 AI 和数码&lt;/p&gt;
-&lt;p&gt;🌍 30+ 国家 · 🏅 半马 1h36 ｜ 全马 3h58&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://scond.me/" rel="nofollow"&gt;主页 scond.me&lt;/a&gt;&lt;/p&gt;
-&lt;img alt="公众号二维码" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://blog.scond.me/img/article-studio/2026-09-29-Apple-Watch-Ultra-4%E4%BD%BF%E7%94%A8%E4%B8%80%E5%91%A8-%E5%BA%94%E8%AF%A5%E4%B8%8D%E4%BC%9A%E5%8F%8C%E6%8C%81%E4%BD%B3%E6%98%8E%E4%BA%86/01-%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87-20260929094313-29-1023.jpg"/&gt;
-&lt;p&gt;原文： &lt;a href="https://mp.weixin.qq.com/s/BI0j5pprqS27tmTkEGmKbA" rel="nofollow"&gt;https://mp.weixin.qq.com/s/BI0j5pprqS27tmTkEGmKbA&lt;/a&gt;&lt;/p&gt;
-
-	</description></item><item><title>[推广] [中转站] 企业稳定不降智中转站推广 图片 ¥0.01/张</title><link>https://www.v2ex.com/t/1255658#reply0</link><guid>tag:www.v2ex.com,2026-11-09:/t/1255658</guid><pubDate>Mon, 09 Nov 2026 11:18:38 +0000</pubDate><description>
-	站内体验： &lt;a target="_blank" href="https://xiaoxiongmao.net/" rel="nofollow noopener"&gt;https://xiaoxiongmao.net/&lt;/a&gt;&lt;br /&gt; 0.28 企业稳定通道，量大可谈， 可对公，可开票&lt;br /&gt; 活动:充值赠送 20%余额&lt;br /&gt; 邀请朋友充值返现 5%
-	</description></item><item><title>[问与答] 卖日本家宽独立 ip， vnc mac 远程桌面系统，主要面向想用 ai 的客户，有搞头么？</title><link>https://www.v2ex.com/t/1255657#reply5</link><guid>tag:www.v2ex.com,2026-11-09:/t/1255657</guid><pubDate>Mon, 09 Nov 2026 11:10:41 +0000</pubDate><description>
-	&lt;p&gt;只提供空机器，保证独立干净日本家宽 ip&lt;/p&gt;
-
-	</description></item><item><title>[产品经理茶话会] 做产品就像做脱口秀</title><link>https://www.v2ex.com/t/1255656#reply0</link><guid>tag:www.v2ex.com,2026-11-09:/t/1255656</guid><pubDate>Mon, 09 Nov 2026 11:08:13 +0000</pubDate><description>
-	&lt;p&gt;我是产品经理，业余演脱口秀（即兴喜剧）的。&lt;/p&gt;
-&lt;p&gt;牵强地说，这两件事很像：&lt;/p&gt;
-&lt;p&gt;产品：做功能、产品、验证、迭代、上线。&lt;/p&gt;
-&lt;p&gt;脱口秀：写段子、稿子、开放麦、改、上线（上综艺）。&lt;/p&gt;
-&lt;p&gt;第一层。产品是改出来的，就像稿子是改出来的。&lt;/p&gt;
-&lt;p&gt;没有演员说自己写完了一篇稿子就不变了，大家说的都是磨（改）。&lt;/p&gt;
-&lt;p&gt;产品第一版也一样。第一版的用处不是给用户用，是拿来告诉你哪里不对。&lt;/p&gt;
-&lt;p&gt;这话说起来简单，但真做到的人少。因为改稿的前提是承认初稿很烂，而产品第一版往往要被当成成果汇报出去。&lt;/p&gt;
-&lt;p&gt;第二层。产品是有结构的，就像五分钟的稿子是有结构的。&lt;/p&gt;
-&lt;p&gt;一个段子好笑，很容易。三句话，一个反转，底下笑一下。攒十个这样的段子，不算难事。&lt;/p&gt;
-&lt;p&gt;但把这十个摆在一起，变成五分钟，绝大多数人做不到。&lt;/p&gt;
-&lt;p&gt;因为五分钟有结构。开场怎么进，第一个笑点放在第几秒，第三个梗要不要留着垫后半段，哪里该松一口气，哪里该连着往上顶。&lt;/p&gt;
-&lt;p&gt;这些跟段子本身没关系，是编排。&lt;/p&gt;
-&lt;p&gt;而做产品的人，大部分时间在攒段子。&lt;/p&gt;
-&lt;p&gt;每个功能单看都成立，都能讲出一句用户价值。攒了三十个，合起来，用户不知道从哪下手，也不知道自己为什么要用它。&lt;/p&gt;
-&lt;p&gt;一个东西是功能列表，一个是作品。差别不在数量，在有没有结构。&lt;/p&gt;
-&lt;p&gt;第三层。产品是试出来的，就像段子是开放麦试出来的。&lt;/p&gt;
-&lt;p&gt;开放麦是小场子，一般不到四十个观众，免费，报名通过审核就能上。演员把没成型的段子拿到这儿来试，甚至也有 AB test 。&lt;/p&gt;
-&lt;p&gt;有意思的地方在于，同一个段子，开场三十秒讲能炸，放到第四分钟就冷。&lt;/p&gt;
-&lt;p&gt;所以开放麦同时试两样东西。这个段子本身成不成立，和它放在稿子的哪个位置。&lt;/p&gt;
-&lt;p&gt;第一样大部分人会做。段子冷场了就改，改不好就扔。做产品也一样，一个新功能放出去，看有没有人用，这就是段子好不好笑。&lt;/p&gt;
-&lt;p&gt;第二样几乎没人做。段子还是那个段子，只是挪了个位置，效果差一整个量级。&lt;/p&gt;
-&lt;p&gt;你的功能也是。用户抱怨的往往不是它不好用，是它不该出现在那儿。两个功能拆开看都成立，接在一起就打架。&lt;/p&gt;
-&lt;p&gt;功能级的测试，测得到段子，测不到位置。&lt;/p&gt;
-&lt;p&gt;第四层，也是最容易被搞混的。产品要靠专场活下来，就像演员不是靠综艺活下来的。&lt;/p&gt;
-&lt;p&gt;综艺给的是曝光，你站在别人的舞台上，借别人的流量，讲那几个最稳的段子。&lt;/p&gt;
-&lt;p&gt;专场不一样。九十分钟，一个人，一屋子买票进来的人，没人给你搭台，冷场了没人救你。&lt;/p&gt;
-&lt;p&gt;演员真正的产品是专场，不是那五分钟。&lt;/p&gt;
-&lt;p&gt;很多演员上完综艺火了，没有专场。热度接不住，一两年就没了。&lt;/p&gt;
-&lt;p&gt;做产品是同一回事。发布会、投放、上大平台的推荐位，那些是综艺。留存、复购、有人自己想起来了主动来找你，那才是专场。&lt;/p&gt;
-&lt;p&gt;前者好看，后者才是你的东西。&lt;/p&gt;
-&lt;p&gt;第五层。产品的失败没有声音，脱口秀的失败有声音。&lt;/p&gt;
-&lt;p&gt;段子砸了，就是满场寂静，你站在台上，一秒之内就知道这句不行。&lt;/p&gt;
-&lt;p&gt;用户不满意，不会告诉你，他们只是不来了。你后台看到一个用户数减一，不知道他为什么走，甚至不知道他是谁。&lt;/p&gt;
-&lt;p&gt;所以产品的开放麦是无声的。你得自己造一个笑声出来。&lt;/p&gt;
-&lt;p&gt;次周还在不在。有没有人主动提起你。走的人说不说得清自己为什么走。&lt;/p&gt;
-&lt;p&gt;这三个问题回答不上来，你的开放麦就等于没开。人来了，没人笑，也没人告诉你为什么。&lt;/p&gt;
-&lt;p&gt;最后说上线。&lt;/p&gt;
-&lt;p&gt;综艺播出的那天，段子就上线了。它同时上线了两样东西，一个是你改了很多遍的版本，另一个是你以后再也改不了的事实。&lt;/p&gt;
-&lt;p&gt;产品也是这样。上线前你能改一百次，上线后改一次都要付代价。&lt;/p&gt;
-&lt;p&gt;所以有个反直觉的地方，很多人是反着做的。&lt;/p&gt;
-&lt;p&gt;演员上综艺，讲的一定是验证过、最稳的那几个段子，不是最新写的。新东西留在开放麦继续试。&lt;/p&gt;
-&lt;p&gt;首发产品也该这样。带出去的是验证过的，最酷的那批留在后面。&lt;/p&gt;
-&lt;p&gt;先把段子攒够，再谈结构。&lt;/p&gt;
-&lt;p&gt;先有开放麦，再谈上线。&lt;/p&gt;
-&lt;p&gt;作者：三此&lt;/p&gt;
-&lt;p&gt;连连 AI 联创，致力于用 AI 帮创业者找资源、扩人脉&lt;/p&gt;
-
-	</description></item><item><title>[分享创造] WebDavy：把 WebDAV 云盘接入浏览器的 Chrome 扩展</title><link>https://www.v2ex.com/t/1255655#reply1</link><guid>tag:www.v2ex.com,2026-11-09:/t/1255655</guid><pubDate>Mon, 09 Nov 2026 11:04:18 +0000</pubDate><description>
-	&lt;p&gt;分享一个自己做的 Chrome 扩展，免费、无广告。&lt;/p&gt;
-&lt;h2&gt;功能&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;支持 Nextcloud 、坚果云、群晖、ownCloud 等 WebDAV 服务&lt;/li&gt;
-&lt;li&gt;多账户管理、文件预览、上传下载&lt;/li&gt;
-&lt;li&gt;侧边栏集成、目录书签、后台常驻&lt;/li&gt;
-&lt;li&gt;配置导入导出&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;链接&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Chrome 商店： &lt;a href="https://chromewebstore.google.com/detail/webdavy/inaeglkgfmnkncalphgpkendfjndjmid" rel="nofollow"&gt;https://chromewebstore.google.com/detail/webdavy/inaeglkgfmnkncalphgpkendfjndjmid&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;产品主页： &lt;a href="https://holatiger.com/webdavy" rel="nofollow"&gt;https://holatiger.com/webdavy&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;欢迎试用，有问题和建议随时反馈。&lt;/p&gt;
-
-	</description></item><item><title>[问与答] 火山的 agent plan 半价 240/年值得吗</title><link>https://www.v2ex.com/t/1255654#reply2</link><guid>tag:www.v2ex.com,2026-11-09:/t/1255654</guid><pubDate>Mon, 09 Nov 2026 10:59:23 +0000</pubDate><description>
-	&lt;p&gt;RT ，火山的 agent plan 半价 240/年值得吗，开了个 40 的 code plan 两轮对话没了，半价的 agentplan 额度怎么样，值得吗。
-另外 agent plan 能生成图像语音吗，20 的额度能生成多少语音呀&lt;/p&gt;
+	</description></item><item><title>[问与答] 天冷了，各位都穿什么价位的羽绒服呢？</title><link>https://www.v2ex.com/t/1255730#reply37</link><guid>tag:www.v2ex.com,2026-11-10:/t/1255730</guid><pubDate>Tue, 10 Nov 2026 01:13:15 +0000</pubDate><description>
+	有什么推荐的吗？想入手一件平价羽绒服
+	</description></item><item><title>[程序员] 公司不让用苹果手机设备了，有 苹果 pro 尺寸大小的手机推荐么</title><link>https://www.v2ex.com/t/1255727#reply43</link><guid>tag:www.v2ex.com,2026-11-10:/t/1255727</guid><pubDate>Tue, 10 Nov 2026 01:10:39 +0000</pubDate><description>
+	&lt;p&gt;感觉 pro 尺寸大小正好，不喜欢 pro max 那样太大的手机。也不想买太贵的。求手机推荐。&lt;/p&gt;
+&lt;p&gt;这个要求是真特么扯，公司还没停止优化裁员呢，真怕换完被优化了。钱白花了。&lt;/p&gt;
 
 	</description></item></channel></rss>
