@@ -1,5 +1,63 @@
 <?xml version='1.0' encoding='utf-8'?>
-<rss version="2.0"><channel><title>V2EX</title><item><title>[求职] 现在全栈简历怎么写啊?</title><link>https://www.v2ex.com/t/1256007#reply0</link><guid>tag:www.v2ex.com,2026-11-10:/t/1256007</guid><pubDate>Tue, 10 Nov 2026 17:53:24 +0000</pubDate><description>
+<rss version="2.0"><channel><title>V2EX</title><item><title>[网络安全] 深圳一机顶盒厂商在 130 万台出厂设备中预埋系统级后门，并将控制权卖给犯罪集团</title><link>https://www.v2ex.com/t/1256013#reply0</link><guid>tag:www.v2ex.com,2026-11-10:/t/1256013</guid><pubDate>Tue, 10 Nov 2026 23:20:14 +0000</pubDate><description>
+	&lt;p&gt;深圳一机顶盒厂商在 130 万台出厂设备中预埋系统级后门，并将控制权卖给犯罪集团。&lt;/p&gt;
+&lt;p&gt;谷歌 11 月 2-3 日公布调查报告：深圳视壮科技（ Videostrong ，品牌 MECOOL ）在 130 万台以上安卓电视盒出厂固件中预埋名为 XCPE （ x.cpe ）的系统级后门，并把控制权出售给网络犯罪集团。&lt;/p&gt;
+&lt;p&gt;后门在首次开机后才从远程下载恶意模块，绕过谷歌认证检测；可远程监控、窃取账号密码、把用户宽带转租作住宅代理用于非法活动，重启后自动恢复、普通用户无法清除。&lt;/p&gt;
+&lt;p&gt;谷歌联合日本警察厅及多家安全公司于 10 月最后一周切断其指挥服务器，并永久禁止 Videostrong 生产销售谷歌认证设备。受影响设备遍布 200 多个国家，另有超 1000 万台设备因此次行动脱离黑产控制。&lt;/p&gt;
+
+	</description></item><item><title>[推广] 做了一个 MiniMax H3 Image 在线生图工具，支持文字生成和参考图编辑</title><link>https://www.v2ex.com/t/1256012#reply0</link><guid>tag:www.v2ex.com,2026-11-10:/t/1256012</guid><pubDate>Tue, 10 Nov 2026 22:14:43 +0000</pubDate><description>
+	最近做了一个 MiniMax H3 Image 在线生图站，想放到推广节点和大家分享。&lt;br /&gt;&lt;br /&gt;目前可以直接在网页上输入提示词生成图片，也可以添加参考图，描述希望如何修改。生成前可设置画面比例、1K/2K/4K 分辨率、质量和张数。站里还整理了一些可浏览的提示词示例，方便找灵感或调整自己的描述。&lt;br /&gt;&lt;br /&gt;网站： &lt;a target="_blank" href="https://minimaxh3img.com/" rel="nofollow noopener"&gt;https://minimaxh3img.com/&lt;/a&gt;&lt;br /&gt;提示词库： &lt;a target="_blank" href="https://minimaxh3img.com/prompts" rel="nofollow noopener"&gt;https://minimaxh3img.com/prompts&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;欢迎反馈～
+	</description></item><item><title>[问与答] GROK 是否有故障了？聊天记录全没，新对话会上隐私锁无法查看</title><link>https://www.v2ex.com/t/1256011#reply0</link><guid>tag:www.v2ex.com,2026-11-10:/t/1256011</guid><pubDate>Tue, 10 Nov 2026 20:17:11 +0000</pubDate><description>
+	
+	</description></item><item><title>[分享创造] 写了一个可以清理 claude code 和 codex 会话存储的工具: cc-clean</title><link>https://www.v2ex.com/t/1256010#reply1</link><guid>tag:www.v2ex.com,2026-11-10:/t/1256010</guid><pubDate>Tue, 10 Nov 2026 18:28:01 +0000</pubDate><description>
+	&lt;p&gt;一键使用:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;npx cc-clean@latest
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;背景大概就是，我同时在用 Claude 和 Codex ，用久了以后，session 会话实在太多了。而我的磁盘又不太够用，一直在疯狂挪东西，又不敢删。&lt;/p&gt;
+&lt;p&gt;然后自己仔细研究过它们的底层设计，发现有些冗余字段其实是可以清理的。就是在不影响 resume 的前提下，尽可能保留会话，把里面多余的字段移除掉。&lt;/p&gt;
+&lt;p&gt;其中占用很大的一块，就是会话里的图片。比如你给它发一张图，告诉它要改哪里，这张图就会以 Base64 编码的形式存在聊天记录里，有时还会反复出现很多次。&lt;/p&gt;
+&lt;p&gt;但这些图片，基本上在当次会话结束以后就不会再用了。有价值的图片，我都会单独换个地方放。&lt;/p&gt;
+&lt;p&gt;反正我到现在基本没再用到过这些图片。偶尔翻历史，主要也是查文字聊天，找过去的会话。&lt;/p&gt;
+&lt;p&gt;类似的，还有一些终端输出的冗余字段、一些 Hook 、一些过期的标识、一些快照，这些其实也可以清理。&lt;/p&gt;
+&lt;p&gt;如果你也和我一样，不太愿意删掉它们的记忆，不妨试试 &lt;code&gt;cc-clean&lt;/code&gt;。把原始记忆留下来，随时恢复又不占地方&lt;/p&gt;
+&lt;h3&gt;清理明细&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;内嵌图片移除&lt;/li&gt;
+&lt;li&gt;命令输出精简&lt;/li&gt;
+&lt;li&gt;Codex 加密推理状态移除&lt;/li&gt;
+&lt;li&gt;Codex 旧上下文压缩快照移除&lt;/li&gt;
+&lt;li&gt;Claude API 请求存档移除&lt;/li&gt;
+&lt;li&gt;Claude 成功 Hook 内容精简&lt;/li&gt;
+&lt;li&gt;Claude 历史工具定义精简&lt;/li&gt;
+&lt;li&gt;Claude 历史技能列表精简&lt;/li&gt;
+&lt;li&gt;Codex 重复会话原文件移除&lt;/li&gt;
+&lt;li&gt;Codex 生成 PNG 图片无损压缩&lt;/li&gt;
+&lt;li&gt;Codex 状态写入临时文件清理&lt;/li&gt;
+&lt;li&gt;Claude 临时任务输出清理&lt;/li&gt;
+&lt;li&gt;Claude 临时工作目录记录清理&lt;/li&gt;
+&lt;li&gt;Codex 临时 Hook 完整输出清理&lt;/li&gt;
+&lt;li&gt;Codex 安装包残留清理&lt;/li&gt;
+&lt;li&gt;会话创建的临时文本产物清理&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr/&gt;
+&lt;p&gt;github: &lt;a href="https://github.com/moonrailgun/cc-clean" rel="nofollow"&gt;https://github.com/moonrailgun/cc-clean&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;如果你觉得这个项目不错，欢迎来个 star&lt;/p&gt;
+
+	</description></item><item><title>[推广] DBVibe 完全免费了，不用再花 Token 自己造数据库管理工具</title><link>https://www.v2ex.com/t/1256009#reply1</link><guid>tag:www.v2ex.com,2026-11-10:/t/1256009</guid><pubDate>Tue, 10 Nov 2026 18:25:09 +0000</pubDate><description>
+	&lt;p&gt;最近更新了数据库管理工具 DBVibe ，决定完全免费开放，不再需要许可证或激活码。&lt;/p&gt;
+&lt;p&gt;DBVibe 不仅具备传统数据库管理工具的常用功能，可以满足日常数据库开发和维护需求，还针对 AI 时代增加了一些新的能力：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Agent&lt;/strong&gt;：通过 AI Agent 自动执行数据库开发和维护任务。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;MCP&lt;/strong&gt;：支持 AI Coding Agent 连接数据库并执行操作。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Skills&lt;/strong&gt;：让 AI 掌握数据库相关的操作流程和使用能力。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;实时可视化&lt;/strong&gt;：可以实时观看 Agent 操作数据库的过程。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;安全授权&lt;/strong&gt;：涉及数据库的操作，需要得到用户许可后才会继续执行。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;项目地址： &lt;a href="https://dbvibe.app" rel="nofollow"&gt;https://dbvibe.app&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;有任何问题、Bug 或功能建议，欢迎到 GitHub 提交 Issue：
+&lt;a href="https://github.com/DBVibe-AI/DBVibe/issues" rel="nofollow"&gt;https://github.com/DBVibe-AI/DBVibe/issues&lt;/a&gt;&lt;/p&gt;
+
+	</description></item><item><title>[求职] 现在全栈简历怎么写啊?</title><link>https://www.v2ex.com/t/1256007#reply0</link><guid>tag:www.v2ex.com,2026-11-10:/t/1256007</guid><pubDate>Tue, 10 Nov 2026 17:53:24 +0000</pubDate><description>
 	&lt;p&gt;[&lt;a href="https://www.v2ex.com/t/1255550" rel="nofollow"&gt;V 站发的简历&lt;/a&gt;]&lt;/p&gt;
 &lt;p&gt;全栈东西多, 加上我本身什么都干. 想突出自己做出海落地经验丰富, 再加上自己的比较喜欢搞技术能自驱学习, 但是感觉可能 hr 不看这个?&lt;/p&gt;
 &lt;p&gt;最近问我什么的都有, 又说我不是简历上精通 PHP 的吗? 又说我没有重点不知道干什么的. 又说不知道能让我干什么.&lt;/p&gt;
@@ -7,10 +65,10 @@
 
 	</description></item><item><title>[分享创造] 宁的账号被封禁啦</title><link>https://www.v2ex.com/t/1256006#reply1</link><guid>tag:www.v2ex.com,2026-11-10:/t/1256006</guid><pubDate>Tue, 10 Nov 2026 17:24:12 +0000</pubDate><description>
 	做了个视频 个人感觉还不错 可惜不想投流了 发出来给大家看看 现在 aigc 流量权都在平台手里 哎&lt;br /&gt;&lt;br /&gt; [ [ Claude 原创 MV ] 宁的账号已经被封啦！| 克劳德小剧场-哔哩哔哩]  &lt;a target="_blank" href="https://b23.tv/q5LvkHC" rel="nofollow noopener"&gt;https://b23.tv/q5LvkHC&lt;/a&gt;
-	</description></item><item><title>[问与答] Anthropic 上市，值得买入并持有吗</title><link>https://www.v2ex.com/t/1256004#reply6</link><guid>tag:www.v2ex.com,2026-11-10:/t/1256004</guid><pubDate>Tue, 10 Nov 2026 16:58:55 +0000</pubDate><description>
+	</description></item><item><title>[问与答] Anthropic 上市，值得买入并持有吗</title><link>https://www.v2ex.com/t/1256004#reply8</link><guid>tag:www.v2ex.com,2026-11-10:/t/1256004</guid><pubDate>Tue, 10 Nov 2026 16:58:55 +0000</pubDate><description>
 	&lt;p&gt;Anthropic 上市，这个估值感觉市场会有分析，如果是你，你会买入吗，这个是一次难得的投资机会，还是大坑。如何看待 Anthropic ，应该就说对未来 ai 发展方向的判断了，还蛮有意思了。五年后再再来看！&lt;/p&gt;
 
-	</description></item><item><title>[Apple] 使用 gestaltx 添加境外 esim 后，插槽 2 的实体卡不显示了</title><link>https://www.v2ex.com/t/1256003#reply2</link><guid>tag:www.v2ex.com,2026-11-10:/t/1256003</guid><pubDate>Tue, 10 Nov 2026 16:58:40 +0000</pubDate><description>
+	</description></item><item><title>[Apple] 使用 gestaltx 添加境外 esim 后，插槽 2 的实体卡不显示了</title><link>https://www.v2ex.com/t/1256003#reply4</link><guid>tag:www.v2ex.com,2026-11-10:/t/1256003</guid><pubDate>Tue, 10 Nov 2026 16:58:40 +0000</pubDate><description>
 	&lt;p&gt;添加的时候提示：将替换插槽 2 的 sim 卡，我以为添加之后至少在设置里可以关闭 esim，开启实体 sim（两者不同时开启）
 但是添加了之后，插槽 2 的 sim 卡直接不显示了是什么鬼。。。
 &lt;img alt="" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://i.imgur.com/9S69dM3.png"/&gt;&lt;/p&gt;
@@ -441,7 +499,7 @@ H5 游戏开发工程师（海外社区方向）//海外社区运营（游戏社
 3.（可选） GitHub / 作品链接。&lt;/p&gt;
 &lt;p&gt;简历投递邮箱 &lt;a href="mailto:linlinli88200@gmail.com"&gt;linlinli88200@gmail.com&lt;/a&gt;&lt;/p&gt;
 
-	</description></item><item><title>[程序员] 🚨Gemini 4 Carbon 已经可以在 Antigravity 中使用</title><link>https://www.v2ex.com/t/1255995#reply0</link><guid>tag:www.v2ex.com,2026-11-10:/t/1255995</guid><pubDate>Tue, 10 Nov 2026 16:07:48 +0000</pubDate><description>
+	</description></item><item><title>[程序员] 🚨Gemini 4 Carbon 已经可以在 Antigravity 中使用</title><link>https://www.v2ex.com/t/1255995#reply1</link><guid>tag:www.v2ex.com,2026-11-10:/t/1255995</guid><pubDate>Tue, 10 Nov 2026 16:07:48 +0000</pubDate><description>
 	&lt;p&gt;由于是刚发布，使用感受上比 Gemini 4 Argon 快多了。但目前好像仅适用于 Ultra 计划。&lt;/p&gt;
 
 	</description></item><item><title>[独立开发者 👨‍💻] 做了个电商 AI 工具目录站，做工具的兄弟来交换 dofollow</title><link>https://www.v2ex.com/t/1255994#reply0</link><guid>tag:www.v2ex.com,2026-11-10:/t/1255994</guid><pubDate>Tue, 10 Nov 2026 16:05:12 +0000</pubDate><description>
@@ -748,7 +806,7 @@ AI ，能做到常用字的笔画级拆分可视化。
 	</description></item><item><title>[问与答] 请问国产手机哪个操作系统好一些???能刷国际版系统吗</title><link>https://www.v2ex.com/t/1255983#reply1</link><guid>tag:www.v2ex.com,2026-11-10:/t/1255983</guid><pubDate>Tue, 10 Nov 2026 14:53:40 +0000</pubDate><description>
 	&lt;p&gt;一加和 iqoo 哪个好? 想买个备用机, ace6t 和 z11 turbo 这俩选哪个好一些? 国产机能刷国际版系统吗? 大电池有没有危险? 有没有论坛啥的, 关哪些没用的系统服务比较好? 都 2000 左右, ace6t 贵 100 块,&lt;/p&gt;
 
-	</description></item><item><title>[Claude] Fable5.2 确实很强</title><link>https://www.v2ex.com/t/1255980#reply8</link><guid>tag:www.v2ex.com,2026-11-10:/t/1255980</guid><pubDate>Tue, 10 Nov 2026 14:37:08 +0000</pubDate><description>
+	</description></item><item><title>[Claude] Fable5.2 确实很强</title><link>https://www.v2ex.com/t/1255980#reply9</link><guid>tag:www.v2ex.com,2026-11-10:/t/1255980</guid><pubDate>Tue, 10 Nov 2026 14:37:08 +0000</pubDate><description>
 	任务的完成度比 opus5.5 效果还好，基本可以一步到位无需修改了。但是用量的消耗速度感觉得有 opus5.5 同样思考强度的十倍了，两轮对话下去五小时限额就没了
 	</description></item><item><title>[Android] 请问国产手机哪个操作系统好一些?</title><link>https://www.v2ex.com/t/1255977#reply6</link><guid>tag:www.v2ex.com,2026-11-10:/t/1255977</guid><pubDate>Tue, 10 Nov 2026 14:14:08 +0000</pubDate><description>
 	&lt;p&gt;一加和 iqoo 哪个好? 想买个备用机, ace6t 和 z11 turbo 这俩选哪个好一些?
@@ -756,7 +814,7 @@ AI ，能做到常用字的笔画级拆分可视化。
 有没有论坛啥的, 关哪些没用的系统服务比较好?
 都 2000 左右, ace6t 贵 100 块,&lt;/p&gt;
 
-	</description></item><item><title>[iPhone] 第一次用 iPhone 有被 app store 震惊到</title><link>https://www.v2ex.com/t/1255974#reply6</link><guid>tag:www.v2ex.com,2026-11-10:/t/1255974</guid><pubDate>Tue, 10 Nov 2026 14:06:57 +0000</pubDate><description>
+	</description></item><item><title>[iPhone] 第一次用 iPhone 有被 app store 震惊到</title><link>https://www.v2ex.com/t/1255974#reply7</link><guid>tag:www.v2ex.com,2026-11-10:/t/1255974</guid><pubDate>Tue, 10 Nov 2026 14:06:57 +0000</pubDate><description>
 	&lt;p&gt;国区 app store 能直接下载 X youtube facebook 等各种不存在的软件，之前在安卓折腾 google play 像傻子一样修 fcm&lt;/p&gt;
 
 	</description></item><item><title>[推广] 我开发了 AI Drake Video 生成器：用一张照片生成派对场景短视频</title><link>https://www.v2ex.com/t/1255971#reply0</link><guid>tag:www.v2ex.com,2026-11-10:/t/1255971</guid><pubDate>Tue, 10 Nov 2026 13:57:29 +0000</pubDate><description>
@@ -887,7 +945,7 @@ AI ，能做到常用字的笔画级拆分可视化。
 &lt;li&gt;WX （ base64 ）：&lt;code&gt;SmVua2luV29v&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-	</description></item><item><title>[Claude] Anthropic 计划以约 1 万亿美元估值 IPO， 11 月 19 日开始交易</title><link>https://www.v2ex.com/t/1255963#reply9</link><guid>tag:www.v2ex.com,2026-11-10:/t/1255963</guid><pubDate>Tue, 10 Nov 2026 13:14:10 +0000</pubDate><description>
+	</description></item><item><title>[Claude] Anthropic 计划以约 1 万亿美元估值 IPO， 11 月 19 日开始交易</title><link>https://www.v2ex.com/t/1255963#reply10</link><guid>tag:www.v2ex.com,2026-11-10:/t/1255963</guid><pubDate>Tue, 10 Nov 2026 13:14:10 +0000</pubDate><description>
 	&lt;p&gt;Anthropic 最新披露，计划在 IPO 中实现约 1 万亿美元的估值。&lt;/p&gt;
 &lt;p&gt;预计 11 月 18 日（下周三）确定发行价，11 月 19 日（下周四）开始交易。&lt;/p&gt;
 &lt;p&gt;截至 10 月 31 日，Anthropic 的年化收入约 810 亿美元，一个月内增加了 100 亿美元。&lt;/p&gt;
@@ -895,7 +953,7 @@ AI ，能做到常用字的笔画级拆分可视化。
 
 	</description></item><item><title>[站长] edgeone 晚上的时候比 cloudflare 快不少，你们对比过吗？</title><link>https://www.v2ex.com/t/1255961#reply3</link><guid>tag:www.v2ex.com,2026-11-10:/t/1255961</guid><pubDate>Tue, 10 Nov 2026 12:57:31 +0000</pubDate><description>
 	纯静态网站。edgeone 是免费全球，cloudflare 是免费的。买的域名托管到 CF 上了，EO 用的是测试域名。测试时间晚上八点半左右。&lt;br /&gt;&lt;br /&gt;CF 一张 103KB 的图片花了 30 秒。EO 花了 5.21 秒。&lt;br /&gt;&lt;br /&gt;CF 白天也挺快的。不太想用 EO ，有点信不过腾讯。
-	</description></item><item><title>[OpenAI] 有没有大佬用的 Linux 桌面端的 Codex，咨询下 Dots 能否直连 Linux ？</title><link>https://www.v2ex.com/t/1255959#reply3</link><guid>tag:www.v2ex.com,2026-11-10:/t/1255959</guid><pubDate>Tue, 10 Nov 2026 12:52:50 +0000</pubDate><description>
+	</description></item><item><title>[OpenAI] 有没有大佬用的 Linux 桌面端的 Codex，咨询下 Dots 能否直连 Linux ？</title><link>https://www.v2ex.com/t/1255959#reply4</link><guid>tag:www.v2ex.com,2026-11-10:/t/1255959</guid><pubDate>Tue, 10 Nov 2026 12:52:50 +0000</pubDate><description>
 	&lt;p&gt;我自己有一台 Ubuntu Server 22.4 ，目前只能让 Dots 通过 Mac 中转 然后 ssh 访问我的 Ubuntu 。这样就得保证我的 Mac 一直在线。&lt;/p&gt;
 &lt;p&gt;我希望我的 Dots 能直连我的 Mac （目前设备列表看不到 Ubuntu ，因为我用的 codex cli ）&lt;/p&gt;
 &lt;p&gt;&lt;img alt="" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://i.imgur.com/Ehr59Fb.png"/&gt; &lt;/p&gt;
@@ -974,7 +1032,7 @@ exceeded retry limit, last status: 429 Too Many Requests&lt;/p&gt;
 &lt;/ul&gt;
 &lt;p&gt;备注：需要通过学院内部渠道 + 教职工账号购买，因此学生或者校外人员是没办法获取的，歪门邪道也不行。只能提供个价格参考。&lt;/p&gt;
 
-	</description></item><item><title>[问与答] 你对 AI 说的最多的一句话是什么？</title><link>https://www.v2ex.com/t/1255953#reply18</link><guid>tag:www.v2ex.com,2026-11-10:/t/1255953</guid><pubDate>Tue, 10 Nov 2026 11:48:18 +0000</pubDate><description>
+	</description></item><item><title>[问与答] 你对 AI 说的最多的一句话是什么？</title><link>https://www.v2ex.com/t/1255953#reply23</link><guid>tag:www.v2ex.com,2026-11-10:/t/1255953</guid><pubDate>Tue, 10 Nov 2026 11:48:18 +0000</pubDate><description>
 	&lt;p&gt;对 AI 是的话：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
@@ -1040,43 +1098,4 @@ exceeded retry limit, last status: 429 Too Many Requests&lt;/p&gt;
 	
 	</description></item><item><title>[分享创造] 做微信小游戏踩的坑--详细版</title><link>https://www.v2ex.com/t/1255945#reply0</link><guid>tag:www.v2ex.com,2026-11-10:/t/1255945</guid><pubDate>Tue, 10 Nov 2026 11:05:50 +0000</pubDate><description>
 	想起什么说什么,基本是要做微信小游戏就需要了解的.&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;iOS 上微信小游戏能用的内存有上限：整个微信进程内存和显存共用大约 1G 到 1.4G(具体看手机内存)，超过就会被系统杀掉；另外 5 秒内收到两次内存警告，微信也会直接销毁小游戏。&lt;br /&gt;别以为你游戏资源包只有几百 MB 就没事。PNG 、JPG 只是文件小，进显存要解开成原始像素，每个像素 4 字节，小游戏占用只看分辨率：一张 2048×2048 的图不管文件多小，都占 16MB ，开了 mipmap 还要再多约 1/3 。要是你的游戏资源几百 M,基本玩着玩着就必崩溃.&lt;br /&gt;解决办法是用 ASTC 压缩纹理：显卡能直接读压缩后的数据，4×4 块的显存是原来的 1/4 ，6×6 约 1/9 ，代价是画质略有损失(我自己测试看不出分别)；再配合用完及时卸载资源，就能把峰值压下来。拿我游戏来说，战斗峰值从约 1G 降到了 200MB.&lt;br /&gt;&lt;br /&gt;ASTC 压缩还有个问题,可能会把某个类型的图片变成洋红色,真机才会出现,所以一定要测试好.&lt;br /&gt;&lt;br /&gt;用户手机发热可以在小游戏网页后台给你的游戏接入高性能模式,能大幅度降低发热问题,其他也有能优化的,腾讯这点好在每个文档里面都有一键复制,直接给你的 AI 看,完美接入.&lt;br /&gt;&lt;br /&gt;网页后台显示 100 用户就可以开启流量主,手机看要 1000,这里以网页后台为主.&lt;br /&gt;&lt;br /&gt;任何游戏,一定要弄新手教程,用户进来几秒不知道干啥,绝对就退了,想象你自己玩小游戏,有那么耐心吗?&lt;br /&gt;&lt;br /&gt;游戏版本审核的时候,只要你的资源需要额外下载,审核界面一定要选择联网,而不是单机,这里不是看你游戏的类型,只要有云上资源,就要联网,不然审核员用不能联网的环境审核失败,会直接打回.&lt;br /&gt;&lt;br /&gt;加载云上资源的时候,游戏一定要显示具体的大小或者文件进度,我买的腾讯 cdn,按理来说网络肯定可以,但是几次遇到下不动的情况,如果你的游戏没有详细说明,用户可能会以为卡死,直接就退了.&lt;br /&gt;&lt;br /&gt;第一次版本审核成功,后台会建议你用他们的代码加固插件,用的时候代码混淆选中等就行,高选项会直接让主包大于 4M.&lt;br /&gt;&lt;br /&gt;接入好友排行功能,要在后台开启这个功能,不然游戏不保报错,但是也不显示内容,会让用户疑惑.&lt;br /&gt;&lt;br /&gt;每个游戏可以开启新游种子,基本会给量让你开启流量主,一定要把版本弄好再开启,不像我,新手引导都没有就开启了,浪费了...&lt;br /&gt;&lt;br /&gt;就说这么多吧,哎,不做游戏看别的游戏都是垃圾,一做才发现真的难啊,总是有一些问题出现,更难受的是辛辛苦苦做完,没有流量&lt;br /&gt;&lt;br /&gt;现在小游戏不花钱推,基本都没入尘烟了&lt;br /&gt;&lt;br /&gt;我的游戏是割草类游戏,就是各种技能搭配,纯爽游,感兴趣的朋友微信搜:站桩修仙
-	</description></item><item><title>[问与答] 目前最便宜的 deepseek 方式是什么</title><link>https://www.v2ex.com/t/1255944#reply15</link><guid>tag:www.v2ex.com,2026-11-10:/t/1255944</guid><pubDate>Tue, 10 Nov 2026 10:49:37 +0000</pubDate><description>
-	&lt;p&gt;现在还用的 command go 循环几个账号，难一点任务就用中转的 Claude&lt;/p&gt;
-
-	</description></item><item><title>[VPS] 今年还有阿里云 99 元续费 ECS 服务器的活动吗？</title><link>https://www.v2ex.com/t/1255943#reply2</link><guid>tag:www.v2ex.com,2026-11-10:/t/1255943</guid><pubDate>Tue, 10 Nov 2026 10:49:36 +0000</pubDate><description>
-	
-	</description></item><item><title>[投资] 盯盘插件新增个股列表趋势分析</title><link>https://www.v2ex.com/t/1255942#reply0</link><guid>tag:www.v2ex.com,2026-11-10:/t/1255942</guid><pubDate>Tue, 10 Nov 2026 10:45:44 +0000</pubDate><description>
-	&lt;p&gt;喜欢用 vscode 的朋友可以下载插件用一下看看
-&lt;br/&gt;
-vscode 搜索牛来盯盘&lt;br/&gt;
-&lt;img alt="" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://i.imgur.com/zvYeG72.png"/&gt;
-&lt;br/&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://i.imgur.com/FvmjmfY.png"/&gt;
-&lt;br/&gt;
-&lt;img alt="" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://i.imgur.com/hiFtPGa.png"/&gt;&lt;/p&gt;
-
-	</description></item><item><title>[推广] 满血中转站，稳定号池不降智 | 企业接入 AI，难的不只是选模型，更是多平台重复接入与后续管理。</title><link>https://www.v2ex.com/t/1255941#reply1</link><guid>tag:www.v2ex.com,2026-11-10:/t/1255941</guid><pubDate>Tue, 10 Nov 2026 10:32:27 +0000</pubDate><description>
-	&lt;p&gt;研发用 Claude，业务测试 GPT，内容团队接入 Gemini——模型越来越多，账号、接口、API Key 和账单却越来越分散。&lt;/p&gt;
-&lt;p&gt;Midalo 米搭为企业提供统一的多模型 API 入口：&lt;/p&gt;
-&lt;p&gt;✅ &lt;strong&gt;一套 API 接入 Claude、GPT、Gemini、DeepSeek 等主流模型&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;✅ &lt;strong&gt;兼容 OpenAI、Anthropic、Gemini 原生协议，减少重复适配&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;✅ 支&lt;strong&gt;持模型与线路选择，按量计费，无强制月费&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;✅ &lt;strong&gt;集中管理 API Key，通过使用日志查看用量、核对扣费&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;✅ &lt;strong&gt;覆盖文本、图像、视频等能力，支持国内直连&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;无论是开发 AI 应用，还是为现有业务增加智能能力，都可以先小额测试模型效果、兼容性和成本，再逐步扩大接入。&lt;/p&gt;
-&lt;p&gt;注册 Midalo，创建企业 API Key，让团队少维护几套接口，多推进几个 AI 项目。&lt;/p&gt;
-&lt;p&gt;👉 Midalo 注册入口： &lt;a href="https://agent.midalo.ai/" rel="nofollow"&gt;https://agent.midalo.ai/&lt;/a&gt; &lt;/p&gt;
-&lt;p&gt;企业充值及开票咨询—VX：wjn168178（B 端老板可加）&lt;/p&gt;
-&lt;hr/&gt;
-&lt;h1&gt;新用户注册送福利！！！&lt;/h1&gt;
-&lt;p&gt;新用户站点注册地址： &lt;a href="https://agent.midalo.ai/" rel="nofollow"&gt;https://agent.midalo.ai/&lt;/a&gt; （一定要用这个地址注册，不然看不到注册 ID，防止后面领不到鸡蛋）&lt;/p&gt;
-&lt;p&gt;本站主打平价，计费透明&lt;/p&gt;
-&lt;p&gt;留下注册 ID 送 2 体验金，加入 QQ 群送 3 体验金，合计 5$，足够完整测试一整天&lt;/p&gt;
-&lt;p&gt;Midalo API 官方 QQ 群：1030748124（注册后进群，私信管理员或联系客服发送账户 ID 即可随机领取 2-5$不等额度鸡蛋，24 小时内到账）&lt;/p&gt;
-&lt;p&gt;客服 QQ：3809674723&lt;/p&gt;
-&lt;p&gt;&lt;img alt="image" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://imagetourl.im/api/storage/file?key=anon%2F-%2F8205693669204-ee8ec666-c970-4c74-ae0e-ecacbbe1c5eb-fb22de9cdd9a2449578faab00bb08617.png"/&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="image" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://imagetourl.im/api/storage/file?key=anon%2F-%2F8205780392028-da677584-2383-4064-b984-8304ef2928e6-2db7a9d8f9f0dbb9f565dd1e1607cc07.png"/&gt;&lt;/p&gt;
-
-	</description></item><item><title>[程序员] gpt 6 astra xhigh 这几日降智非常严重</title><link>https://www.v2ex.com/t/1255940#reply0</link><guid>tag:www.v2ex.com,2026-11-10:/t/1255940</guid><pubDate>Tue, 10 Nov 2026 10:27:40 +0000</pubDate><description>
-	1. 输出越来越看不懂了。一句完整的话语义也非常”扭曲“&lt;br /&gt;&lt;br /&gt;比如这里描述某段逻辑加锁过程。&lt;br /&gt;&lt;br /&gt;按人的描述为：分段锁 → 节点读锁 → 增加 pin → 释放节点锁 → 释放分段锁&lt;br /&gt;codex 输出：段锁 → 查 Map → 增加 pin → 释放段锁&lt;br /&gt;&lt;br /&gt;2. 输入的意思曲解，甚至长任务扭曲需求&lt;br /&gt;&lt;br /&gt;昨天跑了两个小时的长任务，结果和我的需求背道而驰，被我质问后开始道歉。&lt;br /&gt;&lt;br /&gt;3. 代码质量越来越差&lt;br /&gt;4. 越来越慢
 	</description></item></channel></rss>
