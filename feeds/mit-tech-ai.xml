@@ -12,7 +12,7 @@
 	<atom:link href="https://www.technologyreview.com/feed/" rel="self" type="application/rss+xml" />
 	<link>https://www.technologyreview.com</link>
 	<description></description>
-	<lastBuildDate>Thu, 12 Nov 2026 12:32:32 +0000</lastBuildDate>
+	<lastBuildDate>Thu, 12 Nov 2026 21:08:54 +0000</lastBuildDate>
 	<language>en-US</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -28,6 +28,74 @@
 	<height>32</height>
 </image> 
 <site xmlns="com-wordpress:feed-additions:1">172986898</site>	<item>
+		<title>Nvidia privately confirmed it could track chips to fight smuggling, even as industry publicly questioned feasibility</title>
+		<link>https://www.technologyreview.com/2026/11/12/1148483/nvidia-chip-tracking/</link>
+		
+		<dc:creator><![CDATA[James O'Donnell]]></dc:creator>
+		<pubDate>Thu, 12 Nov 2026 20:16:24 +0000</pubDate>
+				<category><![CDATA[Artificial intelligence]]></category>
+		<category><![CDATA[AI]]></category>
+		<category><![CDATA[App]]></category>
+		<category><![CDATA[nvidia]]></category>
+		<guid isPermaLink="false">https://www.technologyreview.com/?p=1148483</guid>
+
+					<description><![CDATA[Representatives from Nvidia told Illinois representative Bill Foster that it would be technically possible to implement the anti-smuggling measures called for in the Chip Security Act, Foster told MIT Technology Review in an interview on Thursday, even while an industry group claimed they were “potentially infeasible.”  Foster, a Democrat who serves on the Committee on&#8230;]]></description>
+										<content:encoded><![CDATA[
+<p class="wp-block-paragraph">Representatives from Nvidia told Illinois representative Bill Foster that it would be technically possible to implement the anti-smuggling measures called for in the Chip Security Act, Foster told <em>MIT Technology Review</em> in an interview on Thursday, even while an industry group claimed they were “potentially infeasible.” </p>
+
+
+
+<p class="wp-block-paragraph">Foster, a Democrat who serves on the Committee on Science, Space, and Technology, is a cosponsor of the act, which would introduce geotracking requirements to verify the location of advanced AI chips in order to prevent their smuggling to China. It is one of three chip-security bills under consideration for inclusion in the Senate’s National Defense Authorization Act, each of which is drawing renewed attention after Nvidia CEO Jensen Huang’s resignation and reported affair with an alleged Chinese spy.</p>
+
+
+
+<p class="wp-block-paragraph">When the Chip Security Act was introduced, in May 2025, lawmakers said the technology to implement it existed, something Nvidia has not publicly confirmed. In March 2026, the Semiconductor Industry Association, of which Nvidia is a member, explicitly <a href="https://www.semiconductors.org/sia-statement-on-chip-security-act/">opposed</a> the bill and wrote that its mandates for chip tracking were “new, untested, and potentially infeasible.” </p>
+
+
+
+<p class="wp-block-paragraph">But privately, Nvidia representatives working with Foster told the lawmaker that the company could implement them. </p>
+
+
+
+<p class="wp-block-paragraph">“They never put anything in writing,” Foster says, but during technical discussions on the possibility of such safeguards, their reaction was “yeah, of course we can do this.” This private acknowledgment to Foster goes further than anything Nvidia has previously made public. </p>
+
+
+
+<p class="wp-block-paragraph">Other technology Nvidia has built for its customers suggests that the company can indeed offer accurate tracking of its chips’ locations. In December 2025, for example, it <a href="https://blogs.nvidia.com/blog/optional-data-center-fleet-management-software/">announced</a> a new tool called Fleet Intelligence that would allow customers to monitor how its advanced chips were performing across different data center locations. In doing so, the tool could indicate which country chips were in, Nvidia <a href="https://www.reuters.com/business/nvidia-builds-location-verification-tech-that-could-help-fight-chip-smuggling-2025-12-10/?utm_source=chatgpt.com">confirmed</a> to Reuters, but the company would not elaborate on whether this technology could be used to prevent smuggling. </p>
+
+
+
+<p class="wp-block-paragraph">Nvidia did not respond to requests for comment or confirmation of Foster’s characterization.</p>
+
+
+
+<p class="wp-block-paragraph">In early October, when lawmakers were reportedly <a href="https://www.bloomberg.com/news/features/2026-10-01/nvidia-faces-questions-over-china-ai-chip-smuggling-cases?taid=6abef534a7b7100001e74694&amp;utm_campaign=trueanthem&amp;utm_content=business&amp;utm_medium=social&amp;utm_source=twitter">increasingly concerned</a> about Nvidia’s role in smuggling, <em>MIT Technology Review</em> asked the company if Fleet Intelligence could be used to prevent the practice. It declined to answer directly, instead sending a statement: “Governments and media have found insignificant diversion of controlled US products—a drop in the bucket compared to the ocean of domestic compute China already has.”</p>
+
+
+
+<p class="wp-block-paragraph">The recent fallout at Nvidia involves a number of people and companies alleged to be involved in chip smuggling. Alice Huang, with whom Jensen Huang reportedly had an affair, runs Megaspeed, a Singaporean firm now under investigation for smuggling advanced GPUs to China. A US Commerce Department inquiry into the company was <a href="https://www.nytimes.com/2026/11/09/business/economy/nvidia-megaspeed-investigation-huang.html">reportedly halted</a> after invention by Nvidia. Megaspeed <a href="https://www.bloomberg.com/news/articles/2026-11-12/us-probing-if-alice-huang-helped-smuggle-super-micro-products">reportedly</a> bought chips from Supermicro, a company that packages Nvidia’s chips onto servers.&nbsp;</p>
+
+
+
+<p class="wp-block-paragraph">The Chip Security Act as drafted would require a mechanism to track the locations of chips, either by inspections of facilities, attestations by companies, or ping-based location mechanisms. The ping-based technique, the hardest option to circumvent, would require the GPU to send a signal of its location when it comes online. In September, the Center for Security and Emerging Technology <a href="https://cset.georgetown.edu/publication/tracking-ai-chips/">found</a> it would be the most cost-effective option.</p>
+
+
+
+<p class="wp-block-paragraph">Foster said he did not ask Nvidia’s representatives why they weren’t voluntarily adopting such chip-tracking tools if they could technically do so.</p>
+
+
+
+<p class="wp-block-paragraph">But if the requirements of the bill pass as part of the Senate’s National Defense Authorization Act, the new tracking mechanisms would only tell investigators where the chips are, not offer a way to disconnect them if it’s revealed they have been smuggled. Foster told <em>MIT Technology Review</em> he intends to introduce new, stricter legislation in the new year that would offer a workaround. The new rule would require licenses to operate advanced GPUs, and before a GPU could connect, its valid license would need to be verified.&nbsp;&nbsp;</p>
+
+
+
+<p class="wp-block-paragraph">In the meantime, the controversy at Nvidia, Foster says, has fueled support among his colleagues for the rules in the bill: “There will be a lot of political pressure, in the wake of everything that’s happened, on the companies to actually do a very good job of the geographic validation of where the chip actually is.”</p>
+]]></content:encoded>
+					
+		
+		
+		<post-id xmlns="com-wordpress:feed-additions:1">1148483</post-id>	</item>
+		<item>
 		<title>The Download: COP31’s climate challenge and the quest for immortality</title>
 		<link>https://www.technologyreview.com/2026/11/12/1148444/the-download-cop31-climate-talks-cognitive-immortality/</link>
 		
@@ -1138,103 +1206,5 @@
 		
 		
 		<post-id xmlns="com-wordpress:feed-additions:1">1147654</post-id>	</item>
-		<item>
-		<title>The climate case for AI has not been made</title>
-		<link>https://www.technologyreview.com/2026/11/09/1148166/the-climate-case-for-ai-has-not-been-made/</link>
-		
-		<dc:creator><![CDATA[Mary Nichols, Jeremy Tamanini]]></dc:creator>
-		<pubDate>Mon, 09 Nov 2026 10:00:00 +0000</pubDate>
-				<category><![CDATA[Climate change and energy]]></category>
-		<category><![CDATA[Opinion]]></category>
-		<guid isPermaLink="false">https://www.technologyreview.com/?p=1148166</guid>
-
-					<description><![CDATA[This week, as countries meet in Antalya, Turkey for the United Nations climate conference, one topic likely to dominate the conversation is artificial intelligence. The host has already called on countries to commit to ensuring that AI is designed, powered, and deployed in ways that support climate action. But so far, industries around the world&#8230;]]></description>
-										<content:encoded><![CDATA[
-<p class="wp-block-paragraph">This week, as countries meet in Antalya, Turkey for the United Nations climate conference, one topic likely to dominate the conversation is artificial intelligence. The host has already <a href="https://www.climatechangenews.com/2026/09/21/cop31-presidency-announces-ai-pledge-as-un-climate-chief-says-big-tech-on-thin-ice/">called on</a> countries to commit to ensuring that AI is designed, powered, and deployed in ways that support climate action.</p>
-
-
-
-<p class="wp-block-paragraph">But so far, industries around the world aren’t doing nearly enough to harness the technology to actually drive down the greenhouse-gas emissions heating up the planet, despite some very optimistic claims from AI companies.</p>
-
-
-
-<p class="wp-block-paragraph">In 2024, OpenAI CEO Sam Altman declared that AI would unleash “astounding triumphs,” including “fixing the climate.” The year before, in a <a href="https://fortune.com/2023/12/18/ai-humanitys-last-chance-climate-change-goals-environment-tech-brandt-lesser/?st_source=ai_overview">2023 op-ed</a>, the head of sustainability at Google and her coauthor wrote that AI could reduce global emissions 5% to 10% by 2030.&nbsp;</p>
-
-
-
-<p class="wp-block-paragraph">Some academic researchers have examined these AI-related climate claims. A peer-reviewed <a href="https://www.nature.com/articles/s44168-025-00252-3">study</a> published last year, led by researchers at the London School of Economics’ Grantham Research Institute and the firm Systemiq, estimated that AI could help cut global emissions by the equivalent of 3.2 to 5.4 billion tons of carbon dioxide annually by 2035—roughly on par with the US’s annual <a href="https://www.eia.gov/tools/faqs/faq.php?id=75&amp;t=11">energy-related emissions</a> on the high end, even after subtracting AI’s own energy footprint. Those potential gains are mostly concentrated in three sectors: power, meat and dairy, and vehicles.</p>
-
-
-
-<p class="wp-block-paragraph">But projections like these are only as good as our willingness to test them against present-day reality. So is there evidence that the largest companies in these three sectors are beginning to integrate AI in line with the study’s projections, and if so, do the results match expectations? Or is the 2035 number still mostly aspirational?&nbsp;</p>
-
-
-
-<p class="wp-block-paragraph">Companies across these sectors have announced plenty of initial efforts to incorporate AI into various business practices. But an <a href="https://dualcitizeninc.com/backcasting-projections-for-2035-ai-induced-emission-reductions-in-partnership-with-claude-code/">AI-assisted review</a> of public information from significant market actors in each sector, conducted and reviewed by the second author of this piece, found that few have announced they’re pursuing the specific emissions-reducing routes that informed the projections in the study—and fewer still claim they’ve used them to achieve meaningful climate progress.</p>
-
-
-
-<p class="wp-block-paragraph">The power sector is where the earlier study’s underlying math is most concrete: AI-driven forecasting of supply and demand could increase the amount of renewable electricity that reaches the grid from already-built solar and wind facilities by up to 20%, which could prevent an estimated 1.8 billion tons of emissions a year.&nbsp;</p>
-
-
-
-<p class="wp-block-paragraph">Yet of the grid operators reviewed in China, the United States, and Europe, only one deployed a known meaningful, working AI program of this sort, according to the analysis. A partnership between the UK’s National Grid ESO and <a href="https://www.openclimatefix.org/">Open Climate Fix</a> halved the grid operator’s solar-forecast error (the difference between the amount of incoming sunlight predicted and the amount that actually reaches solar panels), avoiding hundreds of thousands of tons of carbon dioxide a year. Beyond this example in the UK, though, many other grid operators in the EU, the US, and China had little to show in the public record in terms of the AI integration envisioned by the study.</p>
-
-
-
-<p class="wp-block-paragraph">The meat and dairy sector offers the starkest contrast between technology readiness and market reality. To achieve the 2035 emission reductions anticipated in the earlier study, AI would need to close the taste and cost gap between traditional proteins and alternative ones, such as lab-grown or plant-based burgers and milk substitutes.&nbsp;</p>
-
-
-
-<p class="wp-block-paragraph">In one of the clearest efforts to achieve this, the AI and food tech company NotCo recently formed a joint venture with Kraft Heinz using its platform <a href="https://www.notco.ai/platform/">Giuseppe</a>, which analyzes plant molecular data to pinpoint combinations replicating the taste, texture, and smell of animal products.&nbsp;</p>
-
-
-
-<p class="wp-block-paragraph">But few other alternative-protein companies had such a deeply integrated way of using AI in product development, the AI-assisted review suggests. Meanwhile, the sector seems to be facing more fundamental problems, including stubbornly slow mainstream consumer adoption and declining funding levels. Most notably, venture capital flowing into cultivated meat <a href="https://agfundernews.com/cultivated-meat-deep-dive-after-the-crash-whos-still-standing">fell</a> from a $989 million peak in 2021 to around $83 million last year.&nbsp;</p>
-
-
-
-<p class="wp-block-paragraph">The transportation sector offers some hopeful examples of the type of AI integration necessary to achieve the study’s projections, particularly among battery manufacturers and ride-sharing platforms. CATL—which controls roughly 40% of the global market for electric-vehicle batteries—launched an <a href="https://www.catl.com/en/news/6663.html">AI system</a> trained on more than 100,000 battery design cases and 600 terabytes of test data. It cut the time needed to screen candidate materials by two orders of magnitude, according to the company. Independent researchers also <a href="https://www.sciencedirect.com/science/article/abs/pii/S2214367X23001850">found</a> that the ride-sharing platform Didi Chuxing was able cut per-trip emissions 16% on average by using AI-optimized routing to minimize detours.</p>
-
-
-
-<p class="wp-block-paragraph">There’s another big problem in the climate case for AI, though: Oil and gas companies are also interested in these tools for many reasons, including the potential to <a href="https://www.nature.com/articles/s44168-026-00411-0">increase production of fossil fuels</a>. Technology firms that committed to sustainability goals in the past should answer questions about how their tools could be used to boost old, dirty energy as well as clean, renewable energy.</p>
-
-
-
-<p class="wp-block-paragraph">Finally, it’s also worth noting that integrating AI is just the first step, and it remains unclear to what degree the technology can accelerate the sorts of improvements and innovations envisioned. AI also does little to shorten the standard paths to certifying, permitting, building, packaging, marketing, and selling any resulting products, facilities, or services.&nbsp;</p>
-
-
-
-<p class="wp-block-paragraph">The findings of the analysis, carried out by Anthropic’s Claude Code, were reviewed against public documents and media accounts to ensure their accuracy. It is possible that some companies and utilities in these industries are pursuing AI-assisted applications that would fit into the initial study’s scenarios but haven’t yet been disclosed publicly.&nbsp;</p>
-
-
-
-<p class="wp-block-paragraph">Greater and better-targeted AI integration and efficiency gains in these three sectors may well materialize, bringing the 2035 projections closer to reality. But it won’t happen without deliberate and sustained efforts to ensure that AI delivers more environmental benefits than harms.</p>
-
-
-
-<p class="wp-block-paragraph">Notably, so far the rapid adoption of AI models and buildout of data centers has driven a huge increase in energy consumption and emissions, and this has led major tech companies like Microsoft, Google, and others to fall well off track in their corporate climate goals. At this point it would be surprising if the sector even manages to zero out its climate pollution: Emissions associated with global data centers (which may handle AI as well as non-AI computing tasks) could exceed 300 million tons annually in 2035, according to the <a href="https://www.iea.org/reports/energy-and-ai/energy-supply-for-ai?st_source=ai_overview">IEA’s base forecast</a>.</p>
-
-
-
-<p class="wp-block-paragraph">Industry leaders must implement the technology in the ways that promise to do the most to drive down emissions. Corporate customers should <a href="https://sustainableaigroup.com/cleerlaunch">select models</a> with the lowest environmental impacts and opt to work with the AI developers doing the most to reduce their climate footprint. And states and regions need to do more to incentivize or require all these companies to operate in more responsible ways.</p>
-
-
-
-<p class="wp-block-paragraph">The need has never been more apparent.</p>
-
-
-
-<p class="wp-block-paragraph"><em>Mary Nichols is distinguished counsel at the UCLA School of Law and the former chair of the California Air Resources Board.</em></p>
-
-
-
-<p class="wp-block-paragraph"><em>Jeremy Tamanini is the founder of Dual Citizen, a sustainability research and advisory firm.</em></p>
-]]></content:encoded>
-					
-		
-		
-		<post-id xmlns="com-wordpress:feed-additions:1">1148166</post-id>	</item>
 	</channel>
 </rss>
