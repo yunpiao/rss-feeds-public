@@ -1,108 +1,102 @@
-<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hacker News: Front Page</title><link>https://news.ycombinator.com/</link><description>Hacker News RSS</description><docs>https://hnrss.org/</docs><generator>hnrss v2.1.1</generator><lastBuildDate>Fri, 13 Nov 2026 10:41:45 +0000</lastBuildDate><atom:link href="https://hnrss.org/frontpage" rel="self" type="application/rss+xml"></atom:link><item><title><![CDATA[Claude Is Down]]></title><description><![CDATA[
-<p>Article URL: <a href="https://status.claude.com/history">https://status.claude.com/history</a></p>
-<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50481220">https://news.ycombinator.com/item?id=50481220</a></p>
-<p>Points: 37</p>
-<p># Comments: 13</p>
-]]></description><pubDate>Fri, 13 Nov 2026 10:20:09 +0000</pubDate><link>https://status.claude.com/history</link><dc:creator>cornfieldlabs</dc:creator><comments>https://news.ycombinator.com/item?id=50481220</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50481220</guid></item><item><title><![CDATA[Elevated errors on claude.ai, Claude Code, and platform.claude.com]]></title><description><![CDATA[
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hacker News: Front Page</title><link>https://news.ycombinator.com/</link><description>Hacker News RSS</description><docs>https://hnrss.org/</docs><generator>hnrss v2.1.1</generator><lastBuildDate>Fri, 13 Nov 2026 18:23:58 +0000</lastBuildDate><atom:link href="https://hnrss.org/frontpage" rel="self" type="application/rss+xml"></atom:link><item><title><![CDATA[Show HN: Isometric SF – A pixel-art map of the SF Bay Area]]></title><description><![CDATA[
+<p>Technical Write-up: <a href="https://www.justinchavez.com/blog/isometric-sf-how/" rel="nofollow">https://www.justinchavez.com/blog/isometric-sf-how/</a><p>Hi HN! Showcasing this fun project. I took 1300 square miles of the SF Bay Area from Google Photorealistic 3D Tiles and transformed them into a cohesive pixel map. It's really fun to explore and stumble upon various famous landmarks like Apple Park, Palace of Fine Arts, or UC Berkeley.<p>The technicals involve using Nano Banana 2 to train a Qwen-Image-Edit 2511 LoRA which is used to prototype the style and generation methods. For final map I used Qwen to train a Klein 4B LoRA which reproduced the style at 1/4 of the cost. More details in the blog post.<p>Let me know what you think! I really enjoyed this process of fine-tuning smaller open source models.<p>If I did the map with Nano Banana 2 it would have cost around 7k USD!<p>Credit for the idea goes to Isometric NYC.</p>
+<hr>
+<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50487228">https://news.ycombinator.com/item?id=50487228</a></p>
+<p>Points: 5</p>
+<p># Comments: 0</p>
+]]></description><pubDate>Fri, 13 Nov 2026 17:58:37 +0000</pubDate><link>https://isometricsf.com/</link><dc:creator>juscha1</dc:creator><comments>https://news.ycombinator.com/item?id=50487228</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50487228</guid></item><item><title><![CDATA[After 600 experiments, here's what I discovered about JEPA world models]]></title><description><![CDATA[
+<p>Article URL: <a href="https://haddyalchaer.com/jepa">https://haddyalchaer.com/jepa</a></p>
+<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50487185">https://news.ycombinator.com/item?id=50487185</a></p>
+<p>Points: 6</p>
+<p># Comments: 1</p>
+]]></description><pubDate>Fri, 13 Nov 2026 17:55:28 +0000</pubDate><link>https://haddyalchaer.com/jepa</link><dc:creator>halcdev</dc:creator><comments>https://news.ycombinator.com/item?id=50487185</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50487185</guid></item><item><title><![CDATA[AI unlocks Gödel's notebooks, said to contain hundreds of proved theorems]]></title><description><![CDATA[
+<p>Article URL: <a href="https://www.theguardian.com/science/2026/nov/13/kurt-godel-notebooks-ai-helps-unlock-hidden-discoveries-man-who-transformed-maths">https://www.theguardian.com/science/2026/nov/13/kurt-godel-notebooks-ai-helps-unlock-hidden-discoveries-man-who-transformed-maths</a></p>
+<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50486748">https://news.ycombinator.com/item?id=50486748</a></p>
+<p>Points: 80</p>
+<p># Comments: 6</p>
+]]></description><pubDate>Fri, 13 Nov 2026 17:30:10 +0000</pubDate><link>https://www.theguardian.com/science/2026/nov/13/kurt-godel-notebooks-ai-helps-unlock-hidden-discoveries-man-who-transformed-maths</link><dc:creator>bookofjoe</dc:creator><comments>https://news.ycombinator.com/item?id=50486748</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50486748</guid></item><item><title><![CDATA[Concurrent Shell Command Queues]]></title><description><![CDATA[
+<p>Article URL: <a href="https://emmer.dev/blog/concurrent-shell-command-queues/">https://emmer.dev/blog/concurrent-shell-command-queues/</a></p>
+<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50486521">https://news.ycombinator.com/item?id=50486521</a></p>
+<p>Points: 3</p>
+<p># Comments: 0</p>
+]]></description><pubDate>Fri, 13 Nov 2026 17:13:01 +0000</pubDate><link>https://emmer.dev/blog/concurrent-shell-command-queues/</link><dc:creator>speckx</dc:creator><comments>https://news.ycombinator.com/item?id=50486521</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50486521</guid></item><item><title><![CDATA[Arm boss Rene Haas approached in Nvidia CEO search]]></title><description><![CDATA[
+<p>Article URL: <a href="https://www.ft.com/content/2a64f698-46dd-4178-a3f4-4c5f4c0a0926">https://www.ft.com/content/2a64f698-46dd-4178-a3f4-4c5f4c0a0926</a></p>
+<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50486489">https://news.ycombinator.com/item?id=50486489</a></p>
+<p>Points: 46</p>
+<p># Comments: 40</p>
+]]></description><pubDate>Fri, 13 Nov 2026 17:10:33 +0000</pubDate><link>https://www.ft.com/content/2a64f698-46dd-4178-a3f4-4c5f4c0a0926</link><dc:creator>bazzmt</dc:creator><comments>https://news.ycombinator.com/item?id=50486489</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50486489</guid></item><item><title><![CDATA["LibreOffice works 365 days a year. Just saying."]]></title><description><![CDATA[
+<p>Article URL: <a href="https://twitter.com/LibreOffice/status/2121205272479998268">https://twitter.com/LibreOffice/status/2121205272479998268</a></p>
+<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50486482">https://news.ycombinator.com/item?id=50486482</a></p>
+<p>Points: 368</p>
+<p># Comments: 125</p>
+]]></description><pubDate>Fri, 13 Nov 2026 17:09:58 +0000</pubDate><link>https://twitter.com/LibreOffice/status/2121205272479998268</link><dc:creator>mksaunders2</dc:creator><comments>https://news.ycombinator.com/item?id=50486482</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50486482</guid></item><item><title><![CDATA[Gnomon. Git for Postgres data, built for agents]]></title><description><![CDATA[
+<p>Article URL: <a href="https://github.com/bitsinfra/gnomon">https://github.com/bitsinfra/gnomon</a></p>
+<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50486480">https://news.ycombinator.com/item?id=50486480</a></p>
+<p>Points: 4</p>
+<p># Comments: 0</p>
+]]></description><pubDate>Fri, 13 Nov 2026 17:09:52 +0000</pubDate><link>https://github.com/bitsinfra/gnomon</link><dc:creator>shawkisukkar</dc:creator><comments>https://news.ycombinator.com/item?id=50486480</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50486480</guid></item><item><title><![CDATA[Apify Security Incident]]></title><description><![CDATA[
+<p>Article URL: <a href="https://status.apify.com/incidents/sxd1dj5j6749">https://status.apify.com/incidents/sxd1dj5j6749</a></p>
+<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50486258">https://news.ycombinator.com/item?id=50486258</a></p>
+<p>Points: 43</p>
+<p># Comments: 6</p>
+]]></description><pubDate>Fri, 13 Nov 2026 16:55:59 +0000</pubDate><link>https://status.apify.com/incidents/sxd1dj5j6749</link><dc:creator>cynicalpeace</dc:creator><comments>https://news.ycombinator.com/item?id=50486258</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50486258</guid></item><item><title><![CDATA[North Korean hackers used fake video calls in $400M crypto hack, says FBI]]></title><description><![CDATA[
+<p>Article URL: <a href="https://www.bbc.com/news/articles/cqdj1ellpd70o">https://www.bbc.com/news/articles/cqdj1ellpd70o</a></p>
+<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50486178">https://news.ycombinator.com/item?id=50486178</a></p>
+<p>Points: 36</p>
+<p># Comments: 8</p>
+]]></description><pubDate>Fri, 13 Nov 2026 16:50:22 +0000</pubDate><link>https://www.bbc.com/news/articles/cqdj1ellpd70o</link><dc:creator>saikiran91</dc:creator><comments>https://news.ycombinator.com/item?id=50486178</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50486178</guid></item><item><title><![CDATA[Brazil's Caixa insurer breach exposes names and tax IDs of all 7.6M customers]]></title><description><![CDATA[
+<p>Article URL: <a href="https://filemanager-cdn.mziq.com/published/3972906b-e50b-4f74-ab74-4d0d32125d11/9567a559-d20a-486e-a7ae-5c6bbc030c5e">https://filemanager-cdn.mziq.com/published/3972906b-e50b-4f74-ab74-4d0d32125d11/9567a559-d20a-486e-a7ae-5c6bbc030c5e</a></p>
+<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50485295">https://news.ycombinator.com/item?id=50485295</a></p>
+<p>Points: 127</p>
+<p># Comments: 41</p>
+]]></description><pubDate>Fri, 13 Nov 2026 15:52:04 +0000</pubDate><link>https://filemanager-cdn.mziq.com/published/3972906b-e50b-4f74-ab74-4d0d32125d11/9567a559-d20a-486e-a7ae-5c6bbc030c5e</link><dc:creator>dvaplima</dc:creator><comments>https://news.ycombinator.com/item?id=50485295</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50485295</guid></item><item><title><![CDATA[Palmfrets, Minnesota guitarist's invention, strikes a new chord]]></title><description><![CDATA[
+<p>Article URL: <a href="https://www.echopress.com/business/minnesota-guitarists-invention-strikes-a-new-chord">https://www.echopress.com/business/minnesota-guitarists-invention-strikes-a-new-chord</a></p>
+<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50484650">https://news.ycombinator.com/item?id=50484650</a></p>
+<p>Points: 48</p>
+<p># Comments: 37</p>
+]]></description><pubDate>Fri, 13 Nov 2026 15:08:07 +0000</pubDate><link>https://www.echopress.com/business/minnesota-guitarists-invention-strikes-a-new-chord</link><dc:creator>bookofjoe</dc:creator><comments>https://news.ycombinator.com/item?id=50484650</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50484650</guid></item><item><title><![CDATA[EU Digital Identity Wallet rollout: every EU state on one board]]></title><description><![CDATA[
+<p>Article URL: <a href="https://myid.ie/business/eu-digital-wallet-tracker/">https://myid.ie/business/eu-digital-wallet-tracker/</a></p>
+<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50484496">https://news.ycombinator.com/item?id=50484496</a></p>
+<p>Points: 100</p>
+<p># Comments: 52</p>
+]]></description><pubDate>Fri, 13 Nov 2026 14:58:07 +0000</pubDate><link>https://myid.ie/business/eu-digital-wallet-tracker/</link><dc:creator>mooreds</dc:creator><comments>https://news.ycombinator.com/item?id=50484496</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50484496</guid></item><item><title><![CDATA[A technical vision for the Haskell ecosystem]]></title><description><![CDATA[
+<p>Article URL: <a href="https://discourse.haskell.org/t/a-technical-vision-for-the-haskell-ecosystem/15078">https://discourse.haskell.org/t/a-technical-vision-for-the-haskell-ecosystem/15078</a></p>
+<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50484235">https://news.ycombinator.com/item?id=50484235</a></p>
+<p>Points: 107</p>
+<p># Comments: 38</p>
+]]></description><pubDate>Fri, 13 Nov 2026 14:43:12 +0000</pubDate><link>https://discourse.haskell.org/t/a-technical-vision-for-the-haskell-ecosystem/15078</link><dc:creator>cosmic_quanta</dc:creator><comments>https://news.ycombinator.com/item?id=50484235</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50484235</guid></item><item><title><![CDATA[Lonewolf 0.3 – A standalone XMPP server written in Rust]]></title><description><![CDATA[
+<p>Article URL: <a href="https://github.com/lonewolf-im/lonewolf/releases/tag/v0.3.0">https://github.com/lonewolf-im/lonewolf/releases/tag/v0.3.0</a></p>
+<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50484007">https://news.ycombinator.com/item?id=50484007</a></p>
+<p>Points: 78</p>
+<p># Comments: 14</p>
+]]></description><pubDate>Fri, 13 Nov 2026 14:28:40 +0000</pubDate><link>https://github.com/lonewolf-im/lonewolf/releases/tag/v0.3.0</link><dc:creator>ortuman</dc:creator><comments>https://news.ycombinator.com/item?id=50484007</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50484007</guid></item><item><title><![CDATA[CERN Built the Large Hadron Collider's Next-Gen Magnets]]></title><description><![CDATA[
+<p>Article URL: <a href="https://spectrum.ieee.org/large-hadron-collider-superconducting-magnets">https://spectrum.ieee.org/large-hadron-collider-superconducting-magnets</a></p>
+<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50483959">https://news.ycombinator.com/item?id=50483959</a></p>
+<p>Points: 28</p>
+<p># Comments: 1</p>
+]]></description><pubDate>Fri, 13 Nov 2026 14:25:46 +0000</pubDate><link>https://spectrum.ieee.org/large-hadron-collider-superconducting-magnets</link><dc:creator>marc__1</dc:creator><comments>https://news.ycombinator.com/item?id=50483959</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50483959</guid></item><item><title><![CDATA[Why Zig over C for Systems Programming]]></title><description><![CDATA[
+<p>Article URL: <a href="https://www.mtsoukalos.eu/2026/11/why-zig-over-c-for-systems-programming/">https://www.mtsoukalos.eu/2026/11/why-zig-over-c-for-systems-programming/</a></p>
+<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50483611">https://news.ycombinator.com/item?id=50483611</a></p>
+<p>Points: 178</p>
+<p># Comments: 128</p>
+]]></description><pubDate>Fri, 13 Nov 2026 14:01:13 +0000</pubDate><link>https://www.mtsoukalos.eu/2026/11/why-zig-over-c-for-systems-programming/</link><dc:creator>torutofu</dc:creator><comments>https://news.ycombinator.com/item?id=50483611</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50483611</guid></item><item><title><![CDATA[Doomsday: Friday, 13 November, A.D. 2026 (1960)]]></title><description><![CDATA[
+<p>Article URL: <a href="https://www.science.org/doi/10.1126/science.132.3436.1291">https://www.science.org/doi/10.1126/science.132.3436.1291</a></p>
+<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50482379">https://news.ycombinator.com/item?id=50482379</a></p>
+<p>Points: 352</p>
+<p># Comments: 248</p>
+]]></description><pubDate>Fri, 13 Nov 2026 12:10:24 +0000</pubDate><link>https://www.science.org/doi/10.1126/science.132.3436.1291</link><dc:creator>voxleone</dc:creator><comments>https://news.ycombinator.com/item?id=50482379</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50482379</guid></item><item><title><![CDATA[AI Is Destroying the Trust Between Writers and Readers]]></title><description><![CDATA[
+<p>Article URL: <a href="https://www.theatlantic.com/books/2026/11/ai-literary-scams-amazon/689391/">https://www.theatlantic.com/books/2026/11/ai-literary-scams-amazon/689391/</a></p>
+<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50481870">https://news.ycombinator.com/item?id=50481870</a></p>
+<p>Points: 223</p>
+<p># Comments: 118</p>
+]]></description><pubDate>Fri, 13 Nov 2026 11:13:46 +0000</pubDate><link>https://www.theatlantic.com/books/2026/11/ai-literary-scams-amazon/689391/</link><dc:creator>FinnLobsien</dc:creator><comments>https://news.ycombinator.com/item?id=50481870</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50481870</guid></item><item><title><![CDATA[Elevated errors on claude.ai, Claude Code, and platform.claude.com]]></title><description><![CDATA[
 <p>Article URL: <a href="https://status.claude.com/incidents/nn11wk485zfn">https://status.claude.com/incidents/nn11wk485zfn</a></p>
 <p>Comments URL: <a href="https://news.ycombinator.com/item?id=50481187">https://news.ycombinator.com/item?id=50481187</a></p>
-<p>Points: 91</p>
-<p># Comments: 59</p>
-]]></description><pubDate>Fri, 13 Nov 2026 10:18:13 +0000</pubDate><link>https://status.claude.com/incidents/nn11wk485zfn</link><dc:creator>__vivek</dc:creator><comments>https://news.ycombinator.com/item?id=50481187</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50481187</guid></item><item><title><![CDATA[The Dawn of the Data Intelligence Engineer]]></title><description><![CDATA[
-<p>Article URL: <a href="https://motherduck.com/blog/the-data-intelligence-engineer/">https://motherduck.com/blog/the-data-intelligence-engineer/</a></p>
-<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50480480">https://news.ycombinator.com/item?id=50480480</a></p>
-<p>Points: 25</p>
-<p># Comments: 27</p>
-]]></description><pubDate>Fri, 13 Nov 2026 09:08:18 +0000</pubDate><link>https://motherduck.com/blog/the-data-intelligence-engineer/</link><dc:creator>jonbaer</dc:creator><comments>https://news.ycombinator.com/item?id=50480480</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50480480</guid></item><item><title><![CDATA[TSMC Hacked]]></title><description><![CDATA[
-<p>Article URL: <a href="https://www.sec.gov/Archives/edgar/data/1046179/000104617926000800/a20261112statementregardin.htm">https://www.sec.gov/Archives/edgar/data/1046179/000104617926000800/a20261112statementregardin.htm</a></p>
-<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50479721">https://news.ycombinator.com/item?id=50479721</a></p>
-<p>Points: 51</p>
-<p># Comments: 7</p>
-]]></description><pubDate>Fri, 13 Nov 2026 07:39:55 +0000</pubDate><link>https://www.sec.gov/Archives/edgar/data/1046179/000104617926000800/a20261112statementregardin.htm</link><dc:creator>gmays</dc:creator><comments>https://news.ycombinator.com/item?id=50479721</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50479721</guid></item><item><title><![CDATA[Global Microsoft Outage]]></title><description><![CDATA[
-<p>Article URL: <a href="https://www.cnn.com/2026/11/12/business/live-news/microsoft-global-outage-intl-hnk">https://www.cnn.com/2026/11/12/business/live-news/microsoft-global-outage-intl-hnk</a></p>
-<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50479098">https://news.ycombinator.com/item?id=50479098</a></p>
-<p>Points: 109</p>
-<p># Comments: 53</p>
-]]></description><pubDate>Fri, 13 Nov 2026 06:18:23 +0000</pubDate><link>https://www.cnn.com/2026/11/12/business/live-news/microsoft-global-outage-intl-hnk</link><dc:creator>TechTechTech</dc:creator><comments>https://news.ycombinator.com/item?id=50479098</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50479098</guid></item><item><title><![CDATA[Microsoft says attempts to fix global outage not going 'as expected']]></title><description><![CDATA[
-<p>Article URL: <a href="https://www.bbc.com/news/live/cq5y10ge3dp3t">https://www.bbc.com/news/live/cq5y10ge3dp3t</a></p>
-<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50479045">https://news.ycombinator.com/item?id=50479045</a></p>
-<p>Points: 59</p>
-<p># Comments: 33</p>
-]]></description><pubDate>Fri, 13 Nov 2026 06:12:02 +0000</pubDate><link>https://www.bbc.com/news/live/cq5y10ge3dp3t</link><dc:creator>saikatsg</dc:creator><comments>https://news.ycombinator.com/item?id=50479045</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50479045</guid></item><item><title><![CDATA[Microsoft Outlook/365 still down after 12 hours]]></title><description><![CDATA[
-<p>Article URL: <a href="https://twitter.com/MSFT365Status/status/2121079061774491735">https://twitter.com/MSFT365Status/status/2121079061774491735</a></p>
-<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50478609">https://news.ycombinator.com/item?id=50478609</a></p>
-<p>Points: 308</p>
-<p># Comments: 210</p>
-]]></description><pubDate>Fri, 13 Nov 2026 05:08:23 +0000</pubDate><link>https://twitter.com/MSFT365Status/status/2121079061774491735</link><dc:creator>player85</dc:creator><comments>https://news.ycombinator.com/item?id=50478609</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50478609</guid></item><item><title><![CDATA[IceWM]]></title><description><![CDATA[
+<p>Points: 449</p>
+<p># Comments: 359</p>
+]]></description><pubDate>Fri, 13 Nov 2026 10:18:13 +0000</pubDate><link>https://status.claude.com/incidents/nn11wk485zfn</link><dc:creator>__vivek</dc:creator><comments>https://news.ycombinator.com/item?id=50481187</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50481187</guid></item><item><title><![CDATA[IceWM]]></title><description><![CDATA[
 <p>Article URL: <a href="https://ice-wm.org/">https://ice-wm.org/</a></p>
 <p>Comments URL: <a href="https://news.ycombinator.com/item?id=50478515">https://news.ycombinator.com/item?id=50478515</a></p>
-<p>Points: 186</p>
-<p># Comments: 97</p>
-]]></description><pubDate>Fri, 13 Nov 2026 04:54:53 +0000</pubDate><link>https://ice-wm.org/</link><dc:creator>inatreecrown2</dc:creator><comments>https://news.ycombinator.com/item?id=50478515</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50478515</guid></item><item><title><![CDATA[Switcher (2004)]]></title><description><![CDATA[
-<p>Article URL: <a href="https://folklore.org/Switcher.html">https://folklore.org/Switcher.html</a></p>
-<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50477714">https://news.ycombinator.com/item?id=50477714</a></p>
-<p>Points: 100</p>
-<p># Comments: 28</p>
-]]></description><pubDate>Fri, 13 Nov 2026 03:14:59 +0000</pubDate><link>https://folklore.org/Switcher.html</link><dc:creator>sammatilda</dc:creator><comments>https://news.ycombinator.com/item?id=50477714</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50477714</guid></item><item><title><![CDATA[Brave Search API now accepts agentic payments via the x402 protocol]]></title><description><![CDATA[
-<p>Article URL: <a href="https://brave.com/blog/search-api-agentic-payments/">https://brave.com/blog/search-api-agentic-payments/</a></p>
-<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50477649">https://news.ycombinator.com/item?id=50477649</a></p>
-<p>Points: 108</p>
-<p># Comments: 70</p>
-]]></description><pubDate>Fri, 13 Nov 2026 03:08:08 +0000</pubDate><link>https://brave.com/blog/search-api-agentic-payments/</link><dc:creator>sjdh76</dc:creator><comments>https://news.ycombinator.com/item?id=50477649</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50477649</guid></item><item><title><![CDATA[Nvidia employees petition to bring back Jensen Huang]]></title><description><![CDATA[
-<p>Article URL: <a href="https://www.wired.com/story/nvidia-employees-petition-for-jensen-huangs-return/">https://www.wired.com/story/nvidia-employees-petition-for-jensen-huangs-return/</a></p>
-<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50477231">https://news.ycombinator.com/item?id=50477231</a></p>
-<p>Points: 607</p>
-<p># Comments: 449</p>
-]]></description><pubDate>Fri, 13 Nov 2026 02:16:24 +0000</pubDate><link>https://www.wired.com/story/nvidia-employees-petition-for-jensen-huangs-return/</link><dc:creator>lavendermon</dc:creator><comments>https://news.ycombinator.com/item?id=50477231</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50477231</guid></item><item><title><![CDATA[Edge0-145B: Frontier AI Capabilities on Your Own Computer]]></title><description><![CDATA[
-<p>Article URL: <a href="https://edge0.ai/blog/introducing-edge0-145b-frontier-ai-capabilities-on-your-own-computer">https://edge0.ai/blog/introducing-edge0-145b-frontier-ai-capabilities-on-your-own-computer</a></p>
-<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50475713">https://news.ycombinator.com/item?id=50475713</a></p>
-<p>Points: 259</p>
-<p># Comments: 72</p>
-]]></description><pubDate>Thu, 12 Nov 2026 23:06:17 +0000</pubDate><link>https://edge0.ai/blog/introducing-edge0-145b-frontier-ai-capabilities-on-your-own-computer</link><dc:creator>sroussey</dc:creator><comments>https://news.ycombinator.com/item?id=50475713</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50475713</guid></item><item><title><![CDATA[Foundation Models framework]]></title><description><![CDATA[
-<p>Article URL: <a href="https://developer.apple.com/foundation-models-framework/">https://developer.apple.com/foundation-models-framework/</a></p>
-<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50474361">https://news.ycombinator.com/item?id=50474361</a></p>
-<p>Points: 215</p>
-<p># Comments: 31</p>
-]]></description><pubDate>Thu, 12 Nov 2026 21:13:26 +0000</pubDate><link>https://developer.apple.com/foundation-models-framework/</link><dc:creator>kermatt</dc:creator><comments>https://news.ycombinator.com/item?id=50474361</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50474361</guid></item><item><title><![CDATA[Former Nvidia CEO Huang had a relationship with a second employee, sources say]]></title><description><![CDATA[
-<p><a href="https://www.forbes.com/sites/alisondurkee/2026/11/12/jensen-huang-had-a-third-affair-with-another-nvidia-employee-report-says/" rel="nofollow">https://www.forbes.com/sites/alisondurkee/2026/11/12/jensen-...</a></p>
-<hr>
-<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50473190">https://news.ycombinator.com/item?id=50473190</a></p>
-<p>Points: 287</p>
-<p># Comments: 303</p>
-]]></description><pubDate>Thu, 12 Nov 2026 19:51:33 +0000</pubDate><link>https://www.reuters.com/technology/former-nvidia-ceo-huang-had-relationship-with-second-employee-sources-say-2026-11-12/</link><dc:creator>jbredeche</dc:creator><comments>https://news.ycombinator.com/item?id=50473190</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50473190</guid></item><item><title><![CDATA[Dwarf planet candidate appears which takes roughly 280 years to orbit our sun]]></title><description><![CDATA[
-<p>Article URL: <a href="https://www.smithsonianmag.com/smart-news/astronomers-found-a-mysterious-object-orbiting-far-beyond-pluto-it-could-be-a-new-dwarf-planet-hidden-in-our-solar-system-180989857/">https://www.smithsonianmag.com/smart-news/astronomers-found-a-mysterious-object-orbiting-far-beyond-pluto-it-could-be-a-new-dwarf-planet-hidden-in-our-solar-system-180989857/</a></p>
-<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50472490">https://news.ycombinator.com/item?id=50472490</a></p>
-<p>Points: 319</p>
-<p># Comments: 129</p>
-]]></description><pubDate>Thu, 12 Nov 2026 19:05:33 +0000</pubDate><link>https://www.smithsonianmag.com/smart-news/astronomers-found-a-mysterious-object-orbiting-far-beyond-pluto-it-could-be-a-new-dwarf-planet-hidden-in-our-solar-system-180989857/</link><dc:creator>cybermango</dc:creator><comments>https://news.ycombinator.com/item?id=50472490</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50472490</guid></item><item><title><![CDATA[Gemini 4 Hydrogen and Orchestrator]]></title><description><![CDATA[
-<p>Article URL: <a href="https://antigravity.google/blog/gemini-4-hydrogen-in-google-antigravity/">https://antigravity.google/blog/gemini-4-hydrogen-in-google-antigravity/</a></p>
-<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50472260">https://news.ycombinator.com/item?id=50472260</a></p>
-<p>Points: 420</p>
-<p># Comments: 115</p>
-]]></description><pubDate>Thu, 12 Nov 2026 18:52:01 +0000</pubDate><link>https://antigravity.google/blog/gemini-4-hydrogen-in-google-antigravity/</link><dc:creator>jonbaer</dc:creator><comments>https://news.ycombinator.com/item?id=50472260</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50472260</guid></item><item><title><![CDATA[Rust 1.100]]></title><description><![CDATA[
-<p>Article URL: <a href="https://blog.rust-lang.org/2026/11/12/Rust-1.100.0/">https://blog.rust-lang.org/2026/11/12/Rust-1.100.0/</a></p>
-<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50472038">https://news.ycombinator.com/item?id=50472038</a></p>
-<p>Points: 694</p>
-<p># Comments: 260</p>
-]]></description><pubDate>Thu, 12 Nov 2026 18:39:05 +0000</pubDate><link>https://blog.rust-lang.org/2026/11/12/Rust-1.100.0/</link><dc:creator>mbStavola</dc:creator><comments>https://news.ycombinator.com/item?id=50472038</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50472038</guid></item><item><title><![CDATA[Turning a 22-year-old Postgres type-confusion primitive into RCE]]></title><description><![CDATA[
-<p>Article URL: <a href="https://mehmetince.net/part-3-6-how-i-ended-up-turning-a-22-year-old-postgresql-type-confusion-primitive-into-rce-cve-2026-6460/">https://mehmetince.net/part-3-6-how-i-ended-up-turning-a-22-year-old-postgresql-type-confusion-primitive-into-rce-cve-2026-6460/</a></p>
-<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50471761">https://news.ycombinator.com/item?id=50471761</a></p>
-<p>Points: 195</p>
-<p># Comments: 38</p>
-]]></description><pubDate>Thu, 12 Nov 2026 18:22:22 +0000</pubDate><link>https://mehmetince.net/part-3-6-how-i-ended-up-turning-a-22-year-old-postgresql-type-confusion-primitive-into-rce-cve-2026-6460/</link><dc:creator>ozirus</dc:creator><comments>https://news.ycombinator.com/item?id=50471761</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50471761</guid></item><item><title><![CDATA[Service degradation on Microsoft 365]]></title><description><![CDATA[
-<p><a href="https://www.abc.net.au/news/2026-11-13/microsoft-outage-affects-users-worldwide/107381050" rel="nofollow">https://www.abc.net.au/news/2026-11-13/microsoft-outage-affe...</a><p><a href="https://www.reddit.com/r/sysadmin/comments/1xuje83/microsoft_office_seems_to_be_down/" rel="nofollow">https://www.reddit.com/r/sysadmin/comments/1xuje83/microsoft...</a><p><a href="https://downdetector.com/status/microsoft-365/" rel="nofollow">https://downdetector.com/status/microsoft-365/</a></p>
-<hr>
-<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50471731">https://news.ycombinator.com/item?id=50471731</a></p>
-<p>Points: 907</p>
-<p># Comments: 784</p>
-]]></description><pubDate>Thu, 12 Nov 2026 18:20:48 +0000</pubDate><link>https://status.cloud.microsoft/</link><dc:creator>dkpk</dc:creator><comments>https://news.ycombinator.com/item?id=50471731</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50471731</guid></item><item><title><![CDATA[Show HN: AgentRun – open-source, Self-improving Managed Agents]]></title><description><![CDATA[
-<p>We (GREP.AI, YC F26) are open-sourcing AgentRun and turning it into a full managed agents platform. Read more about it in this post: <a href="https://agentrun.ai/blog/introducing-agentrun-run-smarter-agents-use-fewer-tokens" rel="nofollow">https://agentrun.ai/blog/introducing-agentrun-run-smarter-ag...</a>.<p>It includes what we originally built for our own agent harness:<p>- Self-improving agents 
-- Web-grounded workflows 
-- A range of sandboxes and computer environments 
-- Thousands of tools and integrations 
-- Detailed analytics on how your agents behave<p>You can bring your own agent. AgentRun works with Pi, Claude Agents, Codex, OpenCode, and any other harness that supports ACP.<p>You can self-host it (see 1-click install on Render) with an OpenRouter key, or try the hosted version at console.agentrun.ai.<p>We’d love feedback, especially on the architecture (see README), or anything we may be missing to make it useful to you.</p>
-<hr>
-<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50471650">https://news.ycombinator.com/item?id=50471650</a></p>
-<p>Points: 108</p>
-<p># Comments: 28</p>
-]]></description><pubDate>Thu, 12 Nov 2026 18:15:48 +0000</pubDate><link>https://github.com/Parcha-ai/agentrun/blob/main/README.md</link><dc:creator>miguelrios</dc:creator><comments>https://news.ycombinator.com/item?id=50471650</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50471650</guid></item></channel></rss>
+<p>Points: 331</p>
+<p># Comments: 183</p>
+]]></description><pubDate>Fri, 13 Nov 2026 04:54:53 +0000</pubDate><link>https://ice-wm.org/</link><dc:creator>inatreecrown2</dc:creator><comments>https://news.ycombinator.com/item?id=50478515</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50478515</guid></item></channel></rss>
