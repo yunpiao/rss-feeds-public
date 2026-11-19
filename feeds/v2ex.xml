@@ -1,5 +1,23 @@
 <?xml version='1.0' encoding='utf-8'?>
-<rss version="2.0"><channel><title>V2EX</title><item><title>[问与答] GPT Plus 不给 chat 模型的极高和 pro 对日常使用影响大吗</title><link>https://www.v2ex.com/t/1258400#reply0</link><guid>tag:www.v2ex.com,2026-11-19:/t/1258400</guid><pubDate>Thu, 19 Nov 2026 17:16:50 +0000</pubDate><description>
+<rss version="2.0"><channel><title>V2EX</title><item><title>[问与答] 有没有老哥知道这个是什么型号的键盘？</title><link>https://www.v2ex.com/t/1258407#reply0</link><guid>tag:www.v2ex.com,2026-11-19:/t/1258407</guid><pubDate>Thu, 19 Nov 2026 23:33:32 +0000</pubDate><description>
+	&lt;p&gt;&lt;img alt="IMG_2026-11-20-07-33-09-1.webp" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://cdn.jsdelivr.net/gh/zhen-ke/img@main/202606/IMG_2026-11-20-07-33-09-1.webp"/&gt;&lt;/p&gt;
+
+	</description></item><item><title>[宽带症候群] 杭州移动 NAT1 家宽被半夜修改配置</title><link>https://www.v2ex.com/t/1258405#reply0</link><guid>tag:www.v2ex.com,2026-11-19:/t/1258405</guid><pubDate>Thu, 19 Nov 2026 20:09:51 +0000</pubDate><description>
+	&lt;p&gt;如题。到十一二点还好好的，凌晨两三点的时候反复出现加载不出，一看路由器后台是宽带被断开连接了。&lt;/p&gt;
+&lt;p&gt;重新连接上去，稳定以后，发现我的宽带 ip 被从杭州移动的家庭宽带 ip 段 &lt;a href="http://39.182.12.xxx" rel="nofollow"&gt;39.182.12.xxx&lt;/a&gt; 和 &lt;a href="http://39.182.2.xxx" rel="nofollow"&gt;39.182.2.xxx&lt;/a&gt;，切换到湖州移动的机房 ip 段 &lt;a href="http://39.175.211.xxx" rel="nofollow"&gt;39.175.211.xxx&lt;/a&gt; 和 &lt;a href="http://39.175.194.xxx" rel="nofollow"&gt;39.175.194.xxx&lt;/a&gt;，并且网络类型从原来家庭宽带 ip 段的 NAT1/2 变成了严格全锥形 NAT4，每次端口都不一样。。连接稳定性差了好多。。。&lt;/p&gt;
+
+	</description></item><item><title>[RSS] readwise reader 有什么便宜订阅的方式吗？</title><link>https://www.v2ex.com/t/1258404#reply1</link><guid>tag:www.v2ex.com,2026-11-19:/t/1258404</guid><pubDate>Thu, 19 Nov 2026 18:19:25 +0000</pubDate><description>
+	&lt;p&gt;黑五也没活动吗？&lt;/p&gt;
+&lt;p&gt;有没有靠谱点的优惠路子？&lt;/p&gt;
+&lt;p&gt;另外你们是更推荐 reader only 还是 full？&lt;/p&gt;
+
+	</description></item><item><title>[分享创造] Casvisor 2.0：上周说缺的系统账号、数据库审计、作业中心、访问申请，这次都补上了</title><link>https://www.v2ex.com/t/1258403#reply0</link><guid>tag:www.v2ex.com,2026-11-19:/t/1258403</guid><pubDate>Thu, 19 Nov 2026 18:02:22 +0000</pubDate><description>
+	上周在这里发过 Casvisor，一个 Apache-2.0 的开源堡垒机。当时末尾有一节“老实说的部分”，承认了几处不如 JumpServer 的地方。这周把其中大部分补上了，发了 2.0.0。&lt;br /&gt;&lt;br /&gt;### 系统账号：服务器密码不再经过人&lt;br /&gt;&lt;br /&gt;原来一个资产只有一组账号，所有能连的人共用。现在一个资产可以挂多个系统账号，比如 root、deploy、readonly：&lt;br /&gt;&lt;br /&gt;- 每条权限多了一个“账号”字段：资产自己的账号、和用户同名的账号、所有账号，或按用户名指定。没填账号的老权限行为不变。&lt;br /&gt;- 工作台里，一个资产能用几个账号就列出几行；SSH 网关把账号写进用户名：`ssh -p 2222 alice@deploy@web-01@casvisor.example.com`。&lt;br /&gt;- 密码只留在服务端，浏览器只拿到账号名，会话开始和打开 WebSocket 时都按这个账号再查一次权限。&lt;br /&gt;- 立即改密：生成 24 位随机口令，改完用新口令登录一次验证。推送到资产：服务器上还没有这个账号就先建出来，Linux 用 `useradd -m`，Windows OpenSSH 用 `New-LocalUser`。&lt;br /&gt;- 自动改密按周期跑，默认 30 天，失败一小时后再试。&lt;br /&gt;- 收回某个账号的权限、停用或删除账号，正连着的会话立刻断开。&lt;br /&gt;&lt;br /&gt;改密走资产自己的账号去操作，所以那个账号要有 root 或免密 sudo（Windows 是管理员）。&lt;br /&gt;&lt;br /&gt;### 数据库：MySQL 和 PostgreSQL 进网页，SQL 全部留痕&lt;br /&gt;&lt;br /&gt;- 网页 SQL 控制台，左边是库、表、列的树，主键标出来；执行选中部分或全部，多个结果分页签。&lt;br /&gt;- 每条 SQL 都进命令记录，并且先过命令规则。匹配前会去掉注释再匹配一次，`/* note */ DROP TABLE t` 照样拦得住；MySQL 的 `/*! ... */` 里服务器会执行的内容保留着匹配。&lt;br /&gt;- 结果最多 1000 行，能不能复制、能不能导出 CSV 由权限决定。导出的 CSV 在服务端按当前会话的账号再查一次权限。&lt;br /&gt;- 数据库会话没有画面可录像，“回放”就是这次的 SQL 列表。&lt;br /&gt;- 网域网关照样生效，也能用系统账号，比如 readonly 和 admin。&lt;br /&gt;&lt;br /&gt;### 作业中心：一条命令跑一批机器&lt;br /&gt;&lt;br /&gt;- `/jobs` 里建作业：命令、Bash / PowerShell 脚本，或分发一个文件（最大 1 GB）。&lt;br /&gt;- 按资产名或资产标签选目标。带这些标签的非 SSH 资产会跳过。&lt;br /&gt;- 设并发数（默认 10）和超时（默认 60 秒），能取消，能只重跑失败的，也能复制成新作业。&lt;br /&gt;- 每台资产的输出、退出码、耗时单独保存，每台最多留 1 MB 输出。&lt;br /&gt;- 每台资产的执行都是一个会话，命令照样进记录、过命令规则。&lt;br /&gt;&lt;br /&gt;### 访问申请：授权不用再靠管理员猜&lt;br /&gt;&lt;br /&gt;- 普通用户能看到组织里有哪些资产（名字、协议、标签、账号名，不含地址和口令），填理由和结束时间申请，必须选连接权限。&lt;br /&gt;- 管理员批准时可以再缩小动作、提前结束时间；批准后自动生成一条授权，收回就删授权并断开会话。&lt;br /&gt;- 还没批的申请，用户可以自己撤回。&lt;br /&gt;&lt;br /&gt;### 顺手补的&lt;br /&gt;&lt;br /&gt;- 本地账号模式支持 TOTP 两步验证，手机上任一验证器 App 都行；管理员可以帮丢了手机的人重置。&lt;br /&gt;- 会话、命令、操作日志都能按当前筛选导出 CSV；也能转发到 syslog（RFC 5424 JSON 或 CEF），TCP 断了会指数退避重连。&lt;br /&gt;- RDP 剪贴板现在能传图片和文件。&lt;br /&gt;- SSH 网关能把本地端口转发到任意资产：`ssh -p 2222 -N -L 13306:db-01:3306 alice@casvisor.example.com`，然后用 DBeaver、mstsc 连 localhost。&lt;br /&gt;&lt;br /&gt;### 老实说的部分，还剩这些&lt;br /&gt;&lt;br /&gt;- 数据库客户端走端口转发时，Casvisor 只原样转发，不解析 SQL；要审计就用网页控制台。&lt;br /&gt;- 改密只支持 SSH 资产，Windows 的作业中心还没实测。&lt;br /&gt;- 作业中心没有 Ansible playbook，也没有定时作业。&lt;br /&gt;- 访问申请没有邮件或 IM 通知；没有登录复核、命令复核。&lt;br /&gt;- syslog 不支持 TLS；没有报表；录像还只能存本机目录。&lt;br /&gt;- 还没有 K8s 终端、资产树、批量导入。&lt;br /&gt;&lt;br /&gt;### 升级&lt;br /&gt;&lt;br /&gt;```shell&lt;br /&gt;docker pull casbin/casvisor:2.0.0&lt;br /&gt;```&lt;br /&gt;&lt;br /&gt;数据都在库里，换镜像重启即可。老授权不填账号，行为不变。&lt;br /&gt;&lt;br /&gt;演示：&lt;a target="_blank" href="https://demo.casvisor.com" rel="nofollow noopener"&gt;https://demo.casvisor.com&lt;/a&gt;&lt;br /&gt;文档：&lt;a target="_blank" href="https://casvisor.org" rel="nofollow noopener"&gt;https://casvisor.org&lt;/a&gt;&lt;br /&gt;代码：&lt;a target="_blank" href="https://github.com/casvisor/casvisor" rel="nofollow noopener"&gt;https://github.com/casvisor/casvisor&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;Apache-2.0，没有企业版，录像、SSH 网关、网域网关这些都在开源仓库里。
+	</description></item><item><title>[Claude] Anthropic 上市首日大涨 34%，市值突破 2 万亿美元。这意味着以后的日子更苦了还是更甜了呢？</title><link>https://www.v2ex.com/t/1258402#reply3</link><guid>tag:www.v2ex.com,2026-11-19:/t/1258402</guid><pubDate>Thu, 19 Nov 2026 17:44:12 +0000</pubDate><description>
+	&lt;p&gt;按照监管和越来越严的法规，似乎应该越来越严格，个人用户不是收入大头。
+这个疯狂的公司，竟然就上市了，真 X 啊。&lt;/p&gt;
+
+	</description></item><item><title>[问与答] GPT Plus 不给 chat 模型的极高和 pro 对日常使用影响大吗</title><link>https://www.v2ex.com/t/1258400#reply0</link><guid>tag:www.v2ex.com,2026-11-19:/t/1258400</guid><pubDate>Thu, 19 Nov 2026 17:16:50 +0000</pubDate><description>
 	&lt;p&gt;上个月开了 pro 档&lt;/p&gt;
 &lt;p&gt;可以爽用 GPT chat 的极高和 pro 模型&lt;/p&gt;
 &lt;p&gt;这个月没什么 codex 需求就回到了 plus&lt;/p&gt;
@@ -47,7 +65,7 @@
 	&lt;a target="_blank" href="//i.v2ex.co/csV39U8E.png" rel="nofollow noopener" target="_blank" title="在新窗口打开图片 csV39U8E.png"&gt;&lt;img src="//i.v2ex.co/csV39U8E.png" class="embedded_image"&gt;&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;这还只是 codex 用量，antigravity 没算上
 	</description></item><item><title>[宽带症候群] 境外公共数据集搬运国内</title><link>https://www.v2ex.com/t/1258392#reply3</link><guid>tag:www.v2ex.com,2026-11-19:/t/1258392</guid><pubDate>Thu, 19 Nov 2026 15:52:21 +0000</pubDate><description>
 	想把境外的公共数据集（一般几百 G 一批）下载搬运到网盘上（比如百度网盘），搞了个海外的不限流量的 VPS，下载到 VPS 上再上传网盘，但是感觉这样有点亏硬盘空间（也探索过 alist 这样的方案）。有没有流式传输的方法，尽量减少对硬盘的占用。
-	</description></item><item><title>[Apple] Mac mini 在客廳的使用求助</title><link>https://www.v2ex.com/t/1258391#reply2</link><guid>tag:www.v2ex.com,2026-11-19:/t/1258391</guid><pubDate>Thu, 19 Nov 2026 15:46:03 +0000</pubDate><description>
+	</description></item><item><title>[Apple] Mac mini 在客廳的使用求助</title><link>https://www.v2ex.com/t/1258391#reply3</link><guid>tag:www.v2ex.com,2026-11-19:/t/1258391</guid><pubDate>Thu, 19 Nov 2026 15:46:03 +0000</pubDate><description>
 	&lt;p&gt;設備：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Mac mini M4 macOS 27&lt;/li&gt;
@@ -61,7 +79,7 @@
 &lt;p&gt;感覺是 2.4G 干擾太嚴重的問題。&lt;/p&gt;
 &lt;p&gt;有沒有什麼好的方案能介紹一下。&lt;/p&gt;
 
-	</description></item><item><title>[Android] 安卓手机就没办法彻底关闭视频彩铃了吗</title><link>https://www.v2ex.com/t/1258390#reply3</link><guid>tag:www.v2ex.com,2026-11-19:/t/1258390</guid><pubDate>Thu, 19 Nov 2026 15:35:09 +0000</pubDate><description>
+	</description></item><item><title>[Android] 安卓手机就没办法彻底关闭视频彩铃了吗</title><link>https://www.v2ex.com/t/1258390#reply4</link><guid>tag:www.v2ex.com,2026-11-19:/t/1258390</guid><pubDate>Thu, 19 Nov 2026 15:35:09 +0000</pubDate><description>
 	红米 note 13 pro 开发者选项里都找遍了，也找不到关闭入口了，打电话总是弹出视频彩铃，真是恶心死了
 	</description></item><item><title>[分享发现] 本地部署的大模型 Edge0</title><link>https://www.v2ex.com/t/1258389#reply0</link><guid>tag:www.v2ex.com,2026-11-19:/t/1258389</guid><pubDate>Thu, 19 Nov 2026 15:21:27 +0000</pubDate><description>
 	&lt;p&gt;&lt;a href="https://github.com/Edge0-AI/Edge0" rel="nofollow"&gt;https://github.com/Edge0-AI/Edge0&lt;/a&gt;
@@ -76,7 +94,7 @@ Device-native foundation models: 145B on a laptop, 35B on a phone. Latent MoE, S
 &lt;p&gt;看来以后不能再信任微软了，最近还合并了 365 家庭订阅的硬盘空间。&lt;/p&gt;
 &lt;p&gt;Authenticator 看起来也不安全，真是什么好用砍什么。&lt;/p&gt;
 
-	</description></item><item><title>[OpenAI] codex 配置成 http 模式是不是好点？</title><link>https://www.v2ex.com/t/1258386#reply3</link><guid>tag:www.v2ex.com,2026-11-19:/t/1258386</guid><pubDate>Thu, 19 Nov 2026 14:52:21 +0000</pubDate><description>
+	</description></item><item><title>[OpenAI] codex 配置成 http 模式是不是好点？</title><link>https://www.v2ex.com/t/1258386#reply4</link><guid>tag:www.v2ex.com,2026-11-19:/t/1258386</guid><pubDate>Thu, 19 Nov 2026 14:52:21 +0000</pubDate><description>
 	最近两天总是正在连接 5/5。然后 stream disconnected before completion: error sending request&lt;br /&gt;&lt;br /&gt;默认 websocket 对网络要求太高了
 	</description></item><item><title>[JavaScript] 做了个开源的多人协作表 longtable</title><link>https://www.v2ex.com/t/1258385#reply1</link><guid>tag:www.v2ex.com,2026-11-19:/t/1258385</guid><pubDate>Thu, 19 Nov 2026 14:52:21 +0000</pubDate><description>
 	&lt;p&gt;》》废话少说先上链接《《&lt;/p&gt;
@@ -169,7 +187,7 @@ Deepseek 0.60 倍率&lt;/p&gt;
 &lt;p&gt;我自己用 &lt;a href="https://h3image.com" rel="nofollow"&gt;H3 Image&lt;/a&gt; 测了一下：2K 一张大概 15 到 19 秒，4K 大概 22 秒，带一张参考图改图大约 20 秒。注册送免费积分，不用绑卡。&lt;/p&gt;
 &lt;p&gt;有 V 友拿它试过多参考图改图吗？最想看同一个角色第一轮换衣服、第二轮换表情、第三轮换场景，最后把几张摆一起，看看脸和手到底崩没崩。&lt;/p&gt;
 
-	</description></item><item><title>[问与答] 有没有赚钱的路子？</title><link>https://www.v2ex.com/t/1258381#reply7</link><guid>tag:www.v2ex.com,2026-11-19:/t/1258381</guid><pubDate>Thu, 19 Nov 2026 14:20:06 +0000</pubDate><description>
+	</description></item><item><title>[问与答] 有没有赚钱的路子？</title><link>https://www.v2ex.com/t/1258381#reply8</link><guid>tag:www.v2ex.com,2026-11-19:/t/1258381</guid><pubDate>Thu, 19 Nov 2026 14:20:06 +0000</pubDate><description>
 	&lt;p&gt;小弟目前有几个女朋友要养，压力还蛮大的。
 不知道有没有赚钱的路子，投资少，见效快的。 谢谢各位老大。&lt;/p&gt;
 
@@ -193,7 +211,7 @@ Deepseek 0.60 倍率&lt;/p&gt;
 没有朋友,玩到唐尼被翠鸟帮喂猪,卡尔还能为他感到担忧,虽然这里包含了很多演绎的成分，但是突然意识到我没有一个交心的朋友,也没有一个可以倾诉的同伴.
 同样的感觉我的人生已经被上班占据了所有的空间,不上班竟然不知道闲下来能干些什么事情。&lt;/p&gt;
 
-	</description></item><item><title>[分享创造] [开发者自荐] 不想给第二台电脑再买一套键鼠，做了 SynDesk</title><link>https://www.v2ex.com/t/1258376#reply3</link><guid>tag:www.v2ex.com,2026-11-19:/t/1258376</guid><pubDate>Thu, 19 Nov 2026 13:29:01 +0000</pubDate><description>
+	</description></item><item><title>[分享创造] [开发者自荐] 不想给第二台电脑再买一套键鼠，做了 SynDesk</title><link>https://www.v2ex.com/t/1258376#reply4</link><guid>tag:www.v2ex.com,2026-11-19:/t/1258376</guid><pubDate>Thu, 19 Nov 2026 13:29:01 +0000</pubDate><description>
 	&lt;p&gt;买第二台电脑的时候，我想的是它能帮自己做什么。真正摆到桌上，才发现还得考虑：键盘和鼠标怎么办？&lt;/p&gt;
 &lt;p&gt;同样用途的设备再买一遍，多花一笔钱，桌上也更挤。如果还要在另一台开会，麦克风和耳机又得重新安排。于是我做了 SynDesk，希望已经用顺手的一套设备，也能照顾另一台电脑。&lt;/p&gt;
 &lt;h2&gt;现在能做什么&lt;/h2&gt;
@@ -258,7 +276,7 @@ Deepseek 0.60 倍率&lt;/p&gt;
 	感觉半导体 magsafe 无线充还是太吵了，如果有用 9CM 这种大风扇的就好了，声音会小很多
 	</description></item><item><title>[分享创造] YouTube 字幕导出已上架 Edge 商店：面板字幕一键导出 TXT / MD / SRT / VTT</title><link>https://www.v2ex.com/t/1258369#reply0</link><guid>tag:www.v2ex.com,2026-11-19:/t/1258369</guid><pubDate>Thu, 19 Nov 2026 12:49:04 +0000</pubDate><description>
 	YT Transcript Export v0.1.0 已上架 Microsoft Edge 商店，11 月 15 日提交、11 月 19 日通过审核，免费。&lt;br /&gt;&lt;br /&gt;功能：&lt;br /&gt;- 导出当前 YouTube 视频的字幕，四种格式：TXT / Markdown / SRT / VTT。&lt;br /&gt;- 播放列表批量导出，附 manifest.txt 列出每个视频的结果。&lt;br /&gt;- 本地优先：无账号、无服务器、无追踪。隐私页：&lt;a target="_blank" href="https://alapha888.github.io/yt-transcript-export-privacy/" rel="nofollow noopener"&gt;https://alapha888.github.io/yt-transcript-export-privacy/&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;实现方式如实说：&lt;br /&gt;- 读的是 YouTube 页面自身的字幕面板，不依赖 timedtext 接口（该接口在我这边网络下被拦）。&lt;br /&gt;- 面板就是全量字幕，不是只有首屏——实测四档：3.5 分钟视频 24 条、20 分钟 163 条、76 分钟 713 条、267 分钟 2056 条。&lt;br /&gt;- 字幕面板没打开时，弹窗会提示怎么打开，而不是静默失败。&lt;br /&gt;&lt;br /&gt;v0.1.3 更新已提交审核，批量 manifest 里会逐视频记录是哪种方式打开的字幕面板（已打开／简介区／展开简介／更多菜单）。&lt;br /&gt;&lt;br /&gt;商店链接：&lt;a target="_blank" href="https://microsoftedge.microsoft.com/addons/detail/glplffbabkidmgboinalcdjelenheall" rel="nofollow noopener"&gt;https://microsoftedge.microsoft.com/addons/detail/glplffbabkidmgboinalcdjelenheall&lt;/a&gt;
-	</description></item><item><title>[问与答] 一个需要长期维护的项目，go 语言和 rust 语言。</title><link>https://www.v2ex.com/t/1258368#reply9</link><guid>tag:www.v2ex.com,2026-11-19:/t/1258368</guid><pubDate>Thu, 19 Nov 2026 12:36:45 +0000</pubDate><description>
+	</description></item><item><title>[问与答] 一个需要长期维护的项目，go 语言和 rust 语言。</title><link>https://www.v2ex.com/t/1258368#reply10</link><guid>tag:www.v2ex.com,2026-11-19:/t/1258368</guid><pubDate>Thu, 19 Nov 2026 12:36:45 +0000</pubDate><description>
 	&lt;p&gt;感觉回到刚毕业的那个时候，有两份工作，一份 PHP 和一份 JAVA 的。工资差不多，但 PHP 那家公司离家近，最后选择 PHP，PHP 做为主要语言到现在十几年了。&lt;/p&gt;
 &lt;p&gt;最近有 AI 加持，又在 GO 和 RUST 中选择，一个长期需要维护的项目，要选择 GO 还是 RUST 呢？&lt;/p&gt;
 &lt;p&gt;是一个 ERP（小型，主要针对财务部），但有一个特点，就是需要与金蝶交互，金蝶这台服务器比较古老，中间还有几波二次开发的人，各种奇怪的配置，一点也不敢动它。&lt;/p&gt;
@@ -413,7 +431,7 @@ HTML 语义化与页面结构：标题层级（单一 H1、H2–H6 不跳级）�
 &lt;/ol&gt;
 &lt;p&gt;简历投递 &lt;a href="mailto:linlinli88200@gmail.com"&gt;linlinli88200@gmail.com&lt;/a&gt;&lt;/p&gt;
 
-	</description></item><item><title>[问与答] 小弟需要贷款，想问下各路大佬怎么找到性价比最高的途径</title><link>https://www.v2ex.com/t/1258362#reply18</link><guid>tag:www.v2ex.com,2026-11-19:/t/1258362</guid><pubDate>Thu, 19 Nov 2026 11:56:09 +0000</pubDate><description>
+	</description></item><item><title>[问与答] 小弟需要贷款，想问下各路大佬怎么找到性价比最高的途径</title><link>https://www.v2ex.com/t/1258362#reply19</link><guid>tag:www.v2ex.com,2026-11-19:/t/1258362</guid><pubDate>Thu, 19 Nov 2026 11:56:09 +0000</pubDate><description>
 	&lt;ol&gt;
 &lt;li&gt;我女朋友上学需要缴纳学费 18w，小弟没有攒钱，想贷款一下，怎么找利率最低的方式？&lt;/li&gt;
 &lt;li&gt;无法助学贷，上的是 HK，家庭条件也不符合要求。&lt;/li&gt;
@@ -446,21 +464,21 @@ HTML 语义化与页面结构：标题层级（单一 H1、H2–H6 不跳级）�
 	</description></item><item><title>[OpenAI] OpenAI 怎么这么菜啊</title><link>https://www.v2ex.com/t/1258357#reply6</link><guid>tag:www.v2ex.com,2026-11-19:/t/1258357</guid><pubDate>Thu, 19 Nov 2026 11:35:32 +0000</pubDate><description>
 	&lt;p&gt;今天用了会 6.2 ，两个模型都是纯傻子， 想做个小游戏， 出了个效果图，然后让它往实际能玩的方向写代码，死活推不下去，发一个命令，回复几句废话。让它指挥 workbuddy，居然是粘贴提示词发给 workbuddy。没办法只能用 6.1，6.1 开始干活了，computer use 操作 workbuddy。 可是说实话，6.1 比 A/的 Opus5.5 差远了，本科实习生和博士生的区别。但凡有 Opus5.5 的水平，都能指着 A/的鼻子叫它有多远滚多远。 这 OpenAI 不是有先发优势吗，A/的人也都是从它这叛逃的，怎么现在这么菜啊&lt;/p&gt;
 
-	</description></item><item><title>[分享创造] 谷歌模型也是好起来了，最近搞了个检测重置的站</title><link>https://www.v2ex.com/t/1258356#reply2</link><guid>tag:www.v2ex.com,2026-11-19:/t/1258356</guid><pubDate>Thu, 19 Nov 2026 11:20:48 +0000</pubDate><description>
+	</description></item><item><title>[分享创造] 谷歌模型也是好起来了，最近搞了个检测重置的站</title><link>https://www.v2ex.com/t/1258356#reply3</link><guid>tag:www.v2ex.com,2026-11-19:/t/1258356</guid><pubDate>Thu, 19 Nov 2026 11:20:48 +0000</pubDate><description>
 	&lt;p&gt;最近用 Antigravity 比较多，就做了个查询重置时间的小站，分享给大家：&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://antigravityreset.com" rel="nofollow"&gt;https://antigravityreset.com&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;欢迎试用，有不好用的地方或想加的功能，可以在评论区提，我慢慢改。&lt;/p&gt;
 &lt;p&gt;顺便附一张最近看到的 Agent Arena 排行榜，Gemini 的表现挺亮眼：&lt;/p&gt;
 &lt;p&gt;&lt;img alt="Agent Arena 排行榜" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://i.img402.dev/tk50kbor18.png"/&gt;&lt;/p&gt;
 
-	</description></item><item><title>[投资] 今天晚上买 Anthropic 股票吗？</title><link>https://www.v2ex.com/t/1258354#reply5</link><guid>tag:www.v2ex.com,2026-11-19:/t/1258354</guid><pubDate>Thu, 19 Nov 2026 11:10:54 +0000</pubDate><description>
+	</description></item><item><title>[投资] 今天晚上买 Anthropic 股票吗？</title><link>https://www.v2ex.com/t/1258354#reply6</link><guid>tag:www.v2ex.com,2026-11-19:/t/1258354</guid><pubDate>Thu, 19 Nov 2026 11:10:54 +0000</pubDate><description>
 	&lt;a target="_blank" href="http://ANT.US" rel="nofollow noopener"&gt;ANT.US&lt;/a&gt; 正式 IPO，发行价 83 美元，对应市值 1.5 万亿美元，相当于 0.43 个 Google
 	</description></item><item><title>[分享创造] antigravity 登不上怎么搞？刚买的 pro</title><link>https://www.v2ex.com/t/1258353#reply12</link><guid>tag:www.v2ex.com,2026-11-19:/t/1258353</guid><pubDate>Thu, 19 Nov 2026 11:05:19 +0000</pubDate><description>
 	&lt;p&gt;&lt;img alt="" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://i.imgur.com/J1gSrhN.png"/&gt;&lt;/p&gt;
 
 	</description></item><item><title>[问与答] 收 ddr4 笔记本 内存条 16 或者 16*2。8*2 价格合适也可以</title><link>https://www.v2ex.com/t/1258352#reply0</link><guid>tag:www.v2ex.com,2026-11-19:/t/1258352</guid><pubDate>Thu, 19 Nov 2026 11:00:57 +0000</pubDate><description>
 	
-	</description></item><item><title>[问与答] 使用 t3 code 会导致封号吗？</title><link>https://www.v2ex.com/t/1258351#reply0</link><guid>tag:www.v2ex.com,2026-11-19:/t/1258351</guid><pubDate>Thu, 19 Nov 2026 10:57:39 +0000</pubDate><description>
+	</description></item><item><title>[问与答] 使用 t3 code 会导致封号吗？</title><link>https://www.v2ex.com/t/1258351#reply1</link><guid>tag:www.v2ex.com,2026-11-19:/t/1258351</guid><pubDate>Thu, 19 Nov 2026 10:57:39 +0000</pubDate><description>
 	&lt;p&gt;最近看 t3 code 好像宣发很猛。感觉 Codex 最近好像越来越臃肿而且 UI 偶尔渲染 markdown 还有问题。就想着试试 t3 code
 不过前两天在 B 站还看到创始人的一些分享。看到他建议大家用 CLI Proxy 。按理来说这种反代是不被允许的吧。他是不是没考虑过这种风险问题？&lt;/p&gt;
 
@@ -850,52 +868,6 @@ $$&lt;/p&gt;
 	</description></item><item><title>[问与答] 已经穿上秋裤了，可是勒腿毛 xdm 和解</title><link>https://www.v2ex.com/t/1258349#reply15</link><guid>tag:www.v2ex.com,2026-11-19:/t/1258349</guid><pubDate>Thu, 19 Nov 2026 10:53:30 +0000</pubDate><description>
 	&lt;p&gt;不穿又冷，好难受&lt;/p&gt;
 
-	</description></item><item><title>[问与答] 148 元的百度 svip 该不该买</title><link>https://www.v2ex.com/t/1258348#reply10</link><guid>tag:www.v2ex.com,2026-11-19:/t/1258348</guid><pubDate>Thu, 19 Nov 2026 10:16:13 +0000</pubDate><description>
+	</description></item><item><title>[问与答] 148 元的百度 svip 该不该买</title><link>https://www.v2ex.com/t/1258348#reply12</link><guid>tag:www.v2ex.com,2026-11-19:/t/1258348</guid><pubDate>Thu, 19 Nov 2026 10:16:13 +0000</pubDate><description>
 	
-	</description></item><item><title>[酷工作] 全栈高级工程师（Web / Flutter / Go），AI 全栈工程师(UTC-5 至 UTC+5 时区)</title><link>https://www.v2ex.com/t/1258347#reply0</link><guid>tag:www.v2ex.com,2026-11-19:/t/1258347</guid><pubDate>Thu, 19 Nov 2026 10:15:51 +0000</pubDate><description>
-	远程：全栈高级工程师（Web / Flutter / Go）&lt;br /&gt;薪资范围：15-28K&lt;br /&gt;一、岗位职责&lt;br /&gt;系统架构设计： 负责公司内容分发平台及相关产品的整体技术架构设计，涵盖前端、后端及跨平台应用，保障系统的高可用、高并发、可扩展性及稳定性。&lt;br /&gt;全栈开发交付： 负责公司 Web 端、Flutter 跨平台应用及后端服务的核心功能开发、维护与迭代，能够独立完成从前端页面、业务逻辑、API 接口到后端服务的完整开发交付。&lt;br /&gt;后端服务建设： 负责基于 Golang 的后端服务开发，制定 RESTful API 规范，设计和优化分布式服务、数据库及缓存架构，解决高并发场景下的系统性能瓶颈。&lt;br /&gt;前端技术建设： 负责基于 React、TypeScript 等技术栈的前端架构设计与开发，持续优化前端工程化体系、页面加载速度、SEO 及用户体验。&lt;br /&gt;系统性能与稳定性： 建立系统监控及性能分析机制，持续优化前后端性能，解决高流量场景下的资源消耗、响应延迟、并发处理等技术问题。&lt;br /&gt;工程化与部署： 负责系统容器化改造及 CI/CD 持续集成与交付体系建设，熟悉 Docker、Kubernetes 等技术，提升研发效率和系统部署稳定性。&lt;br /&gt;技术创新与规范： 持续关注前后端及跨平台技术发展趋势，推动技术架构优化、代码规范、模块化建设及研发效率提升，合理应用 AI 编程工具改善研发效能。&lt;br /&gt;&lt;br /&gt;二、岗位要求&lt;br /&gt;本科及以上学历，计算机相关专业，5 年以上全栈开发经验，具备扎实的计算机基础、系统设计能力和全栈开发经验。&lt;br /&gt;前端技术： 熟练掌握 React、TypeScript、JavaScript、HTML5、CSS3 等前端技术，熟悉 Node.js，熟练使用 Webpack、Vite 等工程化工具，有大型 Web 系统架构设计、开发或重构经验。&lt;br /&gt;跨平台开发： 熟悉 Flutter 开发框架，具备跨平台应用开发及性能优化经验，能够独立完成相关业务功能开发。&lt;br /&gt;后端技术： 熟练掌握 Golang，熟悉 GoZero、Gin 等主流开发框架，具备复杂业务系统及 RESTful API 设计开发能力，精通 Go 高并发编程及相关底层原理。&lt;br /&gt;分布式架构： 熟悉分布式系统设计，具备高可用、高并发、负载均衡、服务治理等实际项目经验，能够独立进行系统架构设计及技术难点攻克。&lt;br /&gt;数据库与中间件： 熟悉 MySQL、Redis、Kafka、RabbitMQ、gRPC 等常见数据库及中间件，理解其基本原理，具备数据库设计、缓存优化及消息队列应用经验。&lt;br /&gt;性能优化： 具备高流量、高并发场景下的系统性能优化经验，熟悉内存管理、性能调优、分布式缓存、CDN 及前端加载优化等技术。&lt;br /&gt;工程化与运维： 熟悉 Docker、Kubernetes 等容器化技术及 CI/CD 流程，具备主流云平台应用和生产环境部署、监控及问题排查经验。&lt;br /&gt;架构与质量意识： 具备系统模块化、代码重构、跨浏览器兼容、系统扩展性及可维护性优化经验，能够编写技术方案、架构设计及接口文档。&lt;br /&gt;综合能力： 具备较强的技术学习能力、执行力和问题解决能力，能够独立承担复杂技术任务，并具备良好的跨团队协作能力。&lt;br /&gt;&lt;br /&gt;三、加分项&lt;br /&gt;有内容分发平台、广告平台、流量平台、视频或资讯类产品的实际开发经验。&lt;br /&gt;有大型高并发、高流量 Web 系统从 0 到 1 架构设计及落地经验。&lt;br /&gt;有 AI 辅助编程、AI Agent 及研发自动化工具的实际应用经验。&lt;br /&gt;有优秀的开源社区项目贡献或大型技术项目主导经验。&lt;br /&gt;---------------------------------&lt;br /&gt;远程：AI 全栈工程师(UTC-5 至 UTC+5 时区)&lt;br /&gt;薪资范围：30-40k &lt;br /&gt;岗位职责&lt;br /&gt;1.负责 AI 开放平台前后端开发，包括开发者控制台和管理后台。&lt;br /&gt;2.开发 API 网关功能，包括 Key 管理、计量计费、充值和渠道接入。&lt;br /&gt;3.对接多类大模型服务，统一接口规范。&lt;br /&gt;4.实现 SSO、MFA 认证和权限管理。&lt;br /&gt;5.保障平台稳定，编写接口文档。&lt;br /&gt;任职要求&lt;br /&gt;1.3 年以上全栈开发经验。&lt;br /&gt;2.精通 PHP, Python 或 Go，熟悉 React 或 Vue。&lt;br /&gt;3.熟悉 MySQL 和 Redis，熟悉 RESTful API 设计。&lt;br /&gt;4.熟悉 Linux、Docker 和 CI/CD。&lt;br /&gt;5.能独立推进项目。&lt;br /&gt;加分项&lt;br /&gt;1.有 LiteLLM、NewAPI 等 LLM 网关开发经验。&lt;br /&gt;2.有 PHP/Drupal 经验。&lt;br /&gt;做过计费或开放平台类产品。&lt;br /&gt;----------&lt;br /&gt;更多岗位咨询详细，可直接添加或发简历到 TG：@skyewen20251&lt;br /&gt;有意向投递简历到 Email 邮箱： zygs2151@gmail.com
-	</description></item><item><title>[分享创造] [开源推广] Antigravity 实时遥测仪表盘</title><link>https://www.v2ex.com/t/1258346#reply0</link><guid>tag:www.v2ex.com,2026-11-19:/t/1258346</guid><pubDate>Thu, 19 Nov 2026 10:14:28 +0000</pubDate><description>
-	&lt;p&gt;开源地址
-&lt;a href="https://github.com/DDG0808/antigravity-viewer-pulse" rel="nofollow"&gt;https://github.com/DDG0808/antigravity-viewer-pulse&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;支持功能&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;端到端 tok/s 真实生成速度校准&lt;/li&gt;
-&lt;li&gt;渐进式 Prompt 缓存命中率监控&lt;/li&gt;
-&lt;li&gt;上下文监控&lt;/li&gt;
-&lt;li&gt;提示词防幻觉精简&lt;/li&gt;
-&lt;li&gt;一键汉化 Antigravity&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;&lt;img alt="" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://ny-1s.enzonix.com/bucket-1869-2508/2026/11/9b3ee4c1d6ca48f5cb06fd175250489f.png"/&gt;
-&lt;img alt="" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://ny-1s.enzonix.com/bucket-1869-2508/2026/11/dc5b3c01854f781aef464bb570b13801.png"/&gt;
-&lt;img alt="" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://ny-1s.enzonix.com/bucket-1869-2508/2026/11/ea9f564740f841df6276a90b8831e45a.png"/&gt;
-&lt;img alt="" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://ny-1s.enzonix.com/bucket-1869-2508/2026/11/fb07db53da6dd52a0a00070b077c40ae.png"/&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://ny-1s.enzonix.com/bucket-1869-2508/2026/11/6cc601346a64f0caccb47d0f11db6172.png"/&gt;&lt;/p&gt;
-
-	</description></item><item><title>[问与答] V2er 打开都要转圈后显示内容</title><link>https://www.v2ex.com/t/1258345#reply0</link><guid>tag:www.v2ex.com,2026-11-19:/t/1258345</guid><pubDate>Thu, 19 Nov 2026 10:10:31 +0000</pubDate><description>
-	&lt;p&gt;安卓的 V2er 客户端显示贴子慢半拍，你们的也是这样的吗，网页打开挺快的。&lt;/p&gt;
-
-	</description></item><item><title>[程序员] 历经两年搞了电商企微客服聚合聊天，有没有需要的老板</title><link>https://www.v2ex.com/t/1258344#reply0</link><guid>tag:www.v2ex.com,2026-11-19:/t/1258344</guid><pubDate>Thu, 19 Nov 2026 10:09:45 +0000</pubDate><description>
-	&lt;p&gt;AI 接管客户
-多场景转人工
-智能会话分配
-离线 AI 托管&lt;/p&gt;
-
-	</description></item><item><title>[分享创造] 做了个 Chrome 扩展，给 GitHub Actions 工作流加搜索和收藏</title><link>https://www.v2ex.com/t/1258343#reply2</link><guid>tag:www.v2ex.com,2026-11-19:/t/1258343</guid><pubDate>Thu, 19 Nov 2026 10:01:21 +0000</pubDate><description>
-	&lt;p&gt;仓库里的 GitHub Actions 工作流一多，找某个任务开始变成翻侧栏：名字相似的排在一起，常用的又不一定在眼前。有时候记得文件名的一部分，却要先点开一长串列表。&lt;/p&gt;
-&lt;p&gt;我做了一个 Chrome 扩展 &lt;strong&gt;Workflow Harbor&lt;/strong&gt;，给 Actions 工作流列表加上搜索和个人收藏，分享给也经常在大仓库 Actions 页面里找东西的朋友。&lt;/p&gt;
-&lt;p&gt;Chrome 商店：&lt;a href="https://chromewebstore.google.com/detail/workflow-harbor/kipknnkedgalmljbomlmmpldeifkaeph" rel="nofollow"&gt;https://chromewebstore.google.com/detail/workflow-harbor/kipknnkedgalmljbomlmmpldeifkaeph&lt;/a&gt;&lt;br/&gt;
-开源仓库：&lt;a href="https://github.com/dofy/actions-wrangler" rel="nofollow"&gt;https://github.com/dofy/actions-wrangler&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="Workflow Harbor 中文界面" class="embedded_image" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://raw.githubusercontent.com/dofy/actions-wrangler/main/store-assets/screenshot-zh-CN.png"/&gt;&lt;/p&gt;
-&lt;h3&gt;能做什么&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;按工作流名称或文件名搜索。第一次搜索会尝试加载后续分页；如果加载不完整，会显示状态，方便重试。&lt;/li&gt;
-&lt;li&gt;点扩展提供的星标，把常用工作流放到收藏区。收藏按仓库区分，不会修改 GitHub 自带的置顶。&lt;/li&gt;
-&lt;li&gt;支持 Actions 概览和工作流详情页，也能处理侧栏折叠、GitHub 页面切换与后续分页加载。&lt;/li&gt;
-&lt;li&gt;支持手动展开或自动展开列表；输入法组字时不会急着过滤，搜索期间尽量保留焦点和滚动位置。&lt;/li&gt;
-&lt;li&gt;界面支持简体中文和英文，跟随 Chrome 的语言设置。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;这是原项目 &lt;a href="https://github.com/kldavis4/actions-wrangler" rel="nofollow"&gt;Actions Wrangler&lt;/a&gt; 的独立社区分支，保留原项目的许可与版权说明。我在它的基础上继续处理工作流详情页、搜索、分页和新版 GitHub 侧栏等场景。&lt;/p&gt;
-&lt;p&gt;扩展现在可以从 Chrome Web Store 安装，也可以从仓库构建。收藏和偏好使用 Chrome Sync；浏览器开启同步时会跨设备同步，所以不是严格的“只保存在本机”。&lt;/p&gt;
-&lt;p&gt;如果你们的 Actions 列表也很长，欢迎试试。尤其想知道不同仓库规模、GitHub 侧栏版本，以及中文输入法下还有没有我没覆盖到的情况。&lt;/p&gt;
-
 	</description></item></channel></rss>
