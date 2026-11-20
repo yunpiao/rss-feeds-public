@@ -12,7 +12,7 @@
 	<atom:link href="https://www.technologyreview.com/feed/" rel="self" type="application/rss+xml" />
 	<link>https://www.technologyreview.com</link>
 	<description></description>
-	<lastBuildDate>Fri, 20 Nov 2026 12:48:55 +0000</lastBuildDate>
+	<lastBuildDate>Fri, 20 Nov 2026 20:20:31 +0000</lastBuildDate>
 	<language>en-US</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -28,6 +28,95 @@
 	<height>32</height>
 </image> 
 <site xmlns="com-wordpress:feed-additions:1">172986898</site>	<item>
+		<title>The most misunderstood graph in AI just got a major update</title>
+		<link>https://www.technologyreview.com/2026/11/20/1149399/the-most-misunderstood-graph-in-ai-just-got-a-major-update/</link>
+		
+		<dc:creator><![CDATA[Grace Huckins]]></dc:creator>
+		<pubDate>Fri, 20 Nov 2026 18:15:15 +0000</pubDate>
+				<category><![CDATA[Artificial intelligence]]></category>
+		<category><![CDATA[App]]></category>
+		<category><![CDATA[Summary]]></category>
+		<guid isPermaLink="false">https://www.technologyreview.com/?p=1149399</guid>
+
+					<description><![CDATA[A new report from the AI evaluation nonprofit METR finds that some AI capabilities are continuing to improve along an exponential trajectory—but it also indicates that models aren’t quite as good at tasks that require judgment as they are at coding.  The report is an update to the organization’s time horizon plot, which was widely&#8230;]]></description>
+										<content:encoded><![CDATA[<div data-chronoton-summary="&lt;ul&gt;&lt;br&gt;&lt;li&gt;&lt;strong&gt;AI keeps getting faster at verifiable tasks&lt;/strong&gt; — METR&#039;s updated report confirms that frontier AI models are doubling their performance on measurable tasks every four months.&lt;/li&gt;&lt;br&gt;&lt;li&gt;&lt;strong&gt;Judgment is where models still stumble&lt;/strong&gt; — When asked to design new AI evaluations or score philosophical arguments, even the most advanced models fell short of human performance.&lt;/li&gt;&lt;br&gt;&lt;li&gt;&lt;strong&gt;Some glimmers of progress, but no clean trend lines&lt;/strong&gt; — A handful of newer models are now scoring &quot;borderline above the bar&quot; on evaluation design tasks, up from &quot;clearly below&quot; just a year ago — though researchers warn these improvements are too sparse to predict where things are headed.&lt;/li&gt;&lt;br&gt;&lt;/ul&gt;" data-chronoton-post-id="1149399" data-chronoton-expand-collapse="1" data-chronoton-analytics-enabled="1"></div>
+
+
+<p class="wp-block-paragraph">A <a href="https://metr.org/blog/2026-11-20-q4-2026-capability-update/" data-type="link" data-id="https://metr.org/blog/2026-11-20-q4-2026-capability-update/">new report</a> from the AI evaluation nonprofit METR finds that some AI capabilities are continuing to improve along an exponential trajectory—but it also indicates that models aren’t quite as good at tasks that require judgment as they are at coding. </p>
+
+
+
+<p class="wp-block-paragraph">The report is an update to the organization’s time horizon plot, which was widely shared—<a href="https://www.technologyreview.com/2026/02/05/1132254/this-is-the-most-misunderstood-graph-in-ai/">and widely misinterpreted</a>, owing to the complexity of the measures it used. METR evaluated models by having them attempt a large suite of tasks, each of which had also been completed by humans. Each task’s difficulty was scored by how long it took the human testers to finish it—and then models were rated according to the length of the tasks that they could complete. That plot showed that AI systems were rapidly improving—every four months, the length of the tasks that frontier models could successfully complete doubled.</p>
+
+
+
+<p class="wp-block-paragraph">The updated plot adds more tasks—some that are estimated to take humans far longer than those in the original suite, and others that are more open-ended. One of the biggest questions in AI right now is the extent to which progress on “verifiable” tasks—where it’s possible to check automatically whether an AI system has succeeded or failed—carry over into tasks on which success or failure is harder to measure. We know how to teach neural networks how to do verifiable tasks: Researchers have the systems attempt one many times, strengthen the neural pathways that contribute to success, and weaken the pathways that contribute to failures. That’s why AI systems have become so good at coding and math, two domains where it’s possible to determine automatically whether a solution does or doesn’t work.</p>
+
+
+
+
+
+<p class="wp-block-paragraph">It’s much harder to apply this technique, known as reinforcement learning, to tasks where success is less well defined or takes longer to ascertain—such as choosing a new research direction. For the same reason, it’s tough to evaluate AI performance on these tasks, so METR’s original time horizon plot didn’t include any of them. But it’s precisely this type of task that will prove essential if AI systems are to automate research and development.</p>
+
+
+
+<p class="wp-block-paragraph">And AI research and development is an especially hot topic right now. Parts of the AI community are still reeling from a different, heavily redacted METR report from earlier this month, which claimed that AI might be speeding up the pace of AI progress at Anthropic by a factor of two. That report sparked fears that the company (which just had a blockbuster IPO) could soon achieve full recursive self-improvement, a regime in which AI systems autonomously design their own successors with no human involvement.</p>
+
+
+
+<p class="wp-block-paragraph">METR researchers have worked to make sure their new suite of tasks includes some of the fuzzier, judgment-laden ones that could be most relevant to AI research and development. In one task, they ask models to design new AI evaluations that METR could use in its research and then have human METR employees score the results. Even though the most advanced models are now better than almost every human at software engineering, here they fall short: Not one of the AI-designed evaluations was good enough for METR employees to consider it useful for their research.</p>
+
+
+
+<p class="wp-block-paragraph">In another task, models have to score philosophical arguments. This task is intended to capture the extent to which models can exercise good judgment—though METR writes in the report that employees disagree about how relevant the task is for automation of AI R&amp;D. On this task, too, models fell short of human performance.</p>
+
+
+
+<p class="wp-block-paragraph">Though it’s difficult to score these new tasks—and even harder to determine what the scores mean—experts I spoke with appreciate that METR is incorporating new types of evaluations into its work. “We’re at the point where AI evaluations need to get more creative,” says Sayash Kapoor, a computer scientist and incoming professor at UC Berkeley. “Trying to push the envelope of the space of evaluations is a welcome change.”</p>
+
+
+
+<p class="wp-block-paragraph">Kapoor says he wasn’t surprised to see that models fall short of performance on more open-ended tasks, such as designing an AI evaluation—in a <a href="https://arxiv.org/pdf/2607.27191">preprint from August</a>, he and his collaborators reported that AI models are not yet able to reproduce human computer science research on their own. And in a Wednesday blog post, OpenAI reported that its models don’t do as well on the real-world tasks its employees assign them as they do on the easier, more verifiable tasks in METR’s original suite.</p>
+
+
+
+
+
+<p class="wp-block-paragraph">Still, people disagree about how to interpret current performance differences on easily verifiable and hard-to-verify tasks, Kapoor says. Though he thinks that research taste—the ability to choose promising questions, hypotheses, and experiments—will prove a major bottleneck in automating AI R&amp;D, <a href="https://www.dwarkesh.com/p/dario-amodei-2">others</a> <a href="https://invertedpassion.substack.com/p/making-sense-of-recursive-self-improvement">contend</a> that models trained on easy-to-verify tasks will eventually be able to successfully complete open-ended tasks as well. And progress on verifiable tasks doesn’t seem to be slowing down.&nbsp;</p>
+
+
+
+<p class="wp-block-paragraph">Even if the models do lag behind human performance on open-ended tasks right now, the new report suggests that they might be getting better. Some of the newest models, such as Opus 5.5, tend to achieve what METR calls “borderline above the bar” performance on the evaluation design tasks—not yet usable for METR&#8217;s research, but promising. Just a year ago, every model was scoring in the “clearly below the bar” category.</p>
+
+
+
+<p class="wp-block-paragraph">But because these open-ended and judgment-heavy tasks are so tough to design and score, METR includes few of them in its report, and that makes it difficult to predict whether and how models might continue to progress in these areas. “The improvement we observe, I think that does tell us something for the current moment,” says Najoung Kim, a linguist and computer scientist at Boston University. “I’m not sure just yet how to think about how it would extrapolate.”</p>
+
+
+
+<p class="wp-block-paragraph">Matt Putz, a member of the technical staff at METR, says that predicting progress on these kinds of tasks is likely to remain difficult. “By their nature, hard-to-verify or judgment-laden tasks are much harder to study, and especially to quantify,” he said in an email. “Ultimately, I don’t think we’ll be able to establish trends as clean and robust as for the easy-to-specify [tasks].”</p>
+
+
+
+<p class="wp-block-paragraph">In general, METR is clearly butting up against the practical difficulties of testing AI performance on difficult and underspecified tasks—precisely the ones most relevant to automating AI R&amp;D. METR’s time horizon plots score task difficulty by evaluating how long it would take a human to complete the task, and for the original plot they measured this quantity by actually having people try each task.&nbsp;</p>
+
+
+
+<p class="wp-block-paragraph">In the new report, however, the completion times are mostly estimates, because paying people for tasks that might take hundreds of hours, or that only a few experts are qualified to complete, is prohibitively expensive and time-consuming. Other tasks have more specific shortcomings—for example, for the philosophical argument task, just one person rated most of the arguments, and agents are judged by how well they agree with that particular individual. It’s possible that the scores would change if more experts were surveyed—but that, too, is time-consuming.</p>
+
+
+
+<p class="wp-block-paragraph">It’s still early days for evaluating models on tasks that are hard to validate or require judgment. And while the experts I spoke with see the inclusion of these tasks in METR’s newest time horizon plot as a clear step in the right direction, they agree that we are still far from achieving any definitive answers about whether, and how quickly, automated AI R&amp;D might be coming. “This move toward open-ended tasks is promising,” Kapoor says. But, he adds, “there is just such a lot more to be done to actually get a fuller understanding.”</p>
+
+
+
+<p class="wp-block-paragraph"></p>
+]]></content:encoded>
+					
+		
+		
+		<post-id xmlns="com-wordpress:feed-additions:1">1149399</post-id>	</item>
+		<item>
 		<title>The Download: inside the quest to make our minds immortal</title>
 		<link>https://www.technologyreview.com/2026/11/20/1149371/the-download-quest-to-make-minds-immortal/</link>
 		
@@ -1012,58 +1101,5 @@
 		
 		
 		<post-id xmlns="com-wordpress:feed-additions:1">1148742</post-id>	</item>
-		<item>
-		<title>Research Reports</title>
-		<link>https://www.technologyreview.com/2026/11/17/1148203/research-reports/</link>
-		
-		<dc:creator><![CDATA[MIT Technology Review]]></dc:creator>
-		<pubDate>Tue, 17 Nov 2026 14:39:46 +0000</pubDate>
-				<category><![CDATA[Artificial intelligence]]></category>
-		<guid isPermaLink="false">https://www.technologyreview.com/?p=1148203</guid>
-
-					<description><![CDATA[To access a report, click on the corresponding image below.]]></description>
-										<content:encoded><![CDATA[
-<p class="wp-block-paragraph">To access a report, click on the corresponding image below. </p>
-
-
-
-<figure class="wp-block-gallery has-nested-images columns-default is-cropped wp-block-gallery-1 is-layout-flex wp-block-gallery-is-layout-flex">
-<figure class="wp-block-image size-large"><a href="https://wp.technologyreview.com/wp-content/uploads/2026/11/The-next-decade-in-nuclear-power_FINAL.pdf"><img loading="lazy" decoding="async" width="921" height="1228" data-id="1148225" src="https://wp.technologyreview.com/wp-content/uploads/2026/11/Screenshot-2026-11-09-at-3.15.07-PM-edited.png" alt="" class="wp-image-1148225" srcset="https://wp.technologyreview.com/wp-content/uploads/2026/11/Screenshot-2026-11-09-at-3.15.07-PM-edited.png 921w, https://wp.technologyreview.com/wp-content/uploads/2026/11/Screenshot-2026-11-09-at-3.15.07-PM-edited.png?resize=225,300 225w, https://wp.technologyreview.com/wp-content/uploads/2026/11/Screenshot-2026-11-09-at-3.15.07-PM-edited.png?resize=768,1024 768w" sizes="auto, (max-width: 921px) 100vw, 921px" /></a></figure>
-
-
-
-<figure class="wp-block-image size-large"><a href="https://wp.technologyreview.com/wp-content/uploads/2026/02/Hyperscale-data-centers-in-the-AI-era_r8.pdf"><img loading="lazy" decoding="async" width="947" height="1262" data-id="1148226" src="https://wp.technologyreview.com/wp-content/uploads/2026/11/Screenshot-2026-11-09-at-3.20.50-PM-1-edited.png" alt="" class="wp-image-1148226" srcset="https://wp.technologyreview.com/wp-content/uploads/2026/11/Screenshot-2026-11-09-at-3.20.50-PM-1-edited.png 947w, https://wp.technologyreview.com/wp-content/uploads/2026/11/Screenshot-2026-11-09-at-3.20.50-PM-1-edited.png?resize=225,300 225w, https://wp.technologyreview.com/wp-content/uploads/2026/11/Screenshot-2026-11-09-at-3.20.50-PM-1-edited.png?resize=768,1023 768w" sizes="auto, (max-width: 947px) 100vw, 947px" /></a></figure>
-</figure>
-
-
-
-<div class="wp-block-group is-layout-constrained wp-block-group-is-layout-constrained">
-<div class="wp-block-group alignwide is-layout-grid wp-container-core-group-is-layout-9afd3dea wp-block-group-is-layout-grid">
-<figure class="wp-block-gallery has-nested-images columns-default is-cropped wp-block-gallery-2 is-layout-flex wp-block-gallery-is-layout-flex">
-<figure class="wp-block-image size-large"><a href="https://wp.technologyreview.com/wp-content/uploads/2025/07/Understanding-AI-agents.pdf"><img loading="lazy" decoding="async" width="996" height="1328" data-id="1148227" src="https://wp.technologyreview.com/wp-content/uploads/2026/11/Screenshot-2026-11-09-at-3.26.04-PM-edited.png" alt="" class="wp-image-1148227" srcset="https://wp.technologyreview.com/wp-content/uploads/2026/11/Screenshot-2026-11-09-at-3.26.04-PM-edited.png 996w, https://wp.technologyreview.com/wp-content/uploads/2026/11/Screenshot-2026-11-09-at-3.26.04-PM-edited.png?resize=225,300 225w, https://wp.technologyreview.com/wp-content/uploads/2026/11/Screenshot-2026-11-09-at-3.26.04-PM-edited.png?resize=768,1024 768w" sizes="auto, (max-width: 996px) 100vw, 996px" /></a></figure>
-
-
-
-<figure class="wp-block-image size-large"><a href="https://wp.technologyreview.com/wp-content/uploads/2026/08/World-Models_Final.pdf"><img loading="lazy" decoding="async" width="965" height="1286" data-id="1148228" src="https://wp.technologyreview.com/wp-content/uploads/2026/11/Screenshot-2026-11-09-at-3.24.39-PM-edited.png" alt="" class="wp-image-1148228" srcset="https://wp.technologyreview.com/wp-content/uploads/2026/11/Screenshot-2026-11-09-at-3.24.39-PM-edited.png 965w, https://wp.technologyreview.com/wp-content/uploads/2026/11/Screenshot-2026-11-09-at-3.24.39-PM-edited.png?resize=225,300 225w, https://wp.technologyreview.com/wp-content/uploads/2026/11/Screenshot-2026-11-09-at-3.24.39-PM-edited.png?resize=768,1023 768w" sizes="auto, (max-width: 965px) 100vw, 965px" /></a></figure>
-</figure>
-</div>
-</div>
-
-
-
-<p class="wp-block-paragraph"></p>
-
-
-
-<p class="wp-block-paragraph"></p>
-
-
-
-<p class="wp-block-paragraph"></p>
-]]></content:encoded>
-					
-		
-		
-		<post-id xmlns="com-wordpress:feed-additions:1">1148203</post-id>	</item>
 	</channel>
 </rss>
