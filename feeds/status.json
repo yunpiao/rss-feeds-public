@@ -1,12 +1,12 @@
 {
-  "checked_at": "2026-11-23T09:48:09.207783+00:00",
+  "checked_at": "2026-11-23T22:02:10.012113+00:00",
   "sources": {
     "aibase-daily.xml": {
       "entries": 10,
       "ok": true
     },
     "bbc-business.xml": {
-      "entries": 47,
+      "entries": 54,
       "ok": true
     },
     "bbc-technology.xml": {
@@ -14,7 +14,7 @@
       "ok": true
     },
     "bbc-world.xml": {
-      "entries": 35,
+      "entries": 33,
       "ok": true
     },
     "cloudflare-ai.xml": {
@@ -26,16 +26,16 @@
       "ok": true
     },
     "federalreserve.xml": {
-      "entries": 20,
-      "ok": true
+      "error": "HTTP Error 404: Not Found",
+      "ok": false
     },
     "forbes-ai.xml": {
       "entries": 25,
       "ok": true
     },
     "hackernews.xml": {
-      "entries": 20,
-      "ok": true
+      "error": "HTTP Error 502: Bad Gateway",
+      "ok": false
     },
     "itjuzi.xml": {
       "entries": 50,
@@ -50,7 +50,7 @@
       "ok": true
     },
     "openai.xml": {
-      "entries": 1422,
+      "entries": 1424,
       "ok": true
     },
     "producthunt.xml": {
@@ -74,6 +74,6 @@
       "ok": true
     }
   },
-  "successful": 18,
+  "successful": 16,
   "total": 18
 }
