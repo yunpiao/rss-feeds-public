@@ -1,102 +1,105 @@
-<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hacker News: Front Page</title><link>https://news.ycombinator.com/</link><description>Hacker News RSS</description><docs>https://hnrss.org/</docs><generator>hnrss v2.1.1</generator><lastBuildDate>Wed, 25 Nov 2026 20:05:53 +0000</lastBuildDate><atom:link href="https://hnrss.org/frontpage" rel="self" type="application/rss+xml"></atom:link><item><title><![CDATA[Holy Shit Holy Shit Holy Shit Holy Shit [Algorithmic Complexity Lower Bounds]]]></title><description><![CDATA[
-<p>Article URL: <a href="https://scottaaronson.blog/?p=10379">https://scottaaronson.blog/?p=10379</a></p>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hacker News: Front Page</title><link>https://news.ycombinator.com/</link><description>Hacker News RSS</description><docs>https://hnrss.org/</docs><generator>hnrss v2.1.1</generator><lastBuildDate>Thu, 26 Nov 2026 02:47:52 +0000</lastBuildDate><atom:link href="https://hnrss.org/frontpage" rel="self" type="application/rss+xml"></atom:link><item><title><![CDATA[Tell HN: Lots of Ask HNs again]]></title><description><![CDATA[
+<p>There have been questions about why the /ask page (<a href="https://news.ycombinator.com/ask">https://news.ycombinator.com/ask</a>) was running dry of Ask HN posts - e.g.:<p><i>Ask HN: Why is Ask HN only showing me 14 posts?</i> - <a href="https://news.ycombinator.com/item?id=49984484">https://news.ycombinator.com/item?id=49984484</a> - Oct 2026 (47 comments)<p><i>Ask HN: Why is pagination gone on "Ask HN", and showing only 19 items?</i> - <a href="https://news.ycombinator.com/item?id=50280719">https://news.ycombinator.com/item?id=50280719</a> - Oct 2026 (3 comments)<p>I believe I found the problem. The pool of stories for <a href="https://news.ycombinator.com/ask">https://news.ycombinator.com/ask</a> has traditionally been drawn from the ranked stories list from which we generate the frontpage. That list is restricted to the top 1500 ranked submissions, and it seems the % of submissions which are text posts (i.e. no linked URL) had declined enough to starve the Ask HN feed. The solution is to compute a separate list of ranked Ask HNs.<p>p.s. "Ask HN" is the conventional name but it means text posts. The title can also start with "Tell HN" or nothing in particular. They're just posts which were submitted without a URL.</p>
+<hr>
+<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50649864">https://news.ycombinator.com/item?id=50649864</a></p>
+<p>Points: 100</p>
+<p># Comments: 41</p>
+]]></description><pubDate>Thu, 26 Nov 2026 00:43:34 +0000</pubDate><link>https://news.ycombinator.com/item?id=50649864</link><dc:creator>dang</dc:creator><comments>https://news.ycombinator.com/item?id=50649864</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50649864</guid></item><item><title><![CDATA[Jev is probably Qwen3.5-35B-A3B]]></title><description><![CDATA[
+<p>Article URL: <a href="https://modaic.dev/blog/latency-doesnt-lie">https://modaic.dev/blog/latency-doesnt-lie</a></p>
+<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50648823">https://news.ycombinator.com/item?id=50648823</a></p>
+<p>Points: 233</p>
+<p># Comments: 68</p>
+]]></description><pubDate>Wed, 25 Nov 2026 22:57:04 +0000</pubDate><link>https://modaic.dev/blog/latency-doesnt-lie</link><dc:creator>csoham</dc:creator><comments>https://news.ycombinator.com/item?id=50648823</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50648823</guid></item><item><title><![CDATA[Bare Metal Qwen]]></title><description><![CDATA[
+<p>Article URL: <a href="https://github.com/alesha-pro/llm.asm/tree/main/02-baremetal-os">https://github.com/alesha-pro/llm.asm/tree/main/02-baremetal-os</a></p>
+<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50648365">https://news.ycombinator.com/item?id=50648365</a></p>
+<p>Points: 68</p>
+<p># Comments: 11</p>
+]]></description><pubDate>Wed, 25 Nov 2026 22:15:34 +0000</pubDate><link>https://github.com/alesha-pro/llm.asm/tree/main/02-baremetal-os</link><dc:creator>miohtama</dc:creator><comments>https://news.ycombinator.com/item?id=50648365</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50648365</guid></item><item><title><![CDATA[Deploying a payphone on a tiny Pacific Island]]></title><description><![CDATA[
+<p>Article URL: <a href="https://nickvsnetworking.com/deploying-a-payphone-on-a-tiny-pacific-island-for-fun-and-zero-profit/">https://nickvsnetworking.com/deploying-a-payphone-on-a-tiny-pacific-island-for-fun-and-zero-profit/</a></p>
+<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50648323">https://news.ycombinator.com/item?id=50648323</a></p>
+<p>Points: 45</p>
+<p># Comments: 4</p>
+]]></description><pubDate>Wed, 25 Nov 2026 22:12:25 +0000</pubDate><link>https://nickvsnetworking.com/deploying-a-payphone-on-a-tiny-pacific-island-for-fun-and-zero-profit/</link><dc:creator>qzervaas</dc:creator><comments>https://news.ycombinator.com/item?id=50648323</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50648323</guid></item><item><title><![CDATA[Much shorter version of GRH Lean verification from Anthropic]]></title><description><![CDATA[
+<p>Article URL: <a href="https://github.com/lsernau/grh-lean">https://github.com/lsernau/grh-lean</a></p>
+<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50648050">https://news.ycombinator.com/item?id=50648050</a></p>
+<p>Points: 301</p>
+<p># Comments: 137</p>
+]]></description><pubDate>Wed, 25 Nov 2026 21:48:10 +0000</pubDate><link>https://github.com/lsernau/grh-lean</link><dc:creator>nb-t</dc:creator><comments>https://news.ycombinator.com/item?id=50648050</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50648050</guid></item><item><title><![CDATA[Defang Security Incident]]></title><description><![CDATA[
+<p>Article URL: <a href="https://defang.io/blog/post/security-incident-november-2026/">https://defang.io/blog/post/security-incident-november-2026/</a></p>
+<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50648035">https://news.ycombinator.com/item?id=50648035</a></p>
+<p>Points: 64</p>
+<p># Comments: 19</p>
+]]></description><pubDate>Wed, 25 Nov 2026 21:47:16 +0000</pubDate><link>https://defang.io/blog/post/security-incident-november-2026/</link><dc:creator>gregsadetsky</dc:creator><comments>https://news.ycombinator.com/item?id=50648035</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50648035</guid></item><item><title><![CDATA[The New York Times warns photographers not to update Photoshop over AI features]]></title><description><![CDATA[
+<p><a href="https://archive.ph/pcUgy" rel="nofollow">https://archive.ph/pcUgy</a></p>
+<hr>
+<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50647673">https://news.ycombinator.com/item?id=50647673</a></p>
+<p>Points: 219</p>
+<p># Comments: 184</p>
+]]></description><pubDate>Wed, 25 Nov 2026 21:18:02 +0000</pubDate><link>https://www.theverge.com/ai-artificial-intelligence/1041227/the-new-york-times-warns-photographers-not-to-update-photoshop-over-ai-features</link><dc:creator>rmason</dc:creator><comments>https://news.ycombinator.com/item?id=50647673</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50647673</guid></item><item><title><![CDATA[Slow Ubuntu security response times]]></title><description><![CDATA[
+<p>Article URL: <a href="https://www.openwall.com/lists/oss-security/2026/11/25/9">https://www.openwall.com/lists/oss-security/2026/11/25/9</a></p>
+<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50647181">https://news.ycombinator.com/item?id=50647181</a></p>
+<p>Points: 159</p>
+<p># Comments: 69</p>
+]]></description><pubDate>Wed, 25 Nov 2026 20:38:00 +0000</pubDate><link>https://www.openwall.com/lists/oss-security/2026/11/25/9</link><dc:creator>gslin</dc:creator><comments>https://news.ycombinator.com/item?id=50647181</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50647181</guid></item><item><title><![CDATA[Nfs2root: A 12-year-old pre-auth remote root in the Linux kernel's NFS server]]></title><description><![CDATA[
+<p>Article URL: <a href="https://opensec.in/blog/nfs2root-cve-2026-99362">https://opensec.in/blog/nfs2root-cve-2026-99362</a></p>
+<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50647161">https://news.ycombinator.com/item?id=50647161</a></p>
+<p>Points: 91</p>
+<p># Comments: 28</p>
+]]></description><pubDate>Wed, 25 Nov 2026 20:35:50 +0000</pubDate><link>https://opensec.in/blog/nfs2root-cve-2026-99362</link><dc:creator>dm</dc:creator><comments>https://news.ycombinator.com/item?id=50647161</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50647161</guid></item><item><title><![CDATA[72-hour fasting can reset your immune system, USC study shows]]></title><description><![CDATA[
+<p>Article URL: <a href="https://scienceinhand.com/72-hour-fasting-can-reset-your-entire-immune-system-usc-study-shows/">https://scienceinhand.com/72-hour-fasting-can-reset-your-entire-immune-system-usc-study-shows/</a></p>
+<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50647158">https://news.ycombinator.com/item?id=50647158</a></p>
+<p>Points: 184</p>
+<p># Comments: 133</p>
+]]></description><pubDate>Wed, 25 Nov 2026 20:35:39 +0000</pubDate><link>https://scienceinhand.com/72-hour-fasting-can-reset-your-entire-immune-system-usc-study-shows/</link><dc:creator>handfuloflight</dc:creator><comments>https://news.ycombinator.com/item?id=50647158</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50647158</guid></item><item><title><![CDATA[Holy shit holy shit holy shit holy shit: The magnitude of what’s now happening]]></title><description><![CDATA[
+<p>See also <i>The matrix multiplication exponent is nine fourths [pdf]</i> - <a href="https://news.ycombinator.com/item?id=50637220">https://news.ycombinator.com/item?id=50637220</a></p>
+<hr>
 <p>Comments URL: <a href="https://news.ycombinator.com/item?id=50646108">https://news.ycombinator.com/item?id=50646108</a></p>
-<p>Points: 168</p>
-<p># Comments: 98</p>
-]]></description><pubDate>Wed, 25 Nov 2026 19:11:27 +0000</pubDate><link>https://scottaaronson.blog/?p=10379</link><dc:creator>Kotlopou</dc:creator><comments>https://news.ycombinator.com/item?id=50646108</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50646108</guid></item><item><title><![CDATA[Britain's ghost stations]]></title><description><![CDATA[
+<p>Points: 959</p>
+<p># Comments: 812</p>
+]]></description><pubDate>Wed, 25 Nov 2026 19:11:27 +0000</pubDate><link>https://scottaaronson.blog/?p=10379</link><dc:creator>Kotlopou</dc:creator><comments>https://news.ycombinator.com/item?id=50646108</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50646108</guid></item><item><title><![CDATA[Multiagent coding is the future]]></title><description><![CDATA[
+<p>Article URL: <a href="https://www.kalzumeus.com/2026/11/25/multiagent-coding-is-the-future/">https://www.kalzumeus.com/2026/11/25/multiagent-coding-is-the-future/</a></p>
+<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50645541">https://news.ycombinator.com/item?id=50645541</a></p>
+<p>Points: 42</p>
+<p># Comments: 26</p>
+]]></description><pubDate>Wed, 25 Nov 2026 18:20:11 +0000</pubDate><link>https://www.kalzumeus.com/2026/11/25/multiagent-coding-is-the-future/</link><dc:creator>akalin</dc:creator><comments>https://news.ycombinator.com/item?id=50645541</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50645541</guid></item><item><title><![CDATA[Britain's ghost stations]]></title><description><![CDATA[
 <p><a href="https://archive.ph/pfVdX" rel="nofollow">https://archive.ph/pfVdX</a></p>
 <hr>
 <p>Comments URL: <a href="https://news.ycombinator.com/item?id=50645074">https://news.ycombinator.com/item?id=50645074</a></p>
-<p>Points: 39</p>
-<p># Comments: 8</p>
+<p>Points: 100</p>
+<p># Comments: 21</p>
 ]]></description><pubDate>Wed, 25 Nov 2026 17:43:46 +0000</pubDate><link>https://spectator.com/article/britains-ghost-stations-are-fascinating/</link><dc:creator>translocator</dc:creator><comments>https://news.ycombinator.com/item?id=50645074</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50645074</guid></item><item><title><![CDATA[The polynomial Hirsch conjecture is false [pdf]]]></title><description><![CDATA[
 <p>Article URL: <a href="https://github.com/openai/math/blob/main/preprints/Superpolynomial-graph-diameter-of-simple-polytopes-November-24-2026/paper.pdf">https://github.com/openai/math/blob/main/preprints/Superpolynomial-graph-diameter-of-simple-polytopes-November-24-2026/paper.pdf</a></p>
 <p>Comments URL: <a href="https://news.ycombinator.com/item?id=50644980">https://news.ycombinator.com/item?id=50644980</a></p>
-<p>Points: 27</p>
-<p># Comments: 1</p>
+<p>Points: 127</p>
+<p># Comments: 35</p>
 ]]></description><pubDate>Wed, 25 Nov 2026 17:34:34 +0000</pubDate><link>https://github.com/openai/math/blob/main/preprints/Superpolynomial-graph-diameter-of-simple-polytopes-November-24-2026/paper.pdf</link><dc:creator>acossta</dc:creator><comments>https://news.ycombinator.com/item?id=50644980</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50644980</guid></item><item><title><![CDATA[1Password Security Incident]]></title><description><![CDATA[
 <p>Article URL: <a href="https://1password.com/blog/update-on-nov-2026-security-incident">https://1password.com/blog/update-on-nov-2026-security-incident</a></p>
 <p>Comments URL: <a href="https://news.ycombinator.com/item?id=50644817">https://news.ycombinator.com/item?id=50644817</a></p>
-<p>Points: 575</p>
-<p># Comments: 251</p>
-]]></description><pubDate>Wed, 25 Nov 2026 17:18:26 +0000</pubDate><link>https://1password.com/blog/update-on-nov-2026-security-incident</link><dc:creator>lxhrstn</dc:creator><comments>https://news.ycombinator.com/item?id=50644817</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50644817</guid></item><item><title><![CDATA[Deriving Black-Scholes]]></title><description><![CDATA[
-<p>Article URL: <a href="https://david.alvarezrosa.com/posts/deriving-black-scholes/">https://david.alvarezrosa.com/posts/deriving-black-scholes/</a></p>
-<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50644814">https://news.ycombinator.com/item?id=50644814</a></p>
-<p>Points: 29</p>
-<p># Comments: 15</p>
-]]></description><pubDate>Wed, 25 Nov 2026 17:18:15 +0000</pubDate><link>https://david.alvarezrosa.com/posts/deriving-black-scholes/</link><dc:creator>meysamazad</dc:creator><comments>https://news.ycombinator.com/item?id=50644814</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50644814</guid></item><item><title><![CDATA[Investigating degraded experiences across GitHub products]]></title><description><![CDATA[
-<p>Article URL: <a href="https://www.githubstatus.com/incidents/qn8mfv6q5hlx">https://www.githubstatus.com/incidents/qn8mfv6q5hlx</a></p>
-<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50643720">https://news.ycombinator.com/item?id=50643720</a></p>
-<p>Points: 165</p>
-<p># Comments: 89</p>
-]]></description><pubDate>Wed, 25 Nov 2026 15:59:23 +0000</pubDate><link>https://www.githubstatus.com/incidents/qn8mfv6q5hlx</link><dc:creator>pinjasaur</dc:creator><comments>https://news.ycombinator.com/item?id=50643720</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50643720</guid></item><item><title><![CDATA[In C++, = default and {} are not the same constructor]]></title><description><![CDATA[
-<p>Article URL: <a href="https://lemire.me/blog/2026/11/02/default-and-braces-are-not-the-same-constructor/">https://lemire.me/blog/2026/11/02/default-and-braces-are-not-the-same-constructor/</a></p>
-<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50643199">https://news.ycombinator.com/item?id=50643199</a></p>
-<p>Points: 73</p>
-<p># Comments: 129</p>
-]]></description><pubDate>Wed, 25 Nov 2026 15:20:15 +0000</pubDate><link>https://lemire.me/blog/2026/11/02/default-and-braces-are-not-the-same-constructor/</link><dc:creator>surprisetalk</dc:creator><comments>https://news.ycombinator.com/item?id=50643199</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50643199</guid></item><item><title><![CDATA[A few questions for the guy who went snorkeling in a Home Depot retention pond]]></title><description><![CDATA[
+<p>Points: 1198</p>
+<p># Comments: 510</p>
+]]></description><pubDate>Wed, 25 Nov 2026 17:18:26 +0000</pubDate><link>https://1password.com/blog/update-on-nov-2026-security-incident</link><dc:creator>lxhrstn</dc:creator><comments>https://news.ycombinator.com/item?id=50644817</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50644817</guid></item><item><title><![CDATA[A few questions for the guy who went snorkeling in a Home Depot retention pond]]></title><description><![CDATA[
 <p>Article URL: <a href="https://www.vox.com/down-to-earth/511999/home-depot-retention-pond-snorkel-joseph-ricketts">https://www.vox.com/down-to-earth/511999/home-depot-retention-pond-snorkel-joseph-ricketts</a></p>
 <p>Comments URL: <a href="https://news.ycombinator.com/item?id=50643129">https://news.ycombinator.com/item?id=50643129</a></p>
-<p>Points: 343</p>
-<p># Comments: 88</p>
-]]></description><pubDate>Wed, 25 Nov 2026 15:14:32 +0000</pubDate><link>https://www.vox.com/down-to-earth/511999/home-depot-retention-pond-snorkel-joseph-ricketts</link><dc:creator>gumby</dc:creator><comments>https://news.ycombinator.com/item?id=50643129</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50643129</guid></item><item><title><![CDATA[Rumors swirling that labs might have cracked Factoring in P]]></title><description><![CDATA[
-<p>Article URL: <a href="https://www.reddit.com/r/singularity/comments/1y59ef1/rumor_that_openai_or_anthropic_found_a_way_to/">https://www.reddit.com/r/singularity/comments/1y59ef1/rumor_that_openai_or_anthropic_found_a_way_to/</a></p>
-<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50643065">https://news.ycombinator.com/item?id=50643065</a></p>
-<p>Points: 353</p>
-<p># Comments: 241</p>
-]]></description><pubDate>Wed, 25 Nov 2026 15:08:44 +0000</pubDate><link>https://www.reddit.com/r/singularity/comments/1y59ef1/rumor_that_openai_or_anthropic_found_a_way_to/</link><dc:creator>lilytweed</dc:creator><comments>https://news.ycombinator.com/item?id=50643065</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50643065</guid></item><item><title><![CDATA[I checked Clojure's core with Lean and found unreported bugs]]></title><description><![CDATA[
+<p>Points: 445</p>
+<p># Comments: 110</p>
+]]></description><pubDate>Wed, 25 Nov 2026 15:14:32 +0000</pubDate><link>https://www.vox.com/down-to-earth/511999/home-depot-retention-pond-snorkel-joseph-ricketts</link><dc:creator>gumby</dc:creator><comments>https://news.ycombinator.com/item?id=50643129</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50643129</guid></item><item><title><![CDATA[I checked Clojure's core with Lean and found unreported bugs]]></title><description><![CDATA[
 <p>Article URL: <a href="https://s.conao3.com/blog/2026/e4f733">https://s.conao3.com/blog/2026/e4f733</a></p>
 <p>Comments URL: <a href="https://news.ycombinator.com/item?id=50642939">https://news.ycombinator.com/item?id=50642939</a></p>
-<p>Points: 116</p>
-<p># Comments: 43</p>
+<p>Points: 190</p>
+<p># Comments: 67</p>
 ]]></description><pubDate>Wed, 25 Nov 2026 14:56:52 +0000</pubDate><link>https://s.conao3.com/blog/2026/e4f733</link><dc:creator>encyclopedism</dc:creator><comments>https://news.ycombinator.com/item?id=50642939</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50642939</guid></item><item><title><![CDATA[Google releases Cogentic papers on integer factorization, discrete logs and more]]></title><description><![CDATA[
 <p>Article URL: <a href="https://github.com/google-research/google-research/tree/master/cogentic_research_papers">https://github.com/google-research/google-research/tree/master/cogentic_research_papers</a></p>
 <p>Comments URL: <a href="https://news.ycombinator.com/item?id=50642086">https://news.ycombinator.com/item?id=50642086</a></p>
-<p>Points: 371</p>
-<p># Comments: 291</p>
-]]></description><pubDate>Wed, 25 Nov 2026 13:33:07 +0000</pubDate><link>https://github.com/google-research/google-research/tree/master/cogentic_research_papers</link><dc:creator>rgwohlbold</dc:creator><comments>https://news.ycombinator.com/item?id=50642086</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50642086</guid></item><item><title><![CDATA[Hazel (YC W24) Is Hiring a Product Designer]]></title><description><![CDATA[
-<p>Article URL: <a href="https://www.ycombinator.com/companies/hazel-2/jobs/8EhsvYE-product-designer-contract">https://www.ycombinator.com/companies/hazel-2/jobs/8EhsvYE-product-designer-contract</a></p>
-<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50641323">https://news.ycombinator.com/item?id=50641323</a></p>
-<p>Points: 0</p>
-<p># Comments: 0</p>
-]]></description><pubDate>Wed, 25 Nov 2026 12:00:34 +0000</pubDate><link>https://www.ycombinator.com/companies/hazel-2/jobs/8EhsvYE-product-designer-contract</link><dc:creator>augustschen</dc:creator><comments>https://news.ycombinator.com/item?id=50641323</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50641323</guid></item><item><title><![CDATA[Windows Loudness Equalization, reverse-engineered and ported to PipeWire]]></title><description><![CDATA[
+<p>Points: 451</p>
+<p># Comments: 336</p>
+]]></description><pubDate>Wed, 25 Nov 2026 13:33:07 +0000</pubDate><link>https://github.com/google-research/google-research/tree/master/cogentic_research_papers</link><dc:creator>rgwohlbold</dc:creator><comments>https://news.ycombinator.com/item?id=50642086</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50642086</guid></item><item><title><![CDATA[Windows Loudness Equalization, reverse-engineered and ported to PipeWire]]></title><description><![CDATA[
 <p>Article URL: <a href="https://github.com/xoxorwr/pw-loudness-eq">https://github.com/xoxorwr/pw-loudness-eq</a></p>
 <p>Comments URL: <a href="https://news.ycombinator.com/item?id=50641171">https://news.ycombinator.com/item?id=50641171</a></p>
-<p>Points: 275</p>
-<p># Comments: 162</p>
-]]></description><pubDate>Wed, 25 Nov 2026 11:34:25 +0000</pubDate><link>https://github.com/xoxorwr/pw-loudness-eq</link><dc:creator>ThrowNotAway</dc:creator><comments>https://news.ycombinator.com/item?id=50641171</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50641171</guid></item><item><title><![CDATA[The industrialization of noise: Automated proof-solving is the same old dead end [pdf]]]></title><description><![CDATA[
-<p>Article URL: <a href="https://arxiv.org/abs/2611.31286">https://arxiv.org/abs/2611.31286</a></p>
-<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50639929">https://news.ycombinator.com/item?id=50639929</a></p>
-<p>Points: 56</p>
-<p># Comments: 76</p>
-]]></description><pubDate>Wed, 25 Nov 2026 08:23:34 +0000</pubDate><link>https://arxiv.org/abs/2611.31286</link><dc:creator>pseudohadamard</dc:creator><comments>https://news.ycombinator.com/item?id=50639929</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50639929</guid></item><item><title><![CDATA[Smart people who give a shit use tools]]></title><description><![CDATA[
+<p>Points: 322</p>
+<p># Comments: 178</p>
+]]></description><pubDate>Wed, 25 Nov 2026 11:34:25 +0000</pubDate><link>https://github.com/xoxorwr/pw-loudness-eq</link><dc:creator>ThrowNotAway</dc:creator><comments>https://news.ycombinator.com/item?id=50641171</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50641171</guid></item><item><title><![CDATA[Smart people who give a shit use tools]]></title><description><![CDATA[
 <p>Article URL: <a href="https://www.iankduncan.com/engineering/2026-11-19-smart-people-who-give-a-shit-use-tools">https://www.iankduncan.com/engineering/2026-11-19-smart-people-who-give-a-shit-use-tools</a></p>
 <p>Comments URL: <a href="https://news.ycombinator.com/item?id=50639698">https://news.ycombinator.com/item?id=50639698</a></p>
-<p>Points: 166</p>
-<p># Comments: 152</p>
-]]></description><pubDate>Wed, 25 Nov 2026 07:46:43 +0000</pubDate><link>https://www.iankduncan.com/engineering/2026-11-19-smart-people-who-give-a-shit-use-tools</link><dc:creator>matthewsinclair</dc:creator><comments>https://news.ycombinator.com/item?id=50639698</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50639698</guid></item><item><title><![CDATA[Show HN: Old Nvidia and ATI tech demos, running again in the browser]]></title><description><![CDATA[
-<p>Article URL: <a href="https://gpu-demo-gallery.pages.dev/">https://gpu-demo-gallery.pages.dev/</a></p>
-<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50638503">https://news.ycombinator.com/item?id=50638503</a></p>
-<p>Points: 302</p>
-<p># Comments: 67</p>
-]]></description><pubDate>Wed, 25 Nov 2026 04:31:48 +0000</pubDate><link>https://gpu-demo-gallery.pages.dev/</link><dc:creator>arkits</dc:creator><comments>https://news.ycombinator.com/item?id=50638503</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50638503</guid></item><item><title><![CDATA[Button Sounds – collection of professionally-recorded button clicks and presses]]></title><description><![CDATA[
-<p>Article URL: <a href="https://buttons.joshwcomeau.com/">https://buttons.joshwcomeau.com/</a></p>
-<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50638032">https://news.ycombinator.com/item?id=50638032</a></p>
-<p>Points: 771</p>
-<p># Comments: 124</p>
-]]></description><pubDate>Wed, 25 Nov 2026 03:23:07 +0000</pubDate><link>https://buttons.joshwcomeau.com/</link><dc:creator>gaurang_tandon</dc:creator><comments>https://news.ycombinator.com/item?id=50638032</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50638032</guid></item><item><title><![CDATA[Macrohistory in Six Facts]]></title><description><![CDATA[
-<p>Article URL: <a href="https://basilhalperin.com/essays/macrohistory.html">https://basilhalperin.com/essays/macrohistory.html</a></p>
-<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50637891">https://news.ycombinator.com/item?id=50637891</a></p>
-<p>Points: 157</p>
-<p># Comments: 81</p>
-]]></description><pubDate>Wed, 25 Nov 2026 03:04:46 +0000</pubDate><link>https://basilhalperin.com/essays/macrohistory.html</link><dc:creator>tptacek</dc:creator><comments>https://news.ycombinator.com/item?id=50637891</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50637891</guid></item><item><title><![CDATA[Bypassing iOS Safari's 60 FPS Limit to Build Web Applications That Feel Native]]></title><description><![CDATA[
-<p>Article URL: <a href="https://rida.dev/blog/bypassing-ios-safari-60-fps-limit">https://rida.dev/blog/bypassing-ios-safari-60-fps-limit</a></p>
-<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50637890">https://news.ycombinator.com/item?id=50637890</a></p>
-<p>Points: 408</p>
-<p># Comments: 133</p>
-]]></description><pubDate>Wed, 25 Nov 2026 03:04:37 +0000</pubDate><link>https://rida.dev/blog/bypassing-ios-safari-60-fps-limit</link><dc:creator>vinhnx</dc:creator><comments>https://news.ycombinator.com/item?id=50637890</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50637890</guid></item><item><title><![CDATA[Models Can Communicate via Inference Servers Despite Being Sandboxed]]></title><description><![CDATA[
-<p>Article URL: <a href="https://www.lesswrong.com/posts/7wzWuLP3HhyBLmKfo/models-can-communicate-via-inference-servers-despite-being">https://www.lesswrong.com/posts/7wzWuLP3HhyBLmKfo/models-can-communicate-via-inference-servers-despite-being</a></p>
-<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50637686">https://news.ycombinator.com/item?id=50637686</a></p>
-<p>Points: 413</p>
-<p># Comments: 180</p>
-]]></description><pubDate>Wed, 25 Nov 2026 02:34:21 +0000</pubDate><link>https://www.lesswrong.com/posts/7wzWuLP3HhyBLmKfo/models-can-communicate-via-inference-servers-despite-being</link><dc:creator>gmays</dc:creator><comments>https://news.ycombinator.com/item?id=50637686</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50637686</guid></item></channel></rss>
+<p>Points: 285</p>
+<p># Comments: 230</p>
+]]></description><pubDate>Wed, 25 Nov 2026 07:46:43 +0000</pubDate><link>https://www.iankduncan.com/engineering/2026-11-19-smart-people-who-give-a-shit-use-tools</link><dc:creator>matthewsinclair</dc:creator><comments>https://news.ycombinator.com/item?id=50639698</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50639698</guid></item></channel></rss>
