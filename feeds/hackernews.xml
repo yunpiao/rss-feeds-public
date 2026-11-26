@@ -1,105 +1,104 @@
-<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hacker News: Front Page</title><link>https://news.ycombinator.com/</link><description>Hacker News RSS</description><docs>https://hnrss.org/</docs><generator>hnrss v2.1.1</generator><lastBuildDate>Thu, 26 Nov 2026 02:47:52 +0000</lastBuildDate><atom:link href="https://hnrss.org/frontpage" rel="self" type="application/rss+xml"></atom:link><item><title><![CDATA[Tell HN: Lots of Ask HNs again]]></title><description><![CDATA[
-<p>There have been questions about why the /ask page (<a href="https://news.ycombinator.com/ask">https://news.ycombinator.com/ask</a>) was running dry of Ask HN posts - e.g.:<p><i>Ask HN: Why is Ask HN only showing me 14 posts?</i> - <a href="https://news.ycombinator.com/item?id=49984484">https://news.ycombinator.com/item?id=49984484</a> - Oct 2026 (47 comments)<p><i>Ask HN: Why is pagination gone on "Ask HN", and showing only 19 items?</i> - <a href="https://news.ycombinator.com/item?id=50280719">https://news.ycombinator.com/item?id=50280719</a> - Oct 2026 (3 comments)<p>I believe I found the problem. The pool of stories for <a href="https://news.ycombinator.com/ask">https://news.ycombinator.com/ask</a> has traditionally been drawn from the ranked stories list from which we generate the frontpage. That list is restricted to the top 1500 ranked submissions, and it seems the % of submissions which are text posts (i.e. no linked URL) had declined enough to starve the Ask HN feed. The solution is to compute a separate list of ranked Ask HNs.<p>p.s. "Ask HN" is the conventional name but it means text posts. The title can also start with "Tell HN" or nothing in particular. They're just posts which were submitted without a URL.</p>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hacker News: Front Page</title><link>https://news.ycombinator.com/</link><description>Hacker News RSS</description><docs>https://hnrss.org/</docs><generator>hnrss v2.1.1</generator><lastBuildDate>Thu, 26 Nov 2026 12:18:22 +0000</lastBuildDate><atom:link href="https://hnrss.org/frontpage" rel="self" type="application/rss+xml"></atom:link><item><title><![CDATA[Head of Software Engineering – NOX Metals]]></title><description><![CDATA[
+
+<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50654353">https://news.ycombinator.com/item?id=50654353</a></p>
+<p>Points: 0</p>
+<p># Comments: 0</p>
+]]></description><pubDate>Thu, 26 Nov 2026 12:00:00 +0000</pubDate><link>https://news.ycombinator.com/item?id=50654353</link><dc:creator>zane_heng</dc:creator><comments>https://news.ycombinator.com/item?id=50654353</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50654353</guid></item><item><title><![CDATA[Intel One Mono font]]></title><description><![CDATA[
+<p>Article URL: <a href="https://github.com/intel/intel-one-mono">https://github.com/intel/intel-one-mono</a></p>
+<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50653667">https://news.ycombinator.com/item?id=50653667</a></p>
+<p>Points: 110</p>
+<p># Comments: 61</p>
+]]></description><pubDate>Thu, 26 Nov 2026 10:11:01 +0000</pubDate><link>https://github.com/intel/intel-one-mono</link><dc:creator>saikatsg</dc:creator><comments>https://news.ycombinator.com/item?id=50653667</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50653667</guid></item><item><title><![CDATA[Google Will Make AI Agents Use Its MCP Servers. The Gmail One Can't Send Email]]></title><description><![CDATA[
+<p>Article URL: <a href="https://techstackups.com/articles/google-workspace-ai-agents-mcp/">https://techstackups.com/articles/google-workspace-ai-agents-mcp/</a></p>
+<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50653477">https://news.ycombinator.com/item?id=50653477</a></p>
+<p>Points: 65</p>
+<p># Comments: 52</p>
+]]></description><pubDate>Thu, 26 Nov 2026 09:44:23 +0000</pubDate><link>https://techstackups.com/articles/google-workspace-ai-agents-mcp/</link><dc:creator>ritzaco</dc:creator><comments>https://news.ycombinator.com/item?id=50653477</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50653477</guid></item><item><title><![CDATA[Moat: Your OpenRouter Replacement]]></title><description><![CDATA[
+<p>Article URL: <a href="https://commandcode.ai/moat">https://commandcode.ai/moat</a></p>
+<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50652184">https://news.ycombinator.com/item?id=50652184</a></p>
+<p>Points: 101</p>
+<p># Comments: 75</p>
+]]></description><pubDate>Thu, 26 Nov 2026 06:32:48 +0000</pubDate><link>https://commandcode.ai/moat</link><dc:creator>amanverasia</dc:creator><comments>https://news.ycombinator.com/item?id=50652184</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50652184</guid></item><item><title><![CDATA[An algebraic quantization of gravity from the null cone]]></title><description><![CDATA[
+<p>Article URL: <a href="https://arxiv.org/abs/2611.34924">https://arxiv.org/abs/2611.34924</a></p>
+<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50651863">https://news.ycombinator.com/item?id=50651863</a></p>
+<p>Points: 53</p>
+<p># Comments: 9</p>
+]]></description><pubDate>Thu, 26 Nov 2026 05:37:51 +0000</pubDate><link>https://arxiv.org/abs/2611.34924</link><dc:creator>hecmmm</dc:creator><comments>https://news.ycombinator.com/item?id=50651863</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50651863</guid></item><item><title><![CDATA[Lions' Commentary on Unix: Why It Was Secretly Copied for 20 Years]]></title><description><![CDATA[
+<p>Article URL: <a href="https://fosscomics.com/posts/17.%20Lions%27%20Commentary%20on%20Unix/">https://fosscomics.com/posts/17.%20Lions%27%20Commentary%20on%20Unix/</a></p>
+<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50651719">https://news.ycombinator.com/item?id=50651719</a></p>
+<p>Points: 121</p>
+<p># Comments: 17</p>
+]]></description><pubDate>Thu, 26 Nov 2026 05:12:59 +0000</pubDate><link>https://fosscomics.com/posts/17.%20Lions%27%20Commentary%20on%20Unix/</link><dc:creator>joonehur</dc:creator><comments>https://news.ycombinator.com/item?id=50651719</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50651719</guid></item><item><title><![CDATA[Unconditional Integer Factorization in Subexponential Time]]></title><description><![CDATA[
+<p>Article URL: <a href="https://github.com/google-research/google-research/tree/4a7bc8ab0bc770e71a259b7966c500496b99010a/cogentic_research_papers/integer_factorization">https://github.com/google-research/google-research/tree/4a7bc8ab0bc770e71a259b7966c500496b99010a/cogentic_research_papers/integer_factorization</a></p>
+<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50651627">https://news.ycombinator.com/item?id=50651627</a></p>
+<p>Points: 62</p>
+<p># Comments: 5</p>
+]]></description><pubDate>Thu, 26 Nov 2026 04:59:56 +0000</pubDate><link>https://github.com/google-research/google-research/tree/4a7bc8ab0bc770e71a259b7966c500496b99010a/cogentic_research_papers/integer_factorization</link><dc:creator>_alternator_</dc:creator><comments>https://news.ycombinator.com/item?id=50651627</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50651627</guid></item><item><title><![CDATA[Qualcomm's Oryon 3 Reaches the Top]]></title><description><![CDATA[
+<p>Article URL: <a href="https://chipsandcheese.com/p/qualcomms-oryon-3-reaches-the-top">https://chipsandcheese.com/p/qualcomms-oryon-3-reaches-the-top</a></p>
+<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50651158">https://news.ycombinator.com/item?id=50651158</a></p>
+<p>Points: 54</p>
+<p># Comments: 23</p>
+]]></description><pubDate>Thu, 26 Nov 2026 03:43:24 +0000</pubDate><link>https://chipsandcheese.com/p/qualcomms-oryon-3-reaches-the-top</link><dc:creator>wmf</dc:creator><comments>https://news.ycombinator.com/item?id=50651158</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50651158</guid></item><item><title><![CDATA[OpenAI cuts GPT-6.2 usage: Astra hits limits 40% faster, Sol 25% faster]]></title><description><![CDATA[
+<p>Article URL: <a href="https://twitter.com/thsottiaux/status/2125784147889393806">https://twitter.com/thsottiaux/status/2125784147889393806</a></p>
+<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50651117">https://news.ycombinator.com/item?id=50651117</a></p>
+<p>Points: 303</p>
+<p># Comments: 174</p>
+]]></description><pubDate>Thu, 26 Nov 2026 03:36:58 +0000</pubDate><link>https://twitter.com/thsottiaux/status/2125784147889393806</link><dc:creator>Herrera</dc:creator><comments>https://news.ycombinator.com/item?id=50651117</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50651117</guid></item><item><title><![CDATA[Minipg: PostgreSQL as a Single Executable]]></title><description><![CDATA[
+<p>Article URL: <a href="https://progrium.github.io/minipg/">https://progrium.github.io/minipg/</a></p>
+<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50650892">https://news.ycombinator.com/item?id=50650892</a></p>
+<p>Points: 159</p>
+<p># Comments: 24</p>
+]]></description><pubDate>Thu, 26 Nov 2026 03:00:48 +0000</pubDate><link>https://progrium.github.io/minipg/</link><dc:creator>rguiscard</dc:creator><comments>https://news.ycombinator.com/item?id=50650892</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50650892</guid></item><item><title><![CDATA[Tell HN: Lots of Ask HNs again]]></title><description><![CDATA[
+<p>There have been questions about why the /ask page (<a href="https://news.ycombinator.com/ask">https://news.ycombinator.com/ask</a>) was running dry of Ask HNs - e.g.:<p><i>Ask HN: Why is Ask HN only showing me 14 posts?</i> - <a href="https://news.ycombinator.com/item?id=49984484">https://news.ycombinator.com/item?id=49984484</a> - Oct 2026 (47 comments)<p><i>Ask HN: Why is pagination gone on "Ask HN", and showing only 19 items?</i> - <a href="https://news.ycombinator.com/item?id=50280719">https://news.ycombinator.com/item?id=50280719</a> - Oct 2026 (3 comments)<p>I believe I found the problem. The pool of stories for <a href="https://news.ycombinator.com/ask">https://news.ycombinator.com/ask</a> has traditionally been drawn from the ranked stories list from which we generate the frontpage. That list is restricted to the top 1500 ranked submissions, and it seems the % of submissions which are text posts (i.e. no linked URL) had declined enough to starve the Ask HN feed. The solution is to compute a separate list of ranked Ask HNs.<p>p.s. "Ask HN" is the conventional name but it means text posts. The title can also start with "Tell HN" or nothing in particular. They're just posts which were submitted without a URL.</p>
 <hr>
 <p>Comments URL: <a href="https://news.ycombinator.com/item?id=50649864">https://news.ycombinator.com/item?id=50649864</a></p>
-<p>Points: 100</p>
-<p># Comments: 41</p>
-]]></description><pubDate>Thu, 26 Nov 2026 00:43:34 +0000</pubDate><link>https://news.ycombinator.com/item?id=50649864</link><dc:creator>dang</dc:creator><comments>https://news.ycombinator.com/item?id=50649864</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50649864</guid></item><item><title><![CDATA[Jev is probably Qwen3.5-35B-A3B]]></title><description><![CDATA[
-<p>Article URL: <a href="https://modaic.dev/blog/latency-doesnt-lie">https://modaic.dev/blog/latency-doesnt-lie</a></p>
-<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50648823">https://news.ycombinator.com/item?id=50648823</a></p>
-<p>Points: 233</p>
-<p># Comments: 68</p>
-]]></description><pubDate>Wed, 25 Nov 2026 22:57:04 +0000</pubDate><link>https://modaic.dev/blog/latency-doesnt-lie</link><dc:creator>csoham</dc:creator><comments>https://news.ycombinator.com/item?id=50648823</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50648823</guid></item><item><title><![CDATA[Bare Metal Qwen]]></title><description><![CDATA[
+<p>Points: 288</p>
+<p># Comments: 113</p>
+]]></description><pubDate>Thu, 26 Nov 2026 00:43:34 +0000</pubDate><link>https://news.ycombinator.com/item?id=50649864</link><dc:creator>dang</dc:creator><comments>https://news.ycombinator.com/item?id=50649864</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50649864</guid></item><item><title><![CDATA[Collection of preserved UI style guides]]></title><description><![CDATA[
+<p>Article URL: <a href="https://aresluna.org/ui-style-guides/">https://aresluna.org/ui-style-guides/</a></p>
+<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50649834">https://news.ycombinator.com/item?id=50649834</a></p>
+<p>Points: 246</p>
+<p># Comments: 25</p>
+]]></description><pubDate>Thu, 26 Nov 2026 00:40:00 +0000</pubDate><link>https://aresluna.org/ui-style-guides/</link><dc:creator>sohkamyung</dc:creator><comments>https://news.ycombinator.com/item?id=50649834</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50649834</guid></item><item><title><![CDATA[Bare Metal Qwen]]></title><description><![CDATA[
 <p>Article URL: <a href="https://github.com/alesha-pro/llm.asm/tree/main/02-baremetal-os">https://github.com/alesha-pro/llm.asm/tree/main/02-baremetal-os</a></p>
 <p>Comments URL: <a href="https://news.ycombinator.com/item?id=50648365">https://news.ycombinator.com/item?id=50648365</a></p>
-<p>Points: 68</p>
-<p># Comments: 11</p>
-]]></description><pubDate>Wed, 25 Nov 2026 22:15:34 +0000</pubDate><link>https://github.com/alesha-pro/llm.asm/tree/main/02-baremetal-os</link><dc:creator>miohtama</dc:creator><comments>https://news.ycombinator.com/item?id=50648365</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50648365</guid></item><item><title><![CDATA[Deploying a payphone on a tiny Pacific Island]]></title><description><![CDATA[
+<p>Points: 172</p>
+<p># Comments: 39</p>
+]]></description><pubDate>Wed, 25 Nov 2026 22:15:34 +0000</pubDate><link>https://github.com/alesha-pro/llm.asm/tree/main/02-baremetal-os</link><dc:creator>miohtama</dc:creator><comments>https://news.ycombinator.com/item?id=50648365</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50648365</guid></item><item><title><![CDATA[Deploying a payphone on a tiny Pacific Island for fun and zero profit]]></title><description><![CDATA[
 <p>Article URL: <a href="https://nickvsnetworking.com/deploying-a-payphone-on-a-tiny-pacific-island-for-fun-and-zero-profit/">https://nickvsnetworking.com/deploying-a-payphone-on-a-tiny-pacific-island-for-fun-and-zero-profit/</a></p>
 <p>Comments URL: <a href="https://news.ycombinator.com/item?id=50648323">https://news.ycombinator.com/item?id=50648323</a></p>
-<p>Points: 45</p>
-<p># Comments: 4</p>
+<p>Points: 105</p>
+<p># Comments: 12</p>
 ]]></description><pubDate>Wed, 25 Nov 2026 22:12:25 +0000</pubDate><link>https://nickvsnetworking.com/deploying-a-payphone-on-a-tiny-pacific-island-for-fun-and-zero-profit/</link><dc:creator>qzervaas</dc:creator><comments>https://news.ycombinator.com/item?id=50648323</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50648323</guid></item><item><title><![CDATA[Much shorter version of GRH Lean verification from Anthropic]]></title><description><![CDATA[
 <p>Article URL: <a href="https://github.com/lsernau/grh-lean">https://github.com/lsernau/grh-lean</a></p>
 <p>Comments URL: <a href="https://news.ycombinator.com/item?id=50648050">https://news.ycombinator.com/item?id=50648050</a></p>
-<p>Points: 301</p>
-<p># Comments: 137</p>
-]]></description><pubDate>Wed, 25 Nov 2026 21:48:10 +0000</pubDate><link>https://github.com/lsernau/grh-lean</link><dc:creator>nb-t</dc:creator><comments>https://news.ycombinator.com/item?id=50648050</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50648050</guid></item><item><title><![CDATA[Defang Security Incident]]></title><description><![CDATA[
-<p>Article URL: <a href="https://defang.io/blog/post/security-incident-november-2026/">https://defang.io/blog/post/security-incident-november-2026/</a></p>
-<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50648035">https://news.ycombinator.com/item?id=50648035</a></p>
-<p>Points: 64</p>
-<p># Comments: 19</p>
-]]></description><pubDate>Wed, 25 Nov 2026 21:47:16 +0000</pubDate><link>https://defang.io/blog/post/security-incident-november-2026/</link><dc:creator>gregsadetsky</dc:creator><comments>https://news.ycombinator.com/item?id=50648035</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50648035</guid></item><item><title><![CDATA[The New York Times warns photographers not to update Photoshop over AI features]]></title><description><![CDATA[
+<p>Points: 474</p>
+<p># Comments: 256</p>
+]]></description><pubDate>Wed, 25 Nov 2026 21:48:10 +0000</pubDate><link>https://github.com/lsernau/grh-lean</link><dc:creator>nb-t</dc:creator><comments>https://news.ycombinator.com/item?id=50648050</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50648050</guid></item><item><title><![CDATA[The New York Times warns photographers not to update Photoshop over AI features]]></title><description><![CDATA[
 <p><a href="https://archive.ph/pcUgy" rel="nofollow">https://archive.ph/pcUgy</a></p>
 <hr>
 <p>Comments URL: <a href="https://news.ycombinator.com/item?id=50647673">https://news.ycombinator.com/item?id=50647673</a></p>
-<p>Points: 219</p>
-<p># Comments: 184</p>
+<p>Points: 426</p>
+<p># Comments: 354</p>
 ]]></description><pubDate>Wed, 25 Nov 2026 21:18:02 +0000</pubDate><link>https://www.theverge.com/ai-artificial-intelligence/1041227/the-new-york-times-warns-photographers-not-to-update-photoshop-over-ai-features</link><dc:creator>rmason</dc:creator><comments>https://news.ycombinator.com/item?id=50647673</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50647673</guid></item><item><title><![CDATA[Slow Ubuntu security response times]]></title><description><![CDATA[
 <p>Article URL: <a href="https://www.openwall.com/lists/oss-security/2026/11/25/9">https://www.openwall.com/lists/oss-security/2026/11/25/9</a></p>
 <p>Comments URL: <a href="https://news.ycombinator.com/item?id=50647181">https://news.ycombinator.com/item?id=50647181</a></p>
-<p>Points: 159</p>
-<p># Comments: 69</p>
+<p>Points: 327</p>
+<p># Comments: 159</p>
 ]]></description><pubDate>Wed, 25 Nov 2026 20:38:00 +0000</pubDate><link>https://www.openwall.com/lists/oss-security/2026/11/25/9</link><dc:creator>gslin</dc:creator><comments>https://news.ycombinator.com/item?id=50647181</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50647181</guid></item><item><title><![CDATA[Nfs2root: A 12-year-old pre-auth remote root in the Linux kernel's NFS server]]></title><description><![CDATA[
 <p>Article URL: <a href="https://opensec.in/blog/nfs2root-cve-2026-99362">https://opensec.in/blog/nfs2root-cve-2026-99362</a></p>
 <p>Comments URL: <a href="https://news.ycombinator.com/item?id=50647161">https://news.ycombinator.com/item?id=50647161</a></p>
-<p>Points: 91</p>
-<p># Comments: 28</p>
-]]></description><pubDate>Wed, 25 Nov 2026 20:35:50 +0000</pubDate><link>https://opensec.in/blog/nfs2root-cve-2026-99362</link><dc:creator>dm</dc:creator><comments>https://news.ycombinator.com/item?id=50647161</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50647161</guid></item><item><title><![CDATA[72-hour fasting can reset your immune system, USC study shows]]></title><description><![CDATA[
-<p>Article URL: <a href="https://scienceinhand.com/72-hour-fasting-can-reset-your-entire-immune-system-usc-study-shows/">https://scienceinhand.com/72-hour-fasting-can-reset-your-entire-immune-system-usc-study-shows/</a></p>
-<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50647158">https://news.ycombinator.com/item?id=50647158</a></p>
-<p>Points: 184</p>
-<p># Comments: 133</p>
-]]></description><pubDate>Wed, 25 Nov 2026 20:35:39 +0000</pubDate><link>https://scienceinhand.com/72-hour-fasting-can-reset-your-entire-immune-system-usc-study-shows/</link><dc:creator>handfuloflight</dc:creator><comments>https://news.ycombinator.com/item?id=50647158</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50647158</guid></item><item><title><![CDATA[Holy shit holy shit holy shit holy shit: The magnitude of what’s now happening]]></title><description><![CDATA[
+<p>Points: 161</p>
+<p># Comments: 64</p>
+]]></description><pubDate>Wed, 25 Nov 2026 20:35:50 +0000</pubDate><link>https://opensec.in/blog/nfs2root-cve-2026-99362</link><dc:creator>dm</dc:creator><comments>https://news.ycombinator.com/item?id=50647161</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50647161</guid></item><item><title><![CDATA[Holy shit holy shit holy shit holy shit: The magnitude of what’s now happening]]></title><description><![CDATA[
 <p>See also <i>The matrix multiplication exponent is nine fourths [pdf]</i> - <a href="https://news.ycombinator.com/item?id=50637220">https://news.ycombinator.com/item?id=50637220</a></p>
 <hr>
 <p>Comments URL: <a href="https://news.ycombinator.com/item?id=50646108">https://news.ycombinator.com/item?id=50646108</a></p>
-<p>Points: 959</p>
-<p># Comments: 812</p>
-]]></description><pubDate>Wed, 25 Nov 2026 19:11:27 +0000</pubDate><link>https://scottaaronson.blog/?p=10379</link><dc:creator>Kotlopou</dc:creator><comments>https://news.ycombinator.com/item?id=50646108</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50646108</guid></item><item><title><![CDATA[Multiagent coding is the future]]></title><description><![CDATA[
-<p>Article URL: <a href="https://www.kalzumeus.com/2026/11/25/multiagent-coding-is-the-future/">https://www.kalzumeus.com/2026/11/25/multiagent-coding-is-the-future/</a></p>
-<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50645541">https://news.ycombinator.com/item?id=50645541</a></p>
-<p>Points: 42</p>
-<p># Comments: 26</p>
-]]></description><pubDate>Wed, 25 Nov 2026 18:20:11 +0000</pubDate><link>https://www.kalzumeus.com/2026/11/25/multiagent-coding-is-the-future/</link><dc:creator>akalin</dc:creator><comments>https://news.ycombinator.com/item?id=50645541</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50645541</guid></item><item><title><![CDATA[Britain's ghost stations]]></title><description><![CDATA[
-<p><a href="https://archive.ph/pfVdX" rel="nofollow">https://archive.ph/pfVdX</a></p>
-<hr>
-<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50645074">https://news.ycombinator.com/item?id=50645074</a></p>
-<p>Points: 100</p>
-<p># Comments: 21</p>
-]]></description><pubDate>Wed, 25 Nov 2026 17:43:46 +0000</pubDate><link>https://spectator.com/article/britains-ghost-stations-are-fascinating/</link><dc:creator>translocator</dc:creator><comments>https://news.ycombinator.com/item?id=50645074</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50645074</guid></item><item><title><![CDATA[The polynomial Hirsch conjecture is false [pdf]]]></title><description><![CDATA[
-<p>Article URL: <a href="https://github.com/openai/math/blob/main/preprints/Superpolynomial-graph-diameter-of-simple-polytopes-November-24-2026/paper.pdf">https://github.com/openai/math/blob/main/preprints/Superpolynomial-graph-diameter-of-simple-polytopes-November-24-2026/paper.pdf</a></p>
-<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50644980">https://news.ycombinator.com/item?id=50644980</a></p>
-<p>Points: 127</p>
-<p># Comments: 35</p>
-]]></description><pubDate>Wed, 25 Nov 2026 17:34:34 +0000</pubDate><link>https://github.com/openai/math/blob/main/preprints/Superpolynomial-graph-diameter-of-simple-polytopes-November-24-2026/paper.pdf</link><dc:creator>acossta</dc:creator><comments>https://news.ycombinator.com/item?id=50644980</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50644980</guid></item><item><title><![CDATA[1Password Security Incident]]></title><description><![CDATA[
+<p>Points: 1640</p>
+<p># Comments: 1454</p>
+]]></description><pubDate>Wed, 25 Nov 2026 19:11:27 +0000</pubDate><link>https://scottaaronson.blog/?p=10379</link><dc:creator>Kotlopou</dc:creator><comments>https://news.ycombinator.com/item?id=50646108</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50646108</guid></item><item><title><![CDATA[1Password Security Incident]]></title><description><![CDATA[
 <p>Article URL: <a href="https://1password.com/blog/update-on-nov-2026-security-incident">https://1password.com/blog/update-on-nov-2026-security-incident</a></p>
 <p>Comments URL: <a href="https://news.ycombinator.com/item?id=50644817">https://news.ycombinator.com/item?id=50644817</a></p>
-<p>Points: 1198</p>
-<p># Comments: 510</p>
-]]></description><pubDate>Wed, 25 Nov 2026 17:18:26 +0000</pubDate><link>https://1password.com/blog/update-on-nov-2026-security-incident</link><dc:creator>lxhrstn</dc:creator><comments>https://news.ycombinator.com/item?id=50644817</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50644817</guid></item><item><title><![CDATA[A few questions for the guy who went snorkeling in a Home Depot retention pond]]></title><description><![CDATA[
-<p>Article URL: <a href="https://www.vox.com/down-to-earth/511999/home-depot-retention-pond-snorkel-joseph-ricketts">https://www.vox.com/down-to-earth/511999/home-depot-retention-pond-snorkel-joseph-ricketts</a></p>
-<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50643129">https://news.ycombinator.com/item?id=50643129</a></p>
-<p>Points: 445</p>
-<p># Comments: 110</p>
-]]></description><pubDate>Wed, 25 Nov 2026 15:14:32 +0000</pubDate><link>https://www.vox.com/down-to-earth/511999/home-depot-retention-pond-snorkel-joseph-ricketts</link><dc:creator>gumby</dc:creator><comments>https://news.ycombinator.com/item?id=50643129</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50643129</guid></item><item><title><![CDATA[I checked Clojure's core with Lean and found unreported bugs]]></title><description><![CDATA[
-<p>Article URL: <a href="https://s.conao3.com/blog/2026/e4f733">https://s.conao3.com/blog/2026/e4f733</a></p>
-<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50642939">https://news.ycombinator.com/item?id=50642939</a></p>
-<p>Points: 190</p>
-<p># Comments: 67</p>
-]]></description><pubDate>Wed, 25 Nov 2026 14:56:52 +0000</pubDate><link>https://s.conao3.com/blog/2026/e4f733</link><dc:creator>encyclopedism</dc:creator><comments>https://news.ycombinator.com/item?id=50642939</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50642939</guid></item><item><title><![CDATA[Google releases Cogentic papers on integer factorization, discrete logs and more]]></title><description><![CDATA[
-<p>Article URL: <a href="https://github.com/google-research/google-research/tree/master/cogentic_research_papers">https://github.com/google-research/google-research/tree/master/cogentic_research_papers</a></p>
-<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50642086">https://news.ycombinator.com/item?id=50642086</a></p>
-<p>Points: 451</p>
-<p># Comments: 336</p>
-]]></description><pubDate>Wed, 25 Nov 2026 13:33:07 +0000</pubDate><link>https://github.com/google-research/google-research/tree/master/cogentic_research_papers</link><dc:creator>rgwohlbold</dc:creator><comments>https://news.ycombinator.com/item?id=50642086</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50642086</guid></item><item><title><![CDATA[Windows Loudness Equalization, reverse-engineered and ported to PipeWire]]></title><description><![CDATA[
-<p>Article URL: <a href="https://github.com/xoxorwr/pw-loudness-eq">https://github.com/xoxorwr/pw-loudness-eq</a></p>
-<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50641171">https://news.ycombinator.com/item?id=50641171</a></p>
-<p>Points: 322</p>
-<p># Comments: 178</p>
-]]></description><pubDate>Wed, 25 Nov 2026 11:34:25 +0000</pubDate><link>https://github.com/xoxorwr/pw-loudness-eq</link><dc:creator>ThrowNotAway</dc:creator><comments>https://news.ycombinator.com/item?id=50641171</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50641171</guid></item><item><title><![CDATA[Smart people who give a shit use tools]]></title><description><![CDATA[
-<p>Article URL: <a href="https://www.iankduncan.com/engineering/2026-11-19-smart-people-who-give-a-shit-use-tools">https://www.iankduncan.com/engineering/2026-11-19-smart-people-who-give-a-shit-use-tools</a></p>
-<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50639698">https://news.ycombinator.com/item?id=50639698</a></p>
-<p>Points: 285</p>
-<p># Comments: 230</p>
-]]></description><pubDate>Wed, 25 Nov 2026 07:46:43 +0000</pubDate><link>https://www.iankduncan.com/engineering/2026-11-19-smart-people-who-give-a-shit-use-tools</link><dc:creator>matthewsinclair</dc:creator><comments>https://news.ycombinator.com/item?id=50639698</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50639698</guid></item></channel></rss>
+<p>Points: 1485</p>
+<p># Comments: 639</p>
+]]></description><pubDate>Wed, 25 Nov 2026 17:18:26 +0000</pubDate><link>https://1password.com/blog/update-on-nov-2026-security-incident</link><dc:creator>lxhrstn</dc:creator><comments>https://news.ycombinator.com/item?id=50644817</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50644817</guid></item></channel></rss>
