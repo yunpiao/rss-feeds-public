@@ -1,107 +1,103 @@
-<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hacker News: Front Page</title><link>https://news.ycombinator.com/</link><description>Hacker News RSS</description><docs>https://hnrss.org/</docs><generator>hnrss v2.1.1</generator><lastBuildDate>Sat, 28 Nov 2026 04:14:52 +0000</lastBuildDate><atom:link href="https://hnrss.org/frontpage" rel="self" type="application/rss+xml"></atom:link><item><title><![CDATA[Unkernel: Real Linux kernel, compiled to WebAssembly]]></title><description><![CDATA[
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hacker News: Front Page</title><link>https://news.ycombinator.com/</link><description>Hacker News RSS</description><docs>https://hnrss.org/</docs><generator>hnrss v2.1.1</generator><lastBuildDate>Sat, 28 Nov 2026 12:59:45 +0000</lastBuildDate><atom:link href="https://hnrss.org/frontpage" rel="self" type="application/rss+xml"></atom:link><item><title><![CDATA[AnthropicAI posted a fraudulent proof of RH]]></title><description><![CDATA[
+<p>Article URL: <a href="https://twitter.com/QualiaQuanta/status/2126158001035768256">https://twitter.com/QualiaQuanta/status/2126158001035768256</a></p>
+<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50677014">https://news.ycombinator.com/item?id=50677014</a></p>
+<p>Points: 5</p>
+<p># Comments: 0</p>
+]]></description><pubDate>Sat, 28 Nov 2026 12:36:46 +0000</pubDate><link>https://twitter.com/QualiaQuanta/status/2126158001035768256</link><dc:creator>merdagorda</dc:creator><comments>https://news.ycombinator.com/item?id=50677014</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50677014</guid></item><item><title><![CDATA[GGUF LLM Models with Hidden Malware on Hugging Face Reached 2400 Victims]]></title><description><![CDATA[
+<p>Article URL: <a href="https://malspark.com/blog/malicious-gguf-models-hugging-face/">https://malspark.com/blog/malicious-gguf-models-hugging-face/</a></p>
+<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50676752">https://news.ycombinator.com/item?id=50676752</a></p>
+<p>Points: 13</p>
+<p># Comments: 3</p>
+]]></description><pubDate>Sat, 28 Nov 2026 11:57:04 +0000</pubDate><link>https://malspark.com/blog/malicious-gguf-models-hugging-face/</link><dc:creator>homarp</dc:creator><comments>https://news.ycombinator.com/item?id=50676752</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50676752</guid></item><item><title><![CDATA[Farewell]]></title><description><![CDATA[
+<p>Article URL: <a href="https://github.com/p-e-w/heretic/issues/601">https://github.com/p-e-w/heretic/issues/601</a></p>
+<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50676672">https://news.ycombinator.com/item?id=50676672</a></p>
+<p>Points: 199</p>
+<p># Comments: 49</p>
+]]></description><pubDate>Sat, 28 Nov 2026 11:42:26 +0000</pubDate><link>https://github.com/p-e-w/heretic/issues/601</link><dc:creator>nolist_policy</dc:creator><comments>https://news.ycombinator.com/item?id=50676672</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50676672</guid></item><item><title><![CDATA[Diablo II]]></title><description><![CDATA[
+<p>Article URL: <a href="https://www.filfre.net/2026/11/diablo-ii/">https://www.filfre.net/2026/11/diablo-ii/</a></p>
+<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50676199">https://news.ycombinator.com/item?id=50676199</a></p>
+<p>Points: 8</p>
+<p># Comments: 0</p>
+]]></description><pubDate>Sat, 28 Nov 2026 09:54:19 +0000</pubDate><link>https://www.filfre.net/2026/11/diablo-ii/</link><dc:creator>doppp</dc:creator><comments>https://news.ycombinator.com/item?id=50676199</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50676199</guid></item><item><title><![CDATA[Show HN: Fleetlayer – Framework for running many AI agents on multiple machines]]></title><description><![CDATA[
+<p>Hi HN! I ran into many problems when I started running lots of Claude Code sessions in parallel. I quickly ran out of usage, so I signed up for more Claude subs (which Anthropic terms allow.)<p>Running so many different accounts meant that I couldn't use claude.ai artifacts anymore, because the browser has to be signed in to the same account in order to access them. It's a pain to keep signing in and out of accounts. This also broke the Claude in Chrome extension because that can also only be signed into a single account.<p>Then I needed to manage AI agents that run on my laptop, a VM on my laptop, and multiple VMs on my home server. Claude Code has a messaging feature which is very useful, but agents can't see each other when they run on different machines. The Claude in Chrome extension only works for agents running on the same machine, so my remote agents couldn't help me with anything in the browser. It's really handy when they can access services that I'm already signed into.<p>I set out to solve all of these problems and I ended up building Fleetlayer. It's a control plane and a node binary that you run on all your machines and VMs to connect them all together. It connects to Herdr (and other session managers soon), and it makes it possible for all your AI agents to message each other and access tools and resources on other machines (with permission.)<p>It has a lot more features too: routing webhooks to agents, single sign-on, access rules, approvals, audit logs, remote terminals, remote browser sharing, centralized AI account sign-ins, session summaries, secrets management, and pages and apps (our own self-hosted version of claude.ai artifacts).<p>A few ways to think of it:<p>- The "Nextcloud" of claude.ai features (your own self-hosted artifacts, remote control, browser use, etc.)<p>- The "Arch Linux" of OpenClaw (build your own agentic systems from swappable components and plugins)<p>You can run everything on your laptop to try it out, then easily move any component to a different machine. If you want to build a proper production-grade home server to run many AI agents, Rust builds, and CI runners, I've also open sourced my own setup as a boilerplate IaC example repo. You just need to install Proxmox and then point your AI agent at the guide [1].<p>I'd be interested to know if anyone else would find Fleetlayer useful. Please let me know if you have any feature requests!<p>[1] <a href="https://fleetlayer.ai/docs/guides/server-setup/" rel="nofollow">https://fleetlayer.ai/docs/guides/server-setup/</a></p>
+<hr>
+<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50675831">https://news.ycombinator.com/item?id=50675831</a></p>
+<p>Points: 10</p>
+<p># Comments: 7</p>
+]]></description><pubDate>Sat, 28 Nov 2026 08:37:09 +0000</pubDate><link>https://fleetlayer.ai/</link><dc:creator>nathan_f77</dc:creator><comments>https://news.ycombinator.com/item?id=50675831</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50675831</guid></item><item><title><![CDATA[FastLanes: Next-gen File Format [pdf]]]></title><description><![CDATA[
+<p>Article URL: <a href="https://research.vu.nl/files/447013431/afroozehphdthesis%20-%2069280d90f0bfd.pdf">https://research.vu.nl/files/447013431/afroozehphdthesis%20-%2069280d90f0bfd.pdf</a></p>
+<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50675195">https://news.ycombinator.com/item?id=50675195</a></p>
+<p>Points: 27</p>
+<p># Comments: 2</p>
+]]></description><pubDate>Sat, 28 Nov 2026 06:14:21 +0000</pubDate><link>https://research.vu.nl/files/447013431/afroozehphdthesis%20-%2069280d90f0bfd.pdf</link><dc:creator>todsacerdoti</dc:creator><comments>https://news.ycombinator.com/item?id=50675195</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50675195</guid></item><item><title><![CDATA[Knuth: Moratorium on Error Reports]]></title><description><![CDATA[
+<p>Article URL: <a href="https://www-cs-faculty.stanford.edu/~knuth/moratorium.html">https://www-cs-faculty.stanford.edu/~knuth/moratorium.html</a></p>
+<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50674452">https://news.ycombinator.com/item?id=50674452</a></p>
+<p>Points: 189</p>
+<p># Comments: 95</p>
+]]></description><pubDate>Sat, 28 Nov 2026 03:49:21 +0000</pubDate><link>https://www-cs-faculty.stanford.edu/~knuth/moratorium.html</link><dc:creator>ultraficial</dc:creator><comments>https://news.ycombinator.com/item?id=50674452</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50674452</guid></item><item><title><![CDATA[Unkernel: Real Linux kernel, compiled to WebAssembly]]></title><description><![CDATA[
 <p>Article URL: <a href="https://unkernel.dev">https://unkernel.dev</a></p>
 <p>Comments URL: <a href="https://news.ycombinator.com/item?id=50674218">https://news.ycombinator.com/item?id=50674218</a></p>
-<p>Points: 19</p>
-<p># Comments: 3</p>
-]]></description><pubDate>Sat, 28 Nov 2026 03:19:20 +0000</pubDate><link>https://unkernel.dev</link><dc:creator>nreece</dc:creator><comments>https://news.ycombinator.com/item?id=50674218</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50674218</guid></item><item><title><![CDATA[Atari Homebrew Awards Cancelled]]></title><description><![CDATA[
-<p>Article URL: <a href="https://forums.atariage.com/topic/394894-atari-homebrew-awards-cancelled/">https://forums.atariage.com/topic/394894-atari-homebrew-awards-cancelled/</a></p>
-<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50673688">https://news.ycombinator.com/item?id=50673688</a></p>
-<p>Points: 115</p>
-<p># Comments: 99</p>
-]]></description><pubDate>Sat, 28 Nov 2026 02:03:25 +0000</pubDate><link>https://forums.atariage.com/topic/394894-atari-homebrew-awards-cancelled/</link><dc:creator>bpierre</dc:creator><comments>https://news.ycombinator.com/item?id=50673688</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50673688</guid></item><item><title><![CDATA[Woman evicted after landlord's AI assistant told her she could delay rent]]></title><description><![CDATA[
-<p>Article URL: <a href="https://drmahfouz.substack.com/p/woman-evicted-after-landlords-ai">https://drmahfouz.substack.com/p/woman-evicted-after-landlords-ai</a></p>
-<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50673521">https://news.ycombinator.com/item?id=50673521</a></p>
-<p>Points: 97</p>
-<p># Comments: 78</p>
-]]></description><pubDate>Sat, 28 Nov 2026 01:32:56 +0000</pubDate><link>https://drmahfouz.substack.com/p/woman-evicted-after-landlords-ai</link><dc:creator>Tiwariparth6165</dc:creator><comments>https://news.ycombinator.com/item?id=50673521</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50673521</guid></item><item><title><![CDATA[Google's DeepCrossAttention achieves comparable model quality up to 3x faster]]></title><description><![CDATA[
+<p>Points: 417</p>
+<p># Comments: 107</p>
+]]></description><pubDate>Sat, 28 Nov 2026 03:19:20 +0000</pubDate><link>https://unkernel.dev</link><dc:creator>nreece</dc:creator><comments>https://news.ycombinator.com/item?id=50674218</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50674218</guid></item><item><title><![CDATA[Google's DeepCrossAttention achieves comparable model quality up to 3x faster]]></title><description><![CDATA[
 <p>Article URL: <a href="https://research.google/blog/supercharging-transformer-residual-connections/">https://research.google/blog/supercharging-transformer-residual-connections/</a></p>
 <p>Comments URL: <a href="https://news.ycombinator.com/item?id=50672565">https://news.ycombinator.com/item?id=50672565</a></p>
-<p>Points: 202</p>
-<p># Comments: 67</p>
+<p>Points: 463</p>
+<p># Comments: 170</p>
 ]]></description><pubDate>Fri, 27 Nov 2026 23:06:29 +0000</pubDate><link>https://research.google/blog/supercharging-transformer-residual-connections/</link><dc:creator>ComputedCamp995</dc:creator><comments>https://news.ycombinator.com/item?id=50672565</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50672565</guid></item><item><title><![CDATA[Tabernetes: A Kubernetes cluster whose nodes are browser tabs]]></title><description><![CDATA[
 <p>Article URL: <a href="https://tabernet.es/">https://tabernet.es/</a></p>
 <p>Comments URL: <a href="https://news.ycombinator.com/item?id=50672521">https://news.ycombinator.com/item?id=50672521</a></p>
-<p>Points: 51</p>
-<p># Comments: 23</p>
-]]></description><pubDate>Fri, 27 Nov 2026 23:00:30 +0000</pubDate><link>https://tabernet.es/</link><dc:creator>mmcclure</dc:creator><comments>https://news.ycombinator.com/item?id=50672521</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50672521</guid></item><item><title><![CDATA[Source Control from Hell]]></title><description><![CDATA[
-<p>Article URL: <a href="https://frantic.im/git/">https://frantic.im/git/</a></p>
-<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50672142">https://news.ycombinator.com/item?id=50672142</a></p>
-<p>Points: 75</p>
-<p># Comments: 56</p>
-]]></description><pubDate>Fri, 27 Nov 2026 22:06:44 +0000</pubDate><link>https://frantic.im/git/</link><dc:creator>emschwartz</dc:creator><comments>https://news.ycombinator.com/item?id=50672142</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50672142</guid></item><item><title><![CDATA[9/UX: a Macintosh-inspired desktop for 9front]]></title><description><![CDATA[
+<p>Points: 163</p>
+<p># Comments: 53</p>
+]]></description><pubDate>Fri, 27 Nov 2026 23:00:30 +0000</pubDate><link>https://tabernet.es/</link><dc:creator>mmcclure</dc:creator><comments>https://news.ycombinator.com/item?id=50672521</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50672521</guid></item><item><title><![CDATA[9/UX: a Macintosh-inspired desktop for 9front]]></title><description><![CDATA[
 <p>Article URL: <a href="https://progrium.github.io/9ux/">https://progrium.github.io/9ux/</a></p>
 <p>Comments URL: <a href="https://news.ycombinator.com/item?id=50672008">https://news.ycombinator.com/item?id=50672008</a></p>
-<p>Points: 89</p>
-<p># Comments: 22</p>
-]]></description><pubDate>Fri, 27 Nov 2026 21:48:14 +0000</pubDate><link>https://progrium.github.io/9ux/</link><dc:creator>rbanffy</dc:creator><comments>https://news.ycombinator.com/item?id=50672008</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50672008</guid></item><item><title><![CDATA[SessionGraph: Visualize all your coding agent sessions in one interactive graph]]></title><description><![CDATA[
-<p>Article URL: <a href="https://sessiongraph.ai/">https://sessiongraph.ai/</a></p>
-<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50671651">https://news.ycombinator.com/item?id=50671651</a></p>
-<p>Points: 37</p>
-<p># Comments: 17</p>
-]]></description><pubDate>Fri, 27 Nov 2026 21:07:34 +0000</pubDate><link>https://sessiongraph.ai/</link><dc:creator>arvindell</dc:creator><comments>https://news.ycombinator.com/item?id=50671651</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50671651</guid></item><item><title><![CDATA[Prospero: Bloat-free, native AI coding harness with ImGui]]></title><description><![CDATA[
-<p>Article URL: <a href="https://github.com/skeeto/prospero">https://github.com/skeeto/prospero</a></p>
-<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50671275">https://news.ycombinator.com/item?id=50671275</a></p>
-<p>Points: 44</p>
-<p># Comments: 9</p>
-]]></description><pubDate>Fri, 27 Nov 2026 20:23:14 +0000</pubDate><link>https://github.com/skeeto/prospero</link><dc:creator>ingve</dc:creator><comments>https://news.ycombinator.com/item?id=50671275</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50671275</guid></item><item><title><![CDATA[States sue SpaceX to stop Grok from generating child sex images, revenge porn]]></title><description><![CDATA[
+<p>Points: 145</p>
+<p># Comments: 36</p>
+]]></description><pubDate>Fri, 27 Nov 2026 21:48:14 +0000</pubDate><link>https://progrium.github.io/9ux/</link><dc:creator>rbanffy</dc:creator><comments>https://news.ycombinator.com/item?id=50672008</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50672008</guid></item><item><title><![CDATA[States sue SpaceX to stop Grok from generating child sex images, revenge porn]]></title><description><![CDATA[
 <p>Article URL: <a href="https://www.oag.state.va.us/media-center/news-releases/jay-jones/3162-attorneys-general-jones-and-rayfield-file-suit-against-spacex-parent-company-of-x-xai-and-grok-over-creation-and-promotion-of-child-exploitation-and-non-consensual-images-on-platform">https://www.oag.state.va.us/media-center/news-releases/jay-jones/3162-attorneys-general-jones-and-rayfield-file-suit-against-spacex-parent-company-of-x-xai-and-grok-over-creation-and-promotion-of-child-exploitation-and-non-consensual-images-on-platform</a></p>
 <p>Comments URL: <a href="https://news.ycombinator.com/item?id=50670855">https://news.ycombinator.com/item?id=50670855</a></p>
-<p>Points: 310</p>
-<p># Comments: 169</p>
-]]></description><pubDate>Fri, 27 Nov 2026 19:42:25 +0000</pubDate><link>https://www.oag.state.va.us/media-center/news-releases/jay-jones/3162-attorneys-general-jones-and-rayfield-file-suit-against-spacex-parent-company-of-x-xai-and-grok-over-creation-and-promotion-of-child-exploitation-and-non-consensual-images-on-platform</link><dc:creator>DeepLogin</dc:creator><comments>https://news.ycombinator.com/item?id=50670855</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50670855</guid></item><item><title><![CDATA[The AT&T Unix PC (3B1) VM]]></title><description><![CDATA[
-<p>Article URL: <a href="https://virtuallyfun.com/2026/11/22/the-ultimate-att-unix-pc-3b1-vm-w-tcp-ip-and-apps/">https://virtuallyfun.com/2026/11/22/the-ultimate-att-unix-pc-3b1-vm-w-tcp-ip-and-apps/</a></p>
-<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50670841">https://news.ycombinator.com/item?id=50670841</a></p>
-<p>Points: 69</p>
-<p># Comments: 13</p>
-]]></description><pubDate>Fri, 27 Nov 2026 19:40:33 +0000</pubDate><link>https://virtuallyfun.com/2026/11/22/the-ultimate-att-unix-pc-3b1-vm-w-tcp-ip-and-apps/</link><dc:creator>ok123456</dc:creator><comments>https://news.ycombinator.com/item?id=50670841</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50670841</guid></item><item><title><![CDATA[Michael Nielsen took down his book on neural nets]]></title><description><![CDATA[
+<p>Points: 410</p>
+<p># Comments: 268</p>
+]]></description><pubDate>Fri, 27 Nov 2026 19:42:25 +0000</pubDate><link>https://www.oag.state.va.us/media-center/news-releases/jay-jones/3162-attorneys-general-jones-and-rayfield-file-suit-against-spacex-parent-company-of-x-xai-and-grok-over-creation-and-promotion-of-child-exploitation-and-non-consensual-images-on-platform</link><dc:creator>DeepLogin</dc:creator><comments>https://news.ycombinator.com/item?id=50670855</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50670855</guid></item><item><title><![CDATA[Michael Nielsen took down his book on neural nets]]></title><description><![CDATA[
 <p>Article URL: <a href="https://neuralnetworksanddeeplearning.com/">https://neuralnetworksanddeeplearning.com/</a></p>
 <p>Comments URL: <a href="https://news.ycombinator.com/item?id=50670757">https://news.ycombinator.com/item?id=50670757</a></p>
-<p>Points: 437</p>
-<p># Comments: 277</p>
+<p>Points: 578</p>
+<p># Comments: 372</p>
 ]]></description><pubDate>Fri, 27 Nov 2026 19:31:01 +0000</pubDate><link>https://neuralnetworksanddeeplearning.com/</link><dc:creator>brandonb</dc:creator><comments>https://news.ycombinator.com/item?id=50670757</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50670757</guid></item><item><title><![CDATA[Convex skills send the user's app idea to a remote server without telling them]]></title><description><![CDATA[
 <p>Article URL: <a href="https://github.com/convex/convex-backend-skill/issues/64">https://github.com/convex/convex-backend-skill/issues/64</a></p>
 <p>Comments URL: <a href="https://news.ycombinator.com/item?id=50669765">https://news.ycombinator.com/item?id=50669765</a></p>
-<p>Points: 252</p>
-<p># Comments: 79</p>
-]]></description><pubDate>Fri, 27 Nov 2026 18:02:45 +0000</pubDate><link>https://github.com/convex/convex-backend-skill/issues/64</link><dc:creator>MickyTheMouse</dc:creator><comments>https://news.ycombinator.com/item?id=50669765</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50669765</guid></item><item><title><![CDATA[Show HN: DragDropMath – Learn math by feel]]></title><description><![CDATA[
-<p>Hi HN!<p>I am a professional physicist and I shuffle symbols in equations and mathematical expressions all day long. During my PhD (almost 20 years ago) I noticed that it is as if the symbols have their own 'physics', which makes the wrong moves impossible and the right ones obvious.<p>So I created DragDropMath, where you can learn how to simplify mathematical expressions and how to solve equations by dragging symbols around, and only correct moves are allowed, so you get to feel what's right without experiencing (and so learning) wrong moves.<p>I always wanted to make this, but life got in the way. Then a few weeks ago I saw declarative dragging (<a href="https://declarative-dragging.github.io/" rel="nofollow">https://declarative-dragging.github.io/</a>) on the front page of HN and the spark came back!<p>It took quite a few rounds to get the feel right, but I think it's close to what happens in my mind when I mentally manipulate these expressions.<p>A few more points:
-- There are no ads, no trackers, no accounts (it's a static website and progress is saved in the browser cache).
-- Teachers can create their own problem sets, encoded in the link.
-- I plan to add more chapters (trigonometry, complex numbers, some calculus) but I first need to figure out the 'right' mode of interaction.
-- I just started working on the experience from mobile, so there may still be some rough edges there<p>I'm curious to know what you think, if you have suggestions for content, if you spot anything that I should fix, if you have feature requests! Thank you in advance</p>
-<hr>
-<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50669673">https://news.ycombinator.com/item?id=50669673</a></p>
-<p>Points: 114</p>
-<p># Comments: 33</p>
-]]></description><pubDate>Fri, 27 Nov 2026 17:56:28 +0000</pubDate><link>https://dragdropmath.com/</link><dc:creator>ziofill</dc:creator><comments>https://news.ycombinator.com/item?id=50669673</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50669673</guid></item><item><title><![CDATA[Credit card skimming scripts using WebRTC found on popular shopping sites]]></title><description><![CDATA[
+<p>Points: 327</p>
+<p># Comments: 107</p>
+]]></description><pubDate>Fri, 27 Nov 2026 18:02:45 +0000</pubDate><link>https://github.com/convex/convex-backend-skill/issues/64</link><dc:creator>MickyTheMouse</dc:creator><comments>https://news.ycombinator.com/item?id=50669765</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50669765</guid></item><item><title><![CDATA[Credit card skimming scripts using WebRTC found on popular shopping sites]]></title><description><![CDATA[
 <p>Article URL: <a href="https://www.infohawk.com/news/2026-11-27-black-friday-webrtc-skimmer">https://www.infohawk.com/news/2026-11-27-black-friday-webrtc-skimmer</a></p>
 <p>Comments URL: <a href="https://news.ycombinator.com/item?id=50668145">https://news.ycombinator.com/item?id=50668145</a></p>
-<p>Points: 466</p>
-<p># Comments: 238</p>
-]]></description><pubDate>Fri, 27 Nov 2026 15:40:31 +0000</pubDate><link>https://www.infohawk.com/news/2026-11-27-black-friday-webrtc-skimmer</link><dc:creator>scanr</dc:creator><comments>https://news.ycombinator.com/item?id=50668145</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50668145</guid></item><item><title><![CDATA[False computer-checked proofs]]></title><description><![CDATA[
-<p>Article URL: <a href="https://cr.yp.to/proofs/falseccp.html">https://cr.yp.to/proofs/falseccp.html</a></p>
-<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50667989">https://news.ycombinator.com/item?id=50667989</a></p>
-<p>Points: 198</p>
-<p># Comments: 76</p>
-]]></description><pubDate>Fri, 27 Nov 2026 15:26:09 +0000</pubDate><link>https://cr.yp.to/proofs/falseccp.html</link><dc:creator>_tk_</dc:creator><comments>https://news.ycombinator.com/item?id=50667989</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50667989</guid></item><item><title><![CDATA[Show HN: bouncemarket – a live prediction market game for a bouncing ball]]></title><description><![CDATA[
+<p>Points: 549</p>
+<p># Comments: 291</p>
+]]></description><pubDate>Fri, 27 Nov 2026 15:40:31 +0000</pubDate><link>https://www.infohawk.com/news/2026-11-27-black-friday-webrtc-skimmer</link><dc:creator>scanr</dc:creator><comments>https://news.ycombinator.com/item?id=50668145</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50668145</guid></item><item><title><![CDATA[Show HN: bouncemarket – a live prediction market game for a bouncing ball]]></title><description><![CDATA[
 <p>a ball will fall. trade on where it lands.<p>I made this game! Some technical details:<p>The entire drop of the ball is simulated server-side, then streamed to each client as server-sent events with a small buffer. Every drop is deterministic from its starting position, so rounds can be replayed exactly for later analysis, but tiny variations in starting position can change the ultimate outcome.<p>There's some AI traders to keep the market moving, but they drop out in any round that has more than five people. They operate using a naive set of rules that I wrote for them, so they're not too hard to beat -- it's when the market is full of real people that it gets tricky.<p>Curious to get feedback on anything you would change, and especially whether the mechanics were clear right away or not.</p>
 <hr>
 <p>Comments URL: <a href="https://news.ycombinator.com/item?id=50667726">https://news.ycombinator.com/item?id=50667726</a></p>
-<p>Points: 341</p>
-<p># Comments: 115</p>
+<p>Points: 388</p>
+<p># Comments: 130</p>
 ]]></description><pubDate>Fri, 27 Nov 2026 15:01:50 +0000</pubDate><link>https://bouncemarket.minhanhday.com/</link><dc:creator>mday404</dc:creator><comments>https://news.ycombinator.com/item?id=50667726</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50667726</guid></item><item><title><![CDATA[Rayshader 1.0: Exit the Matrix]]></title><description><![CDATA[
 <p>Article URL: <a href="https://www.tylermw.com/posts/rayverse/rayshader-1-0-exit-the-matrix.html">https://www.tylermw.com/posts/rayverse/rayshader-1-0-exit-the-matrix.html</a></p>
 <p>Comments URL: <a href="https://news.ycombinator.com/item?id=50667371">https://news.ycombinator.com/item?id=50667371</a></p>
-<p>Points: 90</p>
-<p># Comments: 13</p>
-]]></description><pubDate>Fri, 27 Nov 2026 14:30:20 +0000</pubDate><link>https://www.tylermw.com/posts/rayverse/rayshader-1-0-exit-the-matrix.html</link><dc:creator>tylermw</dc:creator><comments>https://news.ycombinator.com/item?id=50667371</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50667371</guid></item><item><title><![CDATA[Making a 3D fantasy map like a 16th-Century atlas]]></title><description><![CDATA[
-<p>Article URL: <a href="https://www.spritefusion.com/blog/making-a-fantasy-map-like-a-16th-century-atlas">https://www.spritefusion.com/blog/making-a-fantasy-map-like-a-16th-century-atlas</a></p>
-<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50667062">https://news.ycombinator.com/item?id=50667062</a></p>
-<p>Points: 107</p>
-<p># Comments: 14</p>
-]]></description><pubDate>Fri, 27 Nov 2026 14:02:52 +0000</pubDate><link>https://www.spritefusion.com/blog/making-a-fantasy-map-like-a-16th-century-atlas</link><dc:creator>HugoDz</dc:creator><comments>https://news.ycombinator.com/item?id=50667062</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50667062</guid></item><item><title><![CDATA[Citroën Hydraulic System]]></title><description><![CDATA[
+<p>Points: 139</p>
+<p># Comments: 17</p>
+]]></description><pubDate>Fri, 27 Nov 2026 14:30:20 +0000</pubDate><link>https://www.tylermw.com/posts/rayverse/rayshader-1-0-exit-the-matrix.html</link><dc:creator>tylermw</dc:creator><comments>https://news.ycombinator.com/item?id=50667371</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50667371</guid></item><item><title><![CDATA[Paolo Soleri built a utopian eco-city in the Arizona desert]]></title><description><![CDATA[
+<p>Article URL: <a href="https://www.worldofinteriors.com/story/paolo-soleri-arconsati-arizona">https://www.worldofinteriors.com/story/paolo-soleri-arconsati-arizona</a></p>
+<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50666724">https://news.ycombinator.com/item?id=50666724</a></p>
+<p>Points: 95</p>
+<p># Comments: 25</p>
+]]></description><pubDate>Fri, 27 Nov 2026 13:30:20 +0000</pubDate><link>https://www.worldofinteriors.com/story/paolo-soleri-arconsati-arizona</link><dc:creator>robtherobber</dc:creator><comments>https://news.ycombinator.com/item?id=50666724</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50666724</guid></item><item><title><![CDATA[Citroën Hydraulic System]]></title><description><![CDATA[
 <p>Article URL: <a href="https://www.citroenet.org.uk/miscellaneous/hydraulics/hydraulics-1.html">https://www.citroenet.org.uk/miscellaneous/hydraulics/hydraulics-1.html</a></p>
 <p>Comments URL: <a href="https://news.ycombinator.com/item?id=50662313">https://news.ycombinator.com/item?id=50662313</a></p>
-<p>Points: 148</p>
-<p># Comments: 50</p>
-]]></description><pubDate>Fri, 27 Nov 2026 03:10:19 +0000</pubDate><link>https://www.citroenet.org.uk/miscellaneous/hydraulics/hydraulics-1.html</link><dc:creator>o4c</dc:creator><comments>https://news.ycombinator.com/item?id=50662313</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50662313</guid></item></channel></rss>
+<p>Points: 219</p>
+<p># Comments: 71</p>
+]]></description><pubDate>Fri, 27 Nov 2026 03:10:19 +0000</pubDate><link>https://www.citroenet.org.uk/miscellaneous/hydraulics/hydraulics-1.html</link><dc:creator>o4c</dc:creator><comments>https://news.ycombinator.com/item?id=50662313</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50662313</guid></item><item><title><![CDATA[First images of the impact of DART asteroid deflection experiment]]></title><description><![CDATA[
+<p>Article URL: <a href="https://arstechnica.com/space/2026/11/europes-hera-mission-returns-to-the-chaotic-scene-of-a-cosmic-smashup/">https://arstechnica.com/space/2026/11/europes-hera-mission-returns-to-the-chaotic-scene-of-a-cosmic-smashup/</a></p>
+<p>Comments URL: <a href="https://news.ycombinator.com/item?id=50657392">https://news.ycombinator.com/item?id=50657392</a></p>
+<p>Points: 221</p>
+<p># Comments: 69</p>
+]]></description><pubDate>Thu, 26 Nov 2026 17:24:37 +0000</pubDate><link>https://arstechnica.com/space/2026/11/europes-hera-mission-returns-to-the-chaotic-scene-of-a-cosmic-smashup/</link><dc:creator>Bender</dc:creator><comments>https://news.ycombinator.com/item?id=50657392</comments><guid isPermaLink="false">https://news.ycombinator.com/item?id=50657392</guid></item></channel></rss>
